@@ -97,7 +97,7 @@ You should find `Starting Dice Roll MCP Server...` and the `DICE ROLL: 1d20 = [.
 
 This is the Floor 5 Narrator. The Rules Agent and the Character Agent are still reached over A2A on `127.0.0.1:8000` and `127.0.0.1:8001`; only the dice client changes. Its TODOs carry the number of this section (8.1 Step 1).
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** If you look at the solution: this file is shared by the four sections, and the solution branch shows it as it is at the end of 8.4, served by AgentCore. That version does not start on your machine. Only copy the lines under the `8.1 Step N` TODOs of this section, and keep the rest of your file as it is.
+> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** If you look at the solution: this file is shared by the four sections, and the `solution` branch shows it as it is at the end of 8.4, served by AgentCore. That version does not start on your machine. Only copy the lines under the `8.1 Step N` TODOs of this section, and keep the rest of your file as it is.
 
 ### Step 1: Read the Dice Server URL from the Environment
 

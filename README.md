@@ -42,7 +42,7 @@ Complete the floors in order: each one reuses what the previous one built. Floor
 ## Branches
 
 - `main`: the skeleton you clone, with `# TODO` markers to fill in.
-- `solution-*`: the same files with the answers written below each TODO. Use the latest one if you get stuck.
+- `solution`: the same files with the answers written below each TODO, run end to end on Amazon Nova 2 Lite. Floor 8 there is the end-of-8.4 state, served by AgentCore. Use it if you get stuck.
 
 ## Dependencies
 
@@ -50,11 +50,15 @@ The workshop ships no lockfile (`uv.lock` is gitignored), so `uv sync` installs 
 
 ## Tests
 
+The tests live on the `solution` branch, because they import the finished Floor 5 agents:
+
 ```bash
+git switch solution
+uv sync --group dev
 uv run pytest tests/
 ```
 
-The tests cover the Floor 5 A2A servers: module imports, the per-context `agent_factory` isolation, and the agent card served over HTTP.
+They cover the Floor 5 A2A servers: module imports, the per-context `agent_factory` isolation, and the agent card served over HTTP. The web interface has its own suite in `web/` (`npm ci`, then `npx vitest run`).
 
 ## Contributing
 

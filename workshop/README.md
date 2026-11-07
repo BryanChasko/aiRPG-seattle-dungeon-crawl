@@ -104,12 +104,12 @@ Each floor follows the same pattern:
 - README Guide: complete instructions and background lore
 - TODO Exercises: hands-on coding challenges to complete
 - Testing Instructions: how to verify your creations work
-- Solution Reference: completed exercises on the `solution-*` branches of the repository
+- Solution Reference: completed exercises on the `solution` branch of the repository
 
 ### Getting Help
 
 - Strands Documentation: [Official Strands Docs](https://strandsagents.com/)
-- Solution Branches: reference implementations for each floor, if you get stuck
+- Solution Branch: reference implementations for every floor, if you get stuck
 - Experiment Freely: the best way to learn is by trying things
 
 ## What is Strands?
