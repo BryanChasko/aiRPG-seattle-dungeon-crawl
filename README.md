@@ -22,7 +22,7 @@ source .venv/bin/activate  # .venv\Scripts\activate on Windows
 
 No `uv`? Install it from [docs.astral.sh/uv](https://docs.astral.sh/uv/getting-started/installation/), or use plain pip: `pip install .` from the repository root.
 
-The agents run on Amazon Nova 2 Lite on Amazon Bedrock (`us.amazon.nova-2-lite-v1:0`, first-party Amazon, no third-party model access needed). You need AWS credentials allowed to invoke it in us-west-2, see [Floor 0](workshop/floor-0.md). Floor 8 deploys to AgentCore: in the workshop Code Editor everything it needs is already set up; in an AWS account of your own, it also needs Node.js 20+ and the [AgentCore CLI](https://github.com/aws/agentcore-cli), which its instructions install.
+Every agent on every floor runs on one model: Amazon Nova 2 Lite on Amazon Bedrock (`us.amazon.nova-2-lite-v1:0`). You need AWS credentials allowed to invoke it in us-west-2, see [Floor 0](workshop/floor-0.md). Floor 8 deploys to AgentCore: in the workshop Code Editor everything it needs is already set up; in an AWS account of your own, it also needs Node.js 20+ and the [AgentCore CLI](https://github.com/aws/agentcore-cli), which its instructions install.
 
 ## The Dungeon Map
 

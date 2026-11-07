@@ -82,7 +82,7 @@ logging.basicConfig(
 
 The system prompt defines your agent's role, personality, and knowledge base. You pass it as the `system_prompt` argument when you create the `Agent`. See [Prompts](https://strandsagents.com/docs/user-guide/sdk/agents/prompts/) in the Strands docs.
 
-Pick the model yourself: without a `model`, Strands defaults to a third-party Claude model on Amazon Bedrock. This crawl runs on Amazon Nova 2 Lite, a first-party Amazon model, through the US cross-Region inference profile `us.amazon.nova-2-lite-v1:0`, so pass `model="us.amazon.nova-2-lite-v1:0"` to `Agent(...)`. Every later floor already passes it in the given code. To try another model later, see the [Amazon Bedrock model provider page](https://strandsagents.com/docs/user-guide/sdk/model-providers/amazon-bedrock/).
+Pass the model every time. This crawl runs on one model, Amazon Nova 2 Lite, through the US cross-Region inference profile `us.amazon.nova-2-lite-v1:0`, so pass `model="us.amazon.nova-2-lite-v1:0"` to `Agent(...)`. Never leave it out: without a `model`, Strands picks one for you, and it is not the workshop's. Every later floor already passes it in the given code. The [Amazon Bedrock model provider page](https://strandsagents.com/docs/user-guide/sdk/model-providers/amazon-bedrock/) explains how Strands talks to Bedrock.
 
 <details>
 <summary>Show me the code for Step 2</summary>
