@@ -2,6 +2,8 @@
 
 [Previous: Floor 8.1](floor-8-1.md) | [Dungeon map](README.md) | [Next: Floor 8.3](floor-8-3.md) <!-- floor-nav -->
 
+Files on this floor: [`8_agentcore_production/characteragent/character_agent.py`](../8_agentcore_production/characteragent/character_agent.py), [`8_agentcore_production/narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py) <!-- floor-files -->
+
 ![Floor 8.2: The Character Agent](../images/floors/floor-8-2-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Brick two. Your characters move into AgentCore Memory, where they will outlive their sessions. This is more than the System offers most Crawlers."
@@ -10,7 +12,7 @@
 
 Move the second brick to production: deploy the Floor 5 Character Agent to AgentCore Runtime as an A2A server, store the characters it creates in AgentCore Memory instead of a local file, then point the Narrator at it. The Rules Agent and the Narrator keep running on your machine.
 
-Why not keep TinyDB? In Floor 5 the characters live in `characters.json`, next to the agent. On AgentCore Runtime that cannot work: the code folder is read-only, and each session runs in its own microVM, so a file written in `/tmp` by one session is invisible to the next one and disappears with its microVM. The characters need a store that lives outside the runtime.
+Why not keep TinyDB? In Floor 5 the characters live in [`characters.json`](../characters.json), next to the agent. On AgentCore Runtime that cannot work: the code folder is read-only, and each session runs in its own microVM, so a file written in `/tmp` by one session is invisible to the next one and disappears with its microVM. The characters need a store that lives outside the runtime.
 
 What is AgentCore Memory? AgentCore Memory is a managed store for agents. It is usually used for conversations: the agent records events, and strategies extract long-term memory records from them (preferences, facts, summaries). Here we use it more simply: a memory with no strategy, in which the agent writes its own records, one per character, and lists them back. You get a persistent store shared by every session, with no database to run.
 
@@ -22,8 +24,8 @@ cd aiRPG-seattle-dungeon-crawl/8_agentcore_production
 
 This section works in two folders:
 
-- The Character Agent (`characteragent/character_agent.py`), the Floor 5 agent, with its `pyproject.toml` and `memory-policy.json`
-- The Narrator (`narrator/narrator_orchestrator.py`), as you left it in 8.1
+- The Character Agent ([`characteragent/character_agent.py`](../8_agentcore_production/characteragent/character_agent.py)), the Floor 5 agent, with its [`pyproject.toml`](../pyproject.toml) and [`memory-policy.json`](../8_agentcore_production/characteragent/memory-policy.json)
+- The Narrator ([`narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py)), as you left it in 8.1
 
 ## Part 1: Prepare the Character Agent for the Cloud (characteragent/character_agent.py)
 

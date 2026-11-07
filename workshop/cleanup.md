@@ -100,7 +100,7 @@ Everything below is generated during the workshop and gitignored, delete it free
 - `7_strands_harness/.agent/`: the Strands harness sessions and memory
 - `.venv/` at the repository root, if you no longer need the environment
 
-`5_a2a_integration/agents/character_agent/characters.json` ships with the repository, empty. Restore it to clear the party's Floor 5 registration:
+[`5_a2a_integration/agents/character_agent/characters.json`](../5_a2a_integration/agents/character_agent/characters.json) ships with the repository, empty. Restore it to clear the party's Floor 5 registration:
 
 ```bash
 git checkout -- 5_a2a_integration/agents/character_agent/characters.json

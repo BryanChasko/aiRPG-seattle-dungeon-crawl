@@ -2,6 +2,8 @@
 
 [Previous: Floor 4](floor-4.md) | [Dungeon map](README.md) | [Next: Floor 6](floor-6.md) <!-- floor-nav -->
 
+Files on this floor: [`5_a2a_integration/agents/rules_agent/rules_agent.py`](../5_a2a_integration/agents/rules_agent/rules_agent.py), [`5_a2a_integration/agents/character_agent/character_agent.py`](../5_a2a_integration/agents/character_agent/character_agent.py), [`5_a2a_integration/agents/narrator_orchestrator/narrator_orchestrator.py`](../5_a2a_integration/agents/narrator_orchestrator/narrator_orchestrator.py), [`5_a2a_integration/utils/create_knowledge_base.py`](../5_a2a_integration/utils/create_knowledge_base.py), [`5_a2a_integration/test/test.http`](../5_a2a_integration/test/test.http) <!-- floor-files -->
+
 ![Floor 5: Party Formation (A2A)](../images/floors/floor-5-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 5. A party. How sweet. Three agents, four terminals, one orchestrator, and a very real chance you forget to start one of them. The audience is placing bets on which."
@@ -34,9 +36,9 @@ cd aiRPG-seattle-dungeon-crawl/5_a2a_integration
 
 Build a system with three specialized agents that work together:
 
-- Rules Agent: manages the game rules and mechanics - `agents/rules_agent/rules_agent.py`
-- Character Agent: handles character creation and management - `agents/character_agent/character_agent.py`
-- Narrator Orchestrator: coordinates all agents for gameplay - `agents/narrator_orchestrator/narrator_orchestrator.py`
+- Rules Agent: manages the game rules and mechanics - [`agents/rules_agent/rules_agent.py`](../5_a2a_integration/agents/rules_agent/rules_agent.py)
+- Character Agent: handles character creation and management - [`agents/character_agent/character_agent.py`](../5_a2a_integration/agents/character_agent/character_agent.py)
+- Narrator Orchestrator: coordinates all agents for gameplay - [`agents/narrator_orchestrator/narrator_orchestrator.py`](../5_a2a_integration/agents/narrator_orchestrator/narrator_orchestrator.py)
 
 ## Part 1: Setting Up the Rules Agent
 
@@ -322,7 +324,7 @@ At this point four terminals should be running:
 
 If one is missing, go back to the launch step of its part.
 
-The Narrator is a FastAPI application listening on port 8009. Each curl command below sends a POST request to its `/inquire` endpoint with a JSON body holding your question, exactly what a web page or any other client would do. While the request runs, the four terminals show how the Narrator treats it: which agent it asks over A2A, when it rolls the dice over MCP, and what each of them answers. Open a fifth terminal for the commands themselves (no virtual environment needed, curl is a system command) and run them there (or, if you have a REST client, use the `test/test.http` file we prepared for these tests):
+The Narrator is a FastAPI application listening on port 8009. Each curl command below sends a POST request to its `/inquire` endpoint with a JSON body holding your question, exactly what a web page or any other client would do. While the request runs, the four terminals show how the Narrator treats it: which agent it asks over A2A, when it rolls the dice over MCP, and what each of them answers. Open a fifth terminal for the commands themselves (no virtual environment needed, curl is a system command) and run them there (or, if you have a REST client, use the [`test/test.http`](../5_a2a_integration/test/test.http) file we prepared for these tests):
 
 ```bash
 # Query the rules

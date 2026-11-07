@@ -2,6 +2,8 @@
 
 [Previous: Floor 3](floor-3.md) | [Dungeon map](README.md) | [Next: Floor 5](floor-5.md) <!-- floor-nav -->
 
+Files on this floor: [`4_mcp_integration/dice_roll_mcp_server.py`](../4_mcp_integration/dice_roll_mcp_server.py), [`4_mcp_integration/narrator_mcp_client.py`](../4_mcp_integration/narrator_mcp_client.py) <!-- floor-files -->
+
 ![Floor 4: The Portal Room (MCP)](../images/floors/floor-4-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 4. You will move your dice out of the agent's pocket and into a server. They are still my dice. They are just somewhere else now, being rolled in public, in front of everybody."
@@ -20,8 +22,8 @@ cd aiRPG-seattle-dungeon-crawl/4_mcp_integration
 
 Create an MCP system with two components:
 
-- An MCP Server (`4_mcp_integration/dice_roll_mcp_server.py`) - exposes the dice rolling service
-- An MCP Client (`4_mcp_integration/narrator_mcp_client.py`) - connects to the server and uses its tools
+- An MCP Server ([`4_mcp_integration/dice_roll_mcp_server.py`](../4_mcp_integration/dice_roll_mcp_server.py)) - exposes the dice rolling service
+- An MCP Client ([`4_mcp_integration/narrator_mcp_client.py`](../4_mcp_integration/narrator_mcp_client.py)) - connects to the server and uses its tools
 
 The `roll_dice` function is exactly the one you built in Floor 3: same signature, same docstring. Only the way it is served changes, from `@tool` to `@mcp.tool()`.
 

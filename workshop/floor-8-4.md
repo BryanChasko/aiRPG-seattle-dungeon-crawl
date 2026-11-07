@@ -2,6 +2,8 @@
 
 [Previous: Floor 8.3](floor-8-3.md) | [Dungeon map](README.md) | [Next: The Exit](cleanup.md) <!-- floor-nav -->
 
+Files on this floor: [`8_agentcore_production/narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py), [`8_agentcore_production/ui_proxy/ui_proxy.py`](../8_agentcore_production/ui_proxy/ui_proxy.py) <!-- floor-files -->
+
 ![Floor 8.4: The Narrator in the Cloud](../images/floors/floor-8-4-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Final brick. I, the System, move into AgentCore Runtime. My conversation goes to AgentCore Memory, and my traces go to CloudWatch, where you may study my every thought. Do not stare."
@@ -22,8 +24,8 @@ cd aiRPG-seattle-dungeon-crawl/8_agentcore_production
 
 This section works in two folders:
 
-- The Narrator (`narrator/narrator_orchestrator.py`), as you left it in 8.3, now with its own `pyproject.toml` and `invoke-policy.json`
-- The UI proxy (`ui_proxy/ui_proxy.py`), given code, nothing to complete
+- The Narrator ([`narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py)), as you left it in 8.3, now with its own [`pyproject.toml`](../pyproject.toml) and [`invoke-policy.json`](../8_agentcore_production/narrator/invoke-policy.json)
+- The UI proxy ([`ui_proxy/ui_proxy.py`](../8_agentcore_production/ui_proxy/ui_proxy.py)), given code, nothing to complete
 
 ## Part 1: Prepare the Narrator for the Cloud (narrator/narrator_orchestrator.py)
 

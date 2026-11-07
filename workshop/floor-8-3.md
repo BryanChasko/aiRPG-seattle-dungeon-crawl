@@ -2,6 +2,8 @@
 
 [Previous: Floor 8.2](floor-8-2.md) | [Dungeon map](README.md) | [Next: Floor 8.4](floor-8-4.md) <!-- floor-nav -->
 
+Files on this floor: [`8_agentcore_production/rulesagent/rules_agent.py`](../8_agentcore_production/rulesagent/rules_agent.py), [`8_agentcore_production/rulesagent/kb-policy.json`](../8_agentcore_production/rulesagent/kb-policy.json), [`8_agentcore_production/narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py) <!-- floor-files -->
+
 ![Floor 8.3: The Rules Agent](../images/floors/floor-8-3-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Brick three. The rule book moves to a managed knowledge base, indexed by Bedrock at its own pace. Check the ingestion status before you deploy. Patience is a stat, and you have not leveled it."
@@ -22,8 +24,8 @@ cd aiRPG-seattle-dungeon-crawl/8_agentcore_production
 
 This section works in two folders:
 
-- The Rules Agent (`rulesagent/rules_agent.py`), the Floor 5 agent, with its `pyproject.toml` and `kb-policy.json`
-- The Narrator (`narrator/narrator_orchestrator.py`), as you left it in 8.2
+- The Rules Agent ([`rulesagent/rules_agent.py`](../8_agentcore_production/rulesagent/rules_agent.py)), the Floor 5 agent, with its [`pyproject.toml`](../pyproject.toml) and [`kb-policy.json`](../8_agentcore_production/rulesagent/kb-policy.json)
+- The Narrator ([`narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py)), as you left it in 8.2
 
 ## Part 1: Check the Knowledge Base
 
