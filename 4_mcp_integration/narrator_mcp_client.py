@@ -11,4 +11,4 @@ narrator = Agent(
     # TODO: Step 2 - Add the MCP tool to the narrator agent
 )
 
-narrator("Help me create a new fantasy character! Roll the strength, wisdom, charisma and intelligence abilities scores using 4d6 drop lowest method.")
+narrator("Help me register a new Crawler for the dungeon under Seattle! Roll the strength, wisdom, charisma and intelligence ability scores using the 4d6 drop lowest method.")

@@ -1,5 +1,5 @@
 {
-  "name": "Strands Dungeon Crawl",
+  "name": "aiRPG Seattle Dungeon Crawl",
   "image": "mcr.microsoft.com/devcontainers/python:1-3.13-bullseye",
 
   // Install uv after the container is created, then sync all Python dependencies.

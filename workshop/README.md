@@ -1,12 +1,23 @@
-# Strands Dungeon Crawl: Learn the Strands Agents SDK One Floor at a Time
+# aiRPG Seattle Dungeon Crawl: Learn the Strands Agents SDK One Floor at a Time
 
-![The crawl: a brawler in heart boxers, a raptor-riding Persian cat casting magic, a screaming doll head, a tree elemental, a changeling assassin and an unimpressed show cat on a lava-lit obsidian floor](../images/banner-1680x720.webp)
+![Cordula, in an orange drysuit with Barnaby the octopus in a water tank on her back and Chonks the lumpsucker on her forearm, strikes a dance pose with her kayak paddle while a startled accountant and an investment banker slip on the flooded floor of collapsed Pier 59. Shelly the geoduck puffs sea mist, bull kelp hangs overhead, and the Space Needle shows through the breach](../images/banner-1680x720.webp)
 
 "Roll for Initiative... in Python!"
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Welcome, Crawlers, to the dungeon. You enter with no shoes, a bare-bones terminal, and a dream of building autonomous multi-agent systems before the floor collapses. Every script you run drops an achievement box. Write a clean loop and earn a Bronze Box. Burn through your token limit with an accidental infinite loop and earn a Desperation Box. The audience is watching. Try to be interesting."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Welcome, Crawlers, to the dungeon under Seattle. Pier 59 collapsed this morning, the Salish Sea came in, and you came with it: soaked, short one kayak, armed with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods. Every script you run drops an achievement box. Write a clean loop and earn a Bronze Box. Burn through your token limit with an accidental infinite loop and earn a Desperation Box. The audience is watching. Try to be interesting."
 
-Welcome, Crawler, to the dungeon. This comprehensive workshop will transform you from a coding apprentice into a builder of AI agent orchestration. Floor after floor, you'll learn to create, equip, and command digital companions that can think, act, and collaborate like a legendary adventuring party.
+Welcome, Crawler, to the dungeon. This workshop takes you from your first agent to a production multi-agent system built with the Strands Agents SDK. Floor after floor, you build the System: the AI that runs *Dungeon Crawl: Seattle*, registers its Crawlers, looks up its own rules, rolls every die in the open and referees dance-offs against the accountants, investment bankers and developer advocates it dropped into the Puget Sound.
+
+## The World You Are Building
+
+The crawl follows Cordula "Core" Vance, a Marine Corps Reserve crew chief who patrols the Sound by kayak, and Barnaby, the uplifted Giant Pacific Octopus who rides on her back in a water tank and leads the party, with Shelly the geoduck and Chonks the spiny lumpsucker. It is nonlethal by design: conflict is a dance-off or a stealthy way around one, and a Crawler who loses is Benched, never killed.
+
+- [World bible](world/README.md): everything the agents say about the world comes from these pages
+- [The System](world/the-system.md): the LitRPG design, one layer per workshop floor
+- [The Cast](world/cast.md) and [Seattle, Under the Sound](world/seattle.md)
+- [The Crawl Handbook](world/crawl-handbook/): the rules, and the Rules Agent's knowledge base
+
+Every floor ends its main exercise with a **SYSTEM DESIGN** callout: the LitRPG layer that the Strands concept you just learned makes possible.
 
 ## The Dungeon Map
 
@@ -24,7 +35,7 @@ Create and call your first agent
 ### [Floor 2: The Vending Machines](floor-2.md)
 Give your agent tools that ship with the SDK
 
-- Add a vended tool, `http_request`, and let the agent query the Open5e API
+- Add a vended tool, `http_request`, and let the agent look up a giant octopus on the Open5e API
 - See the agent decide on its own when a tool is needed
 - Bonus: `shell` and `file_editor`, each call gated by a `HumanInTheLoop` approval prompt
 
@@ -45,8 +56,8 @@ Serve a tool over MCP and consume it
 Make agents talk to each other
 
 - Expose agents with `A2AServer` and an `agent_factory` per conversation
-- Give the Rules Agent a ChromaDB knowledge base built from the Basic Rules PDF
-- Orchestrate them with the `a2a_client` tool and the MCP dice server
+- Give the Rules Agent a ChromaDB knowledge base built from the Crawl Handbook
+- Orchestrate them with the `a2a_client` tool and the MCP dice server, and run a dance-off
 - Return typed JSON with `structured_output_model`
 
 ### [Floor 6: The Arena (Web Interface)](floor-6.md)
@@ -83,7 +94,7 @@ Everything you need to install (Python, uv, the repository) is covered in Floor 
 ### The Rules of the Crawl
 
 - The System AI: the omniscient, slightly unhinged dungeon administrator tracking your code output, your syntax errors and your desperate attempts to pass `uv sync`
-- The Crawlers: you. You enter with no shoes, a bare-bones terminal and a dream of building autonomous multi-agent systems before the floor collapses
+- The Crawlers: you. You enter soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
 - The Loot Boxes: every floor you clear drops an achievement box. Write a clean loop, earn a Bronze Box. Burn your token limit on an accidental infinite loop, earn a Desperation Box
 - The Audience: billions of alien viewers. They are not on your side. Neither are the sponsors
 
@@ -114,22 +125,23 @@ Each floor follows the same pattern:
 
 ## What is Strands?
 
-Strands is a powerful framework for creating AI agents - think of it as your spellbook for summoning digital companions that can interact with tools and services. Like a well-equipped adventuring party, Strands provides:
+Strands is a framework for creating AI agents: think of it as the toolkit the System uses to run its crawl. Strands provides:
 
-- Agent Creation: easy summoning and configuration of AI companions
-- Tool Integration: vended tools and custom enchantments
-- Model Flexibility: support for multiple AI providers (different schools of magic)
+- Agent Creation: an agent is a model, a system prompt and a list of tools
+- Tool Integration: vended tools and your own `@tool` functions
+- Model Flexibility: support for multiple model providers (this crawl runs on Amazon Nova)
 - External Connections: integration with services through MCP
 - Multi-Agent Systems: coordinate multiple agents working together
 
 ### The System Glossary
 
-- Agent: a digital companion that can reason, decide, and use tools
+- Agent: a model that can reason, decide, and use tools
 - Tools: functions that agents can invoke to perform specific tasks
 - System Prompt: the character sheet defining your agent's personality and behavior
 - Model Provider: the source of intelligence (this crawl uses Amazon Nova 2 Lite on Amazon Bedrock)
 - MCP: Model Context Protocol for connecting to external services
 - A2A: Agent-to-Agent communication for multi-agent systems
+- LitRPG: fiction where the story runs on a visible game System: stats, levels, loot and notifications. *Dungeon Crawler Carl* is the inspiration for this one's tone
 
 ## Learning Objectives
 
@@ -142,14 +154,14 @@ By completing this workshop, you'll learn:
 - Strands harness: rebuild the same system in a few lines with the pre-assembled agent
 - Production with AgentCore: deploy the agents, their tools and their memory to Amazon Bedrock AgentCore
 - Real-World Applications: create practical, production-ready agent systems
+- LitRPG System design: the interface, stats, conflict loop, economy and consequences of a game, each one built by the agent capability that makes it possible
 
 ## Ready to Begin?
 
-The stairwell is open. Start with [Floor 0: The Stairwell](floor-0.md) and begin your descent from coding apprentice to Agent Builder.
+The stairwell is open. Start with [Floor 0: The Stairwell](floor-0.md) and begin your descent under the Sound.
 
 ## Additional Resources
 
 - [Strands Framework Documentation](https://strandsagents.com/) - complete reference and guides
 - [Kiro Agentic IDE](https://kiro.dev/) - professional IDE for agent development
 - [Strands GitHub Repository](https://github.com/strands-agents) - source code and community
-- Example Projects - real-world implementations

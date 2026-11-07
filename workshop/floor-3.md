@@ -2,7 +2,7 @@
 
 ![Floor 3: The Crafting Table](../images/floors/floor-3-1200x675.webp)
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 3. Craft your own weapon, Crawler. The model never reads your code, only the docstring you write for it. Write a lazy one and watch your agent swing at air."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 3. Craft your own gear, Crawler. The model never reads your code, only the docstring you write for it. Write a lazy one and watch your agent dance to the wrong song."
 
 ## Floor Objective
 
@@ -11,14 +11,14 @@ Learn how to create custom tools by building a Dice Rolling Tool - an essential 
 Make sure you are at the root of Floor 3 in your terminal:
 
 ```bash
-cd strands-dungeon-crawl/3_custom_tools
+cd aiRPG-seattle-dungeon-crawl/3_custom_tools
 ```
 
 Open and modify the `agent_with_dice_roll_tool.py` file to create an agent capable of rolling dice using a custom tool.
 
 ## How Custom Tools Work
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "On this floor you stop borrowing weapons and forge your own. The model never sees your code. It sees a name, a docstring and a schema. That is your entire sales pitch."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "On this floor you stop borrowing gear and forge your own. The model never sees your code. It sees a name, a docstring and a schema. That is your entire sales pitch."
 
 In Strands, a custom tool is a Python function decorated with special attributes:
 
@@ -111,7 +111,7 @@ Once TODOs are completed, run your script:
 python agent_with_dice_roll_tool.py
 ```
 
-The system prompt in the file turns the agent into Lady Luck, the System's croupier subroutine, who helps players create characters for a fantasy role-playing game. The script asks her to roll four ability scores (strength, wisdom, charisma and intelligence) for a new character with the 4d6-drop-lowest method: for each ability, roll four six-sided dice and keep the three highest. That is four tool calls, one per ability, each with `faces=6, count=4, drop_lowest=1`: sixteen dice in total, all rolled by your tool, which also drops the lowest and adds up the rest.
+The system prompt in the file turns the agent into Lady Luck, the System's croupier subroutine, who helps register new Crawlers for the dungeon under Seattle. The script asks her to roll four ability scores (strength, wisdom, charisma and intelligence) for a new character with the 4d6-drop-lowest method: for each ability, roll four six-sided dice and keep the three highest. That is four tool calls, one per ability, each with `faces=6, count=4, drop_lowest=1`: sixteen dice in total, all rolled by your tool, which also drops the lowest and adds up the rest.
 
 Watch the agent in action:
 
@@ -120,6 +120,8 @@ Watch the agent in action:
 - Call your tool four times with `faces=6, count=4, drop_lowest=1`
 - Report the four totals the tool returned
 - Return the results
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 3: HARD MATH.** Readers forgive a System for being cruel, never for being inconsistent. Ability scores, modifiers and dice are the math every later rule stands on, so they live in code, not in the model's head. In this crawl each of the six scores also maps to a dance-off Move Call: Strength is Power, Dexterity is Footwork, Constitution is Endurance, Intelligence is Choreography, Wisdom is Read the Room and Charisma is Presence. A score of 16 gives a +3 modifier: (score - 10) / 2, rounded down. See [ability scores](world/crawl-handbook/01-ability-scores.md) and [The System](world/the-system.md#2-stat-design).
 
 ## Floor Clear
 

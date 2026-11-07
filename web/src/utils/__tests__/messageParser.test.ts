@@ -5,7 +5,7 @@ import type { RawMessage } from '../../types'
 describe('parseMessages', () => {
   it('hides the character-creation prompt and keeps the next player messages', () => {
     const raw: RawMessage[] = [
-      { role: 'user', content: [{ text: 'Create a new player named Thorin who is a Male Dwarf Fighter.' }] },
+      { role: 'user', content: [{ text: 'Create a new player named Cordula Vance (pronouns she/her), a Human (Seattle Native) Amphibious Breacher.' }] },
       { role: 'user', content: [{ text: 'I open the door' }] },
     ]
     expect(parseMessages(raw)).toEqual([{ role: 'user', text: 'I open the door' }])

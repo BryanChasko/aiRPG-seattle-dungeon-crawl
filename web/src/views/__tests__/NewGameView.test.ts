@@ -50,8 +50,8 @@ describe('NewGameView', () => {
       const wrapper = mountComponent()
 
       expect(wrapper.find('#character-name').exists()).toBe(true)
-      expect(wrapper.find('#gender').exists()).toBe(true)
-      expect(wrapper.find('#race').exists()).toBe(true)
+      expect(wrapper.find('#pronouns').exists()).toBe(true)
+      expect(wrapper.find('#species').exists()).toBe(true)
       expect(wrapper.find('#character-class').exists()).toBe(true)
       expect(wrapper.find('#server-url').exists()).toBe(true)
 
@@ -62,36 +62,36 @@ describe('NewGameView', () => {
   })
 
   describe('dropdown options', () => {
-    it('gender dropdown has exactly 3 options: Male, Female, Non-binary', () => {
+    it('pronouns dropdown has exactly 4 options', () => {
       const wrapper = mountComponent()
-      const genderSelect = wrapper.find('#gender')
-      const options = genderSelect.findAll('option').filter(o => o.attributes('disabled') === undefined)
+      const pronounsSelect = wrapper.find('#pronouns')
+      const options = pronounsSelect.findAll('option').filter(o => o.attributes('disabled') === undefined)
 
-      expect(options).toHaveLength(3)
-      expect(options.map(o => o.text())).toEqual(['Male', 'Female', 'Non-binary'])
+      expect(options).toHaveLength(4)
+      expect(options.map(o => o.text())).toEqual(['she/her', 'he/him', 'they/them', 'any pronouns'])
     })
 
-    it('race dropdown has exactly 9 D&D races', () => {
+    it('species dropdown has exactly 9 Seattle species', () => {
       const wrapper = mountComponent()
-      const raceSelect = wrapper.find('#race')
-      const options = raceSelect.findAll('option').filter(o => o.attributes('disabled') === undefined)
+      const speciesSelect = wrapper.find('#species')
+      const options = speciesSelect.findAll('option').filter(o => o.attributes('disabled') === undefined)
 
       const expectedRaces = [
-        'Human', 'Elf', 'Dwarf', 'Halfling', 'Gnome',
-        'Half-Elf', 'Half-Orc', 'Tiefling', 'Dragonborn',
+        'Human (Seattle Native)', 'Human (Transplant)', 'Uplifted Giant Pacific Octopus', 'Uplifted Crow', 'Harbor Seal',
+        'Sea Otter', 'Banana Slug', 'Fremont Troll-kin', 'Underground Ghost',
       ]
       expect(options).toHaveLength(9)
       expect(options.map(o => o.text())).toEqual(expectedRaces)
     })
 
-    it('class dropdown has exactly 12 D&D classes', () => {
+    it('class dropdown has exactly 12 Seattle classes', () => {
       const wrapper = mountComponent()
       const classSelect = wrapper.find('#character-class')
       const options = classSelect.findAll('option').filter(o => o.attributes('disabled') === undefined)
 
       const expectedClasses = [
-        'Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
-        'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard',
+        'Amphibious Breacher', 'Benthic Dragoon', 'Kayak Patrol Ranger', 'Ferry Engineer', 'Ballard Brewer', 'Fish-Toss Striker',
+        'Grunge Bard', 'Coffee Alchemist', 'Salvage Artificer', 'Rain Warden', 'Floating-Bridge Engineer', 'Startup Necromancer',
       ]
       expect(options).toHaveLength(12)
       expect(options.map(o => o.text())).toEqual(expectedClasses)
@@ -108,8 +108,8 @@ describe('NewGameView', () => {
       const fieldErrors = wrapper.findAll('.field-error')
       expect(fieldErrors.length).toBeGreaterThanOrEqual(5)
       expect(fieldErrors.some(e => e.text().includes('Character name is required'))).toBe(true)
-      expect(fieldErrors.some(e => e.text().includes('Gender is required'))).toBe(true)
-      expect(fieldErrors.some(e => e.text().includes('Race is required'))).toBe(true)
+      expect(fieldErrors.some(e => e.text().includes('Pronouns are required'))).toBe(true)
+      expect(fieldErrors.some(e => e.text().includes('Species is required'))).toBe(true)
       expect(fieldErrors.some(e => e.text().includes('Class is required'))).toBe(true)
       expect(fieldErrors.some(e => e.text().includes('Server URL is required'))).toBe(true)
     })
@@ -124,9 +124,9 @@ describe('NewGameView', () => {
 
       // Fill in all fields
       await wrapper.find('#character-name').setValue('Aragorn')
-      await wrapper.find('#gender').setValue('Male')
-      await wrapper.find('#race').setValue('Human')
-      await wrapper.find('#character-class').setValue('Ranger')
+      await wrapper.find('#pronouns').setValue('he/him')
+      await wrapper.find('#species').setValue('Human (Seattle Native)')
+      await wrapper.find('#character-class').setValue('Coffee Alchemist')
       await wrapper.find('#server-url').setValue('https://example.com')
 
       await wrapper.find('form').trigger('submit.prevent')
@@ -145,9 +145,9 @@ describe('NewGameView', () => {
       const wrapper = mountComponent()
 
       await wrapper.find('#character-name').setValue('Aragorn')
-      await wrapper.find('#gender').setValue('Male')
-      await wrapper.find('#race').setValue('Human')
-      await wrapper.find('#character-class').setValue('Ranger')
+      await wrapper.find('#pronouns').setValue('he/him')
+      await wrapper.find('#species').setValue('Human (Seattle Native)')
+      await wrapper.find('#character-class').setValue('Coffee Alchemist')
       await wrapper.find('#server-url').setValue('https://example.com')
 
       await wrapper.find('form').trigger('submit.prevent')

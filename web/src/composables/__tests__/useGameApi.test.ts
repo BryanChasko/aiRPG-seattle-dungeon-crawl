@@ -82,19 +82,19 @@ describe('useGameApi', () => {
   describe('fetchUser', () => {
     it('sends GET to /user/{userName} and returns CharacterStats', async () => {
       const stats = {
-        name: 'Gandalf',
-        gender: 'Male',
-        race: 'Human',
-        characterClass: 'Wizard',
+        name: 'Cordula',
+        pronouns: 'he/him',
+        species: 'Human (Seattle Native)',
+        characterClass: 'Startup Necromancer',
         level: 20,
         hp: 100,
       }
       globalThis.fetch = mockFetch(stats)
 
       const { fetchUser } = useGameApi(SERVER_URL)
-      const result = await fetchUser('Gandalf')
+      const result = await fetchUser('Cordula')
 
-      expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/user/Gandalf`)
+      expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/user/Cordula`)
       expect(result).toEqual(stats)
     })
 
@@ -111,7 +111,7 @@ describe('useGameApi', () => {
   describe('fetchMessages', () => {
     it('sends GET to /messages and parses raw messages', async () => {
       const rawMessages = [
-        { role: 'user', content: [{ text: 'I attack the goblin' }] },
+        { role: 'user', content: [{ text: 'I challenge the accountant to a dance-off' }] },
         {
           role: 'assistant',
           content: [
@@ -120,7 +120,7 @@ describe('useGameApi', () => {
                 toolUseId: '1',
                 name: 'StoryOutput',
                 input: {
-                  response: 'You swing your sword!',
+                  response: 'You nail the Footwork call!',
                   actions_suggestions: ['Dodge', 'Attack again'],
                   details: 'combat',
                   dice_rolls: [{ dice_type: 'd20', result: '18', reason: 'attack roll' }],
@@ -137,9 +137,9 @@ describe('useGameApi', () => {
 
       expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/messages`)
       expect(result).toHaveLength(2)
-      expect(result[0]).toEqual({ role: 'user', text: 'I attack the goblin' })
+      expect(result[0]).toEqual({ role: 'user', text: 'I challenge the accountant to a dance-off' })
       expect(result[1].role).toBe('assistant')
-      expect(result[1].storyOutput?.response).toBe('You swing your sword!')
+      expect(result[1].storyOutput?.response).toBe('You nail the Footwork call!')
     })
 
     it('filters out non-StoryOutput tool calls', async () => {

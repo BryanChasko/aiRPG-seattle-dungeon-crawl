@@ -6,13 +6,13 @@ import { resolve } from 'path'
  * Theme CSS unit tests
  * Validates: Requirements 9.1, 9.8
  *
- * Tests that the D&D theme CSS file contains expected custom properties
+ * Tests that the System theme CSS file contains expected custom properties
  * and provides graceful fallbacks for textures and fonts.
  */
 
 const themeCss = readFileSync(resolve(__dirname, '../assets/theme.css'), 'utf-8')
 
-describe('D&D Theme CSS Custom Properties (Req 9.1)', () => {
+describe('System Theme CSS Custom Properties (Req 9.1)', () => {
   it('defines color custom properties on :root', () => {
     expect(themeCss).toContain('--color-parchment:')
     expect(themeCss).toContain('--color-parchment-dark:')

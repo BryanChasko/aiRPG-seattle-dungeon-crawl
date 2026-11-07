@@ -15,7 +15,7 @@ POST http://0.0.0.0:8009/inquire
 POST http://0.0.0.0:8009/inquire
 
 {
-    "question": "What are the rules for a dexterity check roll?"
+    "question": "How does the Final Beat work?"
 }
 
 ###
@@ -23,7 +23,7 @@ POST http://0.0.0.0:8009/inquire
 POST http://0.0.0.0:8009/inquire
 
 {
-    "question": "What is the constitution of Arnaud?"
+    "question": "What are Barnaby's Dexterity and Mana?"
 }
 
 ###
@@ -31,7 +31,7 @@ POST http://0.0.0.0:8009/inquire
 POST http://0.0.0.0:8009/inquire
 
 {
-    "question": "Create a character for player 'Alice' named 'Thorin Ironbeard', a male Dwarf Fighter with these stats: strength 16, dexterity 12, constitution 15, intelligence 10, wisdom 13, charisma 8"
+    "question": "Register a new Crawler named Rosa, pronouns they/them, a Harbor Seal Ferry Engineer."
 }
 
 ###
@@ -39,7 +39,15 @@ POST http://0.0.0.0:8009/inquire
 POST http://0.0.0.0:8009/inquire
 
 {
-    "question": "The player's name is Arnaud and you can welcome them to the dungeon. The player is a male Human Fighter who just fell through the floor without shoes. Describe the surroundings of the player and create an atmosphere that the player can bounce off of. Don't make more than 100 words."
+    "question": "Cordula Vance (she/her), a Human (Seattle Native) Amphibious Breacher, and Barnaby (he/him), her octopus party leader, just came through the collapse at Pier 59. Describe the surroundings with real Puget Sound plants and create an atmosphere the player can bounce off of. Don't make more than 100 words."
+}
+
+###
+
+POST http://0.0.0.0:8009/inquire
+
+{
+    "question": "Cordula challenges the Quarterly Close Accountant to a dance-off at the Pier 59 collapse. Run round one."
 }
 
 ###
@@ -48,12 +56,4 @@ POST http://0.0.0.0:8009/inquire
 
 {
     "question": "Tell me about all the characters"
-}
-
-###
-
-POST http://0.0.0.0:8009/inquire
-
-{
-    "question": "Generate an image of Arnaud"
 }

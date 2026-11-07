@@ -15,7 +15,7 @@ from pydantic import BaseModel
 
 # One session id = one campaign: the Narrator finds its conversation again under this id.
 # AgentCore requires at least 33 characters.
-SESSION_ID = "campaign-strands-dungeon-crawl-0001"
+SESSION_ID = "campaign-airpg-seattle-dungeon-crawl-0001"
 
 control = boto3.client("bedrock-agentcore-control")
 # A Narrator turn can call several agents: allow it more than the default 60 seconds

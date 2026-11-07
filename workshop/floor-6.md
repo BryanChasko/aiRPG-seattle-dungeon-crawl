@@ -12,12 +12,12 @@ You've built a Narrator with custom tools, an MCP server and A2A agents. Test it
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The arena is a public HTTPS page that calls your localhost. The browser allows it because 127.0.0.1 is you. Nobody else is invited. Yet."
 
-Once all your agents and MCP servers are running, use the web interface at https://bryanchasko.github.io/strands-dungeon-crawl/.
+Once all your agents and MCP servers are running, use the web interface at https://bryanchasko.github.io/aiRPG-seattle-dungeon-crawl/.
 
-The interface lives in this repository under `web/` (Vue 3 + Vite). To run it on your own machine instead, with Node.js 20 or later:
+The interface lives in this repository under `web/` (Vue 3 + Vite). To run it on your own machine instead, with Node.js 22.12 or later:
 
 ```bash
-cd strands-dungeon-crawl/web
+cd aiRPG-seattle-dungeon-crawl/web
 npm ci
 npm run dev
 ```
@@ -32,11 +32,13 @@ npm run dev
 
 In the web interface:
 
-- Fill in your character: name, gender, race and class
+- Fill in your character: name, pronouns, species and class. Play Cordula (she/her, Human (Seattle Native), Amphibious Breacher), or bring your own Crawler: the species list covers Seattle natives and transplants, an uplifted crow, a harbor seal, a sea otter, a banana slug, Fremont Troll-kin and an Underground ghost
 - In Server URL, enter the URL shown in your Narrator Orchestrator terminal: `http://127.0.0.1:8009`
 - Click Start
 
 The web interface runs in your browser and talks to the Narrator running on the same machine. Browsers let this HTTPS page reach `http://127.0.0.1:8009` because it is localhost.
+
+The character panel shows the sheet the Character Agent saved, with GROOVE and MANA under the six ability scores. Pick a suggested action, or type your own: "Challenge the Rain-Shell Tourist Pod to a dance-off" works, and so does "Have Barnaby sneak us past them".
 
 Monitor performance: watch your terminal logs to see how your Narrator processes requests:
 
@@ -53,6 +55,8 @@ Customization ideas:
 - Modify system prompts to change your Narrator's personality
 - Add new custom tools for different mechanics
 - Integrate additional MCP servers for new capabilities
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 6: THE HUD.** In a LitRPG the reader sees the System through its interface: the floating character sheet, the notification boxes, the battle log. The web interface is that HUD, and it can only exist because Floor 5 forced the Narrator into `StoryOutput`: `response` becomes the notification, `dice_rolls` the battle log, `actions_suggestions` the three choices (one of them always a terrible idea). Design the data first and the interface follows. See [The System](world/the-system.md#1-origin-and-interface).
 
 ## Troubleshooting
 

@@ -26,21 +26,21 @@
           </div>
 
           <div class="form-group">
-            <label for="gender" class="form-label">Gender</label>
-            <select id="gender" v-model="form.gender" class="form-input" :class="{ 'input-error': errors.gender }">
-              <option value="" disabled>Select gender</option>
-              <option v-for="g in genderOptions" :key="g" :value="g">{{ g }}</option>
+            <label for="pronouns" class="form-label">Pronouns</label>
+            <select id="pronouns" v-model="form.pronouns" class="form-input" :class="{ 'input-error': errors.pronouns }">
+              <option value="" disabled>Select pronouns</option>
+              <option v-for="g in pronounsOptions" :key="g" :value="g">{{ g }}</option>
             </select>
-            <span v-if="errors.gender" class="field-error">{{ errors.gender }}</span>
+            <span v-if="errors.pronouns" class="field-error">{{ errors.pronouns }}</span>
           </div>
 
           <div class="form-group">
-            <label for="race" class="form-label">Race</label>
-            <select id="race" v-model="form.race" class="form-input" :class="{ 'input-error': errors.race }">
-              <option value="" disabled>Select race</option>
-              <option v-for="r in raceOptions" :key="r" :value="r">{{ r }}</option>
+            <label for="species" class="form-label">Species</label>
+            <select id="species" v-model="form.species" class="form-input" :class="{ 'input-error': errors.species }">
+              <option value="" disabled>Select species</option>
+              <option v-for="r in speciesOptions" :key="r" :value="r">{{ r }}</option>
             </select>
-            <span v-if="errors.race" class="field-error">{{ errors.race }}</span>
+            <span v-if="errors.species" class="field-error">{{ errors.species }}</span>
           </div>
 
           <div class="form-group">
@@ -93,39 +93,39 @@ onMounted(() => {
   }, 1000)
 })
 
-const genderOptions: CharacterForm['gender'][] = ['Male', 'Female', 'Non-binary']
+const pronounsOptions: CharacterForm['pronouns'][] = ['she/her', 'he/him', 'they/them', 'any pronouns']
 
-const raceOptions: CharacterForm['race'][] = [
-  'Human',
-  'Elf',
-  'Dwarf',
-  'Halfling',
-  'Gnome',
-  'Half-Elf',
-  'Half-Orc',
-  'Tiefling',
-  'Dragonborn',
+const speciesOptions: CharacterForm['species'][] = [
+  'Human (Seattle Native)',
+  'Human (Transplant)',
+  'Uplifted Giant Pacific Octopus',
+  'Uplifted Crow',
+  'Harbor Seal',
+  'Sea Otter',
+  'Banana Slug',
+  'Fremont Troll-kin',
+  'Underground Ghost',
 ]
 
 const classOptions: CharacterForm['characterClass'][] = [
-  'Barbarian',
-  'Bard',
-  'Cleric',
-  'Druid',
-  'Fighter',
-  'Monk',
-  'Paladin',
-  'Ranger',
-  'Rogue',
-  'Sorcerer',
-  'Warlock',
-  'Wizard',
+  'Amphibious Breacher',
+  'Benthic Dragoon',
+  'Kayak Patrol Ranger',
+  'Ferry Engineer',
+  'Ballard Brewer',
+  'Fish-Toss Striker',
+  'Grunge Bard',
+  'Coffee Alchemist',
+  'Salvage Artificer',
+  'Rain Warden',
+  'Floating-Bridge Engineer',
+  'Startup Necromancer',
 ]
 
 const form = reactive<CharacterForm>({
   name: '',
-  gender: '' as CharacterForm['gender'],
-  race: '' as CharacterForm['race'],
+  pronouns: '' as CharacterForm['pronouns'],
+  species: '' as CharacterForm['species'],
   characterClass: '' as CharacterForm['characterClass'],
   serverUrl: '',
 })

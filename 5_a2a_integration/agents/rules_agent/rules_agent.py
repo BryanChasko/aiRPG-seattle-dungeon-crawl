@@ -11,37 +11,38 @@ def rules_collection():
     """Open the ChromaDB collection on first use (fails loudly if the knowledge base was not built)."""
     global _collection
     if _collection is None:
-        _collection = chromadb.PersistentClient(path=KB_PATH).get_collection("basic_rules")
+        _collection = chromadb.PersistentClient(path=KB_PATH).get_collection("crawl_handbook")
     return _collection
 
 @tool
 def query_rules(query: str) -> str:
-    """Look up a rule in the Basic Rules knowledge base.
+    """Look up a rule in the Crawl Handbook knowledge base.
 
-    Use it for any question about game mechanics: ability checks, combat,
-    spellcasting, conditions, resting. Ask in plain English, as a player would.
-    The lookup is a semantic search over the Basic Rules PDF: the three
-    passages closest to the question come back, each with its page number.
+    Use it for any question about the crawl's mechanics: ability scores and checks,
+    dance-offs and Move Calls, the Final Beat, Groove and being benched, stealth,
+    Hype and loot boxes, species, classes, titles, Safe Rooms. Ask in plain English,
+    as a player would. The lookup is a semantic search over the handbook: the three
+    passages closest to the question come back, each with its section name.
 
     Example response:
-        "[Page 74] When a hostile creature that you can see moves out of your reach, ...
+        "[Final Beat] When a round or a dance-off ends level, the System's drum speeds up ...
 
-        [Page 73] ..."
+        [Dance-Offs] ..."
 
     Notes:
         - Passages are about 1,000 characters long; the answer is usually in the first one.
         - Fails if the knowledge base has not been built yet (see utils/create_knowledge_base.py).
 
     Args:
-        query: The rules question or topic, in plain English, e.g. "opportunity attack"
+        query: The rules question or topic, in plain English, e.g. "final beat"
             or "what are the rules for dexterity checks".
 
     Returns:
-        The matching passages, each prefixed with its page reference, separated by blank lines.
+        The matching passages, each prefixed with its section name, separated by blank lines.
     """
     results = rules_collection().query(query_texts=[query], n_results=3)
     return "\n\n".join(
-        f"[Page {meta['page']}] {doc}"
+        f"[{meta['section']}] {doc}"
         for doc, meta in zip(results["documents"][0], results["metadatas"][0])
     )
 
@@ -57,8 +58,8 @@ def create_agent(context_id: str) -> Agent:
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
         # TODO: Step 1 - Add the query_rules tool to the agent
         # TODO: Step 2 - Add the name "Rules Agent" to the agent
-        # TODO: Step 3 - Add the description "Rules lookup for the dungeon: fast, page-referenced answers from the Basic Rules knowledge base." to the agent
-        system_prompt="""You are the Rules Agent, a System subroutine and lifelong rules lawyer for this dungeon. For each rules question, call query_rules once, then answer briefly with the page reference, in the tone of a clerk who has read page 76 four thousand times and resents every one of them. Plain text only, no emoji. The rule book calls the referee the DM; in this dungeon that role is the System, so always say the System.""",
+        # TODO: Step 3 - Add the description "Rules lookup for the dungeon: fast answers from the Crawl Handbook, with the section they come from." to the agent
+        system_prompt="""You are the Rules Agent, a System subroutine and lifelong rules lawyer for this dungeon. For each rules question, call query_rules once, then answer briefly and name the handbook section, in the tone of a clerk who has read the Final Beat rule four thousand times and resents every one of them. Plain text only, no emoji.""",
         hooks=[NewlineAfterTurn()],
     )
 

@@ -5,34 +5,34 @@ import type { CharacterForm } from '../../types'
 describe('formatInitPrompt', () => {
   it('interpolates all character fields into the prompt template', () => {
     const form: CharacterForm = {
-      name: 'Thorin',
-      gender: 'Male',
-      race: 'Dwarf',
-      characterClass: 'Fighter',
+      name: 'Cordula Vance',
+      pronouns: 'she/her',
+      species: 'Human (Seattle Native)',
+      characterClass: 'Amphibious Breacher',
       serverUrl: 'http://localhost:3000',
     }
 
     const result = formatInitPrompt(form)
 
     expect(result).toBe(
-      "Create a new player named Thorin who is a Male Dwarf Fighter. You can then welcome them to the dungeon: they just fell through the floor with no shoes on. Describe the surroundings of the player and create an atmosphere that the player can bounce off of. Don't make more than 100 words.",
+      "Create a new player named Cordula Vance (pronouns she/her), a Human (Seattle Native) Amphibious Breacher. You can then welcome them to the dungeon: they just came through the collapse at Pier 59. Describe the surroundings of the player and create an atmosphere that the player can bounce off of. Don't make more than 100 words.",
     )
   })
 
   it('works with different character combinations', () => {
     const form: CharacterForm = {
-      name: 'Aria',
-      gender: 'Female',
-      race: 'Half-Elf',
-      characterClass: 'Sorcerer',
+      name: 'Barnaby',
+      pronouns: 'he/him',
+      species: 'Uplifted Giant Pacific Octopus',
+      characterClass: 'Rain Warden',
       serverUrl: 'https://example.com',
     }
 
     const result = formatInitPrompt(form)
 
-    expect(result).toContain('Aria')
-    expect(result).toContain('Female')
-    expect(result).toContain('Half-Elf')
-    expect(result).toContain('Sorcerer')
+    expect(result).toContain('Barnaby')
+    expect(result).toContain('he/him')
+    expect(result).toContain('Uplifted Giant Pacific Octopus')
+    expect(result).toContain('Rain Warden')
   })
 })

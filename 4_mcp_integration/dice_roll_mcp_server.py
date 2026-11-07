@@ -13,9 +13,10 @@ mcp = FastMCP(
 def roll_dice(faces: int = 6, count: int = 1, drop_lowest: int = 0) -> dict:
     """Roll one or more dice with the same number of faces, optionally drop the lowest, and total the rest.
 
-    Use it every time the game needs a random roll: ability scores, attack rolls,
-    saving throws, damage. For "4d6 drop lowest", call it once with faces=6,
-    count=4, drop_lowest=1. For a single d20, call it with faces=20.
+    Use it every time the game needs a random roll: ability scores, dance-off
+    Move Calls, the Final Beat, ability checks, loot boxes. For "4d6 drop lowest",
+    call it once with faces=6, count=4, drop_lowest=1. For a single d20, call it
+    with faces=20.
 
     Example response: {"rolls": [5, 2, 6, 3], "kept": [5, 6, 3], "total": 14}
 

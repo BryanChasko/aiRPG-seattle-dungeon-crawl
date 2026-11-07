@@ -1,18 +1,20 @@
-# Strands Dungeon Crawl: Learn the Strands Agents SDK One Floor at a Time
+# aiRPG Seattle Dungeon Crawl: Learn the Strands Agents SDK One Floor at a Time
 
-![The crawl: a brawler in heart boxers, a raptor-riding Persian cat casting magic, a screaming doll head, a tree elemental, a changeling assassin and an unimpressed show cat on a lava-lit obsidian floor](images/banner-1680x720.webp)
+![Cordula, in an orange drysuit with Barnaby the octopus in a water tank on her back and Chonks the lumpsucker on her forearm, strikes a dance pose with her kayak paddle while a startled accountant and an investment banker slip on the flooded floor of collapsed Pier 59. Shelly the geoduck puffs sea mist, bull kelp hangs overhead, and the Space Needle shows through the breach](images/banner-1680x720.webp)
 
 _"Roll for Initiative... in Python!"_
 
-A hands-on workshop that teaches the [Strands Agents SDK](https://strandsagents.com/) by building a Narrator for a fantasy role-playing game: one agent first, then tools, an MCP server, remote agents over A2A, a web interface, the same system rebuilt with Strands harness, and finally the whole party deployed to Amazon Bedrock AgentCore.
+A hands-on workshop that teaches the [Strands Agents SDK](https://strandsagents.com/) by building the System: the AI that runs a LitRPG dungeon crawl under Seattle. You build one agent first, then tools, an MCP server, remote agents over A2A, a web interface, the same system rebuilt with Strands harness, and finally the whole party deployed to Amazon Bedrock AgentCore. Each floor also adds one layer of the game's design, so by the end you have built the agents and the LitRPG they run.
+
+The crawl stars Cordula "Core" Vance, a Marine Corps Reserve crew chief who patrols the Puget Sound by kayak, and Barnaby, the uplifted Giant Pacific Octopus who rides on her back and leads the party. Conflict is a dance-off, opponents are accountants, investment bankers and developer advocates, and nobody dies: losers get Benched. The lore and the rules live in the [world bible](workshop/world/README.md).
 
 **The instructions live in this repository: [workshop/](workshop/README.md).** The System AI will narrate them. This repository holds the code you complete along the way: each floor folder contains files with `# TODO` markers that the workshop walks you through.
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/BryanChasko/strands-dungeon-crawl.git
-cd strands-dungeon-crawl
+git clone https://github.com/BryanChasko/aiRPG-seattle-dungeon-crawl.git
+cd aiRPG-seattle-dungeon-crawl
 uv python install          # if you don't have Python yet (3.10+)
 uv sync                    # creates .venv/ with every dependency
 source .venv/bin/activate  # .venv\Scripts\activate on Windows
@@ -28,16 +30,24 @@ The agents run on Amazon Nova 2 Lite on Amazon Bedrock (`us.amazon.nova-2-lite-v
 |---|---|---|
 | 0. The Stairwell | [instructions](workshop/floor-0.md) | Set up Python, uv and this repository |
 | 1. Agent Summoning | [`1_strands_basics/`](1_strands_basics/) | Your first agent, a system prompt, debug logs |
-| 2. The Vending Machines | [`2_vended_tools/`](2_vended_tools/) | Tools that ship with the SDK (vended tools): `http_request` on the Open5e API; bonus: `shell` + `file_editor` gated by `HumanInTheLoop` |
+| 2. The Vending Machines | [`2_vended_tools/`](2_vended_tools/) | Tools that ship with the SDK (vended tools): `http_request` on the Open5e API to look up a giant octopus; bonus: `shell` + `file_editor` gated by `HumanInTheLoop` |
 | 3. The Crafting Table | [`3_custom_tools/`](3_custom_tools/) | Your own `@tool`: the dice roller |
 | 4. The Portal Room - MCP | [`4_mcp_integration/`](4_mcp_integration/) | The same dice roller served over MCP, and an agent that consumes it |
-| 5. Party Formation - A2A | [`5_a2a_integration/`](5_a2a_integration/) | Rules Agent + Character Agent over A2A, a Narrator orchestrator with structured output |
-| 6. The Arena - Web Interface | [web UI](https://bryanchasko.github.io/strands-dungeon-crawl/) | Play with your Narrator through the browser |
+| 5. Party Formation - A2A | [`5_a2a_integration/`](5_a2a_integration/) | Rules Agent (searching the Crawl Handbook) + Character Agent over A2A, a Narrator orchestrator with structured output that runs dance-offs |
+| 6. The Arena - Web Interface | [web UI](https://bryanchasko.github.io/aiRPG-seattle-dungeon-crawl/) | Play with your Narrator through the browser |
 | 7. The Armory - Strands harness (optional) | [`7_strands_harness/`](7_strands_harness/) | The Narrator API rebuilt with `create_harness()` |
 | 8. Production - AgentCore | [`8_agentcore_production/`](8_agentcore_production/) | The dice server, the Character Agent, the Rules Agent and the Narrator deployed to AgentCore Runtime with the `agentcore` CLI, IAM-signed MCP and A2A calls, characters and conversation in AgentCore Memory, rules in a managed knowledge base |
 | The Exit | [instructions](workshop/cleanup.md) | Stop your services, remove the Floor 8 AWS resources and delete the generated files |
 
 Complete the floors in order: each one reuses what the previous one built. Floor 7 is optional: Floor 8 starts again from the Floor 5 code.
+
+## The World
+
+- [World bible](workshop/world/README.md): where everything the agents say about the world comes from
+- [The System](workshop/world/the-system.md): the LitRPG design, mapped to the floor that builds each layer
+- [The Cast](workshop/world/cast.md): Cordula, Barnaby, Shelly the geoduck and Chonks the spiny lumpsucker
+- [Seattle, Under the Sound](workshop/world/seattle.md): whose land this is, the eight dungeon floors and the Puget Sound plants and habitats they are built from
+- [The Crawl Handbook](workshop/world/crawl-handbook/): the rules, and the knowledge base the Rules Agent searches
 
 ## Branches
 

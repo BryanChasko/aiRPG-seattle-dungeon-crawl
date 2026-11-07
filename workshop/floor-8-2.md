@@ -15,7 +15,7 @@ What is AgentCore Memory? AgentCore Memory is a managed store for agents. It is 
 This section needs the `gameprod` project with the dice server deployed in 8.1. Make sure you are at the root of Floor 8 in your terminal:
 
 ```bash
-cd strands-dungeon-crawl/8_agentcore_production
+cd aiRPG-seattle-dungeon-crawl/8_agentcore_production
 ```
 
 This section works in two folders:
@@ -188,25 +188,25 @@ agentcore status
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Run every command of this step from the root of the `gameprod` folder, like the rest of Part 2.
 
-The Floor 5 characters stayed in `characters.json`: the new memory starts empty. Create a character:
+The Floor 5 characters stayed in `characters.json`: the new memory starts empty. Register the featured Crawler. The Character Agent never rolls or invents a score (in the game, the Narrator rolls them first), so give it all six:
 
 ```bash
-agentcore invoke --runtime characteragent "Create a male dwarf fighter named Thorin"
+agentcore invoke --runtime characteragent "Register Cordula Vance, pronouns she/her, a Human (Seattle Native) Amphibious Breacher, with strength 16, dexterity 13, constitution 16, intelligence 12, wisdom 14, charisma 10"
 ```
 
-The agent rolls the abilities, saves Thorin and describes him. Wait a few seconds, then:
+The agent saves Cordula and stamps the form: Groove 17 (10 + 2 x her +3 Constitution modifier + level 1) and Mana 8 (5 + 1 for Intelligence + 2 for Wisdom), computed by the code, not the model. Wait a few seconds, then:
 
 ```bash
 agentcore invoke --runtime characteragent "List all the characters"
 ```
 
-Thorin is there, read back from AgentCore Memory by another session. The logs show the creation:
+Cordula is there, read back from AgentCore Memory by another session. The logs show the creation:
 
 ```bash
 agentcore logs --runtime characteragent --since 15m
 ```
 
-Look for `New Crawler registered: Thorin (Fighter Dwarf) with id ...`.
+Look for `New Crawler registered: Cordula Vance (Human (Seattle Native) Amphibious Breacher, she/her) with id ...`.
 
 ## Part 3: Connect the Narrator (narrator/narrator_orchestrator.py)
 
@@ -286,15 +286,15 @@ python narrator_orchestrator.py
 
 ## Part 4: Play Against the Cloud
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Thorin, an axe and a goblin. The Narrator looks Thorin up in the cloud before it lets him swing.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Cordula, a Developer Advocate Swarm and a Presence call. The Narrator looks Cordula up in the cloud before it lets her dance.
 
 ```bash
 curl -X POST http://0.0.0.0:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "I am Thorin. Look up my character, then I attack the goblin with my axe!"}'
+  -d '{"question": "I am Cordula Vance. Look up my sheet, then I challenge the Developer Advocate Swarm to a dance-off. Run round one."}'
 ```
 
-The Narrator discovers the two agents, asks the Character Agent for Thorin's sheet, rolls the attack and the damage on the cloud dice server with Thorin's Strength modifier, and narrates. Its `details` field names both agents. Two of your four bricks now run in AWS: `agentcore logs --runtime characteragent` shows the lookup, `agentcore logs --runtime diceserver` the rolls.
+The Narrator discovers the two agents, asks the Character Agent for Cordula's sheet, rolls both sides of the round on the cloud dice server with the modifier of the ability it called, and narrates. Its `details` field names both agents. Two of your four bricks now run in AWS: `agentcore logs --runtime characteragent` shows the lookup, `agentcore logs --runtime diceserver` the rolls.
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Web interface: the Floor 6 interface still works for the game itself. Its character panel, however, reads the Floor 5 `characters.json` through the Narrator's `/user/{user_name}` endpoint, so it does not see the characters stored in AgentCore Memory. 8.4 takes the Narrator to the cloud and settles this.
 
@@ -316,6 +316,6 @@ Loot you're keeping:
 >
 > **[NAMES, ONCE WRITTEN]**
 >
-> Reward: You received a [Silver Box]. Inside: a Character Agent in the cloud and a memory record for Thorin that will not disappear when the microVM does.
+> Reward: You received a [Silver Box]. Inside: a Character Agent in the cloud and a memory record for Cordula that will not disappear when the microVM does.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Your characters now outlive their sessions. Do not get attached. I certainly do not."

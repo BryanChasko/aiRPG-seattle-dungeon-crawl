@@ -23,15 +23,31 @@ class InventoryItem:
     quantity: int
 
 @dataclass
+class Derived:
+    """Computed from the ability scores, never chosen (Crawl Handbook: Groove, Mana, Benched and Cancelled)."""
+    groove: int
+    mana: int
+
+def modifier(score: int) -> int:
+    return (score - 10) // 2
+
+def derive(stats: "Stats", level: int = 1) -> Derived:
+    return Derived(
+        groove=max(4, 10 + 2 * modifier(stats.constitution) + level),
+        mana=max(1, 5 + modifier(stats.intelligence) + modifier(stats.wisdom)),
+    )
+
+@dataclass
 class Character:
     character_id: str
     name: str
     character_class: str  # "class" is reserved in Python too
-    race: str
-    gender: str
+    species: str
+    pronouns: str
     level: int
     experience: int
     stats: Stats
+    derived: Derived
     inventory: list[InventoryItem]
     created_at: str | None = None
 
@@ -57,16 +73,16 @@ def find_character_by_name(name: str) -> dict:
     """Find a stored character by its exact name.
 
     Use it when a player refers to an existing character and you need its sheet:
-    class, race, level, ability scores, inventory. Names are matched exactly and
+    class, species, pronouns, level, ability scores, Groove, Mana, inventory. Names are matched exactly and
     are case-sensitive; use list_all_characters if you are unsure of the spelling.
 
     Example response:
-        {"character_id": "6ca1…", "name": "Thorin", "character_class": "Fighter",
-         "race": "Dwarf", "gender": "Male", "level": 1, "experience": 0,
-         "stats": {"strength": 16, "dexterity": 12, …}, "inventory": […]}
+        {"character_id": "6ca1…", "name": "Cordula Vance", "character_class": "Amphibious Breacher",
+         "species": "Human (Seattle Native)", "pronouns": "she/her", "level": 1, "experience": 0,
+         "stats": {"strength": 16, "dexterity": 13, …}, "derived": {"groove": 17, "mana": 8}, "inventory": […]}
 
     Args:
-        name: The character's name exactly as it was created, e.g. "Thorin".
+        name: The character's name exactly as it was created, e.g. "Cordula Vance".
 
     Notes:
         - Fails with an error if no character with that name exists.
@@ -83,7 +99,7 @@ def find_character_by_name(name: str) -> dict:
         raise ValueError(f"Character with name {name!r} not found")
 
     character = result[0]
-    print(f"[REGISTRY] Found character: {character['name']} (ID: {character['character_id']}, {character['character_class']} {character['race']})")
+    print(f"[REGISTRY] Found character: {character['name']} (ID: {character['character_id']}, {character['species']} {character['character_class']})")
     return character
 
 @tool
@@ -94,9 +110,9 @@ def list_all_characters() -> list[dict]:
     when a player asks for the whole party.
 
     Example response:
-        [{"character_id": "6ca1…", "name": "Thorin", "character_class": "Fighter",
-          "race": "Dwarf", "gender": "Male", "level": 1, "experience": 0,
-          "stats": {"strength": 16, …}, "inventory": […]},
+        [{"character_id": "6ca1…", "name": "Cordula Vance", "character_class": "Amphibious Breacher",
+          "species": "Human (Seattle Native)", "pronouns": "she/her", "level": 1, "experience": 0,
+          "stats": {"strength": 16, …}, "derived": {"groove": 17, "mana": 8}, "inventory": […]},
          …]
 
     Notes:
@@ -116,7 +132,7 @@ def list_all_characters() -> list[dict]:
 
     print(f"[REGISTRY] Found {len(all_chars)} character(s) in database")
     for char in all_chars:
-        print(f"  - {char['name']} ({char['character_class']} {char['race']})")
+        print(f"  - {char['name']} ({char['species']} {char['character_class']}, {char['pronouns']})")
 
     return all_chars
 
@@ -124,34 +140,39 @@ def list_all_characters() -> list[dict]:
 def create_character(
     name: str,
     character_class: str,
-    race: str,
-    gender: str,
+    species: str,
+    pronouns: str,
     stats_dict: dict[str, int]
     ) -> dict:
     """Create a new character and save it to the database.
 
     Use it once per new character, after the ability scores have been decided
     (the System rolls them with roll_dice before it asks). Every new character starts
-    at level 1 with 0 experience, a Crawler Starter Kit (shoes not included) and 100 gold pieces.
+    at level 1 with 0 experience, a Crawler Starter Kit (rain shell not included) and 10 Ferry Tokens.
+    Groove and Mana are computed from the ability scores (Crawl Handbook rules).
 
     Example response:
-        {"character_id": "6ca1…", "name": "Thorin", "character_class": "Fighter",
-         "race": "Dwarf", "gender": "Male", "level": 1, "experience": 0,
-         "stats": {"strength": 16, "dexterity": 12, "constitution": 14,
-                   "intelligence": 10, "wisdom": 11, "charisma": 9},
-         "inventory": [{"item_name": "Crawler Starter Kit (shoes not included)", "quantity": 1},
-                       {"item_name": "Gold Pieces", "quantity": 100}]}
+        {"character_id": "6ca1…", "name": "Cordula Vance", "character_class": "Amphibious Breacher",
+         "species": "Human (Seattle Native)", "pronouns": "she/her", "level": 1, "experience": 0,
+         "stats": {"strength": 16, "dexterity": 13, "constitution": 16,
+                   "intelligence": 12, "wisdom": 14, "charisma": 10},
+         "derived": {"groove": 17, "mana": 8},
+         "inventory": [{"item_name": "Crawler Starter Kit (rain shell not included)", "quantity": 1},
+                       {"item_name": "Ferry Tokens", "quantity": 10}]}
 
     Notes:
-        - Names are not checked for uniqueness: creating "Thorin" twice stores two
+        - Names are not checked for uniqueness: creating "Cordula Vance" twice stores two
           characters. Check with find_character_by_name if in doubt.
         - Any ability score missing from stats_dict defaults to 10.
 
     Args:
-        name: The character's name, e.g. "Thorin".
-        character_class: A class such as "Fighter", "Wizard" or "Rogue".
-        race: A race such as "Dwarf", "Elf" or "Human".
-        gender: The character's gender, e.g. "Female"; pick one if the player did not say.
+        name: The character's name, e.g. "Cordula Vance".
+        character_class: A class from the Crawl Handbook, e.g. "Amphibious Breacher",
+            "Benthic Dragoon" or "Grunge Bard".
+        species: A species from the Crawl Handbook, e.g. "Human (Seattle Native)",
+            "Uplifted Giant Pacific Octopus" or "Harbor Seal".
+        pronouns: The character's pronouns, e.g. "she/her", "he/him" or "they/them";
+            use "they/them" if the request does not say.
         stats_dict: Ability scores as a dict with the keys strength, dexterity,
             constitution, intelligence, wisdom and charisma, each an integer
             (typically 3 to 18), e.g. {"strength": 16, "dexterity": 12}.
@@ -173,19 +194,20 @@ def create_character(
         character_id=character_id,
         name=name,
         character_class=character_class,
-        race=race,
-        gender=gender,
+        species=species,
+        pronouns=pronouns,
         level=1,
         experience=0,
         stats=stats,
+        derived=derive(stats),
         inventory=[
-            InventoryItem("Crawler Starter Kit (shoes not included)", 1),
-            InventoryItem("Gold Pieces", 100),
+            InventoryItem("Crawler Starter Kit (rain shell not included)", 1),
+            InventoryItem("Ferry Tokens", 10),
         ],
     )
     record = asdict(character)
     save_character(record)
-    print(f"[REGISTRY] New Crawler registered: {name} ({character_class} {race}) with id {character_id}")
+    print(f"[REGISTRY] New Crawler registered: {name} ({species} {character_class}, {pronouns}) with id {character_id}")
     return record
 
 def create_agent(context_id: str) -> Agent:
@@ -195,8 +217,8 @@ def create_agent(context_id: str) -> Agent:
         name="Character Agent",
         description="Crawler registration for the dungeon: creates characters from the ability scores it is given, stores them, finds and lists them.",
         system_prompt="""You are the Character Agent, the System's registration desk for new Crawlers. Use your tools to create, find or list characters.
-When creating a character, use exactly the ability scores in the request: the System rolls them before it asks you, and you never invent a score. Leave out any score the request does not give, and create_character sets it to 10. Plain text only, no emoji. If the gender is missing, choose one yourself instead of asking back.
-Confirm creations like a clerk stamping a form the Crawler will regret signing, and summarize found characters briefly: class, race, key stats.""",
+When creating a character, use exactly the ability scores in the request: the System rolls them before it asks you, and you never invent a score. Leave out any score the request does not give, and create_character sets it to 10. Plain text only, no emoji. If the pronouns are missing, use they/them instead of asking back; never guess pronouns from a name.
+Confirm creations like a clerk stamping a form the Crawler will regret signing, and summarize found characters briefly: species, class, pronouns, key stats, Groove and Mana.""",
         callback_handler=None,
     )
 

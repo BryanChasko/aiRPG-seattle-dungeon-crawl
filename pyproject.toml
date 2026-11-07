@@ -1,10 +1,10 @@
 [project]
-name = "strands-dungeon-crawl"
+name = "airpg-seattle-dungeon-crawl"
 version = "1.0.0"
-description = "Learn the Strands Agents SDK by building the System, a petty dungeon AI, one floor at a time"
+description = "Learn the Strands Agents SDK by building the System, the AI that runs a LitRPG dungeon crawl under Seattle, one floor at a time"
 requires-python = ">=3.10"
 dependencies = [
-    # Strands Harness SDK — floor pinned to the release the workshop instructions were
+    # Strands Agents SDK — floor pinned to the release the workshop instructions were
     # last checked against (Oct 2026 docs). Floors 5 and 7 pass make_a2a_client a list of
     # endpoints, the form introduced in 1.57.2.
     "strands-agents[a2a]>=1.61",
@@ -16,9 +16,8 @@ dependencies = [
     "pydantic",
     "uvicorn",
 
-    # Knowledge Base & Document Processing
+    # Knowledge Base — Floor 5 indexes the Crawl Handbook (Markdown) in a local ChromaDB
     "chromadb",
-    "pypdf",
 
     # Database
     "tinydb",
