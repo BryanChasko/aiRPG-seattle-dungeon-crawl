@@ -1,5 +1,7 @@
 # Floor 4: The Portal Room (MCP)
 
+[Previous: Floor 3](floor-3.md) | [Dungeon map](README.md) | [Next: Floor 5](floor-5.md) <!-- floor-nav -->
+
 ![Floor 4: The Portal Room (MCP)](../images/floors/floor-4-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 4. You will move your dice out of the agent's pocket and into a server. They are still my dice. They are just somewhere else now, being rolled in public, in front of everybody."
@@ -25,7 +27,7 @@ The `roll_dice` function is exactly the one you built in Floor 3: same signature
 
 ## Part 1: Setting Up the MCP Server (dice_roll_mcp_server.py)
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Same dice, new address. FastMCP serves roll_dice to anyone who connects. Anyone. Remember that on Floor 8, when IAM shows up."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Same dice, new address. FastMCP serves roll_dice to anyone who connects. Anyone. Remember that on [Floor 8](floor-8.md), when IAM shows up."
 
 ### Step 1: Create the MCP Server
 
@@ -126,4 +128,4 @@ Loot you're keeping:
 >
 > Reward: You received a [Silver Box]. Inside: a FastMCP server, a client that finds it, and four log lines proving the dice roll somewhere your agent is not.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Different process, same cruelty. Floor 5 is where your agents start talking to each other. It never ends well for the quiet one."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Different process, same cruelty. [Floor 5](floor-5.md) is where your agents start talking to each other. It never ends well for the quiet one."

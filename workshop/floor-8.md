@@ -1,5 +1,7 @@
 # Floor 8: Production (AgentCore)
 
+[Previous: Floor 7](floor-7.md) | [Dungeon map](README.md) | [Next: Floor 8.1](floor-8-1.md) <!-- floor-nav -->
+
 ![Floor 8: Production (AgentCore)](../images/floors/floor-8-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 8. Production. Real AWS resources, real IAM roles, real invoices. This is the part of the crawl where mistakes cost money. Set your region before you do anything else. I mean it."

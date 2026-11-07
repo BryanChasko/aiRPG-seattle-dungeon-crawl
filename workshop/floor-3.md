@@ -1,5 +1,7 @@
 # Floor 3: The Crafting Table
 
+[Previous: Floor 2](floor-2.md) | [Dungeon map](README.md) | [Next: Floor 4](floor-4.md) <!-- floor-nav -->
+
 ![Floor 3: The Crafting Table](../images/floors/floor-3-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 3. Craft your own gear, Crawler. The model never reads your code, only the docstring you write for it. Write a lazy one and watch your agent dance to the wrong song."
@@ -142,4 +144,4 @@ Loot you're keeping:
 >
 > Reward: You received a [Silver Box]. Inside: a roll_dice tool that actually works, and sixteen dice that rolled exactly where the docstring told the model to roll them.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "You forged a tool. A real one. Floor 4 is where it leaves the house."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "You forged a tool. A real one. [Floor 4](floor-4.md) is where it leaves the house."

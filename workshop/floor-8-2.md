@@ -1,5 +1,7 @@
 # Floor 8.2: The Character Agent
 
+[Previous: Floor 8.1](floor-8-1.md) | [Dungeon map](README.md) | [Next: Floor 8.3](floor-8-3.md) <!-- floor-nav -->
+
 ![Floor 8.2: The Character Agent](../images/floors/floor-8-2-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Brick two. Your characters move into AgentCore Memory, where they will outlive their sessions. This is more than the System offers most Crawlers."
@@ -302,7 +304,7 @@ curl -X POST http://0.0.0.0:8009/inquire \
 
 The Narrator discovers the two agents, asks the Character Agent for Cordula's sheet, rolls both sides of the round on the cloud dice server with the modifier of the ability it called, and narrates. Its `details` field names both agents. Two of your four bricks now run in AWS: `agentcore logs --runtime characteragent` shows the lookup, `agentcore logs --runtime diceserver` the rolls.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Web interface: the Floor 6 interface still works for the game itself. Its character panel, however, reads the Floor 5 `characters.json` through the Narrator's `/user/{user_name}` endpoint, so it does not see the characters stored in AgentCore Memory. 8.4 takes the Narrator to the cloud and settles this.
+> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Web interface: the [Floor 6](floor-6.md) interface still works for the game itself. Its character panel, however, reads the [Floor 5](floor-5.md) `characters.json` through the Narrator's `/user/{user_name}` endpoint, so it does not see the characters stored in AgentCore Memory. 8.4 takes the Narrator to the cloud and settles this.
 
 ## Floor Clear
 
