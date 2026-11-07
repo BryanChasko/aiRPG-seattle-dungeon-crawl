@@ -6,6 +6,10 @@ Files on this floor: [`5_a2a_integration/agents/rules_agent/rules_agent.py`](../
 
 ![Floor 5: Party Formation (A2A)](../images/floors/floor-5-1200x675.webp)
 
+<!-- cordula-log -->
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 5.** The estuary floods twice a day. The dance floor is there, then it is not. This is where the System finally wanted to start the show, which meant rules, and nobody in the party had read them. We built a clerk to read the rule book, a registration desk to stamp our sheets, and a Narrator to run the game, each one doing one job and talking to the others. Barnaby ran the meeting. He was good at it. He delegated, he cited the handbook, he made the Narrator answer in a format the HUD could read. Then a Quarterly Close Accountant stepped onto the pickleweed and challenged us to a dance-off, and we found out whether any of it worked.
+<!-- /cordula-log -->
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 5. A party. How sweet. Three agents, four terminals, one orchestrator, and a very real chance you forget to start one of them. The audience is placing bets on which."
 
 ## Floor Objective

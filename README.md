@@ -44,6 +44,7 @@ Complete the floors in order: each one reuses what the previous one built. Floor
 ## The World
 
 - [World guide](workshop/world/README.md): where everything the agents say about the world comes from
+- [The Story](workshop/world/story.md): Cordula's crawl, floor by floor, and how each obstacle is a Strands lesson
 - [The System](workshop/world/the-system.md): the LitRPG design, mapped to the floor that builds each layer
 - [The Cast](workshop/world/cast.md): Cordula, Barnaby, Shelly the geoduck and Chonks the spiny lumpsucker
 - [Seattle, Under the Sound](workshop/world/seattle.md): whose land this is, the eight dungeon floors and the Puget Sound plants and habitats they are built from

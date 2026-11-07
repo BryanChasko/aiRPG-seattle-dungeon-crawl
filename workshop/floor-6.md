@@ -6,6 +6,10 @@ Files on this floor: [`web/src/views/NewGameView.vue`](../web/src/views/NewGameV
 
 ![Floor 6: The Arena (Web Interface)](../images/floors/floor-6-1200x675.webp)
 
+<!-- cordula-log -->
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 6.** Under Pioneer Square the old storefronts are still there, buried, and the Fremont Troll sits at the end of the arena like a judge who has seen too much. The audience could see us now. We could not see the show. We needed what the viewers had: the sheet, the rolls, the choices, all on one screen. Once we had it, Barnaby performed. I did not know an octopus could hit his marks. The ratings did.
+<!-- /cordula-log -->
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience what you built. Pick who speaks for the party, point it at port 8009, and press Enter. No pressure. Only billions of viewers."
 
 ## Floor Objective

@@ -13,6 +13,7 @@ Welcome, Crawler, to the dungeon. This workshop takes you from your first agent 
 The crawl follows Cordula "Core" Vance, a Marine Corps Reserve crew chief who patrols the Sound by kayak, and Barnaby, the uplifted Giant Pacific Octopus who rides on her back in a water tank and leads the party, with Shelly the geoduck and Chonks the spiny lumpsucker. It is nonlethal by design: conflict is a dance-off or a stealthy way around one, and a Crawler who loses is Benched, never killed.
 
 - [World guide](world/README.md): everything the agents say about the world comes from these pages
+- [The Story](world/story.md): Cordula tells the crawl in her own words; every floor's obstacle is its Strands lesson
 - [The System](world/the-system.md): the LitRPG design, one layer per workshop floor
 - [The Cast](world/cast.md) and [Seattle, Under the Sound](world/seattle.md)
 - [The Crawl Handbook](world/crawl-handbook/): the rules, and the Rules Agent's knowledge base

@@ -6,6 +6,10 @@ Files on this floor: [`1_strands_basics/simple_agent.py`](../1_strands_basics/si
 
 ![Floor 1: Agent Summoning](../images/floors/floor-1-1200x675.webp)
 
+<!-- cordula-log -->
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 1.** The stairwell let out into what used to be the aquarium lobby, now a field of tide pools and broken glass. There were people down here, a whole tour group in matching rain shells, and none of them could hear us: the System's voice was dead, so the dungeon had no way to talk to anyone. Barnaby could not talk either. The collar was there, a ring of brass with nothing behind it. The System's terminal blinked one line at me: SUMMON AN AGENT. So we did. A model, a few words telling it who to be, one call. The System coughed back to life, and the collar woke up with it. Barnaby's first word was "Sergeant." His second was a complaint about the water temperature.
+<!-- /cordula-log -->
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 1, Crawlers. You will now summon a living creature out of a string of English and one function call. The audience has money on the first thing it says. Be kind to it. It will not be kind to you."
 
 ## Floor Objective

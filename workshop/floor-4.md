@@ -6,6 +6,10 @@ Files on this floor: [`4_mcp_integration/dice_roll_mcp_server.py`](../4_mcp_inte
 
 ![Floor 4: The Portal Room (MCP)](../images/floors/floor-4-1200x675.webp)
 
+<!-- cordula-log -->
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 4.** At the Ship Canal the dungeon split in two. The Ballard Locks were glowing like portals, the dice were on the far side, and the party was on this one, with a swarm of developer advocates doing a live demo on the lock walls. You cannot carry dice through a portal. You can put them on a server and let anyone on any side roll them. Barnaby touched a machine he had never seen, asked it what it could do, and it told him. He went quiet for a long time after that. I think it was the first time he talked to something that was not alive.
+<!-- /cordula-log -->
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 4. You will move your dice out of the agent's pocket and into a server. They are still my dice. They are just somewhere else now, being rolled in public, in front of everybody."
 
 ## Floor Objective
