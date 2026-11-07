@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: a narrow stone stairwell descending into a dungeon, emerald torchlight on wet steps, a heavy safe-room door at the landing sealed by a glowing violet rune lock. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "39424fd1d6a9c310afd9256f5907053fdc9202774cf6ade5047170d6f5cac66e",
+ "auth": "REDACTED",
+ "output_sha256": "bd53f14f9226d10b361f5ee9cd29d64df7aa660df5bd1f9e95e3182cee775183",
+ "revised_prompt": null
+}

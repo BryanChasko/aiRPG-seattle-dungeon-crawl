@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: a summoning circle carved into a cracked obsidian floor, a small newborn wisp of violet light rising from a stone altar shaped like an old computer terminal. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "4187b8c885e2e557284c0a248669efd297c0cbb4a245552dfe219704c0e9755b",
+ "auth": "REDACTED",
+ "output_sha256": "6e8e21f6d778f679e469dbde3fbdbc4e86a25d7f3e46e484fb46bbc479220bc5",
+ "revised_prompt": null
+}

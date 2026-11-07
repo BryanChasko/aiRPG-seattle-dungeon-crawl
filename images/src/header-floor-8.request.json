@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: a vast underground industrial foundry of brass pipes and iron catwalks, glowing monolith server towers rising into a layer of luminous mist overhead. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "f8a42014a3472442b87e0c2dd86304130aabe1ad110f9c5b574e353058db1fb1",
+ "auth": "REDACTED",
+ "output_sha256": "57b99f2f3f79746853963ab02d50a8f7f232fc4a309c7726b974cc564930ac22",
+ "revised_prompt": null
+}

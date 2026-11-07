@@ -1,0 +1,35 @@
+{
+ "bytes": 2624,
+ "file": "item-96x96.webp",
+ "format": "webp lossy q88",
+ "render": {
+  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "ee067a03b0bff950fda147a499a5107317d918818e64c79be414ecbc1a624a00",
+  "size": "1024x1024"
+ },
+ "sha256": "265240dc17747afa6310007b58937aa758d5305077032644f6c9821ac75e7cfe",
+ "size": [
+  96,
+  96
+ ],
+ "source": {
+  "raw": "icon-item.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/icon-item.png",
+  "raw_sha256": "fa075bf411b76def4e4c4d68bdbbcaac176e09486b7e7431e4e7c873a5d7d0b1",
+  "request": "images/src/icon-item.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "center crop 12% margin",
+  "resize 96x96 lanczos",
+  "no dots, no vignette (UI glyph)"
+ ]
+}

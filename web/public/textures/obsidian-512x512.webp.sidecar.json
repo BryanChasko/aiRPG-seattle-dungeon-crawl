@@ -1,0 +1,18 @@
+{
+ "bytes": 13080,
+ "file": "obsidian-512x512.webp",
+ "sha256": "f2b501c6e350e743c43765e31e095394a690846ee509335a17a18c7c689e08eb",
+ "source": {
+  "raw": "tex-obsidian.png",
+  "raw_sha256": "98e34fffe4442f45e1cd364a35791a930d875acceb0a26267ba42e0fe7db03dc",
+  "request": "images/src/tex-obsidian.request.json"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "resize 512x512 lanczos",
+  "webp lossy q80 method 6"
+ ]
+}

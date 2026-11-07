@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: a colosseum arena inside a vast cavern, floating holographic screens of light, an unseen audience of hundreds of glowing alien eyes in the darkness of the stands. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "efd4064e78abd70b41d665d5380772cde81dd490e49ba528cebcf1194dd99e27",
+ "auth": "REDACTED",
+ "output_sha256": "fdb825ac7e82ac478cd6caf43d0bf99348ed0febe2b2c8c3b42a3cd298abf6e1",
+ "revised_prompt": null
+}

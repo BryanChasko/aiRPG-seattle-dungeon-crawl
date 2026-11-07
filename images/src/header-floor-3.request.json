@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: a dungeon blacksmith's crafting table, a glowing twenty-sided die being forged on an anvil, molten orange sparks and scattered tools. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "490dcb189230cd0adfd062c679d26514f9abdd2ca62b0f8976e42d7ce8eb1048",
+ "auth": "REDACTED",
+ "output_sha256": "d8a233ab09242c3f94d43cfd964260b0835afaf18e6e126bdf7f9534296fbb9c",
+ "revised_prompt": null
+}

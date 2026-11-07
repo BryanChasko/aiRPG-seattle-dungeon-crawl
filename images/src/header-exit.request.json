@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: a massive dungeon exit door swung open onto pale dawn light, rubble, scattered dice and a dropped torch on the threshold. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "b6c816720917723f53ebcd80a6a079a39aa4ec9dee0d7e153296ca21a5fbc410",
+ "auth": "REDACTED",
+ "output_sha256": "ca29eb6082ae5a663c404bbf307c811f4a2d185b03799cc926a79ead33566bfc",
+ "revised_prompt": null
+}

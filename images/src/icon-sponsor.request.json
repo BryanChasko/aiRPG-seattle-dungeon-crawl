@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: an antique polished brass broadcast microphone on a short stand, wrapped in faint neon violet sound waves. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "1746a3cf1b61e2550edf52a07c8fe75c9f5861faa0720630aed6f8f212d71678",
+ "auth": "REDACTED",
+ "output_sha256": "ea4128e6685f620a64a6d67560280990e8358e135fc3fcff11f2cd0b17c0f1bb",
+ "revised_prompt": null
+}

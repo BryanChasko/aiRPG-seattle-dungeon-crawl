@@ -1,0 +1,109 @@
+/* Dungeon Crawl theme: the System's obsidian broadcast - CSS Custom Properties */
+
+:root {
+  /* Color Palette: the System's obsidian broadcast theme (names kept from the tabletop theme) */
+  --color-parchment: #1a1f2b;
+  --color-parchment-dark: #242a38;
+  --color-wood-dark: #2a2140;
+  --color-wood-medium: #3a2f55;
+  --color-wood-light: #4a3d6b;
+  --color-gold: #ff2bd6;
+  --color-gold-light: #ff7ae6;
+  --color-red-deep: #ff4d6d;
+  --color-red-accent: #ff6b3d;
+  --color-ink: #e8e2f0;
+  --color-ink-light: #b9b0cc;
+  --color-candlelight: #ff8a3d;
+  --color-shadow: rgba(0, 0, 0, 0.6);
+  --color-emerald: #1fbf75;
+
+  /* New theme variables */
+  --color-bg-page: #0b0e14;
+  --color-bg-card: #141824;
+  --color-bg-user-msg: #1f1a33;
+
+  /* Fonts */
+  --font-heading: 'MedievalSharp', 'Cinzel', serif;
+  --font-body: 'Crimson Text', 'Georgia', serif;
+  --font-ui: 'Lora', serif;
+  --font-handwriting: 'Caveat', cursive;
+
+  /* Borders & Decorations */
+  --border-wood: 3px solid var(--color-wood-dark);
+  --border-gold: 2px solid var(--color-gold);
+  --border-radius-panel: 8px;
+  --shadow-panel: 2px 4px 12px var(--color-shadow);
+  --shadow-glow: 0 0 8px var(--color-gold-light);
+
+  /* Textures */
+  --texture-parchment: url('/textures/obsidian-512x512.webp');
+  --texture-leather: url('/textures/obsidian-512x512.webp');
+  --texture-wood: url('/textures/obsidian-512x512.webp');
+}
+
+/* ===========================
+   Base Layout Styles
+   =========================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background-color: var(--color-bg-page);
+  background-image: var(--texture-wood);
+  padding: 0 1.5rem;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* ===========================
+   Reusable Theme Classes
+   =========================== */
+
+/* Parchment-styled panel */
+.panel-parchment {
+  /* background-color: var(--color-parchment); */
+  background-image: var(--texture-parchment);
+  background-repeat: repeat;
+  background-size: auto;
+  border-radius: var(--border-radius-panel);
+  color: var(--color-ink);
+}
+
+/* Dark wood border */
+.border-wood {
+  border: var(--border-wood);
+}
+
+/* Gold accent border */
+.border-gold {
+  border: var(--border-gold);
+}
+
+/* Gold text/accent color */
+.accent-gold {
+  color: var(--color-gold);
+}
+
+/* Standard panel drop shadow */
+.shadow-panel {
+  box-shadow: var(--shadow-panel);
+}
+
+/* Gold glow effect */
+.shadow-glow {
+  box-shadow: var(--shadow-glow);
+}

@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: a single glowing twenty-sided die suspended inside a glass and brass server cabinet floating among violet clouds. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "0d1ec9d1c3760166648e97cf727cb46a919d73337f7c1aff1e1f457d2237d2a1",
+ "auth": "REDACTED",
+ "output_sha256": "5864b79f96377cea5305668ea96e0b10d85095650db5e86b9829f6cb4619b0a0",
+ "revised_prompt": null
+}

@@ -1,0 +1,35 @@
+{
+ "bytes": 3004,
+ "file": "achievement-96x96.webp",
+ "format": "webp lossy q88",
+ "render": {
+  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "89546aa927c3ed74595b3627d4bc76e644e1766b083300c6f94c8607c4b3c2cd",
+  "size": "1024x1024"
+ },
+ "sha256": "a36b920deb10bafdadfa5052fbce6c2b9f3cf37099ecc31cacea60eab9e21563",
+ "size": [
+  96,
+  96
+ ],
+ "source": {
+  "raw": "icon-achievement.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/icon-achievement.png",
+  "raw_sha256": "2c112d331d95f32469d986fa062036c1d9ee3fca27c274de4abf081d4c428841",
+  "request": "images/src/icon-achievement.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "center crop 12% margin",
+  "resize 96x96 lanczos",
+  "no dots, no vignette (UI glyph)"
+ ]
+}

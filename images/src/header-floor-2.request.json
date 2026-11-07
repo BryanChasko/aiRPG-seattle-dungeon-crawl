@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: a row of ornate dungeon vending machines built from brass and dark wood, glowing magenta glass panels showing potions, scrolls and small tools inside. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "730877fc505a0e91d0d4192ff0d9a50414195c6f8fc131cc024c713eeea96abb",
+ "auth": "REDACTED",
+ "output_sha256": "454bd217e30dcd75310bf909745dea68c21b936f0db1d34e9b58e222876495ed",
+ "revised_prompt": null
+}

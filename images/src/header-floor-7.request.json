@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: an armory vault, an enchanted suit of plate armor on a stand glowing with violet runes, shelves of shields and racked weapons in shadow. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "a7f28931fae056b715d2e140ab261de69e81515f3a2aea477317c6c8e9bd2e2d",
+ "auth": "REDACTED",
+ "output_sha256": "22426f4373a894ca19d654288e680006b25d552da5f51d6e9f9ccadb5a913460",
+ "revised_prompt": null
+}

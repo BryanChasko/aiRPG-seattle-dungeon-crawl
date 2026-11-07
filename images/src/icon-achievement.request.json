@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: an ornate dark wooden loot chest bound in polished brass, its lid cracking open with neon magenta light bursting from the seams. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "89546aa927c3ed74595b3627d4bc76e644e1766b083300c6f94c8607c4b3c2cd",
+ "auth": "REDACTED",
+ "output_sha256": "2c112d331d95f32469d986fa062036c1d9ee3fca27c274de4abf081d4c428841",
+ "revised_prompt": null
+}

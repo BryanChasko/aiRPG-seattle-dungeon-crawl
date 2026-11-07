@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: a stone portal room with two glowing violet portals facing each other across a chasm, a stream of floating glowing dice flowing between them. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "e9f2d6dd706c53302e0af7b9b2498d3f148fe6f3382bd6763f3b4f32bd5c6113",
+ "auth": "REDACTED",
+ "output_sha256": "bc65b35d0d4c94ad68397396866ed93f9e1fa784edcc474eca13c5a229bc1cf5",
+ "revised_prompt": null
+}

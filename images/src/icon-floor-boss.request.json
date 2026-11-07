@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a horned black iron skull helmet with cracked plates, lit from below by molten orange lava light, embers rising. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "0a4e52e27cea72f9b8013d0c3e2310c8ccf88fcb9d839efc5c914ad2ee9f887c",
+ "auth": "REDACTED",
+ "output_sha256": "ae6b28c4bcca35f43e9bcd1e7590629f6849a9957c9417d386c295a20ffc0624",
+ "revised_prompt": null
+}

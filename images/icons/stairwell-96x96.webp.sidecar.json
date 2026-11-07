@@ -1,0 +1,35 @@
+{
+ "bytes": 2672,
+ "file": "stairwell-96x96.webp",
+ "format": "webp lossy q88",
+ "render": {
+  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "5c73d64da9f8203ba16c8e3eeea9e134eebfc521d0af2b6750810fc5be686d81",
+  "size": "1024x1024"
+ },
+ "sha256": "9bf67443fddfd4ec005fefd38582d7160562c4cecfc619919451c3b4382a5ccd",
+ "size": [
+  96,
+  96
+ ],
+ "source": {
+  "raw": "icon-stairwell.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/icon-stairwell.png",
+  "raw_sha256": "8869630b06bec13d26026497846120d00631af66ba4aabd4392409baf876d444",
+  "request": "images/src/icon-stairwell.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "center crop 12% margin",
+  "resize 96x96 lanczos",
+  "no dots, no vignette (UI glyph)"
+ ]
+}

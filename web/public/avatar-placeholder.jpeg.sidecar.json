@@ -1,0 +1,18 @@
+{
+ "bytes": 52846,
+ "file": "avatar-placeholder.jpeg",
+ "sha256": "77beb2b5f55a3a5b5175a12f5b129c59752c8901fdf42a70825fa9319f269c96",
+ "source": {
+  "raw": "avatar-crawler.png",
+  "raw_sha256": "e9bd473cf5ef1138462b74ac98c7c87dc91271a3229f9e971ec4ab28195adee6",
+  "request": "images/src/avatar-crawler.request.json"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "resize 512x512 lanczos",
+  "jpeg q84 optimize (filename kept: the UI references it)"
+ ]
+}

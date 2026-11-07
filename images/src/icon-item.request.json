@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a weathered leather adventurer's pouch with brass buckles spilling radiant emerald green light from its open flap. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "ee067a03b0bff950fda147a499a5107317d918818e64c79be414ecbc1a624a00",
+ "auth": "REDACTED",
+ "output_sha256": "fa075bf411b76def4e4c4d68bdbbcaac176e09486b7e7431e4e7c873a5d7d0b1",
+ "revised_prompt": null
+}

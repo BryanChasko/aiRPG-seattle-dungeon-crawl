@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a floating mechanical surveillance eye made of polished brass rings and gears with a glowing neon violet iris, judging the viewer. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "28ee2e6027d7a6cc0b7e6553898214c5c076dbca91e9a00439d44c1c080ee684",
+ "auth": "REDACTED",
+ "output_sha256": "630cb794b0d998388fb760c096deac6201d851018fced859d678b78e5260ee57",
+ "revised_prompt": null
+}

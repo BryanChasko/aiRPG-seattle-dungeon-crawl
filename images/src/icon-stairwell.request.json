@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a spiral stone staircase descending into a round pit, glowing emerald green from far below. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "5c73d64da9f8203ba16c8e3eeea9e134eebfc521d0af2b6750810fc5be686d81",
+ "auth": "REDACTED",
+ "output_sha256": "8869630b06bec13d26026497846120d00631af66ba4aabd4392409baf876d444",
+ "revised_prompt": null
+}

@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a round antique bronze bomb with a short sparking fuse, molten orange-red glow and drifting smoke. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "20ab802fff752994a3f26ad08aa210e8316c4640484ce76cac7569d4efc75f86",
+ "auth": "REDACTED",
+ "output_sha256": "d8ac2cfed7585932898876cfd56005ce593e0ef377e6ec25f7281e8854dce489",
+ "revised_prompt": null
+}

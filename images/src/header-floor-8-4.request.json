@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: a giant brass mechanical eye floating above a sea of luminous clouds, glowing cables descending from it into darkness below. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "c2dd97f4527b4042fc63dd90f965c0fd228e942c9d666e91e0cf22e8b574bc9d",
+ "auth": "REDACTED",
+ "output_sha256": "87934851f554a61fe8106d3eaab5e03fcad1fb24f1c410d25ae7d2db3bd30971",
+ "revised_prompt": null
+}

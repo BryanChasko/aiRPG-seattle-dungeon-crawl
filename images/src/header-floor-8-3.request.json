@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, high contrast, obsidian black and slate grey shadows with neon magenta-violet, emerald green and molten orange accents, sharp detail, depth layering, darker edges. Scene: a towering library carved into rock, endless shelves of rule books, one heavy book open on a lectern glowing with orange light. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "77aa4c1a139195497a7041a5acd85e318e4c46fc1c1e1b16374ca4c360c4bbe7",
+ "auth": "REDACTED",
+ "output_sha256": "a19144e32d59cbe97b964c6f73aa820919bfc7e0605fea57128d355d86fe7c90",
+ "revised_prompt": null
+}

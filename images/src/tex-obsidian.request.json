@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Seamless tileable texture, flat top-down view of dark polished obsidian stone surface, near-black #0B0E14 base with subtle slate grey grain and very faint thin neon violet veins, even lighting, no perspective, no objects, low contrast so text stays readable on top. No text, no letters, no numbers, no words, no logos, no watermark.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "e37aeb95496757fd122006fe715b9e13821391293a4d70093efdf55241b8cf56",
+ "auth": "REDACTED",
+ "output_sha256": "98e34fffe4442f45e1cd364a35791a930d875acceb0a26267ba42e0fe7db03dc",
+ "revised_prompt": null
+}

@@ -1,0 +1,35 @@
+{
+ "bytes": 143184,
+ "file": "floor-8-3-1200x675.webp",
+ "format": "webp lossy q82",
+ "render": {
+  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "77aa4c1a139195497a7041a5acd85e318e4c46fc1c1e1b16374ca4c360c4bbe7",
+  "size": "1792x1024"
+ },
+ "sha256": "36e1d259c03f006cbb2483ab22ad13d6dd5c0010c6bde7020467ce5768333fbe",
+ "size": [
+  1200,
+  675
+ ],
+ "source": {
+  "raw": "header-floor-8-3.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/header-floor-8-3.png",
+  "raw_sha256": "a19144e32d59cbe97b964c6f73aa820919bfc7e0605fea57128d355d86fe7c90",
+  "request": "images/src/header-floor-8-3.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "cover-crop 1200x675 lanczos",
+  "vignette feather 50 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ]
+}
