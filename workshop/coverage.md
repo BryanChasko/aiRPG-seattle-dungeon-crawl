@@ -8,7 +8,7 @@ This crawl is built on *Once Upon Agentic AI*, the AWS sample workshop that firs
 
 - **Every original exercise is still here.** All 63 `# TODO` steps of the original workshop are present, in the same files, in the same order. The only change is a name: the orchestrator files are named after the Narrator.
 - **Every Strands API the original teaches is still hands-on.** The table below maps each part of the original to its floor, the APIs you type yourself, and the check that proves it works.
-- **Testing grew from one floor to all of them.** The original suite covered the Floor 5 A2A servers (8 test functions). The `solution` branch now runs 39 tests, none of which call a model or AWS. They cover every floor, plus the 114 web interface tests in `web/`.
+- **Testing grew from one floor to all of them.** The original suite covered the Floor 5 A2A servers (8 test functions). The `solution` branch now runs 43 tests, none of which call a model or AWS. They cover every floor and the study companion, plus the 114 web interface tests in `web/`.
 - **One technique was swapped for another, and it is the only one.** The original built its knowledge base from a downloaded PDF with `pypdf`. The crawl builds it from the Crawl Handbook, its own Markdown rule book. The ChromaDB collection, the `all-MiniLM-L6-v2` embeddings, the 1,000-character overlapping passages and the cited answers are all unchanged. PDF text extraction is the one technique no longer taught; it comes back as an optional encounter (below).
 - **Not yet run live:** the Floor 8 AgentCore deployment, which is covered by unit tests only, and the Floor 2 bonus room, which asks you to approve each step and so cannot run unattended. Floors 1 to 5 and 7 have been run end to end on Amazon Nova 2 Lite.
 
@@ -42,5 +42,5 @@ What the crawl teaches that the original did not:
 
 - **TODO steps:** every `# TODO: ... Step N` line in the original `main` branch, compared with this repository's `main`, by file and step number, after the Narrator rename. The result: 63 in the original, 63 here, no step missing and none added.
 - **APIs:** each step's answer on the `solution` branch, read against the original's latest solution branch.
-- **Tests:** `uv run pytest tests/` on the `solution` branch, 39 passing on 2026-11-07, plus `npx vitest run` in `web/`, 114 passing.
+- **Tests:** `uv run pytest tests/` on the `solution` branch, 43 passing on 2026-11-07, plus `npx vitest run` in `web/`, 114 passing.
 - **Live runs:** Floors 1 to 5 and 7 on Amazon Nova 2 Lite (us-west-2), 2026-11-07.
