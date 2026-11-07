@@ -2,7 +2,7 @@
 
 ![Floor 6: The Arena (Web Interface)](../images/floors/floor-6-1200x675.webp)
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience what you built. Fill in your character, point it at port 8009, and press Start. No pressure. Only billions of viewers."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience what you built. Pick who speaks for the party, point it at port 8009, and press Enter. No pressure. Only billions of viewers."
 
 ## Floor Objective
 
@@ -32,13 +32,13 @@ npm run dev
 
 In the web interface:
 
-- Fill in your character: name, pronouns, species and class. Play Cordula (she/her, Human (Seattle Native), Amphibious Breacher), or bring your own Crawler: the species list covers Seattle natives and transplants, an uplifted crow, a harbor seal, a sea otter, a banana slug, Fremont Troll-kin and an Underground ghost
+- Pick who you play. The party is set: Cordula Vance (she/her, Human (Seattle Native), Amphibious Breacher) is the default, or speak as Barnaby (he/him, Uplifted Giant Pacific Octopus, Benthic Dragoon), the party leader. Shelly the geoduck and Chonks the spiny lumpsucker come along as companions either way
 - In Server URL, enter the URL shown in your Narrator Orchestrator terminal: `http://127.0.0.1:8009`
-- Click Start
+- Click Enter the Dungeon
 
 The web interface runs in your browser and talks to the Narrator running on the same machine. Browsers let this HTTPS page reach `http://127.0.0.1:8009` because it is localhost.
 
-The character panel shows the sheet the Character Agent saved, with GROOVE and MANA under the six ability scores. Pick a suggested action, or type your own: "Challenge the Rain-Shell Tourist Pod to a dance-off" works, and so does "Have Barnaby sneak us past them".
+The character panel shows the sheet the Character Agent saved on Floor 5, with GROOVE and MANA under the six ability scores. If you skipped the Floor 5 registration, the first turn registers the party. Pick a suggested action, or type your own: "Challenge the Rain-Shell Tourist Pod to a dance-off" works, and so does "Have Barnaby sneak us past them".
 
 Monitor performance: watch your terminal logs to see how your Narrator processes requests:
 

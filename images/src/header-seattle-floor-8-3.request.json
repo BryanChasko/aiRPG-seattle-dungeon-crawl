@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: an underwater rule archive inside a sunken library: tall shelves of waterproof binders and tidy scrolls lit by teal glow, ribbons of bull kelp and sugar kelp drifting between the stacks, a reading desk with an open binder, fish-shaped shadows, a violet beam of light pointing at one shelf. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "e9a12ab4cac988a7bfc1c5ba4c7af61136fb1dba5e739f8a01f1806e8ec2584f",
+ "auth": "REDACTED",
+ "output_sha256": "6fe102bf3a478b3d71449caf569c3b03464c831a428f9717eb7b3ec087f5a748",
+ "revised_prompt": null
+}

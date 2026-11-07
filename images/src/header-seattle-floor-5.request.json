@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: the Estuary: a salt marsh where a river meets Puget Sound at low tide, red-tinged jointed pickleweed, Pacific silverweed with small yellow flowers and silver-backed leaves, dense green meadows of tall Lyngby's sedge, winding tidal channels reflecting the sky, three glowing beacons on driftwood posts across the marsh in emerald, violet and orange, linked by faint beams of light. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "79ed106187e39443c6a0714dcac670907e0196c3bba4039cae5996f7b98ac202",
+ "auth": "REDACTED",
+ "output_sha256": "71eb2f52e1ae4fbb0d7a67e4099e1d6ca2b736e79655daab4faa18e96062792f",
+ "revised_prompt": null
+}

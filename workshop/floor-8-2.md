@@ -188,19 +188,25 @@ agentcore status
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Run every command of this step from the root of the `gameprod` folder, like the rest of Part 2.
 
-The Floor 5 characters stayed in `characters.json`: the new memory starts empty. Register the featured Crawler. The Character Agent never rolls or invents a score (in the game, the Narrator rolls them first), so give it all six:
+The Floor 5 party sheets stayed in `characters.json`: the new memory starts empty. Register the party again, in the cloud this time. The Character Agent never rolls or invents a score, so give it all six from [the cast](world/cast.md):
 
 ```bash
 agentcore invoke --runtime characteragent "Register Cordula Vance, pronouns she/her, a Human (Seattle Native) Amphibious Breacher, with strength 16, dexterity 13, constitution 16, intelligence 12, wisdom 14, charisma 10"
 ```
 
-The agent saves Cordula and stamps the form: Groove 17 (10 + 2 x her +3 Constitution modifier + level 1) and Mana 8 (5 + 1 for Intelligence + 2 for Wisdom), computed by the code, not the model. Wait a few seconds, then:
+The agent saves Cordula and stamps the form: Groove 17 (10 + 2 x her +3 Constitution modifier + level 1) and Mana 8 (5 + 1 for Intelligence + 2 for Wisdom), computed by the code, not the model. Register the party leader the same way:
+
+```bash
+agentcore invoke --runtime characteragent "Register Barnaby, pronouns he/him, an Uplifted Giant Pacific Octopus Benthic Dragoon, with strength 12, dexterity 18, constitution 10, intelligence 18, wisdom 15, charisma 16"
+```
+
+Wait a few seconds, then:
 
 ```bash
 agentcore invoke --runtime characteragent "List all the characters"
 ```
 
-Cordula is there, read back from AgentCore Memory by another session. The logs show the creation:
+Cordula and Barnaby are there, read back from AgentCore Memory by another session. The logs show the creation:
 
 ```bash
 agentcore logs --runtime characteragent --since 15m

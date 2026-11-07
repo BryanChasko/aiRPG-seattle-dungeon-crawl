@@ -12,9 +12,9 @@ Prepare your development environment: clone the workshop repo, install uv and Py
 
 ## The Crawl You Are Building
 
-This workshop builds the AI behind a LitRPG, *Dungeon Crawl: Seattle*. The System, a broadcast AI filming for alien viewers, collapsed the waterfront at Pier 59 and turned the Puget Sound underneath into an eight-floor dungeon. The leads are Cordula "Core" Vance, a Marine Corps Reserve crew chief who patrols the Sound by kayak, and Barnaby, an uplifted Giant Pacific Octopus who rides on her back in a water tank and runs the party. Shelly the geoduck and Chonks the spiny lumpsucker round it out. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
+This workshop builds the AI behind a LitRPG, *Dungeon Crawl: Seattle*. The System, a broadcast AI filming for alien viewers, collapsed the waterfront at Pier 59 and turned the Puget Sound underneath into an eight-floor dungeon. The leads are Cordula "Core" Vance, a Marine Corps Reserve crew chief who patrols the Sound by kayak, and Barnaby, an uplifted Giant Pacific Octopus who rides on her back in a water tank and runs the party. Shelly the geoduck and Chonks the spiny lumpsucker round it out. You play as this party. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
 
-The lore lives in the [world bible](world/README.md): [the setting](world/seattle.md), [the cast](world/cast.md), [the System design](world/the-system.md) and the [Crawl Handbook](world/crawl-handbook/), the rules your Rules Agent searches on Floor 5.
+The lore lives in the [world guide](world/README.md): [the setting](world/seattle.md), [the cast](world/cast.md), [the System design](world/the-system.md) and the [Crawl Handbook](world/crawl-handbook/), the rules your Rules Agent searches on Floor 5.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is a game-show host with too much power: it is petty, it is theatrical, and it never lies about a number. Each floor of this workshop builds one Strands capability and one more layer of the System that uses it. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 

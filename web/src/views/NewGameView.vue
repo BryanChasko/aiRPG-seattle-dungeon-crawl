@@ -7,50 +7,25 @@
       <div class="scroll-rod scroll-rod--bottom"></div>
 
       <div class="form-card paper-sheet">
-        <h1 class="form-title">Register Your Crawler</h1>
+        <h1 class="form-title">The Party Descends</h1>
 
         <form class="character-form" @submit.prevent="handleSubmit">
           <div v-if="submitError" class="submit-error">{{ submitError }}</div>
 
           <div class="form-group">
-            <label for="character-name" class="form-label">Crawler Name</label>
-            <input
-              id="character-name"
-              v-model="form.name"
-              type="text"
-              class="form-input"
-              :class="{ 'input-error': errors.name }"
-              placeholder="Enter your Crawler's name"
-            />
-            <span v-if="errors.name" class="field-error">{{ errors.name }}</span>
+            <label for="party-member" class="form-label">Speak as</label>
+            <select id="party-member" v-model="form.name" class="form-input">
+              <option v-for="l in PARTY_LEADS" :key="l.name" :value="l.name">{{ l.name }}</option>
+            </select>
           </div>
 
-          <div class="form-group">
-            <label for="pronouns" class="form-label">Pronouns</label>
-            <select id="pronouns" v-model="form.pronouns" class="form-input" :class="{ 'input-error': errors.pronouns }">
-              <option value="" disabled>Select pronouns</option>
-              <option v-for="g in pronounsOptions" :key="g" :value="g">{{ g }}</option>
-            </select>
-            <span v-if="errors.pronouns" class="field-error">{{ errors.pronouns }}</span>
-          </div>
-
-          <div class="form-group">
-            <label for="species" class="form-label">Species</label>
-            <select id="species" v-model="form.species" class="form-input" :class="{ 'input-error': errors.species }">
-              <option value="" disabled>Select species</option>
-              <option v-for="r in speciesOptions" :key="r" :value="r">{{ r }}</option>
-            </select>
-            <span v-if="errors.species" class="field-error">{{ errors.species }}</span>
-          </div>
-
-          <div class="form-group">
-            <label for="character-class" class="form-label">Class</label>
-            <select id="character-class" v-model="form.characterClass" class="form-input" :class="{ 'input-error': errors.characterClass }">
-              <option value="" disabled>Select class</option>
-              <option v-for="c in classOptions" :key="c" :value="c">{{ c }}</option>
-            </select>
-            <span v-if="errors.characterClass" class="field-error">{{ errors.characterClass }}</span>
-          </div>
+          <dl class="party-sheet">
+            <div><dt>Pronouns</dt><dd id="lead-pronouns">{{ lead.pronouns }}</dd></div>
+            <div><dt>Species</dt><dd id="lead-species">{{ lead.species }}</dd></div>
+            <div><dt>Class</dt><dd id="lead-class">{{ lead.characterClass }}</dd></div>
+            <div><dt>Role</dt><dd id="lead-role">{{ lead.role }}</dd></div>
+          </dl>
+          <p class="companions">Companions: {{ COMPANIONS.join(', ') }}</p>
 
           <div class="form-group">
             <label for="server-url" class="form-label">Server URL</label>
@@ -75,13 +50,14 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, onMounted } from 'vue'
+import { reactive, ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import type { CharacterForm, ValidationErrors } from '@/types'
 import { validateForm } from '@/utils/validation'
 import { formatInitPrompt } from '@/utils/promptFormatter'
 import { useGameApi } from '@/composables/useGameApi'
 import { useGameStore } from '@/stores/gameStore'
+import { PARTY_LEADS, COMPANIONS } from '@/party'
 
 const router = useRouter()
 const store = useGameStore()
@@ -93,49 +69,23 @@ onMounted(() => {
   }, 1000)
 })
 
-const pronounsOptions: CharacterForm['pronouns'][] = ['she/her', 'he/him', 'they/them', 'any pronouns']
-
-const speciesOptions: CharacterForm['species'][] = [
-  'Human (Seattle Native)',
-  'Human (Transplant)',
-  'Uplifted Giant Pacific Octopus',
-  'Uplifted Crow',
-  'Harbor Seal',
-  'Sea Otter',
-  'Banana Slug',
-  'Fremont Troll-kin',
-  'Underground Ghost',
-]
-
-const classOptions: CharacterForm['characterClass'][] = [
-  'Amphibious Breacher',
-  'Benthic Dragoon',
-  'Kayak Patrol Ranger',
-  'Ferry Engineer',
-  'Ballard Brewer',
-  'Fish-Toss Striker',
-  'Grunge Bard',
-  'Coffee Alchemist',
-  'Salvage Artificer',
-  'Rain Warden',
-  'Floating-Bridge Engineer',
-  'Startup Necromancer',
-]
-
-const form = reactive<CharacterForm>({
-  name: '',
-  pronouns: '' as CharacterForm['pronouns'],
-  species: '' as CharacterForm['species'],
-  characterClass: '' as CharacterForm['characterClass'],
-  serverUrl: '',
-})
+// The party is set (workshop/world/cast.md): the player picks who speaks for it
+const form = reactive({ name: PARTY_LEADS[0].name, serverUrl: '' })
+const lead = computed(() => PARTY_LEADS.find(l => l.name === form.name) ?? PARTY_LEADS[0])
+const characterForm = computed<CharacterForm>(() => ({
+  name: lead.value.name,
+  pronouns: lead.value.pronouns,
+  species: lead.value.species,
+  characterClass: lead.value.characterClass,
+  serverUrl: form.serverUrl,
+}))
 
 const errors = ref<ValidationErrors>({})
 const loading = ref(false)
 const submitError = ref<string | null>(null)
 
 async function handleSubmit() {
-  const validationErrors = validateForm(form)
+  const validationErrors = validateForm(characterForm.value)
   if (Object.keys(validationErrors).length > 0) {
     errors.value = validationErrors
     return
@@ -146,15 +96,15 @@ async function handleSubmit() {
   loading.value = true
 
   try {
-    const prompt = formatInitPrompt(form)
+    const prompt = formatInitPrompt(characterForm.value)
     const { sendInquiry } = useGameApi(form.serverUrl)
     await sendInquiry(prompt)
-    store.setConnection(form.serverUrl, form.name)
+    store.setConnection(form.serverUrl, lead.value.name)
 
     // Roll the scroll closed, then navigate
     revealed.value = false
     await new Promise(resolve => setTimeout(resolve, 1500))
-    router.push({ name: 'game', params: { characterName: form.name } })
+    router.push({ name: 'game', params: { characterName: lead.value.name } })
   } catch (e) {
     submitError.value = e instanceof Error ? e.message : 'Failed to connect to server'
   } finally {
@@ -328,6 +278,33 @@ async function handleSubmit() {
 .start-button:disabled:hover {
   background-color: var(--color-wood-light);
   box-shadow: none;
+}
+
+.party-sheet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+.party-sheet dt {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--color-ink-light);
+}
+
+.party-sheet dd {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+}
+
+.companions {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-ink-light);
 }
 
 .field-error {

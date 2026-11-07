@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: the Ship Canal flooded at the Ballard Locks: the concrete lock chambers glowing with violet light like two portal gates, water pouring between them, floating homes on cedar log floats swaying on the canal, Craftsman bungalows with deep porches along the bank, brick brewery warehouses in Ballard behind, rain and sodium streetlights. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "7a60f19b1c23559a03613d63f3f5e15c15f674f4c87a1bde607d9ee10e56c058",
+ "auth": "REDACTED",
+ "output_sha256": "ae0d7019e9d95fa048344f5ed06669adc9eda8a2b58e975589cabcf41a14227d",
+ "revised_prompt": null
+}

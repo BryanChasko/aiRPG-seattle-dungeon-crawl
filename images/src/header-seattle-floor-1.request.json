@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: the Pier 59 Collapse: the shattered tanks of an aquarium pavilion folded into tide pools, broken thick acrylic glass, wet timber pier pilings crusted with barnacles, purple and green sea anemones, sheets of bright green sea lettuce on the logs and rocks, a single glowing violet notification box hovering over the largest tide pool. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "4430990ed0f27392540a4e95889db701618007069544f7f5786f804bf0762e2c",
+ "auth": "REDACTED",
+ "output_sha256": "309f6fde027d3412faaababb823201ff9186ab9affb00cecf8b1989a1e58b310",
+ "revised_prompt": null
+}

@@ -90,7 +90,7 @@ The CDK bootstrap stack: on the first deployment, the CLI prepared the region fo
 
 ## Local files
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Delete the knowledge base and .agent/, and send characters.json back to the way it shipped. Your Crawlers will not mind. Your Crawlers were JSON. Cordula and Barnaby stay. They always stay."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Delete the knowledge base and .agent/, and send characters.json back to the way it shipped. The party will re-register. The party always comes back."
 
 Everything below is generated during the workshop and gitignored, delete it freely:
 
@@ -98,7 +98,7 @@ Everything below is generated during the workshop and gitignored, delete it free
 - `7_strands_harness/.agent/`: the Strands harness sessions and memory
 - `.venv/` at the repository root, if you no longer need the environment
 
-`5_a2a_integration/agents/character_agent/characters.json` ships with the repository, seeded with Cordula and Barnaby. Restore it to drop the Crawlers you registered:
+`5_a2a_integration/agents/character_agent/characters.json` ships with the repository, empty. Restore it to clear the party's Floor 5 registration:
 
 ```bash
 git checkout -- 5_a2a_integration/agents/character_agent/characters.json
@@ -118,7 +118,7 @@ Loot you're keeping:
 - Deploying the whole party to Amazon Bedrock AgentCore, with the characters, the rules and the conversation in managed services
 - Designing a LitRPG System layer by layer: voice, outside knowledge, math, fair dice, rules, the dance-off loop, the HUD, consequence and a persistent world
 
-Now go build your own crawl: you've learned the fundamentals. Fork the [world bible](world/README.md), move the dungeon to your own city, and let its people and its plants set the rules.
+Now go build your own crawl: you've learned the fundamentals. Fork the [world guide](world/README.md), move the dungeon to your own city, and let its people and its plants set the rules.
 
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**

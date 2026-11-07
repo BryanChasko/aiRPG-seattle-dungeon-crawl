@@ -30,5 +30,5 @@ dice_roller = Agent(
     When rolling ability scores, remember the traditional method: roll 4d6, drop the lowest die."""
 )
 
-dice_roller("Help me register a new Crawler for the dungeon under Seattle! Roll the strength, wisdom, charisma and intelligence ability scores using the 4d6 drop lowest method.")
+dice_roller("Show the audience how the System rolled Cordula's sheet on day one: roll strength, wisdom, charisma and intelligence with the 4d6 drop lowest method.")
 

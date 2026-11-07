@@ -12,7 +12,7 @@ Welcome, Crawler, to the dungeon. This workshop takes you from your first agent 
 
 The crawl follows Cordula "Core" Vance, a Marine Corps Reserve crew chief who patrols the Sound by kayak, and Barnaby, the uplifted Giant Pacific Octopus who rides on her back in a water tank and leads the party, with Shelly the geoduck and Chonks the spiny lumpsucker. It is nonlethal by design: conflict is a dance-off or a stealthy way around one, and a Crawler who loses is Benched, never killed.
 
-- [World bible](world/README.md): everything the agents say about the world comes from these pages
+- [World guide](world/README.md): everything the agents say about the world comes from these pages
 - [The System](world/the-system.md): the LitRPG design, one layer per workshop floor
 - [The Cast](world/cast.md) and [Seattle, Under the Sound](world/seattle.md)
 - [The Crawl Handbook](world/crawl-handbook/): the rules, and the Rules Agent's knowledge base
@@ -94,7 +94,7 @@ Everything you need to install (Python, uv, the repository) is covered in Floor 
 ### The Rules of the Crawl
 
 - The System AI: the omniscient, slightly unhinged dungeon administrator tracking your code output, your syntax errors and your desperate attempts to pass `uv sync`
-- The Crawlers: you. You enter soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
+- The Crawlers: Cordula and Barnaby, played by you, with Shelly and Chonks along as companions. You enter soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
 - The Loot Boxes: every floor you clear drops an achievement box. Write a clean loop, earn a Bronze Box. Burn your token limit on an accidental infinite loop, earn a Desperation Box
 - The Audience: billions of alien viewers. They are not on your side. Neither are the sponsors
 

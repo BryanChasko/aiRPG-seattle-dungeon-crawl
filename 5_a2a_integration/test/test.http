@@ -23,6 +23,14 @@ POST http://0.0.0.0:8009/inquire
 POST http://0.0.0.0:8009/inquire
 
 {
+    "question": "Register the party with the System: Cordula Vance and Barnaby."
+}
+
+###
+
+POST http://0.0.0.0:8009/inquire
+
+{
     "question": "What are Barnaby's Dexterity and Mana?"
 }
 
@@ -31,15 +39,7 @@ POST http://0.0.0.0:8009/inquire
 POST http://0.0.0.0:8009/inquire
 
 {
-    "question": "Register a new Crawler named Rosa, pronouns they/them, a Harbor Seal Ferry Engineer."
-}
-
-###
-
-POST http://0.0.0.0:8009/inquire
-
-{
-    "question": "Cordula Vance (she/her), a Human (Seattle Native) Amphibious Breacher, and Barnaby (he/him), her octopus party leader, just came through the collapse at Pier 59. Describe the surroundings with real Puget Sound plants and create an atmosphere the player can bounce off of. Don't make more than 100 words."
+    "question": "Cordula Vance (she/her), a Human (Seattle Native) Amphibious Breacher, and Barnaby (he/him), her octopus party leader, just came through the collapse at Pier 59 with Shelly and Chonks. Describe the surroundings with real Puget Sound plants and create an atmosphere the player can bounce off of. Don't make more than 100 words."
 }
 
 ###
@@ -55,5 +55,5 @@ POST http://0.0.0.0:8009/inquire
 POST http://0.0.0.0:8009/inquire
 
 {
-    "question": "Tell me about all the characters"
+    "question": "Tell me about the whole party"
 }

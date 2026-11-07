@@ -319,7 +319,7 @@ curl -X POST http://0.0.0.0:8009/inquire \
   -d '{"question": "Cordula challenges the Quarterly Close Accountant to a dance-off. Run round one."}'
 ```
 
-Then open the Floor 6 web interface, fill in your character and enter `http://127.0.0.1:8009` as the server URL, as in Floor 6. Every turn now travels from your browser to the proxy, to the Narrator runtime, and from there to the three other bricks. Stop the proxy and start it again: the campaign picks up where you left it.
+Then open the Floor 6 web interface, pick who speaks for the party and enter `http://127.0.0.1:8009` as the server URL, as in Floor 6. The proxy reads the sheets you registered in the cloud memory in 8.2. Every turn now travels from your browser to the proxy, to the Narrator runtime, and from there to the three other bricks. Stop the proxy and start it again: the campaign picks up where you left it.
 
 ## Part 4: See What Your Agents Do
 

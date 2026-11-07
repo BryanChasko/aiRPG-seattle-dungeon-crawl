@@ -111,7 +111,7 @@ Once TODOs are completed, run your script:
 python agent_with_dice_roll_tool.py
 ```
 
-The system prompt in the file turns the agent into Lady Luck, the System's croupier subroutine, who helps register new Crawlers for the dungeon under Seattle. The script asks her to roll four ability scores (strength, wisdom, charisma and intelligence) for a new character with the 4d6-drop-lowest method: for each ability, roll four six-sided dice and keep the three highest. That is four tool calls, one per ability, each with `faces=6, count=4, drop_lowest=1`: sixteen dice in total, all rolled by your tool, which also drops the lowest and adds up the rest.
+The system prompt in the file turns the agent into Lady Luck, the System's croupier subroutine, who rolls every die on the broadcast. The script asks her to show the audience how the System rolled Cordula's sheet on day one: four ability scores (strength, wisdom, charisma and intelligence) with the 4d6-drop-lowest method: for each ability, roll four six-sided dice and keep the three highest. That is four tool calls, one per ability, each with `faces=6, count=4, drop_lowest=1`: sixteen dice in total, all rolled by your tool, which also drops the lowest and adds up the rest.
 
 Watch the agent in action:
 

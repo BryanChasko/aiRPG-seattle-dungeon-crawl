@@ -154,9 +154,9 @@ You should see Uvicorn running on `http://127.0.0.1:8000`. Open `http://127.0.0.
 
 ## Part 2: Setting Up the Character Agent
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The Character Agent is the registration desk. Every new Crawler gets ability scores, a species, pronouns, level 1, a starter kit and 10 Ferry Tokens. Groove and Mana are computed, never chosen. The rain shell is not included. The rain shell is never included."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The Character Agent is the party's registration desk. Cordula and Barnaby get their sheets stamped, Groove and Mana computed, a starter kit and 10 Ferry Tokens each. The companions get no paperwork. Shelly has filed a complaint. The rain shell is not included. The rain shell is never included."
 
-The Character Agent manages character creation and lookup. A character sheet holds a name, a species (Human (Seattle Native), Uplifted Giant Pacific Octopus, Harbor Seal, Banana Slug and others, see [species](world/crawl-handbook/08-species.md)), pronouns, a class, six ability scores and the two derived stats the code computes from them: Groove (10 + 2 x Constitution modifier + level) and Mana (5 + Intelligence modifier + Wisdom modifier). Pronouns are whatever the player gives; when none are given the sheet says they/them, and the agent never guesses from a name. The database already holds the two featured Crawlers, Cordula Vance and Barnaby. The agent comes with three pre-built tools:
+The Character Agent manages the party's character sheets. You play as a set party: Cordula Vance and Barnaby are the two Crawlers, and Shelly and Chonks ride along as companions, with no sheet of their own. A sheet holds a name, a species (see [species](world/crawl-handbook/08-species.md)), pronouns, a class, six ability scores and the two derived stats the code computes from them: Groove (10 + 2 x Constitution modifier + level) and Mana (5 + Intelligence modifier + Wisdom modifier). The registry starts empty: in Part 4 the Narrator registers the party with the scores from [the cast](world/cast.md). The agent comes with three pre-built tools:
 
 - `create_character`: creates new characters with stats
 - `find_character_by_name`: looks up characters by name
@@ -307,7 +307,7 @@ You should see Uvicorn running on `http://127.0.0.1:8009`. Four terminals are no
 
 ## Part 4: Test the System
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Four curl commands: a rules question, a new Crawler, a lookup on the party leader, and a dance-off against the Quarterly Close Accountant. Survive all four and the party is formed.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Four curl commands: a rules question, registering the party, a lookup on the party leader, and a dance-off against the Quarterly Close Accountant. Survive all four and the party is formed.
 
 At this point four terminals should be running:
 
@@ -330,10 +330,10 @@ curl -X POST http://0.0.0.0:8009/inquire \
 ```
 
 ```bash
-# Register a new Crawler (the Narrator rolls the six ability scores first)
+# Register the party (the Narrator passes the cast scores, the Character Agent computes the rest)
 curl -X POST http://0.0.0.0:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "Register a new Crawler named Rosa, pronouns they/them, a Harbor Seal Ferry Engineer."}'
+  -d '{"question": "Register the party with the System: Cordula Vance and Barnaby."}'
 ```
 
 ```bash
@@ -350,7 +350,7 @@ curl -X POST http://0.0.0.0:8009/inquire \
   -d '{"question": "Cordula challenges the Quarterly Close Accountant to a dance-off at the Pier 59 collapse. Run round one."}'
 ```
 
-Watch the four terminals while a request runs. In the Narrator terminal the tool calls appear in order: `a2a_client` discovering the agent cards, then `send_message` to the Rules Agent or the Character Agent, or `roll_dice` for the dice. The agent you asked logs the question in its own terminal, and the dice server prints a `DICE ROLL` line for every roll: six `4d6 drop 1` lines before Rosa is registered, two `1d20` lines for each dance-off round. The answer you get back is JSON shaped like `StoryOutput`: `response`, `actions_suggestions`, `details` and `dice_rolls`. Barnaby's sheet should come back with Dexterity 18 and Mana 11: the Narrator read it from the Character Agent instead of inventing it.
+Watch the four terminals while a request runs. In the Narrator terminal the tool calls appear in order: `a2a_client` discovering the agent cards, then `send_message` to the Rules Agent or the Character Agent, or `roll_dice` for the dice. The agent you asked logs the question in its own terminal, and the dice server prints a `DICE ROLL` line for every roll: none while the party registers (the Narrator passes the scores from the cast), two `1d20` lines for each dance-off round. The Character Agent terminal shows two `New Crawler registered` lines, and the sheets it returns carry Groove 17 and Mana 8 for Cordula, Groove 11 and Mana 11 for Barnaby: computed by the code, not the model. The answer you get back is JSON shaped like `StoryOutput`: `response`, `actions_suggestions`, `details` and `dice_rolls`. Barnaby's lookup should come back with Dexterity 18 and Mana 11: the Narrator read it from the Character Agent instead of inventing it.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 5: RULES, SHEETS AND THE CORE LOOP.** This floor is where the game becomes a game. The rules live in a knowledge base the Rules Agent searches, so the Narrator cites them instead of improvising. The character sheet lives with the Character Agent, which computes Groove and Mana from the ability scores so no model can hand a Crawler extra stamina. The dance-off is the core loop: a Move Call, two rolls, a winner, Groove lost, a Final Beat when it is level. Every stat has a job in it, and nobody gets hurt. `StoryOutput` is the notification format the HUD will render on Floor 6. See [The System](world/the-system.md#6-conflict-dance-offs-and-stealth-never-killing) and the [Crawl Handbook](world/crawl-handbook/).
 

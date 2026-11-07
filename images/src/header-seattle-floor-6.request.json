@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: the Seattle Underground beneath Pioneer Square turned into an arena dance floor: dripping old brick storefront arches, glowing purple sidewalk glass prisms in the ceiling, a wet checkerboard dance floor lit by violet and orange stage spotlights, and in the shadows at the back the huge concrete Fremont Troll sculpture with one eye, clutching a real Volkswagen Beetle, watching the floor. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "6c3d2a436622e925ea2d2ebfec310dca78291bf23f86d4c54b21a36bd211d889",
+ "auth": "REDACTED",
+ "output_sha256": "ccfae6b76b0ade6d7d2a2f8ec7e88bb81982b6969e7dbbf6805ede9168fe1609",
+ "revised_prompt": null
+}

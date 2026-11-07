@@ -6,7 +6,7 @@ _"Roll for Initiative... in Python!"_
 
 A hands-on workshop that teaches the [Strands Agents SDK](https://strandsagents.com/) by building the System: the AI that runs a LitRPG dungeon crawl under Seattle. You build one agent first, then tools, an MCP server, remote agents over A2A, a web interface, the same system rebuilt with Strands harness, and finally the whole party deployed to Amazon Bedrock AgentCore. Each floor also adds one layer of the game's design, so by the end you have built the agents and the LitRPG they run.
 
-The crawl stars Cordula "Core" Vance, a Marine Corps Reserve crew chief who patrols the Puget Sound by kayak, and Barnaby, the uplifted Giant Pacific Octopus who rides on her back and leads the party. Conflict is a dance-off, opponents are accountants, investment bankers and developer advocates, and nobody dies: losers get Benched. The lore and the rules live in the [world bible](workshop/world/README.md).
+The crawl stars Cordula "Core" Vance, a Marine Corps Reserve crew chief who patrols the Puget Sound by kayak, and Barnaby, the uplifted Giant Pacific Octopus who rides on her back and leads the party. You play as this party. Conflict is a dance-off, opponents are accountants, investment bankers and developer advocates, and nobody dies: losers get Benched. The lore and the rules live in the [world guide](workshop/world/README.md).
 
 **The instructions live in this repository: [workshop/](workshop/README.md).** The System AI will narrate them. This repository holds the code you complete along the way: each floor folder contains files with `# TODO` markers that the workshop walks you through.
 
@@ -43,7 +43,7 @@ Complete the floors in order: each one reuses what the previous one built. Floor
 
 ## The World
 
-- [World bible](workshop/world/README.md): where everything the agents say about the world comes from
+- [World guide](workshop/world/README.md): where everything the agents say about the world comes from
 - [The System](workshop/world/the-system.md): the LitRPG design, mapped to the floor that builds each layer
 - [The Cast](workshop/world/cast.md): Cordula, Barnaby, Shelly the geoduck and Chonks the spiny lumpsucker
 - [Seattle, Under the Sound](workshop/world/seattle.md): whose land this is, the eight dungeon floors and the Puget Sound plants and habitats they are built from

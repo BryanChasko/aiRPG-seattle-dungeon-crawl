@@ -59,7 +59,7 @@ describe('Navigation Integration', () => {
   })
 
   describe('Character creation → navigation to /game/:characterName', () => {
-    it('navigates to /game/Cordula after successful character creation', async () => {
+    it('navigates to /game/Barnaby after the party enters the dungeon', async () => {
       const pinia = createPinia()
       setActivePinia(pinia)
       const router = createTestRouter(pinia)
@@ -71,8 +71,8 @@ describe('Navigation Integration', () => {
             json: () =>
               Promise.resolve({
                 response: {
-                  response: 'Welcome, brave adventurer!',
-                  actions_suggestions: ['Look around', 'Talk to innkeeper'],
+                  response: 'Welcome to Pier 59, Crawlers.',
+                  actions_suggestions: ['Look around', 'Ask the accountant for a receipt'],
                   details: '',
                   dice_rolls: [],
                 },
@@ -85,9 +85,9 @@ describe('Navigation Integration', () => {
             json: () =>
               Promise.resolve({
                 character_id: '1',
-                name: 'Cordula',
-                character_class: 'Startup Necromancer',
-                species: 'Human (Seattle Native)',
+                name: 'Barnaby',
+                character_class: 'Benthic Dragoon',
+                species: 'Uplifted Giant Pacific Octopus',
                 pronouns: 'he/him',
                 level: 1,
                 experience: 0,
@@ -124,11 +124,8 @@ describe('Navigation Integration', () => {
 
       await flushPromises()
 
-      // Fill in all form fields
-      await wrapper.find('#character-name').setValue('Cordula')
-      await wrapper.find('#pronouns').setValue('he/him')
-      await wrapper.find('#species').setValue('Human (Seattle Native)')
-      await wrapper.find('#character-class').setValue('Startup Necromancer')
+      // Pick who speaks for the party
+      await wrapper.find('#party-member').setValue('Barnaby')
       await wrapper.find('#server-url').setValue('https://example.com')
 
       // Submit the form, then let the 1.5 s closing animation run
@@ -139,13 +136,13 @@ describe('Navigation Integration', () => {
       vi.useRealTimers()
       await flushPromises()
 
-      // Verify navigation to /game/Cordula
-      expect(router.currentRoute.value.path).toBe('/game/Cordula')
+      // Verify navigation to /game/Barnaby
+      expect(router.currentRoute.value.path).toBe('/game/Barnaby')
 
       // Verify the store was updated
       const store = useGameStore(pinia)
       expect(store.serverUrl).toBe('https://example.com')
-      expect(store.characterName).toBe('Cordula')
+      expect(store.characterName).toBe('Barnaby')
       expect(store.isInitialized).toBe(true)
 
       wrapper.unmount()

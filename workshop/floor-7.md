@@ -116,7 +116,7 @@ Ask it something, with curl or with the Floor 6 web interface:
 ```bash
 curl -X POST http://127.0.0.1:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "Register a new Crawler named Mae, pronouns she/her, a Sea Otter Coffee Alchemist. Roll her ability scores."}'
+  -d '{"question": "Look up the party and tell me Cordula'\''s Groove before we head into the Ship Canal."}'
 ```
 
 Then stop the server (Ctrl+C), start it again, and ask:
@@ -124,7 +124,7 @@ Then stop the server (Ctrl+C), start it again, and ask:
 ```bash
 curl -X POST http://127.0.0.1:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "Where did we stop last time, and what is my character called?"}'
+  -d '{"question": "Where did we stop last time, and what was Cordula'\''s Groove?"}'
 ```
 
 Where did the campaign go between the two runs? Look at the `7_strands_harness/.agent/` folder that appeared next to the file: this is where the harness keeps everything a session needs to survive a restart. Under `sessions/session/seattle-campaign/`, the id you chose in Step 5, `snapshot_latest.json` holds the whole conversation, every message exchanged with the Narrator, plus its system prompt and model state. At start-up the harness reads the snapshot for that id and the agent picks up where it stopped. The folder is gitignored, so it stays on your machine. Long-term memory, the facts the harness distils about the player across campaigns, lives in `.agent/memory` the same way, see "what memory does by default".
