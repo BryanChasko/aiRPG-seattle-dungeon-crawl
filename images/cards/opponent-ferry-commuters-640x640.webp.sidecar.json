@@ -1,0 +1,39 @@
+{
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ],
+ "bytes": 83104,
+ "file": "opponent-ferry-commuters-640x640.webp",
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "b483a5890dc3efaf6a3d18b2843f2adb2fa7232fc833264dcbcdb70d41a56305",
+  "size": "1024x1024"
+ },
+ "sha256": "8707fd82a52796100d28bd4faef66d902e24084eb0498069f4e8f1a33f5fce46",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-opponent-ferry-commuters.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/card-opponent-ferry-commuters.png",
+  "raw_sha256": "e9f5e173f3b7785608debfc3be206ec1cdbc93dcdb03bef3473c99ab7f009cc4",
+  "request": "images/src/card-opponent-ferry-commuters.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ]
+}

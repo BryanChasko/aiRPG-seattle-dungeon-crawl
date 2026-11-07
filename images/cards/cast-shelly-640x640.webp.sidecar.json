@@ -1,0 +1,39 @@
+{
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ],
+ "bytes": 76230,
+ "file": "cast-shelly-640x640.webp",
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "916911b08af49c3977fcb54c5588919430553cdf1a799b22a713de77f0653650",
+  "size": "1024x1024"
+ },
+ "sha256": "161be3685c3520e4a21726a98107e60395fea51581ef01b35e36a6c9268e1fee",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-cast-shelly.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/card-cast-shelly.png",
+  "raw_sha256": "16b78a03176096bfa56bc8795d3c7d5dd20fd79306fcdcc6b7c3e7d3aa00b3f0",
+  "request": "images/src/card-cast-shelly.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ]
+}

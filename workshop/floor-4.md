@@ -45,7 +45,7 @@ Import the `FastMCP` class (the `random` and `logging` modules are already impor
 # TODO: Step 2 - Add the decorator to expose roll_dice as an MCP tool
 ```
 
-Decorate `roll_dice` with `@mcp.tool()`. This is the Floor 3 move again: there `@tool` turned the function into a tool for one agent, here `@mcp.tool()` (note the parentheses, it is called) registers it on the server for any MCP client. The function and its docstring are unchanged, so FastMCP builds the same specification Strands built in Floor 3, name, description and schema, and sends it over the network to whoever connects. See the documentation for an example.
+Decorate `roll_dice` with `@mcp.tool()`. This is the Floor 3 move again: there `@tool` turned the function into a tool for one agent, here `@mcp.tool()` (note the parentheses, it is called) registers it on the server for any MCP client. The function and its docstring are unchanged, so FastMCP builds the specification from the same name, the same parameters and the same docstring, and sends it over the network to whoever connects. One difference shows up when you compare: Strands moved the `Args:` lines into each parameter's description, while FastMCP keeps the whole docstring, `Args:` included, as the tool description. The model gets the same facts either way. See the documentation for an example.
 
 ### Step 3: Choose the Transport
 
@@ -89,7 +89,7 @@ Import `MCPClient` (`Agent` is already imported), then create an `MCPClient` tha
 # TODO: Step 2 - Add the MCP tool to the narrator agent
 ```
 
-Pass `mcp_dice_client` itself in `tools=[...]`. No `with` block is needed: `MCPClient` is a tool provider, so when the agent receives it this way Strands manages the connection, opening it on first use to list the tools and closing it when the agent shuts down. This is the managed integration the documentation recommends. The `with mcp_client:` form shown on the transports page is the manual variant, only required when you call `list_tools_sync()` or `call_tool_sync()` yourself.
+Pass `mcp_dice_client` itself in `tools=[...]`. No `with` block is needed: `MCPClient` is a tool provider, so when the agent receives it this way Strands manages the connection, opening it as soon as the agent is created to list the tools and closing it when the agent shuts down. That is why the server must already be running when you start the client: without it, creating the agent fails with `MCPClientInitializationError`. This is the managed integration the documentation recommends. The `with mcp_client:` form shown on the transports page is the manual variant, only required when you call `list_tools_sync()` or `call_tool_sync()` yourself.
 
 ### Step 3: Launch the Client
 

@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy character card illustration, square, single subject centered with generous margin, waist-up or full body, high contrast, sharp detail, obsidian black and slate grey background with deep Puget Sound teal and sea-glass green, neon magenta-violet System rim light, warm sodium-orange accent light, rainy Pacific Northwest atmosphere, darker edges. Friendly, funny, game-show energy, never menacing, no weapons. Subject: a Ferry-Line Commuter Horde, a crowd of damp commuters in rain shells holding coffee cups and backpacks, of many ages and backgrounds, shuffling in a synchronized line dance on a ferry ramp in the rain, a green and white Washington State ferry behind them. A blank glowing violet interface frame edge at the card border, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "b483a5890dc3efaf6a3d18b2843f2adb2fa7232fc833264dcbcdb70d41a56305",
+ "auth": "REDACTED",
+ "output_sha256": "e9f5e173f3b7785608debfc3be206ec1cdbc93dcdb03bef3473c99ab7f009cc4",
+ "revised_prompt": null
+}
