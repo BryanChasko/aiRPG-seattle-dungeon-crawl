@@ -1,0 +1,39 @@
+{
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ],
+ "bytes": 91330,
+ "file": "boss-earnings-call-640x640.webp",
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "7e78e1a4e972614f324ef8c9c0e51ddee93b5f8a2bcae5978d74aa16c21690f2",
+  "size": "1024x1024"
+ },
+ "sha256": "50481d9b3d4e6142b8adf8a8e17f0fb61c116ae8a1f31957f7c74887fdebf536",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-boss-earnings-call.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/card-boss-earnings-call.png",
+  "raw_sha256": "6b586b2d29a9dd8f75817554f76f7b52aaf69fe3eeb88bee035eb093528b7da1",
+  "request": "images/src/card-boss-earnings-call.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ]
+}

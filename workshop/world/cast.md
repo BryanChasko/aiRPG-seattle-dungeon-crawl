@@ -1,5 +1,14 @@
 # The Cast: Cordula, Barnaby, Shelly and Chonks
 
+<table>
+<tr>
+<td><img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula Vance grinning in an orange and black drysuit and float vest, a water tank on her back, holding a black kayak paddle upright like a color-guard staff" width="160"></td>
+<td><img src="../../images/cards/cast-barnaby-640x640.webp" alt="Barnaby, a reddish-orange Giant Pacific Octopus with crimson and white patterns, arms raised inside a clear backpack tank" width="160"></td>
+<td><img src="../../images/cards/cast-shelly-640x640.webp" alt="Shelly the geoduck, a pale oblong clam shell half buried in sand among eelgrass, puffing a soft cloud of sea mist, a carabiner clipped to the shell" width="160"></td>
+<td><img src="../../images/cards/cast-chonks-640x640.webp" alt="Chonks, a small round green spiny lumpsucker covered in bumpy tubercles with big black eyes, stuck to a black forearm guard" width="160"></td>
+</tr>
+</table>
+
 > **System AI:** "Most parties enter the dungeon as a panicking human and a confused pet. This one entered as a Marine Corps crew chief, a Ph.D.-level escape artist with eight arms, a clam that will not be moved, and a fish shaped like an angry golf ball. The ratings have never been higher."
 
 ```

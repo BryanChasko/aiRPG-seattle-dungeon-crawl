@@ -1,0 +1,39 @@
+{
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ],
+ "bytes": 60484,
+ "file": "boss-regional-director-640x640.webp",
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "1674cf331f57fef0477662f68e4ff40a8b816ba4048ca0aaee554326094e1bfd",
+  "size": "1024x1024"
+ },
+ "sha256": "293592909be3ea09ef84df7f4c273c2abd51a5144e92aa7a47af0c8b287094b3",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-boss-regional-director.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/card-boss-regional-director.png",
+  "raw_sha256": "6f30a817bc8a26b4ab54a352a828e8e3d0d23347657e697ed8f8086fd0b1618a",
+  "request": "images/src/card-boss-regional-director.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ]
+}

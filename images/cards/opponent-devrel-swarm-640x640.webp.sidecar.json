@@ -1,0 +1,39 @@
+{
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ],
+ "bytes": 86804,
+ "file": "opponent-devrel-swarm-640x640.webp",
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "2e9269d445a5b4b54e35b37df54b275a4feccdc09ff25addf658d7faa8705bbc",
+  "size": "1024x1024"
+ },
+ "sha256": "91dd75e0e35fdaa5b1032990f005ed1e1533e70f93c9754abaf25f927788948e",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-opponent-devrel-swarm.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/card-opponent-devrel-swarm.png",
+  "raw_sha256": "e03b4da0b6e70413ce052ab9b1439798a03988255a1d58e9c40f09bbb30c953b",
+  "request": "images/src/card-opponent-devrel-swarm.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ],
+ "bytes": 92212,
+ "file": "opponent-tourist-pod-640x640.webp",
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "d1929fee18939c3d54346cea86096d2fd087c4741a4f60157a3d08d94b311846",
+  "size": "1024x1024"
+ },
+ "sha256": "c141bb216a2f4f2a64c4a8c128f99ad12f3bb3ca21323181a327626a248201ae",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-opponent-tourist-pod.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/card-opponent-tourist-pod.png",
+  "raw_sha256": "89b1471850682a27cecf947fc0446b2240b891718e1108a75eb23d3ae3928934",
+  "request": "images/src/card-opponent-tourist-pod.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+ },
+ "tools": {
+  "pillow": "12.2.0",
+  "python": "3.12.3"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ]
+}

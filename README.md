@@ -49,6 +49,10 @@ Complete the floors in order: each one reuses what the previous one built. Floor
 - [Seattle, Under the Sound](workshop/world/seattle.md): whose land this is, the eight dungeon floors and the Puget Sound plants and habitats they are built from
 - [The Crawl Handbook](workshop/world/crawl-handbook/): the rules, and the knowledge base the Rules Agent searches
 
+## Stuck? Ask the System
+
+[`study/ask_the_system.py`](study/README.md) is a study companion built with Strands: ask it about any floor, TODO, error or Strands API, and it answers from this repository and the Strands API reference, with citations. It gives hints before answers.
+
 ## Branches
 
 - `main`: the skeleton you clone, with `# TODO` markers to fill in.
@@ -68,7 +72,11 @@ uv sync --group dev
 uv run pytest tests/
 ```
 
-They cover the Floor 5 A2A servers: module imports, the per-context `agent_factory` isolation, and the agent card served over HTTP. The web interface has its own suite in `web/` (`npm ci`, then `npx vitest run`).
+They cover every floor without calling a model or AWS: the agent each floor builds, its tools and their specs, the dice math, the MCP server, the Floor 5 A2A servers (module imports, the per-context `agent_factory` isolation, the agent card served over HTTP), Groove and Mana, the handbook knowledge base, the harness options, and the Floor 8 memory records, retrieval and entrypoint. The web interface has its own suite in `web/` (`npm ci`, then `npx vitest run`). [workshop/coverage.md](workshop/coverage.md) maps every exercise of the original workshop to the floor and the test that covers it.
+
+## Credits
+
+This crawl is built on *Once Upon Agentic AI*, the AWS sample workshop that first taught the Strands Agents SDK through a role-playing game. Every one of its exercises is still here; the coverage page shows where.
 
 ## Contributing
 

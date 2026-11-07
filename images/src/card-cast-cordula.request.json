@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy character card illustration, square, single subject centered with generous margin, waist-up or full body, high contrast, sharp detail, obsidian black and slate grey background with deep Puget Sound teal and sea-glass green, neon magenta-violet System rim light, warm sodium-orange accent light, rainy Pacific Northwest atmosphere, darker edges. Friendly, funny, game-show energy, never menacing, no weapons. Subject: Cordula, an athletic woman in her early thirties, confident grin, dark hair tied back, in a high-visibility orange and black drysuit, float vest and neoprene boots, a military MOLLE load frame on her back carrying a clear water-filled backpack tank, holding a matte black touring kayak paddle with smooth rounded blunt blades upright like a color-guard staff. A blank glowing violet interface frame edge at the card border, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "d0b344597e72b9c6a8c2dfc8a4c54a47a4361b205931375d06c27ec2972335d1",
+ "auth": "REDACTED",
+ "output_sha256": "8ae5d60d588942dccde3709b470ad63dc3520260f157ca8d1abb9966cbed40cb",
+ "revised_prompt": null
+}
