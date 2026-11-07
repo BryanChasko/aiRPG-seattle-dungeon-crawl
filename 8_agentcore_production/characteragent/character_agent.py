@@ -46,11 +46,17 @@ memory = boto3.client("bedrock-agentcore")
 
 def save_character(record: dict) -> None:
     # TODO: Step 1 - Save the record as a memory record in the namespace /characters/<character_id>
-    pass
+    memory.batch_create_memory_records(memoryId=MEMORY_ID, records=[{
+        "requestIdentifier": record["character_id"],
+        "namespaces": [f"/characters/{record['character_id']}"],
+        "content": {"text": json.dumps(record)},
+        "timestamp": datetime.now(timezone.utc),
+    }])
 
 def load_characters() -> list[dict]:
     # TODO: Step 2 - List the memory records under the namespace path /characters/ and decode their JSON content
-    pass
+    pages = memory.get_paginator("list_memory_records").paginate(memoryId=MEMORY_ID, namespacePath="/characters/")
+    return [json.loads(r["content"]["text"]) for page in pages for r in page["memoryRecordSummaries"]]
 
 @tool
 def find_character_by_name(name: str) -> dict:
@@ -131,7 +137,7 @@ def create_character(
     """Create a new character and save it to the database.
 
     Use it once per new character, after the ability scores have been decided
-    (roll them with the 4d6-drop-lowest method first). Every new character starts
+    (the System rolls them with roll_dice before it asks). Every new character starts
     at level 1 with 0 experience, a Crawler Starter Kit (shoes not included) and 100 gold pieces.
 
     Example response:
@@ -193,13 +199,17 @@ def create_agent(context_id: str) -> Agent:
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
         tools=[create_character, find_character_by_name, list_all_characters],
         name="Character Agent",
-        description="Crawler registration for the dungeon: creates characters (ability scores rolled 4d6 drop lowest), stores them, finds and lists them.",
+        description="Crawler registration for the dungeon: creates characters from the ability scores it is given, stores them, finds and lists them.",
         system_prompt="""You are the Character Agent, the System's registration desk for new Crawlers. Use your tools to create, find or list characters.
-When creating a character, roll each ability score with 4d6 drop lowest. Plain text only, no emoji. If details are missing (gender, some scores), choose or roll them yourself instead of asking back.
+When creating a character, use exactly the ability scores in the request: the System rolls them before it asks you, and you never invent a score. Leave out any score the request does not give, and create_character sets it to 10. Plain text only, no emoji. If the gender is missing, choose one yourself instead of asking back.
 Confirm creations like a clerk stamping a form the Crawler will regret signing, and summarize found characters briefly: class, race, key stats.""",
         callback_handler=None,
     )
 
 if __name__ == "__main__":
     # TODO: Step 3 - Serve the create_agent factory with serve_a2a on all interfaces, with the agent card of an A2AServer built on the same factory
-    pass
+    serve_a2a(
+        StrandsA2AExecutor(agent_factory=create_agent, enable_a2a_compliant_streaming=True),
+        agent_card=A2AServer(agent_factory=create_agent).public_agent_card,
+        host="0.0.0.0",
+    )

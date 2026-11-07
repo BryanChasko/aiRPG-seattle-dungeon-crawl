@@ -44,6 +44,17 @@ dependencies = [
     "boto3>=1.40",
 ]
 
+[dependency-groups]
+# Floor 5 checks on the solution branch: agent_factory isolation and the agent cards served over HTTP
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
+
 [tool.uv]
 required-environments = [
 #"sys_platform == 'darwin' and platform_machine == 'x86_64'",

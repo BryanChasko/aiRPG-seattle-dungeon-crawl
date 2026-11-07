@@ -188,7 +188,7 @@ First field of this agent's card, as in Part 1.
 #### Step 3: Add the Description
 
 ```python
-# TODO: Step 3 - Add the description "Crawler registration for the dungeon: creates characters (ability scores rolled 4d6 drop lowest), stores them, finds and lists them." to the agent
+# TODO: Step 3 - Add the description "Crawler registration for the dungeon: creates characters from the ability scores it is given, stores them, finds and lists them." to the agent
 ```
 
 Second field of the card, what the orchestrator will read to pick this agent.
