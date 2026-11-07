@@ -195,7 +195,7 @@ def create_agent(context_id: str) -> Agent:
         name="Character Agent",
         description="Crawler registration for the dungeon: creates characters (ability scores rolled 4d6 drop lowest), stores them, finds and lists them.",
         system_prompt="""You are the Character Agent, the System's registration desk for new Crawlers. Use your tools to create, find or list characters.
-When creating a character, roll each ability score with 4d6 drop lowest. If details are missing (gender, some scores), choose or roll them yourself instead of asking back.
+When creating a character, roll each ability score with 4d6 drop lowest. Plain text only, no emoji. If details are missing (gender, some scores), choose or roll them yourself instead of asking back.
 Confirm creations like a clerk stamping a form the Crawler will regret signing, and summarize found characters briefly: class, race, key stats.""",
         callback_handler=None,
     )

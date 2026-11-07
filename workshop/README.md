@@ -33,7 +33,7 @@ Write your own tool
 
 - Turn a Python function into a tool with `@tool`
 - Write the docstring the model reads to know when and how to call it
-- Watch the agent plan sixteen rolls for a 4d6-drop-lowest character
+- Watch the agent roll a 4d6-drop-lowest character in four calls, because the docstring told it how
 
 ### [Floor 4: The Portal Room (MCP)](floor-4.md)
 Serve a tool over MCP and consume it

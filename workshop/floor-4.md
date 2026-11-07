@@ -93,7 +93,7 @@ Pass `mcp_dice_client` itself in `tools=[...]`. No `with` block is needed: `MCPC
 
 ### Step 3: Launch the Client
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** The sixteen-roll gauntlet again, except every roll now crosses a process boundary. Watch the server terminal and count the DICE ROLL lines. The System already did.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** The four-ability gauntlet again, except every roll now crosses a process boundary. Watch the server terminal and count the DICE ROLL lines. The System already did.
 
 Open a second terminal (the server keeps running in the first one), go to the same folder and run:
 
@@ -101,7 +101,7 @@ Open a second terminal (the server keeps running in the first one), go to the sa
 python narrator_mcp_client.py
 ```
 
-Here is what happens. The client connects to `http://localhost:8002/mcp`, Strands asks the server for its tool list and receives the `roll_dice` specification, the same one you printed in Floor 3, built this time by FastMCP from your docstring. The client sends the same request as Floor 3: Lady Luck rolls four ability scores with 4d6 drop lowest, 16 rolls. The difference is where they happen. Keep an eye on the server terminal: every roll arrives there as a `DICE ROLL: d6 = ...` log line, 16 of them, while the narration appears in the client terminal. Same agent, same tool, but the dice now live in another process.
+Here is what happens. The client connects to `http://localhost:8002/mcp`, Strands asks the server for its tool list and receives the `roll_dice` specification, the same one you printed in Floor 3, built this time by FastMCP from your docstring. The client sends the same request as Floor 3: Lady Luck rolls four ability scores with 4d6 drop lowest. The difference is where they happen. Keep an eye on the server terminal: every call arrives there as a log line such as `DICE ROLL: 4d6 drop 1 = [5, 2, 6, 3] -> 14`, four of them, while the narration appears in the client terminal. Same agent, same tool, but the dice now live in another process.
 
 Once the character is created, you can stop the client. If you plan to continue with Floor 5, keep the server terminal running: the Narrator will roll its dice through this same server.
 
@@ -122,6 +122,6 @@ Loot you're keeping:
 >
 > **[OUTSOURCED YOUR LUCK]**
 >
-> Reward: You received a [Silver Box]. Inside: a FastMCP server, a client that finds it, and sixteen log lines proving the dice roll somewhere your agent is not.
+> Reward: You received a [Silver Box]. Inside: a FastMCP server, a client that finds it, and four log lines proving the dice roll somewhere your agent is not.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Different process, same cruelty. Floor 5 is where your agents start talking to each other. It never ends well for the quiet one."

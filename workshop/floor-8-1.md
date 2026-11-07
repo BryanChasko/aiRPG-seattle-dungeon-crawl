@@ -91,7 +91,7 @@ agentcore invoke call-tool --runtime diceserver --tool roll_dice --input '{"face
 agentcore logs --runtime diceserver --since 15m
 ```
 
-You should find `Starting Dice Roll MCP Server...` and the `DICE ROLL: d20 = ...` line of your call, the same log lines as in Floor 4, written this time by a server running in AWS.
+You should find `Starting Dice Roll MCP Server...` and the `DICE ROLL: 1d20 = [...] -> ...` line of your call, the same log lines as in Floor 4, written this time by a server running in AWS.
 
 ## Part 3: Connect the Narrator (narrator/narrator_orchestrator.py)
 
@@ -171,7 +171,7 @@ cd ../gameprod
 agentcore logs --runtime diceserver --since 15m
 ```
 
-Your rolls are there, for example `DICE ROLL: d20 = 14` followed by `d8 = 4`. You can also play from the Floor 6 web interface: it talks to the Narrator on port 8009, exactly as before.
+Your rolls are there, for example `DICE ROLL: 1d20 = [14] -> 14` followed by `DICE ROLL: 1d8 = [4] -> 4`. You can also play from the Floor 6 web interface: it talks to the Narrator on port 8009, exactly as before.
 
 Keep the `gameprod` project and its deployment: the next sections add the other bricks to it. To remove everything at the end of the workshop, see the [Cleanup](cleanup.md) page.
 

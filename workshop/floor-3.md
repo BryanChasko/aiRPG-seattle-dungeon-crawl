@@ -27,7 +27,7 @@ In Strands, a custom tool is a Python function decorated with special attributes
 
 ## Step 1: Turn Your Function into a Tool
 
-Open `agent_with_dice_roll_tool.py`: it already contains a plain Python function, `roll_dice`, that rolls a die with a given number of faces. Your goal is to turn that function into a tool your agent can call.
+Open `agent_with_dice_roll_tool.py`: it already contains a plain Python function, `roll_dice`, that rolls `count` dice with `faces` faces each, drops the `drop_lowest` lowest ones and returns every die, the dice kept and their total. Your goal is to turn that function into a tool your agent can call.
 
 ```python
 # TODO: Step 1 - Import tool from strands
@@ -52,17 +52,20 @@ Right now `roll_dice` has no docstring at all. Before writing one, look at what 
 ```
 {'name': 'roll_dice',
  'description': 'roll_dice',  # only the function name
- 'inputSchema': {'json': {'properties': {'faces': {'default': 6, 'description': 'Parameter faces',  # only the parameter name
- 'type': 'integer'}}, 'type': 'object'}}}
+ 'inputSchema': {'json': {'properties': {
+     'faces': {'default': 6, 'description': 'Parameter faces', 'type': 'integer'},  # only the parameter names
+     'count': {'default': 1, 'description': 'Parameter count', 'type': 'integer'},
+     'drop_lowest': {'default': 0, 'description': 'Parameter drop_lowest', 'type': 'integer'}},
+   'type': 'object'}}}
 ```
 
-Look at `description`: it contains only the function name, `roll_dice`, and the parameter is described as nothing more than `Parameter faces`. That is all the model will ever know about your tool: it never reads the function's code, it only receives what Strands builds from the name, the docstring and the typed parameters.
+Look at `description`: it contains only the function name, `roll_dice`, and the three parameters are described as nothing more than `Parameter faces`, `Parameter count` and `Parameter drop_lowest`. That is all the model will ever know about your tool: it never reads the function's code, it only receives what Strands builds from the name, the docstring and the typed parameters.
 
 ```python
 # TODO: Step 2 - Write a docstring with the description, an Args section and the return value
 ```
 
-Now write the docstring: a first paragraph saying what the tool does, an `Args:` section describing `faces`, and what it returns, as in the documentation best practices.
+Now write the docstring: a first paragraph saying what the tool does and how to call it for 4d6 drop lowest, an `Args:` section describing `faces`, `count` and `drop_lowest`, and what it returns, as in the documentation best practices.
 
 Tip: LLMs are good at writing tool docstrings. Give them the function and an example of best practices, and let them generate a docstring for you.
 
@@ -71,13 +74,16 @@ Run the script again and compare the printed specification. You should see:
 ```
 {'name': 'roll_dice',
  'description': '...',  # the docstring you added
- 'inputSchema': {'json': {'properties': {'faces': {'default': 6, 'description': '...',  # the Args section of your docstring
- 'type': 'integer'}}, 'type': 'object'}}}
+ 'inputSchema': {'json': {'properties': {
+     'faces': {'default': 6, 'description': '...', 'type': 'integer'},  # the Args section of your docstring
+     'count': {'default': 1, 'description': '...', 'type': 'integer'},
+     'drop_lowest': {'default': 0, 'description': '...', 'type': 'integer'}},
+   'type': 'object'}}}
 ```
 
-The `Args:` section became the description of `faces`, the rest became the description of the tool.
+The `Args:` section became the description of each parameter, the rest became the description of the tool.
 
-Would it work without a docstring? Here, yes: with a name as explicit as `roll_dice` and a single parameter called `faces`, the model manages either way. With a vaguer name or several parameters it would have nothing else to go on, so make the docstring a habit.
+Would it work without a docstring? Not reliably. `faces` is guessable, but nothing in `count` or `drop_lowest` tells the model that 4d6 drop lowest is a single call with `count=4, drop_lowest=1`, or that it should report the `total` instead of adding the dice itself. On Amazon Nova 2 Lite, an earlier design of this tool that rolled one die per call left the model to plan sixteen calls and do the arithmetic, and it skipped rolls and miscounted. Moving the work into the tool and documenting it fixed both.
 
 ## Step 3: Add the Tool to Your Agent
 
@@ -97,7 +103,7 @@ Why this matters:
 
 ## Step 4: Testing Your Tool
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Sixteen rolls. Four abilities, four dice each, drop the lowest. Lady Luck runs the table, and Lady Luck does not do favors.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Four abilities, four dice each, drop the lowest. Four calls, sixteen dice, zero arithmetic by the model. Lady Luck runs the table, and Lady Luck does not do favors.
 
 Once TODOs are completed, run your script:
 
@@ -105,14 +111,14 @@ Once TODOs are completed, run your script:
 python agent_with_dice_roll_tool.py
 ```
 
-The system prompt in the file turns the agent into Lady Luck, the System's croupier subroutine, who helps players create characters for a fantasy role-playing game. The script asks her to roll four ability scores (strength, wisdom, charisma and intelligence) for a new character with the 4d6-drop-lowest method: for each ability, roll four six-sided dice and keep the three highest. That is always 16 rolls (4 abilities x 4 dice), and every single one must go through your tool.
+The system prompt in the file turns the agent into Lady Luck, the System's croupier subroutine, who helps players create characters for a fantasy role-playing game. The script asks her to roll four ability scores (strength, wisdom, charisma and intelligence) for a new character with the 4d6-drop-lowest method: for each ability, roll four six-sided dice and keep the three highest. That is four tool calls, one per ability, each with `faces=6, count=4, drop_lowest=1`: sixteen dice in total, all rolled by your tool, which also drops the lowest and adds up the rest.
 
 Watch the agent in action:
 
 - Analyze the character creation request
-- Plan necessary rolls (4 abilities x 4d6 each)
-- Execute dice rolls using your custom tool
-- Calculate final scores (keep the best 3 dice)
+- Plan one roll per ability (4d6 drop lowest each)
+- Call your tool four times with `faces=6, count=4, drop_lowest=1`
+- Report the four totals the tool returned
 - Return the results
 
 ## Floor Clear
@@ -132,6 +138,6 @@ Loot you're keeping:
 >
 > **[I MADE THIS (SO TO SPEAK)]**
 >
-> Reward: You received a [Silver Box]. Inside: a roll_dice tool that actually works, and the knowledge that sixteen rolls were required to prove it.
+> Reward: You received a [Silver Box]. Inside: a roll_dice tool that actually works, and sixteen dice that rolled exactly where the docstring told the model to roll them.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "You forged a tool. A real one. Floor 4 is where it leaves the house."

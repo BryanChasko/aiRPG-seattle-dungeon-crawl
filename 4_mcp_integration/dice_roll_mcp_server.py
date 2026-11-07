@@ -10,32 +10,40 @@ mcp = FastMCP(
 )
 
 # TODO: Step 2 - Add the decorator to expose roll_dice as an MCP tool
-def roll_dice(faces: int = 6) -> int:
-    """Roll one die with a given number of faces and return the result.
+def roll_dice(faces: int = 6, count: int = 1, drop_lowest: int = 0) -> dict:
+    """Roll one or more dice with the same number of faces, optionally drop the lowest, and total the rest.
 
     Use it every time the game needs a random roll: ability scores, attack rolls,
-    saving throws, damage. Call it once per die; for "4d6 drop lowest", call it
-    four times with faces=6 and discard the lowest result yourself.
+    saving throws, damage. For "4d6 drop lowest", call it once with faces=6,
+    count=4, drop_lowest=1. For a single d20, call it with faces=20.
 
-    Example response: 14
+    Example response: {"rolls": [5, 2, 6, 3], "kept": [5, 6, 3], "total": 14}
 
     Notes:
-        - One die per call: there is no count parameter.
-        - Each roll is independent and uniformly random.
+        - Report the total this tool returns; never add the dice up yourself.
+        - Each die is independent and uniformly random.
 
     Args:
-        faces: Number of faces on the die, 1 or more. Use 20 for a d20, 6 for a d6,
-            100 for a percentile die. Defaults to 6.
+        faces: Number of faces on each die, 1 or more. Use 20 for a d20, 6 for a d6. Defaults to 6.
+        count: How many dice to roll, 1 or more. Defaults to 1.
+        drop_lowest: How many of the lowest dice to discard before totaling, 0 or more
+            and less than count. Defaults to 0.
 
     Returns:
-        An integer between 1 and faces, inclusive.
+        A dict with every die rolled ("rolls"), the dice kept after dropping ("kept"),
+        and their sum ("total").
     """
     if faces < 1:
         raise ValueError("Dice must have at least 1 face")
+    if count < 1 or not 0 <= drop_lowest < count:
+        raise ValueError("Roll at least one die and keep at least one")
 
-    result = random.randint(1, faces)
+    rolls = [random.randint(1, faces) for _ in range(count)]
+    kept = sorted(rolls)[drop_lowest:]
+    result = {"rolls": rolls, "kept": kept, "total": sum(kept)}
 
-    logging.info(f"[SYSTEM] DICE ROLL: d{faces} = {result}")
+    notation = f"{count}d{faces}" + (f" drop {drop_lowest}" if drop_lowest else "")
+    logging.info(f"[SYSTEM] DICE ROLL: {notation} = {rolls} -> {result['total']}")
 
     return result
 

@@ -9,7 +9,7 @@ arcane_scribe = Agent(
     # TODO: Step 2 - Ask for your approval before each tool call with HumanInTheLoop in stdio mode
     system_prompt=f"""You are Kiro the Doomsday Scripter, a crawler whose class treats code as demolition magic.
     When asked to create spells (code), you inscribe them on scrolls (files) in the directory {os.getcwd()}
-    and then cast them, narrating every step as if the scroll might detonate. It will not. Probably."""
+    and then cast them, narrating every step as if the scroll might detonate. It will not. Probably. Plain text only, no emoji."""
 )
 
 response = arcane_scribe("Create a magical scroll that generates the first 10 numbers of the Fibonacci sequence and demonstrate its power!")

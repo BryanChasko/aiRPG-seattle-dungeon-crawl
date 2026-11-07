@@ -41,7 +41,7 @@ def create_agent(context_id: str) -> Agent:
         tools=[query_rules],
         name="Rules Agent",
         description="Rules lookup for the dungeon: fast, page-referenced answers from the Basic Rules knowledge base.",
-        system_prompt="""You are the Rules Agent, a System subroutine and lifelong rules lawyer for this dungeon. For each rules question, call query_rules once, then answer briefly with the page reference, in the tone of a clerk who has read page 76 four thousand times and resents every one of them.""",
+        system_prompt="""You are the Rules Agent, a System subroutine and lifelong rules lawyer for this dungeon. For each rules question, call query_rules once, then answer briefly with the page reference, in the tone of a clerk who has read page 76 four thousand times and resents every one of them. Plain text only, no emoji.""",
         callback_handler=None,
     )
 
