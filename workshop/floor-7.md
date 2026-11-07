@@ -28,9 +28,9 @@ Strands harness (`from strands_harness import create_harness`) is a pre-assemble
 
 Out of the box, `create_harness()` gives you:
 
-| Piece | Default |
+| Piece | What you get |
 |---|---|
-| Model | Claude Opus 5 on Amazon Bedrock, reasoning enabled |
+| Model | the one you pass; this workshop passes Amazon Nova 2 Lite, reasoning off |
 | System prompt | a tuned "contract" (explore before changing, confirm before anything irreversible, verify before done) + your instructions |
 | Tools | shell, read, write, edit, web_fetch, web_search, subagent |
 | Sessions | saved on disk under `.agent/sessions`, resumable by id |
@@ -39,11 +39,11 @@ Out of the box, `create_harness()` gives you:
 
 ## Before You Start
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The harness defaults to Claude Opus 5, a third-party model. The file pins Amazon Nova 2 Lite instead, the model of every other floor, and turns its reasoning off. The System checked your options so you would not have to. You are welcome."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "This crawl runs on one model, Amazon Nova 2 Lite, on every floor. The file pins it in `create_harness` and turns its reasoning off. Never leave the model out: without it, the harness picks one for you, and it is not ours."
 
 The harness reuses the services from Floors 4 and 5. In three terminals, start the dice server (`4_mcp_integration`), the Rules Agent and the Character Agent, exactly as in Floor 5. Stop the Floor 5 orchestrator: the new one takes its place on port 8009, so the web interface from Floor 6 keeps working unchanged.
 
-`strands-harness` is already in the project dependencies: `uv sync` installed it. The file already passes `model="bedrock/us.amazon.nova-2-lite-v1:0"` and `effort="off"` to `create_harness`, as given code above the TODOs: the harness default, Claude Opus 5, is a third-party model, so the Narrator keeps the model of the other floors, Amazon Nova 2 Lite. The harness turns Nova 2 reasoning on and would pick its high level by default, and with A2A calls in the loop a turn can take a minute or more, so `effort="off"` keeps each turn near ten seconds.
+`strands-harness` is already in the project dependencies: `uv sync` installed it. The file already passes `model="bedrock/us.amazon.nova-2-lite-v1:0"` and `effort="off"` to `create_harness`, as given code above the TODOs, so the Narrator runs on Amazon Nova 2 Lite like every other floor. Keep both lines exactly as they are. The harness turns Nova 2 reasoning on and would pick its high level by default, and with A2A calls in the loop a turn can take a minute or more, so `effort="off"` keeps each turn near ten seconds.
 
 ## Step 1: Create the Narrator with create_harness
 
