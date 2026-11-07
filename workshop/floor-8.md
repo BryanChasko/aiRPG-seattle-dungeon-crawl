@@ -2,6 +2,8 @@
 
 [Previous: Floor 7](floor-7.md) | [Dungeon map](README.md) | [Next: Floor 8.1](floor-8-1.md) <!-- floor-nav -->
 
+Files on this floor: [`8_agentcore_production/.env.example`](../8_agentcore_production/.env.example) <!-- floor-files -->
+
 ![Floor 8: Production (AgentCore)](../images/floors/floor-8-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 8. Production. Real AWS resources, real IAM roles, real invoices. This is the part of the crawl where mistakes cost money. Set your region before you do anything else. I mean it."
@@ -21,7 +23,7 @@ The plan. Everything lives in a single AgentCore project named `gameprod`, creat
 | [8.3](floor-8-3.md) The Rules Agent | the Floor 5 A2A agent, its rules in a knowledge base | `rulesagent/` |
 | [8.4](floor-8-4.md) The Narrator in the Cloud | the Floor 5 orchestrator, its conversation in AgentCore Memory | `narrator/`, `ui_proxy/` |
 
-The Narrator (`narrator/narrator_orchestrator.py`) is the one file you come back to in every section: each time a brick moves to the cloud, the Narrator is pointed at it. Its TODOs therefore carry the number of their section (8.1 Step 1, 8.2 Step 1...). The code is the code you already wrote, with a few lines changed. This floor builds on Floors 4 to 6 only: Floor 7 (Strands harness) is not needed.
+The Narrator ([`narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py)) is the one file you come back to in every section: each time a brick moves to the cloud, the Narrator is pointed at it. Its TODOs therefore carry the number of their section (8.1 Step 1, 8.2 Step 1...). The code is the code you already wrote, with a few lines changed. This floor builds on Floors 4 to 6 only: Floor 7 (Strands harness) is not needed.
 
 The code to write is given. Under each TODO, the sections show the code to paste, with the TODO line above it so you can see where it goes; keep the TODO in your file. When a step replaces or deletes code, a Before / After pair shows the change. The explanation under each block says why the code looks the way it does.
 

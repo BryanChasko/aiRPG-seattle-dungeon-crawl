@@ -2,6 +2,8 @@
 
 [Previous: Floor 8](floor-8.md) | [Dungeon map](README.md) | [Next: Floor 8.2](floor-8-2.md) <!-- floor-nav -->
 
+Files on this floor: [`8_agentcore_production/diceserver/dice_roll_mcp_server.py`](../8_agentcore_production/diceserver/dice_roll_mcp_server.py), [`8_agentcore_production/narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py) <!-- floor-files -->
+
 ![Floor 8.1: The Dice Server](../images/floors/floor-8-1-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Brick one. A dice server, a deploy, an IAM-signed client. Everything else keeps running on your machine. Consider it a warm-up. Consider it the last one."
@@ -12,8 +14,8 @@ Take the first brick to production: deploy the Floor 4 dice server to AgentCore 
 
 This section works in two folders of `8_agentcore_production`:
 
-- The dice server (`diceserver/dice_roll_mcp_server.py`), the Floor 4 server, with its `pyproject.toml`
-- The Narrator (`narrator/narrator_orchestrator.py`), the Floor 5 orchestrator
+- The dice server ([`diceserver/dice_roll_mcp_server.py`](../8_agentcore_production/diceserver/dice_roll_mcp_server.py)), the Floor 4 server, with its [`pyproject.toml`](../pyproject.toml)
+- The Narrator ([`narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py)), the Floor 5 orchestrator
 
 ## Part 1: Prepare the Dice Server for the Cloud (diceserver/dice_roll_mcp_server.py)
 
@@ -103,7 +105,7 @@ This is the Floor 5 Narrator. The Rules Agent and the Character Agent are still 
 
 ### Step 1: Read the Dice Server URL from the Environment
 
-The URL of your runtime belongs to your AWS account: it has no place in the code, which you may share or push to a public repository. It goes into a `.env` file instead, a list of `NAME=value` lines that stays on your machine. The floor folder holds a template, `.env.example`; copy it next to itself:
+The URL of your runtime belongs to your AWS account: it has no place in the code, which you may share or push to a public repository. It goes into a `.env` file instead, a list of `NAME=value` lines that stays on your machine. The floor folder holds a template, [`.env.example`](../8_agentcore_production/.env.example); copy it next to itself:
 
 ```bash
 cp ../.env.example ../.env

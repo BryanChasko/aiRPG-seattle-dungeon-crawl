@@ -2,6 +2,8 @@
 
 [Previous: Floor 1](floor-1.md) | [Dungeon map](README.md) | [Next: Floor 3](floor-3.md) <!-- floor-nav -->
 
+Files on this floor: [`2_vended_tools/agent_with_vended_tools.py`](../2_vended_tools/agent_with_vended_tools.py), [`2_vended_tools/bonus_quest.py`](../2_vended_tools/bonus_quest.py) <!-- floor-files -->
+
 ![Floor 2: The Vending Machines](../images/floors/floor-2-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 2. The vending machines are open. Everything on offer ships with the SDK, nothing is free of consequences, and the optional shell tool will run exactly what you approve. Approve with care. The sponsors are hoping you will not."
@@ -16,7 +18,7 @@ Make sure you are at the root of Floor 2 in your terminal:
 cd aiRPG-seattle-dungeon-crawl/2_vended_tools
 ```
 
-Open and modify the `agent_with_vended_tools.py` file.
+Open and modify the [`agent_with_vended_tools.py`](../2_vended_tools/agent_with_vended_tools.py) file.
 
 ## Your Arsenal: Vended Tools
 
@@ -72,7 +74,7 @@ This demonstrates that your agent can autonomously select and use tools to answe
 
 ## Bonus Room: The Multi-Tool Challenge (optional)
 
-Ready to go deeper? Open `2_vended_tools/bonus_quest.py`. Kiro the Doomsday Scripter, a crawler whose class treats code as demolition magic, will write a Fibonacci script to a file and run it: two tools and one safeguard, wired the same way as the main floor. Each step below has two TODOs in the code: the import at the top of the file, and its use in the agent.
+Ready to go deeper? Open [`2_vended_tools/bonus_quest.py`](../2_vended_tools/bonus_quest.py). Kiro the Doomsday Scripter, a crawler whose class treats code as demolition magic, will write a Fibonacci script to a file and run it: two tools and one safeguard, wired the same way as the main floor. Each step below has two TODOs in the code: the import at the top of the file, and its use in the agent.
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Windows users: the `shell` tool runs commands through `sh`, and `file_editor` expects POSIX paths (starting with `/`), so this bonus room does not run on native Windows. To try it on Windows, run it inside WSL (Windows Subsystem for Linux).
 

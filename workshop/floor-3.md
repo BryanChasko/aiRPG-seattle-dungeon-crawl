@@ -2,6 +2,8 @@
 
 [Previous: Floor 2](floor-2.md) | [Dungeon map](README.md) | [Next: Floor 4](floor-4.md) <!-- floor-nav -->
 
+Files on this floor: [`3_custom_tools/agent_with_dice_roll_tool.py`](../3_custom_tools/agent_with_dice_roll_tool.py) <!-- floor-files -->
+
 ![Floor 3: The Crafting Table](../images/floors/floor-3-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 3. Craft your own gear, Crawler. The model never reads your code, only the docstring you write for it. Write a lazy one and watch your agent dance to the wrong song."
@@ -16,7 +18,7 @@ Make sure you are at the root of Floor 3 in your terminal:
 cd aiRPG-seattle-dungeon-crawl/3_custom_tools
 ```
 
-Open and modify the `agent_with_dice_roll_tool.py` file to create an agent capable of rolling dice using a custom tool.
+Open and modify the [`agent_with_dice_roll_tool.py`](../3_custom_tools/agent_with_dice_roll_tool.py) file to create an agent capable of rolling dice using a custom tool.
 
 ## How Custom Tools Work
 

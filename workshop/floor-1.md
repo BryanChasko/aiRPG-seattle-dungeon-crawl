@@ -2,6 +2,8 @@
 
 [Previous: Floor 0](floor-0.md) | [Dungeon map](README.md) | [Next: Floor 2](floor-2.md) <!-- floor-nav -->
 
+Files on this floor: [`1_strands_basics/simple_agent.py`](../1_strands_basics/simple_agent.py) <!-- floor-files -->
+
 ![Floor 1: Agent Summoning](../images/floors/floor-1-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 1, Crawlers. You will now summon a living creature out of a string of English and one function call. The audience has money on the first thing it says. Be kind to it. It will not be kind to you."
@@ -16,7 +18,7 @@ Make sure you are at the root of Floor 1 in your terminal:
 cd aiRPG-seattle-dungeon-crawl/1_strands_basics
 ```
 
-Open and modify the `simple_agent.py` file. You'll complete the TODO comments to create your first AI agent.
+Open and modify the [`simple_agent.py`](../1_strands_basics/simple_agent.py) file. You'll complete the TODO comments to create your first AI agent.
 
 ### How to Work a TODO
 

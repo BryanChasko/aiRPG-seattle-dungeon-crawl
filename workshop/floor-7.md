@@ -2,6 +2,8 @@
 
 [Previous: Floor 6](floor-6.md) | [Dungeon map](README.md) | [Next: Floor 8](floor-8.md) <!-- floor-nav -->
 
+Files on this floor: [`7_strands_harness/narrator_harness.py`](../7_strands_harness/narrator_harness.py) <!-- floor-files -->
+
 ![Floor 7 (Optional): The Armory (Strands harness)](../images/floors/floor-7-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 7. The optional floor. Skip it if you like, Crawler, but the harness comes with sessions, memory and a contract about confirming irreversible actions, which is more than I can say for you."
@@ -18,7 +20,7 @@ Make sure you are at the root of Floor 7 in your terminal:
 cd aiRPG-seattle-dungeon-crawl/7_strands_harness
 ```
 
-Open and modify the `narrator_harness.py` file.
+Open and modify the [`narrator_harness.py`](../7_strands_harness/narrator_harness.py) file.
 
 ## Strands Agents SDK or Strands harness?
 

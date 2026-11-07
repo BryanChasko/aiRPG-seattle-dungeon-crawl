@@ -2,6 +2,8 @@
 
 [Previous: Floor 5](floor-5.md) | [Dungeon map](README.md) | [Next: Floor 7](floor-7.md) <!-- floor-nav -->
 
+Files on this floor: [`web/src/views/NewGameView.vue`](../web/src/views/NewGameView.vue), [`web/src/party.ts`](../web/src/party.ts) <!-- floor-files -->
+
 ![Floor 6: The Arena (Web Interface)](../images/floors/floor-6-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience what you built. Pick who speaks for the party, point it at port 8009, and press Enter. No pressure. Only billions of viewers."
