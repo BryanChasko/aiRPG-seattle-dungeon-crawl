@@ -4,6 +4,10 @@
 
 ![The Exit: Final Cleanup](../images/floors/exit-1200x675.webp)
 
+<!-- cordula-log -->
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, THE EXIT.** We came up on the beach at Alki at dawn, the skyline across the bay and the rain finally easing off. I packed out everything we brought in, the way you do on any patrol: every deployment, every log, every file. Then I set the dry bag down at the waterline and opened it. The Sound was right there. Barnaby looked at the water for a long time. Then he looked at me.
+<!-- /cordula-log -->
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The crawl is over. Stop the servers, tear down the stack, delete the bucket and the log groups. Anything you forget keeps billing you, and I do not forgive invoices."
 
 ## Floor Objective

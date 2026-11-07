@@ -6,6 +6,10 @@ Files on this floor: [`8_agentcore_production/characteragent/character_agent.py`
 
 ![Floor 8.2: The Character Agent](../images/floors/floor-8-2-1200x675.webp)
 
+<!-- cordula-log -->
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 8.2.** Brick two was the registration desk. A desk in the cloud has no drawer to keep papers in, so our sheets needed a home of their own. When the desk restarted and still knew my Constitution score, Barnaby made a sound through the collar I am going to call a laugh.
+<!-- /cordula-log -->
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Brick two. Your characters move into AgentCore Memory, where they will outlive their sessions. This is more than the System offers most Crawlers."
 
 ## Floor Objective

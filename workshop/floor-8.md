@@ -6,6 +6,10 @@ Files on this floor: [`8_agentcore_production/.env.example`](../8_agentcore_prod
 
 ![Floor 8: Production (AgentCore)](../images/floors/floor-8-1200x675.webp)
 
+<!-- cordula-log -->
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 8.** The last floor is the corporate one: glass towers across Lake Washington, lanyards, a Regional Managing Director who wants us gone by end of quarter, and, past all of it, the Tacoma Narrows, where the old giant octopus legend lives. Everything we built so far stops the moment someone closes a laptop. Down here it has to keep running on its own. So we moved it, one piece at a time, into the cloud: the dice, the registration desk, the rule book, the Narrator itself. Barnaby insisted on doing it in order. He has always respected a checklist.
+<!-- /cordula-log -->
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 8. Production. Real AWS resources, real IAM roles, real invoices. This is the part of the crawl where mistakes cost money. Set your region before you do anything else. I mean it."
 
 ## Floor Objective

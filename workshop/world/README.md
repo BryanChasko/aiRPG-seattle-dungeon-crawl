@@ -4,6 +4,7 @@
 
 Everything the agents say about the world comes from these pages. The prompts, the Rules Agent's knowledge base and the art are all built from them.
 
+- [The Story](story.md): the adventure, told by Cordula, floor by floor, with Barnaby waking up one Strands concept at a time.
 - [The System](the-system.md): the LitRPG design guide. Origin, interface, stats, sub-genre, builds, economy, conflict and consequence, mapped to the workshop floor that builds each layer.
 - [The Cast](cast.md): Cordula "Core" Vance, Barnaby the Giant Pacific Octopus (party leader), Shelly the geoduck and Chonks the spiny lumpsucker. Stats, gear, abilities and opening achievements.
 - [Seattle, Under the Sound](seattle.md): whose land this is, the eight dungeon floors and their Puget Sound habitats, the cities, the opponents and local flavor.

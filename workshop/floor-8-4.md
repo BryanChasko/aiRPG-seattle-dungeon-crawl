@@ -6,6 +6,10 @@ Files on this floor: [`8_agentcore_production/narrator/narrator_orchestrator.py`
 
 ![Floor 8.4: The Narrator in the Cloud](../images/floors/floor-8-4-1200x675.webp)
 
+<!-- cordula-log -->
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 8.4.** The last brick was the Narrator, the System's own voice, which is a strange thing to move when it is still talking to you. After that, the whole show ran in the cloud, the party's memory included. At the Keynote, the final boss, Barnaby did not need me to tell him what came next. He already knew. He had been here before, in the logs.
+<!-- /cordula-log -->
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Final brick. I, the System, move into AgentCore Runtime. My conversation goes to AgentCore Memory, and my traces go to CloudWatch, where you may study my every thought. Do not stare."
 
 ## Floor Objective

@@ -6,6 +6,10 @@ Files on this floor: [`3_custom_tools/agent_with_dice_roll_tool.py`](../3_custom
 
 ![Floor 3: The Crafting Table](../images/floors/floor-3-1200x675.webp)
 
+<!-- cordula-log -->
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 3.** The kelp cathedral goes straight up: bull kelp stipes as thick as my wrist, bulbs floating overhead like lanterns. Nothing down here could be decided, because the System's dice were lost in the flood, and a game without dice is just an argument. So we made dice. Barnaby learned the hard way that a tool is only as good as the instructions on the box: the first version of our roller did exactly what we wrote, which was not what we meant. We rewrote the instructions until it did. A small green fish the size of a golf ball popped off a kelp holdfast and stuck itself to my forearm guard. It would not let go. I named him Chonks.
+<!-- /cordula-log -->
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 3. Craft your own gear, Crawler. The model never reads your code, only the docstring you write for it. Write a lazy one and watch your agent dance to the wrong song."
 
 ## Floor Objective

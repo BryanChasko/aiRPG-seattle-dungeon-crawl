@@ -6,6 +6,10 @@ Files on this floor: [`7_strands_harness/narrator_harness.py`](../7_strands_harn
 
 ![Floor 7 (Optional): The Armory (Strands harness)](../images/floors/floor-7-1200x675.webp)
 
+<!-- cordula-log -->
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 7.** We slept in a Safe Room on the bluffs, under a madrone with its red bark peeling. When we woke up, the System had forgotten everything. Our names, our rolls, the accountant. Barnaby went very still. A giant Pacific octopus lives three to five years, and he knows it; forgetting is the thing he is afraid of. So we gave the campaign a name and a place to keep it, and the next time we woke up, it was all still there. He did not say anything. He just flashed the white-and-red pattern he used at the glass that first morning.
+<!-- /cordula-log -->
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 7. The optional floor. Skip it if you like, Crawler, but the harness comes with sessions, memory and a contract about confirming irreversible actions, which is more than I can say for you."
 
 ## Floor Objective

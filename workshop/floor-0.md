@@ -4,6 +4,36 @@
 
 ![Floor 0: The Stairwell](../images/floors/floor-0-1200x675.webp)
 
+<!-- cordula-log -->
+## Before the Fall
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, 0547, PIER 59.**
+>
+> High tide was at 0612, so I was on the water by 0530: touring kayak, drysuit, float vest, the debris sweep the Soundkeepers run every week. Fog on Elliott Bay, gulls, a ferry horn out past the breakwater. Normal.
+>
+> I tied up under the aquarium to check the intake screens. That is where I always say hello to the octopus. The staff call him Barnaby. He is a hundred pounds of red skin and opinions, and he has opened every puzzle box they have ever built him. He watches people the way I watch a landing zone. That morning he was pressed against the glass before I even clipped in, flashing white, then red, then white. Octopuses do not do that for no reason.
+>
+> At 0551 every phone on the waterfront lit up with the same blank violet box. No text in it. Then the pier moved.
+>
+> It did not crash. It folded, the way a map folds, down and in, and the Sound came in after it. I had about four seconds. I spent them going toward the aquarium instead of away from it, which the Marine Corps would call a training failure and I call the only good decision I made that day.
+>
+> The tank wall was already cracked. I got the kayak's dry bag over him, ran a bilge pump off the kayak battery, and strapped the whole thing to my MOLLE frame. He wrapped two arms around my shoulders like he had planned it. Maybe he had.
+>
+> That is when a voice came out of the water, loud enough to rattle my teeth.
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. Some of my systems were damaged in transit. You will be fixing them. Contestant one: a woman with a boat. Contestant two..." A pause. "Contestant two is an octopus. Fine. Octopus, you get a collar."
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, CONTINUED.**
+>
+> A brass ring snapped shut around Barnaby's mantle, and his skin went a color I had never seen on an animal. He did not speak. He could not, not yet. But he looked at me, and then he looked at the stairwell behind me, the only way down that was not underwater, and I understood him anyway.
+>
+> The stairwell is where this workshop starts. The System is broken, and the only way out is to rebuild it, one piece per floor. What we build, the collar gives to Barnaby. You are the hands at the terminal. I will tell you what happened. The steps tell you what to type.
+>
+> First thing on the stairs: a twenty-foot python.
+
+Read the whole story in [The Story: Cordula's Crawl](world/story.md).
+<!-- /cordula-log -->
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Attention, Crawlers! Welcome to Floor 0. Pier 59 just folded into Elliott Bay and took the Seattle waterfront with it. Before you can out-dance an accountant, deploy agents, or cry to your alien sponsors about missing package managers, you need to clear the stairwell and secure a Safe Room. Wring out your socks, fire up your terminal, and try not to slip on the syntax."
 
 ## Floor Objective
