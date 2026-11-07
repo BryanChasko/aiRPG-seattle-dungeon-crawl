@@ -13,6 +13,7 @@ import asyncio
 import importlib.util
 import json
 import random
+import re
 import sys
 import types
 from pathlib import Path
@@ -397,3 +398,54 @@ def test_knowledge_pack_is_current():
     pack = mod.PACK.read_text(encoding="utf-8")
     assert pack.count("TODO: ") == 63
     assert "strength 16, dexterity 13, constitution 16" in pack
+
+
+# ---------- One model, everywhere -------------------------------------------
+
+ALLOWED_MODELS = {NOVA, f"bedrock/{NOVA}", "amazon.nova-2-lite-v1:0"}
+# other model families and vendors, kept as sha256 prefixes so this file never names them
+OTHER_MODEL_WORDS = {
+    "053ea4804ef1bb33", "5a5110ebe1544b31", "5d72436256ada538", "60965168ce762e94", "67f2d22514622d1b",
+    "6f7ac1823da81d2e", "72e8088a05b38ae3", "76e3c7bfe641ea12", "7d3194f79e645c42", "7f754d3dbef2f9c8",
+    "920510199770f4d6", "a8182c1c17bb2847", "add92b9cde2bdbf3", "c70eca6b0f88f44d", "c857d09db23e6822",
+    "c97504235ab15009", "c9ad8f2cc1294afa", "e12ce8285efc67c6", "fc5a1047f5919892",
+}
+OTHER_NOVA = re.compile(r"amazon\.nova-(?!2-lite-v1:0)[a-z0-9-]+|\bnova\s+(pro|premier|micro|sonic|canvas|reel)\b", re.IGNORECASE)
+MODEL_STRINGS = re.compile(r"""(?:model_id|modelId|MODEL_ID|model)\s*[=:]\s*["']([^"']+)["']""")
+LOOKS_LIKE_MODEL = re.compile(r"amazon|bedrock|nova|v\d+:\d")
+
+
+def tracked_text_files():
+    import subprocess
+
+    names = subprocess.run(["git", "-C", str(ROOT), "ls-files"], capture_output=True, text=True, check=True).stdout.split()
+    skip = ("images/", "web/package-lock.json", "uv.lock")
+    for name in names:
+        path = ROOT / name
+        if name.startswith(skip) or path.suffix in {".webp", ".png", ".ico", ".jpg", ".pdf", ".sqlite3"}:
+            continue
+        try:
+            yield name, path.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, FileNotFoundError):
+            continue
+
+
+def test_no_other_model_is_named_anywhere():
+    """The workshop runs on Amazon Nova 2 Lite only: no page, prompt or file may name another model."""
+    import hashlib
+
+    hits = []
+    for name, text in tracked_text_files():
+        for word in set(re.findall(r"[a-z0-9]+", text.lower())):
+            if hashlib.sha256(word.encode()).hexdigest()[:16] in OTHER_MODEL_WORDS:
+                hits.append(f"{name}: another model or vendor is named")
+        hits.extend(f"{name}: {m.group(0)}" for m in OTHER_NOVA.finditer(text))
+    assert hits == [], "\n".join(sorted(set(hits)))
+
+
+def test_every_model_string_is_nova_2_lite():
+    found = [(name, m.group(1)) for name, text in tracked_text_files() for m in MODEL_STRINGS.finditer(text)
+             if LOOKS_LIKE_MODEL.search(m.group(1))]
+    assert len(found) >= 10, "expected the floor code to pass its model explicitly"
+    wrong = [f"{name}: {value}" for name, value in found if value not in ALLOWED_MODELS]
+    assert wrong == [], "\n".join(wrong)
