@@ -49,6 +49,9 @@ dev = [
     "httpx>=0.28.1",
     "pytest>=9.1.1",
     "pytest-asyncio>=1.4.0",
+    # The Floor 8 tests import the AgentCore runtime and its Strands memory integration. Each
+    # brick's own pyproject.toml declares it for AgentCore; this makes it available locally.
+    "bedrock-agentcore[a2a,strands-agents]>=1.24",
 ]
 
 [tool.pytest.ini_options]
