@@ -232,16 +232,13 @@ The Narrator Orchestrator coordinates all agents and serves as the main API endp
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "This is where I come in. The Narrator orchestrator is the System's body in your terminal. Hand it dice, hand it allies, hand it a schema, then stand back."
 
-The Narrator runs on a stronger setting than the other agents. The given code at the top of the file builds `NARRATOR_MODEL`, Amazon Nova 2 Lite with extended thinking at `medium`:
+The given code at the top of the file builds `NARRATOR_MODEL`, the model the Narrator runs on:
 
 ```python
-NARRATOR_MODEL = BedrockModel(
-    model_id="us.amazon.nova-2-lite-v1:0",
-    additional_request_fields={"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "medium"}},
-)
+NARRATOR_MODEL = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 ```
 
-Nova 2 Lite is the strongest generally available Nova model, and extended thinking lets it plan which agent to ask, which dice to roll and which achievement to award before it answers. `medium` keeps a turn near five seconds; `high` takes about thirty. The Rules Agent and the Character Agent answer narrower questions, so they run on plain `us.amazon.nova-2-lite-v1:0` with reasoning off.
+Nova 2 Lite is the strongest generally available Nova model. It can also think before it answers (extended thinking), but a full Narrator turn, with its A2A calls, measured about 9 seconds with thinking off and 24 to 91 seconds at `medium`. For a game, off wins. The comment above `NARRATOR_MODEL` shows the one argument that turns thinking on if you want deeper plans and can wait for them.
 
 #### Step 1: Create MCP Client for Dice Rolling
 

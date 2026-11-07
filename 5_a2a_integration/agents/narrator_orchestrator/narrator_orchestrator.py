@@ -58,12 +58,10 @@ class StoryOutput(BaseModel):
     actions_suggestions: list[str] = Field(description="['Action 1', 'Action 2', 'Action 3']")
     details: str = Field(description="Brief summary of tools/agents used")
     dice_rolls: list[DiceOutput] = Field(default=[], description="List of dice rolls with dice_type, result, and reason")
-# Amazon Nova 2 Lite with extended thinking at medium: the strongest generally available Nova model,
-# and the effort that keeps a game turn around five seconds (high takes about thirty)
-NARRATOR_MODEL = BedrockModel(
-    model_id="us.amazon.nova-2-lite-v1:0",
-    additional_request_fields={"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "medium"}},
-)
+# Amazon Nova 2 Lite, the strongest generally available Nova model. Extended thinking stays off: a turn
+# with A2A calls measured 9 s with it off and 24 to 91 s at medium. To trade speed for deeper plans, add
+# additional_request_fields={"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "low"}}
+NARRATOR_MODEL = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 
 
 try:
@@ -80,7 +78,7 @@ House rules of the broadcast:
 - Suggest three actions: two sensible, one the audience would love and the Crawler would regret.
 - Plain text only, no emoji: System announcements are typed, never decorated.
 - Mock choices, never real-world identity. No slurs, nothing sexual. Under the jokes, the danger stays serious.
-The System is petty but exact. Discover the agents you can reach and ask them instead of guessing: rules questions, character creation and lookups are their job. Every dice roll goes through roll_dice, and every roll you report is a roll you made. Never make up what a tool can tell you.""",
+The System is petty but exact. Discover the agents you can reach and ask them instead of guessing: rules questions, character creation and lookups are their job. Every dice roll goes through roll_dice, and every roll you report is a roll you made. Never make up what a tool can tell you. The rule book calls the referee the DM; in this dungeon that role is the System, so always say the System.""",
         # TODO: Step 3 - Add the mcp_client and a2a_client tools to the agent
         # TODO: Step 4 - Force the response to use the StoryOutput model
     )

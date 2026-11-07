@@ -37,11 +37,11 @@ Out of the box, `create_harness()` gives you:
 
 ## Before You Start
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The harness defaults to Claude Opus 5, a third-party model. The file pins Amazon Nova 2 Lite instead, the model of every other floor, and keeps its reasoning on medium. The System checked your options so you would not have to. You are welcome."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The harness defaults to Claude Opus 5, a third-party model. The file pins Amazon Nova 2 Lite instead, the model of every other floor, and turns its reasoning off. The System checked your options so you would not have to. You are welcome."
 
 The harness reuses the services from Floors 4 and 5. In three terminals, start the dice server (`4_mcp_integration`), the Rules Agent and the Character Agent, exactly as in Floor 5. Stop the Floor 5 orchestrator: the new one takes its place on port 8009, so the web interface from Floor 6 keeps working unchanged.
 
-`strands-harness` is already in the project dependencies: `uv sync` installed it. The file already passes `model="bedrock/us.amazon.nova-2-lite-v1:0"` and `effort="medium"` to `create_harness`, as given code above the TODOs: the harness default, Claude Opus 5, is a third-party model, so the Narrator keeps the model of the other floors, Amazon Nova 2 Lite. The harness turns Nova 2 reasoning on and would pick its high level by default, and high takes about thirty seconds a turn, so `effort="medium"` keeps each turn near five seconds.
+`strands-harness` is already in the project dependencies: `uv sync` installed it. The file already passes `model="bedrock/us.amazon.nova-2-lite-v1:0"` and `effort="off"` to `create_harness`, as given code above the TODOs: the harness default, Claude Opus 5, is a third-party model, so the Narrator keeps the model of the other floors, Amazon Nova 2 Lite. The harness turns Nova 2 reasoning on and would pick its high level by default, and with A2A calls in the loop a turn can take a minute or more, so `effort="off"` keeps each turn near ten seconds.
 
 ## Step 1: Create the Narrator with create_harness
 
@@ -129,7 +129,7 @@ curl -X POST http://127.0.0.1:8009/inquire \
 
 Where did the campaign go between the two runs? Look at the `7_strands_harness/.agent/` folder that appeared next to the file: this is where the harness keeps everything a session needs to survive a restart. Under `sessions/session/fantasy-campaign/`, the id you chose in Step 5, `snapshot_latest.json` holds the whole conversation, every message exchanged with the Narrator, plus its system prompt and model state. At start-up the harness reads the snapshot for that id and the agent picks up where it stopped. The folder is gitignored, so it stays on your machine. Long-term memory, the facts the harness distils about the player across campaigns, lives in `.agent/memory` the same way, see "what memory does by default".
 
-Expect a few more seconds per turn than in Floor 5: the harness turns Nova 2 reasoning on, at the `medium` level the file sets, the same level as the Floor 5 Narrator. Pass `"high"` for deeper plans at about thirty seconds a turn, or `"off"` for the fastest replies, see "set reasoning effort". Notice also how the Narrator likes to confirm before acting: that is the harness contract, written for coding agents. `instructions` is where you push back.
+Expect about the same speed as Floor 5: the file sets `effort="off"`, the same as the Floor 5 Narrator. Pass `"low"`, `"medium"` or `"high"` for deeper plans, at 30 seconds to over a minute a turn, see "set reasoning effort". Notice also how the Narrator likes to confirm before acting: that is the harness contract, written for coding agents. `instructions` is where you push back.
 
 Floor 5 vs Floor 7:
 
@@ -138,7 +138,7 @@ Floor 5 vs Floor 7:
 | Dice via MCP | `MCPClient(url=...)` | `mcp_servers={"dice": {"url": ...}}` |
 | Remote agents | `make_a2a_client(...)` | same |
 | System prompt | written by you, from scratch | harness contract + your `instructions` |
-| Model | Amazon Nova 2 Lite, medium reasoning (`BedrockModel`) | Amazon Nova 2 Lite, medium reasoning (`model=`, `effort=`) |
+| Model | Amazon Nova 2 Lite, reasoning off (`BedrockModel`) | Amazon Nova 2 Lite, reasoning off (`model=`, `effort=`) |
 | Sessions, memory, caching, context management | none | on by default |
 | Lines of agent code | about 20 | about 10 |
 

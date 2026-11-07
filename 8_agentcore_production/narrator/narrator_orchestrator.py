@@ -101,12 +101,10 @@ a2a_client = make_a2a_client(allowed_endpoints=[
     "http://127.0.0.1:8001",  # Character Agent
 ])
 
-# Amazon Nova 2 Lite with extended thinking at medium: the strongest generally available Nova model,
-# and the effort that keeps a game turn around five seconds (high takes about thirty)
-NARRATOR_MODEL = BedrockModel(
-    model_id="us.amazon.nova-2-lite-v1:0",
-    additional_request_fields={"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "medium"}},
-)
+# Amazon Nova 2 Lite, the strongest generally available Nova model. Extended thinking stays off: a turn
+# with A2A calls measured 9 s with it off and 24 to 91 s at medium. To trade speed for deeper plans, add
+# additional_request_fields={"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "low"}}
+NARRATOR_MODEL = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 
 # One Narrator per session, created on its first invocation
 narrators = {}
@@ -124,7 +122,7 @@ House rules of the broadcast:
 - Suggest three actions: two sensible, one the audience would love and the Crawler would regret.
 - Plain text only, no emoji: System announcements are typed, never decorated.
 - Mock choices, never real-world identity. No slurs, nothing sexual. Under the jokes, the danger stays serious.
-The System is petty but exact. Discover the agents you can reach and ask them instead of guessing: rules questions, character creation and lookups are their job. Every dice roll goes through roll_dice, and every roll you report is a roll you made. Never make up what a tool can tell you.""",
+The System is petty but exact. Discover the agents you can reach and ask them instead of guessing: rules questions, character creation and lookups are their job. Every dice roll goes through roll_dice, and every roll you report is a roll you made. Never make up what a tool can tell you. The rule book calls the referee the DM; in this dungeon that role is the System, so always say the System.""",
             tools=[mcp_client, a2a_client],
             structured_output_model=StoryOutput,
             # TODO: 8.4 Step 2 - Keep the conversation in the conversations memory with an AgentCoreMemorySessionManager for this session and the actor "player"
