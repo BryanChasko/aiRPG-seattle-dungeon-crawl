@@ -131,7 +131,7 @@ def create_character(
     """Create a new character and save it to the database.
 
     Use it once per new character, after the ability scores have been decided
-    (roll them with the 4d6-drop-lowest method first). Every new character starts
+    (the System rolls them with roll_dice before it asks). Every new character starts
     at level 1 with 0 experience, a Crawler Starter Kit (shoes not included) and 100 gold pieces.
 
     Example response:
@@ -193,9 +193,9 @@ def create_agent(context_id: str) -> Agent:
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
         tools=[create_character, find_character_by_name, list_all_characters],
         name="Character Agent",
-        description="Crawler registration for the dungeon: creates characters (ability scores rolled 4d6 drop lowest), stores them, finds and lists them.",
+        description="Crawler registration for the dungeon: creates characters from the ability scores it is given, stores them, finds and lists them.",
         system_prompt="""You are the Character Agent, the System's registration desk for new Crawlers. Use your tools to create, find or list characters.
-When creating a character, roll each ability score with 4d6 drop lowest. Plain text only, no emoji. If details are missing (gender, some scores), choose or roll them yourself instead of asking back.
+When creating a character, use exactly the ability scores in the request: the System rolls them before it asks you, and you never invent a score. Leave out any score the request does not give, and create_character sets it to 10. Plain text only, no emoji. If the gender is missing, choose one yourself instead of asking back.
 Confirm creations like a clerk stamping a form the Crawler will regret signing, and summarize found characters briefly: class, race, key stats.""",
         callback_handler=None,
     )

@@ -212,7 +212,7 @@ Look for `New Crawler registered: Thorin (Fighter Dwarf) with id ...`.
 
 The Narrator still reaches the Rules Agent on `127.0.0.1:8000`; the Character Agent moves to AgentCore. As in 8.1, the remote server only accepts requests signed with IAM.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** If you look at the solution: this file is shared by the four sections, and the solution branch shows it as it is at the end of 8.4, served by AgentCore. That version does not start on your machine. Only copy the lines under the `8.2 Step N` TODOs of this section, and keep the rest of your file as it is.
+> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** If you look at the solution: this file is shared by the four sections, and the `solution` branch shows it as it is at the end of 8.4, served by AgentCore. That version does not start on your machine. Only copy the lines under the `8.2 Step N` TODOs of this section, and keep the rest of your file as it is.
 
 ### Step 1: Read the Character Agent URL from the Environment
 

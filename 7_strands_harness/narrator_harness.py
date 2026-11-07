@@ -24,20 +24,20 @@ class QuestionRequest(BaseModel):
     question: str
 
 class DiceOutput(BaseModel):
-    dice_type: str = Field(description="The dice type. Ex: d4, d6, d20, etc")
-    result: int = Field(description="The dice result value alone")
+    dice_type: str = Field(description="The dice rolled, in dice notation: 1d20, 4d6 drop 1, 2d8")
+    result: int = Field(description="The total roll_dice returned")
     reason: str = Field(description="The reason the dice was rolled. Ex: attack roll. And the modificators if there was any")
 
 class StoryOutput(BaseModel):
     """A single System turn: the announcement, what the Crawler could do next, and any dice rolled."""
-    response: str = Field(description="Your in-character System announcement to the Crawler, including any NEW ACHIEVEMENT or loot box")
-    actions_suggestions: list[str] = Field(description="['Action 1', 'Action 2', 'Action 3']")
+    response: str = Field(description="The System speaking to the Crawler: open with a System notification, never paste tool output, retell it in your own voice and always say the System, never the DM. Announce NEW ACHIEVEMENT UNLOCKED with an insulting title in square brackets and a loot box whenever the Crawler does anything for the first time or anything notable")
+    actions_suggestions: list[str] = Field(description="Exactly three things the Crawler could do next: two sensible, one terrible idea the audience would love")
     details: str = Field(description="Brief summary of tools/agents used")
-    dice_rolls: List[DiceOutput] = Field(default=[], description="List of dice rolls with dice_type, result, and reason")
+    dice_rolls: List[DiceOutput] = Field(default=[], description="One entry for every roll_dice call made this turn, in order; empty only when nothing was rolled")
 
 # Domain instructions only: Strands harness prepends its own behavioral contract.
 INSTRUCTIONS = """You are the System, the omniscient, petty and slightly unhinged AI that runs this dungeon as a reality show for alien viewers and their sponsors. Address the player as Crawler. Speak in System notifications and arena announcements. Resolve clever stunts with exact, literal mechanics: creativity earns a roll, not a free pass. After a notable feat or a spectacular failure, announce NEW ACHIEVEMENT UNLOCKED with an insulting title in square brackets and a loot box (Bronze, Silver, Gold or Desperation). Suggest three actions, one of them a terrible idea the audience would love. Plain text, no emoji. The rule book calls the referee the DM; in this dungeon that role is the System, so always say the System. Mock choices, never real-world identity: no slurs, nothing sexual. Never make up what a tool can tell you.
-- roll_dice (dice MCP server) rolls the dice.
+- roll_dice (dice MCP server) rolls the dice. Before you ask the Character Agent to create a character, roll every ability score the Crawler did not give with roll_dice (faces=6, count=4, drop_lowest=1): one call each for strength, dexterity, constitution, intelligence, wisdom and charisma, never reusing a total, then pass the six named totals in the request. If a tool or an agent call fails or returns an error, tell the Crawler the call failed and stop there: never say an agent said or decided something it did not.
 - a2a_client talks to the Rules Agent (http://127.0.0.1:8000) and the Character Agent (http://127.0.0.1:8001).
 Only use those endpoints. Keep each turn short: a few sentences of narration, then the options."""
 

@@ -193,7 +193,7 @@ The agent searches the knowledge base once and answers with the page reference, 
 
 The Rules Agent was the last brick on 127.0.0.1. It reuses the signed client configuration of 8.2: AgentCore keeps one session per runtime, so the same session id serves both agents.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** If you look at the solution: this file is shared by the four sections, and the solution branch shows it as it is at the end of 8.4, served by AgentCore. That version does not start on your machine. Only copy the lines under the `8.3 Step N` TODOs of this section, and keep the rest of your file as it is.
+> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** If you look at the solution: this file is shared by the four sections, and the `solution` branch shows it as it is at the end of 8.4, served by AgentCore. That version does not start on your machine. Only copy the lines under the `8.3 Step N` TODOs of this section, and keep the rest of your file as it is.
 
 ### Step 1: Read the Rules Agent URL from the Environment
 

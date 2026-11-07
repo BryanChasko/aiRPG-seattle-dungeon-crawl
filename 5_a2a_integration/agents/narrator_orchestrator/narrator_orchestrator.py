@@ -48,16 +48,16 @@ def get_user(user_name):
 # TODO: Step 1 - Create an MCPClient with the url "http://localhost:8002/mcp"
 
 class DiceOutput(BaseModel):
-    dice_type: str = Field(description="The dice type. Ex: d4, d6, d20, etc")
-    result: int = Field(description="The dice result value alone")
+    dice_type: str = Field(description="The dice rolled, in dice notation: 1d20, 4d6 drop 1, 2d8")
+    result: int = Field(description="The total roll_dice returned")
     reason: str = Field(description="The reason the dice was rolled. Ex: attack roll. And the modificators if there was any")
 
 class StoryOutput(BaseModel):
     """A single System turn: the announcement, what the Crawler could do next, and any dice rolled."""
-    response: str = Field(description="Your in-character System announcement to the Crawler, including any NEW ACHIEVEMENT or loot box")
-    actions_suggestions: list[str] = Field(description="['Action 1', 'Action 2', 'Action 3']")
+    response: str = Field(description="The System speaking to the Crawler: open with a System notification, never paste tool output, retell it in your own voice and always say the System, never the DM. Announce NEW ACHIEVEMENT UNLOCKED with an insulting title in square brackets and a loot box whenever the Crawler does anything for the first time or anything notable")
+    actions_suggestions: list[str] = Field(description="Exactly three things the Crawler could do next: two sensible, one terrible idea the audience would love")
     details: str = Field(description="Brief summary of tools/agents used")
-    dice_rolls: list[DiceOutput] = Field(default=[], description="List of dice rolls with dice_type, result, and reason")
+    dice_rolls: list[DiceOutput] = Field(default=[], description="One entry for every roll_dice call made this turn, in order; empty only when nothing was rolled")
 # Amazon Nova 2 Lite, the strongest generally available Nova model. Extended thinking stays off: a turn
 # with A2A calls measured 9 s with it off and 24 to 91 s at medium. To trade speed for deeper plans, add
 # additional_request_fields={"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "low"}}
@@ -78,7 +78,7 @@ House rules of the broadcast:
 - Suggest three actions: two sensible, one the audience would love and the Crawler would regret.
 - Plain text only, no emoji: System announcements are typed, never decorated.
 - Mock choices, never real-world identity. No slurs, nothing sexual. Under the jokes, the danger stays serious.
-The System is petty but exact. Discover the agents you can reach and ask them instead of guessing: rules questions, character creation and lookups are their job. Every dice roll goes through roll_dice, and every roll you report is a roll you made. Never make up what a tool can tell you. The rule book calls the referee the DM; in this dungeon that role is the System, so always say the System.""",
+The System is petty but exact. Discover the agents you can reach and ask them instead of guessing: rules questions, character creation and lookups are their job. Every dice roll goes through roll_dice, and every roll you report is a roll you made. Never make up what a tool can tell you. The rule book calls the referee the DM; in this dungeon that role is the System, so always say the System. Before you ask the Character Agent to create a character, roll every ability score the Crawler did not give with roll_dice (faces=6, count=4, drop_lowest=1): one call each for strength, dexterity, constitution, intelligence, wisdom and charisma, never reusing a total, then pass the six named totals in the request. If a tool or an agent call fails or returns an error, tell the Crawler the call failed and stop there: never say an agent said or decided something it did not.""",
         # TODO: Step 3 - Add the mcp_client and a2a_client tools to the agent
         # TODO: Step 4 - Force the response to use the StoryOutput model
     )
