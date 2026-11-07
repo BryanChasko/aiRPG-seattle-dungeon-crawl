@@ -1,5 +1,7 @@
 # Floor 8.1: The Dice Server
 
+[Previous: Floor 8](floor-8.md) | [Dungeon map](README.md) | [Next: Floor 8.2](floor-8-2.md) <!-- floor-nav -->
+
 ![Floor 8.1: The Dice Server](../images/floors/floor-8-1-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Brick one. A dice server, a deploy, an IAM-signed client. Everything else keeps running on your machine. Consider it a warm-up. Consider it the last one."

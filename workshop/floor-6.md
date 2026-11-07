@@ -1,5 +1,7 @@
 # Floor 6: The Arena (Web Interface)
 
+[Previous: Floor 5](floor-5.md) | [Dungeon map](README.md) | [Next: Floor 7](floor-7.md) <!-- floor-nav -->
+
 ![Floor 6: The Arena (Web Interface)](../images/floors/floor-6-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience what you built. Pick who speaks for the party, point it at port 8009, and press Enter. No pressure. Only billions of viewers."
@@ -56,7 +58,7 @@ Customization ideas:
 - Add new custom tools for different mechanics
 - Integrate additional MCP servers for new capabilities
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 6: THE HUD.** In a LitRPG the reader sees the System through its interface: the floating character sheet, the notification boxes, the battle log. The web interface is that HUD, and it can only exist because Floor 5 forced the Narrator into `StoryOutput`: `response` becomes the notification, `dice_rolls` the battle log, `actions_suggestions` the three choices (one of them always a terrible idea). Design the data first and the interface follows. See [The System](world/the-system.md#1-origin-and-interface).
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 6: THE HUD.** In a LitRPG the reader sees the System through its interface: the floating character sheet, the notification boxes, the battle log. The web interface is that HUD, and it can only exist because [Floor 5](floor-5.md) forced the Narrator into `StoryOutput`: `response` becomes the notification, `dice_rolls` the battle log, `actions_suggestions` the three choices (one of them always a terrible idea). Design the data first and the interface follows. See [The System](world/the-system.md#1-origin-and-interface).
 
 ## Troubleshooting
 

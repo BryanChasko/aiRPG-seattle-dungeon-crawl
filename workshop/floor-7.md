@@ -1,5 +1,7 @@
 # Floor 7 (Optional): The Armory (Strands harness)
 
+[Previous: Floor 6](floor-6.md) | [Dungeon map](README.md) | [Next: Floor 8](floor-8.md) <!-- floor-nav -->
+
 ![Floor 7 (Optional): The Armory (Strands harness)](../images/floors/floor-7-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 7. The optional floor. Skip it if you like, Crawler, but the harness comes with sessions, memory and a contract about confirming irreversible actions, which is more than I can say for you."
@@ -8,7 +10,7 @@
 
 Across Floors 1 to 5 you assembled the Narrator piece by piece: an agent, tools, an MCP server, remote agents over A2A, structured output. Strands harness is the other way in: one call, `create_harness()`, returns a fully assembled agent with a tuned system prompt, built-in tools, sessions, long-term memory, context management and prompt caching. On this floor you rebuild the Floor 5 orchestrator with it, keeping the same API and the same web interface, and you compare the two.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Optional floor: Floor 8 starts again from the Floor 5 code and does not use the harness. You can skip this floor and go straight to Floor 8, or come back to it later.
+> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Optional floor: [Floor 8](floor-8.md) starts again from the [Floor 5](floor-5.md) code and does not use the harness. You can skip this floor and go straight to [Floor 8](floor-8.md), or come back to it later.
 
 Make sure you are at the root of Floor 7 in your terminal:
 

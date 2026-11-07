@@ -1,5 +1,7 @@
 # Floor 0: The Stairwell
 
+[Dungeon map](README.md) | [Next: Floor 1](floor-1.md) <!-- floor-nav -->
+
 ![Floor 0: The Stairwell](../images/floors/floor-0-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Attention, Crawlers! Welcome to Floor 0. Pier 59 just folded into Elliott Bay and took the Seattle waterfront with it. Before you can out-dance an accountant, deploy agents, or cry to your alien sponsors about missing package managers, you need to clear the stairwell and secure a Safe Room. Wring out your socks, fire up your terminal, and try not to slip on the syntax."
@@ -8,7 +10,7 @@
 
 Prepare your development environment: clone the workshop repo, install uv and Python, install the dependencies and activate the virtual environment. Everything else in this workshop runs from there.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Floor 8 deploys the game to AgentCore and also needs the AgentCore CLI. The Floor 8 page installs it (Node.js 20 or later).
+> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** [Floor 8](floor-8.md) deploys the game to AgentCore and also needs the AgentCore CLI. The [Floor 8](floor-8.md) page installs it (Node.js 20 or later).
 
 ## The Crawl You Are Building
 
@@ -22,13 +24,38 @@ Stuck at any point? [Ask the System](../study/README.md): `python study/ask_the_
 
 ## What is Strands?
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Strands is the SDK. You are the Crawler. I am the System. Learn the difference now, it matters on Floor 5."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Strands is the SDK. You are the Crawler. I am the System. Learn the difference now, it matters on [Floor 5](floor-5.md)."
 
 [Strands](https://strandsagents.com/) is an Open Source Python and TypeScript SDK designed to simplify the creation of AI agents and multi-agent systems. Built with developer experience in mind, Strands provides an intuitive framework for building sophisticated AI applications that can interact with various tools, APIs, and services.
 
 ## Claim Your Safe Room (Installation)
 
-### Step 1: Claim Your Starter Safe Room (Clone the Repo)
+Every step below has the same three parts: a command that checks whether you already have the thing, what a good answer looks like, and what to do when it is not. If a check passes, skip to the next step.
+
+### Step 1: Check Your Gear (git, uv, Python)
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Before I hand you anything, empty your pockets. I like to know what I am working with."
+
+Open a terminal (Terminal on macOS, any terminal on Linux, PowerShell on Windows) and run each line:
+
+```bash
+git --version
+uv --version
+python3 --version
+```
+
+On Windows, use `python --version` instead of `python3 --version`.
+
+| you see | it means | do this |
+|---|---|---|
+| `git version 2.x` | git is ready | nothing |
+| `uv 0.x.y` | uv is ready | skip Step 3 |
+| `Python 3.10` or higher | Python is ready | nothing; uv can still bring its own (Step 4) |
+| `command not found`, `not recognized`, or a Python below 3.10 | that tool is missing or too old | its step below installs it |
+
+No git? Install it from [git-scm.com/downloads](https://git-scm.com/downloads), then open a new terminal and run `git --version` again.
+
+### Step 2: Claim Your Starter Safe Room (Clone the Repo)
 
 Grab the repository before the ceiling collapses and buries you in uncompiled garbage:
 
@@ -37,49 +64,139 @@ git clone https://github.com/BryanChasko/aiRPG-seattle-dungeon-crawl.git
 cd aiRPG-seattle-dungeon-crawl
 ```
 
-### Step 2: Equip Your Basic Tools (uv and Python)
+Check: `ls` (or `dir` on Windows) lists `README.md`, `workshop` and the numbered floor folders. Every command from here runs inside this folder.
+
+### Step 3: Equip uv
 
 > <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [uv]**
 >
-> A package manager so fast it finishes before you finish doubting yourself. Rarity: Common. Durability: infinite. Judgment: considerable.
+> A Python package and project manager from Astral, so fast it finishes before you finish doubting yourself. Rarity: Common. Durability: infinite. The System has heard the name means ultraviolet. Astral has not confirmed it, and Seattle has not seen ultraviolet since July. Side effects: none. Wear sunscreen anyway; the System is legally required to say so.
 
-If you don't have uv, install it by following the [uv installation instructions](https://docs.astral.sh/uv/getting-started/installation/).
+Skip this step if `uv --version` already printed a version. Otherwise install it with the command for your system, from the [uv installation instructions](https://docs.astral.sh/uv/getting-started/installation/):
 
-If you don't have Python, install the latest version by running the following command:
+macOS and Linux:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Windows (PowerShell):
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+With Homebrew, `brew install uv` works too.
+
+Then **open a new terminal**: the installer adds uv to your PATH, and a terminal opened before the install will not see it. Check:
+
+```bash
+uv --version
+```
+
+| roadblock | fix |
+|---|---|
+| `uv: command not found` right after installing | open a new terminal; on macOS and Linux you can also run `source $HOME/.local/bin/env` in the current one |
+| `curl: command not found` | install curl with your package manager, or use Homebrew or the Windows command above |
+| a corporate network blocks the download | ask for the proxy address and set `HTTPS_PROXY` before running the installer |
+
+### Step 4: Face the Floor Boss (Python)
+
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS: MONTY, THE RETICULATED PYTHON.** Somebody released their pet into the Underground, and it found the stairwell. Reticulated pythons are the longest snakes in the world, and Monty is twenty feet of geometric camouflage that looks exactly like whatever Python is already on your PATH. It wraps tighter every time a version does not match. Barnaby, who is also a constrictor and has eight arms of opinions about it, refuses to share the stairwell. Nobody gets hurt: you win by knowing exactly which Python you are running.
+
+<img src="../images/cards/boss-monty-640x640.webp" alt="Monty, an enormous reticulated python with a gold, black and silver geometric pattern, loosely coiled around the rusted handrail of a flooded stairwell, head raised with a curious, slightly sheepish look and a brass pet tag on its collar" width="240">
+
+This crawl needs Python 3.10 or later. You do not have to install it yourself: uv downloads a compatible Python the first time a project needs one. To get it now, and to see which one uv will use:
 
 ```bash
 uv python install
+uv python find
 ```
 
-### Step 3: Imbibe the Mana Potions (Install Dependencies)
+`uv python find` prints the path of the interpreter uv picked. Monty's camouflage is the `python3` on your PATH, which can be a different, older Python. That is fine: inside this project, `uv sync` and `uv run` always use the one uv picked, never the camouflage.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "uv sync pulls everything the crawl needs, including the harness for Floor 7. If it fails, the audience gets a replay. Read the error before you paste it anywhere."
+| roadblock | fix |
+|---|---|
+| `python3 --version` says 3.9 or older | leave it alone and let uv manage this project's Python: run `uv python install`, then carry on |
+| `No interpreter found` | run `uv python install` and check your network (the corporate proxy fix above applies) |
+| you have several Pythons and are not sure which one runs | after Step 5, `uv run python --version` shows the one this project uses |
 
-Force-feed your environment all the required Python packages:
+> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+>
+> **[WHICH PYTHON? THIS PYTHON.]**
+>
+> Reward: You received a [Bronze Box]. Inside: one interpreter path, printed. Monty has been rehomed to a licensed reptile rescue. Never release a pet python into the wild. Ask Florida.
+
+### Step 5: Imbibe the Mana Potions (Install Dependencies)
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "uv sync pulls everything the crawl needs, including the harness for [Floor 7](floor-7.md). If it fails, the audience gets a replay. Read the error before you paste it anywhere."
+
+From the repository folder:
 
 ```bash
 uv sync
 ```
 
-### Step 4: Lock the Safe Room Door (Activate Your Virtual Environment)
+It creates a `.venv/` folder and installs every package in it. Check: the last lines say `Installed N packages` (or `Audited` when everything was already there). Then ask the project's own interpreter for its version:
+
+```bash
+uv run python --version
+```
+
+This prints Python 3.10 or later, the project's own interpreter.
+
+| roadblock | fix |
+|---|---|
+| `No pyproject.toml found` | you are not in the repository folder: `cd aiRPG-seattle-dungeon-crawl` |
+| SSL or certificate errors on a corporate network | `uv sync --native-tls` uses your system's certificates |
+| it stops on a package that needs a compiler | make sure `uv run python --version` is 3.10 to 3.13, then run `uv sync` again; open an issue with the full error if it persists |
+
+### Step 6: Lock the Safe Room Door (Activate Your Virtual Environment)
 
 > <img src="../images/icons/sponsor-96x96.webp" alt="Sponsor" width="28" height="28"> **SPONSOR MESSAGE:** This Safe Room is brought to you by .venv. What gets installed in .venv stays in .venv.
 
-Step inside, seal the door behind you, and isolate your environment from the rest of your filthy operating system.
+Activating the environment makes `python` mean the project's Python in this terminal, so every floor's `python some_script.py` works as written.
 
-Your virtual environment is where your dependencies have been installed. To activate it, run the command for your operating system.
-
-macOS / Linux:
+macOS and Linux:
 
 ```bash
 source .venv/bin/activate
 ```
 
-Windows:
+Windows (PowerShell):
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Windows (Command Prompt): `.venv\Scripts\activate.bat`
+
+Check: your prompt now starts with the environment's name in parentheses, and `python --version` prints the same version as `uv run python --version`.
+
+| roadblock | fix |
+|---|---|
+| PowerShell says running scripts is disabled | run `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` once, then activate again |
+| a new terminal forgot the environment | activation lasts for one terminal; run the activate command again in every new one (Floor 5 opens four) |
+| you would rather not activate at all | put `uv run` in front of any command instead: `uv run python simple_agent.py` |
+
+### Step 7: Check Your Pass to the Model (AWS)
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Every floor from 1 on talks to Amazon Nova. Find out now whether I will let you in, not halfway through [Floor 5](floor-5.md)."
+
+The agents call Amazon Nova 2 Lite on Amazon Bedrock in us-west-2 with your usual AWS credentials. With the environment active, send it one message:
 
 ```bash
-.venv\Scripts\activate
+python -c "import boto3; r = boto3.client('bedrock-runtime', region_name='us-west-2').converse(modelId='us.amazon.nova-2-lite-v1:0', messages=[{'role': 'user', 'content': [{'text': 'Reply with one word: ready'}]}]); print(r['output']['message']['content'][0]['text'])"
 ```
+
+A short reply such as `Ready` means you are set for every floor.
+
+| error | it means | fix |
+|---|---|---|
+| `NoCredentialsError` or `Unable to locate credentials` | no AWS credentials in this terminal | configure them (`aws configure`, or `aws sso login --profile <your profile>` then `export AWS_PROFILE=<your profile>`) |
+| `ExpiredToken`, `TokenRetrievalError`, `Token has expired` | your sign-in expired | `aws sso login --profile <your profile>` and try again |
+| `AccessDeniedException` | your role may not invoke this model | open the Amazon Bedrock console in us-west-2, check model access for Amazon Nova 2 Lite, or ask your account admin for `bedrock:InvokeModel` on it |
+| `ValidationException` about the model id | a different region or a typo | keep `region_name='us-west-2'` and the model id exactly as above |
 
 ## Floor Clear
 
@@ -87,9 +204,11 @@ Floor cleared, Crawler. You've set up your development environment for the Stran
 
 Loot you're keeping:
 
-- Installed uv and the latest Python
+- Checked git, uv and Python, and installed what was missing
 - Cloned the workshop repository
+- Beat Monty: you know which Python this project runs
 - Set up and activated the Python virtual environment
+- Proved your AWS credentials can reach Amazon Nova 2 Lite
 
 <img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [Floor 1](floor-1.md) where you'll create your first AI agent.
 
@@ -100,4 +219,4 @@ Loot you're keeping:
 >
 > Reward: You received a [Crawler's Trash Can]. Inside: a pair of unwashed socks, half a bottle of mana potion, and a sticky note that says "Sanctum is for nerds."
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Congratulations! You managed to open a terminal, copy four commands, and not immediately blow up your local environment. Don't get cocky. Next up is Floor 1, where you'll attempt to build your first AI agent. Try not to let it gain sentience and judge you."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Congratulations! You opened a terminal, checked your gear, out-waited a twenty-foot python, and did not immediately blow up your local environment. Don't get cocky. Next up is [Floor 1](floor-1.md), where you'll attempt to build your first AI agent. Try not to let it gain sentience and judge you."

@@ -1,5 +1,7 @@
 # Floor 2: The Vending Machines
 
+[Previous: Floor 1](floor-1.md) | [Dungeon map](README.md) | [Next: Floor 3](floor-3.md) <!-- floor-nav -->
+
 ![Floor 2: The Vending Machines](../images/floors/floor-2-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 2. The vending machines are open. Everything on offer ships with the SDK, nothing is free of consequences, and the optional shell tool will run exactly what you approve. Approve with care. The sponsors are hoping you will not."

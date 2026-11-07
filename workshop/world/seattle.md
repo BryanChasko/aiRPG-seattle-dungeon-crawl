@@ -55,6 +55,8 @@ The dungeon does not throw monsters at the Crawlers. It throws professionals. Ev
 
 The bosses: the Regional Managing Director of Bellevue, the Quarterly Earnings Call (a boss that is a meeting), and the Keynote, which dances for forty-five minutes and never takes questions.
 
+One boss is not a person at work. Monty, a reticulated python someone released into the Underground, guards the Floor 0 stairwell. Reticulated pythons are the longest snakes in the world, and Monty's geometric camouflage makes him look like whatever Python is already on your PATH. Nobody fights him: the party beats him by knowing which Python they are running, and the System rehomes him to a licensed reptile rescue. Barnaby, a constrictor himself, keeps his distance anyway.
+
 <table>
 <tr>
 <td><img src="../../images/cards/opponent-accountant-640x640.webp" alt="The Quarterly Close Accountant, a middle-aged woman in a grey suit with reading glasses pushed up, clutching a calculator while spreadsheet pages flutter around her mid-dance" width="160"></td>

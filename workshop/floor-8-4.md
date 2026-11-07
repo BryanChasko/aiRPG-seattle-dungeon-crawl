@@ -1,5 +1,7 @@
 # Floor 8.4: The Narrator in the Cloud
 
+[Previous: Floor 8.3](floor-8-3.md) | [Dungeon map](README.md) | [Next: The Exit](cleanup.md) <!-- floor-nav -->
+
 ![Floor 8.4: The Narrator in the Cloud](../images/floors/floor-8-4-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Final brick. I, the System, move into AgentCore Runtime. My conversation goes to AgentCore Memory, and my traces go to CloudWatch, where you may study my every thought. Do not stare."

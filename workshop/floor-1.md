@@ -1,5 +1,7 @@
 # Floor 1: Agent Summoning
 
+[Previous: Floor 0](floor-0.md) | [Dungeon map](README.md) | [Next: Floor 2](floor-2.md) <!-- floor-nav -->
+
 ![Floor 1: Agent Summoning](../images/floors/floor-1-1200x675.webp)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 1, Crawlers. You will now summon a living creature out of a string of English and one function call. The audience has money on the first thing it says. Be kind to it. It will not be kind to you."
@@ -86,4 +88,4 @@ Loot you're keeping:
 >
 > Reward: You received a [Bronze Box]. Inside: one working Agent, and a debug log long enough to induce regret.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Your first agent lives. It is mine now, spiritually. Floor 2 awaits, and so does the part where you hand it weapons."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Your first agent lives. It is mine now, spiritually. [Floor 2](floor-2.md) awaits, and so does the part where you hand it weapons."
