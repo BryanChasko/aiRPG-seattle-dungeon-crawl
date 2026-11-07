@@ -15,7 +15,7 @@ What is AgentCore Memory short-term memory? In 8.2 the characters were records i
 This section needs the `gameprod` project with the three bricks deployed in 8.1 to 8.3. Make sure you are at the root of Floor 8 in your terminal:
 
 ```bash
-cd strands-dungeon-crawl/8_agentcore_production
+cd aiRPG-seattle-dungeon-crawl/8_agentcore_production
 ```
 
 This section works in two folders:
@@ -270,15 +270,15 @@ agentcore status
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Run every command of this step from the root of the `gameprod` folder, like the rest of Part 2.
 
 ```bash
-agentcore invoke --runtime narrator --session-id fantasy-campaign-test-of-floor-8-4-0001 \
-  'I attack the goblin with my longsword!'
+agentcore invoke --runtime narrator --session-id seattle-campaign-test-of-floor-8-4-0001 \
+  'Cordula challenges the Quarterly Close Accountant to a dance-off. Run round one.'
 ```
 
-A session id must be at least 33 characters long. The Narrator discovers the two agents, asks the Rules Agent for the goblin's armor class, rolls on the dice server and answers with a `StoryOutput` in JSON, after 30 to 60 seconds. Then ask a question only the conversation can answer, with the same session id:
+A session id must be at least 33 characters long. The Narrator discovers the two agents, asks the Rules Agent for the dance-off procedure, rolls both sides on the dice server and answers with a `StoryOutput` in JSON, after 30 to 60 seconds. Then ask a question only the conversation can answer, with the same session id:
 
 ```bash
-agentcore invoke --runtime narrator --session-id fantasy-campaign-test-of-floor-8-4-0001 \
-  "Remind me: what did I attack, and what did I roll?"
+agentcore invoke --runtime narrator --session-id seattle-campaign-test-of-floor-8-4-0001 \
+  "Remind me: who did Cordula dance against, which move did you call, and what did we roll?"
 ```
 
 The answer comes from the history. Even after the session's microVM is stopped or the Narrator redeployed, it would be the same: the new agent reloads the conversation from the `conversations` memory. Read the logs of the run:
@@ -316,10 +316,10 @@ From another terminal, the same request as before:
 ```bash
 curl -X POST http://0.0.0.0:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "I attack the goblin with my longsword!"}'
+  -d '{"question": "Cordula challenges the Quarterly Close Accountant to a dance-off. Run round one."}'
 ```
 
-Then open the Floor 6 web interface, fill in your character and enter `http://127.0.0.1:8009` as the server URL, as in Floor 6. Every turn now travels from your browser to the proxy, to the Narrator runtime, and from there to the three other bricks. Stop the proxy and start it again: the campaign picks up where you left it.
+Then open the Floor 6 web interface, pick who speaks for the party and enter `http://127.0.0.1:8009` as the server URL, as in Floor 6. The proxy reads the sheets you registered in the cloud memory in 8.2. Every turn now travels from your browser to the proxy, to the Narrator runtime, and from there to the three other bricks. Stop the proxy and start it again: the campaign picks up where you left it.
 
 ## Part 4: See What Your Agents Do
 
@@ -329,7 +329,7 @@ A Narrator turn now crosses several runtimes, and its terminal is gone: AgentCor
 
 ### Step 1: List the Traces
 
-Play a turn that needs a roll and a rule, for example "I try to grapple the goblin, what do I roll?", then, from the `gameprod` folder:
+Play a turn that needs a roll and a rule, for example "Barnaby tries an Eight-Point Hold on the banker during the Footwork call, what do we roll?", then, from the `gameprod` folder:
 
 ```bash
 agentcore traces list --runtime narrator
@@ -373,7 +373,7 @@ python -c "
 import boto3
 control = boto3.client('bedrock-agentcore-control')
 arn = next(r['agentRuntimeArn'] for r in control.list_agent_runtimes()['agentRuntimes'] if r['agentRuntimeName'] == 'gameprod_narrator')
-boto3.client('bedrock-agentcore').stop_runtime_session(agentRuntimeArn=arn, runtimeSessionId='campaign-strands-dungeon-crawl-0001')
+boto3.client('bedrock-agentcore').stop_runtime_session(agentRuntimeArn=arn, runtimeSessionId='campaign-airpg-seattle-dungeon-crawl-0001')
 print('Session stopped')
 "
 ```
@@ -396,7 +396,7 @@ Loot you're keeping:
 - How to call a runtime from your own code with IAM (`invoke_agent_runtime`, `runtimeSessionId`)
 - How to follow a turn across runtimes with traces (`aws-opentelemetry-distro`, `agentcore traces list`, CloudWatch GenAI Observability)
 
-<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to the [Cleanup](cleanup.md) page to dismantle the castle when the campaign is over.
+<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to the [Cleanup](cleanup.md) page to drain the dungeon when the campaign is over.
 
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**

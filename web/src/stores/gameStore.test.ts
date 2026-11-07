@@ -30,26 +30,26 @@ describe('useGameStore', () => {
 
   it('setConnection sets serverUrl and characterName', () => {
     const store = useGameStore()
-    store.setConnection('http://localhost:3000', 'Gandalf')
+    store.setConnection('http://localhost:3000', 'Cordula')
     expect(store.serverUrl).toBe('http://localhost:3000')
-    expect(store.characterName).toBe('Gandalf')
+    expect(store.characterName).toBe('Cordula')
   })
 
   it('setConnection persists serverUrl to localStorage', () => {
     const store = useGameStore()
-    store.setConnection('http://localhost:3000', 'Gandalf')
+    store.setConnection('http://localhost:3000', 'Cordula')
     expect(localStorageMock.setItem).toHaveBeenCalledWith('rpg-gm-server-url', 'http://localhost:3000')
   })
 
   it('isInitialized returns true when both fields are set', () => {
     const store = useGameStore()
-    store.setConnection('http://localhost:3000', 'Gandalf')
+    store.setConnection('http://localhost:3000', 'Cordula')
     expect(store.isInitialized).toBe(true)
   })
 
   it('isInitialized returns false when serverUrl is empty', () => {
     const store = useGameStore()
-    store.setConnection('', 'Gandalf')
+    store.setConnection('', 'Cordula')
     expect(store.isInitialized).toBe(false)
   })
 
@@ -61,7 +61,7 @@ describe('useGameStore', () => {
 
   it('reset clears state back to defaults', () => {
     const store = useGameStore()
-    store.setConnection('http://localhost:3000', 'Gandalf')
+    store.setConnection('http://localhost:3000', 'Cordula')
     expect(store.isInitialized).toBe(true)
 
     store.reset()
@@ -72,7 +72,7 @@ describe('useGameStore', () => {
 
   it('reset removes serverUrl from localStorage', () => {
     const store = useGameStore()
-    store.setConnection('http://localhost:3000', 'Gandalf')
+    store.setConnection('http://localhost:3000', 'Cordula')
     store.reset()
     expect(localStorageMock.removeItem).toHaveBeenCalledWith('rpg-gm-server-url')
   })

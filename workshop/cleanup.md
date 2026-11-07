@@ -28,7 +28,7 @@ Stop every server still running, with Ctrl+C in its terminal: the dice MCP serve
 Skip this section if you did not do Floor 8. Otherwise, run the commands from the project folder, with the same credentials and region as during Floor 8:
 
 ```bash
-cd strands-dungeon-crawl/8_agentcore_production/gameprod
+cd aiRPG-seattle-dungeon-crawl/8_agentcore_production/gameprod
 export AWS_DEFAULT_REGION=us-west-2
 ```
 
@@ -64,7 +64,7 @@ The answer should be `Stack with id AgentCore-gameprod-default does not exist`.
 
 ### Step 3: Delete the Rules Bucket
 
-You created the S3 bucket by hand in 8.3, so the stack does not delete it. Remove it with the PDF it holds:
+You created the S3 bucket by hand on the Floor 8 page, so the stack does not delete it. Remove it with the handbook files it holds:
 
 ```bash
 aws s3 rb s3://gameprod-rules-$(aws sts get-caller-identity --query Account --output text) --force
@@ -90,14 +90,19 @@ The CDK bootstrap stack: on the first deployment, the CLI prepared the region fo
 
 ## Local files
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Delete the PDF, the knowledge base, characters.json and .agent/. Thorin will not mind. Thorin was a JSON file."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Delete the knowledge base and .agent/, and send characters.json back to the way it shipped. The party will re-register. The party always comes back."
 
 Everything below is generated during the workshop and gitignored, delete it freely:
 
-- `5_a2a_integration/utils/`: the `DnD_BasicRules_2018.pdf` you downloaded and the generated `rules_knowledge_base/` folder
-- `5_a2a_integration/agents/character_agent/characters.json`: the characters you created
+- `5_a2a_integration/utils/rules_knowledge_base/`: the ChromaDB knowledge base built from the Crawl Handbook
 - `7_strands_harness/.agent/`: the Strands harness sessions and memory
 - `.venv/` at the repository root, if you no longer need the environment
+
+`5_a2a_integration/agents/character_agent/characters.json` ships with the repository, empty. Restore it to clear the party's Floor 5 registration:
+
+```bash
+git checkout -- 5_a2a_integration/agents/character_agent/characters.json
+```
 
 ## Floor Clear
 
@@ -111,8 +116,9 @@ Loot you're keeping:
 - Testing your complete system through a web interface
 - Rebuilding the same Narrator in a few lines with Strands harness
 - Deploying the whole party to Amazon Bedrock AgentCore, with the characters, the rules and the conversation in managed services
+- Designing a LitRPG System layer by layer: voice, outside knowledge, math, fair dice, rules, the dance-off loop, the HUD, consequence and a persistent world
 
-Now go build your legend: you've learned the fundamentals. Go create something extraordinary of your own.
+Now go build your own crawl: you've learned the fundamentals. Fork the [world guide](world/README.md), move the dungeon to your own city, and let its people and its plants set the rules.
 
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**

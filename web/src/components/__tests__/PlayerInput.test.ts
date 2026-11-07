@@ -25,7 +25,7 @@ describe('PlayerInput', () => {
   it('clears input after submit', async () => {
     const wrapper = mountInput()
     const input = wrapper.find('input')
-    await input.setValue('Cast fireball')
+    await input.setValue('Drop an Ink Cloud')
     await wrapper.find('form').trigger('submit')
     expect((input.element as HTMLInputElement).value).toBe('')
   })

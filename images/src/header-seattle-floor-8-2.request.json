@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: an empty Puget Sound ferry terminal at night turned into a registration desk: a long wooden counter with a stamp, neat stacks of blank character sheets and a brass bell, wet tiled floor, the green-and-white ferry docked beyond rain-streaked windows, a glowing violet panel above the counter. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "44d76c7ba91c86147c0a14fddca39a5cd80f69ba82cd5eb183102c4b1300dca0",
+ "auth": "REDACTED",
+ "output_sha256": "c7b28edb29318b885a6c483c08cc0f19d3e705f8917e6dc82ea7c42eb570d887",
+ "revised_prompt": null
+}

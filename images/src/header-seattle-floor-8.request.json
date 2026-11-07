@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: Bellevue and the Narrows: glass office towers across a dark Lake Washington at night with red laser-grid security light, a polished marble corporate lobby glimpsed through glass, and in the distance the long green suspension bridge over the Tacoma Narrows in rain, with the shadow of a giant octopus arm in the dark water beneath it. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "bc1d9fc5e1f294243026433d657f85758bdfc0dc8275b25022bf713d88772d5e",
+ "auth": "REDACTED",
+ "output_sha256": "47bcb84d5d1a4816e6d73a4f1ebf295a6b51ff9842cd5039614684a01ca7a4f9",
+ "revised_prompt": null
+}

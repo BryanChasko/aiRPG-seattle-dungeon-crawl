@@ -1,8 +1,9 @@
 import type { CharacterForm } from '../types'
+import { PARTY_LINE } from '../party'
 
 // The first message of every game; the message list hides it
-export const INIT_PROMPT_PREFIX = 'Create a new player named '
+export const INIT_PROMPT_PREFIX = 'We play as the party. The player speaks as '
 
 export function formatInitPrompt(form: CharacterForm): string {
-  return `${INIT_PROMPT_PREFIX}${form.name} who is a ${form.gender} ${form.race} ${form.characterClass}. You can then welcome them to the dungeon: they just fell through the floor with no shoes on. Describe the surroundings of the player and create an atmosphere that the player can bounce off of. Don't make more than 100 words.`
+  return `${INIT_PROMPT_PREFIX}${form.name} (pronouns ${form.pronouns}), a ${form.species} ${form.characterClass}. ${PARTY_LINE} Look up ${form.name} with the Character Agent; if Cordula Vance or Barnaby is not registered yet, register them first with their cast scores. Then welcome the party to the dungeon: they just came through the collapse at Pier 59. Describe the surroundings and create an atmosphere the player can bounce off of. Don't make more than 100 words.`
 }

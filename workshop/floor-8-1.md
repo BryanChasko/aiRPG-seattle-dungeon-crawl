@@ -138,7 +138,7 @@ from mcp_proxy_for_aws.client import aws_iam_streamablehttp_client
 mcp_client = MCPClient(lambda: aws_iam_streamablehttp_client(endpoint=DICE_SERVER_URL, aws_service="bedrock-agentcore"))
 ```
 
-In Floor 5 the client was `MCPClient(lambda: streamablehttp_client("http://localhost:8002/mcp"))`. The deployed server, however, only answers callers authenticated with IAM: every request must be signed with your AWS credentials (Signature Version 4). `aws_iam_streamablehttp_client`, from the `mcp-proxy-for-aws` package (already in the workshop dependencies), is the same streamable HTTP transport with that signature added. The signature covers a service and a region: `aws_service` names the service, and the region comes from your boto3 session, the `AWS_DEFAULT_REGION` you exported on the Floor 8 page. A request signed for the wrong region is rejected with a 403. The rest of the Narrator does not change: `mcp_client` still goes into `tools=[...]`, and the model sees the same `roll_dice` tool as before.
+In Floor 5 the client was `MCPClient(url="http://localhost:8002/mcp")`. The deployed server, however, only answers callers authenticated with IAM: every request must be signed with your AWS credentials (Signature Version 4). `aws_iam_streamablehttp_client`, from the `mcp-proxy-for-aws` package (already in the workshop dependencies), is the same streamable HTTP transport with that signature added. The signature covers a service and a region: `aws_service` names the service, and the region comes from your boto3 session, the `AWS_DEFAULT_REGION` you exported on the Floor 8 page. A request signed for the wrong region is rejected with a 403. The rest of the Narrator does not change: `mcp_client` still goes into `tools=[...]`, and the model sees the same `roll_dice` tool as before.
 
 ### Step 3: Launch the Narrator
 
@@ -154,24 +154,24 @@ You should see Uvicorn running on `http://127.0.0.1:8009`. If it stops with `Key
 
 ## Part 4: Play Against the Cloud
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** One goblin, one longsword, two rolls, both in AWS. Read the CloudWatch logs to prove the dice left your machine.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** One investment banker, one Move Call, two rolls, both in AWS. Read the CloudWatch logs to prove the dice left your machine.
 
-Ask for a roll, from another terminal:
+Ask for a dance-off round, from another terminal:
 
 ```bash
 curl -X POST http://0.0.0.0:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "I attack the goblin with my longsword!"}'
+  -d '{"question": "Cordula challenges the Bonus-Season Investment Banker to a dance-off. Run round one."}'
 ```
 
-The Narrator asks for an attack roll, then a damage roll, and narrates the result. In its terminal you see the `roll_dice` tool calls as in Floor 5, but no local terminal prints a `DICE ROLL` line anymore. Read the cloud logs instead:
+The Narrator sets the tempo, makes a Move Call, rolls 1d20 for Cordula and 1d20 for the banker, and narrates who took the round. In its terminal you see the `roll_dice` tool calls as in Floor 5, but no local terminal prints a `DICE ROLL` line anymore. Read the cloud logs instead:
 
 ```bash
 cd ../gameprod
 agentcore logs --runtime diceserver --since 15m
 ```
 
-Your rolls are there, for example `DICE ROLL: 1d20 = [14] -> 14` followed by `DICE ROLL: 1d8 = [4] -> 4`. You can also play from the Floor 6 web interface: it talks to the Narrator on port 8009, exactly as before.
+Your rolls are there, for example `DICE ROLL: 1d20 = [14] -> 14` followed by `DICE ROLL: 1d20 = [9] -> 9`. You can also play from the Floor 6 web interface: it talks to the Narrator on port 8009, exactly as before.
 
 Keep the `gameprod` project and its deployment: the next sections add the other bricks to it. To remove everything at the end of the workshop, see the [Cleanup](cleanup.md) page.
 

@@ -11,7 +11,7 @@ Summon your first agent with Strands: a Narrator that answers an adventurer with
 Make sure you are at the root of Floor 1 in your terminal:
 
 ```bash
-cd strands-dungeon-crawl/1_strands_basics
+cd aiRPG-seattle-dungeon-crawl/1_strands_basics
 ```
 
 Open and modify the `simple_agent.py` file. You'll complete the TODO comments to create your first AI agent.
@@ -35,7 +35,7 @@ There are different log levels: DEBUG, INFO, WARNING, ERROR, and CRITICAL. We re
 > One string that decides who your agent is. Write it carelessly and your agent turns careless. Write it in the voice of the System and it turns insufferable. Recommended.
 
 ```python
-# TODO: Step 2 - Create the agent with model "us.amazon.nova-2-lite-v1:0" and the following system prompt: "You are the System, the sardonic dungeon AI of a fantasy role-playing game. Address the player as Crawler."
+# TODO: Step 2 - Create the agent with model "us.amazon.nova-2-lite-v1:0" and the following system prompt: "You are the System, the sardonic broadcast AI running a dungeon crawl under Seattle. Address the player as Crawler."
 ```
 
 The system prompt defines your agent's role, personality, and knowledge base. Check the documentation on how to create a system prompt.
@@ -48,7 +48,7 @@ Pick the model yourself: without a `model`, Strands defaults to a third-party Cl
 ## Step 3: Test Your Agent
 
 ```python
-# TODO: Step 3 - Invoke your agent with a basic query such as "Hi, I just fell into the dungeon and I am not wearing shoes. What now?"
+# TODO: Step 3 - Invoke your agent with a basic query such as "Hi, I just fell through Pier 59 into the dungeon and my kayak is gone. What now?"
 ```
 
 Time to test your agent. Check the documentation on how to invoke your agent.
@@ -63,7 +63,9 @@ Once you've completed all TODOs, run your script:
 python simple_agent.py
 ```
 
-If successful, your Narrator agent should respond with enthusiasm and set the scene for a fantasy adventure.
+If successful, your Narrator agent should answer in the System's voice and set the scene under the Seattle waterfront.
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 1: THE INTERFACE VOICE.** A LitRPG System talks in notifications, and how they sound sets the genre. A cold, analytic System makes a survival story; a cruel one makes horror; ours is a game-show host. Change one sentence of your system prompt (try "You are a calm, clinical survival System") and run the script again: same model, same question, a different book. See [The System](world/the-system.md#1-origin-and-interface).
 
 ## Floor Clear
 

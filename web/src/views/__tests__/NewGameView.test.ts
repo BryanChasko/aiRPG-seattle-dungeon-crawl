@@ -9,14 +9,6 @@ vi.mock('vue-router', () => ({
   useRouter: () => ({ push: pushMock }),
 }))
 
-function mockFetchSuccess(data: unknown) {
-  return vi.fn().mockResolvedValue({
-    ok: true,
-    status: 200,
-    json: () => Promise.resolve(data),
-  })
-}
-
 function mockFetchFailure(status = 500) {
   return vi.fn().mockResolvedValue({
     ok: false,
@@ -46,14 +38,12 @@ describe('NewGameView', () => {
   })
 
   describe('form rendering', () => {
-    it('renders all 5 form fields and a Start button', () => {
+    it('renders the party picker, the server URL field and an Enter button', () => {
       const wrapper = mountComponent()
 
-      expect(wrapper.find('#character-name').exists()).toBe(true)
-      expect(wrapper.find('#gender').exists()).toBe(true)
-      expect(wrapper.find('#race').exists()).toBe(true)
-      expect(wrapper.find('#character-class').exists()).toBe(true)
+      expect(wrapper.find('#party-member').exists()).toBe(true)
       expect(wrapper.find('#server-url').exists()).toBe(true)
+      expect(wrapper.find('#character-name').exists()).toBe(false)
 
       const startButton = wrapper.find('button[type="submit"]')
       expect(startButton.exists()).toBe(true)
@@ -61,72 +51,57 @@ describe('NewGameView', () => {
     })
   })
 
-  describe('dropdown options', () => {
-    it('gender dropdown has exactly 3 options: Male, Female, Non-binary', () => {
+  describe('the set party', () => {
+    it('offers exactly the two party leads, Cordula Vance first and selected', () => {
       const wrapper = mountComponent()
-      const genderSelect = wrapper.find('#gender')
-      const options = genderSelect.findAll('option').filter(o => o.attributes('disabled') === undefined)
+      const select = wrapper.find('#party-member')
+      const options = select.findAll('option')
 
-      expect(options).toHaveLength(3)
-      expect(options.map(o => o.text())).toEqual(['Male', 'Female', 'Non-binary'])
+      expect(options.map(o => o.text())).toEqual(['Cordula Vance', 'Barnaby'])
+      expect((select.element as HTMLSelectElement).value).toBe('Cordula Vance')
+      expect(wrapper.find('#lead-pronouns').text()).toBe('she/her')
+      expect(wrapper.find('#lead-species').text()).toBe('Human (Seattle Native)')
+      expect(wrapper.find('#lead-class').text()).toBe('Amphibious Breacher')
     })
 
-    it('race dropdown has exactly 9 D&D races', () => {
+    it('shows Barnaby\'s sheet when he speaks for the party', async () => {
       const wrapper = mountComponent()
-      const raceSelect = wrapper.find('#race')
-      const options = raceSelect.findAll('option').filter(o => o.attributes('disabled') === undefined)
+      await wrapper.find('#party-member').setValue('Barnaby')
 
-      const expectedRaces = [
-        'Human', 'Elf', 'Dwarf', 'Halfling', 'Gnome',
-        'Half-Elf', 'Half-Orc', 'Tiefling', 'Dragonborn',
-      ]
-      expect(options).toHaveLength(9)
-      expect(options.map(o => o.text())).toEqual(expectedRaces)
+      expect(wrapper.find('#lead-pronouns').text()).toBe('he/him')
+      expect(wrapper.find('#lead-species').text()).toBe('Uplifted Giant Pacific Octopus')
+      expect(wrapper.find('#lead-class').text()).toBe('Benthic Dragoon')
+      expect(wrapper.find('#lead-role').text()).toBe('Party leader')
     })
 
-    it('class dropdown has exactly 12 D&D classes', () => {
+    it('lists Shelly and Chonks as companions', () => {
       const wrapper = mountComponent()
-      const classSelect = wrapper.find('#character-class')
-      const options = classSelect.findAll('option').filter(o => o.attributes('disabled') === undefined)
+      const companions = wrapper.find('.companions').text()
 
-      const expectedClasses = [
-        'Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
-        'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard',
-      ]
-      expect(options).toHaveLength(12)
-      expect(options.map(o => o.text())).toEqual(expectedClasses)
+      expect(companions).toContain('Shelly the geoduck')
+      expect(companions).toContain('Chonks the spiny lumpsucker')
     })
   })
 
   describe('validation', () => {
-    it('shows validation error messages when submitting with empty fields', async () => {
+    it('only asks for the server URL: the party is already filled in', async () => {
       const wrapper = mountComponent()
 
       await wrapper.find('form').trigger('submit.prevent')
       await flushPromises()
 
       const fieldErrors = wrapper.findAll('.field-error')
-      expect(fieldErrors.length).toBeGreaterThanOrEqual(5)
-      expect(fieldErrors.some(e => e.text().includes('Character name is required'))).toBe(true)
-      expect(fieldErrors.some(e => e.text().includes('Gender is required'))).toBe(true)
-      expect(fieldErrors.some(e => e.text().includes('Race is required'))).toBe(true)
-      expect(fieldErrors.some(e => e.text().includes('Class is required'))).toBe(true)
-      expect(fieldErrors.some(e => e.text().includes('Server URL is required'))).toBe(true)
+      expect(fieldErrors).toHaveLength(1)
+      expect(fieldErrors[0].text()).toContain('Server URL is required')
     })
   })
 
   describe('loading state', () => {
-    it('disables Start button and shows "Starting..." during submission', async () => {
+    it('disables the button and shows "Descending..." during submission', async () => {
       // Use a fetch that never resolves to keep loading state active
       globalThis.fetch = vi.fn().mockReturnValue(new Promise(() => {}))
 
       const wrapper = mountComponent()
-
-      // Fill in all fields
-      await wrapper.find('#character-name').setValue('Aragorn')
-      await wrapper.find('#gender').setValue('Male')
-      await wrapper.find('#race').setValue('Human')
-      await wrapper.find('#character-class').setValue('Ranger')
       await wrapper.find('#server-url').setValue('https://example.com')
 
       await wrapper.find('form').trigger('submit.prevent')
@@ -136,6 +111,22 @@ describe('NewGameView', () => {
       expect(button.attributes('disabled')).toBeDefined()
       expect(button.text()).toBe('Descending...')
     })
+
+    it('sends the party prompt for the selected lead', async () => {
+      const fetchMock = vi.fn().mockReturnValue(new Promise(() => {}))
+      globalThis.fetch = fetchMock
+
+      const wrapper = mountComponent()
+      await wrapper.find('#party-member').setValue('Barnaby')
+      await wrapper.find('#server-url').setValue('https://example.com')
+
+      await wrapper.find('form').trigger('submit.prevent')
+      await wrapper.vm.$nextTick()
+
+      const body = JSON.parse(fetchMock.mock.calls[0][1].body)
+      expect(body.question).toContain('The player speaks as Barnaby (pronouns he/him)')
+      expect(body.question).toContain('Shelly the geoduck')
+    })
   })
 
   describe('error handling', () => {
@@ -143,11 +134,6 @@ describe('NewGameView', () => {
       globalThis.fetch = mockFetchFailure(500)
 
       const wrapper = mountComponent()
-
-      await wrapper.find('#character-name').setValue('Aragorn')
-      await wrapper.find('#gender').setValue('Male')
-      await wrapper.find('#race').setValue('Human')
-      await wrapper.find('#character-class').setValue('Ranger')
       await wrapper.find('#server-url').setValue('https://example.com')
 
       await wrapper.find('form').trigger('submit.prevent')

@@ -2,30 +2,30 @@
 
 export interface CharacterForm {
   name: string
-  gender: 'Male' | 'Female' | 'Non-binary'
-  race:
-    | 'Human'
-    | 'Elf'
-    | 'Dwarf'
-    | 'Halfling'
-    | 'Gnome'
-    | 'Half-Elf'
-    | 'Half-Orc'
-    | 'Tiefling'
-    | 'Dragonborn'
+  pronouns: 'she/her' | 'he/him' | 'they/them' | 'any pronouns'
+  species:
+    | 'Human (Seattle Native)'
+    | 'Human (Transplant)'
+    | 'Uplifted Giant Pacific Octopus'
+    | 'Uplifted Crow'
+    | 'Harbor Seal'
+    | 'Sea Otter'
+    | 'Banana Slug'
+    | 'Fremont Troll-kin'
+    | 'Underground Ghost'
   characterClass:
-    | 'Barbarian'
-    | 'Bard'
-    | 'Cleric'
-    | 'Druid'
-    | 'Fighter'
-    | 'Monk'
-    | 'Paladin'
-    | 'Ranger'
-    | 'Rogue'
-    | 'Sorcerer'
-    | 'Warlock'
-    | 'Wizard'
+    | 'Amphibious Breacher'
+    | 'Benthic Dragoon'
+    | 'Kayak Patrol Ranger'
+    | 'Ferry Engineer'
+    | 'Ballard Brewer'
+    | 'Fish-Toss Striker'
+    | 'Grunge Bard'
+    | 'Coffee Alchemist'
+    | 'Salvage Artificer'
+    | 'Rain Warden'
+    | 'Floating-Bridge Engineer'
+    | 'Startup Necromancer'
   serverUrl: string
 }
 
@@ -33,8 +33,8 @@ export interface CharacterForm {
 
 export interface ValidationErrors {
   name?: string
-  gender?: string
-  race?: string
+  pronouns?: string
+  species?: string
   characterClass?: string
   serverUrl?: string
 }
@@ -109,11 +109,12 @@ export interface CharacterStats {
   character_id: string
   name: string
   character_class: string
-  race: string
-  gender: string
+  species: string
+  pronouns: string
   level: number
   experience: number
   stats: AbilityScores
+  derived?: { groove: number; mana: number }
   inventory: InventoryItem[]
   created_at: string
 }

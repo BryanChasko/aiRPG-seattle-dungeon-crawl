@@ -1,43 +1,50 @@
-"""Build the Rules Agent knowledge base: a local ChromaDB collection of Basic Rules passages.
+"""Build the Rules Agent knowledge base: a local ChromaDB collection of Crawl Handbook passages.
 
-Run it once from this folder, with DnD_BasicRules_2018.pdf next to it:
+The Crawl Handbook is the crawl's own rule book, one Markdown file per section in
+workshop/world/crawl-handbook/. Run this once from this folder:
     python create_knowledge_base.py
 """
 
 import os
 import sys
+from pathlib import Path
 
 import chromadb
-from pypdf import PdfReader
 
-PDF_FILE = "DnD_BasicRules_2018.pdf"
+HANDBOOK_DIR = Path(__file__).resolve().parent.parent.parent / "workshop" / "world" / "crawl-handbook"
 DB_PATH = "./rules_knowledge_base"
-COLLECTION = "basic_rules"
-# Printed at the top of almost every page; useless for search, so it is stripped.
-FOOTER = "D&D Basic Rules (Version 1.0). Not for resale. Permission granted to print and photocopy this document for personal use only."
+COLLECTION = "crawl_handbook"
 CHUNK_SIZE = 1000    # characters per passage
 CHUNK_OVERLAP = 200  # characters shared by two consecutive passages, so a rule cut in two stays findable
 
 
-def extract_chunks(pdf_path: str) -> list[dict]:
-    """Read the PDF page by page and cut each page into overlapping passages."""
+def section_title(path: Path) -> str:
+    """The section's first heading, e.g. "Dance-Offs" for 03-dance-offs.md."""
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("# "):
+            return line[2:].strip()
+    return path.stem
+
+
+def extract_chunks(handbook_dir: Path) -> list[dict]:
+    """Read each handbook section and cut it into overlapping passages."""
     chunks = []
-    for page_number, page in enumerate(PdfReader(pdf_path).pages, start=1):
-        # pypdf separates many words with newlines: normalise all whitespace to single spaces
-        text = " ".join((page.extract_text() or "").replace(FOOTER, " ").split())
+    for path in sorted(handbook_dir.glob("*.md")):
+        section = section_title(path)
+        text = path.read_text(encoding="utf-8").strip()
         start = 0
         while start < len(text):
             end = min(start + CHUNK_SIZE, len(text))
-            if end < len(text):  # cut on a space, not in the middle of a word
-                cut = text.rfind(" ", start + CHUNK_SIZE // 2, end)
+            if end < len(text):  # cut on a line break or a space, not in the middle of a word
+                cut = max(text.rfind("\n", start + CHUNK_SIZE // 2, end), text.rfind(" ", start + CHUNK_SIZE // 2, end))
                 if cut != -1:
                     end = cut
             passage = text[start:end].strip()
             if len(passage) > 50:
                 chunks.append({
-                    "id": f"page_{page_number}_offset_{start}",
+                    "id": f"{path.stem}_offset_{start}",
                     "text": passage,
-                    "metadata": {"page": page_number, "source": PDF_FILE},
+                    "metadata": {"section": section, "source": path.name},
                 })
             if end == len(text):
                 break
@@ -46,8 +53,8 @@ def extract_chunks(pdf_path: str) -> list[dict]:
 
 
 def create_knowledge_base() -> None:
-    print("Extracting text from the PDF...")
-    chunks = extract_chunks(PDF_FILE)
+    print(f"Reading the Crawl Handbook from {HANDBOOK_DIR}...")
+    chunks = extract_chunks(HANDBOOK_DIR)
     print(f"{len(chunks)} passages extracted")
 
     client = chromadb.PersistentClient(path=DB_PATH)
@@ -71,7 +78,7 @@ def create_knowledge_base() -> None:
 
 
 if __name__ == "__main__":
-    if not os.path.exists(PDF_FILE):
-        sys.exit(f"'{PDF_FILE}' not found. Download it next to this script first (see the workshop instructions).")
+    if not HANDBOOK_DIR.is_dir():
+        sys.exit(f"Crawl Handbook not found at {HANDBOOK_DIR}. Run this script from inside the repository.")
     create_knowledge_base()
     print("Knowledge base creation complete!")

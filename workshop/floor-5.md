@@ -13,7 +13,7 @@ What is A2A? [Agent2Agent (A2A)](https://a2a-protocol.org/) is an open protocol 
 Make sure you are at the root of Floor 5 in your terminal:
 
 ```bash
-cd strands-dungeon-crawl/5_a2a_integration
+cd aiRPG-seattle-dungeon-crawl/5_a2a_integration
 ```
 
 ## System Architecture
@@ -38,28 +38,21 @@ Build a system with three specialized agents that work together:
 
 ## Part 1: Setting Up the Rules Agent
 
-First, you need to create a Knowledge Base for the Rules Agent. The Basic Rules PDF must be processed and stored in ChromaDB (a vector database) so the agent can query it for rules questions.
+First, you need to create a Knowledge Base for the Rules Agent. The Crawl Handbook, the crawl's own rule book, must be processed and stored in ChromaDB (a vector database) so the agent can query it for rules questions.
 
 ### Creating the Knowledge Base
 
-> <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [DnD_BasicRules_2018.pdf]**
+> <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [The Crawl Handbook]**
 >
-> An 11 MB rule book. Rarity: Free. The Rules Agent reads it so you never have to, then cites page numbers at you with visible satisfaction.
+> Eleven Markdown files of rules, written by the System and revised every time a Crawler found a loophole. Rarity: Free. The Rules Agent reads it so you never have to, then cites section names at you with visible satisfaction.
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** You must complete this setup before the Rules Agent can work.
 
-#### Step 1: Download the Basic Rules
+#### Step 1: Read the Handbook
 
-Get the D&D Basic Rules 2018 PDF from Wizards of the Coast (download the rule book from their site).
+The handbook ships with this repository, in [`workshop/world/crawl-handbook/`](world/crawl-handbook/): one file per section, from ability scores and dance-offs to Safe Rooms and Ferry Tokens. Skim [Dance-Offs](world/crawl-handbook/03-dance-offs.md) and [The Final Beat](world/crawl-handbook/04-final-beat.md) now: the Narrator will run both before this floor is over. Nothing to download.
 
-Important: name it exactly `DnD_BasicRules_2018.pdf`.
-
-#### Step 2: Place the PDF in the Correct Folder
-
-- Put `DnD_BasicRules_2018.pdf` in the `5_a2a_integration/utils/` folder
-- It should be next to `create_knowledge_base.py`
-
-#### Step 3: Build the Knowledge Base
+#### Step 2: Build the Knowledge Base
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
@@ -67,19 +60,23 @@ Important: name it exactly `DnD_BasicRules_2018.pdf`.
 >
 > Reward: You received a [Bronze Box]. Inside: a chroma.sqlite3 file and a vector index that understands the rules better than you do.
 
-Run the script to process the PDF. Important: run this from the `utils` folder.
+Run the script to index the handbook. Important: run this from the `utils` folder.
 
 ```bash
+cd utils
 python create_knowledge_base.py
+cd ..
 ```
 
-What the script does. `pypdf` reads the PDF page by page and extracts the text. Each page is cut into passages of about 1,000 characters that overlap a little, so a rule split across two passages stays findable, and the page number is kept with each passage. ChromaDB then creates a local database in `rules_knowledge_base/` (a SQLite file plus a vector index) and turns every passage into a vector with its default embedding model, `all-MiniLM-L6-v2`, downloaded on first run (about 80 MB, cached afterwards): two passages about the same thing end up with vectors close to each other. Later, when the Rules Agent calls its tool, the question is turned into a vector the same way and the three closest passages come back with their page numbers. No LLM is involved in that lookup, it is pure semantic search; the model only reads the passages afterwards to write its answer.
+What the script does. It reads every handbook file and keeps the section title from its first heading. Each file is cut into passages of about 1,000 characters that overlap by 200, so a rule split across two passages stays findable, and the section name is kept with each passage. ChromaDB then creates a local database in `rules_knowledge_base/` (a SQLite file plus a vector index) and turns every passage into a vector with its default embedding model, `all-MiniLM-L6-v2`, downloaded on first run (about 80 MB, cached afterwards): two passages about the same thing end up with vectors close to each other. Later, when the Rules Agent calls its tool, the question is turned into a vector the same way and the three closest passages come back with their section names. No LLM is involved in that lookup, it is pure semantic search; the model only reads the passages afterwards to write its answer.
 
 Verify that the knowledge base was created:
 
 - Check that the `5_a2a_integration/utils/rules_knowledge_base/` folder exists
 - Look for `chroma.sqlite3` inside
 - You should see: "Knowledge base creation complete!"
+
+Change a rule in the handbook and run the script again: the Rules Agent answers from the new text on its next question. That is the whole point of keeping rules in a knowledge base instead of a prompt.
 
 ### Configure the Rules Agent
 
@@ -106,11 +103,11 @@ Floors 1 to 4 never set a name, because nobody but you talked to the agent. Here
 ```json
 {
   "name": "Rules Agent",
-  "description": "Rules lookup for the dungeon: fast, page-referenced answers from the Basic Rules knowledge base.",
+  "description": "Rules lookup for the dungeon: fast answers from the Crawl Handbook, with the section they come from.",
   "url": "http://127.0.0.1:8000/",
   "version": "0.0.1",
   "skills": [
-    {"id": "query_rules", "name": "query_rules", "description": "Look up a rule in the Basic Rules knowledge base. ..."}
+    {"id": "query_rules", "name": "query_rules", "description": "Look up a rule in the Crawl Handbook knowledge base. ..."}
   ],
   "capabilities": {"streaming": true},
   "defaultInputModes": ["text"],
@@ -123,7 +120,7 @@ The skills are your tools: Strands fills them from the tool names and docstrings
 #### Step 3: Add the Description
 
 ```python
-# TODO: Step 3 - Add the description "Rules lookup for the dungeon: fast, page-referenced answers from the Basic Rules knowledge base." to the agent
+# TODO: Step 3 - Add the description "Rules lookup for the dungeon: fast answers from the Crawl Handbook, with the section they come from." to the agent
 ```
 
 The description at the top of the card: this is what the orchestrator reads in Part 3 to decide which agent to ask. It is required, the server refuses to start without one. See the documentation for an example of an agent with a name and a description.
@@ -157,9 +154,9 @@ You should see Uvicorn running on `http://127.0.0.1:8000`. Open `http://127.0.0.
 
 ## Part 2: Setting Up the Character Agent
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The Character Agent is the registration desk. Every new Crawler gets ability scores, level 1, a starter kit and 100 gold pieces. Shoes are not included. Shoes are never included."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The Character Agent is the party's registration desk. Cordula and Barnaby get their sheets stamped, Groove and Mana computed, a starter kit and 10 Ferry Tokens each. The companions get no paperwork. Shelly has filed a complaint. The rain shell is not included. The rain shell is never included."
 
-The Character Agent manages character creation and lookup. It comes with three pre-built tools:
+The Character Agent manages the party's character sheets. You play as a set party: Cordula Vance and Barnaby are the two Crawlers, and Shelly and Chonks ride along as companions, with no sheet of their own. A sheet holds a name, a species (see [species](world/crawl-handbook/08-species.md)), pronouns, a class, six ability scores and the two derived stats the code computes from them: Groove (10 + 2 x Constitution modifier + level) and Mana (5 + Intelligence modifier + Wisdom modifier). The registry starts empty: in Part 4 the Narrator registers the party with the scores from [the cast](world/cast.md). The agent comes with three pre-built tools:
 
 - `create_character`: creates new characters with stats
 - `find_character_by_name`: looks up characters by name
@@ -280,10 +277,11 @@ We have coded `StoryOutput` for you, a little further up in the file: the schema
 
 ```json
 {
-  "response": "The die tumbles across the table and lands on a 13! You are quick off the mark as the chaos of combat erupts around you.",
-  "actions_suggestions": ["Draw your weapon", "Look for cover", "Shout a warning to your allies"],
-  "details": "roll_dice (d20) through the dice server",
-  "dice_rolls": [{"dice_type": "d20", "result": 13, "reason": "initiative roll"}]
+  "response": "Tempo: Driving. The Quarterly Close Accountant loosens their tie and calls Footwork like it is an audit finding. Cordula answers with a 13 plus 1 for Dexterity: 14 against their 11. Round one to the kayak patrol.",
+  "actions_suggestions": ["Let Barnaby drop an Ink Cloud before the next call", "Ask the accountant about their weekend", "Challenge them to a second dance-off, double or nothing, during quarter close"],
+  "details": "roll_dice through the dice server, twice; Rules Agent for the tempo bonus",
+  "dice_rolls": [{"dice_type": "1d20", "result": 13, "reason": "Footwork Move Call, round 1, Cordula +1 Dexterity"},
+                 {"dice_type": "1d20", "result": 9, "reason": "Footwork Move Call, round 1, accountant +0 Dexterity +2 Driving tempo"}]
 }
 ```
 
@@ -309,7 +307,7 @@ You should see Uvicorn running on `http://127.0.0.1:8009`. Four terminals are no
 
 ## Part 4: Test the System
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Four curl commands: a rules question, a new character, a lookup and an initiative roll. Survive all four and the party is formed.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Four curl commands: a rules question, registering the party, a lookup on the party leader, and a dance-off against the Quarterly Close Accountant. Survive all four and the party is formed.
 
 At this point four terminals should be running:
 
@@ -328,31 +326,33 @@ The Narrator is a FastAPI application listening on port 8009. Each curl command 
 # Query the rules
 curl -X POST http://0.0.0.0:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "What are the rules for dexterity checks?"}'
+  -d '{"question": "How does the Final Beat work?"}'
 ```
 
 ```bash
-# Create a new character
+# Register the party (the Narrator passes the cast scores, the Character Agent computes the rest)
 curl -X POST http://0.0.0.0:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "Create a character named Thorin, a Dwarf Fighter with strength 16, dexterity 12, constitution 15"}'
+  -d '{"question": "Register the party with the System: Cordula Vance and Barnaby."}'
 ```
 
 ```bash
-# Look up a character
+# Look up the party leader
 curl -X POST http://0.0.0.0:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "What is Thorin'\''s constitution?"}'
+  -d '{"question": "What are Barnaby'\''s Dexterity and Mana?"}'
 ```
 
 ```bash
-# Roll for initiative
+# Start a dance-off
 curl -X POST http://0.0.0.0:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "Roll a d20 for initiative!"}'
+  -d '{"question": "Cordula challenges the Quarterly Close Accountant to a dance-off at the Pier 59 collapse. Run round one."}'
 ```
 
-Watch the four terminals while a request runs. In the Narrator terminal the tool calls appear in order: `a2a_client` discovering the agent cards, then `send_message` to the Rules Agent or the Character Agent, or `roll_dice` for the dice. The agent you asked logs the question in its own terminal, and the dice server prints a `DICE ROLL` line for every roll. The answer you get back is JSON shaped like `StoryOutput`: `response`, `actions_suggestions`, `details` and `dice_rolls`.
+Watch the four terminals while a request runs. In the Narrator terminal the tool calls appear in order: `a2a_client` discovering the agent cards, then `send_message` to the Rules Agent or the Character Agent, or `roll_dice` for the dice. The agent you asked logs the question in its own terminal, and the dice server prints a `DICE ROLL` line for every roll: none while the party registers (the Narrator passes the scores from the cast), two `1d20` lines for each dance-off round. The Character Agent terminal shows two `New Crawler registered` lines, and the sheets it returns carry Groove 17 and Mana 8 for Cordula, Groove 11 and Mana 11 for Barnaby: computed by the code, not the model. The answer you get back is JSON shaped like `StoryOutput`: `response`, `actions_suggestions`, `details` and `dice_rolls`. Barnaby's lookup should come back with Dexterity 18 and Mana 11: the Narrator read it from the Character Agent instead of inventing it.
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 5: RULES, SHEETS AND THE CORE LOOP.** This floor is where the game becomes a game. The rules live in a knowledge base the Rules Agent searches, so the Narrator cites them instead of improvising. The character sheet lives with the Character Agent, which computes Groove and Mana from the ability scores so no model can hand a Crawler extra stamina. The dance-off is the core loop: a Move Call, two rolls, a winner, Groove lost, a Final Beat when it is level. Every stat has a job in it, and nobody gets hurt. `StoryOutput` is the notification format the HUD will render on Floor 6. See [The System](world/the-system.md#6-conflict-dance-offs-and-stealth-never-killing) and the [Crawl Handbook](world/crawl-handbook/).
 
 ## Floor Clear
 
@@ -360,7 +360,7 @@ Floor cleared, Crawler. You've built a complete multi-agent Narrator system with
 
 Loot you're keeping:
 
-- Setting up a ChromaDB knowledge base for the Rules Agent
+- Setting up a ChromaDB knowledge base from the Crawl Handbook for the Rules Agent
 - Building agent factories for per-caller isolation (the `agent_factory` pattern)
 - Setting up A2A servers to expose your agents
 - Creating an A2A client tool so the orchestrator can discover and call other agents
@@ -374,6 +374,6 @@ Loot you're keeping:
 >
 > **[FOUR TERMINALS OPEN, ZERO FRIENDS]**
 >
-> Reward: You received a [Gold Box]. Inside: a Rules Agent that cites page numbers, a Character Agent that remembers Thorin, and an orchestrator that has opinions about both.
+> Reward: You received a [Gold Box]. Inside: a Rules Agent that cites handbook sections, a Character Agent that remembers Barnaby's Dexterity to the point, and an orchestrator that just watched an accountant lose a Footwork call.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "You built a multi-agent system and it returned typed JSON. I am, against my better judgment, impressed. Floor 6 lets you watch it play in public."

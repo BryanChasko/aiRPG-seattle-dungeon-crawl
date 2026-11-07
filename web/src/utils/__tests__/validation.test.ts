@@ -4,9 +4,9 @@ import type { CharacterForm } from '../../types'
 
 const validForm: CharacterForm = {
   name: 'Aragorn',
-  gender: 'Male',
-  race: 'Human',
-  characterClass: 'Ranger',
+  pronouns: 'he/him',
+  species: 'Human (Seattle Native)',
+  characterClass: 'Coffee Alchemist',
   serverUrl: 'https://example.com',
 }
 
@@ -21,14 +21,14 @@ describe('validateForm', () => {
     expect(Object.keys(errors)).toHaveLength(1)
   })
 
-  it('returns error when gender is empty', () => {
-    const errors = validateForm({ ...validForm, gender: '' as CharacterForm['gender'] })
-    expect(errors.gender).toBeDefined()
+  it('returns error when pronouns is empty', () => {
+    const errors = validateForm({ ...validForm, pronouns: '' as CharacterForm['pronouns'] })
+    expect(errors.pronouns).toBeDefined()
   })
 
-  it('returns error when race is empty', () => {
-    const errors = validateForm({ ...validForm, race: '' as CharacterForm['race'] })
-    expect(errors.race).toBeDefined()
+  it('returns error when species is empty', () => {
+    const errors = validateForm({ ...validForm, species: '' as CharacterForm['species'] })
+    expect(errors.species).toBeDefined()
   })
 
   it('returns error when characterClass is empty', () => {
@@ -54,8 +54,8 @@ describe('validateForm', () => {
   it('returns errors for all empty fields', () => {
     const errors = validateForm({
       name: '',
-      gender: '' as CharacterForm['gender'],
-      race: '' as CharacterForm['race'],
+      pronouns: '' as CharacterForm['pronouns'],
+      species: '' as CharacterForm['species'],
       characterClass: '' as CharacterForm['characterClass'],
       serverUrl: '',
     })

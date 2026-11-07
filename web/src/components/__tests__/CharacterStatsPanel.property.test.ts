@@ -9,36 +9,36 @@ import type { CharacterStats } from '@/types'
  * Validates: Requirements 4.2
  *
  * For any valid CharacterStats object, the CharacterStatsPanel component
- * should render output containing the character's name, race, class, and gender.
+ * should render output containing the character's name, species, class, and pronouns.
  */
 
-const genderArb = fc.constantFrom('Male', 'Female', 'Non-binary')
+const pronounsArb = fc.constantFrom('she/her', 'he/him', 'they/them', 'any pronouns')
 
-const raceArb = fc.constantFrom(
-  'Human',
-  'Elf',
-  'Dwarf',
-  'Halfling',
-  'Gnome',
-  'Half-Elf',
-  'Half-Orc',
-  'Tiefling',
-  'Dragonborn',
+const speciesArb = fc.constantFrom(
+  'Human (Seattle Native)',
+  'Human (Transplant)',
+  'Uplifted Giant Pacific Octopus',
+  'Uplifted Crow',
+  'Harbor Seal',
+  'Sea Otter',
+  'Banana Slug',
+  'Fremont Troll-kin',
+  'Underground Ghost',
 )
 
 const classArb = fc.constantFrom(
-  'Barbarian',
-  'Bard',
-  'Cleric',
-  'Druid',
-  'Fighter',
-  'Monk',
-  'Paladin',
-  'Ranger',
-  'Rogue',
-  'Sorcerer',
-  'Warlock',
-  'Wizard',
+  'Amphibious Breacher',
+  'Benthic Dragoon',
+  'Kayak Patrol Ranger',
+  'Ferry Engineer',
+  'Ballard Brewer',
+  'Fish-Toss Striker',
+  'Grunge Bard',
+  'Coffee Alchemist',
+  'Salvage Artificer',
+  'Rain Warden',
+  'Floating-Bridge Engineer',
+  'Startup Necromancer',
 )
 
 const abilityScoresArb = fc.record({
@@ -53,8 +53,8 @@ const abilityScoresArb = fc.record({
 const characterStatsArb: fc.Arbitrary<CharacterStats> = fc.record({
   character_id: fc.uuid(),
   name: fc.string({ minLength: 1, maxLength: 60 }).filter((s) => s.trim().length > 0),
-  gender: genderArb,
-  race: raceArb,
+  pronouns: pronounsArb,
+  species: speciesArb,
   character_class: classArb,
   level: fc.integer({ min: 1, max: 20 }),
   experience: fc.integer({ min: 0, max: 999999 }),
@@ -64,7 +64,7 @@ const characterStatsArb: fc.Arbitrary<CharacterStats> = fc.record({
 })
 
 describe('Property 4: Character stats rendering', () => {
-  it('renders name, race, class, and gender for any valid CharacterStats', { timeout: 30000 }, () => {
+  it('renders name, species, class, and pronouns for any valid CharacterStats', { timeout: 30000 }, () => {
     fc.assert(
       fc.property(characterStatsArb, (stats) => {
         const wrapper = mount(CharacterStatsPanel, {
@@ -73,9 +73,9 @@ describe('Property 4: Character stats rendering', () => {
 
         const text = wrapper.text()
         expect(text).toContain(stats.name)
-        expect(text).toContain(stats.race)
+        expect(text).toContain(stats.species)
         expect(text).toContain(stats.character_class)
-        expect(text).toContain(stats.gender)
+        expect(text).toContain(stats.pronouns)
       }),
       { numRuns: 100 },
     )

@@ -16,9 +16,9 @@ import type { CharacterForm } from '../../types'
 /** A valid base form with all fields filled — only serverUrl will vary */
 const baseForm: Omit<CharacterForm, 'serverUrl'> = {
   name: 'Thorn',
-  gender: 'Male',
-  race: 'Human',
-  characterClass: 'Barbarian',
+  pronouns: 'he/him',
+  species: 'Human (Seattle Native)',
+  characterClass: 'Amphibious Breacher',
 }
 
 /**

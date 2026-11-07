@@ -1,27 +1,27 @@
 {
  "brand_exceptions": [
-  "BRAND.md 3 people/faces ban lifted: the banner spec is a character scene (precedent: sso spider bible)",
-  "BRAND.md 3 glyph ban lifted for the grenade runes the banner spec requests"
+  "BRAND.md 3 people/faces ban lifted: the banner is a character scene of the cast (Cordula, Barnaby, Shelly, Chonks)",
+  "interface boxes in the render are blank by prompt; no model text"
  ],
- "bytes": 258412,
+ "bytes": 247480,
  "file": "banner-1680x720.webp",
  "format": "webp lossy q84",
  "render": {
   "endpoint": "POST https://api.meta.ai/v1/images/generations",
   "model": "muse-image-1.0",
-  "prompt_sha256": "7e74244e2c9957b9adbd90f29326120097c4e0b4e8f619a960b8a1178e85e253",
+  "prompt_sha256": "dc4567dca2e7a91d0635ba6425149512b42fb4f7ae737a1c58d2db6ab456d3c1",
   "size": "1792x768"
  },
- "sha256": "d270a509afc0e30327d6b4c7097cf8a7af3561e7cf05cefa6451fb40e65b133e",
+ "sha256": "1d8ea7c4c821af6e7e4ca8471f076e7c0960d3bf419de0634de8330b94816720",
  "size": [
   1680,
   720
  ],
  "source": {
-  "raw": "banner-f.png",
-  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/banner-f.png",
-  "raw_sha256": "0dfc1b9a24eb86291147f746ef3c699cb18c8f4e4078c1fe149eea2092ad344f",
-  "request": "images/src/banner-f.request.json"
+  "raw": "banner-seattle-d.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/banner-seattle-d.png",
+  "raw_sha256": "29832f77647271c2b4a8a10fbb7f08025f48148f7bdbec75757d551a6730ba9c",
+  "request": "images/src/banner-seattle-d.request.json"
  },
  "tokens": {
   "ben_day": "#d7c7ee",

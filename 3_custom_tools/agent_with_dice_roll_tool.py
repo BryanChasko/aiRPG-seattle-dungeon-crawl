@@ -7,9 +7,10 @@ def roll_dice(faces: int = 6, count: int = 1, drop_lowest: int = 0) -> dict:
     # TODO: Step 2 - Write a docstring with the description, an Args section and the return value
     """Roll one or more dice with the same number of faces, optionally drop the lowest, and total the rest.
 
-    Use it every time the game needs a random roll: ability scores, attack rolls,
-    saving throws, damage. For "4d6 drop lowest", call it once with faces=6,
-    count=4, drop_lowest=1. For a single d20, call it with faces=20.
+    Use it every time the game needs a random roll: ability scores, dance-off
+    Move Calls, the Final Beat, ability checks, loot boxes. For "4d6 drop lowest",
+    call it once with faces=6, count=4, drop_lowest=1. For a single d20, call it
+    with faces=20.
 
     Example response: {"rolls": [5, 2, 6, 3], "kept": [5, 6, 3], "total": 14}
 
@@ -54,5 +55,5 @@ dice_roller = Agent(
     When rolling ability scores, remember the traditional method: roll 4d6, drop the lowest die."""
 )
 
-dice_roller("Help me create a new fantasy character! Roll the strength, wisdom, charisma and intelligence abilities scores using 4d6 drop lowest method.")
+dice_roller("Show the audience how the System rolled Cordula's sheet on day one: roll strength, wisdom, charisma and intelligence with the 4d6 drop lowest method.")
 

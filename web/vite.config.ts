@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  base: '/strands-dungeon-crawl/',
+  base: '/aiRPG-seattle-dungeon-crawl/',
   plugins: [vue()],
   resolve: {
     alias: {

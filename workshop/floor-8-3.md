@@ -6,16 +6,16 @@
 
 ## Floor Objective
 
-Move the third brick to production: put the Basic Rules PDF in an Amazon Bedrock Knowledge Base, deploy the Floor 5 Rules Agent to AgentCore Runtime as an A2A server that searches it, then point the Narrator at it. After this section, only the Narrator still runs on your machine.
+Move the third brick to production: put the Crawl Handbook in an Amazon Bedrock Knowledge Base, deploy the Floor 5 Rules Agent to AgentCore Runtime as an A2A server that searches it, then point the Narrator at it. After this section, only the Narrator still runs on your machine.
 
 Why not keep ChromaDB? In Floor 5 the rules live in a ChromaDB folder built on your machine, and the embedding model is downloaded on first use. On AgentCore Runtime the code folder is read-only, a new microVM must be ready within seconds, and every microVM would need its own copy of the index. The rules need a search service that lives outside the runtime, built once and shared by every session.
 
-What is a managed knowledge base? A Bedrock Knowledge Base turns documents into a searchable index: it splits them into passages, computes their embeddings and stores the vectors. In a managed knowledge base, Bedrock also runs the vector store, so there is no database to create or size. You point it at an S3 bucket, it ingests the files, and the Retrieve API returns the passages closest to a question, each with its source page. The AgentCore CLI declares it in the project like any other brick.
+What is a managed knowledge base? A Bedrock Knowledge Base turns documents into a searchable index: it splits them into passages, computes their embeddings and stores the vectors. In a managed knowledge base, Bedrock also runs the vector store, so there is no database to create or size. You point it at an S3 bucket, it ingests the files, and the Retrieve API returns the passages closest to a question, each with the location of the file it came from. The AgentCore CLI declares it in the project like any other brick.
 
 This section needs the `gameprod` project with the dice server and the Character Agent deployed in 8.1 and 8.2, and the knowledge base you started on the Floor 8 page. Make sure you are at the root of Floor 8 in your terminal:
 
 ```bash
-cd strands-dungeon-crawl/8_agentcore_production
+cd aiRPG-seattle-dungeon-crawl/8_agentcore_production
 ```
 
 This section works in two folders:
@@ -29,9 +29,9 @@ This section works in two folders:
 
 You started the knowledge base on the Floor 8 page, in Step 3 of Set Up the Project. Here is what its commands did:
 
-- `aws s3 mb` and `aws s3 cp` create a bucket and copy the PDF into it: a knowledge base reads its documents from S3. Bucket names are global across all AWS accounts, so the name ends with your account id.
+- `aws s3 mb` and `aws s3 cp --recursive` create a bucket and copy the eleven handbook files into it: a knowledge base reads its documents from S3. Bucket names are global across all AWS accounts, so the name ends with your account id.
 - `agentcore add knowledge-base` declares a managed knowledge base named `rules` in `agentcore/agentcore.json`, with the bucket as its data source. The CLI gives the knowledge base, not your agents, the right to read the bucket.
-- `agentcore deploy` creates the knowledge base and its data source, then the CLI starts the ingestion: Bedrock reads the PDF, splits it and indexes it. The deployment ends before the ingestion does.
+- `agentcore deploy` creates the knowledge base and its data source, then the CLI starts the ingestion: Bedrock reads the handbook, splits it and indexes it. The deployment ends before the ingestion does.
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Run `agentcore` from the root of the `gameprod` folder, like every `agentcore` command of this floor. The CLI looks for `agentcore/agentcore.json` in the current folder and its parents: from `8_agentcore_production` or from `rulesagent/`, it stops with `No agentcore project found`. Check the indexing:
 
@@ -40,9 +40,9 @@ cd gameprod
 agentcore status
 ```
 
-Under Knowledge Bases, `rules` shows `Deployed` as soon as the knowledge base exists, and `Ingestion: IN_PROGRESS` while Bedrock indexes the PDF. It is ready when it shows `Ingestion: COMPLETE`. If the ingestion is still running, prepare the agent in Part 2 meanwhile, and check again before Part 3. Copy the id at the end of the knowledge base ARN, after `knowledge-base/` (10 characters, like `YAYTMGXCRR`): you paste it into `agentcore/agentcore.json` in Part 3, Step 2.
+Under Knowledge Bases, `rules` shows `Deployed` as soon as the knowledge base exists, and `Ingestion: IN_PROGRESS` while Bedrock indexes the handbook. It is ready when it shows `Ingestion: COMPLETE`. If the ingestion is still running, prepare the agent in Part 2 meanwhile, and check again before Part 3. Copy the id at the end of the knowledge base ARN, after `knowledge-base/` (10 characters, like `YAYTMGXCRR`): you paste it into `agentcore/agentcore.json` in Part 3, Step 2.
 
-If you change the PDF later, `agentcore run ingest` indexes the bucket again.
+If you change a handbook file later, copy it to the bucket again and run `agentcore run ingest`: Bedrock indexes the bucket again, and the cloud Rules Agent answers from the new rule.
 
 ## Part 2: Prepare the Rules Agent for the Cloud (rulesagent/rules_agent.py)
 
@@ -55,19 +55,21 @@ KNOWLEDGE_BASE_ID = os.environ["KNOWLEDGE_BASE_RULES_ID"]
 knowledge_base = boto3.client("bedrock-agent-runtime")
 ```
 
+Below them, a given helper, `section_of(result)`, turns the S3 location of a result into a section name: each handbook section is its own file, so `s3://.../03-dance-offs.md` becomes `Dance Offs` and `04-final-beat.md` becomes `Final Beat`. In Floor 5 the section came from the metadata you stored in ChromaDB; here Bedrock keeps the file location with every passage, and the file name is the section.
+
 Unlike the memory in 8.2, the CLI passes nothing to the runtimes for a knowledge base: neither its id nor the right to search it. You add both to `agentcore/agentcore.json` in Part 3, Step 2.
 
 ### Step 1: Search the Knowledge Base
 
 ```python
-    # TODO: Step 1 - Retrieve the 3 passages closest to the query from the knowledge base and prefix each one with its page number
+    # TODO: Step 1 - Retrieve the 3 passages closest to the query from the knowledge base and prefix each one with its section
     results = knowledge_base.retrieve(
         knowledgeBaseId=KNOWLEDGE_BASE_ID,
         retrievalQuery={"text": query},
         retrievalConfiguration={"managedSearchConfiguration": {"numberOfResults": 3}},
     )["retrievalResults"]
     return "\n\n".join(
-        f"[Page {int(result['metadata']['_excerpt_page_number'])}] {result['content']['text']}"
+        f"[{section_of(result)}] {result['content']['text']}"
         for result in results
     )
 ```
@@ -78,7 +80,7 @@ The code goes under the TODO, at the end of `query_rules`, after its docstring. 
 - `retrievalQuery={"text": query}`: the question, in plain English; the knowledge base computes its embedding
 - `retrievalConfiguration={"managedSearchConfiguration": {"numberOfResults": 3}}`: a managed knowledge base takes `managedSearchConfiguration`; the `vectorSearchConfiguration` you may find in other examples is for knowledge bases on your own vector store, and is rejected here
 
-The response has a `retrievalResults` list. Each result holds the passage in `result["content"]["text"]` and its page in `result["metadata"]["_excerpt_page_number"]`, a float such as `76.0`, hence the `int(...)`. The tool returns the passages as in Floor 5: `[Page 76] ...`, separated by blank lines. See Retrieve and ManagedSearchConfiguration.
+The response has a `retrievalResults` list. Each result holds the passage in `result["content"]["text"]` and the file it came from in `result["location"]["s3Location"]["uri"]`, which `section_of` reads. The tool returns the passages as in Floor 5: `[Final Beat] ...`, separated by blank lines. See Retrieve and ManagedSearchConfiguration.
 
 ### Step 2: Serve the Agent on AgentCore
 
@@ -177,17 +179,17 @@ agentcore status
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
-> **[PAGE 76 ENJOYER]**
+> **[FINAL BEAT ENJOYER]**
 >
-> Reward: You received a [Silver Box]. Inside: one opportunity attack ruling, one page reference, and a Rules Agent who will bring up page 76 at parties.
+> Reward: You received a [Silver Box]. Inside: one Final Beat ruling, one section name, and a Rules Agent who will explain the speeding drum at parties.
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Run every command of this step from the root of the `gameprod` folder, like the rest of Part 3.
 
 ```bash
-agentcore invoke --runtime rulesagent "What is an opportunity attack?"
+agentcore invoke --runtime rulesagent "How does the Final Beat work?"
 ```
 
-The agent searches the knowledge base once and answers with the page reference, page 76, as in Floor 5.
+The agent searches the knowledge base once and answers with the section name, Final Beat, as in Floor 5: both roll 1d20 plus their Dexterity modifier, and the total closest to 20 without going over wins.
 
 ## Part 4: Connect the Narrator (narrator/narrator_orchestrator.py)
 
@@ -243,15 +245,15 @@ python narrator_orchestrator.py
 
 ## Part 5: Play Against the Cloud
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Walk away from a goblin and find out what an opportunity attack costs. Page 76 has the answer, and the Rules Agent has page 76.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** A Pitch-Deck Founder blocks the Ship Canal locks. Sneak past or dance: the Rules Agent knows what each one costs, and the handbook backs it up.
 
 ```bash
 curl -X POST http://0.0.0.0:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "Quick rules check: what happens if I walk away from the goblin next to me? Then I attack it with my longsword."}'
+  -d '{"question": "Quick rules check: can Barnaby sneak the party past the Pitch-Deck Founder at the Ship Canal locks instead of dancing? Then try it."}'
 ```
 
-The Narrator asks the Rules Agent about opportunity attacks, then rolls on the cloud dice server and narrates. Its `details` field cites the page. Three of your four bricks now run in AWS, and `agentcore logs --runtime rulesagent` shows the request. Only the Narrator is left on your machine: 8.4 moves it too.
+The Narrator asks the Rules Agent about stealth, then rolls on the cloud dice server and narrates. Its `details` field cites the handbook section. Three of your four bricks now run in AWS, and `agentcore logs --runtime rulesagent` shows the request. Only the Narrator is left on your machine: 8.4 moves it too.
 
 ## Floor Clear
 
@@ -260,7 +262,7 @@ Floor cleared, Crawler. The rule book now lives in the cloud, and every session 
 Loot you're keeping:
 
 - How to put documents in a managed Bedrock Knowledge Base declared in the project (`agentcore add knowledge-base`, ingestion, `agentcore status`)
-- How to search it from a tool (`bedrock-agent-runtime`, `retrieve`, `managedSearchConfiguration`, `_excerpt_page_number`)
+- How to search it from a tool (`bedrock-agent-runtime`, `retrieve`, `managedSearchConfiguration`, the result's S3 location)
 - How to pass configuration and a least-privilege permission to a runtime (`envVars`, `additionalPolicies`, `bedrock:Retrieve`)
 
 <img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [8.4](floor-8-4.md) where the Narrator itself takes its seat in the cloud.
@@ -270,6 +272,6 @@ Loot you're keeping:
 >
 > **[RTFM (AS A SERVICE)]**
 >
-> Reward: You received a [Silver Box]. Inside: a deployed Rules Agent, a bedrock:Retrieve permission with no friends, and page 76 on demand.
+> Reward: You received a [Silver Box]. Inside: a deployed Rules Agent, a bedrock:Retrieve permission with no friends, and the whole Crawl Handbook on demand.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The rule book lives in the cloud, and every session reads the same one. Fairness is a feature, not a promise."

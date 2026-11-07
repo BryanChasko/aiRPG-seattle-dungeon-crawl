@@ -25,7 +25,7 @@ const assistantMsg: ParsedMessage = {
 const assistantMsgWithDice: ParsedMessage = {
   role: 'assistant',
   storyOutput: {
-    response: 'You swing your sword at the goblin.',
+    response: 'You out-dance the accountant on the Footwork call.',
     actions_suggestions: [],
     details: '',
     dice_rolls: [

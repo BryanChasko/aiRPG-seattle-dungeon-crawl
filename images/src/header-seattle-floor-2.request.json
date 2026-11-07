@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: the Eelgrass Nursery: a shallow underwater meadow of long ribbon-like green eelgrass swaying over pale sand and mud flats, sunlight filtering down through a few feet of water, clusters of tiny herring eggs on the blades, a small Dungeness crab half buried in the sand, two old vending machines sunk at an angle in the meadow, their fronts glowing violet and orange. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "037f54e2c55b3b05d9886390d3ecd665f6b98bbb1a7dc8613df09c06e027b277",
+ "auth": "REDACTED",
+ "output_sha256": "0c19cd176d409806b1eee503cfaf5a2c3becabc55406acfaae2bcf763a7932b3",
+ "revised_prompt": null
+}

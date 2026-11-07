@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: the Bluffs: a steep Puget Sound shoreline cliff just above the high-tide line, Pacific madrone trees with twisting trunks and peeling red-orange bark, wind-bent shore pines, Hooker's willow at the water's edge, wild pink Nootka roses and white snowberry holding the slope, yellow Puget Sound gumweed flowers among the rocks, a weathered gear locker built into the cliff, its doors open with a faint violet glow inside, the grey Sound and distant islands below. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "d8eb658dd42d044e8d0edb7f350364e942039264e4ee19951b1d73f67197c3a6",
+ "auth": "REDACTED",
+ "output_sha256": "3b0f0b6bb8855afffdb0232dbb8620aca496072560a4e99cc441c4562d0d515e",
+ "revised_prompt": null
+}

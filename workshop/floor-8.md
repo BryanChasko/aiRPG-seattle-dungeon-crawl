@@ -32,7 +32,7 @@ The code to write is given. Under each TODO, the sections show the code to paste
 Make sure you are at the root of Floor 8 in your terminal:
 
 ```bash
-cd strands-dungeon-crawl/8_agentcore_production
+cd aiRPG-seattle-dungeon-crawl/8_agentcore_production
 ```
 
 ### Step 1: Install the AgentCore CLI
@@ -70,26 +70,28 @@ agentcore create --project-name gameprod --no-agent
 
 ### Step 3: Start the Knowledge Base
 
-> <img src="../images/icons/sponsor-96x96.webp" alt="Sponsor" width="28" height="28"> **SPONSOR MESSAGE:** Bedrock indexing is brought to you by patience: ten minutes in your own account, up to an hour in a sandbox. Start it now and go deploy some dice.
+> <img src="../images/icons/sponsor-96x96.webp" alt="Sponsor" width="28" height="28"> **SPONSOR MESSAGE:** Bedrock indexing is brought to you by patience: a few minutes in your own account, longer in a sandbox with a low embedding quota. Start it now and go deploy some dice.
 
-In 8.3, the Rules Agent searches the Basic Rules in an Amazon Bedrock knowledge base. Bedrock needs time to index the 11 MB PDF: about 10 minutes, up to an hour in an account with a low embedding quota. Start it now: the indexing runs in the background while you work through 8.1 and 8.2. Here you only run the commands; 8.3 explains them.
+In 8.3, the Rules Agent searches the Crawl Handbook in an Amazon Bedrock knowledge base. Bedrock needs time to index it: the handbook is eleven small Markdown files, so a few minutes, longer in an account with a low embedding quota. Start it now: the indexing runs in the background while you work through 8.1 and 8.2. Here you only run the commands; 8.3 explains them.
 
-The PDF is the one you downloaded in Floor 5. Run the commands from the project folder:
+The handbook is the one the Floor 5 knowledge base was built from, in `workshop/world/crawl-handbook/`. Run the commands from the project folder:
 
 ```bash
 cd gameprod
 BUCKET=gameprod-rules-$(aws sts get-caller-identity --query Account --output text)
 aws s3 mb s3://$BUCKET
-aws s3 cp ../../5_a2a_integration/utils/DnD_BasicRules_2018.pdf s3://$BUCKET/
-agentcore add knowledge-base --name rules --description "Basic Rules" --source s3://$BUCKET/
+aws s3 cp ../../workshop/world/crawl-handbook/ s3://$BUCKET/ --recursive
+agentcore add knowledge-base --name rules --description "Crawl Handbook" --source s3://$BUCKET/
 agentcore deploy -y
 ```
 
-If `aws s3 cp` cannot find the PDF, download it again as in Floor 5. The PDF goes into a new S3 bucket, the project declares a knowledge base that reads it, and `agentcore deploy` creates it in a few minutes. When the deployment ends, the knowledge base shows `Deployed` but is not ready yet: Bedrock goes on indexing the PDF. Nothing to wait for: 8.3 checks the indexing.
+`aws s3 cp --recursive` should list eleven uploads, one per handbook section. The files go into a new S3 bucket, the project declares a knowledge base that reads it, and `agentcore deploy` creates it in a few minutes. When the deployment ends, the knowledge base shows `Deployed` but is not ready yet: Bedrock goes on indexing the handbook. Nothing to wait for: 8.3 checks the indexing.
 
 These commands create resources in your AWS account: an S3 bucket and a knowledge base. Remove them at the end of the workshop, as described on the [Cleanup](cleanup.md) page.
 
 The project is ready: head to [8.1 The Dice Server](floor-8-1.md) to deploy its first brick.
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 8: A PERSISTENT WORLD.** A LitRPG world exists whether or not the reader is looking. On your laptop, the System ends when you close the terminal. On AgentCore, the dice, the registry, the rules and the Narrator each run on their own, the characters live in AgentCore Memory, the rules in a managed knowledge base, and every turn leaves a trace. That is the difference between a game you run and a world that runs: Cordula's sheet is still there tomorrow, and so is the accountant's grudge. See [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >

@@ -10,9 +10,9 @@ function mountPanel(props: { stats: CharacterStats | null; loading: boolean; err
 const sampleStats: CharacterStats = {
   character_id: 'test-id-123',
   name: 'Aragorn',
-  gender: 'Male',
-  race: 'Human',
-  character_class: 'Ranger',
+  pronouns: 'he/him',
+  species: 'Human (Seattle Native)',
+  character_class: 'Coffee Alchemist',
   level: 5,
   experience: 1200,
   stats: {
@@ -50,9 +50,9 @@ describe('CharacterStatsPanel', () => {
   it('displays all character stats when stats are provided', () => {
     const wrapper = mountPanel({ stats: sampleStats, loading: false, error: null })
     expect(wrapper.text()).toContain('Aragorn')
-    expect(wrapper.text()).toContain('Male')
-    expect(wrapper.text()).toContain('Human')
-    expect(wrapper.text()).toContain('Ranger')
+    expect(wrapper.text()).toContain('he/him')
+    expect(wrapper.text()).toContain('Human (Seattle Native)')
+    expect(wrapper.text()).toContain('Coffee Alchemist')
     expect(wrapper.text()).toContain('5')
     expect(wrapper.text()).toContain('1200')
   })
@@ -75,7 +75,7 @@ describe('CharacterStatsPanel', () => {
     expect(headers[1].text()).toBe('Vitals')
   })
 
-  it('applies D&D theme classes to the panel', () => {
+  it('applies System theme classes to the panel', () => {
     const wrapper = mountPanel({ stats: sampleStats, loading: false, error: null })
     const panel = wrapper.find('.character-stats-panel')
     expect(panel.classes()).toContain('panel-parchment')

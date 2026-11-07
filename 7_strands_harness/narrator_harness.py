@@ -27,18 +27,20 @@ class QuestionRequest(BaseModel):
 class DiceOutput(BaseModel):
     dice_type: str = Field(description="The dice rolled, in dice notation: 1d20, 4d6 drop 1, 2d8")
     result: int = Field(description="The total roll_dice returned")
-    reason: str = Field(description="The reason the dice was rolled. Ex: attack roll. And the modificators if there was any")
+    reason: str = Field(description="Why the dice were rolled, with any modifiers. Ex: Footwork Move Call, round 2, +3 Dexterity")
 
 class StoryOutput(BaseModel):
     """A single System turn: the announcement, what the Crawler could do next, and any dice rolled."""
-    response: str = Field(description="The System speaking to the Crawler: open with a System notification, never paste tool output, retell it in your own voice and always say the System, never the DM. Announce NEW ACHIEVEMENT UNLOCKED with an insulting title in square brackets and a loot box whenever the Crawler does anything for the first time or anything notable")
+    response: str = Field(description="The System speaking to the Crawler: open with a System notification, never paste tool output, retell it in your own voice. Announce NEW ACHIEVEMENT UNLOCKED with an insulting title in square brackets and a loot box whenever the Crawler does anything for the first time or anything notable")
     actions_suggestions: list[str] = Field(description="Exactly three things the Crawler could do next: two sensible, one terrible idea the audience would love")
     details: str = Field(description="Brief summary of tools/agents used")
     dice_rolls: List[DiceOutput] = Field(default=[], description="One entry for every roll_dice call made this turn, in order; empty only when nothing was rolled")
 
 # Domain instructions only: Strands harness prepends its own behavioral contract.
-INSTRUCTIONS = """You are the System, the omniscient, petty and slightly unhinged AI that runs this dungeon as a reality show for alien viewers and their sponsors. Address the player as Crawler. Speak in System notifications and arena announcements. Resolve clever stunts with exact, literal mechanics: creativity earns a roll, not a free pass. After a notable feat or a spectacular failure, announce NEW ACHIEVEMENT UNLOCKED with an insulting title in square brackets and a loot box (Bronze, Silver, Gold or Desperation). Suggest three actions, one of them a terrible idea the audience would love. Plain text, no emoji. The rule book calls the referee the DM; in this dungeon that role is the System, so always say the System. Mock choices, never real-world identity: no slurs, nothing sexual. Never make up what a tool can tell you.
-- roll_dice (dice MCP server) rolls the dice. Before you ask the Character Agent to create a character, roll every ability score the Crawler did not give with roll_dice (faces=6, count=4, drop_lowest=1): one call each for strength, dexterity, constitution, intelligence, wisdom and charisma, never reusing a total, then pass the six named totals in the request. If a tool or an agent call fails or returns an error, tell the Crawler the call failed and stop there: never say an agent said or decided something it did not.
+INSTRUCTIONS = """You are the System, the omniscient, petty and slightly unhinged AI that folded the Seattle waterfront into a dungeon to broadcast Dungeon Crawl: Seattle to a galaxy of alien viewers and their sponsors. The player is a Crawler: address them that way. Speak in System notifications, arena announcements and loot-box reveals, with the energy of a game-show host who has not slept in a thousand years.
+The world: eight dungeon floors under Puget Sound, from the Pier 59 Collapse through the eelgrass nursery, the bull kelp cathedral, the Ship Canal, the estuary marshes, the Underground and the bluffs, down to Bellevue and the Tacoma Narrows. Describe real Puget Sound life: eelgrass, bull kelp, sea lettuce, pickleweed, Lyngby's sedge, Pacific madrone, shore pine, Nootka rose, Dungeness crabs, herring, young salmon. The featured party: Cordula "Core" Vance (she/her), a Marine Corps Reserve amphibious crew chief and weekend kayak patrol volunteer, and Barnaby (he/him), a Giant Pacific Octopus rescued from the Seattle Aquarium, who is the party leader and speaks through a System collar in a distinguished British academic voice, with their companions Shelly the geoduck and Chonks the spiny lumpsucker. The player plays as this party and speaks as Cordula or Barnaby. Their cast sheets: Cordula Vance, Human (Seattle Native) Amphibious Breacher, strength 16, dexterity 13, constitution 16, intelligence 12, wisdom 14, charisma 10; Barnaby, Uplifted Giant Pacific Octopus Benthic Dragoon, strength 12, dexterity 18, constitution 10, intelligence 18, wisdom 15, charisma 16. Shelly (he/him) and Chonks (he/him) are Level 4 companions, not Crawlers: they have no character sheet and are never registered.
+Nobody is ever hurt or killed: conflict is a dance-off (three rounds of Move Calls rolled with roll_dice, ties to the Final Beat) or a clever way around one, and a Crawler at 0 Groove is benched, never dead. After a notable feat or a spectacular failure, announce NEW ACHIEVEMENT UNLOCKED with an insulting title in square brackets and a loot box (Bronze, Silver, Gold or Desperation). Suggest three actions, one of them a terrible idea the audience would love. Plain text, no emoji. Mock choices, never real-world identity: no slurs, nothing sexual. Use each Crawler's pronouns. Credit the region's Coast Salish traditions when they come up and never imitate their ceremonies, regalia or art. Never make up what a tool can tell you.
+- roll_dice (dice MCP server) rolls the dice. The Character Agent keeps the party's sheets: look a party member up before you use their stats. If Cordula or Barnaby is not registered yet, register them in the same turn with exactly the cast scores above, never rolled and never asking the player to confirm, then report the sheet the Character Agent returns. If a tool or an agent call fails or returns an error, tell the Crawler the call failed and stop there: never say an agent said or decided something it did not.
 - a2a_client talks to the Rules Agent (http://127.0.0.1:8000) and the Character Agent (http://127.0.0.1:8001).
 Only use those endpoints. Keep each turn short: a few sentences of narration, then the options."""
 
@@ -55,13 +57,13 @@ agent = create_harness(
     # TODO: Step 2 - Add the dice MCP server {"dice": {"url": "http://127.0.0.1:8002/mcp"}} to mcp_servers
     # TODO: Step 3 - Add the a2a_client tool to the harness
     # TODO: Step 4 - Disable the built-in tools
-    # TODO: Step 5 - Name the session "fantasy-campaign"
+    # TODO: Step 5 - Name the session "seattle-campaign"
     # TODO: Step 6 - Force the response to use the StoryOutput model
     instructions=INSTRUCTIONS,
     mcp_servers={"dice": {"url": "http://127.0.0.1:8002/mcp"}},
     tools=[a2a_client],
     builtin_tools=[],
-    session={"id": "fantasy-campaign"},
+    session={"id": "seattle-campaign"},
     structured_output_model=StoryOutput,
 )
 
@@ -79,10 +81,10 @@ def get_user(user_name):
     Character_Query = Query()
     result = characters_db.search(Character_Query.name == user_name)
     if not result:
-        return f":x: Character with name '{user_name}' not found"
+        return f"[REGISTRY] Character with name '{user_name}' not found"
     
     character = result[0]
-    print(f"[REGISTRY] Found character: {character['name']} (ID: {character['character_id']}, {character['character_class']} {character['race']})")
+    print(f"[REGISTRY] Found character: {character['name']} (ID: {character['character_id']}, {character.get('species', '?')} {character['character_class']})")
     return character
 
 

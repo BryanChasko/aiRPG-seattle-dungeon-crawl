@@ -13,7 +13,7 @@ What is MCP? The [Model Context Protocol](https://modelcontextprotocol.io/) is a
 Make sure you are at the root of Floor 4 in your terminal:
 
 ```bash
-cd strands-dungeon-crawl/4_mcp_integration
+cd aiRPG-seattle-dungeon-crawl/4_mcp_integration
 ```
 
 Create an MCP system with two components:
@@ -104,6 +104,8 @@ python narrator_mcp_client.py
 Here is what happens. The client connects to `http://localhost:8002/mcp`, Strands asks the server for its tool list and receives the `roll_dice` specification, the same one you printed in Floor 3, built this time by FastMCP from your docstring. The client sends the same request as Floor 3: Lady Luck rolls four ability scores with 4d6 drop lowest. The difference is where they happen. Keep an eye on the server terminal: every call arrives there as a log line such as `DICE ROLL: 4d6 drop 1 = [5, 2, 6, 3] -> 14`, four of them, while the narration appears in the client terminal. Same agent, same tool, but the dice now live in another process.
 
 Once the character is created, you can stop the client. If you plan to continue with Floor 5, keep the server terminal running: the Narrator will roll its dice through this same server.
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 4: ONE SOURCE OF LUCK.** A LitRPG audience has to trust the dice. If every agent rolled its own, nobody could audit a dance-off, and the System would be one prompt away from fudging a result. One MCP server that every agent shares, logging every roll with its notation, is the battle log readers check when a Final Beat comes down to a single point. See [The System](world/the-system.md#1-origin-and-interface).
 
 ## Floor Clear
 

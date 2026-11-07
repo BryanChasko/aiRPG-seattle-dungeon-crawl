@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: a tall brass and glass dice tower standing on the concrete pontoon deck of a Lake Washington floating bridge at night, glowing six-sided and twenty-sided dice tumbling inside it, rain, the bridge lights stretching away into the dark water, a faint violet glow from the tower. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "b164067d3a393e98aba5d7d8d96aff3db8fb92670da2dd05adb876f5c19b3793",
+ "auth": "REDACTED",
+ "output_sha256": "dbe97910a73033f013873480a80049fb1ed47bb8a337b69f02809974edc67964",
+ "revised_prompt": null
+}

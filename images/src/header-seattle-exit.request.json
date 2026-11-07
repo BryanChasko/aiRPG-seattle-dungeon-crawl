@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: a grey dawn on the beach at Alki looking across Elliott Bay to the Seattle skyline and the Space Needle, the rain easing, driftwood logs on the sand, yellow Puget Sound gumweed and white snowberry along the beach edge, Hooker's willow by a small creek outlet, calm teal water, a glowing violet stairwell hatch closing in the sand behind. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "64fdd3f04dfdc6c342192ed131e19a4d78c7a470a73cb8b979bc03eb80f1c951",
+ "auth": "REDACTED",
+ "output_sha256": "def4065764e27834040451d67b66ecb4c2e10560f33f67c3fc4b9923064f7b97",
+ "revised_prompt": null
+}

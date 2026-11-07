@@ -7,12 +7,12 @@ export function validateForm(form: CharacterForm): ValidationErrors {
     errors.name = 'Character name is required'
   }
 
-  if (!form.gender) {
-    errors.gender = 'Gender is required'
+  if (!form.pronouns) {
+    errors.pronouns = 'Pronouns are required'
   }
 
-  if (!form.race) {
-    errors.race = 'Race is required'
+  if (!form.species) {
+    errors.species = 'Species is required'
   }
 
   if (!form.characterClass) {

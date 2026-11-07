@@ -198,14 +198,13 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 .DS_Store
-*.pdf# S
-trands REPL state files
+*.pdf
+# Strands REPL state files
 repl_state/
-*.pkl# Workshop s
-olutions (uncomment to hide from participants)
+*.pkl
+# Workshop solutions (uncomment to hide from participants)
 # solutions/
 
-DnD_BasicRules_2018.pdf
 A2A_BUG_REPORT.md
 output/
 

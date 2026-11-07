@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no animals in focus, high contrast, obsidian black and slate grey shadows, deep Puget Sound teal and sea-glass green, neon magenta-violet System light, warm sodium-orange emergency light, sharp botanical detail, depth layering, darker edges. Rainy Pacific Northwest atmosphere. Scene: a broadcast control booth perched high above the Tacoma Narrows at night: banks of glowing monitors, a large microphone on a boom arm, red ON AIR lamp without letters, wide windows looking out over the suspension bridge in the rain and the dark water below, violet and orange screen light. Subtle blank glowing violet interface panel floating in one upper corner, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "0018f676a7b6fdda968455243b5c630152f80aa8482d698a484c7d05eac1824c",
+ "auth": "REDACTED",
+ "output_sha256": "94af2e3368fabb8a9e26b62ce752a8b370d8291e7e8355b7c57915ebf7481351",
+ "revised_prompt": null
+}

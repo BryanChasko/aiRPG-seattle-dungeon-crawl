@@ -33,12 +33,12 @@
       <div class="stat-section">
         <h3 class="section-header">Identity</h3>
         <div class="stat-row">
-          <span class="stat-label">GENDER:</span>
-          <span class="stat-value">{{ stats.gender }}</span>
+          <span class="stat-label">PRONOUNS:</span>
+          <span class="stat-value">{{ stats.pronouns }}</span>
         </div>
         <div class="stat-row">
-          <span class="stat-label">RACE:</span>
-          <span class="stat-value">{{ stats.race }}</span>
+          <span class="stat-label">SPECIES:</span>
+          <span class="stat-value">{{ stats.species }}</span>
         </div>
         <div class="stat-row">
           <span class="stat-label">CLASS:</span>
@@ -56,6 +56,14 @@
         <div class="stat-row">
           <span class="stat-label">XP:</span>
           <span class="stat-value stat-number">{{ stats.experience }}</span>
+        </div>
+        <div v-if="stats.derived" class="stat-row">
+          <span class="stat-label">GROOVE:</span>
+          <span class="stat-value stat-number">{{ stats.derived.groove }}</span>
+        </div>
+        <div v-if="stats.derived" class="stat-row">
+          <span class="stat-label">MANA:</span>
+          <span class="stat-value stat-number">{{ stats.derived.mana }}</span>
         </div>
       </div>
 

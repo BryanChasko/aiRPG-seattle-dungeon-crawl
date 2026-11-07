@@ -1,23 +1,23 @@
 {
- "bytes": 112942,
+ "bytes": 126256,
  "file": "exit-1200x675.webp",
  "format": "webp lossy q82",
  "render": {
   "endpoint": "POST https://api.meta.ai/v1/images/generations",
   "model": "muse-image-1.0",
-  "prompt_sha256": "b6c816720917723f53ebcd80a6a079a39aa4ec9dee0d7e153296ca21a5fbc410",
+  "prompt_sha256": "64fdd3f04dfdc6c342192ed131e19a4d78c7a470a73cb8b979bc03eb80f1c951",
   "size": "1792x1024"
  },
- "sha256": "fc7cac1509dc744f3baa002fda02d6b51e07c774432ba97c2362a5da19be044b",
+ "sha256": "1095e1637da940840dd2ee5e6a02781c51a0977536e9c7a7b214a30ece92ff2e",
  "size": [
   1200,
   675
  ],
  "source": {
-  "raw": "header-exit.png",
-  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/header-exit.png",
-  "raw_sha256": "ca29eb6082ae5a663c404bbf307c811f4a2d185b03799cc926a79ead33566bfc",
-  "request": "images/src/header-exit.request.json"
+  "raw": "header-seattle-exit.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/header-seattle-exit.png",
+  "raw_sha256": "def4065764e27834040451d67b66ecb4c2e10560f33f67c3fc4b9923064f7b97",
+  "request": "images/src/header-seattle-exit.request.json"
  },
  "tokens": {
   "ben_day": "#d7c7ee",

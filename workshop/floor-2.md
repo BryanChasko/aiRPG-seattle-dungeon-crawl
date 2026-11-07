@@ -6,12 +6,12 @@
 
 ## Floor Objective
 
-Tools are the primary mechanism for extending agent capabilities, enabling them to perform actions beyond text generation. Tools allow agents to interact with external systems, access data, and manipulate their environment. On this floor, you'll use your first vended tool, the name Strands gives to the tools that ship with the SDK, by adding the `http_request` tool to your agent, so your Narrator can look up spells and monsters on a real role-playing game API.
+Tools are the primary mechanism for extending agent capabilities, enabling them to perform actions beyond text generation. Tools allow agents to interact with external systems, access data, and manipulate their environment. On this floor, you'll use your first vended tool, the name Strands gives to the tools that ship with the SDK, by adding the `http_request` tool to your agent, so your Narrator can look up real creature stat blocks on a public role-playing game API.
 
 Make sure you are at the root of Floor 2 in your terminal:
 
 ```bash
-cd strands-dungeon-crawl/2_vended_tools
+cd aiRPG-seattle-dungeon-crawl/2_vended_tools
 ```
 
 Open and modify the `agent_with_vended_tools.py` file.
@@ -35,7 +35,7 @@ View the complete list in the documentation.
 
 > <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [http_request]**
 >
-> Calls external APIs on your agent's behalf. Rarity: Common. Comes with the Open5e API pre-bookmarked, because the System refuses to invent spell damage for you.
+> Calls external APIs on your agent's behalf. Rarity: Common. Comes with the Open5e API pre-bookmarked, because the System refuses to invent a stat block in front of a live audience.
 
 ```python
 # TODO: Step 1 - Import http_request from strands.vended_tools
@@ -45,11 +45,11 @@ View the complete list in the documentation.
 # TODO: Step 1 - Add the http_request tool to your agent
 ```
 
-Import the `http_request` tool from `strands.vended_tools`, then pass it to your agent's `tools` parameter (see adding tools to agents). The system prompt already tells your Narrator where to find spells and monsters: the free Open5e API. The documentation describes what the tool can do.
+Import the `http_request` tool from `strands.vended_tools`, then pass it to your agent's `tools` parameter (see adding tools to agents). The system prompt already tells your Narrator where to find creatures: the free [Open5e API](https://open5e.com/), which serves the System Reference Document 5.1 under the Creative Commons Attribution 4.0 license. The documentation describes what the tool can do.
 
 ## Step 2: Test Your Agent
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** The Fireball spell. Your agent must look up the damage instead of guessing. Guessing is how Crawlers end up as a highlight reel.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Barnaby's homework. The party leader wants to know how the surface world's monster manuals rated his species, and he has a doctorate's worth of opinions ready. Your agent must look it up instead of guessing. Barnaby will check.
 
 Once you've completed both TODOs, run your script:
 
@@ -59,12 +59,14 @@ python agent_with_vended_tools.py
 
 Your agent will:
 
-- Receive the question "What does the Fireball spell do, and how much damage does it deal?"
+- Receive the question "Barnaby is a Giant Pacific Octopus. How do the old monster manuals say a giant octopus hides underwater, and what does its Ink Cloud do?"
 - Determine that it needs to use the `http_request` tool
-- Call the API at `https://api.open5e.com/v2/spells/srd_fireball/`
-- Answer from the data it received (8d6 fire damage, half on a successful save)
+- Call the API at `https://api.open5e.com/v2/creatures/srd_giant-octopus/`
+- Answer from the data it received: Underwater Camouflage gives advantage on Dexterity (Stealth) checks underwater, and Ink Cloud fills a 20-foot radius that stays heavily obscured for 1 minute, after which the octopus can Dash as a bonus action
 
 This demonstrates that your agent can autonomously select and use tools to answer questions.
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 2: OUTSIDE KNOWLEDGE.** A System that makes up facts loses its readers the first time a number contradicts itself. Giving the agent a tool means it looks things up and quotes the source instead of guessing. Barnaby's own abilities in [the cast sheet](world/cast.md) (Chromatophore Stealth, Ink Cloud) are built on exactly what this API returns, adapted to the dance floor. See [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 
 ## Bonus Room: The Multi-Tool Challenge (optional)
 

@@ -13,14 +13,14 @@ Across Floors 1 to 5 you assembled the Narrator piece by piece: an agent, tools,
 Make sure you are at the root of Floor 7 in your terminal:
 
 ```bash
-cd strands-dungeon-crawl/7_strands_harness
+cd aiRPG-seattle-dungeon-crawl/7_strands_harness
 ```
 
 Open and modify the `narrator_harness.py` file.
 
-## Strands Harness SDK or Strands harness?
+## Strands Agents SDK or Strands harness?
 
-The Strands Harness SDK (`from strands import Agent`) is what you used so far: you assemble the agent loop yourself, tool by tool.
+The Strands Agents SDK (`from strands import Agent`) is what you used so far: you assemble the agent loop yourself, tool by tool.
 
 Strands harness (`from strands_harness import create_harness`) is a pre-assembled agent built on that SDK. What you get back is a plain `Agent`, so everything you learned still applies and every default can be overridden. See what the default harness does in the documentation.
 
@@ -90,7 +90,7 @@ One import, one factory: `create_harness` comes from `strands_harness` (see "use
 > <img src="../images/icons/sponsor-96x96.webp" alt="Sponsor" width="28" height="28"> **SPONSOR MESSAGE:** This armor is sponsored by .agent/sessions. Your campaign, saved to disk, gitignored, and judged.
 
 ```python
-# TODO: Step 5 - Name the session "fantasy-campaign"
+# TODO: Step 5 - Name the session "seattle-campaign"
 ```
 
 `session`: a named session persisted under `.agent/sessions`; start the server again with the same id and the campaign resumes. See "persist and resume by id".
@@ -116,7 +116,7 @@ Ask it something, with curl or with the Floor 6 web interface:
 ```bash
 curl -X POST http://127.0.0.1:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "Create a character named Thorin, a Dwarf Fighter. Roll his ability scores."}'
+  -d '{"question": "Look up the party and tell me Cordula'\''s Groove before we head into the Ship Canal."}'
 ```
 
 Then stop the server (Ctrl+C), start it again, and ask:
@@ -124,10 +124,10 @@ Then stop the server (Ctrl+C), start it again, and ask:
 ```bash
 curl -X POST http://127.0.0.1:8009/inquire \
   -H "Content-Type: application/json" \
-  -d '{"question": "Where did we stop last time, and what is my character called?"}'
+  -d '{"question": "Where did we stop last time, and what was Cordula'\''s Groove?"}'
 ```
 
-Where did the campaign go between the two runs? Look at the `7_strands_harness/.agent/` folder that appeared next to the file: this is where the harness keeps everything a session needs to survive a restart. Under `sessions/session/fantasy-campaign/`, the id you chose in Step 5, `snapshot_latest.json` holds the whole conversation, every message exchanged with the Narrator, plus its system prompt and model state. At start-up the harness reads the snapshot for that id and the agent picks up where it stopped. The folder is gitignored, so it stays on your machine. Long-term memory, the facts the harness distils about the player across campaigns, lives in `.agent/memory` the same way, see "what memory does by default".
+Where did the campaign go between the two runs? Look at the `7_strands_harness/.agent/` folder that appeared next to the file: this is where the harness keeps everything a session needs to survive a restart. Under `sessions/session/seattle-campaign/`, the id you chose in Step 5, `snapshot_latest.json` holds the whole conversation, every message exchanged with the Narrator, plus its system prompt and model state. At start-up the harness reads the snapshot for that id and the agent picks up where it stopped. The folder is gitignored, so it stays on your machine. Long-term memory, the facts the harness distils about the player across campaigns, lives in `.agent/memory` the same way, see "what memory does by default".
 
 Expect about the same speed as Floor 5: the file sets `effort="off"`, the same as the Floor 5 Narrator. Pass `"low"`, `"medium"` or `"high"` for deeper plans, at 30 seconds to over a minute a turn, see "set reasoning effort". Notice also how the Narrator likes to confirm before acting: that is the harness contract, written for coding agents. `instructions` is where you push back.
 
@@ -146,7 +146,9 @@ Floor 5 vs Floor 7:
 
 The docs put it plainly: reach for the harness when its defaults fit and you want a capable agent quickly; drop to the SDK when you need shapes the harness does not assume, a bespoke toolset, a custom loop, multi-agent orchestration. The two compose, since the harness returns a plain `Agent`. See "when to reach for which".
 
-From here you can add any feature you want. Your Narrator could generate images of scenes and characters, remember non-player characters and their relationships, run a campaign for several players at once, invent new locations as the story needs them, track spell slots and experience points, read its narration aloud, or roll several dice of different types in one call to the dice server instead of one MCP call per die. Sky is the limit.
+From here you can add any feature you want. Your Narrator could generate images of scenes and characters, remember the opponents the party out-danced and whether they became friends, run a campaign for several players at once, invent new Puget Sound locations as the story needs them, track Hype, sponsors and experience points, read its narration aloud, or roll both sides of a dance-off round in one call to the dice server. Sky is the limit.
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 7: PERSISTENCE AND CONSEQUENCE.** Stakes only mean something if the System remembers. Being Benched costs half your Hype, three benches on one floor gets your segment Cancelled, and none of that bites if a restart wipes the slate. A named session gives the campaign a memory that outlives the process, so a Crawler's losses, loot and grudges carry into the next turn. Design consequence first, then pick the storage that makes it stick. See [The System](world/the-system.md#7-consequence-benched-not-dead).
 
 ## Floor Clear
 
@@ -159,7 +161,7 @@ Loot you're keeping:
 - Resuming a campaign across restarts with a named session
 - When to pick the harness and when to stay on the SDK
 
-<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to the [final cleanup](cleanup.md) page to stop your services and reflect on what you've built.
+<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [Floor 8](floor-8.md) to deploy the whole party to AgentCore, or to the [final cleanup](cleanup.md) page to stop your services and reflect on what you've built.
 
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**

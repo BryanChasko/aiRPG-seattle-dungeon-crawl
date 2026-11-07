@@ -14,4 +14,4 @@ narrator = Agent(
     tools=[mcp_dice_client],
 )
 
-narrator("Help me create a new fantasy character! Roll the strength, wisdom, charisma and intelligence abilities scores using 4d6 drop lowest method.")
+narrator("Show the audience how the System rolled Cordula's sheet on day one: roll strength, wisdom, charisma and intelligence with the 4d6 drop lowest method.")
