@@ -198,6 +198,7 @@ Press Accept: the turn finishes and the System AI hands over the box. Ask again 
 | the turn never pauses, the Narrator carries on | `answer = "accept"` is still the placeholder | Step 2 |
 | Refuse does not change the story | a refusal does not cancel the tool | Step 3 |
 | the browser shows "Request failed with status 500" after a button press | `resume` is still an empty list, or the Narrator restarted and lost the paused turn | Step 5, then start a new turn |
+| `POST /respond` answers 500 right after you restarted the server | the interrupt id is only valid for the life of the server process, so a restart between `POST /inquire` and `POST /respond` loses it | send `POST /inquire` again after any restart, then answer the new interrupt |
 | typing while a deal is open | the text box is off on purpose | answer the deal |
 | `AccessDeniedException` or `ExpiredToken` | the Amazon Nova 2 Lite call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
 

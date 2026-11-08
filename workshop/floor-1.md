@@ -31,6 +31,7 @@ Every floor follows the same routine, so this page spells it out once:
 - Find each `# TODO: Step N - ...` comment. The comment says what to write; the matching step on this page says how.
 - Write code on the lines **under** the comment. Leave the comment in place: the pages, the tests and the `solution` branch all line up on it.
 - Save, then run the script from this folder: `python simple_agent.py`.
+- On Linux and macOS without an activated virtual environment the command may be `python3 simple_agent.py`. `uv run python simple_agent.py` works everywhere.
 - Stuck? Each step has a hint, a link to the matching Strands page, and a **Show me the code** block. Read the hint first. Or ask the [study companion](../study/README.md): `python ../study/ask_the_system.py "how do I enable debug logging in Strands?"`.
 
 `simple_agent.py` goes from this:
@@ -163,6 +164,7 @@ Check: the answer streams into the terminal as it is written, addresses the play
 | `NameError: name 'agent' is not defined` | Step 2 is missing, or the variable has a different name | name it `agent` |
 | the script ends with no answer at all | Step 3 is missing | call `agent("...")` |
 | no DEBUG lines | Step 1 is missing, or `basicConfig` has no handler | copy the Step 1 block |
+| the run prints nothing, no error, and exits as if it worked (the raw run says `(no output - script ends silently with empty agent)`) | the TODO lines still have no answers, so the script has nothing to run | write the code under each `# TODO: Step N` comment, then run it again |
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Rain-Shell Tourist Pod was blocking the tide pools, twenty people in matching jackets with a guide holding a flag. They could not hear us. Then the System AI's voice came back on, loud enough to rattle the glass, and every one of them turned around at once. The collar on Barnaby's mantle clicked, and a voice came out of it, dry and very British. "Sergeant." A pause. "This water is four degrees too cold, and I should like that noted." I noted it. The tour guide lowered the flag and let us through.
 
