@@ -16,6 +16,21 @@ Leave no trace behind: stop the local services, remove the AWS resources of Floo
 
 Good news first: Floors 0 to 7 create no AWS resource. Everything runs on your machine and only calls Amazon Bedrock models, which are billed per call and cost nothing once you stop. Floor 8 is different: it deploys the game to your AWS account, and its resources stay there until you remove them. This page is the last stop: whatever floors you completed, everything to stop or delete is listed here.
 
+What keeps billing, and which step removes it (the rates are on [What Floor 8 Costs](floor-8.md#what-floor-8-costs)):
+
+| left behind | bills while it exists | removed by |
+|---|---|---|
+| the four runtimes and their IAM roles | nothing without a session; per second during one | Step 2, with the stack |
+| the `characters` and `conversations` memories | records and events, by the month | Step 2, with the stack |
+| the `rules` knowledge base | its index, by the month | Step 2, with the stack |
+| the `gameprod-rules-<account id>` bucket | storage, by the month | Step 3 |
+| the runtime log groups in CloudWatch | storage, by the month, forever: they never expire | Step 4 |
+| the `CDKToolkit` stack and its bucket | next to nothing | see the note after Step 4 |
+
+Each of these costs cents a month at workshop size, and a whole year of them adds up to well under a dollar. Clean up anyway: an account you understand is cheaper than one you have to audit later.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Pack out what you pack in. That is the first rule of every patrol I have ever run, and the Sound does not care that the trash is digital. I made the list before I touched anything, the way you count gear before you leave a beach: every runtime, every memory, every bucket, every log.
+
 ## Amazon Bedrock
 
 The workshop calls Amazon Bedrock models, so there is nothing to delete on the Bedrock side. Keep in mind:
@@ -68,6 +83,8 @@ aws cloudformation describe-stacks --stack-name AgentCore-gameprod-default
 
 The answer should be `Stack with id AgentCore-gameprod-default does not exist`.
 
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Tearing down the stack took less time than building one brick of it. Barnaby watched the four runtimes go one by one and did not say anything. The dice, the desk, the clerk, the voice. Then the records office, with his folder in it. I asked if he was all right. "It was a good office, Sergeant. I do not need it anymore."
+
 ### Step 3: Delete the Rules Bucket
 
 You created the S3 bucket by hand on the Floor 8 page, so the stack does not delete it. Remove it with the handbook files it holds:
@@ -75,6 +92,8 @@ You created the S3 bucket by hand on the Floor 8 page, so the stack does not del
 ```bash
 aws s3 rb s3://gameprod-rules-$(aws sts get-caller-identity --query Account --output text) --force
 ```
+
+Check: the command ends with `remove_bucket: gameprod-rules-...`. If it says `NoSuchBucket`, the bucket is already gone, or you added a suffix to its name on the Floor 8 page: use that name.
 
 ### Step 4: Delete the Runtime Logs
 
@@ -91,6 +110,13 @@ done
 ```
 
 Once the stack is gone, you can also delete the `gameprod/` folder.
+
+Check: the same listing, run on its own, now prints nothing.
+
+```bash
+aws logs describe-log-groups --log-group-name-prefix /aws/bedrock-agentcore/runtimes/gameprod_ \
+  --query 'logGroups[].logGroupName' --output text
+```
 
 The CDK bootstrap stack: on the first deployment, the CLI prepared the region for CDK if it was not already, with a stack named `CDKToolkit` and its S3 bucket. Every CDK application of the account and region shares it, and it costs next to nothing: delete it only if you know nothing else uses it.
 
@@ -109,6 +135,12 @@ Everything below is generated during the workshop and gitignored, delete it free
 ```bash
 git checkout -- 5_a2a_integration/agents/character_agent/characters.json
 ```
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Last, the local gear: the knowledge base folder, the harness sessions, the registry file put back the way it shipped. I zipped the dry bag shut on an empty laptop. Then I carried Barnaby down to the waterline at Alki, set the bag on the wet sand, and opened it.
+
+## The Last Log
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, ALKI, 0612.** High tide again, the same time as the morning the pier fell. I told him the truth: the System was fixed, the collar would keep working, and the Sound was right there, whenever he wanted it. He did not have to ride on my back to be the party leader. He looked at the water for a long time. Then he poured himself out of the bag and into the shallows, red going to white going to red, and was gone. I sat on the sand for a while. Shelly dug in next to my boot. Chonks stuck himself to my forearm guard. At 0631 the collar pinged in my earpiece. "Sergeant. The Narrows. Tuesday. Bring the kayak." That is the end of the crawl. It is not the end of the patrol.
 
 ## Floor Clear
 

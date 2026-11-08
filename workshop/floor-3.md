@@ -45,7 +45,26 @@ Open `agent_with_dice_roll_tool.py`: it already contains a plain Python function
 # TODO: Step 1 - Add the decorator to transform your function into a tool
 ```
 
-Import the `@tool` decorator from Strands, then put it on `roll_dice`: the decorator turns an ordinary Python function into a tool that your agent can automatically discover and use. See this example in the documentation.
+Import the `@tool` decorator from Strands, then put it on `roll_dice`: the decorator turns an ordinary Python function into a tool that your agent can automatically discover and use. See the [Basic Example](https://strandsagents.com/docs/user-guide/sdk/tools/custom-tools/#basic-example) on the Create custom tools page.
+
+<details>
+<summary>Show me the code for Step 1</summary>
+
+```python
+from strands import Agent
+# TODO: Step 1 - Import tool from strands
+from strands import tool
+
+# TODO: Step 1 - Add the decorator to transform your function into a tool
+@tool
+def roll_dice(faces: int = 6, count: int = 1, drop_lowest: int = 0) -> dict:
+```
+
+The `solution` branch folds the import into the first line instead, `from strands import Agent, tool`: both work. The decorator goes on the line right above `def`, with no parentheses.
+
+</details>
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** We found a crafting table wedged between two kelp stipes, with a function already scratched into it: roll some dice, drop the low ones, add up the rest. It worked, and nobody could use it. A function is a tool the way a wrench in a locked drawer is a tool. The decorator is the key to the drawer.
 
 ## Step 2: Write a Clear Docstring
 
@@ -73,9 +92,48 @@ Look at `description`: it contains only the function name, `roll_dice`, and the 
 # TODO: Step 2 - Write a docstring with the description, an Args section and the return value
 ```
 
-Now write the docstring: a first paragraph saying what the tool does and how to call it for 4d6 drop lowest, an `Args:` section describing `faces`, `count` and `drop_lowest`, and what it returns, as in the documentation best practices.
+Now write the docstring: a first paragraph saying what the tool does and how to call it for 4d6 drop lowest, an `Args:` section describing `faces`, `count` and `drop_lowest`, and what it returns, as in [Write effective tool descriptions](https://strandsagents.com/docs/user-guide/sdk/tools/custom-tools/#write-effective-tool-descriptions).
 
 Tip: LLMs are good at writing tool docstrings. Give them the function and an example of best practices, and let them generate a docstring for you.
+
+<details>
+<summary>Show me the code for Step 2</summary>
+
+```python
+def roll_dice(faces: int = 6, count: int = 1, drop_lowest: int = 0) -> dict:
+    # TODO: Step 2 - Write a docstring with the description, an Args section and the return value
+    """Roll one or more dice with the same number of faces, optionally drop the lowest, and total the rest.
+
+    Use it every time the game needs a random roll: ability scores, dance-off
+    Move Calls, the Final Beat, ability checks, loot boxes. For "4d6 drop lowest",
+    call it once with faces=6, count=4, drop_lowest=1. For a single d20, call it
+    with faces=20.
+
+    Example response: {"rolls": [5, 2, 6, 3], "kept": [5, 6, 3], "total": 14}
+
+    Notes:
+        - Report the total this tool returns; never add the dice up yourself.
+        - Each die is independent and uniformly random.
+
+    Args:
+        faces: Number of faces on each die, 1 or more. Use 20 for a d20, 6 for a d6. Defaults to 6.
+        count: How many dice to roll, 1 or more. Defaults to 1.
+        drop_lowest: How many of the lowest dice to discard before totaling, 0 or more
+            and less than count. Defaults to 0.
+
+    Returns:
+        A dict with every die rolled ("rolls"), the dice kept after dropping ("kept"),
+        and their sum ("total").
+    """
+```
+
+A docstring must be the first statement of the function, so it goes right under the TODO comment, before `import random`. Yours does not have to match word for word: what matters is the call for 4d6 drop lowest, an `Args:` line per parameter, and the instruction to report the tool's total.
+
+</details>
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Our first roller had no instructions on the box, and the model treated it like a toy: one die at a time, sixteen calls, and it added them up in its head and got it wrong. Barnaby took that personally. He spent an hour on the docstring, arm by arm, reading each line back through the collar. "The model never sees the code, Sergeant. It sees what we promise the code does. So we promise precisely." I have written maintenance cards for amphibious vehicles. His were better.
+
+## Step 3: Add the Tool to Your Agent
 
 Run the script again and compare the printed specification. You should see:
 
@@ -101,7 +159,23 @@ Would it work without a docstring? Not reliably. `faces` is guessable, but nothi
 # TODO: Step 3 - Add the tool to the agent
 ```
 
-Pass your tool to your agent. See the documentation from step 1 for how to do this.
+Pass your tool to your agent, the same way as a vended tool on Floor 2: see [Adding Tools to Agents](https://strandsagents.com/docs/user-guide/sdk/tools/using-tools/#adding-tools-to-agents).
+
+<details>
+<summary>Show me the code for Step 3</summary>
+
+```python
+dice_roller = Agent(
+    model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
+    # TODO: Step 3 - Add the tool to the agent
+    tools=[roll_dice],
+    system_prompt="""...""",
+)
+```
+
+Pass the decorated function itself, `roll_dice`, not a call to it.
+
+</details>
 
 Why this matters:
 
@@ -128,6 +202,18 @@ Watch the agent in action:
 - Call your tool four times with `faces=6, count=4, drop_lowest=1`
 - Report the four totals the tool returned
 - Return the results
+
+Check: the terminal prints the new `tool_spec` first, then four `Tool #N: roll_dice` lines, then Lady Luck's report with four totals, each between 3 and 18. To see the dice behind each total, paste the debug logging lines from [Floor 1, Step 1](floor-1.md#step-1-enable-debug-logging) at the top of the file and run it again: every tool result appears in the log, and the totals Lady Luck reports are the tool's, never a sum she made up.
+
+| you see | it means | fix |
+|---|---|---|
+| `NameError: name 'tool' is not defined` | the import of Step 1 is missing | add `from strands import tool` |
+| `'function' object has no attribute 'tool_spec'` | the decorator is missing | put `@tool` on the line above `def roll_dice` |
+| `'description': 'roll_dice'` in the printed spec | the docstring is not the first statement of the function | move it right under `def`, before `import random` |
+| sixteen calls with `count=1`, or a total that does not match the dice | the docstring does not say how to call 4d6 drop lowest | add the `count=4, drop_lowest=1` sentence and the "report the total" note |
+| no `Tool #` line at all | the tool is not on the agent | Step 3: `tools=[roll_dice]` |
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Lady Luck dealt from a table of abalone shell and called every roll like a boxing announcer. Four calls, four totals, and she did not touch the arithmetic once. She hated that. Halfway through the third roll, a green fish the size of a golf ball let go of a kelp holdfast, drifted over, and stuck himself to my forearm guard with a sound like a plunger. He would not come off. Barnaby looked at him for a long moment and said, "Compact. Quiet. Aerodynamic." That was Chonks, hired.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 3: HARD MATH.** Readers forgive a System for being cruel, never for being inconsistent. Ability scores, modifiers and dice are the math every later rule stands on, so they live in code, not in the model's head. In this crawl each of the six scores also maps to a dance-off Move Call: Strength is Power, Dexterity is Footwork, Constitution is Endurance, Intelligence is Choreography, Wisdom is Read the Room and Charisma is Presence. A score of 16 gives a +3 modifier: (score - 10) / 2, rounded down. See [ability scores](world/crawl-handbook/01-ability-scores.md) and [The System](world/the-system.md#2-stat-design).
 

@@ -82,7 +82,9 @@ app = BedrockAgentCoreApp()
 load_dotenv()
 ```
 
-`...` stands for the lines of the file not shown here. `BedrockAgentCoreApp` is a web server that implements the HTTP protocol contract of AgentCore Runtime: `POST /invocations` for the requests and `GET /ping` for the health checks. The routes of the web interface move to the proxy of Part 3.
+`...` stands for the lines of the file not shown here. `BedrockAgentCoreApp` is a web server that implements the [HTTP protocol contract](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-http-protocol-contract.html) of AgentCore Runtime: `POST /invocations` for the requests and `GET /ping` for the health checks. The routes of the web interface move to the proxy of Part 3.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Moving the Narrator is moving the System's voice while it is still talking to you. Its front door had four signs on it. The cloud gives it one door and a doorbell, and whoever rings has to show ID. The System complained the whole time. I packed it anyway.
 
 ### Step 2: Keep the Conversation in AgentCore Memory
 
@@ -108,7 +110,9 @@ In Floor 5 a single Narrator served every request. Here the agent is created in 
 
 The two arguments go into the `Agent(...)` of `get_narrator`, under the TODO, before the closing parenthesis. The session manager takes an `AgentCoreMemoryConfig`: the memory id comes from the `MEMORY_CONVERSATIONS_ID` environment variable, which the CLI sets on the runtime at deployment, like `MEMORY_CHARACTERS_ID` in 8.2. The actor is the player the conversation belongs to. Like every boto3 client of the floor, the session manager takes the region of the runtime.
 
-`callback_handler=None`: nobody reads its terminal anymore, and its logs go to CloudWatch. See "AgentCore Memory with Strands".
+`callback_handler=None`: nobody reads its terminal anymore, and its logs go to CloudWatch. See [Integrate AgentCore Memory with Strands Agents](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/strands-sdk-memory.html) in the AgentCore Developer Guide.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** On the bluffs, a named session on my laptop kept the campaign. Here the laptop is gone, and every microVM is a Safe Room that gets torn down behind us. So the conversation goes to the records office too, filed under the player and the session. Barnaby asked how long they keep it. Thirty days, by default. He said that was longer than some octopuses get, and did not say anything else for a while.
 
 ### Step 3: Create the Entrypoint
 
@@ -295,6 +299,14 @@ The answer comes from the history. Even after the session's microVM is stopped o
 agentcore logs --runtime narrator --since 15m
 ```
 
+If the first invoke fails, the logs say why: `KeyError` names a missing `envVars` entry or memory, `Invalid endpoint URL '<your diceserver URL>'` means a placeholder is still in `agentcore.json` (Step 3), and `AccessDeniedException` on `InvokeAgentRuntime` means `invoke-policy.json` is not attached. After a fix and a deploy, use a new `--session-id`, or stop the old session as described in [Troubleshooting](#troubleshooting).
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I asked the System, in the cloud, who I had danced against and what we rolled. It told me. Not because it remembered, it said, but because it had looked it up. Barnaby said that was the honest version of memory, and the only kind he trusts.
+
+### What the Narrator and Its Memory Cost
+
+The Narrator runtime bills like the others, per second while a session runs, and a dance-off turn keeps it busy 30 to 60 seconds, mostly waiting on the model and the other runtimes, which costs no CPU. The `conversations` memory bills about $1.00 per GB of events written, with each event counted as at least 12 KB, $0.20 per GB read and $0.10 per GB-month stored ([AgentCore pricing](https://aws.amazon.com/bedrock/agentcore/pricing/)). A hundred turns write a few hundred events: about 5 MB billed, half a cent. The model calls of those hundred turns, about a dollar, cost more than every runtime and memory of the floor together.
+
 ## Part 3: Play from the Web Interface (ui_proxy/ui_proxy.py)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The browser has no AWS credentials. The proxy does. It signs every request and forwards it to the System. The System approves of intermediaries who know their place."
@@ -329,11 +341,17 @@ curl -X POST http://0.0.0.0:8009/inquire \
 
 Then open the Floor 6 web interface, pick who speaks for the party and enter `http://127.0.0.1:8009` as the server URL, as in Floor 6. The proxy reads the sheets you registered in the cloud memory in 8.2. Every turn now travels from your browser to the proxy, to the Narrator runtime, and from there to the three other bricks. Stop the proxy and start it again: the campaign picks up where you left it.
 
+Check: the character panel shows the sheet registered in 8.2, and the first turn answers in 30 to 60 seconds. If the proxy stops at startup with `RuntimeError: No gameprod_narrator runtime in ...`, the region it names is not the one you deployed to: export `AWS_DEFAULT_REGION` and check `agentcore status`.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Keynote was the last thing on the corporate floor: a stage on the Narrows bridge deck, a confidence monitor, a Regional Managing Director in the front row with a lanyard and a stopwatch. Everything we had built ran somewhere else now, and the only thing on my laptop was the bridge to the screen. Barnaby called the moves before the Narrator did. He had read every turn of this campaign in the logs, and he knew how it went. We took the Keynote on Choreography, three moves ahead, and the RMD stopped the stopwatch and clapped.
+
 ## Part 4: See What Your Agents Do
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Traces show every thought the System had during a turn, across four runtimes. Most of them were about you."
 
-A Narrator turn now crosses several runtimes, and its terminal is gone: AgentCore records each turn as a trace instead. The `pyproject.toml` of the Narrator, the Character Agent and the Rules Agent lists `aws-opentelemetry-distro`, the AWS distribution of OpenTelemetry. AgentCore starts these runtimes with `opentelemetry-instrument`, and the distribution sends a span for each step of the agent loop to CloudWatch. Strands creates these spans itself, with nothing to add to the code. The dice server has no model and keeps tracing off (`"enableOtel": false` in `agentcore.json`): its rolls appear on the Narrator's side. See the AgentCore observability documentation.
+A Narrator turn now crosses several runtimes, and its terminal is gone: AgentCore records each turn as a trace instead. The `pyproject.toml` of the Narrator, the Character Agent and the Rules Agent lists `aws-opentelemetry-distro`, the AWS distribution of OpenTelemetry. AgentCore starts these runtimes with `opentelemetry-instrument`, and the distribution sends a span for each step of the agent loop to CloudWatch. Strands creates these spans itself, with nothing to add to the code. The dice server has no model and keeps tracing off (`"enableOtel": false` in `agentcore.json`): its rolls appear on the Narrator's side. See [AgentCore Observability](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html) in the AgentCore Developer Guide.
+
+Traces cost very little at this size: CloudWatch bills about $0.35 per GB of spans ingested ([AgentCore pricing](https://aws.amazon.com/bedrock/agentcore/pricing/), Observability), and a workshop's worth of turns is a few MB, under a cent.
 
 ### Step 1: List the Traces
 
@@ -364,9 +382,11 @@ gameprod_narrator
 
 It is the agent loop of Floor 1, drawn: each cycle calls the model, which answers or asks for tools. The trace crosses the A2A call, so the Rules Agent's work appears inside the Narrator's turn, and the duration of each span shows where the time goes, usually in the `chat` spans. The Narrator shows as `Strands Agents` because it has no name, unlike the Rules Agent. The Rules Agent's runtime also adds many short `a2a.utils.helpers.append_artifact_to_task` spans from the A2A SDK: you can ignore them.
 
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby read the trace of the Eight-Point Hold turn the way I read an after-action report: who called whom, how long each one took, where the time went. Most of it went to thinking, which he said was correct. Then he found his own name in the input of a model call and went very still, and I let him have the minute.
+
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Tracing "Not enabled" in the AgentCore console: the page of a runtime in the Amazon Bedrock AgentCore console shows `Tracing: Not enabled`. That setting delivers the spans of the AgentCore service itself, not the ones your agents send: the traces above do not need it.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** No trace at all after a few minutes: CloudWatch stores spans only once Transaction Search is enabled in the account, a one-time setting of the CloudWatch console. Enable it once per account and region. See "Enable Transaction Search".
+> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** No trace at all after a few minutes: CloudWatch stores spans only once Transaction Search is enabled in the account, a one-time setting of the CloudWatch console. Enable it once per account and region. See [Enable Transaction Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Enable-TransactionSearch.html) in the CloudWatch User Guide.
 
 ## Troubleshooting
 
