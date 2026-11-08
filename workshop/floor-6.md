@@ -114,6 +114,7 @@ Slow response times:
 
 - [The Hype Meter](encounters/hype-meter.md), sidequest: a hook turns tool and model events into Hype, and a meter in the web interface shows it
 - [Sponsor Interrupt](encounters/sponsor-interrupt.md), sidequest: an interrupt pauses the turn so the player accepts or refuses a sponsor deal in the browser
+- [Launch Commit Criteria](encounters/launch-commit-criteria.md), sidequest: a hook that rate-limits Cadabra's go/no-go loop, with a minimum interval and a budget of tool and model calls
 
 ## Floor Clear
 
