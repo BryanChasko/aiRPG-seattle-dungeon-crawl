@@ -192,3 +192,91 @@ def test_context_flood_turn_3_is_the_developer_advocate_swarm(flood):
     log = flood.campaign_log()
     assert len(log) == 2 + 2 * 60
     assert "the Developer Advocate Swarm" in log[2 + 2 * 2]["content"][0]["text"]
+
+
+# ---------- Floor 5: the boss battles and their dance floor ------------------
+
+BOSSES = "encounters/floor-5-boss-battles"
+
+
+@pytest.fixture
+def dance_floor():
+    mod = load(f"{BOSSES}/dance_floor.py", "dance_floor")
+    mod.scoreboard.clear()
+    return mod
+
+
+def with_dice(monkeypatch, mod, *faces):
+    rolls = iter(faces)
+    monkeypatch.setattr(mod.random, "randint", lambda a, b: next(rolls))
+
+
+def test_dance_round_party_wins_with_the_cast_modifier(dance_floor, monkeypatch):
+    with_dice(monkeypatch, dance_floor, 15, 10)
+    result = dance_floor.dance_round(opponent="the Quarterly Close Accountant", move_call="Footwork")
+    assert result["crawler"] == "Cordula: 15 + 1 = 16"
+    assert result["opponent_roll"] == "the Quarterly Close Accountant: 10 + 0 = 10"
+    assert (result["winner"], result["groove_lost"], result["final_beat"]) == ("party", 6, None)
+    assert dance_floor.party_took_the_last_round()
+
+
+def test_dance_round_tempo_and_opponent_modifier_count(dance_floor, monkeypatch):
+    with_dice(monkeypatch, dance_floor, 10, 10)
+    result = dance_floor.dance_round(opponent="the Regional Managing Director", move_call="Presence", crawler="Barnaby",
+                                     opponent_modifier=2, tempo="Frantic")
+    assert result["crawler"] == "Barnaby: 10 + 3 = 13"
+    assert result["opponent_roll"] == "the Regional Managing Director: 10 + 6 = 16"
+    assert (result["winner"], result["groove_lost"]) == ("opponent", 3)
+    assert not dance_floor.party_took_the_last_round()
+
+
+def test_dance_round_tie_goes_to_the_final_beat_and_rerolls_a_level_drum(dance_floor, monkeypatch):
+    # round: 10 + 1 = 11 against 11; Final Beat: 14 against 14 is level, then 20 against 5
+    with_dice(monkeypatch, dance_floor, 10, 11, 13, 14, 19, 5)
+    result = dance_floor.dance_round(opponent="the Bonus-Season Investment Banker", move_call="Footwork")
+    assert result["final_beat"] == "Cordula 20, the Bonus-Season Investment Banker 5"
+    assert (result["winner"], result["groove_lost"]) == ("party", 1)
+
+
+def test_dance_round_final_beat_over_20_loses(dance_floor, monkeypatch):
+    # round: 10 + 3 = 13 against 11 + 2 = 13; Barnaby's Final Beat: 18 + 4 = 22 goes over and loses to a 7
+    with_dice(monkeypatch, dance_floor, 10, 11, 18, 7)
+    result = dance_floor.dance_round(opponent="the Keynote Speaker", move_call="Presence", crawler="Barnaby", opponent_modifier=2, tempo="Steady")
+    assert result["final_beat"] == "Barnaby 22, the Keynote Speaker 7"
+    assert result["winner"] == "opponent"
+
+
+@pytest.mark.parametrize("kwargs", [{"move_call": "Breakdance"}, {"move_call": "Power", "crawler": "Shelly"},
+                                    {"move_call": "Power", "tempo": "Lazy"}, {"move_call": "Power", "opponent_modifier": 5}])
+def test_dance_round_rejects_moves_outside_the_handbook(dance_floor, kwargs):
+    with pytest.raises(ValueError):
+        dance_floor.dance_round(opponent="the Swag Table", **kwargs)
+    assert dance_floor.scoreboard == []
+
+
+def test_earnings_call_graph_runs_the_agenda_in_order_on_won_rounds(dance_floor):
+    mod = load(f"{BOSSES}/quarterly_earnings_call.py", "encounter_earnings_call")
+    graph = mod.build_earnings_call()
+    assert set(graph.nodes) == {"accountant", "banker", "rmd"}
+    assert {node.node_id for node in graph.entry_points} == {"accountant"}
+    assert {(e.from_node.node_id, e.to_node.node_id) for e in graph.edges} == {("accountant", "banker"), ("banker", "rmd")}
+    assert all(e.condition is mod.party_won for e in graph.edges)
+    for node_id, node in graph.nodes.items():
+        assert node.executor.model.config["model_id"] == NOVA
+        assert node.executor.tool_names == ["dance_round"]
+    mod.scoreboard.append({"winner": "opponent"})
+    assert mod.party_won(None) is False
+    mod.scoreboard.append({"winner": "party"})
+    assert mod.party_won(None) is True
+    mod.scoreboard.clear()
+
+
+def test_advocate_swarm_starts_at_the_keynote_and_is_capped():
+    mod = load(f"{BOSSES}/developer_advocate_swarm.py", "encounter_advocate_swarm")
+    swarm = mod.build_swarm()
+    assert list(swarm.nodes) == ["keynote", "live_demo", "livestream", "swag_table"]
+    assert swarm.entry_point.name == "keynote"
+    assert (swarm.max_handoffs, swarm.max_iterations) == (4, 6)
+    for node in swarm.nodes.values():
+        assert node.executor.model.config["model_id"] == NOVA
+        assert "dance_round" in node.executor.tool_names
