@@ -18,6 +18,8 @@ import sys
 
 from strands import Agent
 # TODO: Step 1 - Import MemoryManager from strands.memory and BedrockKnowledgeBaseStore from strands.vended_memory_stores.bedrock_knowledge_base
+from strands.memory import MemoryManager
+from strands.vended_memory_stores.bedrock_knowledge_base import BedrockKnowledgeBaseStore
 
 GRUDGES = [  # who, and what is not forgiven
     ("the Pitch-Deck Founder", "stood on Shelly's tail at the Ship Canal locks, and Barnaby wants it in ink"),
@@ -30,19 +32,31 @@ VISIT = "The Quarterly Close Accountant steps back onto the dance floor and eyes
 def make_store() -> BedrockKnowledgeBaseStore:
     """The grudges knowledge base as a memory store, writable, with every grudge filed under the party."""
     # TODO: Step 2 - Return a BedrockKnowledgeBaseStore named "grudges", scope "party", writable=True; its config names the MANAGED knowledge base GRUDGE_KB_ID, an S3 data source GRUDGE_DATA_SOURCE_ID and the s3 bucket GRUDGE_BUCKET with prefix "grudges/"
-    return None
+    return BedrockKnowledgeBaseStore(
+        config={
+            "knowledge_base_id": os.environ["GRUDGE_KB_ID"],
+            "knowledge_base_type": "MANAGED",
+            "data_source_type": "S3",
+            "data_source_id": os.environ["GRUDGE_DATA_SOURCE_ID"],
+            "s3": {"bucket": os.environ["GRUDGE_BUCKET"], "prefix": "grudges/"},
+        },
+        name="grudges",
+        description="Grudges between the party and the opponents they have met",
+        scope="party",
+        writable=True,
+    )
 
 
 def remember(store: BedrockKnowledgeBaseStore, opponent: str, grudge: str):
     """File one grudge in the ledger, with the opponent as metadata."""
     # TODO: Step 3 - Run store.add(...) with asyncio.run: the text is the opponent and the grudge, the metadata is {"opponent": opponent}
-    return None
+    return asyncio.run(store.add(f"{opponent} {grudge}", metadata={"opponent": opponent}))
 
 
 def recall(store: BedrockKnowledgeBaseStore, question: str):
     """Search the ledger. Each entry has .content and .metadata."""
     # TODO: Step 4 - Run store.search(question) with asyncio.run and return the entries
-    return []
+    return asyncio.run(store.search(question))
 
 
 def make_system(store: BedrockKnowledgeBaseStore) -> Agent:
@@ -53,6 +67,7 @@ def make_system(store: BedrockKnowledgeBaseStore) -> Agent:
 of the people the party has beaten: when a grudge from your memory fits the moment, work it into your line, in one or two
 sentences. Nobody is ever hurt; a grudge is a dance-off waiting to happen. Plain text only, no emoji.""",
         # TODO: Step 5 - Give the agent memory_manager=MemoryManager(stores=[store], add_tool_config=True)
+        memory_manager=MemoryManager(stores=[store], add_tool_config=True),
         callback_handler=None,
     )
 

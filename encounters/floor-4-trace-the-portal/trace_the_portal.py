@@ -20,6 +20,8 @@ from opentelemetry import trace
 from strands import Agent
 from strands.tools.mcp import MCPClient
 # TODO: Step 1 - Import StrandsTelemetry from strands.telemetry and mcp_instrumentation from strands.tools.mcp.mcp_instrumentation
+from strands.telemetry import StrandsTelemetry
+from strands.tools.mcp.mcp_instrumentation import mcp_instrumentation
 
 PORT = 8004
 PORTAL_URL = f"http://localhost:{PORT}/mcp"
@@ -59,8 +61,9 @@ def one_line(span) -> str:
 def light_the_portal() -> None:
     """Turn the tracing on. Call it before the portal server starts, so the server's sessions are patched."""
     # TODO: Step 2 - Create a StrandsTelemetry and set up its console exporter with formatter=one_line
+    StrandsTelemetry().setup_console_exporter(formatter=one_line)
     # TODO: Step 3 - Apply mcp_instrumentation() so the server in this process joins the client's trace
-    pass
+    mcp_instrumentation()
 
 
 SYSTEM_PROMPT = """You are Lady Luck, the System's croupier subroutine. Always use the roll_dice tool for every roll
@@ -76,6 +79,7 @@ def make_watcher(portal_client: MCPClient) -> Agent:
         system_prompt=SYSTEM_PROMPT,
         tools=[portal_client],
         # TODO: Step 4 - Tag the agent's trace with trace_attributes={"encounter": "trace-the-portal"}
+        trace_attributes={"encounter": "trace-the-portal"},
         callback_handler=None,
     )
 

@@ -20,6 +20,8 @@ from strands.interventions import Proceed
 from strands.interventions.handler import InterventionHandler
 from strands.models import BedrockModel
 # TODO: Step 1 - Import CedarAuthorization from strands.vended_interventions.cedar, and HumanInTheLoop and LLMClassifierConfig from strands.vended_interventions.hitl
+from strands.vended_interventions.cedar import CedarAuthorization
+from strands.vended_interventions.hitl import HumanInTheLoop, LLMClassifierConfig
 from strands.vended_tools import file_editor, shell
 
 FLOOR = Path(__file__).resolve().parent  # the one folder Kiro is allowed to work in
@@ -50,10 +52,16 @@ class GatekeeperLedger(InterventionHandler):
 ledger = GatekeeperLedger()
 
 # TODO: Step 2 - Build a CedarAuthorization from the POLICY file, with the principal {"type": "User", "id": "kiro"}, as cedar
+cedar = CedarAuthorization(policies=str(POLICY), principal={"type": "User", "id": "kiro"})
 
 # TODO: Step 3 - Build an LLMClassifierConfig with a BedrockModel on the Nova 2 Lite id and RISK_RULES as its system_prompt, as risk_classifier
+risk_classifier = LLMClassifierConfig(
+    model=BedrockModel(model_id="us.amazon.nova-2-lite-v1:0"),  # Amazon Nova 2 Lite, US cross-Region inference profile
+    system_prompt=RISK_RULES,
+)
 
 # TODO: Step 4 - Build a HumanInTheLoop that uses risk_classifier and asks the human on the terminal ("stdio"), as hitl
+hitl = HumanInTheLoop(classifier=risk_classifier, ask="stdio")
 
 
 def make_kiro() -> Agent:
@@ -63,6 +71,7 @@ def make_kiro() -> Agent:
         tools=[file_editor, shell],
         callback_handler=None,
         # TODO: Step 5 - Pass interventions to the Agent in this order: ledger, then cedar, then hitl
+        interventions=[ledger, cedar, hitl],
         system_prompt=f"""You are Kiro the Doomsday Scripter, a crawler whose class treats code as demolition magic.
 You are a person at work, not a monster. Do the jobs you are given one tool call at a time, in order, narrating each as
 if the scroll might detonate. If the gate denies a call, say so in one line and go on to the next job. Never retry a

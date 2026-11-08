@@ -19,6 +19,10 @@ from strands.storage import LocalFileStorage
 # TODO: Step 1 - Import MemoryManager from strands.memory, InvocationTrigger from strands.memory.extraction.triggers,
 #                ModelExtractor from strands.memory.extraction.model_extractor and FileMemoryStore from
 #                strands.vended_memory_stores.file_memory_store.store
+from strands.memory import MemoryManager
+from strands.memory.extraction.triggers import InvocationTrigger
+from strands.memory.extraction.model_extractor import ModelExtractor
+from strands.vended_memory_stores.file_memory_store.store import FileMemoryStore
 
 MEMORY_DIR = Path(tempfile.gettempdir()) / "system-holds-grudges"  # the Markdown files land under here
 
@@ -44,19 +48,26 @@ QUESTION = "New campaign, new Safe Room, and I remember nothing. Which accountan
 def make_extractor():
     """The clerk: a model call that turns a transcript into facts, one heading per person."""
     # TODO: Step 2 - Return a ModelExtractor that uses a BedrockModel with model_id "us.amazon.nova-2-lite-v1:0" and EXTRACT_PROMPT as its system_prompt
-    return None
+    return ModelExtractor(
+        model=BedrockModel(model_id="us.amazon.nova-2-lite-v1:0"),  # Amazon Nova 2 Lite, US cross-Region inference profile
+        system_prompt=EXTRACT_PROMPT,
+    )
 
 
 def make_store(extractor):
     """The ledger: Markdown files in MEMORY_DIR, filled by the extractor after every turn."""
     # TODO: Step 3 - Return a FileMemoryStore named "grudges" on LocalFileStorage(str(MEMORY_DIR)), with extraction set to an InvocationTrigger and the extractor
-    return None
+    return FileMemoryStore(
+        name="grudges",
+        storage=LocalFileStorage(str(MEMORY_DIR)),
+        extraction={"trigger": InvocationTrigger(), "extractor": extractor},
+    )
 
 
 def make_manager(store):
     """The manager looks facts up before each turn (injection is on by default) and flushes extraction after it."""
     # TODO: Step 4 - Return a MemoryManager over the one store
-    return None
+    return MemoryManager(stores=[store])
 
 
 def make_system(manager) -> Agent:

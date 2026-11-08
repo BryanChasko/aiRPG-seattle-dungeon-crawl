@@ -92,7 +92,7 @@ class SponsorDeals(HookProvider):
 
     def register_hooks(self, registry: HookRegistry, **kwargs: Any) -> None:
         # TODO: Step 1 - Register self.ask_the_player with registry.add_callback for BeforeToolCallEvent
-        pass
+        registry.add_callback(BeforeToolCallEvent, self.ask_the_player)
 
     def ask_the_player(self, event: BeforeToolCallEvent) -> None:
         if event.tool_use["name"] != "sponsor_offer":
@@ -100,8 +100,10 @@ class SponsorDeals(HookProvider):
         deal = event.tool_use["input"]
         reason = {key: deal.get(key, "") for key in ("sponsor", "offer", "reward", "cost")}
         # TODO: Step 2 - Raise the interrupt with event.interrupt("sponsor_deal", reason=reason) and keep the player's answer
-        answer = "accept"  # placeholder: the answer replaces this line
+        answer = event.interrupt("sponsor_deal", reason=reason)
         # TODO: Step 3 - When the answer is not "accept", cancel the tool call by setting event.cancel_tool to a message the System can retell
+        if answer != "accept":
+            event.cancel_tool = "The Crawler refused the deal. Tell them the sponsor sulks, then carry on."
 
 
 sponsor_deals = SponsorDeals()
@@ -115,6 +117,16 @@ class DealAnswer(BaseModel):
 def turn_payload(result) -> dict:
     """The JSON for one turn: the story, plus the interrupt when the turn paused on a sponsor deal."""
     # TODO: Step 4 - When result.stop_reason is "interrupt", also return the first interrupt as id, name and reason
+    if result.stop_reason == "interrupt" and result.interrupts:
+        first = result.interrupts[0]
+        sponsor = (first.reason or {}).get("sponsor", "A sponsor")
+        holding = {
+            "response": f"SPONSOR LINE: {sponsor} is on the line. The broadcast holds the turn until the Crawler answers.",
+            "actions_suggestions": [],
+            "details": "interrupt",
+            "dice_rolls": [],
+        }
+        return {"response": holding, "interrupt": {"id": first.id, "name": first.name, "reason": first.reason}}
     return {"response": result.structured_output.model_dump()}
 
 
@@ -123,7 +135,8 @@ async def respond_to_sponsor(answer: DealAnswer):
     print("Resuming the turn...")
     try:
         # TODO: Step 5 - Resume the agent with a list of one interruptResponse block: the interrupt id and "accept" or "refuse"
-        resume = []
+        resume = [{"interruptResponse": {"interruptId": answer.interrupt_id,
+                                         "response": "accept" if answer.accepted else "refuse"}}]
         response = await agent.invoke_async(resume)
         return JSONResponse(content=turn_payload(response))
     except Exception as e:

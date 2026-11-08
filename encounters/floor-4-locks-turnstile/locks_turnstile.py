@@ -14,16 +14,20 @@ import time
 
 from strands import Agent
 # TODO: Step 1 - Import make_mcp_router from strands.vended_tools.mcp_router.mcp_router
+from strands.vended_tools.mcp_router.mcp_router import make_mcp_router
 
 import tide_server
 
 TIDE_URL = f"http://localhost:{tide_server.PORT}/mcp"
 
 # TODO: Step 2 - Write the allowlist: "dice" at http://localhost:8002/mcp and "tide" at TIDE_URL, each as {"url": ...}
-ALLOWLIST: dict = {}
+ALLOWLIST: dict = {
+    "dice": {"url": "http://localhost:8002/mcp"},
+    "tide": {"url": TIDE_URL},
+}
 
 # TODO: Step 3 - Build the router tool named "turnstile" from the allowlist, with at most 2 open connections
-turnstile = None
+turnstile = make_mcp_router(name="turnstile", servers=ALLOWLIST, max_connections=2)
 
 SYSTEM_PROMPT = """You are the gate keeper at the Ballard Locks turnstile, a router for the System's MCP servers.
 Open a connection with the turnstile tool (command connect, a short connection_id, and a server_name),
@@ -40,6 +44,7 @@ def make_gate() -> Agent:
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
         system_prompt=SYSTEM_PROMPT,
         # TODO: Step 4 - Give the agent the turnstile as its only tool
+        tools=[turnstile],
         callback_handler=None,
     )
 

@@ -20,6 +20,9 @@ from strands import Agent
 from strands.storage import LocalFileStorage
 # TODO: Step 1 - Import FileSessionManager from strands.session.file_session_manager, SnapshotSessionManager from
 #                strands.session.snapshot_session_manager and S3SessionManager from strands.session.s3_session_manager
+from strands.session.file_session_manager import FileSessionManager
+from strands.session.snapshot_session_manager import SnapshotSessionManager
+from strands.session.s3_session_manager import S3SessionManager
 
 SAVE_DIR = Path(tempfile.gettempdir()) / "save-points"  # the file and snapshot save points land under here
 REGION = "us-west-2"
@@ -36,19 +39,19 @@ MORE = "One more thing: Chonks ate the ferry map."
 def file_save():
     """One JSON file per message, in a folder."""
     # TODO: Step 2 - Return a FileSessionManager with session_id "bluffs-file" and storage_dir str(SAVE_DIR / "file")
-    return None
+    return FileSessionManager(session_id="bluffs-file", storage_dir=str(SAVE_DIR / "file"))
 
 
 def snapshot_save():
     """The whole agent as one blob, on the Storage of your choice, plus checkpoints."""
     # TODO: Step 3 - Return a SnapshotSessionManager with session_id "bluffs-snapshot" and storage LocalFileStorage(str(SAVE_DIR / "snapshot"))
-    return None
+    return SnapshotSessionManager(session_id="bluffs-snapshot", storage=LocalFileStorage(str(SAVE_DIR / "snapshot")))
 
 
 def s3_save(bucket: str):
     """The file layout, in a bucket."""
     # TODO: Step 4 - Return an S3SessionManager with session_id "bluffs-s3", the bucket, prefix "save-points/" and region_name REGION
-    return None
+    return S3SessionManager(session_id="bluffs-s3", bucket=bucket, prefix="save-points/", region_name=REGION)
 
 
 def make_player(manager) -> Agent:

@@ -18,6 +18,7 @@ from pathlib import Path
 
 from strands.models import BedrockModel
 # TODO: Step 1 - Import LLMDecisionModel from strands.decisions.llm_decision_model
+from strands.decisions.llm_decision_model import LLMDecisionModel
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # the shared dance floor lives in encounters/
 from dance_floor import MODIFIERS, TEMPO, dance_round, scoreboard
@@ -42,7 +43,10 @@ DECISION_PROMPT = ("You are the System's Narrator, calling a dance-off between t
 def make_decision_model():
     """The System's decision model: Amazon Nova 2 Lite, answering closed questions."""
     # TODO: Step 2 - Return an LLMDecisionModel over a BedrockModel with model_id us.amazon.nova-2-lite-v1:0 and a system_prompt of DECISION_PROMPT
-    return None
+    return LLMDecisionModel(
+        model=BedrockModel(model_id="us.amazon.nova-2-lite-v1:0"),  # Amazon Nova 2 Lite, US cross-Region inference profile
+        system_prompt=DECISION_PROMPT,
+    )
 
 
 def best_dancer(move_call: str) -> str:
@@ -67,6 +71,7 @@ async def read_the_room(decision_model, situation: str, last_move: str | None, t
         }
     result = None
     # TODO: Step 3 - Ask the decision model the questions about the situation with ask, and keep the DecisionResult in result
+    result = await decision_model.ask(situation, questions)
     answers = result.answers
     return tempo or str(answers["tempo"]), str(answers["move_call"])
 
@@ -74,7 +79,8 @@ async def read_the_room(decision_model, situation: str, last_move: str | None, t
 def dance(tempo: str, move_call: str) -> dict:
     """Roll one round with the typed values."""
     # TODO: Step 4 - Return dance_round(...) for the opponent, with move_call and tempo as the typed values, crawler=best_dancer(move_call) and opponent_modifier=OPPONENT_MODIFIER
-    return None
+    return dance_round(opponent=OPPONENT, move_call=move_call, tempo=tempo, crawler=best_dancer(move_call),
+                       opponent_modifier=OPPONENT_MODIFIER)
 
 
 async def main() -> None:

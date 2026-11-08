@@ -7,11 +7,13 @@ the agent is running; the tool watcher notices and registers it.
 import random
 
 # TODO: Step 2 - Import tool from strands.tools.decorator
+from strands.tools.decorator import tool
 
 FOOTWORK = {"Cordula": 1, "Barnaby": 4}  # the party's Dexterity modifiers
 
 
 # TODO: Step 3 - Mark final_beat as a tool with the @tool decorator
+@tool
 def final_beat(crawler: str = "Cordula") -> dict:
     """Settle a tied round with the Final Beat: both sides roll until exactly one lands closest to 20 without going over.
 

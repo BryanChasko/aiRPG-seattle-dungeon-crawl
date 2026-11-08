@@ -20,6 +20,8 @@ import sys
 from a2a.types import Message, TaskArtifactUpdateEvent, TaskStatusUpdateEvent
 from strands import Agent
 # TODO: Step 1 - Import A2AAgent from strands.agent.a2a_agent and A2AServer from strands.multiagent.a2a.server
+from strands.agent.a2a_agent import A2AAgent
+from strands.multiagent.a2a.server import A2AServer
 
 RULES_URL = "http://127.0.0.1:8000"  # the Floor 5 Rules Agent
 CHARACTER_URL = "http://127.0.0.1:8001"  # the Floor 5 Character Agent
@@ -52,13 +54,18 @@ def describe(event) -> str:
 def phone(endpoint: str) -> A2AAgent:
     """An A2AAgent for one remote endpoint, with a 60 second limit on each HTTP operation."""
     # TODO: Step 2 - Return an A2AAgent for the endpoint, with a timeout of 60 seconds
-    return None
+    return A2AAgent(endpoint, timeout=60)
 
 
 async def take_the_call(line: A2AAgent, question: str):
     """Send one question down the line and print each A2A event as it arrives. Returns the final AgentResult."""
     result = None
     # TODO: Step 3 - Loop over line.stream_async(question): print describe(event["event"]) for each "a2a_stream" event, and keep event["result"] when it arrives
+    async for event in line.stream_async(question):
+        if event.get("type") == "a2a_stream":
+            print(f"    {describe(event['event'])}")
+        elif "result" in event:
+            result = event["result"]
     return result
 
 
@@ -76,7 +83,7 @@ def create_barnaby(context_id: str) -> Agent:
 def build_barnaby_line() -> A2AServer:
     """Barnaby's own line: an A2A server on port 8003 that builds a Barnaby for every caller."""
     # TODO: Step 4 - Return an A2AServer with the create_barnaby factory on port 8003 (BARNABY_PORT)
-    return None
+    return A2AServer(agent_factory=create_barnaby, port=BARNABY_PORT)
 
 
 async def main() -> None:

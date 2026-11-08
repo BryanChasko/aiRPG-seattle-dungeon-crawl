@@ -14,6 +14,7 @@ from urllib.parse import urlencode
 
 from strands import Agent
 # TODO: Step 1 - Import http_request and notebook from strands.vended_tools
+from strands.vended_tools import http_request, notebook
 
 NOAA_API = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter"
 SEATTLE_STATION = "9447130"  # the Elliott Bay tide gauge
@@ -23,7 +24,18 @@ FLOOD_LINE_FT = 11.0  # the Estuary dance floor floods when a high tide reaches 
 def tide_url(day: date) -> str:
     """The NOAA address for the high and low tides of one day at the Seattle gauge."""
     # TODO: Step 2 - Fill params for NOAA: product predictions, interval hilo, station SEATTLE_STATION, begin_date and end_date both day as YYYYMMDD, datum MLLW, units english, time_zone lst_ldt, format json, application aiRPG_workshop
-    params = {}
+    params = {
+        "product": "predictions",
+        "interval": "hilo",
+        "station": SEATTLE_STATION,
+        "begin_date": day.strftime("%Y%m%d"),
+        "end_date": day.strftime("%Y%m%d"),
+        "datum": "MLLW",
+        "units": "english",
+        "time_zone": "lst_ldt",
+        "format": "json",
+        "application": "aiRPG_workshop",
+    }
     return f"{NOAA_API}?{urlencode(params)}"
 
 
@@ -31,6 +43,8 @@ system = Agent(
     model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
     tools=[
         # TODO: Step 3 - Add the http_request and notebook tools to the agent
+        http_request,
+        notebook,
     ],
     callback_handler=None,
     system_prompt=f"""You are the System, the sardonic AI that runs a dungeon crawl under Seattle as a show for alien viewers.
@@ -47,3 +61,6 @@ if __name__ == "__main__":
     result = system(f"Is the Estuary dance floor underwater today? The tide table for {today.isoformat()} is at {tide_url(today)}")
     print(f"\nTHE SYSTEM RULES: {str(result).strip()}")
     # TODO: Step 4 - Read the party's notes: print the "notebooks" entry of the system agent's state
+    print("\nTHE PARTY'S NOTES:")
+    for name, text in (system.state.get("notebooks") or {}).items():
+        print(f"[{name}]\n{text}")

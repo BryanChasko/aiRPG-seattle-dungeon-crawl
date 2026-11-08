@@ -17,6 +17,8 @@ from pathlib import Path
 import boto3
 from strands import Agent
 # TODO: Step 1 - Import get_tracer from strands.telemetry.tracer and metrics_to_string from strands.telemetry.metrics
+from strands.telemetry.tracer import get_tracer
+from strands.telemetry.metrics import metrics_to_string
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # the shared dance floor lives in encounters/
 from dance_floor import dance_round, scoreboard
@@ -44,6 +46,7 @@ def make_booth(round_number: int, move_call: str, crawler: str) -> Agent:
 opponent_modifier=2, tempo="Driving". Then report each side as die + modifier = total and name who took the round,
 in two sentences. Never roll or decide anything yourself. Plain text only, no emoji.""",
         # TODO: Step 2 - Stamp every span of this agent with trace_attributes: dance.round, dance.move_call and dance.opponent
+        trace_attributes={"dance.round": round_number, "dance.move_call": move_call, "dance.opponent": OPPONENT},
         callback_handler=None,
     )
 
@@ -56,13 +59,26 @@ def run_round(round_number: int, move_call: str, crawler: str):
 def broadcast_round(round_number: int, move_call: str, crawler: str):
     """Dance one round inside a span of its own, so the whole round shows up as one line in CloudWatch."""
     # TODO: Step 3 - Run run_round inside a span named "broadcast.round" opened with get_tracer().tracer.start_as_current_span; set dance.round and dance.move_call on it first, and dance.winner from the scoreboard after the round
-    return run_round(round_number, move_call, crawler)
+    with get_tracer().tracer.start_as_current_span("broadcast.round") as span:
+        span.set_attribute("dance.round", round_number)
+        span.set_attribute("dance.move_call", move_call)
+        result = run_round(round_number, move_call, crawler)
+        span.set_attribute("dance.winner", scoreboard[-1]["winner"] if scoreboard else "none")
+    return result
 
 
 def round_receipt(result) -> dict:
     """What the round did and cost, read from the agent's metrics."""
     # TODO: Step 4 - Read result.metrics.get_summary() and return model_cycles, dance_round_calls, input_tokens and output_tokens
-    return {}
+    summary = result.metrics.get_summary()
+    usage = summary["accumulated_usage"]
+    calls = summary["tool_usage"].get("dance_round", {}).get("execution_stats", {}).get("call_count", 0)
+    return {
+        "model_cycles": summary["total_cycles"],
+        "dance_round_calls": calls,
+        "input_tokens": usage["inputTokens"],
+        "output_tokens": usage["outputTokens"],
+    }
 
 
 def read_back(minutes: int = 30) -> list[dict]:

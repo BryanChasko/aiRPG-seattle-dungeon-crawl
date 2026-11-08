@@ -32,13 +32,14 @@ def make_workbench() -> Agent:
 from a tool; never roll, add or decide anything yourself. If the tool you need is not on the workbench, say "The drum is not on the
 workbench yet." and stop. Otherwise report what the tool returned. Two sentences. Plain text only, no emoji.""",
         # TODO: Step 1 - Load the tools in ./tools and watch the folder for changes: pass load_tools_from_directory=True
+        load_tools_from_directory=True,
     )
 
 
 def put_on_the_bench() -> None:
     """Add final_beat to the folder while the agent is running."""
     # TODO: Step 4 - Copy SHELF into the TOOLS folder with shutil.copyfile; the new file is TOOLS / SHELF.name
-    pass
+    shutil.copyfile(SHELF, TOOLS / SHELF.name)
 
 
 def wait_for_tool(agent: Agent, name: str, seconds: float = 10.0) -> bool:

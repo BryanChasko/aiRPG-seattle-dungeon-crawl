@@ -18,6 +18,8 @@ from pathlib import Path
 
 from strands import Agent
 # TODO: Step 1 - Import DockerSandbox from strands.sandbox.docker and PosixShellSandbox from strands.sandbox.posix_shell
+from strands.sandbox.docker import DockerSandbox
+from strands.sandbox.posix_shell import PosixShellSandbox
 
 CONTAINER = "tide-pool"  # the name given to docker run above
 SCROLL = "/tmp/scroll.py"  # a path inside the container, not on your machine
@@ -30,7 +32,7 @@ def check_pool(pool) -> None:
 
 
 # TODO: Step 2 - Build a DockerSandbox for the CONTAINER, with working_dir "/tmp" and user "nobody", as pool
-pool = None
+pool = DockerSandbox(CONTAINER, working_dir="/tmp", user="nobody")
 
 
 def make_kiro() -> Agent:
@@ -38,6 +40,7 @@ def make_kiro() -> Agent:
     return Agent(
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
         # TODO: Step 3 - Give the agent the pool as its sandbox
+        sandbox=pool,
         callback_handler=None,
         system_prompt=f"""You are Kiro the Doomsday Scripter, a crawler whose class treats code as demolition magic.
 You work inside a sandbox, a tide pool in a container: use sandbox_file_editor to inscribe scrolls (files) and
@@ -54,4 +57,5 @@ if __name__ == "__main__":
     result = make_kiro()(JOBS)
     print(f"\nKiro: {str(result).strip()}")
     # TODO: Step 4 - Read the scroll back from inside the pool with pool.read_text (an async method: run it with asyncio.run) and print it
+    print(f"\nThe scroll, read from inside the pool:\n{asyncio.run(pool.read_text(SCROLL))}")
     print(f"\nA scroll.py in this folder on your machine? {Path('scroll.py').exists()}")

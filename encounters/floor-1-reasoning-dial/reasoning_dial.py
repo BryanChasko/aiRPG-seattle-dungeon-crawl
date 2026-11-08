@@ -18,6 +18,9 @@ from botocore.config import Config
 from strands import Agent, tool
 from strands.models import BedrockModel
 # TODO: Step 1 - Import ModelRouter and RoutingCandidate from strands.models.routing.router, ClassifierStrategy from strands.models.routing.classifier_strategy and FallbackStrategy from strands.models.routing.fallback_strategy
+from strands.models.routing.router import ModelRouter, RoutingCandidate
+from strands.models.routing.classifier_strategy import ClassifierStrategy
+from strands.models.routing.fallback_strategy import FallbackStrategy
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # the shared dance floor lives in encounters/
 from dance_floor import MODIFIERS, dance_round, final_beat, party_took_the_last_round, scoreboard
@@ -80,16 +83,35 @@ class DialStrategy:
 
 
 # TODO: Step 2 - Build the quick candidate: a RoutingCandidate around a BedrockModel with model_id "us.amazon.nova-2-lite-v1:0" and reasoning off, named "quick", described by QUICK_DESCRIPTION
-quick = None
+quick = RoutingCandidate(
+    BedrockModel(model_id="us.amazon.nova-2-lite-v1:0"),  # Amazon Nova 2 Lite, US cross-Region inference profile
+    name="quick",
+    description=QUICK_DESCRIPTION,
+)
 
 # TODO: Step 3 - Build the deep candidate: the same model with additional_request_fields={"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "low"}} and a boto_client_config of Config(read_timeout=DEEP_PATIENCE_SECONDS, retries={"total_max_attempts": 1, "mode": "standard"}), named "deep", described by DEEP_DESCRIPTION
-deep = None
+deep = RoutingCandidate(
+    BedrockModel(
+        model_id="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
+        additional_request_fields={"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "low"}},
+        boto_client_config=Config(read_timeout=DEEP_PATIENCE_SECONDS, retries={"total_max_attempts": 1, "mode": "standard"}),
+    ),
+    name="deep",
+    description=DEEP_DESCRIPTION,
+)
 
 # TODO: Step 4 - Build the dial: a DialStrategy of a ClassifierStrategy and a FallbackStrategy, as dial. The classifier runs on its own BedrockModel with model_id "us.amazon.nova-2-lite-v1:0", system_prompt=DIAL_POLICY and timeout=15
-dial = None
+dial = DialStrategy(
+    ClassifierStrategy(
+        BedrockModel(model_id="us.amazon.nova-2-lite-v1:0"),  # Amazon Nova 2 Lite, US cross-Region inference profile
+        system_prompt=DIAL_POLICY,
+        timeout=15,
+    ),
+    FallbackStrategy(),
+)
 
 # TODO: Step 5 - Build the router: a ModelRouter over quick and deep with dial as its strategy, as router
-router = None
+router = ModelRouter([quick, deep], strategy=dial)
 
 
 def make_system() -> Agent:

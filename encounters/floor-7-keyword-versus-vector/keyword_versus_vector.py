@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "5_a2a_in
 from create_knowledge_base import HANDBOOK_DIR, extract_chunks
 from strands.storage import LocalFileStorage
 # TODO: Step 1 - Import Bm25SearchStrategy from strands.storage.search.bm25
+from strands.storage.search.bm25 import Bm25SearchStrategy
 
 FINAL_BEAT = "04-final-beat"  # the handbook file the right answer lives in
 TOP = 5  # how many passages each searcher gets to hand back
@@ -49,7 +50,7 @@ def rank_of(keys: list[str]) -> int | None:
 def keyword_arena(folder: str, chunks: list[dict]) -> LocalFileStorage:
     """A folder of passages with a BM25 index over them. Writing a file indexes it."""
     # TODO: Step 2 - Create a LocalFileStorage at folder whose search_strategy is a Bm25SearchStrategy()
-    storage = None
+    storage = LocalFileStorage(folder, search_strategy=Bm25SearchStrategy())
 
     async def write_all() -> None:
         for chunk in chunks:
@@ -62,7 +63,7 @@ def keyword_arena(folder: str, chunks: list[dict]) -> LocalFileStorage:
 def keyword_search(storage: LocalFileStorage, query: str) -> list[str]:
     """The keys of the passages BM25 found, best first. Every word of the question has to be in a passage."""
     # TODO: Step 3 - Run storage.search(query) with asyncio.run and return the key of each of the first TOP results, in order
-    return []
+    return [result.key for result in asyncio.run(storage.search(query))[:TOP]]
 
 
 def vector_arena(chunks: list[dict]):
@@ -75,7 +76,7 @@ def vector_arena(chunks: list[dict]):
 def vector_search(collection, query: str) -> list[str]:
     """The ids of the TOP passages nearest to the question in meaning, closest first."""
     # TODO: Step 4 - Query the collection with query_texts=[query] and n_results=TOP, and return the first list under "ids"
-    return []
+    return collection.query(query_texts=[query], n_results=TOP)["ids"][0]
 
 
 def judge(keyword_rank: int | None, vector_rank: int | None) -> str:

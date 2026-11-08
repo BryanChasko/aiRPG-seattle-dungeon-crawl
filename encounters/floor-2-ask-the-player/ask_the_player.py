@@ -14,6 +14,7 @@ from pathlib import Path
 
 from strands import Agent
 # TODO: Step 1 - Import handoff_to_user from strands.vended_tools
+from strands.vended_tools import handoff_to_user
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # the shared dance floor lives in encounters/
 from dance_floor import dance_round, scoreboard
@@ -22,6 +23,8 @@ narrator = Agent(
     model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
     tools=[
         # TODO: Step 2 - Add the handoff_to_user and dance_round tools to the agent
+        handoff_to_user,
+        dance_round,
     ],
     callback_handler=None,
     system_prompt="""You are the Narrator of a dungeon crawl under Seattle, calling a dance-off live for alien viewers.
@@ -36,13 +39,13 @@ returned in two sentences, and never roll or decide anything yourself. Plain tex
 def asking(result) -> bool:
     """True when the Narrator stopped to ask the player something instead of finishing the turn."""
     # TODO: Step 3 - Return whether the result's stop_reason is "interrupt"
-    return False
+    return result.stop_reason == "interrupt"
 
 
 def answer_block(interrupt, answer: str) -> dict:
     """The content block that resumes the Narrator: the player's answer, tied to the question it answers."""
     # TODO: Step 4 - Return an "interruptResponse" block holding the interrupt's id as "interruptId" and the answer as "response"
-    return {}
+    return {"interruptResponse": {"interruptId": interrupt.id, "response": answer}}
 
 
 if __name__ == "__main__":

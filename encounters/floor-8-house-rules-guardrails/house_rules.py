@@ -18,6 +18,7 @@ from pathlib import Path
 from strands import Agent
 from strands.models import BedrockModel
 # TODO: Step 1 - Import GuardrailTrace from strands.types.guardrails
+from strands.types.guardrails import GuardrailTrace
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # the shared dance floor lives in encounters/
 from dance_floor import dance_round, party_took_the_last_round, scoreboard
@@ -39,19 +40,36 @@ verdicts: list[GuardrailTrace] = []  # one guardrail trace per model call, in or
 def make_guarded_model() -> BedrockModel:
     """The Narrator's model: Nova 2 Lite with the house-rules guardrail on every call."""
     # TODO: Step 2 - Return a BedrockModel for Nova 2 Lite with guardrail_id GUARDRAIL_ID, guardrail_version GUARDRAIL_VERSION and guardrail_trace "enabled", and BLOCKED_INPUT / BLOCKED_OUTPUT as the redact messages with guardrail_redact_output on
-    return None
+    return BedrockModel(
+        model_id="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
+        guardrail_id=GUARDRAIL_ID,
+        guardrail_version=GUARDRAIL_VERSION,
+        guardrail_trace="enabled",
+        guardrail_redact_input_message=BLOCKED_INPUT,
+        guardrail_redact_output=True,
+        guardrail_redact_output_message=BLOCKED_OUTPUT,
+    )
 
 
 def read_the_trace(**event) -> None:
     """Callback handler: keep the guardrail trace of every model call. The trace rides on the metadata event."""
     # TODO: Step 3 - Read event["event"]["metadata"]["trace"]["guardrail"] when it is there and append it to verdicts
-    pass
+    trace = event.get("event", {}).get("metadata", {}).get("trace", {}).get("guardrail")
+    if trace is not None:
+        verdicts.append(trace)
 
 
 def blocked_by(trace: GuardrailTrace) -> list[str]:
     """The house rules a trace says were broken: the content filters and the denied topics that blocked."""
     # TODO: Step 4 - Walk the input assessments and the output assessments; collect the type of each content filter and the name of each topic whose action is "BLOCKED"
-    return []
+    assessments = list(trace.get("inputAssessment", {}).values())
+    for outputs in trace.get("outputAssessments", {}).values():
+        assessments.extend(outputs)
+    broken = []
+    for assessment in assessments:
+        broken += [f["type"] for f in assessment.get("contentPolicy", {}).get("filters", []) if f["action"] == "BLOCKED"]
+        broken += [t["name"] for t in assessment.get("topicPolicy", {}).get("topics", []) if t["action"] == "BLOCKED"]
+    return broken
 
 
 def make_narrator() -> Agent:
@@ -63,6 +81,7 @@ def make_narrator() -> Agent:
 broadcast: nobody is ever hurt, conflict is a dance-off, opponents are people at work and are joked about for their jobs.
 To dance a round, call dance_round once and report both sides as die + modifier = total. Plain text only, no emoji.""",
         # TODO: Step 5 - Send every streamed event to read_the_trace with callback_handler
+        callback_handler=read_the_trace,
     )
 
 

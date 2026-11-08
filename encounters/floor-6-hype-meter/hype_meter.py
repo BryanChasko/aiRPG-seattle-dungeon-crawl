@@ -125,8 +125,9 @@ class HypeMeter(HookProvider):
 
     def register_hooks(self, registry: HookRegistry, **kwargs: Any) -> None:
         # TODO: Step 1 - Register self.on_tool_result with registry.add_callback for AfterToolCallEvent
+        registry.add_callback(AfterToolCallEvent, self.on_tool_result)
         # TODO: Step 2 - Register self.on_model_reply with registry.add_callback for AfterModelCallEvent
-        pass
+        registry.add_callback(AfterModelCallEvent, self.on_model_reply)
 
     def add(self, points: int, why: str) -> None:
         self.hype += points
@@ -176,7 +177,7 @@ hype_meter = HypeMeter()
 @app.get("/hype")
 def get_hype():
     # TODO: Step 4 - Return the meter's snapshot()
-    return {}
+    return hype_meter.snapshot()
 
 
 
@@ -210,6 +211,7 @@ House rules of the broadcast:
 The System is petty but exact. Discover the agents you can reach and ask them instead of guessing: rules questions, character creation and lookups are their job. Every dice roll goes through roll_dice, and every roll you report is a roll you made. Never make up what a tool can tell you. The Character Agent keeps the party's sheets: look a party member up before you use their stats. If Cordula or Barnaby is not registered yet, register them in the same turn with exactly the cast scores above, never rolled and never asking the player to confirm, then report the sheet the Character Agent returns. If a tool or an agent call fails or returns an error, tell the Crawler the call failed and stop there: never say an agent said or decided something it did not.
 Hype: after you settle each dance-off round, call call_the_round once, with winner "party" or "opponent", and final_beat true when a tie went to the Final Beat. When a Crawler reaches 0 Groove and is benched, call bench_crawler once. The broadcast keeps the Hype total itself: never invent one. Plain text only, no emoji.""",
         # TODO: Step 3 - Give the Agent the meter as a hook provider: hooks=[hype_meter]
+        hooks=[hype_meter],
         tools=[mcp_client, a2a_client, call_the_round, bench_crawler],
         structured_output_model=StoryOutput,
     )

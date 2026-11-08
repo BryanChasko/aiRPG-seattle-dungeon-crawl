@@ -59,9 +59,23 @@ def read_the_receipt(result, seconds: float) -> dict:
         "agent_usage_so_far": dict(metrics.accumulated_usage),  # every turn this agent has taken, not just this one
     }
     # TODO: Step 1 - Add "turn_usage": the usage of this turn alone, turn.usage, as a dict
+    receipt["turn_usage"] = dict(turn.usage)
     # TODO: Step 2 - Add "cycles": one {"input": ..., "output": ...} per cycle of this turn, from turn.cycles and the inputTokens and outputTokens of each cycle's usage
+    receipt["cycles"] = [{"input": c.usage["inputTokens"], "output": c.usage["outputTokens"]} for c in turn.cycles]
     # TODO: Step 3 - Add "tools_so_far": for each name and tool in metrics.tool_metrics, its call_count, error_count and total_time rounded to 3 places
+    receipt["tools_so_far"] = {
+        name: {"calls": tm.call_count, "errors": tm.error_count, "seconds": round(tm.total_time, 3)}
+        for name, tm in metrics.tool_metrics.items()
+    }
     # TODO: Step 4 - Add "traces": for the last len(turn.cycles) entries of metrics.traces, its name, its duration() in seconds and the (name, duration) of each of its children
+    receipt["traces"] = [
+        {
+            "name": t.name,
+            "seconds": round(t.duration() or 0, 2),
+            "steps": [(child.name, round(child.duration() or 0, 2)) for child in t.children],
+        }
+        for t in metrics.traces[len(metrics.traces) - len(turn.cycles):]
+    ]
     return receipt
 
 

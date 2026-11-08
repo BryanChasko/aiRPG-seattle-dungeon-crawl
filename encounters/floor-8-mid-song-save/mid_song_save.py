@@ -20,6 +20,7 @@ from pathlib import Path
 from strands import Agent
 from strands.session.file_session_manager import FileSessionManager
 # TODO: Step 1 - Import Checkpoint from strands.experimental.checkpoint.checkpoint
+from strands.experimental.checkpoint.checkpoint import Checkpoint
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # the shared dance floor lives in encounters/
 from dance_floor import dance_round, scoreboard
@@ -40,6 +41,7 @@ crawler="Barnaby", opponent_modifier=2, tempo="Driving". Then report each side a
 the round, in two sentences. Never roll or decide anything yourself. Plain text only, no emoji.""",
         session_manager=FileSessionManager(session_id="mid-song-save", storage_dir=str(STATE_DIR)),
         # TODO: Step 2 - Turn on checkpointing so the loop pauses at its cycle boundaries and returns a checkpoint
+        checkpointing=True,
         callback_handler=None,
     )
 
@@ -47,13 +49,14 @@ the round, in two sentences. Never roll or decide anything yourself. Plain text 
 def save_checkpoint(result) -> None:
     """Write the checkpoint of a paused result where the next run will find it."""
     # TODO: Step 3 - Write result.checkpoint.to_dict() to CHECKPOINT_FILE as JSON
-    pass
+    CHECKPOINT_FILE.write_text(json.dumps(result.checkpoint.to_dict()))
 
 
 def resume(band: Agent):
     """Pick the song up where the last run left it."""
     # TODO: Step 4 - Read CHECKPOINT_FILE, check it with Checkpoint.from_dict, and call the band with a {"checkpointResume": {"checkpoint": ...}} block
-    return None
+    checkpoint = Checkpoint.from_dict(json.loads(CHECKPOINT_FILE.read_text()))
+    return band({"checkpointResume": {"checkpoint": checkpoint.to_dict()}})
 
 
 def play_next_beat() -> str:

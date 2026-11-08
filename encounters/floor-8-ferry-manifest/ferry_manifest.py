@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 
 # TODO: Step 1 - Import config_to_agent from strands.experimental.agent_config
+from strands.experimental.agent_config import config_to_agent
 
 NOVA = "us.amazon.nova-2-lite-v1:0"  # Amazon Nova 2 Lite, US cross-Region inference profile
 MANIFEST = Path(__file__).resolve().parent / "rules-agent-manifest.json"
@@ -21,14 +22,17 @@ QUESTION = "How does the Final Beat work?"
 def check_manifest(path: Path) -> dict:
     """Read the manifest and refuse to sail unless it pins Nova 2 Lite."""
     # TODO: Step 2 - Load the JSON from path and raise ValueError unless its "model" is NOVA; return the manifest
-    return {}
+    manifest = json.loads(path.read_text())
+    if manifest.get("model") != NOVA:
+        raise ValueError(f"{path.name} pins {manifest.get('model')!r}; this crawl runs {NOVA}")
+    return manifest
 
 
 def build_rules_agent(path: Path = MANIFEST):
     """The Rules Agent, built from the manifest. The manifest names its tool by a relative path: run from this folder."""
     check_manifest(path)
     # TODO: Step 3 - Return config_to_agent(str(path)) with callback_handler=None passed as a keyword argument
-    return None
+    return config_to_agent(str(path), callback_handler=None)
 
 
 if __name__ == "__main__":

@@ -14,6 +14,8 @@ from __future__ import annotations
 
 from strands import Agent, tool
 # TODO: Step 1 - Import make_subagent from strands.vended_tools.subagent.subagent, and Fixed and Preset from strands.multiagent.spec
+from strands.multiagent.spec import Fixed, Preset
+from strands.vended_tools.subagent.subagent import make_subagent
 
 CLERK_RULES = """You are a one-off clerk hired by the System to file the party's paperwork. You work from the task as written and cannot ask questions.
 Return a tidy form: a title line, one line per item, and a total line. Every sum goes through the add_up tool; never add numbers yourself.
@@ -41,7 +43,13 @@ def make_clerk_tool():
     """The tool the Narrator calls to hire a clerk for one task."""
     # TODO: Step 2 - Build the tool with make_subagent: name hire_clerk, one preset "clerk" with the CLERK_RULES instructions and only the add_up tool, and instructions=Fixed() so the model cannot rewrite them
     # TODO: Step 3 - Pin the clerk's model in the same call with model=Fixed(...) set to Amazon Nova 2 Lite, so it never falls back to the parent's
-    return None
+    return make_subagent(
+        name="hire_clerk",
+        description="Hire a one-off clerk to file the party's paperwork. Give it the whole task, with every number it needs.",
+        presets={"clerk": Preset(instructions=CLERK_RULES, tools=["add_up"], description="a clerk who files forms and adds with add_up")},
+        instructions=Fixed(),
+        model=Fixed("us.amazon.nova-2-lite-v1:0"),  # Amazon Nova 2 Lite, US cross-Region inference profile
+    )
 
 
 def make_narrator(clerk_tool) -> Agent:
@@ -49,7 +57,7 @@ def make_narrator(clerk_tool) -> Agent:
     return Agent(
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
         # TODO: Step 4 - Give the Narrator the add_up tool and the clerk_tool
-        tools=[],
+        tools=[add_up, clerk_tool],
         callback_handler=None,
         system_prompt="""You are the System's Narrator. When the party has paperwork, hire a clerk with hire_clerk, pass it the whole task, then report the clerk's form to the Crawler in two sentences and name the total. You never do the filing yourself. Plain text only, no emoji.""",
     )
