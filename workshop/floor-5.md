@@ -594,6 +594,12 @@ Watch the four terminals while a request runs. In the Narrator terminal the tool
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 5: RULES, SHEETS AND THE CORE LOOP.** This floor is where the game becomes a game. The rules live in a knowledge base the Rules Agent searches, so the Narrator cites them instead of improvising. The character sheet lives with the Character Agent, which computes Groove and Mana from the ability scores so no model can hand a Crawler extra stamina. The dance-off is the core loop: a Move Call, two rolls, a winner, Groove lost, a Final Beat when it is level. Every stat has a job in it, and nobody gets hurt. `StoryOutput` is the notification format the HUD will render on [Floor 6](floor-6.md). See [The System](world/the-system.md#6-conflict-dance-offs-and-stealth-never-killing) and the [Crawl Handbook](world/crawl-handbook/).
 
+## Side Passage: The Paper Trail (optional)
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The accountant left in a hurry and left a binder on the pickleweed: an audit report, of us, as a PDF. Our clerk only read Markdown.
+
+[The Paper Trail](encounters/paper-trail.md), a sidequest: read the accountant's audit report with `pypdf` and add it to the Rules Agent's knowledge base, so the Rules Agent cites it by page like any handbook section.
+
 ## Floor Clear
 
 Floor cleared, Crawler. You've built a complete multi-agent Narrator system with agent orchestration.

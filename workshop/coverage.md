@@ -9,7 +9,7 @@ This crawl is built on *Once Upon Agentic AI*, the AWS sample workshop that firs
 - **Every original exercise is still here.** All 63 `# TODO` steps of the original workshop are present, in the same files, in the same order. The only change is a name: the orchestrator files are named after the Narrator.
 - **Every Strands API the original teaches is still hands-on.** The table below maps each part of the original to its floor, the APIs you type yourself, and the check that proves it works.
 - **Testing grew from one floor to all of them.** The original suite covered the Floor 5 A2A servers (8 test functions). The `solution` branch now runs 43 tests, none of which call a model or AWS. They cover every floor and the study companion, plus the 114 web interface tests in `web/`.
-- **One technique was swapped for another, and it is the only one.** The original built its knowledge base from a downloaded PDF with `pypdf`. The crawl builds it from the Crawl Handbook, its own Markdown rule book. The ChromaDB collection, the `all-MiniLM-L6-v2` embeddings, the 1,000-character overlapping passages and the cited answers are all unchanged. PDF text extraction is the one technique no longer taught; it comes back as an optional encounter (below).
+- **One technique was swapped for another, and it is the only one.** The original built its knowledge base from a downloaded PDF with `pypdf`. The crawl builds it from the Crawl Handbook, its own Markdown rule book. The ChromaDB collection, the `all-MiniLM-L6-v2` embeddings, the 1,000-character overlapping passages and the cited answers are all unchanged. PDF text extraction is no longer part of the main floors; it comes back in [The Paper Trail](encounters/paper-trail.md), the optional Floor 5 encounter, with `pypdf` and the same collection.
 - **Not yet run live:** the Floor 8 AgentCore deployment, which is covered by unit tests only, and the Floor 2 bonus room, which asks you to approve each step and so cannot run unattended. Floors 1 to 5 and 7 have been run end to end on Amazon Nova 2 Lite.
 
 ## Part by Part
@@ -35,8 +35,8 @@ What the crawl teaches that the original did not:
 - **A world with rules you can read.** The [Crawl Handbook](world/crawl-handbook/) is the Rules Agent's knowledge base, so changing a rule and rebuilding the index changes the game.
 - **Honest agents.** The Narrator rolls through the dice server and reports what it rolled, uses the party's cast scores instead of inventing them, and says so when a tool call fails. Every one of these rules came from a measured failure on Nova 2 Lite.
 - **Offline tests for every floor.** Each answer is checked the way its page teaches it.
-- **Optional encounters, planned:** sidequests, boss battles and dance-offs that go deeper into the SDK on every floor, plus three deeper floors for plugins, steering and middleware. They are tracked for the companion workshop site, and their code lands here first.
-- **The Paper Trail, planned:** an optional Floor 5 encounter that brings back the PDF extraction technique from the original. You index a PDF (the Quarterly Close Accountant's audit report) with `pypdf` alongside the handbook.
+- **Optional encounters, four so far:** [sidequests, a dance-off and a boss battle](encounters/README.md) that go deeper into the SDK: a callback handler and the receipt of a turn (Floor 1), tool executors (Floor 3), conversation managers and pinned messages (Floor 7). Each has TODO markers on `main`, answers and offline tests on `solution`. More are planned for every floor, plus three deeper floors for plugins, steering and middleware, tracked with the companion workshop site.
+- **The Paper Trail:** the optional Floor 5 encounter that brings back the PDF extraction technique from the original. You index a PDF, the Quarterly Close Accountant's audit report, with `pypdf` alongside the handbook.
 
 ## Method
 

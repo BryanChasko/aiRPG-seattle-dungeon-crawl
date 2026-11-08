@@ -169,6 +169,12 @@ Check: the answer streams into the terminal as it is written, addresses you as C
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 1: THE INTERFACE VOICE.** A LitRPG System talks in notifications, and how they sound sets the genre. A cold, analytic System makes a survival story; a cruel one makes horror; ours is a game-show host. Change one sentence of your system prompt (try "You are a calm, clinical survival System") and run the script again: same model, same question, a different book. See [The System](world/the-system.md#1-origin-and-interface).
 
+## Side Passage: The Commentary Booth (optional)
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Behind the gift shop there was a door marked BROADCAST. Barnaby wanted to know what our first conversation had cost. So did I.
+
+[The Commentary Booth](encounters/commentary-booth.md), a sidequest: replace the default callback handler with your own, stream the System's call of a dance-off as it happens, announce every tool call, and read the turn's receipt, tokens and dollars, from the `AgentResult`.
+
 ## Floor Clear
 
 Floor cleared, Crawler. You've created your first AI agent using Strands.
