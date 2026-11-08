@@ -18,6 +18,8 @@ dependencies = [
 
     # Knowledge Base — Floor 5 indexes the Crawl Handbook (Markdown) in a local ChromaDB
     "chromadb",
+    # PDF text extraction for The Paper Trail, the optional Floor 5 encounter that adds a PDF to that knowledge base
+    "pypdf>=5",
 
     # Database
     "tinydb",

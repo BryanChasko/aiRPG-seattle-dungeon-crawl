@@ -44,7 +44,7 @@ The companions hatch from the eggs the System awards in the opening achievements
 | 8 | Bellevue and the Narrows | the corporate floor wants the party gone by end of quarter | deploy every piece to AgentCore, so the world persists without them | the Bonus-Season Investment Banker, the Regional Managing Director, the Quarterly Earnings Call, and the Keynote |
 | exit | Alki at dawn | getting out clean | remove every deployed resource and generated file | none; the audience leaves |
 
-The optional encounters (sidequests, boss battles and dance-offs) hang off these beats: each one is a side passage on the floor it belongs to, told in Cordula's voice like the floor itself.
+The optional encounters (sidequests, boss battles and dance-offs) hang off these beats: each one is a side passage on the floor it belongs to, told in Cordula's voice like the floor itself. The ones open so far are listed in [Side Passages](../encounters/README.md).
 
 ## Voices
 

@@ -217,6 +217,12 @@ Check: the terminal prints the new `tool_spec` first, then four `Tool #N: roll_d
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 3: HARD MATH.** Readers forgive a System for being cruel, never for being inconsistent. Ability scores, modifiers and dice are the math every later rule stands on, so they live in code, not in the model's head. In this crawl each of the six scores also maps to a dance-off Move Call: Strength is Power, Dexterity is Footwork, Constitution is Endurance, Intelligence is Choreography, Wisdom is Read the Room and Charisma is Presence. A score of 16 gives a +3 modifier: (score - 10) / 2, rounded down. See [ability scores](world/crawl-handbook/01-ability-scores.md) and [The System](world/the-system.md#2-stat-design).
 
+## Side Passage: The Concurrent Shuffle (optional)
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Deeper in the kelp, a second table with slow dice and the Quarterly Close Accountant, early for once. Two dancers, two dice, and one of them always waiting for the other.
+
+[The Concurrent Shuffle](encounters/concurrent-shuffle.md), a dance-off: roll both sides of a round with a sequential and a concurrent tool executor, and time the difference.
+
 ## Floor Clear
 
 Floor cleared, Crawler. You've created your own custom tool, and your agent can now use a capability you built specifically for it.

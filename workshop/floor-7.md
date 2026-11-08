@@ -266,6 +266,12 @@ From here you can add any feature you want. Your Narrator could generate images 
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 7: PERSISTENCE AND CONSEQUENCE.** Stakes only mean something if the System remembers. Being Benched costs half your Hype, three benches on one floor gets your segment Cancelled, and none of that bites if a restart wipes the slate. A named session gives the campaign a memory that outlives the process, so a Crawler's losses, loot and grudges carry into the next turn. Design consequence first, then pick the storage that makes it stick. See [The System](world/the-system.md#7-consequence-benched-not-dead).
 
+## Side Passage: The Context Flood (optional)
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Sixty turns in, the System was carrying every word of the campaign on every call. Somebody had to decide what it could forget. Barnaby's one condition: our names stay.
+
+[The Context Flood](encounters/context-flood.md), a boss battle: squeeze a 60-turn campaign into 20 messages with the sliding window and the summarizing conversation managers, and pin the cast sheets so neither can drop them.
+
 ## Floor Clear
 
 Floor cleared, Crawler. You rebuilt your Narrator with Strands harness and saw exactly what it adds to the agent you wired by hand.

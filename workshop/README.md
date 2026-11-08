@@ -86,6 +86,14 @@ Deploy the whole party to Amazon Bedrock AgentCore, one brick at a time
 ### [The Exit: Final Cleanup](cleanup.md)
 Stop your services, remove the Floor 8 AWS resources and delete the harness state in `.agent/`
 
+### [Side Passages: Optional Encounters](encounters/README.md)
+Deeper into the SDK, off the main corridor, each one starting where its floor ends
+
+- Floor 1, [The Commentary Booth](encounters/commentary-booth.md): your own callback handler, and the receipt of a turn
+- Floor 3, [The Concurrent Shuffle](encounters/concurrent-shuffle.md): sequential and concurrent tool executors, timed
+- Floor 5, [The Paper Trail](encounters/paper-trail.md): a PDF read with `pypdf`, added to the Rules Agent's knowledge base
+- Floor 7, [The Context Flood](encounters/context-flood.md): sliding window, summarizing, and pinned messages
+
 ## Preparing for the Crawl
 
 Everything you need to install (Python, uv, the repository) is covered in Floor 0. Bring basic Python knowledge, a terminal, and a sense of adventure.

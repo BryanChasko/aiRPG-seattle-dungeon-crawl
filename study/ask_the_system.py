@@ -33,8 +33,8 @@ from strands.storage.search.bm25 import Bm25SearchStrategy
 ROOT = Path(__file__).resolve().parent.parent
 STATE = Path(__file__).resolve().parent / ".state"  # gitignored: the search index and the chat session
 PAGES = sorted(
-    [*ROOT.glob("README.md"), *ROOT.glob("workshop/*.md"), *ROOT.glob("workshop/world/*.md"),
-     *ROOT.glob("workshop/world/crawl-handbook/*.md")]
+    [*ROOT.glob("README.md"), *ROOT.glob("workshop/*.md"), *ROOT.glob("workshop/encounters/*.md"),
+     *ROOT.glob("workshop/world/*.md"), *ROOT.glob("workshop/world/crawl-handbook/*.md")]
 )
 API_PAGE = "https://strandsagents.com/docs/api/python/{module}/"
 MODULE_NAME = re.compile(r"^strands(\.[a-z0-9_]+){0,6}$")
