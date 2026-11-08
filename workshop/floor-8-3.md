@@ -281,6 +281,13 @@ The Narrator asks the Rules Agent about stealth, then rolls on the cloud dice se
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder had set up a tripod at the top of the locks and was rehearsing to nobody. We asked the rule book, from the cloud, whether we could sneak past. It said yes, with a Dexterity check against ten plus the founder's best Wisdom modifier, and advantage if Barnaby hid us. He bent the light across my drysuit until I could not see my own boots. The dice said we made it. The founder never looked up from the slides.
 
+## Side Passages (optional)
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The rule book moved to the cloud, and two things came with it: the ferry's manifest, and the System's grudges.
+
+- [The Ferry Manifest](encounters/ferry-manifest.md), sidequest: the Rules Agent built from a configuration file that pins Amazon Nova 2 Lite
+- [The Grudge Ledger in the Cloud](encounters/grudge-ledger.md), sidequest: the System's grudges kept in a Bedrock knowledge base memory store
+
 ## Floor Clear
 
 Floor cleared, Crawler. The rule book now lives in the cloud, and every session reads the same one.

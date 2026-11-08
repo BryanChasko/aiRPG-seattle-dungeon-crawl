@@ -223,6 +223,12 @@ Check: the terminal prints the new `tool_spec` first, then four `Tool #N: roll_d
 
 [The Concurrent Shuffle](encounters/concurrent-shuffle.md), a dance-off: roll both sides of a round with a sequential and a concurrent tool executor, and time the difference.
 
+## More Side Passages
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Past the last kelp holdfast, a workbench bolted to the rock, with room on the pegboard for one more tool.
+
+- [The Living Workbench](encounters/living-workbench.md), sidequest: hot-reload a `tools/` folder and add a `final_beat` tool to an agent that never restarts
+
 ## Floor Clear
 
 Floor cleared, Crawler. You've created your own custom tool, and your agent can now use a capability you built specifically for it.

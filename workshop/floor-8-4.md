@@ -422,6 +422,14 @@ The AWS CLI has the same operation, `aws bedrock-agentcore stop-runtime-session`
 
 To remove everything at the end of the workshop, see the [Cleanup](cleanup.md) page.
 
+## Side Passages (optional)
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** With the whole show in the cloud, three last doors: the booth where the broadcast is logged, the lobby where the Regional Managing Director wants something worse than a dance-off, and the moment the lights go out mid-song.
+
+- [The Broadcast Booth](encounters/broadcast-booth.md), sidequest: span attributes for the round and the Move Call, read back in Amazon CloudWatch
+- [House Rules as Guardrails](encounters/house-rules-guardrails.md), boss battle: an Amazon Bedrock guardrail holds the broadcast's house rules on every Narrator turn
+- [Mid-Song Save](encounters/mid-song-save.md), sidequest: experimental checkpoints resume a dance-off mid-round after a restart
+
 ## Floor Clear
 
 Floor cleared, Crawler. The whole party now plays in the cloud, and the story survives every session.
