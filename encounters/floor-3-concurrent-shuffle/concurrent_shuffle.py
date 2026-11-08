@@ -15,6 +15,7 @@ import time
 
 from strands import Agent, tool
 # TODO: Step 1 - Import ConcurrentToolExecutor and SequentialToolExecutor from strands.tools.executors
+from strands.tools.executors import ConcurrentToolExecutor, SequentialToolExecutor
 
 TUMBLE_SECONDS = 1.0  # how long a die takes to land
 tumbles: list[dict] = []  # one entry per roll of the current round: who, when the die left the hand, when it landed
@@ -79,8 +80,10 @@ def dance(band: Agent, label: str) -> None:
 
 
 # TODO: Step 2 - Build the sequential band: make_band with a SequentialToolExecutor, as sequential_band
+sequential_band = make_band(SequentialToolExecutor())
 
 # TODO: Step 3 - Build the concurrent band: make_band with a ConcurrentToolExecutor, as concurrent_band
+concurrent_band = make_band(ConcurrentToolExecutor())
 
 if __name__ == "__main__":
     dance(sequential_band, "SEQUENTIAL: one die at a time, in the order Lady Luck asked")

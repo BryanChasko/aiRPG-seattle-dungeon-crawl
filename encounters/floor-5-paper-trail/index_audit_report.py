@@ -13,6 +13,7 @@ from pathlib import Path
 
 import chromadb
 # TODO: Step 1 - Import PdfReader from pypdf
+from pypdf import PdfReader
 
 HERE = Path(__file__).resolve().parent
 REPORT = HERE / "audit-report.pdf"
@@ -44,13 +45,21 @@ def cut(text: str) -> list[str]:
 def read_pages(path: Path) -> list[str]:
     """The text of every page of the PDF, in order."""
     # TODO: Step 2 - Open the PDF with PdfReader and return the extract_text() of each of its pages
-    return []
+    return [page.extract_text() for page in PdfReader(path).pages]
 
 
 def passages(pages: list[str]) -> list[dict]:
     """Every passage of the report, ready for ChromaDB: an id, the text, and the section it cites."""
     # TODO: Step 3 - Cut each page into passages. Number pages from 1; give each passage the id "audit-report_p<page>_<n>" and the metadata {"section": "Audit Report, page <page>", "source": "audit-report.pdf"}
-    return []
+    found = []
+    for page_number, text in enumerate(pages, start=1):
+        for n, passage in enumerate(cut(text)):
+            found.append({
+                "id": f"audit-report_p{page_number}_{n}",
+                "text": passage,
+                "metadata": {"section": f"Audit Report, page {page_number}", "source": "audit-report.pdf"},
+            })
+    return found
 
 
 if __name__ == "__main__":

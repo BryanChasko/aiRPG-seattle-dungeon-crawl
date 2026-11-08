@@ -12,6 +12,7 @@ Run it from this folder, with the workshop environment active:
 from strands import Agent
 from strands.agent.conversation_manager import SlidingWindowConversationManager, SummarizingConversationManager
 # TODO: Step 1 - Import pin_message from strands.agent.conversation_manager.compression.pin_message
+from strands.agent.conversation_manager.compression.pin_message import pin_message
 
 WINDOW = 20  # how many recent messages each manager keeps
 
@@ -49,7 +50,8 @@ def campaign_log(turns: int = 60) -> list[dict]:
 def pin_cast_sheets(messages: list[dict]) -> None:
     """Protect the first two messages, the cast sheets and their receipt, from every conversation manager."""
     # TODO: Step 3 - Pin messages 0 and 1 with pin_message
-    pass
+    pin_message(messages, 0)
+    pin_message(messages, 1)
 
 
 def characters(messages: list[dict]) -> int:
@@ -80,13 +82,13 @@ def make_narrator(conversation_manager) -> Agent:
 def sliding_window():
     """Keep the last WINDOW messages and drop the rest."""
     # TODO: Step 2 - Return a SlidingWindowConversationManager that keeps WINDOW messages
-    return None
+    return SlidingWindowConversationManager(window_size=WINDOW)
 
 
 def summarizing():
     """Fold the oldest messages into one summary, keep at least the last WINDOW as they are."""
     # TODO: Step 4 - Return a SummarizingConversationManager that summarizes 80 percent of the history and preserves the last WINDOW messages
-    return None
+    return SummarizingConversationManager(summary_ratio=0.8, preserve_recent_messages=WINDOW)
 
 
 if __name__ == "__main__":

@@ -42,13 +42,25 @@ class CommentaryBooth:
     def __call__(self, **kwargs):
         # TODO: Step 1 - Print each chunk of text as it arrives: kwargs.get("data"), on the same line, flushed
         # TODO: Step 2 - Announce each tool call once: the first time kwargs.get("current_tool_use") carries a new toolUseId, print "PLAY-BY-PLAY: " and its name on a new line
-        pass
+        data = kwargs.get("data")
+        if data:
+            print(data, end="", flush=True)
+        tool_use = kwargs.get("current_tool_use")
+        if tool_use and tool_use.get("toolUseId") and tool_use["toolUseId"] not in self.calls_announced:
+            self.calls_announced.add(tool_use["toolUseId"])
+            print(f"\nPLAY-BY-PLAY: {tool_use['name']}", flush=True)
 
 
 def read_the_receipt(result) -> dict:
     """What the turn cost: why it stopped, the tokens it used, and their price."""
     # TODO: Step 4 - Return result.stop_reason, the inputTokens and outputTokens of result.metrics.accumulated_usage, and their cost in dollars at the prices above
-    return {}
+    usage = result.metrics.accumulated_usage
+    return {
+        "stop_reason": result.stop_reason,
+        "input_tokens": usage["inputTokens"],
+        "output_tokens": usage["outputTokens"],
+        "dollars": round(usage["inputTokens"] * PRICE_PER_INPUT_TOKEN + usage["outputTokens"] * PRICE_PER_OUTPUT_TOKEN, 6),
+    }
 
 
 if __name__ == "__main__":
@@ -56,6 +68,7 @@ if __name__ == "__main__":
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
         tools=[roll_d20],
         # TODO: Step 3 - Hand a CommentaryBooth to the agent as its callback_handler
+        callback_handler=CommentaryBooth(),
         system_prompt="""You are Lady Luck, the System's croupier subroutine, calling a dance-off from the commentary booth
         like a sports announcer who has had too much coffee. Every roll goes through roll_d20, one call per dancer, and you
         report the number it returns. Cordula adds +1 for Dexterity on Footwork; the guide adds +0. The higher total wins the
