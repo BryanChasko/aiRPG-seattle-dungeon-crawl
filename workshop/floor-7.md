@@ -221,6 +221,16 @@ Where did the campaign go between the two runs? Look at the `7_strands_harness/.
 
 Check: the second answer names the Ship Canal and Cordula's Groove, 17, from before the restart, and `7_strands_harness/.agent/sessions/session/seattle-campaign/snapshot_latest.json` exists.
 
+Then meet this floor's opponent with the resumed campaign. The harness rolls through `dice_roll_dice`, the dice server's tool under its `dice` prefix:
+
+```bash
+curl -X POST http://127.0.0.1:8009/inquire \
+  -H "Content-Type: application/json" \
+  -d '{"question": "Dawn on the bluffs: the Ferry-Line Commuter Horde comes up the cliff path, travel mugs first. Cordula challenges them to a dance-off. Run all three rounds, and use her Groove from before the restart."}'
+```
+
+The `dice_rolls` field lists at least six rolls, two per round and more if a round goes to the Final Beat, and the narration starts from the Groove the session remembered.
+
 | you see | it means | fix |
 |---|---|---|
 | `NameError: name 'create_harness' is not defined` | the import of Step 1 is missing | add `from strands_harness import create_harness` |

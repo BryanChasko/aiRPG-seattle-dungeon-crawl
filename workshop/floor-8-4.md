@@ -341,6 +341,16 @@ curl -X POST http://0.0.0.0:8009/inquire \
 
 Then open the Floor 6 web interface, pick who speaks for the party and enter `http://127.0.0.1:8009` as the server URL, as in Floor 6. The proxy reads the sheets you registered in the cloud memory in 8.2. Every turn now travels from your browser to the proxy, to the Narrator runtime, and from there to the three other bricks. Stop the proxy and start it again: the campaign picks up where you left it.
 
+Then the last boss of the crawl, in the cloud, with the whole party deployed:
+
+```bash
+curl -X POST http://0.0.0.0:8009/inquire \
+  -H "Content-Type: application/json" \
+  -d '{"question": "The Keynote, on the Narrows bridge deck: the Regional Managing Director times it from the front row. Barnaby leads, Cordula assists. Run all three rounds, and the Final Beat if it ends level."}'
+```
+
+It takes a few minutes: three rounds, each a rules question and two rolls, across four runtimes. The `dice_rolls` field lists every roll, and `agentcore logs --runtime diceserver` shows the same rolls in the cloud.
+
 Check: the character panel shows the sheet registered in 8.2, and the first turn answers in 30 to 60 seconds. If the proxy stops at startup with `RuntimeError: No gameprod_narrator runtime in ...`, the region it names is not the one you deployed to: export `AWS_DEFAULT_REGION` and check `agentcore status`.
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Keynote was the last thing on the corporate floor: a stage on the Narrows bridge deck, a confidence monitor, a Regional Managing Director in the front row with a lanyard and a stopwatch. Everything we had built ran somewhere else now, and the only thing on my laptop was the bridge to the screen. Barnaby called the moves before the Narrator did. He had read every turn of this campaign in the logs, and he knew how it went. We took the Keynote on Choreography, three moves ahead, and the RMD stopped the stopwatch and clapped.

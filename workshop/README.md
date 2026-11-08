@@ -98,6 +98,8 @@ Deeper into the SDK, off the main corridor, each one starting where its floor en
 - Floor 1, [The Commentary Booth](encounters/commentary-booth.md): your own callback handler, and the receipt of a turn
 - Floor 3, [The Concurrent Shuffle](encounters/concurrent-shuffle.md): sequential and concurrent tool executors, timed
 - Floor 5, [The Paper Trail](encounters/paper-trail.md): a PDF read with `pypdf`, added to the Rules Agent's knowledge base
+- Floor 5 boss battle, [The Quarterly Earnings Call](encounters/quarterly-earnings-call.md): the accountant, the banker and the Regional Managing Director as a graph with conditional edges
+- Floor 5 boss battle, [The Developer Advocate Swarm](encounters/developer-advocate-swarm.md): four advocates as a swarm that passes the mic itself
 - Floor 7, [The Context Flood](encounters/context-flood.md): sliding window, summarizing, and pinned messages
 
 ## Preparing for the Crawl
