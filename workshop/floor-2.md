@@ -16,21 +16,21 @@ Files on this floor: [`2_vended_tools/agent_with_vended_tools.py`](../2_vended_t
 
 Tools are the primary mechanism for extending agent capabilities, enabling them to perform actions beyond text generation. Tools allow agents to interact with external systems, access data, and manipulate their environment. On this floor, you'll use your first vended tool, the name Strands gives to the tools that ship with the SDK, by adding the `http_request` tool to your agent, so your Narrator can look up real creature stat blocks on a public role-playing game API.
 
-Make sure you are at the root of Floor 2 in your terminal:
+Open a terminal at the Floor 2 folder:
 
 ```bash
 cd aiRPG-seattle-dungeon-crawl/2_vended_tools
 ```
 
-Open and modify the [`agent_with_vended_tools.py`](../2_vended_tools/agent_with_vended_tools.py) file.
+Edit [`agent_with_vended_tools.py`](../2_vended_tools/agent_with_vended_tools.py) file.
 
-## Your Arsenal: Vended Tools
+## The Arsenal: Vended Tools
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Vended tools ship in strands.vended_tools. No pip install, no shopping, no excuses. The shell tool runs exactly what you approve, and the audience adores a Crawler who approves everything."
 
-The Strands SDK ships with a set of ready-to-use tools, the vended tools. They live in `strands.vended_tools`, so there is nothing extra to install. Here are some of them:
+The Strands SDK ships with a set of ready-to-use tools, the vended tools. They live in `strands.vended_tools`, so no extra install is needed. Six of the tools:
 
-- `http_request`: calls external APIs (GET, POST, ...)
+- `http_request`: calls external APIs (GET, POST, and other HTTP methods)
 - `notebook`: keeps persistent notes in the agent's state
 - `file_editor`: views, creates and edits files
 - `shell`: runs shell commands
@@ -41,11 +41,11 @@ The complete list is on the [Vended Tools](https://strandsagents.com/docs/user-g
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Six machines in a row, humming in the eelgrass. I read every label before I touched one, the way you check a parts bin before you trust it. Barnaby pointed two arms at the one that looks things up. "That one, Sergeant. I wish to know what the surface world thinks I am."
 
-## Step 1: Equip Your Agent with http_request
+## Step 1: Equip the Agent with http_request
 
 > <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [http_request]**
 >
-> Calls external APIs on your agent's behalf. Rarity: Common. Comes with the Open5e API pre-bookmarked, because the System refuses to invent a stat block in front of a live audience.
+> Calls external APIs on the agent's behalf. Rarity: Common. Comes with the Open5e API pre-bookmarked, because the System refuses to invent a stat block in front of a live audience.
 
 ```python
 # TODO: Step 1 - Import http_request from strands.vended_tools
@@ -55,9 +55,9 @@ The complete list is on the [Vended Tools](https://strandsagents.com/docs/user-g
 # TODO: Step 1 - Add the http_request tool to your agent
 ```
 
-Import the `http_request` tool from `strands.vended_tools`, then pass it to your agent's `tools` parameter: see [Adding Tools to Agents](https://strandsagents.com/docs/user-guide/sdk/tools/using-tools/#adding-tools-to-agents) in the Strands docs. The system prompt already tells your Narrator where to find creatures: the free [Open5e API](https://open5e.com/), which serves the System Reference Document 5.1 under the Creative Commons Attribution 4.0 license. The [HTTP request](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/http-request/) page describes what the tool can do.
+Import the `http_request` tool from `strands.vended_tools`, then pass `http_request` to the agent's `tools` parameter: see [Adding Tools to Agents](https://strandsagents.com/docs/user-guide/sdk/tools/using-tools/#adding-tools-to-agents) in the Strands docs. The system prompt already tells the Narrator where to find creatures: the free [Open5e API](https://open5e.com/), which serves the System Reference Document 5.1 under the Creative Commons Attribution 4.0 license. The [HTTP request](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/http-request/) page describes what `http_request` can do.
 
-In the file, `tools=[...]` holds only the TODO comment. Replace the empty list with one that holds the tool.
+In `agent_with_vended_tools.py`, `tools=[...]` holds only the TODO comment. Replace the empty list with a list that holds `http_request`.
 
 <details>
 <summary>Show me the code for Step 1</summary>
@@ -77,37 +77,37 @@ agent = Agent(
 )
 ```
 
-A vended tool is a ready-made Strands tool object: import it and put it in the list, with no parentheses after its name.
+A vended tool is a ready-made Strands tool object: import `http_request` and put it in the `tools` list, with no parentheses after the name.
 
 </details>
 
-## Step 2: Test Your Agent
+## Step 2: Test the Agent
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Barnaby's homework. The party leader wants to know how the surface world's monster manuals rated his species, and he has a doctorate's worth of opinions ready. Your agent must look it up instead of guessing. Barnaby will check.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Barnaby's homework. The party leader wants to know how the surface world's monster manuals rated his species, and he has a doctorate's worth of opinions ready. The agent must look up the entry instead of guessing. Barnaby will check.
 
-Once you've completed both TODOs, run your script:
+After both TODOs are done, run the script:
 
 ```bash
 python agent_with_vended_tools.py
 ```
 
-Your agent will:
+The agent will:
 
 - Receive the question "Barnaby is a Giant Pacific Octopus. How do the old monster manuals say a giant octopus hides underwater, and what does its Ink Cloud do?"
-- Determine that it needs to use the `http_request` tool
+- Decide to call the `http_request` tool
 - Call the API at `https://api.open5e.com/v2/creatures/srd_giant-octopus/`
-- Answer from the data it received: Underwater Camouflage gives advantage on Dexterity (Stealth) checks underwater, and Ink Cloud fills a 20-foot radius that stays heavily obscured for 1 minute, after which the octopus can Dash as a bonus action
+- Answer from the data the API returned: Underwater Camouflage gives advantage on Dexterity (Stealth) checks underwater, and Ink Cloud fills a 20-foot radius that stays heavily obscured for 1 minute, after which the octopus can Dash as a bonus action
 
-This demonstrates that your agent can autonomously select and use tools to answer questions.
+The agent selected and called `http_request` on its own to answer the question.
 
-Check: the terminal shows `Tool #1: http_request` before the answer, and the answer quotes the 20-foot radius and the 1 minute of Ink Cloud. Those numbers come from the API. An agent without the tool would have to guess them.
+Check: the terminal shows `Tool #1: http_request` before the answer, and the answer quotes the 20-foot radius and the 1 minute of Ink Cloud. Both numbers come from the Open5e API. An agent without `http_request` would have to guess them.
 
-| you see | it means | fix |
+| output | cause | fix |
 |---|---|---|
-| `ImportError: cannot import name 'http_request'` | a typo, or an older SDK | copy the import from the Show me block; `uv run python -c "import importlib.metadata as m; print(m.version('strands-agents'))"` must print 1.61 or later, otherwise run `uv sync` |
+| `ImportError: cannot import name 'http_request'` | a typo in the import, or an older Strands SDK | copy the import from the Show me block; `uv run python -c "import importlib.metadata as m; print(m.version('strands-agents'))"` must print 1.61 or later, otherwise run `uv sync` |
 | an answer with no `Tool #1` line | the tool is not on the agent | check the second TODO: `tools=[http_request]` |
-| `Tool #1: http_request`, then a connection error or a timeout | your network cannot reach Open5e | open https://api.open5e.com/v2/creatures/srd_giant-octopus/ in a browser; on a corporate network, set `HTTPS_PROXY` |
-| `AccessDeniedException` or `ExpiredToken` | the model call failed, not the tool | run the check in [Floor 0, Step 7](floor-0.md#step-7-check-your-pass-to-the-model-aws) |
+| `Tool #1: http_request`, then a connection error or a timeout | the network cannot reach Open5e | open https://api.open5e.com/v2/creatures/srd_giant-octopus/ in a browser; on a corporate network, set `HTTPS_PROXY` |
+| `AccessDeniedException` or `ExpiredToken` | the Amazon Nova 2 Lite call failed, not `http_request` | run the check in [Floor 0, Step 7](floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The answer came back with numbers in it, and every one had a source. Barnaby read the stat block twice. "Advantage on stealth. Correct. A twenty-foot ink cloud. Accurate, if unambitious." Then, quieter: "They wrote me down as a monster, Sergeant." I told him it was a game manual from before anybody had met him. He went red for ten minutes. Then he asked how many other things the machine could look up.
 
@@ -115,7 +115,7 @@ Check: the terminal shows `Tool #1: http_request` before the answer, and the ans
 
 ## Bonus Room: The Multi-Tool Challenge (optional)
 
-Ready to go deeper? Open [`2_vended_tools/bonus_quest.py`](../2_vended_tools/bonus_quest.py). Kiro the Doomsday Scripter, a crawler whose class treats code as demolition magic, will write a Fibonacci script to a file and run it: two tools and one safeguard, wired the same way as the main floor. Each step below has two TODOs in the code: the import at the top of the file, and its use in the agent.
+Want a harder room? Open [`2_vended_tools/bonus_quest.py`](../2_vended_tools/bonus_quest.py). Kiro the Doomsday Scripter, a crawler whose class treats code as demolition magic, will write a Fibonacci script to a file and run it: two tools and one safeguard, wired the same way as `http_request` in the main floor. Each step below has two TODOs in `bonus_quest.py`: the import at the top of the file, and the use of that import inside the agent.
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Windows users: the `shell` tool runs commands through `sh`, and `file_editor` expects POSIX paths (starting with `/`), so this bonus room does not run on native Windows. To try it on Windows, run it inside WSL (Windows Subsystem for Linux).
 
@@ -129,7 +129,7 @@ Ready to go deeper? Open [`2_vended_tools/bonus_quest.py`](../2_vended_tools/bon
 # TODO: Step 1 - Add the shell and file_editor tools to your agent
 ```
 
-Both are vended tools: `file_editor` writes the scroll, `shell` casts it. Import them, then pass them in the agent's `tools` parameter, exactly like `http_request` in the main floor: see [Adding Tools to Agents](https://strandsagents.com/docs/user-guide/sdk/tools/using-tools/#adding-tools-to-agents), and the pages for [shell](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/shell/) and [file editor](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/file-editor/).
+Both are vended tools: `file_editor` writes the scroll, `shell` casts it. Import `shell` and `file_editor`, then pass both in the agent's `tools` parameter, like `http_request` in the main floor: see [Adding Tools to Agents](https://strandsagents.com/docs/user-guide/sdk/tools/using-tools/#adding-tools-to-agents), and the pages for [shell](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/shell/) and [file editor](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/file-editor/).
 
 <details>
 <summary>Show me the code for Step 1</summary>
@@ -144,17 +144,17 @@ from strands.vended_tools import shell, file_editor
     tools=[shell, file_editor],
 ```
 
-The two import TODOs sit together at the top of the file, and the two agent TODOs sit together inside `Agent(...)`. Each answer goes under its own comment, or under the pair: the `solution` branch puts both imports after the second import TODO.
+The two import TODOs sit together at the top of the file, and the two agent TODOs sit together inside `Agent(...)`. Place each answer under its own TODO comment, or under the pair: the `solution` branch puts both imports after the second import TODO.
 
 </details>
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Kiro the Doomsday Scripter had a terminal strapped to his chest and a grin I have seen on boot privates holding fireworks. He wanted a pen and a match: something to write a file, something to run it. I gave him both. I did not give him permission yet.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Kiro the Doomsday Scripter had a terminal strapped to his chest and a grin I have seen on boot privates holding fireworks. He wanted a pen and a match: a tool to write a file, a tool to run it. I gave him both. I did not give him permission yet.
 
 ### Step 2: Add the Safeguard
 
 > <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [HumanInTheLoop]**
 >
-> An intervention that makes every tool call wait for your y/n. Rarity: Uncommon. Side effect: you become personally responsible for everything that happens next.
+> An intervention that holds every tool call until the player types y or n. Rarity: Uncommon. Side effect: the player becomes personally responsible for everything that happens next.
 
 ```python
 # TODO: Step 2 - Import HumanInTheLoop from strands.vended_interventions.hitl
@@ -164,14 +164,14 @@ The two import TODOs sit together at the top of the file, and the two agent TODO
 # TODO: Step 2 - Ask for your approval before each tool call with HumanInTheLoop in stdio mode
 ```
 
-Writing files and running commands change your system. Strands lets you gate tool calls behind your approval with an intervention: import `HumanInTheLoop`, then pass `HumanInTheLoop(ask="stdio")` in the agent's `interventions` parameter, as shown in [Stdio Mode](https://strandsagents.com/docs/user-guide/sdk/agents/interventions/human-in-the-loop/#stdio-mode) on the Human in the loop page. Every tool call now pauses and asks for your permission in the terminal:
+Writing files and running commands change the computer. Strands gates tool calls behind approval with an intervention: import `HumanInTheLoop`, then pass `HumanInTheLoop(ask="stdio")` in the agent's `interventions` parameter, as shown in [Stdio Mode](https://strandsagents.com/docs/user-guide/sdk/agents/interventions/human-in-the-loop/#stdio-mode) on the Human in the loop page. Every tool call now pauses and asks for permission in the terminal:
 
 ```
 Approve "file_editor"?
   Input: {"command": "create", "path": ".../fibonacci_scroll.py", ...} (y/n):
 ```
 
-Type `y` and press Enter to allow the tool to execute, or `n` to refuse. Without this step, the agent writes files and runs commands without asking you anything: try it once with Step 2 left out to see the difference.
+Type `y` and press Enter to run the tool call, or `n` to refuse. Without this step, the agent writes files and runs commands with no prompt: run `bonus_quest.py` once with Step 2 left out to compare.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -186,7 +186,7 @@ from strands.vended_interventions.hitl import HumanInTheLoop
     interventions=[HumanInTheLoop(ask="stdio")],
 ```
 
-`interventions` takes a list, like `tools`. Unlike a vended tool, `HumanInTheLoop` is a class: call it, with `ask="stdio"`, to get the intervention.
+`interventions` takes a list, like `tools`. Unlike a vended tool, `HumanInTheLoop` is a class: construct it with `ask="stdio"`.
 
 </details>
 
@@ -198,52 +198,52 @@ from strands.vended_interventions.hitl import HumanInTheLoop
 python bonus_quest.py
 ```
 
-Approve each call as it comes:
+Answer each prompt as it appears:
 
 - `Approve "file_editor"?`: Kiro writes `fibonacci_scroll.py` in the floor folder. Type `y`.
 - `Approve "shell"?`: Kiro casts the scroll, usually `python3 fibonacci_scroll.py`, sometimes after a `cd` into the folder. Type `y` for each shell call.
 - Kiro reports the first ten Fibonacci numbers.
 
-Try `n` on one of the calls to see how the agent reacts to a refusal.
+Type `n` on one call to see how Kiro reacts to a refusal.
 
-Check: `fibonacci_scroll.py` now sits in `2_vended_tools/`, and Kiro reports the first ten Fibonacci numbers, `0, 1, 1, 2, 3, 5, 8, 13, 21, 34` (some runs start at 1 instead of 0). Run `python fibonacci_scroll.py` yourself: the scroll prints the same numbers.
+Check: `fibonacci_scroll.py` now sits in `2_vended_tools/`, and Kiro reports the first ten Fibonacci numbers, `0, 1, 1, 2, 3, 5, 8, 13, 21, 34` (some runs start at 1 instead of 0). Run `python fibonacci_scroll.py` directly: the script prints the same numbers.
 
-| you see | it means | fix |
+| output | cause | fix |
 |---|---|---|
-| no `Approve` prompt at all, and the file appears anyway | the intervention is not on the agent | check Step 2: `interventions=[HumanInTheLoop(ask="stdio")]` |
-| `ModuleNotFoundError: No module named 'strands.vended_interventions'` | an older SDK | `uv sync`, then check the version as in Step 2 of the main floor |
-| `file_editor` refuses the path | the path is not absolute, or you are on native Windows | run the script from `2_vended_tools/`; on Windows, use WSL (see the warning above) |
-| the scroll is written, then the shell call fails with `python3: not found` | your system calls Python `python` | type `n` on that call: Kiro usually retries with `python`. If not, add "run it with python" to the request at the bottom of `bonus_quest.py` |
+| no `Approve` prompt at all, and the file appears anyway | `HumanInTheLoop` is not on the agent | check Step 2: `interventions=[HumanInTheLoop(ask="stdio")]` |
+| `ModuleNotFoundError: No module named 'strands.vended_interventions'` | an older Strands SDK | `uv sync`, then check the version as in Step 2 of the main floor |
+| `file_editor` refuses the path | the path is not absolute, or the script runs on native Windows | run the script from `2_vended_tools/`; on Windows, use WSL (see the warning above) |
+| the scroll is written, then the shell call fails with `python3: not found` | this computer's Python command is `python` | type `n` on that call: Kiro usually retries with `python`. If Kiro does not retry, add "run it with python" to the request at the bottom of `bonus_quest.py` |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I said no to the first command Kiro tried, on purpose, to see what he would do. He sulked, rewrote it, and asked again. That is the whole point of the machine. Then the sand under my boots started to move, slowly, the way a tide moves, and something pale and the size of a loaf of bread pushed up out of the eelgrass and sighed sea mist at me. Shelly had arrived. He has never once let go of the floor since.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I said no to the first command Kiro tried, on purpose, to see what he would do. He sulked, rewrote it, and asked again. That is the whole point of the HumanInTheLoop machine. Then the sand under my boots started to move, slowly, the way a tide moves, and a pale creature the size of a loaf of bread pushed up out of the eelgrass and sighed sea mist at me. Shelly had arrived. He has never once let go of the floor since.
 
 ### Tool Consent and Safety
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "allowed_tools=["*"] removes every prompt. The sponsors call it brave. The System calls it content."
 
-- Approval prompts: tools run with the permissions of your Python process. With `HumanInTheLoop`, nothing that alters your system happens without your explicit approval.
-- Letting some tools through: `allowed_tools=["file_editor"]` lets a tool run freely while the others still ask. Use `["*"]` to disable the prompts entirely, for testing only.
+- Approval prompts: tools run with the permissions of the Python process. With `HumanInTheLoop`, no tool call that alters the computer runs without explicit approval.
+- Allowing named tools: `allowed_tools=["file_editor"]` lets `file_editor` run without a prompt while other tools still ask. Use `["*"]` to disable every prompt, for testing only.
 
 ## Side Passages (optional)
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The eelgrass has more machines than the six on the main row, and Kiro has more scrolls than one.
 
 - [The Tide Table](encounters/tide-table.md), sidequest: today's real Seattle tides from NOAA, and a ruling on whether the Estuary dance floor is underwater
-- [The Sandbox Tide Pool](encounters/sandbox-tide-pool.md), sidequest: Kiro's scroll cast inside a Docker sandbox instead of your own shell
-- [The Policy Gatekeeper](encounters/policy-gatekeeper.md), boss battle: a Cedar policy and a risk classifier in front of Kiro, so you only see the risky calls
-- [Ask the Player](encounters/ask-the-player.md), sidequest: the Narrator stops mid-turn to ask you which Move Call to make
+- [The Sandbox Tide Pool](encounters/sandbox-tide-pool.md), sidequest: Kiro's scroll cast inside a Docker sandbox instead of the local shell
+- [The Policy Gatekeeper](encounters/policy-gatekeeper.md), boss battle: a Cedar policy and a risk classifier in front of Kiro, so only the risky calls reach the player
+- [Ask the Player](encounters/ask-the-player.md), sidequest: the Narrator stops mid-turn to ask the player which Move Call to make
 
 ## Floor Clear
 
-Floor cleared, Crawler. You've equipped your agent with the `http_request` vended tool, and it can now decide on its own when to use it.
+Floor cleared, Crawler. The Narrator now holds the `http_request` vended tool and decides on its own when to call it.
 
-Loot you're keeping:
+Loot kept:
 
 - How to import a vended tool and add it to your agent
 - How an agent autonomously decides when to use a tool
 - Tool consent and safety (covered with the bonus room's `HumanInTheLoop` intervention)
 
-<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Journey to [Floor 3](floor-3.md) where you'll create custom tools for your specific use cases.
+<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Journey to [Floor 3](floor-3.md) where custom tools take shape for specific use cases.
 
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**

@@ -27,7 +27,7 @@
 
 - **Role:** Crawler, party tank, breacher (of doors, never of people) and carrier.
 - **Before the crawl:** a Sergeant and crew chief in a Marine Corps Reserve amphibious assault company, trained on tracked amphibious vehicles and beach landings. On weekends she ran kayak patrols on Lake Union and Elliott Bay and crewed rigid inflatable boats for marine data collection.
-- **When the dungeon opened:** she was on the waterfront running a high-tide debris sweep and public outreach table. When Pier 59 folded, she grabbed her touring paddle and went toward the aquarium instead of away from it.
+- **When the dungeon opened:** she was on the waterfront running a high-tide debris sweep and public outreach table. When Pier 59 folded, she grabbed her touring paddle and went toward the aquarium instead of away from the pier.
 - **Vibe:** pragmatic, unflappable, resourceful. While everyone else panics, she is already rigging bilge pumps and cargo straps.
 - **Pronouns:** she/her.
 
@@ -41,20 +41,20 @@
 
 ### Gear: no boxers, no bare feet
 
-Cordula enters the dungeon dressed for the Sound: a high-visibility drysuit, a tactical float vest, and a heavy touring kayak paddle with a titanium shaft and blunt composite blades. She uses it as a vaulting pole, a doorstop, a drum and, in a dance-off, a color-guard staff.
+Cordula enters the dungeon dressed for the Sound: a high-visibility drysuit, a tactical float vest, and a heavy touring kayak paddle with a titanium shaft and blunt composite blades. She uses the paddle as a vaulting pole, a doorstop, a drum and, in a dance-off, a color-guard staff.
 
-**The Hydro-Pack.** Barnaby needs oxygenated salt water, so on Floor 1 Cordula builds him a home out of what she has:
+**The Hydro-Pack.** Barnaby needs oxygenated salt water, so on Floor 1 Cordula builds him a home out of her kayak and Marine Corps gear:
 
 - **The shell:** the dry cargo bag from her touring kayak, mounted on her Marine Corps MOLLE frame
 - **The life support:** two 12-volt marine bilge pumps on a rechargeable kayak battery, recirculating seawater through clear vinyl tubing over her shoulders
-- **The seating chart:** Barnaby rides inside and on top. Two arms manage his water lines, two pick locks and pockets, two cast, and two anchor Cordula to walls and ceilings
+- **The seating chart:** Barnaby rides inside and on top. Two arms tend his water lines, two pick locks and pockets, two cast, and two anchor Cordula to walls and ceilings
 
 ## Barnaby
 
 - **Role:** party leader, crowd control, strategist.
 - **Species:** Giant Pacific Octopus (*Enteroctopus dofleini*), uplifted by the System.
 - **Before the crawl:** the star of the Seattle Aquarium's Ocean Pavilion, famous for solving puzzle boxes and escaping tanks.
-- **Voice:** a System-issued collar that turns his chromatophore pulses into speech. Default accent: Distinguished British Academic. He could change it in settings. He will not.
+- **Voice:** a System-issued collar that turns his chromatophore pulses into speech. Default accent: Distinguished British Academic. He could change the accent in settings. He will not.
 - **Personality:** he considers humans clumsy, dry, land-bound apes, and respects Cordula's operational discipline above almost everything. He flashes crimson and stark white when he is irritated or plotting, which is most of the time.
 - **Pronouns:** he/him.
 
@@ -75,7 +75,7 @@ CHROMATOPHORE      INK CLOUD           EIGHT-POINT HOLD    ARM-LOCK PICK
 STEALTH            (smoke screen)      (gentle pin)        (locks, chests)
 ```
 
-- **Chromatophore Stealth (passive and active):** bends light across his skin, hiding himself and Cordula while they stand still in damp or shadowed places. This is how the party skips a dance-off it does not want.
+- **Chromatophore Stealth (passive and active):** bends light across his skin, hiding himself and Cordula while they stand still in damp or shadowed places. Chromatophore Stealth lets the party skip a dance-off the party does not want.
 - **Ink Cloud (area):** a thick black cloud that blinds and makes the floor slick. Opponents inside it are Off-Beat for two rounds. Nobody is hurt; everybody is confused.
 - **Eight-Point Hold (single target):** four suction-lined arms hold an opponent's arms and legs still, gently and completely. A held opponent cannot answer a Move Call that round.
 - **Arm-Lock Pick (utility):** a soft arm tip into a lock, a keycard reader or a chest bypasses any lock up to level 15.
@@ -92,8 +92,8 @@ STEALTH            (smoke screen)      (gentle pin)        (locks, chests)
 
 - **Anchor:** Shelly digs into stone in half a second. With Cordula's carabiner on his shell ring, the party cannot be knocked back, pulled or blown off a ledge.
 - **Siphon Bind:** his siphon wraps an opponent's ankles from below and holds them in place for one round.
-- **Saltwater Jet:** a pressurized blast that pushes up to three opponents fifteen feet back and leaves them Mud-Sighted for a round. Puts out fires instantly.
-- **Shell Bunker:** pulls in and hardens. Immune to debuffs, and Cordula can carry him as a tower shield.
+- **Saltwater Jet:** a pressurized blast that pushes up to three opponents fifteen feet back and leaves them Mud-Sighted for a round. The jet puts out fires instantly.
+- **Shell Bunker:** Shelly pulls in and hardens, immune to debuffs, and Cordula can carry him as a tower shield.
 - **Party politics:** the System narrates Shelly's appearance with far too much enthusiasm and runs a weekly viewer poll on what the siphon is for. Barnaby refuses to share a water line with "that unspeakable clam" and keeps him five feet away at all times. Cordula loves him: he takes no back space and he never lets go of the floor.
 
 ## Chonks, the Suction-Cup Sentinel
@@ -108,7 +108,7 @@ STEALTH            (smoke screen)      (gentle pin)        (locks, chests)
 
 - **Suction Latch:** thrown (by Cordula's pitching arm or Barnaby's flick), Chonks seals onto a visor, a phone screen or a slide clicker. The target is Off-Beat until he lets go.
 - **Spine Flare:** while latched, he puffs up and flares his spines. Anyone who grabs him loses their next move.
-- **Stamina Vacuum:** while latched, he drains the target's Groove and shares half of it with the party.
+- **Stamina Vacuum:** while latched, he drains the target's Groove and shares half of the drained Groove with the party.
 - **Buckler:** strapped to Cordula's forearm, he inflates and hardens into a round shield.
 - **Party politics:** the System tracks his Flings Per Minute on the broadcast. Barnaby approves of him: compact, quiet, and an excellent projectile. He sometimes wears Chonks on an upper arm like a shoulder cannon.
 
@@ -122,7 +122,7 @@ STEALTH            (smoke screen)      (gentle pin)        (locks, chests)
 
 > **NEW ACHIEVEMENT UNLOCKED!** **[The Ultimate Eight-Legged Co-Pilot]** Rewarding: Cordula and Barnaby. Most Crawlers enter with a useless house pet. You entered with a marine biologist's dream and a volunteer patrol harness. Reward: the Cephalopod Hydration Pack (Level 1), which filters dungeon grime into clean, oxygenated seawater for your party leader.
 
-> **NEW ACHIEVEMENT UNLOCKED!** **[Dug In and Refused to Elaborate]** Rewarding: Cordula and Barnaby. Most Crawlers pick pets that are fierce or fluffy. You picked a burrowing clam with a two-foot neck. Barnaby will not look at it. Reward: the Geoduck Companion Egg (Benthic Variant). It hatches Shelly.
+> **NEW ACHIEVEMENT UNLOCKED!** **[Dug In and Refused to Elaborate]** Rewarding: Cordula and Barnaby. Most Crawlers pick pets that are fierce or fluffy. You picked a burrowing clam with a two-foot neck. Barnaby will not look at the clam. Reward: the Geoduck Companion Egg (Benthic Variant). It hatches Shelly.
 
 > **NEW ACHIEVEMENT UNLOCKED!** **[You Brought a Sticky Beach Ball to a Dance Battle]** Rewarding: Cordula and Barnaby. You chose a spherical, armor-plated fish that moves by vibrating its tiny fins and glaring. Reward: the Spiny Lumpsucker Companion Egg (Benthic Variant). It hatches Chonks.
 
@@ -152,6 +152,6 @@ Chonks unlatched with a POP and landed back on Cordula's forearm buckler, lookin
 
 "Lovely work," Barnaby said. "Do wipe the spherical one before he goes back on the pack. He is degrading the aesthetic of my tank."
 
-"Got it, Professor," Cordula said. "Good job, Chonks."
+"Understood, Professor," Cordula said. "Good job, Chonks."
 
 Chonks gave one stubborn gurgle.

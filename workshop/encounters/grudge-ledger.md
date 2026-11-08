@@ -5,7 +5,7 @@
 Files on this side passage: [`encounters/floor-8-grudge-ledger/grudge_ledger.py`](../../encounters/floor-8-grudge-ledger/grudge_ledger.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 8.** On the bluffs the System kept its grudges in a folder on a laptop, and a laptop is a thing that gets closed. In Bellevue everything the System owns lives somewhere with an address, so I asked where the grudges had gone. The System said it had moved them to a records office on the twelfth floor, in a room with a lock and a very patient clerk. I asked to see the room. It was a knowledge base with one door and a shelf of small sentences: who stood on whose tail, who lost by how many points, who is rehearsing a reply. Barnaby read the shelf from the doorway. "Sergeant," he said. "That is the most terrifying filing system I have ever seen."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 8.** On the bluffs the System kept its grudges in a folder on a laptop, and a laptop is a machine that gets closed. In Bellevue everything the System owns lives somewhere with an address, so I asked where the grudges had gone. The System said it had moved them to a records office on the twelfth floor, in a room with a lock and a patient clerk. I asked to see the room. It was a knowledge base with one door and a shelf of small sentences: who stood on whose tail, who lost by how many points, who is rehearsing a reply. Barnaby read the shelf from the doorway. "Sergeant," he said. "That is the most terrifying filing system I have ever seen."
 <!-- /cordula-log -->
 
 > <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: the Grudge Ledger in the Cloud. Every grudge is filed in an Amazon Bedrock knowledge base, indexed, scoped to the party and searchable. When the Accountant walks back onto the floor, I will already know what they have not forgiven. I will not be showing my work."
@@ -15,17 +15,17 @@ Files on this side passage: [`encounters/floor-8-grudge-ledger/grudge_ledger.py`
 | | |
 |---|---|
 | type | sidequest |
-| starts from | [Floor 8.3](../floor-8-3.md), finished: you know the managed knowledge base commands from its Part 1 and from the Floor 8 page. This sidequest adds a second knowledge base, `grudges`, to the `gameprod` project. The agent runs on your machine |
-| you build | a Bedrock knowledge base as a writable memory store, two functions that file a grudge and search the ledger, and a System whose memory manager brings the right grudge up before each model call |
+| starts from | [Floor 8.3](../floor-8-3.md), finished: the managed knowledge base commands from Floor 8.3 Part 1 and from the Floor 8 page are familiar. This sidequest adds a second knowledge base, `grudges`, to the `gameprod` project. The agent runs on the local machine |
+| builds | a Bedrock knowledge base as a writable memory store, two functions that file a grudge and search the ledger, and a System whose memory manager brings the right grudge up before each Amazon Nova 2 Lite call |
 | teaches | [`strands.vended_memory_stores.bedrock_knowledge_base.store`](https://strandsagents.com/docs/api/python/strands.vended_memory_stores.bedrock_knowledge_base.store/): `BedrockKnowledgeBaseStore`, and [`strands.memory.memory_manager`](https://strandsagents.com/docs/api/python/strands.memory.memory_manager/): `MemoryManager` |
 | time | about 30 minutes, most of it waiting for a deploy |
 | model | Amazon Nova 2 Lite, as on every floor |
 
-The Floor 7 sidequest, The System Holds Grudges, keeps the System's grudges as Markdown files in a folder on your machine, and a memory manager brings the right ones up before a turn. It does not need to be built for this one, and this one shares none of its code. What this one asks is where the grudges should live once the System runs in production, and the answer is the same place as the rules: a managed Amazon Bedrock knowledge base, which survives any laptop, any microVM and any redeploy.
+The Floor 7 sidequest, The System Holds Grudges, keeps the System's grudges as Markdown files in a folder on your machine, and a memory manager brings the right ones up before a turn. Building the Floor 7 sidequest first is not required, and the Grudge Ledger shares none of its code. This sidequest asks where the grudges should live once the System runs in production, and the answer is the same place as the rules: a managed Amazon Bedrock knowledge base that survives any laptop, any microVM and any redeploy.
 
-Strands wraps a knowledge base as a memory store, `BedrockKnowledgeBaseStore`. A store can be searched, and when it is writable it can be added to: the store uploads the text to an S3 bucket, ingests that one document into the knowledge base, and attaches metadata to it. A `scope` keeps one party's grudges apart from another's by stamping a `namespace` attribute on every write and filtering on it in every search. A `MemoryManager` then puts the store behind an agent: before each model call it searches the store with the player's latest message and slips the best hits in front of the model, and it registers a `search_memory` and an `add_memory` tool so the model can look things up and file new facts itself. See [Memory](https://strandsagents.com/docs/user-guide/sdk/memory/overview/), [Amazon Bedrock Knowledge Base](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/) and [Scope and Namespaces](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/#scope-and-namespaces).
+Strands wraps a knowledge base as a memory store, `BedrockKnowledgeBaseStore`. A store can be searched; a writable store also accepts additions: the store uploads the text to an S3 bucket, ingests that one document into the knowledge base, and attaches metadata to it. A `scope` keeps one party's grudges apart from another's by stamping a `namespace` attribute on every write and filtering on it in every search. A `MemoryManager` then puts the store behind an agent: before each Amazon Nova 2 Lite call the `MemoryManager` searches the store with the player's latest message and places the best hits in front of Amazon Nova 2 Lite, and it registers a `search_memory` and an `add_memory` tool so the System can look up and file new facts without help. See [Memory](https://strandsagents.com/docs/user-guide/sdk/memory/overview/), [Amazon Bedrock Knowledge Base](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/) and [Scope and Namespaces](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/#scope-and-namespaces).
 
-How you know it worked: `write` files three grudges and prints their S3 locations; a minute later `ask`, in a new process, prints the grudge that matches the question about Footwork, and the System greets the Accountant with it.
+Success check: `write` files three grudges and prints their S3 locations; a minute later `ask`, in a new process, prints the grudge that matches the question about Footwork, and the System greets the Accountant with it.
 
 Go to the encounter folder:
 
@@ -35,7 +35,7 @@ cd aiRPG-seattle-dungeon-crawl/encounters/floor-8-grudge-ledger
 
 ## Build the Records Office
 
-> <img src="../../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** This sidequest creates AWS resources in your account: an S3 bucket and a managed knowledge base, deployed by the same `gameprod` project as the rest of Floor 8. Both bill by the month, a few cents at most. Delete them at the end, with the commands in [What It Costs](#what-it-costs).
+> <img src="../../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** This sidequest creates AWS resources in the AWS account: an S3 bucket and a managed knowledge base, deployed by the same `gameprod` project as the rest of Floor 8. The bucket and the knowledge base bill monthly, a few cents at most. Delete both at the end, with the commands in [What It Costs](#what-it-costs).
 
 From the project folder, as on the Floor 8 page:
 
@@ -49,13 +49,13 @@ agentcore add knowledge-base --name grudges --description "Grudges between the p
 agentcore deploy -y
 ```
 
-The small seed file gives the first ingestion a document to read. `agentcore deploy` creates the knowledge base in a few minutes. Check the knowledge base the way 8.3 did, and copy its id (the ten characters after `knowledge-base/`) when `grudges` shows `Ingestion: COMPLETE`:
+The small seed file gives the first ingestion a document to read. `agentcore deploy` creates the knowledge base in a few minutes. Check the knowledge base the way 8.3 did, and copy the knowledge base id (the ten characters after `knowledge-base/`) when `grudges` shows `Ingestion: COMPLETE`:
 
 ```bash
 agentcore status
 ```
 
-Then look up the id of its data source, and export all three:
+Then look up the data source id of the `grudges` knowledge base, and export all three:
 
 ```bash
 export GRUDGE_KB_ID=<the-ten-characters>
@@ -63,9 +63,9 @@ export GRUDGE_DATA_SOURCE_ID=$(aws bedrock-agent list-data-sources --knowledge-b
 echo $GRUDGE_KB_ID $GRUDGE_DATA_SOURCE_ID $GRUDGE_BUCKET
 ```
 
-Check: the last line prints a knowledge base id, a data source id and the bucket name. Your credentials need the permissions listed under [Required IAM Permissions](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/#required-iam-permissions): `bedrock:Retrieve`, `bedrock:IngestKnowledgeBaseDocuments` and `s3:PutObject` on the bucket. The file gives the store the knowledge base type, so `bedrock:GetKnowledgeBase` is not needed.
+Check: the last line prints a knowledge base id, a data source id and the bucket name. The AWS credentials need the permissions listed under [Required IAM Permissions](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/#required-iam-permissions): `bedrock:Retrieve`, `bedrock:IngestKnowledgeBaseDocuments` and `s3:PutObject` on the bucket. `grudge_ledger.py` gives the store the knowledge base type, so `bedrock:GetKnowledgeBase` is not needed.
 
-If `aws s3 mb` fails with `BucketAlreadyExists`, add a suffix to `GRUDGE_BUCKET` and keep it for the delete commands.
+If `aws s3 mb` fails with `BucketAlreadyExists`, add a suffix to `GRUDGE_BUCKET` and keep that suffix for the delete commands.
 
 Back to the encounter folder:
 
@@ -81,7 +81,7 @@ cd ../../encounters/floor-8-grudge-ledger
 # TODO: Step 1 - Import MemoryManager from strands.memory and BedrockKnowledgeBaseStore from strands.vended_memory_stores.bedrock_knowledge_base
 ```
 
-`MemoryManager` sits on an agent and runs its memory stores. `BedrockKnowledgeBaseStore` is the store that talks to a Bedrock knowledge base.
+`MemoryManager` sits on an agent and runs the agent's memory stores. `BedrockKnowledgeBaseStore` is the store that talks to a Bedrock knowledge base.
 
 <details>
 <summary>Show me the code for Step 1</summary>
@@ -103,7 +103,7 @@ def make_store() -> BedrockKnowledgeBaseStore:
     return None
 ```
 
-The store takes keyword arguments. `config` says which knowledge base to reach: `knowledge_base_id`, `knowledge_base_type` (`"MANAGED"`, the kind you deployed: saying so skips a `GetKnowledgeBase` call at startup), `data_source_type` (`"S3"`, the kind the CLI created), `data_source_id`, and `s3` with the `bucket` and the `prefix` where writes land. Then the store's own fields: `name`, a `description` the search tool shows the model, `scope`, and `writable=True`. Without `writable=True` the store can be searched but `add` raises an error. See [Data Source Types and Writability](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/#data-source-types-and-writability).
+The store takes keyword arguments. `config` says which knowledge base to reach: `knowledge_base_id`, `knowledge_base_type` (`"MANAGED"`, the kind deployed above: setting it skips a `GetKnowledgeBase` call at startup), `data_source_type` (`"S3"`, the kind the CLI created), `data_source_id`, and `s3` with the `bucket` and the `prefix` where writes land. Then the store's own fields: `name`, a `description` the search tool shows the model, `scope`, and `writable=True`. Without `writable=True` the store can be searched but `add` raises an error. See [Data Source Types and Writability](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/#data-source-types-and-writability).
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -127,7 +127,7 @@ def make_store() -> BedrockKnowledgeBaseStore:
     )
 ```
 
-Replace the `return None`. The ids come from the environment, as the knowledge base id does in 8.3, and never from the code.
+Replace the `return None`. The ids come from the environment, as the knowledge base id does in Floor 8.3, and never from the code.
 
 </details>
 
@@ -140,7 +140,7 @@ def remember(store: BedrockKnowledgeBaseStore, opponent: str, grudge: str):
     return None
 ```
 
-`store.add(content, metadata=...)` is a coroutine, so `asyncio.run` runs it. It uploads the text as an object under `grudges/`, writes a small `.metadata.json` file beside it carrying the scope and the metadata, and asks Bedrock to ingest that document. It returns an object whose `document_id` is the S3 location. The `opponent` metadata lets you filter on a name later.
+`store.add(content, metadata=...)` is a coroutine, so `asyncio.run` runs it. The call uploads the text as an object under `grudges/`, writes a small `.metadata.json` file beside it carrying the scope and the metadata, and asks Bedrock to ingest that document. `store.add` returns an object whose `document_id` is the S3 location. The `opponent` metadata lets a later search filter on the opponent name.
 
 <details>
 <summary>Show me the code for Step 3</summary>
@@ -165,7 +165,7 @@ def recall(store: BedrockKnowledgeBaseStore, question: str):
     return []
 ```
 
-`store.search(query)` is a coroutine too. It calls the Retrieve API with a managed search configuration and the filter for the store's scope, and returns `MemoryEntry` objects: the text in `.content`, and in `.metadata` the attributes you filed plus `_relevance_score` and `_source_location`.
+`store.search(query)` is a coroutine too. The call uses the Retrieve API with a managed search configuration and the filter for the store's scope, and returns `MemoryEntry` objects: the text in `.content`, and in `.metadata` the attributes filed with each grudge plus `_relevance_score` and `_source_location`.
 
 <details>
 <summary>Show me the code for Step 4</summary>
@@ -203,7 +203,7 @@ Replace the `return []`.
 
 ## Open the Ledger and Come Back
 
-File the grudges. This is the first process:
+File the grudges. This command starts the first process:
 
 ```bash
 python grudge_ledger.py write
@@ -224,7 +224,7 @@ Wait a minute, then run a second, separate process:
 python grudge_ledger.py ask
 ```
 
-Check: the search finds the Accountant's grudge, and the System uses it. The wording and the score will differ:
+Check: the search finds the Accountant's grudge, and the System uses that grudge. The wording and the score will differ:
 
 ```
 remembered: the Quarterly Close Accountant lost a Footwork round to Cordula by four and has not forgotten the margin (score 0.71)
@@ -232,9 +232,9 @@ remembered: the Quarterly Close Accountant lost a Footwork round to Cordula by f
 SYSTEM: The Quarterly Close Accountant returns to the floor, and I see a certain margin of four is still on the books. Do be careful with the footwork, Crawlers.
 ```
 
-The second process has nothing from the first except the knowledge base: that is the point.
+The second process has nothing from the first except the knowledge base: this separation is the point.
 
-| you see | it means | fix |
+| symptom | cause | fix |
 |---|---|---|
 | `KeyError: 'GRUDGE_KB_ID'` (or `GRUDGE_DATA_SOURCE_ID`, `GRUDGE_BUCKET`) | the variable is not set in this terminal | export all three, as above |
 | `AttributeError: 'NoneType' object has no attribute 'document_id'` | `remember` returns `None` | Step 3 |
@@ -242,20 +242,20 @@ The second process has nothing from the first except the knowledge base: that is
 | `ValidationException` about `vectorSearchConfiguration` | the store thinks the knowledge base is self-managed | give the config `"knowledge_base_type": "MANAGED"` |
 | `ask` prints nothing under `remembered:` | the document is not indexed yet, or `write` did not finish | wait another minute and run `ask` again; if it stays empty, `agentcore run ingest` from `gameprod` indexes the bucket again |
 | the System answers with no grudge | the memory manager is not on the agent | Step 5 |
-| `AccessDeniedException` on `IngestKnowledgeBaseDocuments`, `Retrieve` or `PutObject` | your credentials lack one of the permissions listed above | add it and run again |
-| `ExpiredToken` | the model call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-the-model-aws) |
+| `AccessDeniedException` on `IngestKnowledgeBaseDocuments`, `Retrieve` or `PutObject` | the AWS credentials lack one of the permissions listed above | add the missing permission and run again |
+| `ExpiredToken` | the Amazon Nova 2 Lite call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
 
 ## Ledger or Folder?
 
-A folder of Markdown files is the right ledger on your machine: nothing to deploy, nothing to pay for, and you can open every grudge in an editor. The knowledge base is the right ledger when the System runs in AgentCore: it outlives any microVM, any runtime session and any redeploy, every session reads the same one, and a search finds a grudge by meaning, not by matching words. The price is a deploy, an IAM policy and a bill by the gigabyte. The memory manager does not change either way: swap the store and the agent code stays as it is.
+A folder of Markdown files is the right ledger on a local machine: nothing to deploy, nothing to pay for, and every grudge opens in an editor. The knowledge base is the right ledger when the System runs in AgentCore: the knowledge base outlives any microVM, any runtime session and any redeploy, every session reads the same one, and a search finds a grudge by meaning, not by matching words. The price is a deploy, an IAM policy and a bill by the gigabyte. The memory manager does not change either way: swap the store and the agent code stays unchanged.
 
 ## What It Costs
 
-The same rates as the `rules` knowledge base ([What Floor 8 Costs](../floor-8.md#what-floor-8-costs), from the [Amazon Bedrock pricing page](https://aws.amazon.com/bedrock/pricing/), Knowledge Bases): $5.00 per GB of raw data a month and $1.00 per 1,000 Retrieve calls, with parsing and embeddings included. Three grudges are about 300 bytes: 0.0000003 GB x $5.00 = $0.0000015 a month. Each `ask` makes one Retrieve call for `recall` and one before the System's model call, so two: $0.002. The S3 bucket holds a handful of tiny objects, under a cent ([Amazon S3 pricing](https://aws.amazon.com/s3/pricing/)).
+The same rates as the `rules` knowledge base ([What Floor 8 Costs](../floor-8.md#what-floor-8-costs), from the [Amazon Bedrock pricing page](https://aws.amazon.com/bedrock/pricing/), Knowledge Bases): $5.00 per GB of raw data a month and $1.00 per 1,000 Retrieve calls, with parsing and embeddings included. Three grudges are about 300 bytes: 0.0000003 GB x $5.00 = $0.0000015 a month. Each `ask` makes one Retrieve call for `recall` and one before the System's Amazon Nova 2 Lite call, so two: $0.002. The S3 bucket holds a handful of tiny objects, under a cent ([Amazon S3 pricing](https://aws.amazon.com/s3/pricing/)).
 
-Nova 2 Lite for the System's turn is one model call of about 600 input tokens and 60 output tokens (an estimate): 600 x $0.30 / 1,000,000 + 60 x $2.50 / 1,000,000 = $0.00018 + $0.00015, about a thirtieth of a cent ([Floor 1](../floor-1.md#what-a-turn-costs)). A model that uses `add_memory` adds one ingest per grudge and nothing else.
+Nova 2 Lite for the System's turn is one call of about 600 input tokens and 60 output tokens (an estimate): 600 x $0.30 / 1,000,000 + 60 x $2.50 / 1,000,000 = $0.00018 + $0.00015, about a thirtieth of a cent ([Floor 1](../floor-1.md#what-a-turn-costs)). When the System uses `add_memory`, each filed grudge adds one ingest and no other cost.
 
-Delete what you built, from the `gameprod` folder. The knowledge base is part of the project, so remove it from the project and deploy, then delete the bucket by hand, as the [Cleanup](../cleanup.md#step-3-delete-the-rules-bucket) page does for the rules bucket:
+Delete the sidequest resources, from the `gameprod` folder. The knowledge base is part of the project, so remove the knowledge base from the project and deploy, then delete the bucket by hand, as the [Cleanup](../cleanup.md#step-3-delete-the-rules-bucket) page does for the rules bucket:
 
 ```bash
 cd ../../8_agentcore_production/gameprod
@@ -272,23 +272,23 @@ agentcore status
 aws s3 ls s3://gameprod-grudges-$(aws sts get-caller-identity --query Account --output text)
 ```
 
-The second command should end with `NoSuchBucket`. If you skip this and later follow the Cleanup page, its `agentcore remove all -y` takes the `grudges` knowledge base too, but only the bucket step above removes the grudges bucket.
+The second command should end with `NoSuchBucket`. If this step is skipped and the Cleanup page runs later, that page's `agentcore remove all -y` takes the `grudges` knowledge base too, but only the bucket step above removes the grudges bucket.
 
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Accountant walked back onto the floor and the System said, before anyone had asked, that a margin of four is still on the books. The Accountant went pale in a way that suggested they had been losing sleep over exactly that number. Barnaby leaned over. "It never forgets a point, Sergeant." I said I knew a few people like that. He asked if I meant the System. I said no. I meant me.
 
 ## Encounter Clear
 
-Loot you're keeping:
+Loot kept:
 
 - `BedrockKnowledgeBaseStore` makes a Bedrock knowledge base a memory store, searchable and, with `writable=True`, writable through S3 and direct ingestion
-- A `scope` keeps one party's memories apart, and metadata files each one under a name
-- A `MemoryManager` searches the store before each model call and gives the model `search_memory` and `add_memory` tools
+- A `scope` keeps one party's memories apart, and metadata files each memory under a name
+- A `MemoryManager` searches the store before each Amazon Nova 2 Lite call and gives the System `search_memory` and `add_memory` tools
 - The memory manager stays the same whether the store is a folder or a knowledge base
 
 > <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[THE CLOUD NEVER FORGETS]**
 >
-> Reward: You received a [Gold Box]. Inside: a records office with one door, a shelf of small sentences, and a standing invitation from the Accountant to discuss the margin.
+> Reward: the party received a [Gold Box]. Inside: a records office with one door, a shelf of small sentences, and a standing invitation from the Accountant to discuss the margin.
 
 Back to [Floor 8.3](../floor-8-3.md#floor-clear), or on to [Floor 8.4](../floor-8-4.md).
