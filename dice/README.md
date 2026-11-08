@@ -1,6 +1,6 @@
 # Dice SVG Assets
 
-Place dice SVG files here for the DiceDisplay component:
+Place one SVG file per die in web/public/dice/ for the DiceDisplay component:
 
 - `d4.svg`
 - `d6.svg`
@@ -10,6 +10,6 @@ Place dice SVG files here for the DiceDisplay component:
 - `d20.svg`
 - `d100.svg`
 
-Each SVG should be an outline-style die shape with a transparent center area for overlaying the roll result number.
+Draw each SVG as an outline-style die with a transparent center that holds the roll result number.
 
-If any SVG is missing, the DiceDisplay component falls back to a CSS-rendered shape with the dice type label and result.
+If an SVG file is missing, the DiceDisplay component falls back to a CSS-rendered die shape with the die type label and the roll result.
