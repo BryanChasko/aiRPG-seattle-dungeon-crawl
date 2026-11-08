@@ -144,6 +144,8 @@ SUMMARIZING, cast sheets pinned (one extra model call writes the summary)
   the System: Cordula's constitution is 16, and on turn 3 she danced against the Developer Advocate Swarm. ...
 ```
 
+The `the System:` answer lines are model text and can still say the System lost a detail even when the sheets are pinned, so trust the message counts (122 to 20, 22 and 28) and the `cast sheets still first` lines as the proof.
+
 Twenty-eight messages: the two pinned ones, one summary in place of 95 old messages, and the 25 most recent.
 
 Amazon Nova 2 Lite writes the summary, so the summarizing Narrator's answer is the one that can vary: if the summary leaves turn 3 out, run the script again, or lower `summary_ratio` so less history is folded into the summary.

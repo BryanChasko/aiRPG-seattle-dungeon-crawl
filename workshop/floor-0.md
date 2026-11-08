@@ -40,7 +40,7 @@ Read the whole story in [The Story: Cordula's Crawl](world/story.md).
 
 Prepare your development environment: clone the workshop repo, install uv and Python, install the dependencies and activate the virtual environment. Everything else in this workshop runs from there.
 
-> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** [Floor 8](floor-8.md) deploys the game to AgentCore and also needs the AgentCore CLI. The [Floor 8](floor-8.md) page installs it (Node.js 20 or later).
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** [Floor 8](floor-8.md) deploys the game to AgentCore and also needs the AgentCore CLI. The [Floor 8](floor-8.md) page installs it (Node.js 20 or later). Check Node.js now with `node --version`: a version of 20 or higher is ready, and `node: command not found` means Node.js is not installed yet (it is only needed on Floor 8).
 
 ## The Crawl Under Construction
 
@@ -120,7 +120,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 With Homebrew, `brew install uv` works too.
 
-Then **open a new terminal**: the installer adds uv to the PATH, and a terminal opened before the install will not see uv. Check:
+Then **open a new terminal** (or source the env file the installer prints): the installer adds uv to the PATH, and a terminal opened before the install will not find `uv`. Check:
 
 ```bash
 uv --version
@@ -229,7 +229,7 @@ A short reply such as `Ready` means Amazon Nova 2 Lite is reachable from every f
 
 | error | meaning | fix |
 |---|---|---|
-| `NoCredentialsError` or `Unable to locate credentials` | no AWS credentials in this terminal | configure them (`aws configure`, or `aws sso login --profile <your profile>` then `export AWS_PROFILE=<your profile>`) |
+| `NoCredentialsError: Unable to locate credentials` (the last line of a long traceback) | no AWS credentials in this terminal | set up credentials in this terminal: configure them (`aws configure`, or `aws sso login --profile <your profile>` then `export AWS_PROFILE=<your profile>`) |
 | `ExpiredToken`, `TokenRetrievalError`, `Token has expired` | the AWS sign-in expired | `aws sso login --profile <your profile>` and try again |
 | `AccessDeniedException` | the AWS role may not invoke Amazon Nova 2 Lite | open the Amazon Bedrock console in us-west-2, check model access for Amazon Nova 2 Lite, or ask your account admin for `bedrock:InvokeModel` on it |
 | `ValidationException` about the Amazon Nova 2 Lite model id | a different region or a typo | keep `region_name='us-west-2'` and the model id exactly as above |

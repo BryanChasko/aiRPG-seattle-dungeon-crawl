@@ -111,6 +111,8 @@ THE DEVELOPER ADVOCATE SWARM: Status.COMPLETED
   The party out-danced the whole swarm. The advocates have gone to find better lighting.
 ```
 
+The number of rounds varies from run to run, because the dice decide: all three live runs of this page ended after one round (two where the swarm won the round, one where the party won it and the mic still stopped at the keynote), so a short path is normal and four rounds is the long case.
+
 When the swarm takes a round, the mic stops there, and the path ends with the advocate who kept the floor.
 
 | you see | it means | fix |

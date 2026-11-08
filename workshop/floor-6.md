@@ -44,7 +44,7 @@ In the web interface:
 - In Server URL, enter the URL shown in the Narrator Orchestrator terminal: `http://127.0.0.1:8009`
 - Click Enter the Dungeon
 
-The web interface runs in the browser and talks to the Narrator running on the same machine. Browsers let this HTTPS page reach `http://127.0.0.1:8009` because 127.0.0.1 is localhost.
+The web interface runs in the browser and talks to the Narrator running on the same machine. Browsers treat localhost as a secure origin, so this HTTPS page may call `http://127.0.0.1:8009`, but Chrome and Edge now ask permission before a public page can reach a service on the same machine. When the prompt appears, allow it. If Enter the Dungeon shows "Failed to fetch" and no prompt appeared, open the site settings for the page (the icon left of the address bar), allow local network access, then reload.
 
 The character panel shows the sheet the Character Agent saved on Floor 5, with GROOVE and MANA under the six ability scores. If you skipped the Floor 5 registration, the first turn registers the party. Pick a suggested action, or type a custom action: "Challenge the Rain-Shell Tourist Pod to a dance-off" and "Have Barnaby sneak us past them" both work. This floor's opponent is the Pitch-Deck Founder, with the Fremont Troll judging. Type this prompt to face the Pitch-Deck Founder:
 
@@ -91,6 +91,11 @@ Browser:
 
 - Confirm the Narrator Orchestrator is running on port 8009
 - Confirm no firewall blocks port 8009
+
+"Failed to fetch" after Enter the Dungeon:
+
+- Allow local network access when Chrome or Edge asks
+- If no prompt appeared, open the site settings for the page (the icon left of the address bar), allow local network access, then reload
 
 "Invalid Server URL" message:
 

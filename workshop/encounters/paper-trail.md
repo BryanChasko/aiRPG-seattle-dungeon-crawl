@@ -131,7 +131,7 @@ The Rules Agent terminal shows the passages it found, `[Audit Report, page 1]` a
 
 ## What It Costs
 
-Nothing on AWS for the indexing: `pypdf` and ChromaDB run on the local machine, and the embedding model is the one Floor 5 already downloaded. The question costs a Narrator turn, under one cent ([Floor 5](../floor-5.md#what-a-narrator-turn-costs)).
+Nothing on AWS for the indexing: `pypdf` and ChromaDB run on the local machine, and the embedding model is the one Floor 5 already downloaded: `all-MiniLM-L6-v2`, 79.3 MB, which took about 2 to 3 minutes in the live run, downloads once and is cached after that. The question costs a Narrator turn, under one cent ([Floor 5](../floor-5.md#what-a-narrator-turn-costs)).
 
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The rule clerk read the audit back to us with section and page, in the same bored voice it uses for the Final Beat. Finding 1 was fair. Finding 3 was fair too: I had not checked the tide before the dance-off, and the tide matters on this floor. The tide check is on my checklist now. Finding 5 we kept to ourselves. Barnaby has filed a formal dispute of Finding 2. The dispute is four pages long. I have not read the dispute.
 

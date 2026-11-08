@@ -144,6 +144,7 @@ The odds get worse down the agenda: the banker adds +4 in all, the Regional Mana
 | all three executives dance even after the party loses a round | the edges have no condition | `condition=party_won` on both |
 | the banker or the RMD dances before the accountant | an edge is missing or reversed | accountant to banker, banker to rmd |
 | a round with no line on the scoreboard | the executive answered without the tool | run the script again; the prompt tells each executive to call `dance_round` exactly once |
+| `UserWarning: graph has no max_node_executions or execution_timeout set; execution is unbounded`, printed at `return builder.build()` | Strands warns when a graph has no limit set | harmless here: the graph ends on its own after at most three nodes. To silence it, call `builder.set_max_node_executions(3)` (or `builder.set_execution_timeout(...)`) before `builder.build()` |
 | `AccessDeniedException` or `ExpiredToken` | the Amazon Nova 2 Lite call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
 
 ## Graph or Narrator?
