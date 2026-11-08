@@ -1,11 +1,11 @@
 {
  "model": "muse-image-1.0",
- "prompt": "Cinematic dark-fantasy character card illustration, square, single subject centered with generous margin, waist-up or full body, high contrast, sharp detail, obsidian black and slate grey background with deep Puget Sound teal and sea-glass green, neon magenta-violet System rim light, warm sodium-orange accent light, rainy Pacific Northwest atmosphere, darker edges. Friendly, funny, game-show energy, never menacing, no weapons. Subject: Lady Luck, the Narrator's croupier on Floor 3: a glamorous casino croupier in a sea-green sequined vest and a dealer visor, behind a gaming table of iridescent abalone shell inside a bull kelp forest, tossing a pair of glowing dice with pips, announcing like a boxing ring announcer, one hand raised. A blank glowing violet interface frame edge at the card border, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "prompt": "Cinematic dark-fantasy character card illustration, square, single subject centered with generous margin, waist-up or full body, high contrast, sharp detail, obsidian black and slate grey background with deep Puget Sound teal and sea-glass green, neon magenta-violet System rim light, warm sodium-orange accent light, rainy Pacific Northwest atmosphere, darker edges. Friendly, funny, game-show energy, never menacing, no weapons. Subject: Lady Luck, the System AI's croupier on Floor 3: a glamorous casino croupier in a sea-green sequined vest and a dealer visor, behind a gaming table of iridescent abalone shell inside a bull kelp forest, tossing a pair of glowing dice with pips, announcing like a boxing ring announcer, one hand raised. A blank glowing violet interface frame edge at the card border, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
  "n": 1,
  "size": "1024x1024",
  "output_format": "png",
  "endpoint": "POST https://api.meta.ai/v1/images/generations",
- "prompt_sha256": "06e7402e2e9a587012f366a365759528cc1b7fff27ea2ca158f48a986fcc0594",
+ "prompt_sha256": "e0147a873ea3c8613962217e1e5b161ba36d70f6d26fe1f43acbacb709009dc7",
  "auth": "REDACTED",
  "output_sha256": null,
  "revised_prompt": null,

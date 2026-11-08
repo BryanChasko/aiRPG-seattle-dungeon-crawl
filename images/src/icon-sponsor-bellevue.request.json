@@ -1,11 +1,11 @@
 {
  "model": "muse-image-1.0",
- "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a round steel-grey enamel sponsor medallion, raised relief of three tall glass office towers over a calm lake, violet window glints, a brass rim with small rivets, corporate and cold. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a round cold steel-grey enamel sponsor medallion for a tech monolith, raised relief of a half-open office door with violet light spilling out, small glass towers over a calm lake behind it, beige-desktop nostalgia, brass rim with rivets, corporate and smug, no window grid, no flag. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
  "n": 1,
  "size": "1024x1024",
  "output_format": "png",
  "endpoint": "POST https://api.meta.ai/v1/images/generations",
- "prompt_sha256": "49a48ee597214accdc5ac6beb88c487a865769949aebe67f67868683d48bc200",
+ "prompt_sha256": "e4b56b69ebb954c2e40b5219ee32fa8bdeec394c9c99ecf40a8dc1ab5a1161ab",
  "auth": "REDACTED",
  "output_sha256": null,
  "revised_prompt": null,

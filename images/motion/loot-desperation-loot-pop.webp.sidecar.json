@@ -1,0 +1,34 @@
+{
+ "file": "loot-desperation-loot-pop.webp",
+ "still": "loot-desperation-loot-pop-still.webp",
+ "effect": "loot-pop",
+ "frames": 12,
+ "size": [
+  192,
+  192
+ ],
+ "frame_ms": [
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  1400
+ ],
+ "bytes": 19988,
+ "source": {
+  "image": "images/icons/loot-desperation-96x96.webp",
+  "image_sha256": "3b4407b073f7629d73e514c094515a4ce81689ce70af7cf638b4176735690dbd"
+ },
+ "tools": {
+  "pillow": "11.3.0"
+ },
+ "model_calls": 0,
+ "sha256": "a82c8dc236c8b61c38729fd229861e4b8bc30e6831d308ce94f129744db0ec70"
+}
