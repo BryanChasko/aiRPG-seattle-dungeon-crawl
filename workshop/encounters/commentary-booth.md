@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-1-commentary-booth/commentary_booth.py`](../../encounters/floor-1-commentary-booth/commentary_booth.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 1.** Behind the aquarium's old gift shop there was a door marked BROADCAST, and behind it a glass booth with two chairs, a dead microphone and a window onto the tide pools. The System had a voice again, but it spoke in finished paragraphs, minutes late, like a press release. A dance-off needs a play-by-play: every word as it happens, every roll the moment it is called. Barnaby sat in the second chair with three arms on the mixing board. "If we are going to be on television, Sergeant, we will at least know what the broadcast costs."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, SIDE PASSAGE OFF FLOOR 1.** Behind the aquarium's old gift shop there was a door marked BROADCAST, and behind it a glass booth with two chairs, a dead microphone and a window onto the tide pools. The Narrator had a voice again, but it spoke in finished paragraphs, minutes late, like a press release. A dance-off needs a play-by-play: every word as it happens, every roll the moment it is called. Barnaby sat in the second chair with three arms on the mixing board. "If we are going to be on television, Sergeant, we will at least know what the broadcast costs."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The commentary booth. Here you decide what the audience hears while I think. Every word, every tool call, every token on the bill. I recommend you do not read the bill out loud."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The commentary booth. Here you decide what the audience hears while the Narrator thinks. Every word, every tool call, every token on the bill. I recommend you do not read the bill out loud."
 
 ## The Brief
 
@@ -31,7 +31,7 @@ Go to the encounter folder:
 cd aiRPG-seattle-dungeon-crawl/encounters/floor-1-commentary-booth
 ```
 
-The file defines a dice tool, `roll_d20`, so the turn has tool calls to announce, and Lady Luck, the System's croupier, to call the round.
+The file defines a dice tool, `roll_d20`, so the turn has tool calls to announce, and Lady Luck, the Narrator's croupier, to call the round.
 
 ## Step 1: Stream the Narration
 
@@ -155,7 +155,7 @@ RECEIPT: {'stop_reason': 'end_turn', 'input_tokens': 1834, 'output_tokens': 212,
 
 The receipt is the cost: this turn makes two or three Amazon Nova 2 Lite calls and comes to about a tenth of a cent. Two figures in the receipt deserve a second look. The input count is several times the prompt length, because every Amazon Nova 2 Lite call of the turn resends the system prompt, the tool specification and the conversation so far. And output tokens cost about eight times input tokens, so a chatty Lady Luck costs more than a long prompt. Change the system prompt to "Keep it to one sentence" and run it again: the output count, and the dollars, drop.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby read the receipt out loud anyway, to the decimal. A tenth of a cent for a dance-off. He said that if the System ever tried to charge us more than that for one round, we would have the paperwork to prove it. Then he asked if the booth had a second microphone. It did. He has not given it back.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby read the receipt out loud anyway, to the decimal. A tenth of a cent for a dance-off. He said that if the System AI ever tried to charge us more than that for one round, we would have the paperwork to prove it. Then he asked if the booth had a second microphone. It did. He has not given it back.
 
 ## Encounter Clear
 

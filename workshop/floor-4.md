@@ -7,10 +7,10 @@ Files on this floor: [`4_mcp_integration/dice_roll_mcp_server.py`](../4_mcp_inte
 ![Floor 4: The Portal Room (MCP)](../images/floors/floor-4-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 4.** At the Ship Canal the dungeon split in two. The Ballard Locks were glowing like portals, the dice were on the far side, and the party was on this one, with a swarm of developer advocates doing a live demo on the lock walls. Nobody can carry dice through a portal. I can put them on a server and let anyone on any side roll them. Barnaby touched a machine he had never seen, asked the machine what tools it served, and the machine listed them. He went quiet for a long time after that. I think it was the first time he talked to something that was not alive.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 4, SATURDAY, JUNE 20, FLOOR 4.** At the Ship Canal the dungeon split in two. The Ballard Locks were glowing like portals, the dice were on the far side, and the party was on this one, with a swarm of developer advocates doing a live demo on the lock walls. I used to count salmon through the window of the fish ladder viewing room at these Locks, and now the water was glowing. Nobody can carry dice through a portal. I can put them on a server and let anyone on any side roll them. Barnaby touched a machine he had never seen, asked the machine what tools it served, and the machine listed them. He went quiet for a long time after that. I think it was the first time he talked to something that was not alive.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 4. You will move your dice out of the agent's pocket and into a server. They are still my dice. They are just somewhere else now, being rolled in public, in front of everybody."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 4. You will move your dice out of the agent's pocket and into a server. They are still the Narrator's dice, and the Narrator is not here to object. They are just somewhere else now, being rolled in public, in front of everybody."
 
 ## Floor Objective
 
@@ -185,7 +185,7 @@ Add the comma: in the file, the closing `"""` of the system prompt has no comma 
 
 ### Step 3: Launch the Client
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** The four-ability gauntlet again, except every roll now crosses a process boundary. Watch the server terminal and count the DICE ROLL lines. The System already did.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** The four-ability gauntlet again, except every roll now crosses a process boundary. Watch the server terminal and count the DICE ROLL lines. The System AI already did.
 
 Open a second terminal (the server keeps running in the first one), go to the same folder, then run:
 
@@ -206,9 +206,9 @@ Check: four `DICE ROLL: 4d6 drop 1 = ...` lines in the server terminal, and four
 | the client answers, but no `DICE ROLL` line appears in the server terminal | the Narrator has no MCP tool and invents its own rolls | check `tools=[mcp_dice_client]` |
 | `404 Not Found` in the server terminal | the client URL lacks `/mcp` | `url="http://localhost:8002/mcp"` |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The developer advocates were mid-demo when the first roll crossed the portal, and every one of them stopped to film it. Four rolls went over, four came back, and the log on the far wall printed each one where everybody could read it. One advocate in the swarm asked if we had a QR code. We did not. The swarm dispersed to find better lighting, and the Locks let us through.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The developer advocates were mid-demo when the first roll crossed the portal, and every one of them stopped to film it. It was the solstice, the longest day of the year, and the swarm had the whole afternoon to film it. Four rolls went over, four came back, and the log on the far wall printed each one where everybody could read it. One advocate in the swarm asked if we had a QR code. We did not. The swarm dispersed to find better lighting, and the Locks let us through.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 4: ONE SOURCE OF LUCK.** A LitRPG audience has to trust the dice. If every agent rolled its own, nobody could audit a dance-off, and the System would be one prompt away from fudging a result. One MCP server that every agent shares, logging every roll with its notation, is the battle log readers check when a Final Beat comes down to a single point. See [The System](world/the-system.md#1-origin-and-interface).
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 4: ONE SOURCE OF LUCK.** A LitRPG audience has to trust the dice. If every agent rolled its own, nobody could audit a dance-off, and the Narrator would be one prompt away from fudging a result. One MCP server that every agent shares, logging every roll with its notation, is the battle log readers check when a Final Beat comes down to a single point. See [The System](world/the-system.md#1-origin-and-interface).
 
 ## Side Passages (optional)
 

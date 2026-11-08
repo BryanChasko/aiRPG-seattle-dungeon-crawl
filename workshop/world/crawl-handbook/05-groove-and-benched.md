@@ -11,4 +11,4 @@ Benched: at 0 Groove, a Crawler leaves the dance floor. The Crawler wakes up in 
 
 Cancelled: a Crawler benched three times on the same floor has the segment cancelled for the rest of the floor. The Crawler rides the elevator down to the next floor with no loot from the floor the Crawler left.
 
-Companions such as Shelly and Chonks have their own Groove. A benched companion returns to the companion's egg and hatches again at the next Safe Room.
+Companions such as Shelly and Chonks have their own Groove. A benched companion returns to the companion's Companion Egg and binds again at the next Safe Room.

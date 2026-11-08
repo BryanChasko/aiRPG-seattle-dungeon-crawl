@@ -1,6 +1,6 @@
 # Titles, Skills and Fusion
 
-Titles are passive bonuses the System awards for remarkable or ridiculous accomplishments. A Crawler may hold multiple titles; the System announces each title.
+Titles are passive bonuses the System AI awards for remarkable or ridiculous accomplishments. A Crawler may hold multiple titles; the System AI announces each title.
 
 - Salish Sea Guardian: +15% movement on wet or slippery terrain; immune to water-based environmental debuffs. Cordula's starting title.
 - First Final Beat: +1 to the holder's next three Final Beat rolls.
@@ -10,4 +10,4 @@ Achievements, skill books from loot boxes, and trainers in Safe Rooms unlock ski
 
 Fusion: two Level 3 skills held by members of the same party fuse at a Safe Room forge into one skill. Example: Ink Cloud (Barnaby) and Saltwater Jet (Shelly) fuse into Inkjet, a long-range blinding spray.
 
-Exploits: the System respects a combination the System did not see coming, and pays out a loot box for that combination the first time.
+Exploits: the System AI respects a combination the System AI did not see coming, and pays out a loot box for that combination the first time.

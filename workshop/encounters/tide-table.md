@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-2-tide-table/tide_table.py`](../../encounters/floor-2-tide-table/tide_table.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 2.** The Estuary dance floor sits down in the pickleweed, and I have stood on it at low water. Dry, flat, good grip. I have also stood on it when the Sound came back in, and the floor is a pond. The schedule for the next dance-off said "Estuary, midday" and nobody on the broadcast knew which of the two floors we were getting. A crew chief does not guess about water. There is a tide gauge on Elliott Bay that has been writing the numbers down for years, and the number for today is public. Barnaby read the schedule twice. "Sergeant, the surface world publishes the sea's timetable. We should read the timetable."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 2, THURSDAY, JUNE 18, SIDE PASSAGE OFF FLOOR 2.** The schedule names an Estuary dance floor, down in the pickleweed. I have stood on flats like it at low water: dry, flat, good grip. I have also stood on one when the Sound came back in, and the floor is a pond. The schedule for the next dance-off said "Estuary, midday" and nobody on the broadcast knew which of the two floors we were getting. A crew chief does not guess about water. There is a tide gauge on Elliott Bay that has been writing the numbers down for years, and the number for today is public: low water at 1400 is minus 2.7 feet, and the high at 2135 is 12.4, 1.4 feet past the eleven-foot line. Barnaby read the schedule twice. Shelly dug in at my heel and puffed a cloud of sea mist at the schedule. "Sergeant, the surface world publishes the sea's timetable. We should read the timetable."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: the Tide Table. The Estuary floor floods at eleven feet and not one inch earlier, and the audience has bet on it. I will rule. Crawler, bring me the real number. If the number is made up, the audience will know, because the audience has a window."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: the Tide Table. The Estuary floor floods at eleven feet and not one inch earlier, and the audience has bet on it. The Narrator will rule and I will announce it. Crawler, bring me the real number. If the number is made up, the audience will know, because the audience has a window."
 
 ## The Brief
 
@@ -25,7 +25,7 @@ On Floor 2 the agent looked up a creature on an open game API. This time the dat
 
 The new tool is [`notebook`](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/notebook/). The `notebook` tool gives the agent named notebooks to create, write to, read back and clear. Notebooks live in the agent's state and last as long as the agent, with no extra service to pay for. A notebook is useful when a job has more than one step and Amazon Nova 2 Lite should not carry every number between calls: write each tide down once, read the page back, then rule.
 
-Success check: the run prints the System's ruling with the day's highest tide quoted to the tenth of a foot, then the contents of the `tide-log` notebook, one line per tide. Compare the ruling to the [station page](https://tidesandcurrents.noaa.gov/stationhome.html?id=9447130): the audience checks.
+Success check: the run prints the System's ruling with the day's highest tide quoted to the tenth of a foot, then the contents of the `tide-log` notebook, one line per tide. Compare the ruling to the [station page](https://tidesandcurrents.noaa.gov/stationhome.html?id=9447130): the audience checks. The ruling is the Narrator's, spoken in the System AI's voice: the agent's prompt opens "You are the System".
 
 Open the encounter folder:
 
@@ -65,7 +65,7 @@ Check the address with one bare request, no agent involved. The request should a
 curl -s "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&interval=hilo&station=9447130&begin_date=20260101&end_date=20260101&datum=MLLW&units=english&time_zone=lst_ldt&format=json&application=aiRPG_workshop"
 ```
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I tested the address by hand before I trusted the address to the machine. One request, four lines back: a high before dawn, a low in the morning, a high at lunch, a deep low after dark. Same as checking a radio before you hand it to a new crew member. If the radio does not work in my hand, it will not work in theirs.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I tested the address by hand before I trusted the address to the machine. One request, four lines back, two highs and two lows. Same as checking a radio before you hand it to a new crew member. If the radio does not work in my hand, it will not work in theirs.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -119,7 +119,7 @@ Add `http_request` and `notebook` to the `tools` list. The prompt does the rest:
 
 The notebook tool stores pages in the agent's state under the key `notebooks`, a dictionary of notebook name to text. Reading `notebooks` from the script, outside the conversation, checks the System's notes against the System's ruling. The module docstring on the tool's [API page](https://strandsagents.com/docs/api/python/strands.vended_tools.notebook.notebook/) names the `notebooks` key.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The notebook is the logbook. When the System says the high is eleven point six at four twenty-one, I do not take the System's word. I open the log and read the line the System wrote when the number came in. If the ruling and the log disagree, the log wins.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The notebook is the logbook. When the System says the high is twelve point four at nine thirty-five tonight, I do not take the System's word. I open the log and read the line the System wrote when the number came in. If the ruling and the log disagree, the log wins.
 
 <details>
 <summary>Show me the code for Step 4</summary>

@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-8-broadcast-booth/broadcast_booth.py`](../../encounters/floor-8-broadcast-booth/broadcast_booth.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 8.** Behind the glass wall of the Bellevue conference room there was a second room, smaller, dark, full of blinking gear. A broadcast booth. Somebody had labeled every dial with masking tape and a marker, which I respect. The System keeps a log of every round it airs, it told us, and a log is only worth something if you can find the line you want in it. I asked how it files a round. By number, by move, by who won, it said. I asked who reads the log. The producers, it said, and a very small number of accountants. Barnaby was already looking at the dials. "Sergeant. We are being recorded. I should like to be recorded correctly."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** Behind the glass wall of the Bellevue conference room there was a second room, smaller, dark, full of blinking gear. A broadcast booth. Somebody had labeled every dial with masking tape and a marker, which I respect. The System AI keeps a log of every round it airs, it told us, and a log is only worth something if you can find the line you want in it. I asked how it files a round. By number, by move, by who won, it said. I asked who reads the log. The producers, it said, and a very small number of accountants. Barnaby was already looking at the dials. "Sergeant. We are being recorded. I should like to be recorded correctly."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: the Broadcast Booth. Every round of every dance-off is stamped with its number and its Move Call, wrapped in a span of its own, and filed in Amazon CloudWatch. The producers will be searching it by Friday. Label things properly. The System hates a bad label."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: the Broadcast Booth. Every round of every dance-off is stamped with its number and its Move Call, wrapped in a span of its own, and filed in Amazon CloudWatch. The producers will be searching it before the quarter closes. Label things properly. I hate a bad label."
 
 ## The Brief
 
@@ -102,7 +102,7 @@ The dots in the names are plain characters; the names only look like a hierarchy
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Round one went to the Bonus-Season Investment Banker's Presence. Barnaby took the mic, +3 against their +4, and the dial labeled ROUND went to one. The dial labeled MOVE went to Presence. Every wire off that board carried both labels. That is how you find a particular wire at two in the morning.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Round one was a Presence call against the Bonus-Season Investment Banker. Barnaby took the mic, +3 against their +4, and the dial labeled ROUND went to one. The dial labeled MOVE went to Presence. Every wire off that board carried both labels. That is how you find a particular wire at two in the morning.
 
 ## Step 3: Wrap the Round in a Span
 
@@ -236,7 +236,7 @@ aws logs describe-log-groups --log-group-name-prefix /aws/gameprod/broadcast-boo
 
 `aws/spans` belongs to Transaction Search for the whole account, and the deployed runtimes of Floor 8 write spans to `aws/spans` too. If nothing else in the account needs those spans, shorten how long `aws/spans` keeps the spans: `aws logs put-retention-policy --log-group-name aws/spans --retention-in-days 1`. Otherwise leave the retention unchanged. The [Cleanup](../cleanup.md) page removes the runtimes.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The producers searched the log on Friday, as promised. They asked for every round Barnaby lost on Footwork. One query, zero rows. Barnaby read the empty result twice, pleased, and then asked me to check that the query was right. It was. He asked me to check the query again.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The producers searched the log that night, as promised. They asked for every round Barnaby lost on Presence. One query, zero rows. Barnaby read the empty result twice, pleased, and then asked me to check that the query was right. It was. He asked me to check the query again.
 
 ## Encounter Clear
 

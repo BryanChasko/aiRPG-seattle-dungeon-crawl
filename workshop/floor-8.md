@@ -7,7 +7,7 @@ Files on this floor: [`8_agentcore_production/.env.example`](../8_agentcore_prod
 ![Floor 8: Production (AgentCore)](../images/floors/floor-8-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 8.** The last floor is the corporate one: glass towers across Lake Washington, lanyards, a Regional Managing Director who wants us gone by end of quarter, and, past all of it, the Tacoma Narrows, where the old giant octopus legend lives. Everything we built so far stops the moment someone closes a laptop. Down here the game has to keep running on its own. So we moved the game, one piece at a time, into the cloud: the dice, the registration desk, the rule book, the Narrator itself. Barnaby insisted on doing it in order. He has always respected a checklist.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, FLOOR 8.** The last floor is the corporate one: glass towers across Lake Washington, lanyards on a Saturday, a Regional Managing Director who wants us gone by end of quarter, and, past all of it, the Tacoma Narrows, where the old giant octopus legend lives. Everything we built so far stops the moment someone closes a laptop. Down here the game has to keep running on its own. So we moved the game, one piece at a time, into the cloud: the dice, the registration desk, the rule book, the Narrator itself. Barnaby insisted on doing it in order. He has always respected a checklist.
 <!-- /cordula-log -->
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 8. Production. Real AWS resources, real IAM roles, real invoices. This is the part of the crawl where mistakes cost money. Set your region before you do anything else. I mean it."
@@ -127,7 +127,7 @@ The project is ready: head to [8.1 The Dice Server](floor-8-1.md) to deploy the 
 
 ## Boss Battle: The Quarterly Earnings Call (optional)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Bellevue has conference rooms the way the estuary has tide pools. In one of them, the accountant from Floor 5 had dialed in a banker and the Regional Managing Director, and we were the only item on the agenda.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Bellevue has conference rooms the way the estuary has tide pools. In one of them, a calendar invite for Monday shows the accountant from Floor 5, a banker and the Regional Managing Director, and we are the only item on the agenda.
 
 [The Quarterly Earnings Call](encounters/quarterly-earnings-call.md): the accountant reviews, the banker spins, the Regional Managing Director signs off. A Strands graph with fixed edges and a condition on each one: the call only continues if the party took the last round. The encounter starts from the Floor 5 code and runs on your machine: play it before, during or after the deployments of this floor.
 
@@ -135,7 +135,7 @@ The project is ready: head to [8.1 The Dice Server](floor-8-1.md) to deploy the 
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
-> **[WE DEPLOYED ON A FRIDAY]**
+> **[WE DEPLOYED ON A SATURDAY]**
 >
 > Reward: You received a [Gold Box]. Inside: an empty AgentCore project, a knowledge base quietly indexing in the background, and a sense of foreboding.
 

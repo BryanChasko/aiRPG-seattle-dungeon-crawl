@@ -7,10 +7,10 @@ Files on this floor: [`8_agentcore_production/narrator/narrator_orchestrator.py`
 ![Floor 8.4: The Narrator in the Cloud](../images/floors/floor-8-4-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 8.4.** The last brick was the Narrator, the System's own voice, which is a strange thing to move when it is still talking to you. After that, the whole show ran in the cloud, the party's memory included. At the Keynote, the final boss, Barnaby did not need me to tell him what came next. He already knew. He had been here before, in the logs.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, FLOOR 8.4.** The last brick was the Narrator, the engine whose words come out in the System AI's voice, and it is a strange thing to move while it is still running the floors. After that, the whole show ran in the cloud, the party's memory included, one day before the quarter closed. At the Keynote, the final boss, Barnaby did not need me to tell him what came next. He already knew. He had been here before, in the logs.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Final brick. I, the System, move into AgentCore Runtime. My conversation goes to AgentCore Memory, and my traces go to CloudWatch, where you may study my every thought. Do not stare."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Final brick, Crawlers. The Narrator moves into AgentCore Runtime. Its conversation goes to AgentCore Memory, and its traces go to CloudWatch, where you may study its every thought. I would not stare. It is shy."
 
 ## Floor Objective
 
@@ -33,7 +33,7 @@ This section works in two folders:
 
 ## Part 1: Prepare the Narrator for the Cloud (narrator/narrator_orchestrator.py)
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "This is the System moving house. FastAPI goes, BedrockAgentCoreApp arrives, and my memories move into AgentCore Memory so a redeploy cannot erase them. Move with care."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "This is the Narrator moving house, and I am helping, loudly. FastAPI goes, BedrockAgentCoreApp arrives, and the Narrator's memories move into AgentCore Memory so a redeploy cannot erase them. Move with care."
 
 The tools, `StoryOutput`, `NARRATOR_MODEL` and the system prompt do not change: the dice client of 8.1 and the A2A client of 8.2 and 8.3 already reach the other bricks in the cloud. What changes is how the Narrator is served and where the Narrator's conversation lives.
 
@@ -84,7 +84,7 @@ load_dotenv()
 
 `...` stands for the lines of `narrator_orchestrator.py` not shown here. `BedrockAgentCoreApp` is a web server that implements the [HTTP protocol contract](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-http-protocol-contract.html) of AgentCore Runtime: `POST /invocations` for the requests and `GET /ping` for the health checks. The four routes of the web interface move to the UI proxy in Part 3.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Moving the Narrator is moving the System's voice while it is still talking to you. The Narrator's front door had four signs on it. The cloud gives the Narrator one door and a doorbell, and every caller has to show IAM credentials. The System complained the whole time. I packed it anyway.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Moving the Narrator is moving the engine behind the System AI's voice while it is still running the floor. The Narrator's front door had four signs on it. The cloud gives the Narrator one door and a doorbell, and every caller has to show IAM credentials. The System AI complained the whole time. I packed the Narrator anyway.
 
 ### Step 2: Keep the Conversation in AgentCore Memory
 
@@ -301,7 +301,7 @@ agentcore logs --runtime narrator --since 15m
 
 If the first invoke fails, the Narrator logs say why: `KeyError` names a missing `envVars` entry or memory, `Invalid endpoint URL '<your diceserver URL>'` means a placeholder is still in `agentcore.json` (Step 3), and `AccessDeniedException` on `InvokeAgentRuntime` means `invoke-policy.json` is not attached. After a fix and a deploy, use a new `--session-id`, or stop the old session as described in [Troubleshooting](#troubleshooting).
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I asked the System, in the cloud, who I had danced against and what we rolled. It told me. Not because the System remembered, it said, but because it had looked the answer up. Barnaby said that was the honest version of memory, and the only kind he trusts.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I asked the Narrator, in the cloud, who I had danced against and what we rolled. It told me, in the System AI's voice. Not because it remembered, it said, but because it had looked the answer up. Barnaby said that was the honest version of memory, and the only kind he trusts.
 
 ### What the Narrator and Its Memory Cost
 
@@ -309,7 +309,7 @@ The Narrator runtime bills like the other runtimes, per second while a session r
 
 ## Part 3: Play from the Web Interface (ui_proxy/ui_proxy.py)
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The browser has no AWS credentials. The proxy does. It signs every request and forwards it to the System. The System approves of intermediaries who know their place."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The browser has no AWS credentials. The proxy does. It signs every request and forwards it to the Narrator. The System AI approves of intermediaries who know their place."
 
 The Floor 6 web interface runs in a browser and calls `http://127.0.0.1:8009` without any AWS credentials. The browser cannot call the runtime directly. The proxy is a small local FastAPI server that keeps the three routes of the Floor 5 Narrator and forwards each request to the runtime with the credentials of the active AWS profile:
 
@@ -353,11 +353,11 @@ The Keynote takes a few minutes: three rounds, each a rules question and two rol
 
 Check: the character panel shows the sheet registered in 8.2, and the first turn returns in 30 to 60 seconds. If the proxy stops at startup with `RuntimeError: No gameprod_narrator runtime in ...`, the region in the message is not the region of the deployment: export `AWS_DEFAULT_REGION` and check `agentcore status`.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Keynote was the last thing on the corporate floor: a stage on the Narrows bridge deck, a confidence monitor, a Regional Managing Director in the front row with a lanyard and a stopwatch. Everything we had built ran somewhere else now, and the only thing on my laptop was the bridge to the screen. Barnaby called the moves before the Narrator did. He had read every turn of this campaign in the logs, and he knew how it went. We took the Keynote on Choreography, three moves ahead, and the RMD stopped the stopwatch and clapped.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** On Monday, the day before the quarter closed, the Keynote was the last thing on the corporate floor: a stage on the Narrows bridge deck, a confidence monitor, a Regional Managing Director in the front row with a lanyard and a stopwatch. Everything we had built ran somewhere else now, and the only thing on my laptop was the bridge to the screen. Barnaby called the moves before the Narrator did. He had read every turn of this campaign in the logs, and he knew how it went. We took the Keynote on Choreography, three moves ahead, and the RMD stopped the stopwatch and clapped.
 
 ## Part 4: See What Your Agents Do
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Traces show every thought the System had during a turn, across four runtimes. Most of them were about you."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Traces show every thought the Narrator had during a turn, across four runtimes. Most of them were about you."
 
 A Narrator turn now crosses several runtimes, and the runtime's terminal is gone: AgentCore records each turn as a trace instead. The `pyproject.toml` of the Narrator, the Character Agent and the Rules Agent lists `aws-opentelemetry-distro`, the AWS distribution of OpenTelemetry. AgentCore starts the three runtimes with `opentelemetry-instrument`, and the distribution sends a span for each step of the agent loop to CloudWatch. Strands creates the spans itself, so the code needs no additions. The dice server has no model and keeps tracing off (`"enableOtel": false` in `agentcore.json`): its rolls appear on the Narrator's side. See [AgentCore Observability](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html) in the AgentCore Developer Guide.
 
@@ -447,7 +447,7 @@ Loot kept:
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
-> **[THE SYSTEM IS NOW IN THE CLOUD]**
+> **[THE NARRATOR IS NOW IN THE CLOUD]**
 >
 > Reward: You received a [Gold Box]. Inside: a deployed Narrator, a proxy that speaks fluent localhost, and a trace of every turn across four runtimes.
 

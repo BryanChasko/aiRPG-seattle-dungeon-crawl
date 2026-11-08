@@ -7,7 +7,7 @@ Files on this floor: [`8_agentcore_production/diceserver/dice_roll_mcp_server.py
 ![Floor 8.1: The Dice Server](../images/floors/floor-8-1-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 8.1.** Brick one was the dice. If anything is going to keep running without us, the dice, which decide who wins, should be the part that does. Barnaby wanted proof the dice had left the building, so we read the logs from the cloud until he was satisfied. It took a while. He is hard to satisfy.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, FLOOR 8.1.** Brick one was the dice. If anything is going to keep running without us, the dice, which decide who wins, should be the part that does. Barnaby wanted proof the dice had left the building, so we read the logs from the cloud until he was satisfied. It took a while. He is hard to satisfy.
 <!-- /cordula-log -->
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Brick one. A dice server, a deploy, an IAM-signed client. Everything else keeps running on your machine. Consider this deploy a warm-up. Consider it the last one."

@@ -7,7 +7,7 @@ Files on this floor: [`8_agentcore_production/rulesagent/rules_agent.py`](../8_a
 ![Floor 8.3: The Rules Agent](../images/floors/floor-8-3-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 8.3.** Brick three was the rule book. Every Crawler on every server reads the same handbook now, which Barnaby considers the single most civilized thing the System has ever done. Then a pitch-deck founder blocked the Locks and we got to use it.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, FLOOR 8.3.** Brick three was the rule book. Every Crawler on every server reads the same handbook now, which Barnaby considers the single most civilized thing the Narrator has ever done. Then a pitch-deck founder blocked the Locks and we got to use it. Then a pitch-deck founder blocked the Locks and we got to use it.
 <!-- /cordula-log -->
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Brick three. The rule book moves to a managed knowledge base, indexed by Bedrock at its own pace. Check the ingestion status before you deploy. Patience is a stat, and you have not leveled it."
@@ -138,7 +138,7 @@ The listing shows `kb-policy.json`, `nova-policy.json`, `pyproject.toml` and `ru
 
 > <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [kb-policy.json]**
 >
-> Grants bedrock:Retrieve and nothing else. The Rules Agent can read the rule book. It cannot read the AWS account. The System can. The System is the exception.
+> Grants bedrock:Retrieve and nothing else. The Rules Agent can read the rule book. It cannot read the AWS account. The System AI can. The System AI is the exception.
 
 `rulesagent/kb-policy.json` is provided; change nothing. This IAM policy allows a single action, `bedrock:Retrieve`, on the knowledge bases of the AWS account. The Rules Agent can search the rules and do nothing else in the account.
 
@@ -279,14 +279,14 @@ curl -X POST http://0.0.0.0:8009/inquire \
 
 The Narrator asks the Rules Agent about stealth, then rolls on the cloud dice server and narrates. The response `details` field cites the handbook section. Three of the four bricks now run in AWS, and `agentcore logs --runtime rulesagent` shows the request. Only the Narrator still runs locally: 8.4 moves the Narrator too.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder had set up a tripod at the top of the locks and was rehearsing to nobody. We asked the rule book, from the cloud, whether we could sneak past. It said yes, with a Dexterity check against ten plus the founder's best Wisdom modifier, and advantage if Barnaby hid us. He bent the light across my drysuit until I could not see my own boots. The dice said we made it. The founder never looked up from the slides.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder had set up a tripod at the top of the locks and was rehearsing to nobody. We asked the rule book, from the cloud, whether we could sneak past. It said yes, with a Dexterity check against ten plus the founder's best Wisdom modifier, and advantage if Barnaby hid us. He bent the light across my drysuit until I could not see my own boots. Shelly dug in at my heel and Chonks stayed stuck to my forearm guard, so the party gave the founder nothing to look at. The dice said we made it. The founder never looked up from the slides.
 
 ## Side Passages (optional)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The rule book moved to the cloud, and two things came with it: the ferry's manifest, and the System's grudges.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The rule book moved to the cloud, and two things came with it: the ferry's manifest, and the System AI's grudges.
 
 - [The Ferry Manifest](encounters/ferry-manifest.md), sidequest: the Rules Agent built from a configuration file that pins Amazon Nova 2 Lite
-- [The Grudge Ledger in the Cloud](encounters/grudge-ledger.md), sidequest: the System's grudges kept in a Bedrock knowledge base memory store
+- [The Grudge Ledger in the Cloud](encounters/grudge-ledger.md), sidequest: the System AI's grudges kept in a Bedrock knowledge base memory store
 
 ## Floor Clear
 

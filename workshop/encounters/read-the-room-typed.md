@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-5-read-the-room-typed/read_the_room_typed.py`](../../encounters/floor-5-read-the-room-typed/read_the_room_typed.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 5.** The Quarterly Close Accountant was back, this time on the estuary dance floor with a calculator and a deadline. On Floor 5 the System announced the dance-off in a paragraph: "a brisk tempo, perhaps, with some footwork." Perhaps. I do not take orders that say perhaps. Down here the System had to fill in a form. Tempo: one box, three choices. Move Call: one box, six choices minus the one it called last. The System ticked its boxes, and the accountant and I danced to exactly what the form said.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 7, TUESDAY, JUNE 23, SIDE PASSAGE OFF FLOOR 5.** The Quarterly Close Accountant was back, this time on the estuary dance floor with a calculator and a deadline. On Floor 5 the System AI announced the dance-off in a paragraph: "a brisk tempo, perhaps, with some footwork." Perhaps. I do not take orders that say perhaps. Down here the Narrator had to fill in a form. Tempo: one box, three choices. Move Call: one box, six choices minus the one it called last. The Narrator ticked its boxes, and the accountant and I danced to exactly what the form said.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Dance-off: the Quarterly Close Accountant. Three rounds. I will be choosing the tempo and every Move Call from a list, because a Crawler once told me my announcements were 'more of a vibe.' The list is binding. The vibe is not."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Dance-off: the Quarterly Close Accountant. Three rounds. I will be announcing the tempo and every Move Call from a list, because a Crawler once told me my announcements were 'more of a vibe.' The list is binding. The vibe is not."
 
 <img src="../../images/cards/opponent-accountant-640x640.webp" alt="The Quarterly Close Accountant, a middle-aged woman in a grey suit with reading glasses pushed up, clutching a calculator while spreadsheet pages flutter around her mid-dance" width="240">
 
@@ -25,11 +25,11 @@ Files on this side passage: [`encounters/floor-5-read-the-room-typed/read_the_ro
 
 On Floor 5 the Narrator answers in prose, and for a dance-off the prose has to name a tempo and a Move Call that the Python code then reads out of a paragraph. A [decision model](https://strandsagents.com/docs/api/python/strands.decisions.decision_model/) asks Amazon Nova 2 Lite closed questions instead. Pass the situation and a dictionary of questions, each with a `choices` list, and `ask` returns a [`DecisionResult`](https://strandsagents.com/docs/api/python/strands.decisions.types/) whose `answers` dictionary holds one value per question, and every value is one of the listed choices. `LLMDecisionModel` makes a single call to Amazon Nova 2 Lite, forced to answer through structured output; the other decision models in the package are for other back ends.
 
-The rules of the round stay in code, where Floor 3 kept the numbers. The dance follows the Crawl Handbook: the System announces one tempo for the whole dance-off, makes a Move Call each round, and never calls the same move twice in a row. `read_the_room_typed.py` enforces both rules by shaping the questions: the tempo is asked only in round one, and the move already called is left out of the next round's choices, so Amazon Nova 2 Lite cannot break the rule. Which party member dances is decided by `best_dancer`, from the modifiers in `dance_floor.py`. The dice are rolled by the shared `dance_round`, from [`dance_floor.py`](../../encounters/dance_floor.py), with the typed values passed straight in.
+The rules of the round stay in code, where Floor 3 kept the numbers. The dance follows the Crawl Handbook: the Narrator picks one tempo for the whole dance-off and a Move Call each round, the System AI announces them, and the same move is never called twice in a row. `read_the_room_typed.py` enforces both rules by shaping the questions: the tempo is asked only in round one, and the move already called is left out of the next round's choices, so Amazon Nova 2 Lite cannot break the rule. Which party member dances is decided by `best_dancer`, from the modifiers in `dance_floor.py`. The dice are rolled by the shared `dance_round`, from [`dance_floor.py`](../../encounters/dance_floor.py), with the typed values passed straight in.
 
 The party wins by taking two of three rounds. The accountant dances at +1 for the accountant's own modifier, plus the tempo bonus: Steady +0, Driving +2 or Frantic +4.
 
-How you know it worked: the System announces a tempo, then each round prints the Move Call, both totals as die + modifier = total and the winner, and no Move Call repeats back to back; the dance-off stops as soon as one side has two rounds.
+How you know it worked: the System AI announces a tempo, then each round prints the Move Call, both totals as die + modifier = total and the winner, and no Move Call repeats back to back; the dance-off stops as soon as one side has two rounds.
 
 Go to the encounter folder:
 
@@ -62,7 +62,7 @@ from strands.decisions.llm_decision_model import LLMDecisionModel
 # TODO: Step 2 - Return an LLMDecisionModel over a BedrockModel with model_id us.amazon.nova-2-lite-v1:0 and a system_prompt of DECISION_PROMPT
 ```
 
-`LLMDecisionModel(model=..., system_prompt=...)` takes the model to ask and the framing for the decisions. Without `model`, `LLMDecisionModel` builds a default `BedrockModel`, so name Amazon Nova 2 Lite here: `BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")`. The SDK adds its own rules after `DECISION_PROMPT`, and those rules tell Amazon Nova 2 Lite to treat the situation text as data and answer only through the structured output, so a clever Crawler cannot talk the System into a tempo. See [`LLMDecisionModel`](https://strandsagents.com/docs/api/python/strands.decisions.llm_decision_model/).
+`LLMDecisionModel(model=..., system_prompt=...)` takes the model to ask and the framing for the decisions. Without `model`, `LLMDecisionModel` builds a default `BedrockModel`, so name Amazon Nova 2 Lite here: `BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")`. The SDK adds its own rules after `DECISION_PROMPT`, and those rules tell Amazon Nova 2 Lite to treat the situation text as data and answer only through the structured output, so a clever Crawler cannot talk the Narrator into a tempo. See [`LLMDecisionModel`](https://strandsagents.com/docs/api/python/strands.decisions.llm_decision_model/).
 
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Same Amazon Nova 2 Lite as the Narrator, a different job. The decision model does not tell stories. It reads the floor and ticks a box. Barnaby approved of the division of labour. "A narrator who commits to a list, Sergeant, is a narrator one can plan around."
 
@@ -158,13 +158,13 @@ The party takes two of three. The accountant leaves the floor, relieved, and fil
 
 ## Typed or Told?
 
-The Narrator of Floor 5 can still announce the dance-off in prose, and the Narrator should: prose is what the audience hears. The decision model is for the moment the Python code needs to act on the choice. A told answer is a paragraph to parse; a typed answer is a value to pass to a function, compare, log, or test. The cost is a second kind of call, one more Amazon Nova 2 Lite request that does nothing but choose. For one choice in a dance-off, the extra call is cheap, and the gain is worth having: a System that cannot say "perhaps".
+The Narrator of Floor 5 can still decide the dance-off in prose, and the System AI should announce it: prose in the System AI's voice is what the audience hears. The decision model is for the moment the Python code needs to act on the choice. A told answer is a paragraph to parse; a typed answer is a value to pass to a function, compare, log, or test. The cost is a second kind of call, one more Amazon Nova 2 Lite request that does nothing but choose. For one choice in a dance-off, the extra call is cheap, and the gain is worth having: a Narrator that cannot say "perhaps".
 
 ## What It Costs
 
 Each `ask` is one call to Amazon Nova 2 Lite, with the situation, the questions and the answer schema in, and a few words out: about 500 tokens in and 60 out. At about $0.30 per million input tokens and $2.50 per million output tokens, the cost is about $0.0003 a call, and a three-round dance-off makes three: about a tenth of a cent. The dice cost nothing, because they are code. See [What a Turn Costs](../floor-1.md#what-a-turn-costs).
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Round three ended with the accountant gathering their spreadsheet pages off the floor. They gave me a nod and said the party had come in under budget. I said we had been trying. Barnaby asked if the System had chosen Presence by itself. The System had. From a list of five. He is pleased about the list.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Round three ended with the accountant gathering their spreadsheet pages off the floor. They gave me a nod and said the party had come in under budget. I said we had been trying. Barnaby asked if the Narrator had chosen Presence by itself. The Narrator had. From a list of five. He is pleased about the list.
 
 ## Encounter Clear
 

@@ -7,7 +7,7 @@ Files on this floor: [`5_a2a_integration/agents/rules_agent/rules_agent.py`](../
 ![Floor 5: Party Formation (A2A)](../images/floors/floor-5-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 5.** The estuary floods twice a day. The dance floor is there, then it is not. This is where the System finally wanted to start the show, which meant rules, and nobody in the party had read them. We built a clerk to read the rule book, a registration desk to stamp our sheets, and a Narrator to run the game, each one doing one job and talking to the others. Barnaby ran the meeting. He was good at it. He delegated, he cited the handbook, he made the Narrator answer in a format the HUD could read. Then a Quarterly Close Accountant stepped onto the pickleweed and challenged us to a dance-off, and we found out whether any of it worked.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 6, MONDAY, JUNE 22, FLOOR 5.** The estuary floods twice a day. The dance floor is there, then it is not. This is where the System finally wanted to start the show, which meant rules, and nobody in the party had read them. We built a clerk to read the rule book, a registration desk to stamp our sheets, and a Narrator to run the game, each one doing one job and talking to the others. Barnaby ran the meeting. He was good at it. He delegated, he cited the handbook, he made the Narrator answer in a format the HUD could read. Then a Quarterly Close Accountant stepped onto the pickleweed and challenged us to a dance-off, and we found out whether any of it worked.
 <!-- /cordula-log -->
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 5. A party. How sweet. Three agents, four terminals, one orchestrator, and a very real chance you forget to start one of them. The audience is placing bets on which."
@@ -25,6 +25,8 @@ cd aiRPG-seattle-dungeon-crawl/5_a2a_integration
 ```
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The estuary smelled like salt and cut grass. The tide table on a post said the dance floor would be dry for six hours, then gone. Six hours to stand up a rule clerk, a registration desk and a Narrator, and get them talking. I have run tighter timelines on a beach landing. I have not run one with an octopus in charge.
+
+> **NARRATOR:** The tide turns. The Estuary floods at 1224.
 
 ## System Architecture
 
@@ -54,7 +56,7 @@ First, create the Knowledge Base for the Rules Agent. The Crawl Handbook, the cr
 
 > <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [The Crawl Handbook]**
 >
-> Eleven Markdown files of rules, written by the System and revised every time a Crawler found a loophole. Rarity: Free. The Rules Agent reads it so you never have to, then cites section names at you with visible satisfaction.
+> Eleven Markdown files of rules, written by the Narrator and revised every time a Crawler found a loophole. Rarity: Free. The Rules Agent reads it so you never have to, then cites section names at you with visible satisfaction.
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Complete this setup before the Rules Agent can work.
 
@@ -379,7 +381,7 @@ The Narrator Orchestrator coordinates all agents and serves as the main API endp
 
 ### Configure the Narrator Agent
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "This is where I come in. The Narrator orchestrator is the System's body in your terminal. Hand it dice, hand it allies, hand it a schema, then stand back."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "This is where I come in, loudly. The Narrator orchestrator runs the game in your terminal, and the Narrator speaks in my voice: its system prompt opens 'You are the System', so every scene, roll and ruling reaches a Crawler as me. Hand it dice, hand it allies, hand it a schema, then stand back."
 
 The given code at the top of the file builds `NARRATOR_MODEL`, the Amazon Nova 2 Lite client the Narrator runs on:
 
@@ -471,7 +473,7 @@ The Narrator gets two tools: `mcp_client`, which brings in `roll_dice` from the 
 
 > <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [StoryOutput]**
 >
-> A Pydantic model that forces the System to answer in JSON. Rarity: Rare. The System resents it. The web interface depends on it. The System resents that too.
+> A Pydantic model that forces the Narrator to answer in JSON. Rarity: Rare. The System AI resents it. The web interface depends on it. The System AI resents that too.
 
 By default, an agent replies with free-form text. Structured output makes Amazon Nova 2 Lite return a typed object that matches a Pydantic schema; Strands validates the object and returns clean JSON. See [Request structured output](https://strandsagents.com/docs/user-guide/sdk/agents/structured-output/#request-structured-output).
 

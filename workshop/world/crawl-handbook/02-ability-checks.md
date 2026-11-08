@@ -1,6 +1,6 @@
 # Ability Checks
 
-When a Crawler tries an action whose outcome is uncertain, the System calls for an ability check: roll 1d20, add the matching ability modifier, and compare the total to a Difficulty Class (DC). A total that meets or beats the DC succeeds.
+When a Crawler tries an action whose outcome is uncertain, the Narrator calls for an ability check and the System AI announces it: roll 1d20, add the matching ability modifier, and compare the total to a Difficulty Class (DC). A total that meets or beats the DC succeeds.
 
 | Task | DC |
 |---|---|

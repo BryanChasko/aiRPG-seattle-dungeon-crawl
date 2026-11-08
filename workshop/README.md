@@ -8,18 +8,19 @@
 
 ## Who I Am
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I am Cordula Vance. Core, to anyone who has shared a boat with me. Marine Corps Reserve, amphibious crew chief, and on weekends I run kayak patrols on the Sound. This morning I tied up under Pier 59 to say hello to the octopus, and the pier folded into Elliott Bay with both of us under it.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I am Cordula Vance. Core, to anyone who has shared a boat with me. Marine Corps Reserve, amphibious crew chief, and before work I sweep debris off the Sound in a kayak. On Wednesday, June 17, I tied up under Pier 59 to say hello to the octopus, and at 0551 the pier folded into Elliott Bay with both of us under it.
 >
-> He rides on my back now, in my kayak's dry bag with two bilge pumps, and he runs the party. His name is Barnaby. Eight arms, a doctorate's worth of opinions, and, since the System clamped a collar on him, a British accent. A geoduck named Shelly and a lumpsucker named Chonks joined later. Nobody asked them.
+> He rides on my back now, in my kayak's dry bag with a bilge pump, and he runs the party. His name is Barnaby. Eight arms, a doctorate's worth of opinions, and, since the System AI clamped a collar on him, a British accent.
 >
-> The System that did this is broken. Its voice, its dice, its rule book and its memory washed out across eight floors under the Sound, and the only way out is to put it back together, one piece per floor. Every piece I rebuild, Barnaby's collar picks up, and he wakes up a little more. I build every piece with the Strands Agents SDK: the first floor is one agent and one call, the last is the whole party running on Amazon Bedrock AgentCore. I write all of it.
+> The thing that folded the pier is called the Narrator. It runs this dungeon: the floors, the tides, the opponents, the dice, the rules. The flood broke it. Its voice, its dice, its rule book and its memory washed out across eight floors under the Sound. The System AI, the voice that hands out achievements and insults, came through fine, and it wants its show back. The only way out is to rebuild the Narrator, one piece per floor. Every piece I rebuild passes through Barnaby's collar first, and he wakes up a little more. I build every piece with the Strands Agents SDK: the first floor is one agent and one call, the last is the whole game running on Amazon Bedrock AgentCore. I write all of it.
 >
 > Nobody gets hurt down here. A fight is a dance-off, the opponents are accountants, bankers and developer advocates at work, and the worst that happens is I get Benched and wake up in a Safe Room. I keep a log. The log is what happened. The steps are what I type next.
 
-What the System, the party and the rules are made of:
+What the Narrator, the party and the rules are made of:
 
 - [World guide](world/README.md): everything the agents say about the world comes from these pages
 - [The Story](world/story.md): the log, floor by floor; every floor's obstacle is its Strands lesson
+- [The Timeline](world/timeline.md): the fourteen days of the crawl, with the tides
 - [The System](world/the-system.md): the LitRPG design, one layer per workshop floor
 - [The Cast](world/cast.md) and [Seattle, Under the Sound](world/seattle.md)
 - [The Crawl Handbook](world/crawl-handbook/): the rules, and the Rules Agent's knowledge base
@@ -112,8 +113,9 @@ Floor 0 covers the installs: Python, uv and the repository. Bring basic Python k
 
 ### The Rules of the Crawl
 
-- The System AI: the omniscient, slightly unhinged dungeon administrator tracking each Crawler's code output, syntax errors and desperate attempts to pass `uv sync`
-- The Crawlers: Cordula, with Barnaby on her back running the party and Shelly and Chonks along as companions. The party enters soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
+- The Narrator: the game AI that runs the dungeon, the floors, the tides, the opponents, the dice and every ruling. It is broken, and the Crawlers rebuild it. It does the job the source workshop gives the agent that runs the game
+- The System AI: the omniscient, slightly unhinged host that talks to the Crawlers, tracking each Crawler's code output, syntax errors and desperate attempts to pass `uv sync`, and paying out achievements and insults
+- The Crawlers: Cordula, with Barnaby on her back running the party. Companions join on the way down. The party enters soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
 - The Loot Boxes: every cleared floor drops an achievement box. A clean loop earns a Bronze Box. Burning the token limit on an accidental infinite loop earns a Desperation Box
 - The Audience: billions of alien viewers. The viewers are not on the Crawlers' side. Neither are the sponsors
 
@@ -144,7 +146,7 @@ Each floor follows the same pattern:
 
 ## What is Strands?
 
-Strands is a framework for creating AI agents: Strands is the toolkit the System uses to run its crawl. Strands provides:
+Strands is a framework for creating AI agents: Strands is the toolkit Cordula uses to rebuild the Narrator. Strands provides:
 
 - Agent Creation: an agent is Amazon Nova 2 Lite, a system prompt and a list of tools
 - Tool Integration: vended tools and custom `@tool` functions
@@ -170,7 +172,7 @@ This workshop teaches:
 - Tool Craft: use vended tools and write custom tools
 - External Integration: connect agents to external services via MCP
 - Multi-Agent Systems: build a Narrator, Character Agent and Rules Agent that cooperate
-- Strands harness: rebuild the same system in a few lines with the pre-assembled agent
+- Strands harness: rebuild the Narrator in a few lines with the pre-assembled agent
 - Production with AgentCore: deploy the agents, their tools and their memory to Amazon Bedrock AgentCore
 - Real-World Applications: ship agent systems to production
 - LitRPG System design: the interface, stats, conflict loop, economy and consequences of a game, each one built by the agent capability that makes it possible

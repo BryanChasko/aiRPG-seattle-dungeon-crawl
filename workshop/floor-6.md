@@ -7,7 +7,7 @@ Files on this floor: [`web/src/views/NewGameView.vue`](../web/src/views/NewGameV
 ![Floor 6: The Arena (Web Interface)](../images/floors/floor-6-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 6.** Under Pioneer Square the old storefronts are still there, buried, and the Fremont Troll sits at the end of the arena like a judge who has seen too much. The audience could see us now. We could not see the show. We needed what the viewers had: the sheet, the rolls, the choices, all on one screen. Once we had it, Barnaby performed. I did not know an octopus could hit his marks. The ratings did.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, FLOOR 6.** Under Pioneer Square the old storefronts are still there, buried, and the Fremont Troll sits at the end of the arena like a judge who has seen too much. The audience could see us now. We could not see the show. We needed what the viewers had: the sheet, the rolls, the choices, all on one screen. Once we had it, Barnaby performed. I did not know an octopus could hit his marks. The ratings did. The aquarium had today on its calendar for Barnaby's return to the Sound. He did not mention it, and I did not either.
 <!-- /cordula-log -->
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience the Narrator. Pick who speaks for the party, point the web interface at port 8009, and press Enter. No pressure. Only billions of viewers."
@@ -54,7 +54,7 @@ Challenge the Pitch-Deck Founder to a dance-off in the Underground, with the Fre
 
 Check: the panel shows Cordula with GROOVE 17 and MANA 8 (or Barnaby with 11 and 11), and the Narrator returns the first turn as a notification, three choices and a battle log, within about ten seconds.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The screen came up in a dead storefront under Pioneer Square: my sheet on the left, the battle log down the side, three choices at the bottom, one of them a terrible idea, as advertised. For the first time since the pier folded I could see what the viewers saw. I did not love it. Barnaby, on the other hand, found the camera within a second and turned a color I can only call stage-ready.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The System AI's HUD came up in a dead storefront under Pioneer Square: my sheet on the left, the battle log down the side, three choices at the bottom, one of them a terrible idea, as advertised. For the first time since the pier folded I could see what the viewers saw. I did not love it. Barnaby, on the other hand, found the camera within a second and turned a color I can only call stage-ready.
 
 Monitor performance: read the Narrator Orchestrator terminal log to follow each request:
 
@@ -72,9 +72,9 @@ Customization ideas:
 - Add custom tools for new game mechanics
 - Connect more MCP servers to add tools
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder wanted a dance-off for our "attention share." The Fremont Troll judged from the end of the arena, one stone eye on each of us. I called Endurance and held a drill cadence until the founder ran out of slides. Barnaby closed on Presence with a full-body light show, timed to the beat, hitting every mark. The log on the screen showed every roll. The ratings ticker in the corner went vertical. Barnaby noticed. He is going to be insufferable about it.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder wanted a dance-off for our "attention share." The Fremont Troll judged from the end of the arena, one stone eye on each of us. I called Endurance and held a drill cadence until the founder ran out of slides. Shelly dug in at my heel, and Chonks sat on my forearm guard and gurgled once. Barnaby closed on Presence with a full-body light show, timed to the beat, hitting every mark. The log on the screen showed every roll. The ratings ticker in the corner went vertical. Barnaby noticed. He is going to be insufferable about it.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 6: THE HUD.** In a LitRPG the reader sees the System through its interface: the floating character sheet, the notification boxes, the battle log. The web interface is that HUD, and it can only exist because [Floor 5](floor-5.md) forced the Narrator into `StoryOutput`: `response` becomes the notification, `dice_rolls` the battle log, `actions_suggestions` the three choices (one of them always a terrible idea). Design the data first and the interface follows. See [The System](world/the-system.md#1-origin-and-interface).
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 6: THE HUD.** In a LitRPG the reader sees the System through its interface: the floating character sheet, the notification boxes, the battle log. The web interface is that HUD, the System AI's screen for the Narrator's output, and it can only exist because [Floor 5](floor-5.md) forced the Narrator into `StoryOutput`: `response` becomes the notification, `dice_rolls` the battle log, `actions_suggestions` the three choices (one of them always a terrible idea). Design the data first and the interface follows. See [The System](world/the-system.md#1-origin-and-interface).
 
 ## Troubleshooting
 
@@ -118,7 +118,7 @@ Loot you're keeping:
 - Testing Narrator responses in the web interface
 - Following Narrator tool calls in the terminal log
 
-<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Explore [Floor 7](floor-7.md) for advanced enhancements to the System.
+<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Explore [Floor 7](floor-7.md) for advanced enhancements to the Narrator.
 
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**

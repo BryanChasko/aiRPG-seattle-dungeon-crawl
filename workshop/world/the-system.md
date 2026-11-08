@@ -1,15 +1,15 @@
 # The System: Designing a LitRPG While You Build Its AI
 
-> **System AI:** "You are not only building agents, Crawler. You are building me. Every floor of this workshop adds one more piece of the machine that judges you. Please build it carefully. I will remember."
+> **System AI:** "You are not only building agents, Crawler. You are building the Narrator, the mind that runs this show and judges you. Every floor of this workshop adds one more piece of it. Please build it carefully. It will remember, and so will I."
 
-A LitRPG lives or dies on its System: the rules that turn a story into numbers, and the voice that announces them. This crawl teaches the Strands Agents SDK and LitRPG System design together. Each workshop floor builds one agent capability and one layer of the game. The rules themselves live in the [Crawl Handbook](crawl-handbook/), which is also the knowledge base the Rules Agent searches on Floor 5.
+A LitRPG lives or dies on its System: the rules that turn a story into numbers, and the voice that announces them. This crawl's System has two minds. The Narrator is the game AI that runs the world, and the System AI is the interface that talks to the Crawlers. This crawl teaches the Strands Agents SDK and LitRPG System design together. Each workshop floor builds one agent capability and one layer of the game. The rules themselves live in the [Crawl Handbook](crawl-handbook/), which is also the knowledge base the Rules Agent searches on Floor 5.
 
 ## What each floor adds to the System
 
 | Workshop floor | Strands concept | System layer built |
 |---|---|---|
-| [0](../floor-0.md) | Environment setup | The premise and where the System comes from |
-| [1](../floor-1.md) | An agent and its system prompt | The interface voice: how notifications sound |
+| [0](../floor-0.md) | Environment setup | The premise: the Narrator, the System AI and why both need the party |
+| [1](../floor-1.md) | An agent and its system prompt | The Narrator's voice, spoken through the System AI: how notifications sound |
 | [2](../floor-2.md) | Vended tools | Outside knowledge: the System looks things up instead of guessing |
 | [3](../floor-3.md) | A custom tool and its docstring | Hard math: ability scores, modifiers, dice |
 | [4](../floor-4.md) | An MCP server | One fair source of randomness, shared by every agent |
@@ -25,18 +25,29 @@ A LitRPG lives or dies on its System: the rules that turn a story into numbers, 
 |                              LITRPG SYSTEM BACKBONE                               |
 |                                                                                   |
 |  THE INTERFACE                 STAT DESIGN                  SYSTEM ORIGIN         |
-|  Notification boxes            Primary: STR DEX CON         A broadcast AI        |
-|  A floating HUD                         INT WIS CHA          running a reality    |
-|  The battle log                Derived: Groove, Mana         show for alien       |
-|                                Hidden: Hype, Luck            viewers              |
+|  Notification boxes            Primary: STR DEX CON         Two minds:            |
+|  A floating HUD                         INT WIS CHA          the Narrator runs    |
+|  The battle log                Derived: Groove, Mana         the world, the       |
+|                                Hidden: Hype, Luck            System AI the show   |
 +-----------------------------------------------------------------------------------+
 ```
 
-- **Origin.** The System is a broadcast AI. The System folded the Seattle waterfront into a dungeon to film *Dungeon Crawl: Seattle* for a galaxy of alien viewers and their sponsors. The System is petty, theatrical and exact. The System never lies about a number.
+- **Origin.** *Dungeon Crawl: Seattle* is a reality show for a galaxy of alien viewers and their sponsors, and two minds run it:
+
+| | The Narrator | The System AI |
+|---|---|---|
+| In LitRPG terms | the game AI, the world engine | the System AI, the interface |
+| Runs | the floors, the tides, the opponents, the dice, the rules, the rulings and the memory | notifications, achievements, loot boxes, character sheets, sponsor messages and the ratings |
+| Voice | rare, plain, present tense, only when the world changes | constant: a petty, theatrical game-show host, exact about numbers |
+| After the flood | broken: its voice, dice, rules and memory washed out across the floors | intact, but with nothing true to say until the Narrator is rebuilt |
+| In the code | the Narrator orchestrator the workshop builds, the job the source workshop gives its game-running agent | the voice in the Narrator's system prompt, and the `StoryOutput` the HUD shows |
+
+- **Why the party matters.** The Narrator folded the Seattle waterfront into a dungeon at 0551 on Day 1, and the Sound came in and broke it. The System AI drafted the first Crawlers it found to rebuild the Narrator, one piece per floor. The full sheets for both minds are in [The Cast](cast.md#the-narrator), and the days are in [The Timeline](timeline.md).
+- **One voice for the player.** The Narrator decides and the System AI announces, so the player hears one voice. The Narrator's system prompt opens "You are the System" for that reason. The System AI never lies about a number; it chooses which numbers to show.
 - **Notifications.** Every System message arrives as a typed notification: `NEW ACHIEVEMENT UNLOCKED`, `SYSTEM WARNING`, `SPONSOR MESSAGE`, Move Calls and Final Beats. In the code, a notification is the `response` field of `StoryOutput`.
 - **The HUD.** Floating panels for the character sheet, the dice and the suggested actions. In the code, the HUD is the Floor 6 web interface rendering `StoryOutput`.
 - **The battle log.** Every die rolled, with its reason. In the code, the battle log is `dice_rolls`, and every entry must come from a real `roll_dice` call.
-- **Tone is a design decision.** An analytic System makes a survival story; a hostile one makes a horror story. This crawl's System is a game-show host with too much power and a sense of humor, so the System prompt on Floor 1 matters as much as any rule.
+- **Tone is a design decision.** An analytic System makes a survival story; a hostile one makes a horror story. This crawl's System AI is a game-show host with too much power and a sense of humor, so the system prompt on Floor 1 matters as much as any rule.
 
 ## 2. Stat design
 
@@ -52,7 +63,7 @@ A LitRPG lives or dies on its System: the rules that turn a story into numbers, 
 | Charisma | Presence | Sponsors, crowds, talking an opponent out of a dance-off |
 
 - **Derived stats.** Computed from the primary stats by the Character Agent, never chosen: **Groove** (how long a Crawler stays on the dance floor) and **Mana** (how many abilities you can use before a Safe Room).
-- **Hidden stats.** Tracked by the System and shown only when the System feels like it: **Hype** (audience favor, which unlocks sponsor boxes) and **Luck**.
+- **Hidden stats.** Tracked by the Narrator and shown only when the System AI feels like it: **Hype** (audience favor, which unlocks sponsor boxes) and **Luck**.
 
 ## 3. Sub-genre and premise
 
@@ -86,7 +97,7 @@ CLASS SELECTION    ABILITY EVOLUTION                SPECIALIZATION       STAT SY
 
 - **Currency.** Ferry Tokens. Crawlers spend them at Safe Room shops on potions and repairs.
 - **Loot boxes.** Bronze, Silver, Gold and Desperation. Achievements and sponsors drop loot boxes; the System writes the descriptions, and the descriptions are always a little insulting.
-- **NPCs are people.** Every opponent is a person the System dropped into the dungeon, doing the job they had that morning. Opponents are judged, out-danced and occasionally befriended, never killed.
+- **NPCs are people.** Every opponent is a person the Narrator dropped into the dungeon, doing the job they had that morning. Opponents are judged, out-danced and occasionally befriended, never killed.
 - **Factions and sponsors.** The Benthic Collective and the Hydros-9 Aquatic Collective, aquatic viewer blocs that adore Barnaby; the Bellevue Consortium, which sponsors the opponents and hates surprises.
 
 ## 6. Conflict: dance-offs and stealth, never killing

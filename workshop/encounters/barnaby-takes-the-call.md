@@ -5,7 +5,7 @@
 Files on this side passage: [`encounters/floor-5-barnaby-takes-the-call/barnaby_takes_the_call.py`](../../encounters/floor-5-barnaby-takes-the-call/barnaby_takes_the_call.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 5.** On Floor 5 the Narrator did all the phoning. It decided when to ring the Rules Agent, what to say, and when to hang up, and I only heard the result. Down here Barnaby pulled the handset off the wall. He dialed the rules desk himself, with the line open and the speaker on, and every word that came back crackled out of it as it was said: connected, working, here is a piece of the answer, done. I have run a radio net. I know what it is to hear a call as it happens instead of in the after-action report.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 7, TUESDAY, JUNE 23, SIDE PASSAGE OFF FLOOR 5.** On Floor 5 the Narrator did all the phoning. It decided when to ring the Rules Agent, what to say, and when to hang up, and I only heard the result. Down here Barnaby pulled the handset off the wall. He dialed the rules desk himself, with the line open and the speaker on, and every word that came back crackled out of it as it was said: connected, working, here is a piece of the answer, done. I have run a radio net. I know what it is to hear a call as it happens instead of in the after-action report.
 <!-- /cordula-log -->
 
 > <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: Barnaby Takes the Call. No more middleman tool. The octopus dials, the octopus listens, and the octopus gets his own number, extension 8003. Calls are not recorded. Calls are, however, streamed."
@@ -180,7 +180,7 @@ The `a2a_client` tool and `A2AAgent` reach the same agents over the same protoco
 
 The calling side costs nothing: `A2AAgent` is HTTP, with no Amazon Nova 2 Lite call behind the request. The Rules Agent and the Character Agent each spend a couple of short Amazon Nova 2 Lite calls on one question, about a thousand tokens in and a couple of hundred out. At about $0.30 per million input tokens and $2.50 per million output tokens, that costs roughly a tenth of a cent a call, and under a cent for the whole script. Barnaby's server costs a call only when someone dials him. See [What a Turn Costs](../floor-1.md#what-a-turn-costs).
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby's line is up on 8003. I put a sticker over the port number so nobody takes it for the Narrator's. He asked for a ring tone. The System offered the Final Beat drum. He accepted before the offer was finished. Shelly has already tried to call it from the mudflat, and I have decided that is a problem for the next shift.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby's line is up on 8003. I put a sticker over the port number so nobody takes it for the Narrator's. He asked for a ring tone. The System AI offered the Final Beat drum. He accepted before the offer was finished. Shelly has already tried to call it from the mudflat, and I have decided that is a problem for the next shift.
 
 ## Encounter Clear
 
