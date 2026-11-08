@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no faces, no text, high contrast, obsidian and slate background with deep Puget Sound teal, magenta-violet System glow accents, warm sodium-orange practical lights, rainy Pacific Northwest atmosphere, darker edges. Subject: Safe Room interior in Northwest Regional style, heavy glulam Douglas fir beams, red cedar walls, basalt hearth with low fire, big rain-streaked windows onto black water, wool blankets and a paddle rack, warm refuge glow against the dungeon dark. No text, no letters, no numbers.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "75b513755432994ac10366498f4856a5f7571c18a0710751ef4f327ee1242c44",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

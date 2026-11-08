@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no faces, no text, high contrast, obsidian and slate background with deep Puget Sound teal, magenta-violet System glow accents, warm sodium-orange practical lights, rainy Pacific Northwest atmosphere, darker edges. Subject: steep shoreline cliffs above the high-tide line, twisting Pacific madrone trunks with peeling red-orange bark, wind-bent shore pine and Nootka rose holding the slopes, yellow gumweed on rocky beach, exposed roots glowing violet where the System pins the bluff together. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "fdcce528daf227fc733b0a51390843fbaf88b7c7d69b218af51f50f999977d96",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

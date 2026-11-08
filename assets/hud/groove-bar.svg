@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="Groove meter">
+  <title>Groove</title>
+  <style>
+    .static{display:none}
+    @media (prefers-reduced-motion: reduce){
+      .motion{display:none}
+      .static{display:inline}
+    }
+  </style>
+  <rect x="1" y="1" width="118" height="26" rx="6" fill="#0B0E14" stroke="#1FBF75" stroke-width="2"/>
+  <g class="motion">
+    <rect x="6" y="7" width="96" height="14" rx="4" fill="#1FBF75">
+      <animate attributeName="width" values="96;58;96" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="6" y="7" width="18" height="14" rx="4" fill="#FF8A3D" opacity="0.9">
+      <animate attributeName="x" values="6;82;6" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="102" y="7" width="12" height="14" rx="4" fill="#FF2BD6" opacity="0.9"/>
+  </g>
+  <g class="static">
+    <rect x="6" y="7" width="96" height="14" rx="4" fill="#1FBF75"/>
+    <rect x="102" y="7" width="12" height="14" rx="4" fill="#FF2BD6"/>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+{
+ "file": "safe-room-1200x675.webp",
+ "bytes": 145736,
+ "format": "webp lossy q82",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "75b513755432994ac10366498f4856a5f7571c18a0710751ef4f327ee1242c44",
+  "size": "1792x1024"
+ },
+ "sha256": "667a4b203702770dc0157f925b9e2e850544000af88fde5826d7cc6cb88bd0ea",
+ "size": [
+  1200,
+  675
+ ],
+ "source": {
+  "raw": "header-safe-room.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-01/raw/header-safe-room.png",
+  "raw_sha256": "1967bdbce8a56ca5562986ade0834f6cd13830eba716dfe596351c0e352c1976",
+  "request": "images/src/header-safe-room.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "12.1.0",
+  "python": "3.14.2"
+ },
+ "transforms": [
+  "cover-crop 1200x675 lanczos",
+  "vignette feather 50 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

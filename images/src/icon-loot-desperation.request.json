@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a dented tin lunchbox with a glowing violet crack in its side, lid slightly open and spilling teal light, scrappy but useful. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "39dd9c4af082c755c9ded4e95ecee7a048012b989f7d1f2afba8b90ac7cbf8ac",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

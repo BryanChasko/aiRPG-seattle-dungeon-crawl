@@ -6,6 +6,8 @@ Files on this floor: [`7_strands_harness/narrator_harness.py`](../7_strands_harn
 
 ![Floor 7 (Optional): The Armory (Strands harness)](../images/floors/floor-7-1200x675.webp)
 
+![Safe Room on the bluffs](../images/floors/safe-room-1200x675.webp)
+
 <!-- cordula-log -->
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, FLOOR 7.** We slept in a Safe Room on the bluffs, under a madrone with its red bark peeling. When we woke up, the Narrator had forgotten everything. Our names, our rolls, the accountant. Barnaby went still. A giant Pacific octopus lives three to five years, and he knows it; forgetting is what he fears. So we gave the campaign a name and a place to keep it, and the next time we woke up, the whole campaign was still there. He did not say anything. He flashed the white-and-red pattern he used at the glass that first morning.
 <!-- /cordula-log -->
@@ -222,6 +224,8 @@ Where did the campaign go between the two runs? Look at the `7_strands_harness/.
 Check: the second answer names the Ship Canal and Cordula's Groove, 17, from before the restart, and `7_strands_harness/.agent/sessions/session/seattle-campaign/snapshot_latest.json` exists.
 
 Then meet this floor's opponent with the resumed campaign. The harness rolls through `dice_roll_dice`, the dice server's tool under its `dice` prefix:
+
+![Dawn on the bluffs, the cliff path where the Ferry-Line Commuter Horde arrives](../images/floors/bluffs-cliff-1200x675.webp)
 
 ```bash
 curl -X POST http://127.0.0.1:8009/inquire \

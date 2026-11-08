@@ -1,0 +1,22 @@
+{
+ "_about": "Single source for prompt language. tools/airpg_render.py --plan builds every request from these blocks; docs/visual-design-system.md sections 3 and 8 describe them. Change a block here, never inside a request file.",
+ "blocks": {
+  "card": "Cinematic dark-fantasy character card illustration, square, single subject centered with generous margin, waist-up or full body, high contrast, sharp detail, obsidian black and slate grey background with deep Puget Sound teal and sea-glass green, neon magenta-violet System rim light, warm sodium-orange accent light, rainy Pacific Northwest atmosphere, darker edges. Friendly, funny, game-show energy, never menacing, no weapons. Subject: ",
+  "floor": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no faces, no text, high contrast, obsidian and slate background with deep Puget Sound teal, magenta-violet System glow accents, warm sodium-orange practical lights, rainy Pacific Northwest atmosphere, darker edges. Subject: ",
+  "icon": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: ",
+  "narrator-icon": "Dark fantasy game interface icon, a single object centered with generous empty margin, quiet even lighting, muted and impersonal, plain obsidian black background (#0B0E14), no glow halo, no magenta, no violet. Subject: "
+ },
+ "endings": {
+  "card": " A blank glowing violet interface frame edge at the card border, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+  "floor": " No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+  "icon": " No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+  "narrator-icon": " No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface."
+ },
+ "sizes": {"card": "1024x1024", "floor": "1024x576", "icon": "1024x1024", "narrator-icon": "1024x1024"},
+ "model_sheet": {
+  "CORDULA": "Cordula Vance, a Marine Corps Reserve crew chief in her late twenties with dark curly hair, an orange and black high-visibility drysuit and a tactical float vest, holding a black touring kayak paddle, no weapons",
+  "BARNABY": "Barnaby, a big reddish-orange Giant Pacific Octopus with crimson and white patterns and a polished brass collar, riding in a clear backpack water tank, no human face",
+  "GEODUCK": "a real Puget Sound geoduck clam: a small pale oblong shell no bigger than a hand, and growing out of it a huge, long, thick, wrinkled tan siphon neck, two feet long and far bigger than the shell, the shell has no face, no eyes, no legs, no arms",
+  "LUMPSUCKER": "a tiny round green Pacific spiny lumpsucker fish, perfectly round like a golf ball, covered in bumpy tubercles, big black glaring eyes, stubby tiny fins, no long body, no tail stalk, not a seahorse"
+ }
+}

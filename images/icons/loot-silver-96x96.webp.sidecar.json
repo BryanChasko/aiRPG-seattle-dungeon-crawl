@@ -1,0 +1,39 @@
+{
+ "file": "loot-silver-96x96.webp",
+ "bytes": 1316,
+ "format": "webp lossy q88",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "e76975f9039b322b592fd2cf14b0fcbe08c61ed497b75534ec38f8d9337a0d59",
+  "size": "1024x1024"
+ },
+ "sha256": "63f7abc6341f936473583fec06dede361bad8fa2d16b337964233782debdcc1e",
+ "size": [
+  96,
+  96
+ ],
+ "source": {
+  "raw": "icon-loot-silver.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-04/raw/icon-loot-silver.png",
+  "raw_sha256": "5361daa5941bf01a6c07c6e4db88ac6d90113a21752ddd87342acacde68087b8",
+  "request": "images/src/icon-loot-silver.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "12.1.0",
+  "python": "3.14.2"
+ },
+ "transforms": [
+  "center crop 12% margin",
+  "resize 96x96 lanczos",
+  "no dots, no vignette (UI glyph)"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

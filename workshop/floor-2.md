@@ -39,6 +39,8 @@ The Strands SDK ships with a set of ready-to-use tools, the vended tools. They l
 
 The complete list is on the [Vended Tools](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/#available-tools) page of the Strands docs.
 
+![The Eelgrass Nursery: a shallow meadow of eelgrass with crabs among the blades](../images/floors/eelgrass-nursery-1200x675.webp)
+
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Six machines in a row, humming in the eelgrass. I read every label before I touched one, the way you check a parts bin before you trust it. Barnaby pointed two arms at the one that looks things up. "That one, Sergeant. I wish to know what the surface world thinks I am."
 
 ## Step 1: Equip the Agent with http_request

@@ -226,3 +226,6 @@ study/.state/
 
 # Optional encounters: local state the Floor 8 Mid-Song Save writes
 .mid-song-save/
+
+# raw renders and run logs live in ~/writing/art/once-upon-agentic-ai/experiments
+experiments/

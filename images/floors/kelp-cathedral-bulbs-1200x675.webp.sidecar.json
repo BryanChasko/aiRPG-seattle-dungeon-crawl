@@ -1,0 +1,39 @@
+{
+ "file": "kelp-cathedral-bulbs-1200x675.webp",
+ "bytes": 157890,
+ "format": "webp lossy q82",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "67f6fbf170f22ad43d01b73c5430b777c4e9b93c88bcff29cad0b014a15cd9fe",
+  "size": "1792x1024"
+ },
+ "sha256": "1b5ceb8e96c0567f98dff213cba1bf2672b8b19ffc484279208f96e9c4ab99a8",
+ "size": [
+  1200,
+  675
+ ],
+ "source": {
+  "raw": "header-kelp-cathedral-bulbs.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-03/raw/header-kelp-cathedral-bulbs.png",
+  "raw_sha256": "fc1fad43f7d1e3308e30356c846c13beba0eb4c82628f0a4c433342de0cc871e",
+  "request": "images/src/header-kelp-cathedral-bulbs.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "12.1.0",
+  "python": "3.14.2"
+ },
+ "transforms": [
+  "cover-crop 1200x675 lanczos",
+  "vignette feather 50 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

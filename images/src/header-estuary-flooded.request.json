@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no faces, no text, high contrast, obsidian and slate background with deep Puget Sound teal, magenta-violet System glow accents, warm sodium-orange practical lights, rainy Pacific Northwest atmosphere, darker edges. Subject: a salt-marsh estuary dance floor drowned at high tide, pickleweed and Lyngby's sedge mats submerged under dark floodwater, the luminous stage barely visible below the surface, a wooden tide staff gauge standing deep in the water, flooded channels glinting violet all around. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "8e37ee30142c55cb7f8c2d83393e2ce454857a22c2a5f2bb1fd9cf1d34327683",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

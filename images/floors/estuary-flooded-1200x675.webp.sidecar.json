@@ -1,0 +1,39 @@
+{
+ "file": "estuary-flooded-1200x675.webp",
+ "bytes": 150432,
+ "format": "webp lossy q82",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "8e37ee30142c55cb7f8c2d83393e2ce454857a22c2a5f2bb1fd9cf1d34327683",
+  "size": "1792x1024"
+ },
+ "sha256": "22aab24f4a1dbed023d18aad648ad6a6a9b52d9efb5fcc1223a048ba0c70cab6",
+ "size": [
+  1200,
+  675
+ ],
+ "source": {
+  "raw": "header-estuary-flooded.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-03/raw/header-estuary-flooded.png",
+  "raw_sha256": "2de704c37230eda7beaa5605fda44ef904371118a411523f85257a31512a7d9f",
+  "request": "images/src/header-estuary-flooded.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "12.1.0",
+  "python": "3.14.2"
+ },
+ "transforms": [
+  "cover-crop 1200x675 lanczos",
+  "vignette feather 50 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

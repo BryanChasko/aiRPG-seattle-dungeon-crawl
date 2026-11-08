@@ -1,0 +1,39 @@
+{
+ "file": "bluffs-cliff-1200x675.webp",
+ "bytes": 170052,
+ "format": "webp lossy q82",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "fdcce528daf227fc733b0a51390843fbaf88b7c7d69b218af51f50f999977d96",
+  "size": "1792x1024"
+ },
+ "sha256": "7fe092f42d1c8b66ae4a39b6bea61d0576825af286d714251074981e44d52866",
+ "size": [
+  1200,
+  675
+ ],
+ "source": {
+  "raw": "header-bluffs-cliff.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-03/raw/header-bluffs-cliff.png",
+  "raw_sha256": "f1887498ffe364dfc5c1a0ecbb4e8161a498ec0fcb371f70093f5b078b051f89",
+  "request": "images/src/header-bluffs-cliff.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "12.1.0",
+  "python": "3.14.2"
+ },
+ "transforms": [
+  "cover-crop 1200x675 lanczos",
+  "vignette feather 50 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

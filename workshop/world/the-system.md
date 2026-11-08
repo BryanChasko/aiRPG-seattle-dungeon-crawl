@@ -47,6 +47,16 @@ A LitRPG lives or dies on its System: the rules that turn a story into numbers, 
 - **Notifications.** Every System message arrives as a typed notification: `NEW ACHIEVEMENT UNLOCKED`, `SYSTEM WARNING`, `SPONSOR MESSAGE`, Move Calls and Final Beats. In the code, a notification is the `response` field of `StoryOutput`.
 - **The HUD.** Floating panels for the character sheet, the dice and the suggested actions. In the code, the HUD is the Floor 6 web interface rendering `StoryOutput`.
 - **The battle log.** Every die rolled, with its reason. In the code, the battle log is `dice_rolls`, and every entry must come from a real `roll_dice` call.
+
+<table>
+  <tr>
+    <td align="center"><img src="../../assets/hud/groove-bar.svg" alt="Groove bar meter, how long a Crawler stays on the dance floor" width="120"></td>
+    <td align="center"><img src="../../assets/hud/mana-pips.svg" alt="Mana pips meter, abilities left before a Safe Room" width="120"></td>
+    <td align="center"><img src="../../assets/hud/hype-tick.svg" alt="Hype tick meter, audience favor" width="120"></td>
+    <td align="center"><img src="../../assets/hud/d20.svg" alt="Twenty-sided die for the battle log" width="120"></td>
+    <td align="center"><img src="../../assets/hud/tide-clock.svg" alt="Tide clock meter, the rising Sound" width="120"></td>
+  </tr>
+</table>
 - **Tone is a design decision.** An analytic System makes a survival story; a hostile one makes a horror story. This crawl's System AI is a game-show host with too much power and a sense of humor, so the system prompt on Floor 1 matters as much as any rule.
 
 ## 2. Stat design
@@ -61,6 +71,17 @@ A LitRPG lives or dies on its System: the rules that turn a story into numbers, 
 | Intelligence | Choreography | Locks, puzzles, reading the System's fine print |
 | Wisdom | Read the Room | Noticing hidden opponents and traps |
 | Charisma | Presence | Sponsors, crowds, talking an opponent out of a dance-off |
+
+<table>
+  <tr>
+    <td align="center"><img src="../../assets/hud/move-power.svg" alt="Power move icon" width="48"></td>
+    <td align="center"><img src="../../assets/hud/move-footwork.svg" alt="Footwork move icon" width="48"></td>
+    <td align="center"><img src="../../assets/hud/move-endurance.svg" alt="Endurance move icon" width="48"></td>
+    <td align="center"><img src="../../assets/hud/move-choreography.svg" alt="Choreography move icon" width="48"></td>
+    <td align="center"><img src="../../assets/hud/move-readroom.svg" alt="Read the Room move icon" width="48"></td>
+    <td align="center"><img src="../../assets/hud/move-presence.svg" alt="Presence move icon" width="48"></td>
+  </tr>
+</table>
 
 - **Derived stats.** Computed from the primary stats by the Character Agent, never chosen: **Groove** (how long a Crawler stays on the dance floor) and **Mana** (how many abilities you can use before a Safe Room).
 - **Hidden stats.** Tracked by the Narrator and shown only when the System AI feels like it: **Hype** (audience favor, which unlocks sponsor boxes) and **Luck**.
@@ -100,9 +121,22 @@ CLASS SELECTION    ABILITY EVOLUTION                SPECIALIZATION       STAT SY
 - **NPCs are people.** Every opponent is a person the Narrator dropped into the dungeon, doing the job they had that morning. Opponents are judged, out-danced and occasionally befriended, never killed.
 - **Factions and sponsors.** The Benthic Collective and the Hydros-9 Aquatic Collective, aquatic viewer blocs that adore Barnaby; the Bellevue Consortium, which sponsors the opponents and hates surprises.
 
+<table>
+  <tr>
+    <td align="center"><img src="../../images/icons/ferry-token-96x96.webp" alt="Ferry Token coin" width="48"></td>
+    <td align="center"><img src="../../images/icons/loot-bronze-96x96.webp" alt="Bronze loot box" width="48"></td>
+    <td align="center"><img src="../../images/icons/loot-silver-96x96.webp" alt="Silver loot box" width="48"></td>
+    <td align="center"><img src="../../images/icons/loot-gold-96x96.webp" alt="Gold loot box" width="48"></td>
+    <td align="center"><img src="../../images/icons/loot-desperation-96x96.webp" alt="Desperation loot box" width="48"></td>
+    <td align="center"><img src="../../images/icons/sponsor-benthic-96x96.webp" alt="Benthic Collective sponsor badge" width="48"></td>
+  </tr>
+</table>
+
 ## 6. Conflict: dance-offs and stealth, never killing
 
 The crawl replaces combat with the dance-off: three rounds of Move Calls rolled with real dice, and a Final Beat tie-breaker where the drum speeds up until someone misses the last strike. When the party would rather not dance, Barnaby's stealth and the party's wits let the party slip past. The full procedure is in the handbook.
+
+<img src="../../assets/hud/final-beat-drum.svg" alt="The Final Beat drum" width="120">
 
 Why dance? Because dance gives every stat a job, dance is funnier than violence, and dance keeps the game welcoming. The structure is credited where the idea came from: dance as public display of law and strength runs deep in Northwest Coast protocol, and the speeding-drum tie-breaker comes from the modern powwow circuit. See [the setting's notes on representation](seattle.md#whose-land-this-is).
 
@@ -111,5 +145,7 @@ Why dance? Because dance gives every stat a job, dance is funnier than violence,
 The result at zero Groove decides the stakes. This crawl is nonlethal by design:
 
 - **Benched.** At 0 Groove a Crawler leaves the dance floor, wakes in the last Safe Room with 1 Groove, loses that fight's loot box and half their Hype.
+
+<img src="../../images/cards/cast-cordula-benched-640x640.webp" alt="Cordula benched, sitting out the dance floor" width="160">
 - **Cancelled.** Benched three times on the same floor, a Crawler's segment is cancelled for the rest of that floor: the Crawler rides the elevator down to the next floor with no loot.
 - **The stakes stay real.** Loot, Hype and sponsors are what keep a party alive deeper down, and losing loot, Hype or sponsors hurts. The System shows the audience every loss.

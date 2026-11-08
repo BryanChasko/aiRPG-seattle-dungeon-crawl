@@ -1,0 +1,39 @@
+{
+ "file": "eelgrass-nursery-1200x675.webp",
+ "bytes": 161048,
+ "format": "webp lossy q82",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "a231c96e6789bbbda01930d3cc05a537cb7069dbf77028b01101ae07ad5c77a7",
+  "size": "1792x1024"
+ },
+ "sha256": "564e428fd3a2d15169be6681d3ea0c19626d870a0f16729799a5927996ed4e6f",
+ "size": [
+  1200,
+  675
+ ],
+ "source": {
+  "raw": "header-eelgrass-nursery.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-03/raw/header-eelgrass-nursery.png",
+  "raw_sha256": "403253a334f1329349af1571170661581d9cfe2d5fb3a650a24f4ee9fd129a9a",
+  "request": "images/src/header-eelgrass-nursery.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "12.1.0",
+  "python": "3.14.2"
+ },
+ "transforms": [
+  "cover-crop 1200x675 lanczos",
+  "vignette feather 50 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a small ornate gold treasure chest with brass bands, lid slightly open and spilling warm sodium-orange light. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "246e6bb6c5afdba32e01a6c94641d4fda4b8a6420e9ae537979c24a676d1e1d1",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

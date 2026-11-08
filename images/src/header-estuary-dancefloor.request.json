@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no faces, no text, high contrast, obsidian and slate background with deep Puget Sound teal, magenta-violet System glow accents, warm sodium-orange practical lights, rainy Pacific Northwest atmosphere, darker edges. Subject: salt-marsh estuary dance floor at low tide, pickleweed and Lyngby's sedge mats around shallow pools, a flat luminous stage of wet mud with violet System edge-light, tide marker post showing six dry hours, distant flooded channels glinting. No text, no letters, no numbers.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "3a4e4ceb03fbac7f5bc586ae1fc27f336102c1425daf683a457a3be6c9d44a6f",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Presence move">
+  <title>Presence</title>
+  <style>
+    .static{display:none}
+    @media (prefers-reduced-motion: reduce){
+      .motion{display:none}
+      .static{display:inline}
+    }
+  </style>
+  <rect x="1" y="1" width="46" height="46" rx="8" fill="#0B0E14" stroke="#FF8A3D" stroke-width="2"/>
+  <g class="motion">
+    <polygon points="24,6 14,34 34,34" fill="#FF8A3D" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.45;0.2" dur="2.4s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="24,20 26,27 33,27 27.5,31 29.5,38 24,34 18.5,38 20.5,31 15,27 22,27" fill="#FF2BD6">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2.4s" repeatCount="indefinite"/>
+    </polygon>
+    <circle cx="24" cy="6" r="2.5" fill="#FF8A3D"/>
+  </g>
+  <g class="static">
+    <polygon points="24,6 14,34 34,34" fill="#FF8A3D" opacity="0.3"/>
+    <polygon points="24,20 26,27 33,27 27.5,31 29.5,38 24,34 18.5,38 20.5,31 15,27 22,27" fill="#FF2BD6"/>
+    <circle cx="24" cy="6" r="2.5" fill="#FF8A3D"/>
+  </g>
+</svg>

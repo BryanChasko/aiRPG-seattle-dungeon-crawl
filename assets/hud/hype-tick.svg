@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Hype tick">
+  <title>Hype</title>
+  <style>
+    .static{display:none}
+    @media (prefers-reduced-motion: reduce){
+      .motion{display:none}
+      .static{display:inline}
+    }
+  </style>
+  <rect x="1" y="1" width="46" height="46" rx="8" fill="#0B0E14" stroke="#FF8A3D" stroke-width="2"/>
+  <g class="motion">
+    <polygon points="24,8 28,20 40,20 30,27 34,39 24,31 14,39 18,27 8,20 20,20" fill="#FF8A3D">
+      <animateTransform attributeName="transform" type="translate" values="0,4;0,-4;0,4" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.65;1;0.65" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+  <g class="static">
+    <polygon points="24,8 28,20 40,20 30,27 34,39 24,31 14,39 18,27 8,20 20,20" fill="#FF8A3D"/>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy character card illustration, square, single subject centered with generous margin, waist-up or full body, high contrast, sharp detail, obsidian black and slate grey background with deep Puget Sound teal and sea-glass green, neon magenta-violet System rim light, warm sodium-orange accent light, rainy Pacific Northwest atmosphere, darker edges. Friendly, funny, game-show energy, never menacing, no weapons. Subject: a Pitch-Deck Founder Off-Beat: the same white woman in her late twenties in a black turtleneck and white sneakers, slide clicker fumbled, one sneaker sliding out from under her on a slick ink-black wet floor, the glowing projected chart of plain shapes behind her tilted and wobbling, dramatic pose collapsing into a flustered stumble, rhythm-broken but game. A blank glowing violet interface frame edge at the card border, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "b460329c80f3d795899dd400735ace36986d78466d4080b49ad47c05db05dbb1",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

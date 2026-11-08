@@ -1,0 +1,39 @@
+{
+ "file": "loot-desperation-96x96.webp",
+ "bytes": 1992,
+ "format": "webp lossy q88",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "39dd9c4af082c755c9ded4e95ecee7a048012b989f7d1f2afba8b90ac7cbf8ac",
+  "size": "1024x1024"
+ },
+ "sha256": "3b4407b073f7629d73e514c094515a4ce81689ce70af7cf638b4176735690dbd",
+ "size": [
+  96,
+  96
+ ],
+ "source": {
+  "raw": "icon-loot-desperation.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-04/raw/icon-loot-desperation.png",
+  "raw_sha256": "b4042e0035e859dbfc6ecbebdf8fecfe310a28bc086b00cd480e09e6365c8971",
+  "request": "images/src/icon-loot-desperation.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "12.1.0",
+  "python": "3.14.2"
+ },
+ "transforms": [
+  "center crop 12% margin",
+  "resize 96x96 lanczos",
+  "no dots, no vignette (UI glyph)"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}
