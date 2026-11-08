@@ -1,0 +1,39 @@
+{
+ "file": "underground-troll-1200x675.webp",
+ "bytes": 153234,
+ "format": "webp lossy q82",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "a65d916cec8b1d2da760991c3c916fc089599afa0cd12ca171d5bb2ce272b25a",
+  "size": "1792x1024"
+ },
+ "sha256": "2c220c4a925d6e66e0b3271fdbb9646aa2658c6a10081fc506c1954d58266b14",
+ "size": [
+  1200,
+  675
+ ],
+ "source": {
+  "raw": "header-underground-troll.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-03/raw/header-underground-troll.png",
+  "raw_sha256": "ea69c6675fb8ef512d68386287aa0f08642edeaa8d3089295a6cf1f9f7123900",
+  "request": "images/src/header-underground-troll.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "12.1.0",
+  "python": "3.14.2"
+ },
+ "transforms": [
+  "cover-crop 1200x675 lanczos",
+  "vignette feather 50 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

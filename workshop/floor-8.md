@@ -127,6 +127,8 @@ The project is ready: head to [8.1 The Dice Server](floor-8-1.md) to deploy the 
 
 ## Boss Battle: The Quarterly Earnings Call (optional)
 
+![The Bellevue corporate lobby, the arena for the Quarterly Earnings Call](../images/floors/bellevue-lobby-1200x675.webp)
+
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Bellevue has conference rooms the way the estuary has tide pools. In one of them, a calendar invite for Monday shows the accountant from Floor 5, a banker and the Regional Managing Director, and we are the only item on the agenda.
 
 [The Quarterly Earnings Call](encounters/quarterly-earnings-call.md): the accountant reviews, the banker spins, the Regional Managing Director signs off. A Strands graph with fixed edges and a condition on each one: the call only continues if the party took the last round. The encounter starts from the Floor 5 code and runs on your machine: play it before, during or after the deployments of this floor.

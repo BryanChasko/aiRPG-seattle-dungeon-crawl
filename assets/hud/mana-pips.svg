@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="Mana pips">
+  <title>Mana</title>
+  <style>
+    .static{display:none}
+    @media (prefers-reduced-motion: reduce){
+      .motion{display:none}
+      .static{display:inline}
+    }
+  </style>
+  <rect x="1" y="1" width="118" height="26" rx="6" fill="#0B0E14" stroke="#FF2BD6" stroke-width="2"/>
+  <g class="motion" fill="#FF2BD6">
+    <polygon points="16,5 23,14 16,23 9,14">
+      <animate attributeName="opacity" values="1;0.25;1" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="38,5 45,14 38,23 31,14">
+      <animate attributeName="opacity" values="1;0.25;1" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="60,5 67,14 60,23 53,14">
+      <animate attributeName="opacity" values="1;0.25;1" dur="2.5s" begin="1s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="82,5 89,14 82,23 75,14">
+      <animate attributeName="opacity" values="1;0.25;1" dur="2.5s" begin="1.5s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="104,5 111,14 104,23 97,14" fill="#1FBF75">
+      <animate attributeName="opacity" values="1;0.25;1" dur="2.5s" begin="2s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+  <g class="static">
+    <polygon points="16,5 23,14 16,23 9,14" fill="#FF2BD6"/>
+    <polygon points="38,5 45,14 38,23 31,14" fill="#FF2BD6"/>
+    <polygon points="60,5 67,14 60,23 53,14" fill="#FF2BD6"/>
+    <polygon points="82,5 89,14 82,23 75,14" fill="#FF2BD6"/>
+    <polygon points="104,5 111,14 104,23 97,14" fill="#1FBF75"/>
+  </g>
+</svg>

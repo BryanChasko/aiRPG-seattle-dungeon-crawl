@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no faces, no text, high contrast, obsidian and slate background with deep Puget Sound teal, magenta-violet System glow accents, warm sodium-orange practical lights, rainy Pacific Northwest atmosphere, darker edges. Subject: a maze of buried Pioneer Square brick storefronts under dripping streets, glowing sidewalk prisms overhead, the massive shadow of a concrete troll sculpture looming over a clear arena floor, warm sodium-orange work lights on wet brick. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "a65d916cec8b1d2da760991c3c916fc089599afa0cd12ca171d5bb2ce272b25a",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

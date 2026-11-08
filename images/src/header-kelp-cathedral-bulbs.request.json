@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no faces, no text, high contrast, obsidian and slate background with deep Puget Sound teal, magenta-violet System glow accents, warm sodium-orange practical lights, rainy Pacific Northwest atmosphere, darker edges. Subject: a towering underwater bull kelp forest cathedral, giant hollow floating bulbs on stipes rising a hundred feet, sugar kelp crinkled in sheltered corners, violet System glow filtering down through the fronds, a vertical climbing arena of glowing bulbs. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "67f6fbf170f22ad43d01b73c5430b777c4e9b93c88bcff29cad0b014a15cd9fe",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

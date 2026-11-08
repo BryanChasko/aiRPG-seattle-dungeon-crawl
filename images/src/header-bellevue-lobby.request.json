@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no faces, no text, high contrast, obsidian and slate background with deep Puget Sound teal, magenta-violet System glow accents, warm sodium-orange practical lights, rainy Pacific Northwest atmosphere, darker edges. Subject: a flooded glass-tower corporate lobby of polished marble, red laser-grid security lines crossing the arena floor, reflections of Lake Washington towers in floor-to-ceiling glass, violet System glow in the elevator shafts, floating brass nameplates with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1792x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "a658ba9c6f80200040ddb17c3d528d8a0f2d109b6a788173d666d6e7d9e675cd",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

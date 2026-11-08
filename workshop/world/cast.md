@@ -57,6 +57,13 @@ When Pier 59 folded she had about four seconds. The Marine Corps trains a crew c
 |---|---|---|---|---|---|
 | 16 | 13 | 16 | 12 | 14 | 10 |
 
+<table>
+<tr>
+<td><img src="../../images/cards/cast-cordula-drill-640x640.webp" alt="Cordula dancing her drill-cadence style" width="160"></td>
+<td><img src="../../images/cards/cast-cordula-benched-640x640.webp" alt="Cordula Benched, wrapped in a blanket" width="160"></td>
+</tr>
+</table>
+
 - **Species:** Human (Seattle Native). **Class:** Amphibious Breacher.
 - **Title:** *Salish Sea Guardian* (+15% movement on wet or slippery terrain; immune to water-based environmental debuffs such as Soggy and Riptide).
 - **Dance style:** drill cadence. She does not dance pretty; she dances on time, every time, for as long as it takes. Endurance and the Final Beat are hers.
@@ -114,6 +121,13 @@ In April 2025 he climbed into one after the bait and stayed. The Seattle Aquariu
 CHROMATOPHORE      INK CLOUD           EIGHT-POINT HOLD    ARM-LOCK PICK
 STEALTH            (smoke screen)      (gentle pin)        (locks, chests)
 ```
+
+<table>
+<tr>
+<td><img src="../../images/cards/cast-barnaby-presence-640x640.webp" alt="Barnaby in a dance-off, calling Presence" width="160"></td>
+<td><img src="../../images/cards/cast-barnaby-stealth-640x640.webp" alt="Barnaby using Chromatophore Stealth" width="160"></td>
+</tr>
+</table>
 
 - **Chromatophore Stealth (passive and active):** bends light across his skin, hiding himself and Cordula while they stand still in damp or shadowed places. Chromatophore Stealth lets the party skip a dance-off the party does not want.
 - **Ink Cloud (area):** a thick black cloud that blinds and makes the floor slick. Opponents inside it are Off-Beat for two rounds. Nobody is hurt; everybody is confused.
@@ -186,6 +200,9 @@ On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the hold
 - **Spine Flare:** while latched, he puffs up and flares his spines. Anyone who grabs him loses their next move.
 - **Stamina Vacuum:** while latched, he drains the target's Groove and shares half of the drained Groove with the party.
 - **Buckler:** strapped to Cordula's forearm, he inflates and hardens into a round shield.
+
+<img src="../../images/cards/cast-chonks-buckler-640x640.webp" alt="Chonks as a Buckler, strapped to a forearm" width="160">
+
 - **Party politics:** the System AI tracks his Flings Per Minute on the broadcast. Barnaby approves of him: compact, quiet, and an excellent projectile. He sometimes wears Chonks on an upper arm like a shoulder cannon.
 
 ## The Narrator

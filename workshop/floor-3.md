@@ -213,6 +213,8 @@ Check: the terminal prints the new `tool_spec` first, then four `Tool #N: roll_d
 | sixteen calls with `count=1`, or a total that does not match the dice | the docstring does not say how to call 4d6 drop lowest | add the `count=4, drop_lowest=1` sentence and the "report the total" note |
 | no `Tool #` line at all | the tool is not on the agent | Step 3: `tools=[roll_dice]` |
 
+![Lady Luck's abalone-shell table in the Bull Kelp Cathedral, with kelp bulbs floating overhead like lanterns](../images/floors/kelp-cathedral-bulbs-1200x675.webp)
+
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Lady Luck dealt from a table of abalone shell and called every roll like a boxing announcer. Four calls, four totals, and she did not touch the arithmetic once. She hated that. Halfway through the third roll, a bulb overhead popped and the stipe it hung from whipped across the table. A green fish the size of a golf ball came off his holdfast, hit my forearm guard, and stuck there with a sound like a plunger. I pulled; he held. The second Companion Egg went warm, and the System AI announced the bind. The audience named him by poll, and Barnaby voted for "Projectile", but "Chonks" won with 61 percent. Barnaby studied him for a long moment and said, "Compact. Quiet. Aerodynamic." Shelly sent up a puff of sea mist, and Chonks gave one stubborn gurgle.
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
@@ -220,6 +222,8 @@ Check: the terminal prints the new `tool_spec` first, then four `Tool #N: roll_d
 > **[You Brought a Sticky Beach Ball to a Dance Battle]**
 >
 > Reward: Cordula and Barnaby. You bound a spherical, armor-plated fish that moves by vibrating its tiny fins and glaring. The audience has named him. You will live with the name. Companion Egg consumed: Chonks, Pacific spiny lumpsucker, Level 4 Rare Companion.
+
+<img src="../images/cards/cast-chonks-buckler-640x640.webp" alt="Chonks the spiny lumpsucker, worn as a buckler" width="200">
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 3: HARD MATH.** Readers forgive a System for being cruel, never for being inconsistent. Ability scores, modifiers and dice are the math every later rule stands on, so they live in code, not in the model's head. In this crawl each of the six scores also maps to a dance-off Move Call: Strength is Power, Dexterity is Footwork, Constitution is Endurance, Intelligence is Choreography, Wisdom is Read the Room and Charisma is Presence. A score of 16 gives a +3 modifier: (score - 10) / 2, rounded down. See [ability scores](world/crawl-handbook/01-ability-scores.md) and [The System](world/the-system.md#2-stat-design).
 

@@ -1,0 +1,39 @@
+{
+ "file": "cast-cordula-benched-640x640.webp",
+ "bytes": 94482,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "0e1c2216fbd9d49f0d8186098de97ffdf05beb1e0ae1c01ea26dec2a1a856917",
+  "size": "1024x1024"
+ },
+ "sha256": "c92630dbf1cd1c1ef0a6d29f645c50c981d0319513e2e0d7293b1eaba92b2117",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-cast-cordula-benched.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-01/raw/card-cast-cordula-benched.png",
+  "raw_sha256": "81d1421e09e363f17fb92dbdf05d798cc92fedac05ac34b739a4664783d1de48",
+  "request": "images/src/card-cast-cordula-benched.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "12.1.0",
+  "python": "3.14.2"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

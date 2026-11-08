@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Endurance move">
+  <title>Endurance</title>
+  <style>
+    .static{display:none}
+    @media (prefers-reduced-motion: reduce){
+      .motion{display:none}
+      .static{display:inline}
+    }
+  </style>
+  <rect x="1" y="1" width="46" height="46" rx="8" fill="#0B0E14" stroke="#1FBF75" stroke-width="2"/>
+  <g class="motion" fill="none" stroke="#1FBF75">
+    <circle cx="24" cy="24" r="6" stroke-width="3"/>
+    <circle cx="24" cy="24" r="12" stroke-width="2">
+      <animate attributeName="opacity" values="1;0.3;1" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="24" cy="24" r="17" stroke-width="1.5" stroke="#FF2BD6">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g class="static" fill="none">
+    <circle cx="24" cy="24" r="6" stroke="#1FBF75" stroke-width="3"/>
+    <circle cx="24" cy="24" r="12" stroke="#1FBF75" stroke-width="2"/>
+    <circle cx="24" cy="24" r="17" stroke="#FF2BD6" stroke-width="1.5"/>
+  </g>
+</svg>

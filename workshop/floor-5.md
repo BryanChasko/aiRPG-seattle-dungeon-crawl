@@ -6,6 +6,8 @@ Files on this floor: [`5_a2a_integration/agents/rules_agent/rules_agent.py`](../
 
 ![Floor 5: Party Formation (A2A)](../images/floors/floor-5-1200x675.webp)
 
+![Estuary dance floor at low tide](../images/floors/estuary-dancefloor-1200x675.webp)
+
 <!-- cordula-log -->
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 6, MONDAY, JUNE 22, FLOOR 5.** The estuary floods twice a day. The dance floor is there, then it is not. This is where the System finally wanted to start the show, which meant rules, and nobody in the party had read them. We built a clerk to read the rule book, a registration desk to stamp our sheets, and a Narrator to run the game, each one doing one job and talking to the others. Barnaby ran the meeting. He was good at it. He delegated, he cited the handbook, he made the Narrator answer in a format the HUD could read. Then a Quarterly Close Accountant stepped onto the pickleweed and challenged us to a dance-off, and we found out whether any of it worked.
 <!-- /cordula-log -->
@@ -27,6 +29,8 @@ cd aiRPG-seattle-dungeon-crawl/5_a2a_integration
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The estuary smelled like salt and cut grass. The tide table on a post said the dance floor would be dry for six hours, then gone. Six hours to stand up a rule clerk, a registration desk and a Narrator, and get them talking. I have run tighter timelines on a beach landing. I have not run one with an octopus in charge.
 
 > **NARRATOR:** The tide turns. The Estuary floods at 1224.
+
+![The estuary dance floor under the incoming tide, the dry boards gone beneath shallow water](../images/floors/estuary-flooded-1200x675.webp)
 
 ## System Architecture
 
@@ -593,6 +597,8 @@ Watch the four terminals while a request runs. In the Narrator terminal the tool
 | Groove or Mana differ from 17 and 8 for Cordula | the scores the Narrator passed are not the cast's | look at the `New Crawler registered` line in terminal 2; restore `characters.json` (see [Cleanup](cleanup.md#local-files)) and register again |
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Quarterly Close Accountant stepped onto the pickleweed in a fleece vest and called Footwork like it was an audit finding. The Narrator set the tempo, asked the dice twice, and read both totals out loud with the modifiers shown. I took round one on a drill cadence. The accountant took it well and said they had a close to return to, and I believed them. Barnaby, very quietly, through the collar: "Registered, Sergeant. They wrote my name down as party leader." He sounded like he had been waiting a long time to hear it.
+
+<img src="../images/cards/opponent-accountant-offbeat-640x640.webp" alt="The Quarterly Close Accountant, caught off the beat after losing round one" width="200">
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 5: RULES, SHEETS AND THE CORE LOOP.** This floor is where the game becomes a game. The rules live in a knowledge base the Rules Agent searches, so the Narrator cites them instead of improvising. The character sheet lives with the Character Agent, which computes Groove and Mana from the ability scores so no model can hand a Crawler extra stamina. The dance-off is the core loop: a Move Call, two rolls, a winner, Groove lost, a Final Beat when it is level. Every stat has a job in it, and nobody gets hurt. `StoryOutput` is the notification format the HUD will render on [Floor 6](floor-6.md). See [The System](world/the-system.md#6-conflict-dance-offs-and-stealth-never-killing) and the [Crawl Handbook](world/crawl-handbook/).
 

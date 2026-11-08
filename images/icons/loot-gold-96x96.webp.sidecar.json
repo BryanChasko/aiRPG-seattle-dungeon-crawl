@@ -1,0 +1,39 @@
+{
+ "file": "loot-gold-96x96.webp",
+ "bytes": 1648,
+ "format": "webp lossy q88",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "246e6bb6c5afdba32e01a6c94641d4fda4b8a6420e9ae537979c24a676d1e1d1",
+  "size": "1024x1024"
+ },
+ "sha256": "6703cc556c26700a7feb2a4d7b7606a95845cac558d02aaae168d33a907cdcf0",
+ "size": [
+  96,
+  96
+ ],
+ "source": {
+  "raw": "icon-loot-gold.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-04/raw/icon-loot-gold.png",
+  "raw_sha256": "1dba5733c55d7375e8095afe5c3e426eef081f8a68ee3ec94ccfe8f0915513a2",
+  "request": "images/src/icon-loot-gold.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "12.1.0",
+  "python": "3.14.2"
+ },
+ "transforms": [
+  "center crop 12% margin",
+  "resize 96x96 lanczos",
+  "no dots, no vignette (UI glyph)"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

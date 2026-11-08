@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a round deep-teal enamel sponsor badge showing a curled octopus arm holding a tiny spotlight, brass rim. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "ad71900fea9c862385ce87ef144e41cb459b11c525e58812b97604b4a039591e",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

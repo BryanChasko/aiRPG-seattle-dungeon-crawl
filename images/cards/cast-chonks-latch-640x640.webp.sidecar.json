@@ -1,0 +1,39 @@
+{
+ "file": "cast-chonks-latch-640x640.webp",
+ "bytes": 76832,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "471481568a6f12da76425579c683525bf0a3593f49913e96ee2c6e9447256df1",
+  "size": "1024x1024"
+ },
+ "sha256": "933eb38c995daa60ffd4792a9ce99be6294ada56ebafa4a371337122052acf0b",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-cast-chonks-latch.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-02/raw/card-cast-chonks-latch.png",
+  "raw_sha256": "6ffd7f9c3fa325f59dd37a43c01ff56c6481e712dbaa0d36158acff30061df12",
+  "request": "images/src/card-cast-chonks-latch.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "12.1.0",
+  "python": "3.14.2"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

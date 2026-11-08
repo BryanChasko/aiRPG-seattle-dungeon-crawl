@@ -1,0 +1,12 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy character card illustration, square, single subject centered with generous margin, waist-up or full body, high contrast, sharp detail, obsidian black and slate grey background with deep Puget Sound teal and sea-glass green, neon magenta-violet System rim light, warm sodium-orange accent light, rainy Pacific Northwest atmosphere, darker edges. Friendly, funny, game-show energy, never menacing, no weapons. Subject: a Bonus-Season Investment Banker Off-Beat: the same young South Asian man in a quarter-zip fleece vest over a dress shirt, sunglasses fallen, phone slipping from his hand, tie over his shoulder, skidding on a slick ink-black wet floor mid-spin, arms windmilling, overconfident grin turned to comical panic, rhythm-broken. A blank glowing violet interface frame edge at the card border, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "e0c85698e2d0e237a262f1c067c53f4104b1723fe272f77539cd9f495ae5a7c4",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null
+}

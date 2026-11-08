@@ -12,6 +12,8 @@ Files on this side passage: [`encounters/floor-8-quarterly-earnings-call/quarter
 
 <img src="../../images/cards/boss-earnings-call-640x640.webp" alt="The Quarterly Earnings Call, a giant grinning speakerphone with glowing buttons beneath three floating video-call tiles, sending violet sound waves over a flooded boardroom" width="240">
 
+![The Bellevue lobby, where the glass conference rooms of the earnings call wait overhead](../../images/floors/bellevue-lobby-1200x675.webp)
+
 ## The Brief
 
 | | |
@@ -153,6 +155,8 @@ The Floor 5 Narrator could run this call too: ask it for three dance-offs in a r
 Each executive is one agent turn of two Amazon Nova 2 Lite calls, so a full call is six calls with short prompts: well under a cent. A call the party loses on the first item costs a third of a full call. The dice cost nothing: the dice are code.
 
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Regional Managing Director called Choreography at a Frantic tempo, which is a dirty trick on a Monday, and Barnaby took the Frantic tempo three moves ahead with two arms still on his water lines. The RMD looked at the totals for a long moment, then signed. Not the party, the quarter. The banker asked if we were looking for representation. The accountant just looked relieved. They had a close to get back to.
+
+<img src="../../images/cards/opponent-banker-offbeat-640x640.webp" alt="The Bonus-Season Investment Banker, caught off the beat" width="200">
 
 ## Encounter Clear
 

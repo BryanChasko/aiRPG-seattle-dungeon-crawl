@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tide clock">
+  <title>Tide clock</title>
+  <style>
+    .static{display:none}
+    @media (prefers-reduced-motion: reduce){
+      .motion{display:none}
+      .static{display:inline}
+    }
+  </style>
+  <rect x="1" y="1" width="62" height="62" rx="10" fill="#0B0E14" stroke="#1FBF75" stroke-width="2"/>
+  <circle cx="32" cy="30" r="20" fill="none" stroke="#1FBF75" stroke-width="2.5"/>
+  <g stroke="#1FBF75" stroke-width="2.5" stroke-linecap="round">
+    <line x1="32" y1="12" x2="32" y2="17"/>
+    <line x1="32" y1="43" x2="32" y2="48"/>
+    <line x1="14" y1="30" x2="19" y2="30"/>
+    <line x1="45" y1="30" x2="50" y2="30"/>
+  </g>
+  <path d="M12,52 q5,-5 10,0 q5,5 10,0 q5,-5 10,0" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round"/>
+  <g class="motion">
+    <line x1="32" y1="30" x2="32" y2="15" stroke="#FF2BD6" stroke-width="3" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" from="0 32 30" to="360 32 30" dur="8s" repeatCount="indefinite"/>
+    </line>
+    <circle cx="32" cy="30" r="3" fill="#FF2BD6"/>
+  </g>
+  <g class="static">
+    <line x1="32" y1="30" x2="32" y2="15" stroke="#FF2BD6" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="32" cy="30" r="3" fill="#FF2BD6"/>
+  </g>
+</svg>
