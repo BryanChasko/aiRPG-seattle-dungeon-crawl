@@ -1,21 +1,23 @@
-# Side Passage: The Quarterly Earnings Call (Floor 5 Boss Battle)
+# Side Passage: The Quarterly Earnings Call (Floor 8 Boss Battle)
 
-[Back to Floor 5](../floor-5.md) | [All encounters](README.md) | [Dungeon map](../README.md) <!-- floor-nav -->
+[Back to Floor 8](../floor-8.md) | [All encounters](README.md) | [Dungeon map](../README.md) <!-- floor-nav -->
 
-Files on this side passage: [`encounters/floor-5-boss-battles/quarterly_earnings_call.py`](../../encounters/floor-5-boss-battles/quarterly_earnings_call.py), [`encounters/floor-5-boss-battles/dance_floor.py`](../../encounters/floor-5-boss-battles/dance_floor.py) <!-- floor-files -->
+Files on this side passage: [`encounters/floor-8-quarterly-earnings-call/quarterly_earnings_call.py`](../../encounters/floor-8-quarterly-earnings-call/quarterly_earnings_call.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 5.** The accountant came back. Not alone. They had a conference line open on a folding table in the pickleweed, and two more people dialed in: an investment banker in a quarter-zip, and a Regional Managing Director who introduced themselves by title only. Every quarter has an agenda, and this one had three items, in order, and we were all three of them. Review, spin, sign-off. Nobody skips ahead on a call like that. Barnaby adjusted the collar like a tie. "Sergeant, we take every item, or we do not leave the meeting."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 8.** Bellevue has conference rooms the way the estuary has tide pools. In a glass one over Bellevue Way, the accountant from the estuary was waiting for us. Not alone. They had a conference line open on the table, and two more people dialed in: an investment banker in a quarter-zip, and a Regional Managing Director who introduced themselves by title only. Every quarter has an agenda, and this one had three items, in order, and we were all three of them. Review, spin, sign-off. Nobody skips ahead on a call like that. Barnaby adjusted the collar like a tie. "Sergeant, we take every item, or we do not leave the meeting."
 <!-- /cordula-log -->
 
 > <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Boss battle: the Quarterly Earnings Call. Three executives, one agenda, no skipping. Win a call and the next executive unmutes. Lose one and the call is over, and the minutes will reflect it."
+
+<img src="../../images/cards/boss-earnings-call-640x640.webp" alt="The Quarterly Earnings Call, a giant grinning speakerphone with glowing buttons beneath three floating video-call tiles, sending violet sound waves over a flooded boardroom" width="240">
 
 ## The Brief
 
 | | |
 |---|---|
 | type | boss battle |
-| starts from | [Floor 5](../floor-5.md), finished; this file brings its own dice, so no server needs to be running |
+| starts from | [Floor 5](../floor-5.md), finished: the graph runs on your machine, so no AgentCore deployment is needed, and the file brings its own dice, so no server needs to be running |
 | you build | a graph of three opponent agents with fixed edges: the accountant reviews, the banker spins, the Regional Managing Director signs off, and each edge only opens if the party took the round before it |
 | teaches | [`strands.multiagent.graph`](https://strandsagents.com/docs/api/python/strands.multiagent.graph/): `GraphBuilder`, nodes, conditional edges, the entry point |
 | time | about 25 minutes |
@@ -23,7 +25,7 @@ Files on this side passage: [`encounters/floor-5-boss-battles/quarterly_earnings
 
 On Floor 5 the Narrator decided whom to call and when: the model held the plan. A graph puts the plan in code. Each node is an agent, each edge says which agent runs after which, and an edge can carry a condition, a plain Python function that decides whether the graph follows it. The model plays each executive; your code decides whether the call goes on. See [Graph](https://strandsagents.com/docs/user-guide/sdk/multi-agent/graph/).
 
-Every round is rolled and scored by `dance_round`, in the shared [`dance_floor.py`](../../encounters/floor-5-boss-battles/dance_floor.py): the [Dance-Offs](../world/crawl-handbook/03-dance-offs.md) rules for the modifiers and the tempo, and [The Final Beat](../world/crawl-handbook/04-final-beat.md) for a tie. Each round lands on a scoreboard, and `party_won`, the edge condition, reads the last one. Each executive calls one move, so the call is three Move Calls, one per agenda item.
+Every round is rolled and scored by `dance_round`, in the shared [`dance_floor.py`](../../encounters/dance_floor.py): the [Dance-Offs](../world/crawl-handbook/03-dance-offs.md) rules for the modifiers and the tempo, and [The Final Beat](../world/crawl-handbook/04-final-beat.md) for a tie. Each round lands on a scoreboard, and `party_won`, the edge condition, reads the last one. Each executive calls one move, so the call is three Move Calls, one per agenda item.
 
 | agenda item | node | move | modifier | tempo |
 |---|---|---|---|---|
@@ -36,7 +38,7 @@ How you know it worked: the call prints its rounds in agenda order, and it stops
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/encounters/floor-5-boss-battles
+cd aiRPG-seattle-dungeon-crawl/encounters/floor-8-quarterly-earnings-call
 ```
 
 ## Step 1: Import the Builder
@@ -166,4 +168,4 @@ Loot you're keeping:
 >
 > Reward: You received a [Gold Box]. Inside: a signed quarter, three name cards, and a calendar invite for next quarter you are already dreading.
 
-Back to [Floor 5](../floor-5.md#floor-clear), or on to [The Developer Advocate Swarm](developer-advocate-swarm.md).
+Back to [Floor 8](../floor-8.md#set-up-the-project), or on to [8.1 The Dice Server](../floor-8-1.md).

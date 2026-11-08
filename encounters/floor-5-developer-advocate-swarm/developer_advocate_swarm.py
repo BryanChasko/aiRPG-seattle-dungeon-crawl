@@ -10,10 +10,14 @@ Run it from this folder, with the workshop environment active:
     python developer_advocate_swarm.py
 """
 
+import sys
+from pathlib import Path
+
 from strands import Agent
 # TODO: Step 1 - Import Swarm from strands.multiagent
 from strands.multiagent import Swarm
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # the shared dance floor lives in encounters/
 from dance_floor import dance_round, party_took_the_last_round, scoreboard
 
 ADVOCATES = [

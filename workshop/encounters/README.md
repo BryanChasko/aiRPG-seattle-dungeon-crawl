@@ -13,9 +13,9 @@ Every opponent of the crawl is playable somewhere. The floors run their own danc
 | 1 | [The Commentary Booth](commentary-booth.md) | sidequest | a callback handler that streams the System's call of a dance-off and announces each tool call, then a receipt for the turn | `strands.handlers.callback_handler`, `strands.agent.agent_result` |
 | 3 | [The Concurrent Shuffle](concurrent-shuffle.md) | dance-off | the same round rolled by a sequential and a concurrent tool executor, timed | `strands.tools.executors` |
 | 5 | [The Paper Trail](paper-trail.md) | sidequest | a PDF audit report read with `pypdf` and added to the Rules Agent's knowledge base | `pypdf`, ChromaDB |
-| 5 | [The Quarterly Earnings Call](quarterly-earnings-call.md) | boss battle | the accountant, the banker and the Regional Managing Director as a graph: one move each, in order, and the call only goes on if the party took the last round | `strands.multiagent.graph` |
 | 5 | [The Developer Advocate Swarm](developer-advocate-swarm.md) | boss battle | four advocates as a swarm, passing the mic themselves; the party beats whoever holds it | `strands.multiagent.swarm` |
 | 7 | [The Context Flood](context-flood.md) | boss battle | a 60-turn campaign squeezed into 20 messages, three ways, with the cast sheets pinned | `strands.agent.conversation_manager`, `compression.pin_message` |
+| 8 | [The Quarterly Earnings Call](quarterly-earnings-call.md) | boss battle | the accountant, the banker and the Regional Managing Director as a graph: one move each, in order, and the call only goes on if the party took the last round | `strands.multiagent.graph` |
 
 Encounter code lives in [`encounters/`](../../encounters/), one folder per encounter, outside the floor folders: the floors stay exactly as their pages describe them.
 

@@ -1,4 +1,6 @@
-"""Floor 5 boss battle, The Quarterly Earnings Call: three executives, one fixed agenda.
+"""Floor 8 boss battle, The Quarterly Earnings Call: three executives, one fixed agenda.
+
+It starts from the Floor 5 code and runs on your machine: no AgentCore needed.
 
 A graph runs agents in an order you draw: nodes are agents, edges say who goes next, and an edge
 can carry a condition. On this call the Quarterly Close Accountant reviews, the Bonus-Season
@@ -9,10 +11,14 @@ Run it from this folder, with the workshop environment active:
     python quarterly_earnings_call.py
 """
 
+import sys
+from pathlib import Path
+
 from strands import Agent
 # TODO: Step 1 - Import GraphBuilder from strands.multiagent
 from strands.multiagent import GraphBuilder
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # the shared dance floor lives in encounters/
 from dance_floor import dance_round, party_took_the_last_round, scoreboard
 
 AGENDA = [
@@ -22,7 +28,7 @@ AGENDA = [
     ("rmd", "the Regional Managing Director", "signs off on the quarter, or does not", "Choreography", 1, "Frantic"),
 ]
 
-CHALLENGE = ("The Quarterly Earnings Call has started on the estuary dance floor, and the party is the only item on the "
+CHALLENGE = ("The Quarterly Earnings Call has started in a glass conference room over Bellevue Way, and the party is the only item on the "
              "agenda. Cordula and Barnaby take every move the executives call.")
 
 

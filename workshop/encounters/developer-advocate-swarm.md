@@ -2,13 +2,15 @@
 
 [Back to Floor 5](../floor-5.md) | [All encounters](README.md) | [Dungeon map](../README.md) <!-- floor-nav -->
 
-Files on this side passage: [`encounters/floor-5-boss-battles/developer_advocate_swarm.py`](../../encounters/floor-5-boss-battles/developer_advocate_swarm.py), [`encounters/floor-5-boss-battles/dance_floor.py`](../../encounters/floor-5-boss-battles/dance_floor.py) <!-- floor-files -->
+Files on this side passage: [`encounters/floor-5-developer-advocate-swarm/developer_advocate_swarm.py`](../../encounters/floor-5-developer-advocate-swarm/developer_advocate_swarm.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 5.** The Developer Advocate Swarm followed us down from the Locks. They had found better lighting: a ring light on the mudflat, a fog machine, a folding table of stickers and socks. There were four of them and one microphone, and they passed it around without ever deciding who went next. Whoever held the mic called a move. Whoever lost it handed it on. You do not beat a swarm by beating one of them. You beat whoever has the mic, again and again, until nobody is left to pass it to.
 <!-- /cordula-log -->
 
 > <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Boss battle: the Developer Advocate Swarm. Four advocates, one mic, no agenda. They decide who goes next. You decide whether they get to. Like and subscribe."
+
+<img src="../../images/cards/opponent-devrel-swarm-640x640.webp" alt="The Developer Advocate Swarm, five cheerful advocates in matching teal conference hoodies with laptops, stickers, a ring light and a camera, dancing in formation" width="240">
 
 ## The Brief
 
@@ -21,9 +23,9 @@ Files on this side passage: [`encounters/floor-5-boss-battles/developer_advocate
 | time | about 20 minutes |
 | model | Amazon Nova 2 Lite, as on every floor |
 
-In [The Quarterly Earnings Call](quarterly-earnings-call.md), your code drew the order. A swarm draws none. Strands gives every agent in the swarm a handoff tool, `handoff_to_agent`, and the agent holding the work decides, from its prompt and the conversation, whether to pass it and to whom. The swarm ends when an agent answers without handing off, or when a safety limit stops it. See [Swarm](https://strandsagents.com/docs/user-guide/sdk/multi-agent/swarm/) and [How Swarms Work](https://strandsagents.com/docs/user-guide/sdk/multi-agent/swarm/#how-swarms-work).
+A swarm has no order drawn in advance. The Floor 8 boss battle, [The Quarterly Earnings Call](quarterly-earnings-call.md), is the opposite: a graph, whose order your code draws. Strands gives every agent in the swarm a handoff tool, `handoff_to_agent`, and the agent holding the work decides, from its prompt and the conversation, whether to pass it and to whom. The swarm ends when an agent answers without handing off, or when a safety limit stops it. See [Swarm](https://strandsagents.com/docs/user-guide/sdk/multi-agent/swarm/) and [How Swarms Work](https://strandsagents.com/docs/user-guide/sdk/multi-agent/swarm/#how-swarms-work).
 
-The rounds are rolled and scored by the same `dance_round` the earnings call uses, from [`dance_floor.py`](../../encounters/floor-5-boss-battles/dance_floor.py), every one at a Driving tempo (+2).
+The rounds are rolled and scored by the same `dance_round` the earnings call uses, from [`dance_floor.py`](../../encounters/dance_floor.py), every one at a Driving tempo (+2).
 
 | advocate | name | move | modifier |
 |---|---|---|---|
@@ -37,7 +39,7 @@ How you know it worked: the mic starts at the keynote and moves after every roun
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/encounters/floor-5-boss-battles
+cd aiRPG-seattle-dungeon-crawl/encounters/floor-5-developer-advocate-swarm
 ```
 
 ## Step 1: Import the Swarm
@@ -121,7 +123,7 @@ When the swarm takes a round, the mic stops there, and the path ends with the ad
 
 ## Swarm or Graph?
 
-The two boss battles on this floor are the same fight with the decision in a different place. In the earnings call, the order is a rule, so it lives in code, in the edges and their condition. In the swarm, the order is a judgment, so it lives with the agents: each advocate picks the next one from the descriptions of the others. A swarm adapts when you cannot draw the path in advance; a graph guarantees the path when you can. The limits of Step 3 are the price of letting the agents choose.
+This boss battle and the Floor 8 one, The Quarterly Earnings Call, are the same fight with the decision in a different place. In the earnings call, the order is a rule, so it lives in code, in the edges and their condition. In the swarm, the order is a judgment, so it lives with the agents: each advocate picks the next one from the descriptions of the others. A swarm adapts when you cannot draw the path in advance; a graph guarantees the path when you can. The limits of Step 3 are the price of letting the agents choose.
 
 ## What It Costs
 

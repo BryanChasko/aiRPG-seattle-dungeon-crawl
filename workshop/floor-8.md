@@ -125,6 +125,12 @@ Check: `agentcore status` lists `rules` under Knowledge Bases as `Deployed`, wit
 
 The project is ready: head to [8.1 The Dice Server](floor-8-1.md) to deploy its first brick.
 
+## Boss Battle: The Quarterly Earnings Call (optional)
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Bellevue has conference rooms the way the estuary has tide pools. In one of them, the accountant from Floor 5 had dialed in a banker and the Regional Managing Director, and we were the only item on the agenda.
+
+[The Quarterly Earnings Call](encounters/quarterly-earnings-call.md): the accountant reviews, the banker spins, the Regional Managing Director signs off. A Strands graph with fixed edges and a condition on each one: the call only goes on if the party took the last round. It starts from the Floor 5 code and runs on your machine, so you can play it before, during or after the deployments of this floor.
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 8: A PERSISTENT WORLD.** A LitRPG world exists whether or not the reader is looking. On your laptop, the System ends when you close the terminal. On AgentCore, the dice, the registry, the rules and the Narrator each run on their own, the characters live in AgentCore Memory, the rules in a managed knowledge base, and every turn leaves a trace. That is the difference between a game you run and a world that runs: Cordula's sheet is still there tomorrow, and so is the accountant's grudge. See [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
