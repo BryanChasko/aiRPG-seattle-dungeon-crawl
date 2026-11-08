@@ -27,7 +27,7 @@
 
         <!-- Assistant message -->
         <div v-if="msg.role === 'assistant' && msg.storyOutput" class="assistant-block">
-          <span class="role-tag">The System</span>
+          <span class="role-tag">The System AI</span>
           <div class="narrative-text" v-html="renderMarkdown(msg.storyOutput.response)"></div>
 
           <div
@@ -48,7 +48,7 @@
       <!-- Typing indicator -->
       <div v-if="typing" class="message-entry message-assistant">
         <div class="assistant-block">
-          <span class="role-tag">The System</span>
+          <span class="role-tag">The System AI</span>
           <div class="typing-indicator">
             <span class="typing-dot"></span>
             <span class="typing-dot"></span>

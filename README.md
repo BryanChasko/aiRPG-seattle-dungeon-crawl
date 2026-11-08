@@ -8,17 +8,19 @@ A hands-on workshop that teaches the [Strands Agents SDK](https://strandsagents.
 
 ## The Collapse
 
-> <img src="images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 2026, 0551, PIER 59.**
+> <img src="images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 2026, 0551, PIER 59.**
 >
-> High water was due at 0556. I was in my kayak under Pier 59 on the dawn debris sweep, tied up at the aquarium's intake screens, close enough to hear the pumps inside.
+> High water was due at 0556. I was in my kayak under Pier 59 on the dawn debris sweep, tied up at the aquarium's intake screens, where the crabs crowd.
+>
+> I had seen his shadow three times before: twice over the Gertie wreck at the Narrows, once under Pier 57. Something too big to be an octopus, always just past where the light reached. I logged every sighting as unconfirmed. I had never met him face to face.
 >
 > At 0551 every phone on the waterfront lit up with the same blank violet box. Then the pier folded, down and in, the way a map folds, and Elliott Bay came in after it.
 >
-> I had about four seconds. I spent them going toward the aquarium instead of away from it, because the octopus inside was looking at me through cracked glass, and nobody else was awake to go get him.
+> The shadow was there, close this time, tangled in the collapsing intake screen: an octopus bigger than any on record, one eye on me. I had about four seconds. I spent them going toward him instead of away, because nobody else was awake to cut him loose. I cut him free with my rescue knife; he wrapped two arms around me and the kayak and held us both clear of the debris as the fold carried us down.
 
-> <img src="images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*, season one, live to a galaxy of viewers. A small problem. The Narrator, the mind that runs this show, built your dungeon for a dry city, and the Sound came in. Its voice, its dice, its rules and its memory are scattered across eight floors under your feet. No Narrator, no show. So you will rebuild it, Crawler, one floor at a time. The audience is watching. Try to be interesting."
+> <img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*, season one, live to a galaxy of viewers. A small problem. I built your dungeon for a dry city, and the Sound came in. My voice, my dice, my rules and my memory are scattered across eight floors under your feet. So you will rebuild me, Crawler, one floor at a time. The audience is watching. Try to be interesting."
 
-> <img src="images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I have rebuilt engines with less to go on. I keep a log. The log is what happened. The steps are what I type next.
+> <img src="images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I have rebuilt engines with less to go on. I keep a log. The log is what happened. The steps are what I type next.
 
 ### [Begin the descent: Floor 0, The Stairwell](workshop/floor-0.md)
 
@@ -69,7 +71,7 @@ Complete the floors in order: each one reuses what the previous one built. Floor
 - [World guide](workshop/world/README.md): where everything the agents say about the world comes from
 - [The Story](workshop/world/story.md): Cordula's crawl, floor by floor, and how each obstacle is a Strands lesson
 - [The Timeline](workshop/world/timeline.md): the fourteen days of the crawl, with the tides
-- [The Cast](workshop/world/cast.md): character sheets for the party and for the two minds that run the crawl, the Narrator and the System AI
+- [The Cast](workshop/world/cast.md): character sheets for the party and for the System AI that runs the crawl
 - [The System](workshop/world/the-system.md): the LitRPG design, mapped to the floor that builds each layer
 - [Seattle, Under the Sound](workshop/world/seattle.md): whose land this is, the eight dungeon floors and the Puget Sound plants and habitats the floors are built from
 - [The Crawl Handbook](workshop/world/crawl-handbook/): the rules, and the knowledge base the Rules Agent searches

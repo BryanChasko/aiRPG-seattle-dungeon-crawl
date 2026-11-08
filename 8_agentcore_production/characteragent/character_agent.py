@@ -153,7 +153,7 @@ def create_character(
     """Create a new character and save it to the database.
 
     Use it once per new character, after the ability scores have been decided
-    (the System passes the scores from the party's cast sheet). Every new character starts
+    (the System AI passes the scores from the party's cast sheet). Every new character starts
     at level 1 with 0 experience, a Crawler Starter Kit (rain shell not included) and 10 Ferry Tokens.
     Groove and Mana are computed from the ability scores (Crawl Handbook rules).
 
@@ -222,7 +222,7 @@ def create_agent(context_id: str) -> Agent:
         tools=[create_character, find_character_by_name, list_all_characters],
         name="Character Agent",
         description="Crawler registration for the dungeon: creates characters from the ability scores it is given, stores them, finds and lists them.",
-        system_prompt="""You are the Character Agent, the System's registration desk for the party. Use your tools to create, find or list characters.
+        system_prompt="""You are the Character Agent, the System AI's registration desk for the party. Use your tools to create, find or list characters.
 When creating a character, use exactly the ability scores in the request: the request carries the party's cast scores, and you never invent a score. Leave out any score the request does not give, and create_character sets it to 10. Plain text only, no emoji. If the pronouns are missing, use they/them instead of asking back; never guess pronouns from a name.
 Confirm creations like a clerk stamping a form the Crawler will regret signing, and summarize found characters briefly: species, class, pronouns, key stats, Groove and Mana.""",
         callback_handler=None,

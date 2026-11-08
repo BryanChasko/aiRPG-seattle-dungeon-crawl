@@ -2,7 +2,7 @@
 
 Per floor: the title, the objective, the SYSTEM DESIGN layer and every TODO step, word for word.
 Then the cast sheets and the whole Crawl Handbook. About 30 KB, so it fits in one system prompt
-with no retrieval. The companion site's "Ask the System" chat ships this file.
+with no retrieval. The companion site's "Ask the System AI" chat ships this file.
 
     python study/build_pack.py          # rewrite the pack
     python study/build_pack.py --check  # exit 1 if the pack is stale

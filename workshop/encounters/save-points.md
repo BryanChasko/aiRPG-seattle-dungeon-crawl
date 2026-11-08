@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-7-save-points/save_points.py`](../../encounters/floor-7-save-points/save_points.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, SIDE PASSAGE OFF FLOOR 7.** Under the madrones on the bluffs there were three lockers, bolted to the rock, each with a different lock. A steel one with a folder inside, a glass one that held a single sealed jar, and a third that Barnaby said was not on the bluffs at all, only the key was. I asked what the lockers were for. The System said save points, and for once it did not make a joke. I put one fact in each: the code word for the ferry gate. Then I walked away, came back as a new agent with no memory, and opened every locker. I check every exit before I need one.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, SIDE PASSAGE OFF FLOOR 7.** Under the madrones on the bluffs there were three lockers, bolted to the rock, each with a different lock. A steel one with a folder inside, a glass one that held a single sealed jar, and a third that Barnaby said was not on the bluffs at all, only the key was. I asked what the lockers were for. The System AI said save points, and for once it did not make a joke. I put one fact in each: the code word for the ferry gate. Then I walked away, came back as a new agent with no memory, and opened every locker. I check every exit before I need one.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Three lockers, Crawlers. The folder, the jar and the one in the cloud. Each keeps your progress until the lights go out. One of them charges rent. I will let you work out which."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Three lockers, Crawlers. The folder, the jar and the one in the cloud. Each keeps your progress until the lights go out. One of them charges rent. I will let you work out which."
 
 ## The Brief
 
@@ -69,7 +69,7 @@ from strands.session.s3_session_manager import S3SessionManager
 
 `FileSessionManager(session_id=..., storage_dir=...)`. The session id names the save point; the folder is where the JSON files land. Leave `storage_dir` out and `FileSessionManager` uses a private folder under the home directory, which is the right choice for a project and the wrong one for a workshop folder you plan to delete.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The steel locker. I opened it and the whole shift was in there, one sheet per message, in order. I could read a folder. I could copy it, diff it, hand it to a teammate. I kept it as the baseline.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The steel locker. I opened it and the whole shift was in there, one sheet per message, in order. I could read a folder. I could copy it, diff it, hand it to a teammate. I kept it as the baseline.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -182,7 +182,7 @@ S3 SESSION MANAGER: skipped. Set SAVE_POINTS_BUCKET to a bucket you created to t
 
 ## Which Locker?
 
-Start with the folder: it is the simplest, and the files are readable. Move to snapshots to go back to a moment, as in a game with save slots, and to restore in one read. Move to S3 when the agent runs somewhere that disappears, such as a container, and the save point has to be somewhere else. Each manager keeps the conversation and nothing more; what the agent learned from that conversation is the job of memory, in [The System Holds Grudges](system-holds-grudges.md). The Floor 8 build puts the Narrator's conversation in AgentCore Memory for the same reason S3 is here: the machine will go.
+Start with the folder: it is the simplest, and the files are readable. Move to snapshots to go back to a moment, as in a game with save slots, and to restore in one read. Move to S3 when the agent runs somewhere that disappears, such as a container, and the save point has to be somewhere else. Each manager keeps the conversation and nothing more; what the agent learned from that conversation is the job of memory, in [The System AI Holds Grudges](system-holds-grudges.md). The Floor 8 build puts the Narrator's conversation in AgentCore Memory for the same reason S3 is here: the machine will go.
 
 ## What It Costs
 
@@ -199,7 +199,7 @@ Loot you're keeping:
 - A fixed `agent_id` is what lets a new agent find an old one
 - A save point holds what was said, not what was learned
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[AUTOSAVE, THREE WAYS]**
 >

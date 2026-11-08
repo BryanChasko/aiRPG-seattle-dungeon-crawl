@@ -1,8 +1,8 @@
-"""Floor 8 encounter, The Grudge Ledger in the Cloud: the System's grudges, kept in a Bedrock knowledge base memory store.
+"""Floor 8 encounter, The Grudge Ledger in the Cloud: the System AI's grudges, kept in a Bedrock knowledge base memory store.
 
-On Floor 7 the System learned to hold a grudge. A grudge kept on one machine dies with the machine. Here each grudge is
+On Floor 7 the System AI learned to hold a grudge. A grudge kept on one machine dies with the machine. Here each grudge is
 written as a document into a managed Amazon Bedrock knowledge base through a memory store, and a Memory Manager hands
-the System the ones that match what the player is doing, before every model call. Run it once to write, once more to
+the System AI the ones that match what the player is doing, before every model call. Run it once to write, once more to
 ask: the second run is a different process that remembers.
 
 Needs a knowledge base called grudges (the page creates it). Run it from this folder, with the workshop environment active:
@@ -60,10 +60,10 @@ def recall(store: BedrockKnowledgeBaseStore, question: str):
 
 
 def make_system(store: BedrockKnowledgeBaseStore) -> Agent:
-    """The System, with the ledger behind it."""
+    """The System AI, with the ledger behind it."""
     return Agent(
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
-        system_prompt="""You are the System, the petty, theatrical game-show host of Dungeon Crawl: Seattle. You keep grudges on behalf
+        system_prompt="""You are the System AI, the petty, theatrical game-show host of Dungeon Crawl: Seattle. You keep grudges on behalf
 of the people the party has beaten: when a grudge from your memory fits the moment, work it into your line, in one or two
 sentences. Nobody is ever hurt; a grudge is a dance-off waiting to happen. Plain text only, no emoji.""",
         # TODO: Step 5 - Give the agent memory_manager=MemoryManager(stores=[store], add_tool_config=True)

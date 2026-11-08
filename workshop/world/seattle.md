@@ -1,8 +1,8 @@
 # The World: Seattle, Under the Sound
 
-> **System AI:** "Welcome to Seattle, Crawlers. The rain is real, the coffee is strong, and as of this morning the waterfront is a dungeon. Please keep your hands, arms and tentacles inside the floor at all times."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Welcome to Seattle, Crawlers. The rain is real, the coffee is strong, and as of this morning the waterfront is a dungeon. Please keep your hands, arms and tentacles inside the floor at all times."
 
-The crawl opens on the Seattle waterfront at 0551 on Day 1, Wednesday, June 17, when the Narrator folds the ground under Pier 59 into a dungeon that runs beneath Puget Sound, under the neighborhoods and out to Tacoma and Bellevue. This page is the setting guide: the places, the living things, the opponents, and how the game treats the cultures of the region.
+The crawl opens on the Seattle waterfront at 0551 on Day 1, Wednesday, June 17, when the System AI folds the ground under Pier 59 into a dungeon that runs beneath Puget Sound, under the neighborhoods and out to Tacoma and Bellevue. This page is the setting guide: the places, the living things, the opponents, and how the game treats the cultures of the region.
 
 ## Whose land this is
 
@@ -15,11 +15,11 @@ Seattle sits on the homelands of Coast Salish peoples, including the Duwamish, w
 
 ## The dungeon floors
 
-Each dungeon floor is a real Puget Sound habitat that the Narrator dragged underground, lit with bioluminescence and filled with opponents.
+Each dungeon floor is a real Puget Sound habitat that the System AI dragged underground, lit with bioluminescence and filled with opponents.
 
 | Dungeon floor | Biome | What grows and lives there | What the Narrator does with it |
 |---|---|---|---|
-| 1. Pier 59 Collapse | The Seattle Aquarium and the waterfront, folded into tide pools | Sea lettuce (*Ulva lactuca*) sheeting the logs and rocks, anemones, the aquarium's shattered tanks | The opening scramble: Cordula breaches the glass of the octopus den and walks out with Barnaby |
+| 1. Pier 59 Collapse | The Seattle Aquarium and the waterfront, folded into tide pools | Sea lettuce (*Ulva lactuca*) sheeting the logs and rocks, anemones, the aquarium's shattered tanks | The opening scramble: Cordula cuts Barnaby free from the intake screen and they walk out together |
 | 2. The Eelgrass Nursery | Shallow mud and sand flats under a few feet of water | Native eelgrass (*Zostera marina*) meadows sheltering Dungeness crabs, herring eggs and young salmon | A stealth floor: dance-offs are loud, and loud wakes the crabs |
 | 3. The Bull Kelp Cathedral | A towering underwater forest | Bull kelp (*Nereocystis luetkeana*) holdfasts gripping the rocks, hollow floating bulbs on stipes up to 100 feet long, sugar kelp (*Laminaria saccharina*) crinkled in the sheltered corners | A vertical floor: climb the stipes, dance on the bulbs, avoid popping a bulb |
 | 4. The Ship Canal | Ballard, Fremont and Lake Union, flooded at the locks | Floating homes on cedar log floats, the Ballard brewery district, Craftsman bungalows with deep porches | Taprooms become potion shops; houseboats become platforms that sway off the beat |

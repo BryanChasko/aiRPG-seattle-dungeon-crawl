@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-2-ask-the-player/ask_the_player.py`](../../encounters/floor-2-ask-the-player/ask_the_player.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 2, THURSDAY, JUNE 18, SIDE PASSAGE OFF FLOOR 2.** Until now the Narrator has called every dance-off as if the outcome was already settled. The Narrator picked the Move Call, rolled the dice, and the first I heard of my own footwork was the replay. I do not like a plan someone else settles over my head. In the eelgrass the System AI had cleared the floor for a round against the Quarterly Close Accountant, the lights were up and the music was waiting. Then the Narrator stopped, mid-sentence, and asked me which move I wanted to call. A handoff works that way on a flight line: the one who owns the decision says it out loud, and everyone else waits for it. Barnaby leaned on my shoulder. "Sergeant, I believe it is a question for you." Shelly had dug in at my heel and said nothing, which is how Shelly agrees.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 2, THURSDAY, JUNE 18, SIDE PASSAGE OFF FLOOR 2.** Until now the System AI has called every dance-off as if the outcome was already settled. The System AI picked the Move Call, rolled the dice, and the first I heard of my own footwork was the replay. I do not like a plan someone else settles over my head. In the eelgrass the System AI had cleared the floor for a round against the Quarterly Close Accountant, the lights were up and the music was waiting. Then the System AI stopped, mid-sentence, and asked me which move I wanted to call. A handoff works that way on a flight line: the one who owns the decision says it out loud, and everyone else waits for it. Barnaby leaned on my shoulder. "Sergeant, I believe it is a question for you." Shelly had dug in at my heel and said nothing, which is how Shelly agrees.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: Ask the Player. The Narrator will now stop the show and ask the player a question. The interruption is irregular. The dice, I assure you, remain fair."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: Ask the Player. I will now stop the show and ask the player a question. The interruption is irregular. The dice, I assure you, remain fair."
 
 ## The Brief
 
@@ -61,7 +61,7 @@ from strands.vended_tools import handoff_to_user
 
 The prompt in the file tells the Narrator the Move Call is the player's to make, to ask before rolling, and to list the six choices in its question. Without that instruction, Amazon Nova 2 Lite, given `dance_round`, picks a Move Call and rolls; the tool alone is not enough. The prompt also says to call `handoff_to_user` once, so the show stops once, not on every sentence.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** A good question has the answers in it. The Narrator does not say "what do you want to do?" It lists the six moves. I read the list, I know my numbers, Footwork is plus one and Power is plus three, and I call Power. The accountant brought a calculator and no warm-up. I like my odds.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** A good question has the answers in it. The System AI does not say "what do you want to do?" It lists the six moves. I read the list, I know my numbers, Footwork is plus one and Power is plus three, and I call Power. The accountant brought a calculator and no warm-up. I like my odds.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -114,7 +114,7 @@ Trap: resume the same `narrator` object. The paused turn lives in the narrator's
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The id on the answer matters. On a flight line you do not say "yes" to the air and hope the right aircraft hears it. You say it to the one that called. The block names the question it answers, and a handoff is nothing more: the right answer reaching the right asker.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The id on the answer matters. On a flight line you do not say "yes" to the air and hope the right aircraft hears it. You say it to the one that called. The block names the question it answers, and a handoff is nothing more: the right answer reaching the right asker.
 
 ## Run It
 
@@ -159,7 +159,7 @@ Loot to keep:
 - The difference between asking a person for permission and asking for a choice
 - A Narrator that leaves the Move Call to the player and the rolls to code
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[YOUR CALL, CRAWLER]**
 >

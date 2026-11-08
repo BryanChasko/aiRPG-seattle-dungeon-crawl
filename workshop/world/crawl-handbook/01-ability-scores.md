@@ -1,6 +1,6 @@
 # Ability Scores and Modifiers
 
-Every Crawler has six ability scores: Strength, Dexterity, Constitution, Intelligence, Wisdom and Charisma. A new Crawler rolls each score with 4d6 drop lowest: four six-sided dice, keep the three highest, add the three dice. The Narrator rolls the six scores with roll_dice (faces 6, count 4, drop_lowest 1) and the System AI announces them. A score never assigned or rolled defaults to 10.
+Every Crawler has six ability scores: Strength, Dexterity, Constitution, Intelligence, Wisdom and Charisma. A new Crawler rolls each score with 4d6 drop lowest: four six-sided dice, keep the three highest, add the three dice. The System AI rolls the six scores with roll_dice (faces 6, count 4, drop_lowest 1) and announces them. A score never assigned or rolled defaults to 10.
 
 The ability modifier is the score minus 10, divided by 2, rounded down.
 
@@ -22,6 +22,6 @@ What each ability does in the crawl:
 - Strength: Power Move Calls, lifting, carrying, holding a door shut.
 - Dexterity: Footwork Move Calls, the Final Beat, stealth, balance, throwing objects (and fish).
 - Constitution: Endurance Move Calls and Groove.
-- Intelligence: Choreography Move Calls, locks, puzzles, the System's fine print.
+- Intelligence: Choreography Move Calls, locks, puzzles, the System AI's fine print.
 - Wisdom: Read the Room Move Calls, noticing hidden opponents, traps and ambushes.
 - Charisma: Presence Move Calls, sponsors, crowds, talking an opponent out of a dance-off.

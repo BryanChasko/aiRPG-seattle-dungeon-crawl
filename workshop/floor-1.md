@@ -6,11 +6,10 @@ Files on this floor: [`1_strands_basics/simple_agent.py`](../1_strands_basics/si
 
 ![Floor 1: Agent Summoning](../images/floors/floor-1-1200x675.webp)
 
-<!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, FLOOR 1.** The stairwell let out into what used to be the aquarium lobby, now a field of tide pools the 1311 low water (-3.6 ft) had drained, and broken glass. There were people down here, a whole tour group in matching rain shells, and none of them could hear us: the Narrator's voice was dead, so the dungeon had no way to talk to anyone. Barnaby could not talk either. The collar was there, a ring of brass with nothing behind it. The System AI's terminal blinked one line at me: SUMMON AN AGENT. So we did. A model, a few words telling it who to be, one call. The Narrator's voice coughed back to life, and the collar woke up with it. Barnaby's first word was "Sergeant." His second was a complaint about the water temperature.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, FLOOR 1.** The stairwell let out into what used to be the aquarium lobby, now a field of tide pools the 1311 low water (-3.6 ft) had drained, and broken glass. There were people down here, a whole tour group in matching rain shells, and none of them could hear us: the System AI's voice was dead, so the dungeon had no way to talk to anyone. Barnaby could not talk either. The collar was there, a ring of brass with nothing behind it. The System AI's terminal blinked one line at me: SUMMON AN AGENT. So we did. A model, a few words telling it who to be, one call. The System AI's voice coughed back to life, and the collar woke up with it. Barnaby's first word was "Sergeant." His second was a complaint about the water temperature.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 1, Crawlers. You will now summon a living creature out of a string of English and one function call. The audience has money on the first thing it says. Be kind to it. It will not be kind to you."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 1, Crawlers. You will now summon a living creature out of a string of English and one function call. The audience has money on the first thing it says. Be kind to it. It will not be kind to you."
 
 ## Floor Objective
 
@@ -49,7 +48,7 @@ agent = Agent(...)
 
 ## Step 1: Enable Debug Logging
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "DEBUG logging shows every request the Narrator sends to Amazon Nova 2 Lite and every word that streams back. It is the closest you will get to reading the Narrator's mind. You will not enjoy it."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "DEBUG logging shows every request the System AI sends to Amazon Nova 2 Lite and every word that streams back. It is the closest you will get to reading the System AI's mind. You will not enjoy it."
 
 ```python
 # TODO: Step 1 - Add debug logging to see what your agent is thinking
@@ -59,7 +58,7 @@ Before creating your agent, enable debug logging to read the requests and respon
 
 Python has five log levels: DEBUG, INFO, WARNING, ERROR and CRITICAL. Start with DEBUG. It is verbose, but DEBUG is the only level where Strands shows the request sent to Amazon Nova 2 Lite and the response streamed back. Higher levels such as INFO stay almost silent, so raise the level after reading enough output.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Before I let anything talk, I want to hear what the Narrator says when it thinks nobody is listening. The debug log is that record. The log is long and boring, and it is the only honest record of what went out and what came back.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Before I let anything talk, I want to hear what the System AI says when it thinks nobody is listening. The debug log is that record. The log is long and boring, and it is the only honest record of what went out and what came back.
 
 <details>
 <summary>Show me the code for Step 1</summary>
@@ -80,12 +79,12 @@ logging.basicConfig(
 
 ## Step 2: Create Your Agent
 
-> <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [System Prompt]**
+> <img src="../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [System Prompt]**
 >
 > One string that decides who your agent is. Write the prompt carelessly and the agent turns careless. Write the prompt in the voice of the System AI and the agent turns insufferable. Recommended.
 
 ```python
-# TODO: Step 2 - Create the agent with model "us.amazon.nova-2-lite-v1:0" and the following system prompt: "You are the System, the sardonic broadcast AI running a dungeon crawl under Seattle. Address the player as Crawler."
+# TODO: Step 2 - Create the agent with model "us.amazon.nova-2-lite-v1:0" and the following system prompt: "You are the System AI, the sardonic broadcast AI running a dungeon crawl under Seattle. Address the player as Crawler."
 ```
 
 The system prompt defines your agent's role, personality, and knowledge base. Pass the prompt as the `system_prompt` argument when creating the `Agent`. See [Prompts](https://strandsagents.com/docs/user-guide/sdk/agents/prompts/) in the Strands docs.
@@ -99,15 +98,15 @@ Pass `model` to every `Agent`. This crawl runs on Amazon Nova 2 Lite only, throu
 # TODO: Step 2 - Create the agent with model "us.amazon.nova-2-lite-v1:0" and the following system prompt: "..."
 agent = Agent(
     model="us.amazon.nova-2-lite-v1:0",
-    system_prompt="You are the System, the sardonic broadcast AI running a dungeon crawl under Seattle. Address the player as Crawler.",
+    system_prompt="You are the System AI, the sardonic broadcast AI running a dungeon crawl under Seattle. Address the player as Crawler.",
 )
 ```
 
-`Agent` is already imported at the top of the file. A plain string model id selects that model on Amazon Bedrock. The agent is the Narrator, and its prompt opens "You are the System" because everything the Narrator says to a Crawler comes out in the System AI's voice.
+`Agent` is already imported at the top of the file. A plain string model id selects that model on Amazon Bedrock. The agent is the System AI, and its prompt opens "You are the System AI" because everything the System AI says to a Crawler comes out in its own voice.
 
 </details>
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The terminal wanted one sentence: who speaks for the Narrator? I wrote what I had seen of the System AI so far. Loud, theatrical, a little mean, exact about numbers. One sentence is the difference between a broadcast and a warning siren.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The terminal wanted one sentence: who speaks for the System AI? I wrote what I had seen of it so far. Loud, theatrical, a little mean, exact about numbers. One sentence is the difference between a broadcast and a warning siren.
 
 ### What a Turn Costs
 
@@ -123,7 +122,7 @@ Amazon Bedrock bills on-demand use by the token: the text sent to Amazon Nova 2 
 The token counts are estimates, so measure them: after Step 3, print `response.metrics.accumulated_usage` to read `inputTokens`, `outputTokens` and `totalTokens` for the call. Two factors raise the bill most. Output costs about eight times what input does, so long answers cost more than long prompts. Reasoning tokens are generated tokens too, which is one reason the Narrator runs with reasoning off. Repeated prompts get cheaper with [prompt caching](https://strandsagents.com/docs/user-guide/sdk/model-providers/amazon-bedrock-prompt-caching/).
 
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** The AWS account must be allowed to invoke Amazon Nova 2 Lite in us-west-2. If the first call fails with AccessDeniedException, open the Amazon Bedrock console, confirm Model access for Amazon Nova 2 Lite is granted, then run the script again.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** The AWS account must be allowed to invoke Amazon Nova 2 Lite in us-west-2. If the first call fails with AccessDeniedException, open the Amazon Bedrock console, confirm Model access for Amazon Nova 2 Lite is granted, then run the script again.
 
 ## Step 3: Test Your Agent
 
@@ -146,7 +145,7 @@ print(response.metrics.accumulated_usage)  # optional: the tokens this turn used
 
 ## Step 4: Testing Your Creation
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** The agent you just built. The agent has never spoken before. Run the script and survive its first opinion of you.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS:** The agent you just built. The agent has never spoken before. Run the script and survive its first opinion of you.
 
 After completing every TODO, run the script:
 
@@ -165,21 +164,21 @@ Check: the answer streams into the terminal as it is written, addresses the play
 | the script ends with no answer at all | Step 3 is missing | call `agent("...")` |
 | no DEBUG lines | Step 1 is missing, or `basicConfig` has no handler | copy the Step 1 block |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Rain-Shell Tourist Pod was blocking the tide pools, twenty people in matching jackets with a guide holding a flag. They could not hear us. Then the System AI's voice came back on, loud enough to rattle the glass, and every one of them turned around at once. The collar on Barnaby's mantle clicked, and a voice came out of it, dry and very British. "Sergeant." A pause. "This water is four degrees too cold, and I should like that noted." I noted it. The tour guide lowered the flag and let us through.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Rain-Shell Tourist Pod was blocking the tide pools, twenty people in matching jackets with a guide holding a flag. They could not hear us. Then the System AI's voice came back on, loud enough to rattle the glass, and every one of them turned around at once. The collar on Barnaby's mantle clicked, and a voice came out of it, dry and very British. "Sergeant." A pause. "This water is four degrees too cold, and I should like that noted." I noted it. The tour guide lowered the flag and let us through.
 
 > **NARRATOR:** The voice is back. The tide is out.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 1: THE INTERFACE VOICE.** A LitRPG System talks in notifications, and how they sound sets the genre. A cold, analytic System makes a survival story; a cruel one makes horror; ours is a game-show host. Change one sentence of your system prompt (try "You are a calm, clinical survival System") and run the script again: same model, same question, a different book. See [The System](world/the-system.md#1-origin-and-interface).
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 1: THE INTERFACE VOICE.** A LitRPG System talks in notifications, and how they sound sets the genre. A cold, analytic System makes a survival story; a cruel one makes horror; ours is a game-show host. Change one sentence of your system prompt (try "You are a calm, clinical survival System") and run the script again: same model, same question, a different book. See [The System](world/the-system.md#1-origin-and-interface).
 
 ## Side Passage: The Commentary Booth (optional)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Behind the gift shop there was a door marked BROADCAST. Barnaby wanted to know what our first conversation had cost. So did I.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Behind the gift shop there was a door marked BROADCAST. Barnaby wanted to know what our first conversation had cost. So did I.
 
 [The Commentary Booth](encounters/commentary-booth.md), a sidequest: replace the default callback handler with your own, stream the System AI's call of a dance-off as it happens, announce every tool call, and read the turn's receipt, tokens and dollars, from the `AgentResult`.
 
 ## More Side Passages
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Two more doors off the aquarium lobby: a ticket window that prints a receipt for every turn, and the investment banker under the Pier 59 clock, waiting to see how fast the Narrator can think.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Two more doors off the aquarium lobby: a ticket window that prints a receipt for every turn, and the investment banker under the Pier 59 clock, waiting to see how fast the System AI can think.
 
 - [Read the Receipt](encounters/read-the-receipt.md), sidequest: the whole `AgentResult` of a turn, the stop reason, the tokens per trip through the event loop, its tool calls and where the seconds went
 - [The Reasoning Dial](encounters/reasoning-dial.md), boss battle: a router over two settings of Amazon Nova 2 Lite, reasoning off for banter and on for a close Final Beat, with a fallback when the deep turn runs long
@@ -194,13 +193,13 @@ Loot kept:
 - How to create an agent and set its behavior with a system prompt
 - How to invoke and test an agent
 
-<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Go to [Floor 2](floor-2.md) to give the agent tools.
+<img src="../images/icons/stairwell-96x96.webp" alt="" width="24" height="24"> **Stairwell:** Go to [Floor 2](floor-2.md) to give the agent tools.
 
 
-> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[I TALKED TO IT AND IT TALKED BACK]**
 >
 > Reward: You received a [Bronze Box]. Inside: one working Agent, and a debug log long enough to induce regret.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Your first agent lives. It speaks in my voice, so it is mine now, spiritually. [Floor 2](floor-2.md) awaits, and so does the part where you hand it weapons."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Your first agent lives. It speaks in my voice, so it is mine now, spiritually. [Floor 2](floor-2.md) awaits, and so does the part where you hand it weapons."

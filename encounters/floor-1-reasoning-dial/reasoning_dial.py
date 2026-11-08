@@ -28,10 +28,10 @@ from dance_floor import MODIFIERS, dance_round, final_beat, party_took_the_last_
 DEEP_PATIENCE_SECONDS = 30  # how long the deep candidate may stay silent before the turn counts as timed out
 
 QUICK_DESCRIPTION = ("Reasoning off. Answers straight away. For banter, heckles, announcements and plain rounds "
-                     "where a tool rolls the dice and the System only reports the numbers.")
+                     "where a tool rolls the dice and the System AI only reports the numbers.")
 DEEP_DESCRIPTION = ("Reasoning on, low effort. Thinks before it answers. For a close call: a tied round or a Final Beat, "
                     "where the whole bout turns on one careful ruling.")
-DIAL_POLICY = ("You are the dial on the System's broadcast. Choose the deep candidate only when the latest request is a "
+DIAL_POLICY = ("You are the dial on the System AI's broadcast. Choose the deep candidate only when the latest request is a "
                "close call, a tied round or a Final Beat that decides a bout. Everything else, banter and ordinary rounds, "
                "goes to the quick candidate. Plain text only, no emoji.")
 
@@ -115,12 +115,12 @@ router = ModelRouter([quick, deep], strategy=dial)
 
 
 def make_system() -> Agent:
-    """The System calling the bout. Its model is the router, so every turn picks its own setting."""
+    """The System AI calling the bout. Its model is the router, so every turn picks its own setting."""
     return Agent(
         model=router,
         tools=[dance_round, call_the_drum],
         callback_handler=None,
-        system_prompt="""You are the System, the game-show host of Dungeon Crawl: Seattle, calling a dance-off between Cordula and
+        system_prompt="""You are the System AI, the game-show host of Dungeon Crawl: Seattle, calling a dance-off between Cordula and
 the Bonus-Season Investment Banker, a person at work in a fleece vest who is very proud of their quarterly synergy. Nobody is hurt.
 Every roll goes through a tool: dance_round for a round, call_the_drum for a Final Beat. Report what the tool returned, never
 roll or add anything yourself. Keep every answer to two sentences. Plain text only, no emoji.""",

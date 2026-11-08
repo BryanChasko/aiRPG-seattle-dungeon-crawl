@@ -35,13 +35,13 @@ SITUATION = (
     "Read the Room +2). Nobody is hurt in a dance-off."
 )
 
-DECISION_PROMPT = ("You are the System's Narrator, calling a dance-off between the party and an accountant at work. "
+DECISION_PROMPT = ("You are the System AI, calling a dance-off between the party and an accountant at work. "
                    "Read the room and pick the tempo and the Move Call that make the best show for the audience. "
                    "Plain text only, no emoji.")
 
 
 def make_decision_model():
-    """The System's decision model: Amazon Nova 2 Lite, answering closed questions."""
+    """The System AI's decision model: Amazon Nova 2 Lite, answering closed questions."""
     # TODO: Step 2 - Return an LLMDecisionModel over a BedrockModel with model_id us.amazon.nova-2-lite-v1:0 and a system_prompt of DECISION_PROMPT
     return LLMDecisionModel(
         model=BedrockModel(model_id="us.amazon.nova-2-lite-v1:0"),  # Amazon Nova 2 Lite, US cross-Region inference profile
@@ -58,14 +58,14 @@ async def read_the_room(decision_model, situation: str, last_move: str | None, t
     """Ask for the Move Call, and for the tempo too when none has been announced. Returns (tempo, move_call) as plain strings."""
     questions = {
         "move_call": {
-            "question": "Which Move Call should the System make next, given what you know about the accountant and the party?",
-            "choices": [move for move in MOVES if move != last_move],  # the System never calls the same move twice in a row
+            "question": "Which Move Call should the System AI make next, given what you know about the accountant and the party?",
+            "choices": [move for move in MOVES if move != last_move],  # the System AI never calls the same move twice in a row
             "uncertainty": False,  # commit to one of the choices; no "uncertain" answer
         },
     }
     if tempo is None:
         questions["tempo"] = {
-            "question": "Which tempo should the System announce? Steady is gentle, Driving is brisk, Frantic is a quarter-end scramble.",
+            "question": "Which tempo should the System AI announce? Steady is gentle, Driving is brisk, Frantic is a quarter-end scramble.",
             "choices": list(TEMPO),
             "uncertainty": False,
         }
@@ -91,7 +91,7 @@ async def main() -> None:
         round_ = dance(tempo, move_call)
         last_move = move_call
         if round_number == 1:
-            print(f"The System announces the tempo: {tempo}")
+            print(f"The System AI announces the tempo: {tempo}")
         print(f"Round {round_number}, {move_call}: {round_['crawler']} against {round_['opponent_roll']}"
               f"{' (Final Beat: ' + round_['final_beat'] + ')' if round_['final_beat'] else ''}"
               f" -> {round_['winner']}, {round_['groove_lost']} Groove lost")

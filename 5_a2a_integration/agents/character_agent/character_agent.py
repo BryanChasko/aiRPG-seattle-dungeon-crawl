@@ -143,7 +143,7 @@ def create_character(
     """Create a new character and save it to the database.
 
     Use it once per new character, after the ability scores have been decided
-    (the System passes the scores from the party's cast sheet). Every new character starts
+    (the System AI passes the scores from the party's cast sheet). Every new character starts
     at level 1 with 0 experience, a Crawler Starter Kit (rain shell not included) and 10 Ferry Tokens.
     Groove and Mana are computed from the ability scores (Crawl Handbook rules).
 

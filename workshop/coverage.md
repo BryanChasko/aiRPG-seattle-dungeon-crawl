@@ -1,6 +1,6 @@
 # Coverage: Everything the Original Teaches, and What the Crawl Adds
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "I keep receipts. Here are mine."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "I keep receipts. Here are mine."
 
 This crawl is built on *Once Upon Agentic AI*, the AWS sample workshop that first taught the Strands Agents SDK through a role-playing game. We kept every exercise the original workshop teaches and added to it. This page shows the evidence.
 

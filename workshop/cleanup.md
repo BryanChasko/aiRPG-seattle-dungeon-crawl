@@ -5,10 +5,10 @@
 ![The Exit: Final Cleanup](../images/floors/exit-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, THE EXIT.** We came up on the beach at Alki at sunrise, 0515, the skyline across the bay and the rain finally easing off. I packed out everything we brought in, as on any patrol: every deployment, every log, every file. Then I set the dry bag down at the waterline and opened it. The Sound was right there. The aquarium had put his return to the Sound on its calendar for June 24, a week earlier, and the crawl had taken that date from both of us. I told him the Sound was open and the choice was his. Barnaby looked at the water for a long time. Then he looked at me.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, THE EXIT.** We came up on the beach at Alki at sunrise, 0515, the skyline across the bay and the rain finally easing off. I packed out everything we brought in, as on any patrol: every deployment, every log, every file. Then I set the dry bag down at the waterline and opened it. The Sound was right there. He had come from the wreck at the Narrows, where the King Octopus legend lives, and the Sound would take him back whenever he was ready. I told him it was open and the choice was his. Barnaby looked at the water for a long time. Then he looked at me.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The crawl is over and the quarter closes at midnight. Stop the servers, tear down the stack, delete the bucket and the log groups. Any resource left running keeps billing the account, and I do not forgive invoices."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The crawl is over and the quarter closes at midnight. Stop the servers, tear down the stack, delete the bucket and the log groups. Any resource left running keeps billing the account, and I do not forgive invoices."
 
 ## Floor Objective
 
@@ -29,7 +29,7 @@ What keeps billing, and which step removes it (the rates are on [What Floor 8 Co
 
 Each left-behind resource costs cents a month at workshop size, and a whole year of those resources adds up to well under a dollar. Clean up anyway: an account that is understood is cheaper than one that needs an audit later.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Pack out what we pack in. That is the first rule of every patrol I have ever run, and the Sound does not care that the trash is digital. I made the list before I touched anything, the way a patrol counts gear before leaving a beach: every runtime, every memory, every bucket, every log.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Pack out what we pack in. That is the first rule of every patrol I have ever run, and the Sound does not care that the trash is digital. I made the list before I touched anything, the way a patrol counts gear before leaving a beach: every runtime, every memory, every bucket, every log.
 
 ## Amazon Bedrock
 
@@ -44,7 +44,7 @@ Press Ctrl+C in the terminal of every running server: the dice MCP server, the R
 
 ## Floor 8: AgentCore Resources
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The AgentCore CLI has no destroy command. Empty the project, then deploy the emptiness. The System finds the sequence poetic."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The AgentCore CLI has no destroy command. Empty the project, then deploy the emptiness. The System finds the sequence poetic."
 
 Skip this section without Floor 8. Otherwise run the commands from the project folder, with the same credentials and region as in Floor 8:
 
@@ -63,7 +63,7 @@ The AgentCore CLI has no destroy command: remove the resources from the project,
 
 ### Step 2: Deploy the Empty Project
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Run `agentcore deploy -y` from the root of the `gameprod` folder, as with `agentcore remove all -y`. The CLI looks for `agentcore/agentcore.json` in the current folder and its parents: from `8_agentcore_production` or a brick folder, the CLI stops with `No agentcore project found`, and nothing is deleted.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run `agentcore deploy -y` from the root of the `gameprod` folder, as with `agentcore remove all -y`. The CLI looks for `agentcore/agentcore.json` in the current folder and its parents: from `8_agentcore_production` or a brick folder, the CLI stops with `No agentcore project found`, and nothing is deleted.
 
 ```bash
 agentcore deploy -y
@@ -83,7 +83,7 @@ aws cloudformation describe-stacks --stack-name AgentCore-gameprod-default
 
 The output should read `Stack with id AgentCore-gameprod-default does not exist`.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Tearing down the stack took less time than building one brick of it. Barnaby watched the four runtimes go one by one and did not say anything. The dice, the desk, the clerk, the voice. Then the records office, with his folder in it. I asked if he was all right. "It was a good office, Sergeant. I do not need it anymore."
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Tearing down the stack took less time than building one brick of it. Barnaby watched the four runtimes go one by one and did not say anything. The dice, the desk, the clerk, the voice. Then the records office, with his folder in it. I asked if he was all right. "It was a good office, Sergeant. I do not need it anymore."
 
 ### Step 3: Delete the Rules Bucket
 
@@ -97,7 +97,7 @@ Check: the command ends with `remove_bucket: gameprod-rules-...`. If it says `No
 
 ### Step 4: Delete the Runtime Logs
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The runtime log groups never expire. They will outlive the Crawler. Delete the log groups."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The runtime log groups never expire. They will outlive the Crawler. Delete the log groups."
 
 AgentCore Runtime writes the logs of each runtime in a CloudWatch log group that outlives the runtime and never expires. Delete the project's log groups:
 
@@ -122,7 +122,7 @@ The CDK bootstrap stack: on the first deployment, the CLI bootstrapped the regio
 
 ## Local files
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Delete the knowledge base and .agent/, and restore characters.json to its shipped state. The party will re-register. The party always comes back."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Delete the knowledge base and .agent/, and restore characters.json to its shipped state. The party will re-register. The party always comes back."
 
 Every item below is generated during the workshop and gitignored, delete freely:
 
@@ -136,11 +136,11 @@ Every item below is generated during the workshop and gitignored, delete freely:
 git checkout -- 5_a2a_integration/agents/character_agent/characters.json
 ```
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Last, the local gear: the knowledge base folder, the harness sessions, the registry file restored to the shipped state. I zipped the dry bag shut on an empty laptop. Then I carried Barnaby down to the waterline at Alki and set the bag on the wet sand.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Last, the local gear: the knowledge base folder, the harness sessions, the registry file restored to the shipped state. I zipped the dry bag shut on an empty laptop. Then I carried Barnaby down to the waterline at Alki and set the bag on the wet sand.
 
 ## The Last Log
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, ALKI, 0515.** High water had come at 0442, an hour and a quarter earlier than on the morning the pier fell, and the sun was up at 0515. I told him the truth: the Narrator was rebuilt, the collar would keep working, and the Sound was open, whenever he wanted it. He did not have to ride on my back to be the party leader. I held out the dry bag and the open Sound and told him it was his call. He looked at the water for a long time. Then he poured himself out of the bag and into the shallows, red going to white going to red, and was gone. I sat on the sand for a while. Shelly dug in next to my boot. Chonks stuck himself to my forearm guard. At 0631 the collar pinged in my earpiece. "Sergeant. The Narrows. Next Tuesday. Bring the kayak." That is the end of the crawl. It is not the end of the patrol.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, ALKI, 0515.** High water had come at 0442, an hour and a quarter earlier than on the morning the pier fell, and the sun was up at 0515. I told him the truth: the System AI was rebuilt, the collar would keep working, and the Sound was open, whenever he wanted it. He did not have to ride on my back to be the party leader. I held out the dry bag and the open Sound and told him it was his call. He looked at the water for a long time. Then he poured himself out of the bag and into the shallows, red going to white going to red, and was gone. I sat on the sand for a while. Shelly dug in next to my boot. Chonks stuck himself to my forearm guard. At 0631 the collar pinged in my earpiece. "Sergeant. The Narrows. Next Tuesday. Bring the kayak." That is the end of the crawl. It is not the end of the patrol.
 
 ## Floor Clear
 
@@ -159,10 +159,10 @@ Loot kept:
 Build a crawl of your own: the fundamentals are covered. Fork the [world guide](world/README.md), move the dungeon to your own city, and let the city's people and plants set the rules.
 
 
-> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[LEFT THE STOVE ON]**
 >
 > Reward: a [Desperation Box]. Inside: an empty gameprod project and a CloudFormation stack that no longer exists. Check the account anyway.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "You survived the crawl. The audience is leaving. Go build a crawl of your own."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You survived the crawl. The audience is leaving. Go build a crawl of your own."

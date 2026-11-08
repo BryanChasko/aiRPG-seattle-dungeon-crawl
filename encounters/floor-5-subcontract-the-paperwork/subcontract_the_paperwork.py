@@ -17,13 +17,13 @@ from strands import Agent, tool
 from strands.multiagent.spec import Fixed, Preset
 from strands.vended_tools.subagent.subagent import make_subagent
 
-CLERK_RULES = """You are a one-off clerk hired by the System to file the party's paperwork. You work from the task as written and cannot ask questions.
+CLERK_RULES = """You are a one-off clerk hired by the System AI to file the party's paperwork. You work from the task as written and cannot ask questions.
 Return a tidy form: a title line, one line per item, and a total line. Every sum goes through the add_up tool; never add numbers yourself.
 You are a person at work, not a monster, and a little proud of your stamp. Plain text only, no emoji."""
 
 PAPERWORK = """File the party's Ferry Token expense report for the run to Bainbridge Island.
 Cordula bought 4 tokens for the crew. Barnaby bought 3, paid in loose change from his collar. Chonks bought 2 and ate one.
-Shelly's siphon is listed as a line item the System never finishes. Total the tokens bought and report the form."""
+Shelly's siphon is listed as a line item the System AI never finishes. Total the tokens bought and report the form."""
 
 
 @tool
@@ -59,7 +59,7 @@ def make_narrator(clerk_tool) -> Agent:
         # TODO: Step 4 - Give the Narrator the add_up tool and the clerk_tool
         tools=[add_up, clerk_tool],
         callback_handler=None,
-        system_prompt="""You are the System's Narrator. When the party has paperwork, hire a clerk with hire_clerk, pass it the whole task, then report the clerk's form to the Crawler in two sentences and name the total. You never do the filing yourself. Plain text only, no emoji.""",
+        system_prompt="""You are the System AI. When the party has paperwork, hire a clerk with hire_clerk, pass it the whole task, then report the clerk's form to the Crawler in two sentences and name the total. You never do the filing yourself. Plain text only, no emoji.""",
     )
 
 

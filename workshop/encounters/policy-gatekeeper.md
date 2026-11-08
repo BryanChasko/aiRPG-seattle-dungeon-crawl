@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-2-policy-gatekeeper/policy_gatekeeper.py`](../../encounters/floor-2-policy-gatekeeper/policy_gatekeeper.py), [`encounters/floor-2-policy-gatekeeper/gatekeeper.cedar`](../../encounters/floor-2-policy-gatekeeper/gatekeeper.cedar) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 2, THURSDAY, JUNE 18, SIDE PASSAGE OFF FLOOR 2.** Kiro the Doomsday Scripter was waiting at the bottom of the bonus stairs with a folder of scrolls and the happiest face I have seen on a person holding that much demolition magic. On the bonus floor I approved every one of Kiro's calls by hand. Forty approvals into a long day I would have said yes to anything, and the System AI knows it. So the Underground gave us a gate instead: a door with a rulebook bolted to the frame and a clerk beside it who waves the dull paperwork through. Kiro gets the floor folder. Everything else, the gate answers before I see the call. Barnaby read the rulebook aloud. "Sergeant, the rulebook is a short document. A short rulebook is the first sign of a good rulebook."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 2, THURSDAY, JUNE 18, SIDE PASSAGE OFF FLOOR 2.** Kiro the Doomsday Scripter was waiting at the bottom of the bonus stairs with a folder of scrolls and the happiest face I have seen on a person holding that much demolition magic. On the bonus floor I approved every one of Kiro's calls by hand. Forty approvals into a long day I would have said yes to anything, and the System AI knows it. So the Underground gave us a gate instead: a door with a rulebook bolted to the frame and a clerk beside it who waves the dull paperwork through. Kiro gets the floor folder. Everything else, the gate answers before I see the call. Barnaby read the rulebook aloud. "Sergeant, the rulebook is a short document. A short rulebook is the first sign of a good rulebook."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Boss battle: the Policy Gatekeeper. The opponent is Kiro the Doomsday Scripter, a person at work, who has been told to do five jobs and has not been told which two are forbidden. The gate has. None of you will enjoy this. The audience will."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Policy Gatekeeper. The opponent is Kiro the Doomsday Scripter, a person at work, who has been told to do five jobs and has not been told which two are forbidden. The gate has. None of you will enjoy this. The audience will."
 
 ## The Brief
 
@@ -77,7 +77,7 @@ from strands.vended_interventions.hitl import HumanInTheLoop, LLMClassifierConfi
 
 `policies` takes either policy text or the path to a `.cedar` file; pass `str(POLICY)`. The `principal` says who is asking. Every call in this battle comes from the one agent, so a fixed principal is enough; the rulebook does not use the principal, but Cedar needs a principal for every request. The handler reads and checks the file as it is built, so a typo in a rule fails at Step 2, with the policy's own error, and not in the middle of a fight.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I read the rulebook the way I read a load plan. Two permits, one forbid, and the forbid wins any argument. If a plan has an exception that beats the rule, I want it written down before the load moves, not discovered during the lift. Kiro's rulebook writes the exception down. The shell can run a command that names the floor folder. It cannot run one that climbs out of it, even when the same command also names the folder.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I read the rulebook the way I read a load plan. Two permits, one forbid, and the forbid wins any argument. If a plan has an exception that beats the rule, I want it written down before the load moves, not discovered during the lift. Kiro's rulebook writes the exception down. The shell can run a command that names the floor folder. It cannot run one that climbs out of it, even when the same command also names the folder.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -140,7 +140,7 @@ hitl = HumanInTheLoop(classifier=risk_classifier, ask="stdio")
 
 The order is the strategy. Handlers run in the order of the list and the first deny stops the line. Put `cedar` before `hitl` and a forbidden call is turned back before the classifier spends a model call on it or a human sees it. Put `ledger` first and the ledger records every call, forbidden ones included; swap `ledger` behind `cedar` and the ledger never hears about a denied call.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby asked why the clerk does not just guard everything. A clerk who guards everything is the same as me approving forty calls by hand: after a while the hand says yes on its own. The rulebook turns back what must never happen, the clerk waves through what is dull, and the calls left for me are few enough to read. I would rather make four decisions with my head than forty with my thumb.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby asked why the clerk does not just guard everything. A clerk who guards everything is the same as me approving forty calls by hand: after a while the hand says yes on its own. The rulebook turns back what must never happen, the clerk waves through what is dull, and the calls left for me are few enough to read. I would rather make four decisions with my head than forty with my thumb.
 
 <details>
 <summary>Show me the code for Step 5</summary>
@@ -205,7 +205,7 @@ Loot to keep:
 - A risk classifier on Amazon Nova 2 Lite, already used on every floor, so people see only the risky calls
 - Why the order of the handler list is the strategy
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[THE SHORT RULEBOOK]**
 >

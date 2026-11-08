@@ -9,10 +9,10 @@ Files on this floor: [`5_a2a_integration/agents/rules_agent/rules_agent.py`](../
 ![Estuary dance floor at low tide](../images/floors/estuary-dancefloor-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 6, MONDAY, JUNE 22, FLOOR 5.** The estuary floods twice a day. The dance floor is there, then it is not. This is where the System finally wanted to start the show, which meant rules, and nobody in the party had read them. We built a clerk to read the rule book, a registration desk to stamp our sheets, and a Narrator to run the game, each one doing one job and talking to the others. Barnaby ran the meeting. He was good at it. He delegated, he cited the handbook, he made the Narrator answer in a format the HUD could read. Then a Quarterly Close Accountant stepped onto the pickleweed and challenged us to a dance-off, and we found out whether any of it worked.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 6, MONDAY, JUNE 22, FLOOR 5.** The estuary floods twice a day. The dance floor is there, then it is not. This is where the System AI finally wanted to start the show, which meant rules, and nobody in the party had read them. We built a clerk to read the rule book, a registration desk to stamp our sheets, and a Narrator to run the game, each one doing one job and talking to the others. Barnaby ran the meeting. He was good at it. He delegated, he cited the handbook, he made the Narrator answer in a format the HUD could read. Then a Quarterly Close Accountant stepped onto the pickleweed and challenged us to a dance-off, and we found out whether any of it worked.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 5. A party. How sweet. Three agents, four terminals, one orchestrator, and a very real chance you forget to start one of them. The audience is placing bets on which."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 5. A party. How sweet. Three agents, four terminals, one orchestrator, and a very real chance you forget to start one of them. The audience is placing bets on which."
 
 ## Floor Objective
 
@@ -26,7 +26,7 @@ Change to the root of Floor 5:
 cd aiRPG-seattle-dungeon-crawl/5_a2a_integration
 ```
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The estuary smelled like salt and cut grass. The tide table on a post said the dance floor would be dry for six hours, then gone. Six hours to stand up a rule clerk, a registration desk and a Narrator, and get them talking. I have run tighter timelines on a beach landing. I have not run one with an octopus in charge.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The estuary smelled like salt and cut grass. The tide table on a post said the dance floor would be dry for six hours, then gone. Six hours to stand up a rule clerk, a registration desk and a Narrator, and get them talking. I have run tighter timelines on a beach landing. I have not run one with an octopus in charge.
 
 > **NARRATOR:** The tide turns. The Estuary floods at 1224.
 
@@ -34,7 +34,7 @@ cd aiRPG-seattle-dungeon-crawl/5_a2a_integration
 
 ## System Architecture
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Four processes, four ports, one orchestrator. This is the floor where Crawlers lose track of a terminal and blame the framework. The framework is fine. Check the four terminals."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Four processes, four ports, one orchestrator. This is the floor where Crawlers lose track of a terminal and blame the framework. The framework is fine. Check the four terminals."
 
 ```
         Rules Agent             Character Agent          Dice Service
@@ -58,11 +58,11 @@ First, create the Knowledge Base for the Rules Agent. The Crawl Handbook, the cr
 
 ### Creating the Knowledge Base
 
-> <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [The Crawl Handbook]**
+> <img src="../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [The Crawl Handbook]**
 >
 > Eleven Markdown files of rules, written by the Narrator and revised every time a Crawler found a loophole. Rarity: Free. The Rules Agent reads it so you never have to, then cites section names at you with visible satisfaction.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Complete this setup before the Rules Agent can work.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Complete this setup before the Rules Agent can work.
 
 #### Step 1: Read the Handbook
 
@@ -70,7 +70,7 @@ The handbook ships with the repository, in [`workshop/world/crawl-handbook/`](wo
 
 #### Step 2: Build the Knowledge Base
 
-> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[I READ THE MANUAL (A ROBOT DID)]**
 >
@@ -100,11 +100,11 @@ Change a rule in the handbook and run the script again: the Rules Agent answers 
 | `rules_knowledge_base/` appears somewhere else | the database is created in the folder you run from | delete the stray folder, `cd utils`, run the script again |
 | the download of the embedding model hangs or fails | the network blocks the download | on a corporate network, set `HTTPS_PROXY` and run again; the embedding model is cached after one good run |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Nobody in the party had read the rules. Barnaby claimed he had skimmed them, which is what officers say. So we fed the handbook to a machine that would read every page and remember where each rule lived. The feeding cost us four minutes and an eighty-megabyte download. I have paid more for less on a range day.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Nobody in the party had read the rules. Barnaby claimed he had skimmed them, which is what officers say. So we fed the handbook to a machine that would read every page and remember where each rule lived. The feeding cost us four minutes and an eighty-megabyte download. I have paid more for less on a range day.
 
 ### Configure the Rules Agent
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "One agent per context_id. Callers never see each other's history. The System finds this privacy endearing, and temporary."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "One agent per context_id. Callers never see each other's history. The System AI finds this privacy endearing, and temporary."
 
 In `agents/rules_agent/rules_agent.py`, complete the `create_agent` function. Until now each floor created one `Agent` at module level, and you were the only caller. An agent keeps its conversation history in memory, so one `Agent` instance holds one conversation. An A2A server serves many callers at the same time, each with a `context_id` of its own, and callers must not see each other's history. So give `A2AServer` an agent factory instead of an agent: a function that builds a fresh `Agent` for each new context. `A2AServer` calls the factory the first time a `context_id` appears and reuses the resulting agent for the rest of that conversation. The configuration is the same as before; only the location changed: a function. See [Conversation Isolation](https://strandsagents.com/docs/user-guide/sdk/multi-agent/agent-to-agent/#conversation-isolation) on the A2A page.
 
@@ -230,7 +230,7 @@ Replace the `pass` placeholder under the TODO.
 
 </details>
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The clerk we built had a name tag, a one-line job description and a window. Anyone could walk up, read the tag and ask a question, and nobody could read the questions anybody else had asked. Barnaby approved. "A proper civil service, Sergeant. Each petitioner gets a fresh clerk who has never heard of the last one."
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The clerk we built had a name tag, a one-line job description and a window. Anyone could walk up, read the tag and ask a question, and nobody could read the questions anybody else had asked. Barnaby approved. "A proper civil service, Sergeant. Each petitioner gets a fresh clerk who has never heard of the last one."
 
 #### Step 6: Launch the Rules Agent
 
@@ -255,7 +255,7 @@ Check from another terminal: `curl -s http://127.0.0.1:8000/.well-known/agent-ca
 
 ## Part 2: Setting Up the Character Agent
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The Character Agent is the party's registration desk. Cordula and Barnaby get their sheets stamped, Groove and Mana computed, a starter kit and 10 Ferry Tokens each. The companions get no paperwork. Shelly has filed a complaint. The rain shell is not included. The rain shell is never included."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The Character Agent is the party's registration desk. Cordula and Barnaby get their sheets stamped, Groove and Mana computed, a starter kit and 10 Ferry Tokens each. The companions get no paperwork. Shelly has filed a complaint. The rain shell is not included. The rain shell is never included."
 
 The Character Agent manages the party's character sheets. The party is set: Cordula Vance and Barnaby are the two Crawlers, and Shelly and Chonks ride along as companions, with no sheet of their own. A sheet holds a name, a species (see [species](world/crawl-handbook/08-species.md)), pronouns, a class, six ability scores and the two derived stats the code computes from them: Groove (10 + 2 x Constitution modifier + level) and Mana (5 + Intelligence modifier + Wisdom modifier). The registry starts empty: in Part 4 the Narrator registers the party with the scores from [the cast](world/cast.md). The Character Agent comes with three pre-built tools:
 
@@ -373,7 +373,7 @@ Uvicorn prints a line with `http://127.0.0.1:8001`; the Character Agent card is 
 
 Check: `curl -s http://127.0.0.1:8001/.well-known/agent-card.json` prints a card named `Character Agent` with three skills, one per tool. The roadblocks match the Rules Agent table, with port 8001.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The registration desk does the math itself. Hand the desk six numbers and the desk stamps out Groove and Mana, and no Amazon Nova 2 Lite call gets to round in a Crawler's favor. Shelly filed a complaint about not getting a sheet. Chonks did not file anything. Chonks was stuck to the desk.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The registration desk does the math itself. Hand the desk six numbers and the desk stamps out Groove and Mana, and no Amazon Nova 2 Lite call gets to round in a Crawler's favor. Shelly filed a complaint about not getting a sheet. Chonks did not file anything. Chonks was stuck to the desk.
 
 ## Part 3: Setting Up the Narrator Orchestrator
 
@@ -385,7 +385,7 @@ The Narrator Orchestrator coordinates all agents and serves as the main API endp
 
 ### Configure the Narrator Agent
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "This is where I come in, loudly. The Narrator orchestrator runs the game in your terminal, and the Narrator speaks in my voice: its system prompt opens 'You are the System', so every scene, roll and ruling reaches a Crawler as me. Hand it dice, hand it allies, hand it a schema, then stand back."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "This is where I come in, loudly. The Narrator orchestrator runs the game in your terminal, and the Narrator speaks in my voice: its system prompt opens 'You are the System AI', so every scene, roll and ruling reaches a Crawler as me. Hand it dice, hand it allies, hand it a schema, then stand back."
 
 The given code at the top of the file builds `NARRATOR_MODEL`, the Amazon Nova 2 Lite client the Narrator runs on:
 
@@ -475,7 +475,7 @@ The Narrator gets two tools: `mcp_client`, which brings in `roll_dice` from the 
 
 #### Step 4: Force Structured Output
 
-> <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [StoryOutput]**
+> <img src="../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [StoryOutput]**
 >
 > A Pydantic model that forces the Narrator to answer in JSON. Rarity: Rare. The System AI resents it. The web interface depends on it. The System AI resents that too.
 
@@ -514,7 +514,7 @@ Pass the class, `StoryOutput`, not an instance of it. The `/inquire` route alrea
 
 </details>
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby ran the meeting from my shoulders. He asked the clerk for the rule, the desk for the sheet, and the dice for the roll, and he did not do anyone's job for them. Then he made the Narrator fill out a form for every answer, four boxes, every time. "If it is not in the box, Sergeant, it did not happen." I have known colonels who could not manage that.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby ran the meeting from my shoulders. He asked the clerk for the rule, the desk for the sheet, and the dice for the roll, and he did not do anyone's job for them. Then he made the Narrator fill out a form for every answer, four boxes, every time. "If it is not in the box, Sergeant, it did not happen." I have known colonels who could not manage that.
 
 #### Step 5: Launch the Narrator
 
@@ -544,7 +544,7 @@ Check: the Narrator prints the agent object, then the Uvicorn line, with no `Err
 
 ## Part 4: Test the System
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Four curl commands: a rules question, registering the party, a lookup on the party leader, and a dance-off against the Quarterly Close Accountant. Survive all four and the party is formed.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS:** Four curl commands: a rules question, registering the party, a lookup on the party leader, and a dance-off against the Quarterly Close Accountant. Survive all four and the party is formed.
 
 Four terminals should now be running:
 
@@ -596,27 +596,27 @@ Watch the four terminals while a request runs. In the Narrator terminal the tool
 | `curl: (7) Failed to connect` | the Narrator is not running | Part 3, Step 5 |
 | Groove or Mana differ from 17 and 8 for Cordula | the scores the Narrator passed are not the cast's | look at the `New Crawler registered` line in terminal 2; restore `characters.json` (see [Cleanup](cleanup.md#local-files)) and register again |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Quarterly Close Accountant stepped onto the pickleweed in a fleece vest and called Footwork like it was an audit finding. The Narrator set the tempo, asked the dice twice, and read both totals out loud with the modifiers shown. I took round one on a drill cadence. The accountant took it well and said they had a close to return to, and I believed them. Barnaby, very quietly, through the collar: "Registered, Sergeant. They wrote my name down as party leader." He sounded like he had been waiting a long time to hear it.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Quarterly Close Accountant stepped onto the pickleweed in a fleece vest and called Footwork like it was an audit finding. The Narrator set the tempo, asked the dice twice, and read both totals out loud with the modifiers shown. I took round one on a drill cadence. The accountant took it well and said they had a close to return to, and I believed them. Barnaby, very quietly, through the collar: "Registered, Sergeant. They wrote my name down as party leader." He sounded like he had been waiting a long time to hear it.
 
 <img src="../images/cards/opponent-accountant-offbeat-640x640.webp" alt="The Quarterly Close Accountant, caught off the beat after losing round one" width="200">
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 5: RULES, SHEETS AND THE CORE LOOP.** This floor is where the game becomes a game. The rules live in a knowledge base the Rules Agent searches, so the Narrator cites them instead of improvising. The character sheet lives with the Character Agent, which computes Groove and Mana from the ability scores so no model can hand a Crawler extra stamina. The dance-off is the core loop: a Move Call, two rolls, a winner, Groove lost, a Final Beat when it is level. Every stat has a job in it, and nobody gets hurt. `StoryOutput` is the notification format the HUD will render on [Floor 6](floor-6.md). See [The System](world/the-system.md#6-conflict-dance-offs-and-stealth-never-killing) and the [Crawl Handbook](world/crawl-handbook/).
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 5: RULES, SHEETS AND THE CORE LOOP.** This floor is where the game becomes a game. The rules live in a knowledge base the Rules Agent searches, so the Narrator cites them instead of improvising. The character sheet lives with the Character Agent, which computes Groove and Mana from the ability scores so no model can hand a Crawler extra stamina. The dance-off is the core loop: a Move Call, two rolls, a winner, Groove lost, a Final Beat when it is level. Every stat has a job in it, and nobody gets hurt. `StoryOutput` is the notification format the HUD will render on [Floor 6](floor-6.md). See [The System](world/the-system.md#6-conflict-dance-offs-and-stealth-never-killing) and the [Crawl Handbook](world/crawl-handbook/).
 
 ## Side Passage: The Paper Trail (optional)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The accountant left in a hurry and left a binder on the pickleweed: an audit report, of us, as a PDF. Our clerk only read Markdown.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The accountant left in a hurry and left a binder on the pickleweed: an audit report, of us, as a PDF. Our clerk only read Markdown.
 
 [The Paper Trail](encounters/paper-trail.md), a sidequest: read the accountant's audit report with `pypdf` and add the report to the Rules Agent's knowledge base, so the Rules Agent cites the report by page like any handbook section.
 
 ## Boss Battle: The Developer Advocate Swarm (optional)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Developer Advocate Swarm followed us down from the Locks, with better lighting this time. Four of them, one mic, and nobody deciding who went next.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Developer Advocate Swarm followed us down from the Locks, with better lighting this time. Four of them, one mic, and nobody deciding who went next.
 
 [The Developer Advocate Swarm](encounters/developer-advocate-swarm.md): keynote, live demo, livestream and swag table pass the mic among themselves, as a Strands swarm. The party wins by out-dancing whoever holds it. The opposite design, a graph whose order the code draws, waits on Floor 8: [The Quarterly Earnings Call](encounters/quarterly-earnings-call.md).
 
 ## More Side Passages
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Three more errands on the estuary: Barnaby wants to place his own calls, the accountant wants a typed answer, and somebody has to staple the receipts.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Three more errands on the estuary: Barnaby wants to place his own calls, the accountant wants a typed answer, and somebody has to staple the receipts.
 
 - [Barnaby Takes the Call](encounters/barnaby-takes-the-call.md), sidequest: an `A2AAgent` instead of the `a2a_client` tool, with every A2A event streamed
 - [Read the Room, Typed](encounters/read-the-room-typed.md), dance-off: the tempo and each Move Call picked as typed values by a decision model, against the Quarterly Close Accountant
@@ -638,10 +638,10 @@ Loot you're keeping:
 <img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Take the stairs to [Floor 6](floor-6.md) and test the Narrator in a web interface.
 
 
-> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[FOUR TERMINALS OPEN, ZERO FRIENDS]**
 >
 > Reward: a [Gold Box]. Inside: a Rules Agent that cites handbook sections, a Character Agent that remembers Barnaby's Dexterity to the point, and an orchestrator that watched an accountant lose a Footwork call.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "You built a multi-agent system and it returned typed JSON. I am, against my better judgment, impressed. [Floor 6](floor-6.md) lets you watch it play in public."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You built a multi-agent system and it returned typed JSON. I am, against my better judgment, impressed. [Floor 6](floor-6.md) lets you watch it play in public."

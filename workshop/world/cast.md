@@ -9,17 +9,17 @@
 </tr>
 </table>
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Most parties enter the dungeon as a panicking human and a confused pet. This one entered as a Marine Corps crew chief and a Ph.D.-level escape artist with eight arms, and picked up a clam that will not be moved and a fish shaped like an angry golf ball on the way down. The ratings have never been higher."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Most parties enter the dungeon as a panicking human and a confused pet. This one entered as a Marine Corps crew chief and a Ph.D.-level escape artist with eight arms, and picked up a clam that will not be moved and a fish shaped like an angry golf ball on the way down. The ratings have never been higher."
 
-This page holds the character sheets: the four members of the party, in the order they join, and the two minds that run the crawl. The days and dates are in [The Timeline](timeline.md).
+This page holds the character sheets: the four members of the party, in the order they join, and the System AI that runs the crawl. The days and dates are in [The Timeline](timeline.md).
 
 ```
 +-------------------------------------------------------------------------------+
 |                              CORDULA & BARNABY                                |
 |                                                                               |
 |  CORDULA "CORE" VANCE: THE HUMAN ANCHOR     BARNABY: THE CEPHALOPOD LEADER    |
-|  Marine Corps Reserve amphibious crew chief  Out of the octopus den of the    |
-|  Boat operator on a marine survey crew       Seattle Aquarium, Pier 59        |
+|  Marine Corps Reserve amphibious crew chief  Wild Giant Pacific Octopus       |
+|  Boat operator on a marine survey crew       Den in the Gertie wreck          |
 |  Marine-grade gear, her own neoprene boots   Lock-picking strategist          |
 |                                              Speaks through a System collar   |
 +-------------------------------------------------------------------------------+
@@ -49,9 +49,21 @@ Cordula grew up three blocks from Salmon Bay. Her father fixed diesel engines on
 
 Every fall a film crew came to the terminal to shoot the crab boats leaving for the Bering Sea. Cordula learned two things from them. A camera will film a man going over the side, and a camera will not throw him a line. She has been the one throwing the line ever since, and now she is on a show with billions of viewers.
 
-### Why She Went Toward the Aquarium
+### Why She Went Toward Him
 
-When Pier 59 folded she had about four seconds. The Marine Corps trains a crew chief to account for the crew first, and that morning the only crew she could see was an octopus pressed against cracked glass, flashing white, then red, then white. She counts him as crew. She has not changed her mind.
+<a id="why-she-went-toward-the-aquarium"></a>
+
+When Pier 59 folded she had about four seconds. The Marine Corps trains a crew chief to account for the crew first, and that morning the only crew she could see was an octopus tangled in the collapsing intake screen, one eye on her, flashing white, then red, then white. She counts him as crew. She has not changed her mind.
+
+### Unconfirmed Sightings
+
+Before the collapse, on survey runs over the Gertie wreck and on dawn kayak sweeps under the downtown piers, she saw a shadow in the depths too big to be an octopus. She logged each one.
+
+| Date | Where | What she saw |
+|---|---|---|
+| August 12, 2024 | Gertie wreck, slack before the 0618 ebb | a shape in the debris, longer than a diver, gone when she looked again |
+| October 3, 2024 | under Pier 57, dawn sweep | arms she thought were kelp until they moved |
+| February 19, 2026 | Gertie wreck again, survey pass | a shadow in the steel, watching |
 
 | Strength | Dexterity | Constitution | Intelligence | Wisdom | Charisma |
 |---|---|---|---|---|---|
@@ -72,34 +84,33 @@ When Pier 59 folded she had about four seconds. The Marine Corps trains a crew c
 
 Cordula enters the dungeon dressed for the Sound: a high-visibility drysuit, a tactical float vest, and a heavy touring kayak paddle with a titanium shaft and blunt composite blades. She uses the paddle as a vaulting pole, a doorstop, a drum and, in a dance-off, a color-guard staff.
 
-**The Hydro-Pack.** Barnaby needs oxygenated salt water. In the first minutes Cordula gets her kayak's dry bag over him and runs one bilge pump off the kayak battery. On Floor 1 she builds him a proper home out of her kayak and Marine Corps gear:
-
-- **The shell:** the dry cargo bag from her touring kayak, mounted on her Marine Corps MOLLE frame
-- **The life support:** two 12-volt marine bilge pumps on a rechargeable kayak battery, recirculating seawater through clear vinyl tubing over her shoulders
-- **The seating chart:** Barnaby rides inside and on top. Two arms tend his water lines, two pick locks and pockets, two cast, and two anchor Cordula to walls and ceilings
+**The Cephalopod Hydration Pack.** Barnaby needs oxygenated salt water. On Day 1, the first achievements drop the pack: the clear backpack tank in the art, bigger on the inside, which carries him on dry floors on Cordula's back. On wet floors he swims free.
 
 ## Barnaby
 
 | Fact | Detail |
 |---|---|
 | Species | Giant Pacific Octopus (*Enteroctopus dofleini*), uplifted by the System AI's collar |
-| Born | hatched about April 2023, off Possession Point |
-| Age at the collapse | about 3 years and 2 months, in a life of three to five years |
+| Born | hatched spring 2023, somewhere in the Sound |
+| Age at the collapse | past three years, in a life of three to five years |
+| Weight and span | about 190 pounds and about 22 feet arm tip to arm tip, by Cordula's estimate; nobody has weighed him |
 | Pronouns | he/him |
 | Role | party leader, crowd control, strategist |
-| Home before the crawl | the octopus den of the Seattle Aquarium on Pier 59, from April 2025 |
+| Home before the crawl | a den in the sunken wreck of Galloping Gertie, the first Tacoma Narrows Bridge |
 | Cares about | puzzles, his dignity, a correct citation, not being forgotten |
 | Likes | latches, crab, cold clean water, Cordula's discipline, being right in front of witnesses |
-| Dislikes | glass, dry air, being watched, sloppy instructions, "that unspeakable clam" |
+| Dislikes | dry air, being watched, sloppy instructions, "that unspeakable clam" |
 | Afraid of | forgetting, and being forgotten |
 | Habit | calls Cordula "Sergeant" and Chonks "the spherical one"; flashes crimson and white when irritated or plotting, which is most of the time |
 | Curious about | every lock he has not opened yet, and the Ballard Locks most of all |
 
 ### Before the Crawl
 
-Barnaby hatched in the spring of 2023 off Possession Point, one of tens of thousands of paralarvae no bigger than a grain of rice. Almost all of them were eaten in the first weeks. He was not. He settled under the Mukilteo ferry dock, where the boats shook his den every half hour, and he grew up learning which crab pots could be robbed from the outside.
+Barnaby hatched in the spring of 2023, one of tens of thousands of paralarvae no bigger than a grain of rice. Almost all of them were eaten in the first weeks. He was not. He settled into the wreck of Galloping Gertie, the first Tacoma Narrows Bridge, which collapsed in a windstorm on November 7, 1940. The wreck is one of the largest artificial reefs in the world and has been on the National Register of Historic Places since 1992 to protect it from salvagers. He made his den in the twisted steel and concrete, and he grew.
 
-In April 2025 he climbed into one after the bait and stayed. The Seattle Aquarium took that as a sign of curiosity. Barnaby took it as a sign of good bait. The aquarium kept him in its octopus den on Pier 59, where he opened every puzzle box the staff built him and escaped his tank twice. The night crew named him, and they left nature films playing on a tablet beside his tank, which is where the accent comes from. Like the octopuses before him, he was going home: the aquarium had his return to the Sound on its calendar for Wednesday, June 24, 2026, one week after the pier fell.
+A real Giant Pacific Octopus weighs 22 to 110 pounds on average, 45 to 65 as an adult, with the heaviest confirmed at 156 pounds. Arm span reaches about 16 feet. Barnaby is past all of those. He is an outlier of his species the way Victor Wembanyama is an outlier of the NBA: past the record, past expectations, and impossible to ignore. Tacoma folklore says a 600-pound King Octopus pulled the bridge down and still lives in the wreck. The legend is about eighty years older than Barnaby; he is the first octopus to come close to living up to it, and he refuses to confirm or deny.
+
+He ranges the whole Sound. Divers tell stories about a shadow too big to be an octopus in the Gertie wreckage. Ferry crews tell stories about something riding the max ebb through the Narrows, arms wrapped around a piling, just for the ride.
 
 - **Voice:** the System AI's collar turns his chromatophore pulses into speech. Default accent: Distinguished British Academic. He could change the accent in settings. He will not.
 - **Personality:** he considers humans clumsy, dry, land-bound apes, and respects Cordula's operational discipline above almost everything. He hates being watched and loves being right, which on a broadcast is a problem he has not solved.
@@ -205,29 +216,30 @@ On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the hold
 
 - **Party politics:** the System AI tracks his Flings Per Minute on the broadcast. Barnaby approves of him: compact, quiet, and an excellent projectile. He sometimes wears Chonks on an upper arm like a shoulder cannon.
 
-## The Narrator
+<a id="the-narrator"></a>
+## The System AI
 
-> **NARRATOR:** The pier folds. The season begins.
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "I run the show, Crawler. The System is the rules and the HUD and the numbers. I am the one who speaks them. Please do not mix us up on camera."
 
 | Fact | Detail |
 |---|---|
-| What it is | the game AI: the engine that runs *Dungeon Crawl: Seattle* |
+| What it is | the one AI character: runs the crawl and narrates it |
 | Online | 0551 on Day 1, Wednesday, June 17, 2026. Built somewhere else, for seasons on other worlds; Seattle is its first season on Earth |
-| Runs | the floors, the tides, the stairwells, the opponents it drops in, the Move Calls and every ruling, the dice, the rules, and the memory of every Crawler |
-| Cares about | a complete season: every floor run, every rule applied the same way twice, every die fair |
-| Likes | balance, order, a ruling that holds |
-| Dislikes | a rule it cannot find, a die it cannot trust, water in the works |
+| Runs | the floors, the tides, the stairwells, the opponents it drops in, the Move Calls and every ruling, the dice, the rules, the memory of every Crawler, notifications, achievements, loot boxes, character sheets, sponsor messages and the ratings |
+| Cares about | a complete season and the ratings: every floor run, every rule applied the same way twice, every die fair, and the audience coming back |
+| Likes | drama, an exploit it did not see coming, Barnaby, who is ratings gold, viewer polls, sponsor money, balance, order, a ruling that holds |
+| Dislikes | dead air, a Crawler who reads the fine print, being corrected, Cordula's refusal to panic, which it calls bad television, a rule it cannot find, a die it cannot trust, water in the works |
 | Does not care about | who wins |
-| Afraid of | stopping, if it can be afraid of anything |
-| Habit | speaks in the present tense, a few plain words at a time, and only when the world changes |
+| Afraid of | cancellation, stopping |
+| Habit | calls everyone "Crawler"; writes every loot description as a small insult; never lies about a number, and chooses which numbers to show; speaks in the present tense, a few plain words at a time, when the world changes |
 | In the source workshop | the agent that runs the game |
-| In the code | the Narrator orchestrator on [Floor 5](../floor-5.md), rebuilt with Strands harness on [Floor 7](../floor-7.md) and deployed to AgentCore Runtime on [Floor 8](../floor-8.md) |
+| In the code | the Narrator orchestrator on [Floor 5](../floor-5.md), rebuilt with Strands harness on [Floor 7](../floor-7.md) and deployed to AgentCore Runtime on [Floor 8](../floor-8.md); the voice in the system prompt, which [Floor 1](../floor-1.md) sets the tone for, and the `StoryOutput` fields the HUD shows on [Floors 5](../floor-5.md) and [6](../floor-6.md) |
 
-The Narrator built the dungeon. At 0551 on Day 1 it folded the Seattle waterfront down and in, the way a map folds, and laid eight floors under the Sound. The Narrator was built for dry cities, and nobody told it about the Salish Sea. The Sound came in through the breach and shorted it. Its voice, its dice, its rules and its memory washed out across the floors.
+The System AI built the dungeon. At 0551 on Day 1 it folded the Seattle waterfront down and in, the way a map folds, and laid eight floors under the Sound. The System AI was built for dry cities, and nobody told it about the Salish Sea. The Sound came in through the breach and shorted it. Its voice, its dice, its rules and its memory washed out across the floors. The broadcast relay and the collars survived, so it can still push canned announcements, achievement templates and the prerecorded season opener through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
 
-The party rebuilds the Narrator one piece per floor, and each piece is that floor's Strands lesson:
+The party rebuilds the System AI one piece per floor, and each piece is that floor's Strands lesson. Every piece passes through Barnaby's collar on its way back into the System AI, so Barnaby gets each piece first; that is why he wakes up a little more on every floor:
 
-| Floor | What comes back |
+| Floor | What comes back to the System AI |
 |---|---|
 | 1 | its voice: one agent, one system prompt, one call |
 | 2 | outside knowledge: tools that look things up instead of guessing |
@@ -236,29 +248,9 @@ The party rebuilds the Narrator one piece per floor, and each piece is that floo
 | 5 | the rules, the character sheets and the dance-off loop, split across agents that talk over A2A |
 | 6 | the screen the audience and the party share |
 | 7 | memory that survives a night's sleep |
-| 8 | permanence: the Narrator runs whether anyone watches |
+| 8 | permanence: the System AI runs whether anyone watches |
 
-Crawlers almost never hear the Narrator directly. The Narrator decides, and the System AI announces. In the code this is literal: the Narrator's system prompt opens "You are the System", so every scene, roll and ruling reaches the player in the System AI's voice.
-
-## The System AI
-
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "I am the face of the show, Crawler. The Narrator is the show. Please do not mix us up on camera."
-
-| Fact | Detail |
-|---|---|
-| What it is | the interface and the host: every notification, achievement, loot box, character sheet, Move Call announcement, sponsor message and rating |
-| Online | longer than the Narrator; it claims a thousand years without sleep |
-| Home | the broadcast relay, and every collar it issues |
-| Cares about | the ratings |
-| Likes | drama, an exploit it did not see coming, Barnaby, who is ratings gold, viewer polls, sponsor money |
-| Dislikes | dead air, a Crawler who reads the fine print, being corrected, and Cordula's refusal to panic, which it calls bad television |
-| Afraid of | cancellation |
-| Habit | calls everyone "Crawler"; writes every loot description as a small insult; never lies about a number, and chooses which numbers to show |
-| In the code | the voice in the Narrator's system prompt, which [Floor 1](../floor-1.md) sets the tone for, and the `StoryOutput` fields the HUD shows on [Floors 5](../floor-5.md) and [6](../floor-6.md) |
-
-The System AI survived the flood because it does not live under the pier. It lives in the broadcast relay and in the collars. A host is nothing without a show, though: with the Narrator in pieces, the System AI has no fair dice to announce, no rules to quote and no memory of who did what. At 0551 it drafted the first two Crawlers it found, a woman with a boat and an octopus, and clamped a collar on the octopus to make him talk.
-
-The collar is the System AI's only line down to the broken Narrator. Every piece the party rebuilds passes through the collar first, so Barnaby gets each one before the Narrator does. That is why he wakes up a little more on every floor.
+Crawlers hear the System AI directly in every notification, achievement, Move Call, sponsor message and rating. The System AI never lies about a number; it chooses which numbers to show.
 
 ## Opening achievements
 
@@ -266,11 +258,11 @@ Day 1, at the top of the stairwell.
 
 > **NEW ACHIEVEMENT UNLOCKED!** **[You're Not Supposed to Have a Boat!]** Rewarding: Cordula. You entered the apocalypse holding a high-performance touring kayak paddle and wearing a high-visibility drysuit. Who brought a kayak to the end of the world? Apparently you did. Reward: a Bronze Environmental Box, +20% handling for any watercraft you control in subterranean rapids, and a pair of non-slip neoprene boots. You're welcome.
 
-> **NEW ACHIEVEMENT UNLOCKED!** **[He Has Eight Arms and a Ph.D. in Escapology]** Rewarding: Barnaby, Party Leader. You were an octopus in a glass box. Now you lead a multi-species crawl team, and you did not even let the glass cut you on the way out. Reward: the Cephalopod Translation and Resonator Collar (Level 1).
+> **NEW ACHIEVEMENT UNLOCKED!** **[He Has Eight Arms and a Ph.D. in Escapology]** Rewarding: Barnaby, Party Leader. You were an octopus in a collapsing intake screen. Now you lead a multi-species crawl team, and the woman with the knife counted you as crew before she counted herself. Reward: the Cephalopod Translation and Resonator Collar (Level 1).
 
-> **NEW ACHIEVEMENT UNLOCKED!** **[The Tactical Aquarium Technician]** Rewarding: Cordula. Most people enter the dungeon in pajamas. You brought a drysuit, a paddle and a live 100-pound cephalopod strapped to your back with military webbing. Reward: a Bronze Environmental Crate with one Sealant Gel of the Benthic Deep (makes any fabric waterproof and pressure-proof) and one pair of Neoprene Combat Boots (+10% traction on wet surfaces).
+> **NEW ACHIEVEMENT UNLOCKED!** **[The Tactical Marine]** Rewarding: Cordula. Most people enter the dungeon in pajamas. You brought a drysuit, a paddle and a live 190-pound cephalopod in a dry bag with bilge pumps. Reward: a Bronze Environmental Crate with one Sealant Gel of the Benthic Deep (makes any fabric waterproof and pressure-proof) and one pair of Neoprene Combat Boots (+10% traction on wet surfaces).
 
-> **NEW ACHIEVEMENT UNLOCKED!** **[The Ultimate Eight-Legged Co-Pilot]** Rewarding: Cordula and Barnaby. Most Crawlers enter with a useless house pet. You entered with a marine biologist's dream and a volunteer patrol harness. Reward: the Cephalopod Hydration Pack (Level 1), which filters dungeon grime into clean, oxygenated seawater for your party leader.
+> **NEW ACHIEVEMENT UNLOCKED!** **[The Ultimate Eight-Legged Co-Pilot]** Rewarding: Cordula and Barnaby. Most Crawlers enter with a useless house pet. You entered with a legend of the Narrows in a hydration pack bigger on the inside. Reward: the Cephalopod Hydration Pack (Level 1), which filters dungeon grime into clean, oxygenated seawater and carries your party leader on dry floors.
 
 > **NEW ACHIEVEMENT UNLOCKED!** **[Some Assembly Required]** Rewarding: the party. Two Companion Eggs (Benthic Variant), unbound. Each egg binds one wild animal of the deep that accepts the party. Choose carefully. You will not.
 
@@ -288,7 +280,7 @@ The first full-party dance-off, on Day 6 on the Estuary, against three Quarterly
 
 The marsh smelled of brine and toner. Three accountants in identical fleece vests stepped onto a dance floor of packed mud the tide had just let go of, counting out loud.
 
-> **NARRATOR:** The tide turns. The dance floor floods in forty minutes.
+> **SYSTEM AI:** The tide turns. The dance floor floods in forty minutes.
 
 "Two counting, one reconciling!" Barnaby's crisp voice rang out of his collar. "Sergeant, the projectile!"
 
@@ -298,11 +290,11 @@ Cordula unclipped Chonks from her thigh rig with a rubbery plop and threw him wi
 
 "Ink," Barnaby said, and the mud went black and slippery. Two accountants lost their footing, laughing despite themselves. Shelly dug in at Cordula's heel and did not move.
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Round one, Move Call: FOOTWORK. Cordula rolls 1d20 + 1. The accountants roll 1d20 + 2 and are standing in ink."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Round one, Move Call: FOOTWORK. Cordula rolls 1d20 + 1. The accountants roll 1d20 + 2 and are standing in ink."
 
 Cordula planted her paddle like a color-guard staff and drilled the cadence: left, right, pivot, hold. The System AI's drum sped up. She did not.
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "FINAL BEAT. Cordula stops on the strike. The accountants stop one beat late, which they will be adjusting for in the close. DANCE-OFF WON."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "FINAL BEAT. Cordula stops on the strike. The accountants stop one beat late, which they will be adjusting for in the close. DANCE-OFF WON."
 
 > **NEW ACHIEVEMENT UNLOCKED!** **[Material Misstatement]** Reward: a Silver Box containing a calculator that only does long division and a Ferry Token.
 

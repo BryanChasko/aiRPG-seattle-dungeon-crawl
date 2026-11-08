@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-4-locks-turnstile/locks_turnstile.py`](../../encounters/floor-4-locks-turnstile/locks_turnstile.py), [`encounters/floor-4-locks-turnstile/tide_server.py`](../../encounters/floor-4-locks-turnstile/tide_server.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 5, SUNDAY, JUNE 21, SIDE PASSAGE OFF FLOOR 4.** There was a gate in the lock wall that Floor 4 had not shown us: a turnstile, brass, with a placard of names. DICE. TIDE. Nothing else. The developer advocates were mid-demo on the far side, and one of them kept shouting new server names across the water, each one more exciting than the last. The turnstile did not care how exciting. It read the placard, found no match, and stayed shut. I have worked gates like that. I grew up three blocks from Salmon Bay and counted salmon at the fish ladder windows here every summer, so I know this gate list by heart. They are the only kind worth having. Barnaby read the placard twice. "Sergeant, a list that someone wrote down on purpose. How rare."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 5, SUNDAY, JUNE 21, SIDE PASSAGE OFF FLOOR 4.** There was a gate in the lock wall that Floor 4 had not shown us: a turnstile, brass, with a placard of names. DICE. TIDE. Nothing else. The developer advocates were mid-demo on the far side, and one of them kept shouting new server names across the water, each one more exciting than the last. The turnstile did not care how exciting. It read the placard, found no match, and stayed shut. I have worked gates like that. I grew up three blocks from Salmon Bay and counted salmon at the fish ladder windows here every summer, so I know this gate list by heart. They are the only kind worth having. Barnaby read the placard twice. "Sergeant, a list that someone wrote down on purpose. How rare."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: the Locks Turnstile. Two servers are on the list. A third would like to be. The audience has opinions about which one is more fun, and the turnstile has a clipboard. The clipboard wins."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Locks Turnstile. Two servers are on the list. A third would like to be. The audience has opinions about which one is more fun, and the turnstile has a clipboard. The clipboard wins."
 
 ## The Brief
 
@@ -63,7 +63,7 @@ ALLOWLIST: dict = {}
 
 Each key is the name the agent will use in `server_name`. Each value is a config dict with the server's `url`, the same address passed to `MCPClient(url=...)` on Floor 4. Headers, a stdio `command` and OAuth credentials fit in the same dict when a server requires them. `make_mcp_router` raises `ValueError` if `ALLOWLIST` is empty: a turnstile with no names on the placard is a wall.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Two names. I wrote them myself, in my own hand, on my own clipboard. If a server is not on it, I do not need a reason to say no. That is the whole point of a list. Everybody who has ever approved something at the gate "just this once" has a story about it, and none of the stories are good.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Two names. I wrote them myself, in my own hand, on my own clipboard. If a server is not on it, I do not need a reason to say no. That is the whole point of a list. Everybody who has ever approved something at the gate "just this once" has a story about it, and none of the stories are good.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -124,7 +124,7 @@ The `knock` helper in `locks_turnstile.py` calls the turnstile without calling A
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I knocked first, by hand, with Amazon Nova 2 Lite out of the loop. Ferry-wifi: refused, with the list read back to me. Tide: open. Then I let Lady Luck's cousin run the gate and watched her repeat the run in her own words. She connected, listed the tools, called one, and shut the door behind her. Barnaby said it was the first time he had watched an agent tidy up after itself. He wrote it down.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I knocked first, by hand, with Amazon Nova 2 Lite out of the loop. Ferry-wifi: refused, with the list read back to me. Tide: open. Then I let Lady Luck's cousin run the gate and watched her repeat the run in her own words. She connected, listed the tools, called one, and shut the door behind her. Barnaby said it was the first time he had watched an agent tidy up after itself. He wrote it down.
 
 ## Run the Turnstile
 
@@ -171,7 +171,7 @@ Loot kept:
 - `agent.tool.<name>(...)` calls any tool, router included, without calling Amazon Nova 2 Lite
 - Wire a server in at build time or let the agent choose: the trade-off
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[THE CLIPBOARD WINS]**
 >

@@ -2,7 +2,7 @@
 
 [Dungeon map](../README.md) | [Floor 1](../floor-1.md) | [Floor 2](../floor-2.md) | [Floor 3](../floor-3.md) | [Floor 4](../floor-4.md) | [Floor 5](../floor-5.md) | [Floor 6](../floor-6.md) | [Floor 7](../floor-7.md) | [Floor 8](../floor-8.md) <!-- floor-nav -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Side passages, Crawlers. Optional, unpaid, and the audience's favorite part. Every side passage starts where a floor ends and teaches a piece of the SDK the floor skipped. Skip the side passages if you like. The sponsors will notice."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Side passages, Crawlers. Optional, unpaid, and the audience's favorite part. Every side passage starts where a floor ends and teaches a piece of the SDK the floor skipped. Skip the side passages if you like. The sponsors will notice."
 
 Each encounter hangs off a floor: the encounter starts from that floor's finished code, teaches a Strands SDK module the floor does not cover, and runs on Amazon Nova 2 Lite like everything else in the crawl. Cordula logs each encounter, as she logs the floors. Encounter code follows the floor pattern: TODO markers on `main`, answers on the `solution` branch, a Show me the code block under each step, and offline tests on `solution`.
 
@@ -29,7 +29,7 @@ Every opponent of the crawl is playable in at least one floor or encounter. The 
 | 6 | [The Hype Meter](hype-meter.md) | sidequest | a hook that turns tool and model events into Hype, a `GET /hype` route, and a meter in the web interface | `strands.hooks.events`, `strands.hooks.registry` |
 | 6 | [Sponsor Interrupt](sponsor-interrupt.md) | sidequest | a hook that stops the turn before a sponsor deal, a route that resumes it, and a dialog in the web interface to accept or refuse | `strands.interrupt` |
 | 7 | [The Context Flood](context-flood.md) | boss battle | a 60-turn campaign squeezed into 20 messages, three ways, with the cast sheets pinned | `strands.agent.conversation_manager`, `compression.pin_message` |
-| 7 | [The System Holds Grudges](system-holds-grudges.md) | sidequest | a memory manager over a folder of Markdown files, filled after every turn, and a second campaign that remembers the first | `strands.memory`, `strands.vended_memory_stores.file_memory_store` |
+| 7 | [The System AI Holds Grudges](system-holds-grudges.md) | sidequest | a memory manager over a folder of Markdown files, filled after every turn, and a second campaign that remembers the first | `strands.memory`, `strands.vended_memory_stores.file_memory_store` |
 | 7 | [Keyword versus Vector](keyword-versus-vector.md) | dance-off | keyword search against vector search on the Crawl Handbook, scored on where each finds the Final Beat | `strands.storage.search.bm25`, ChromaDB |
 | 7 | [Save Points](save-points.md) | sidequest | the same save point three ways, file, snapshot and S3, and a player who comes back from each | `strands.session` |
 | 8 | [The Quarterly Earnings Call](quarterly-earnings-call.md) | boss battle | the accountant, the banker and the Regional Managing Director as a graph: one move each, in order, and the call only goes on if the party took the last round | `strands.multiagent.graph` |
@@ -43,4 +43,4 @@ Encounter code lives in [`encounters/`](../../encounters/), one folder per encou
 
 The crawl runs one language model, Amazon Nova 2 Lite. Two parts of the original plan reached past Amazon Nova 2 Lite: a cloud embedding service for Keyword versus Vector, and a third-party hosted decision service next to Read the Room, Typed. Neither part ships: Keyword versus Vector runs on local ChromaDB, and Read the Room, Typed decides on Nova 2 Lite.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Every floor down here has doors off the main corridor. Most doors lead to closets. Some open onto the System AI's best material. Barnaby wants to open every door. I want to finish the floor first. We compromise: finish the floor, then open one door.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Every floor down here has doors off the main corridor. Most doors lead to closets. Some open onto the System AI's best material. Barnaby wants to open every door. I want to finish the floor first. We compromise: finish the floor, then open one door.

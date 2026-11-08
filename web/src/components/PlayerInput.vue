@@ -4,7 +4,7 @@
       v-model="message"
       type="text"
       class="player-input-field"
-      placeholder="Tell the System what you do, Crawler..."
+      placeholder="Tell the System AI what you do, Crawler..."
       :disabled="disabled"
     />
     <button type="submit" class="player-input-btn" :disabled="disabled">

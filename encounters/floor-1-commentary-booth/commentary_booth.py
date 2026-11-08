@@ -34,7 +34,7 @@ def roll_d20(dancer: str, move_call: str) -> int:
 
 
 class CommentaryBooth:
-    """The System's play-by-play desk: Strands calls it with every event of the turn."""
+    """The System AI's play-by-play desk: Strands calls it with every event of the turn."""
 
     def __init__(self):
         self.calls_announced = set()  # the toolUseId of every tool call already announced
