@@ -64,7 +64,9 @@ The call replaces the `pass` under the TODO. In Floor 5, `save_character` called
 - `content`: `{"text": json.dumps(record)}`; a memory record holds text, so the character is stored as JSON
 - `timestamp`: `datetime.now(timezone.utc)`
 
-See BatchCreateMemoryRecords.
+See [BatchCreateMemoryRecords](https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchCreateMemoryRecords.html) in the AgentCore API Reference.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** A desk in the cloud has no drawer. Every session gets a fresh desk and throws it away after. So the forms go to a records office down the hall, one folder per Crawler, labeled by id. Barnaby insisted on the label format. He is an octopus who has been filed incorrectly before.
 
 ### Step 2: Load the Characters
 
@@ -75,7 +77,7 @@ def load_characters() -> list[dict]:
     return [json.loads(r["content"]["text"]) for page in pages for r in page["memoryRecordSummaries"]]
 ```
 
-The two lines replace the `pass` under the TODO. In Floor 5, `load_characters` returned `characters_db.all()`. `list_memory_records` with `namespacePath="/characters/"` returns every record whose namespace starts with that path, a page at a time, hence the paginator. Each page has a `memoryRecordSummaries` list, and each record holds a character as JSON text in `content.text`. See ListMemoryRecords.
+The two lines replace the `pass` under the TODO. In Floor 5, `load_characters` returned `characters_db.all()`. `list_memory_records` with `namespacePath="/characters/"` returns every record whose namespace starts with that path, a page at a time, hence the paginator. Each page has a `memoryRecordSummaries` list, and each record holds a character as JSON text in `content.text`. See [ListMemoryRecords](https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListMemoryRecords.html).
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Not instant: a new record shows up in the list a few seconds after it is created, sometimes up to a minute. Ask for a character right after creating it and the agent may not find it yet: wait and ask again.
 
@@ -97,7 +99,7 @@ The call replaces the `pass` under the TODO. In Floor 5, `A2AServer(agent_factor
 - `agent_card=A2AServer(agent_factory=create_agent).public_agent_card`: the agent card built from the agent's name, description and tools, as in Floor 5; on AgentCore, its `url` is the runtime's public URL
 - `host="0.0.0.0"`, so that the server is reachable from outside its microVM
 
-See "Deploy A2A servers in AgentCore Runtime".
+See [Deploy A2A servers in AgentCore Runtime](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-a2a.html).
 
 The agent is created with `callback_handler=None`: nobody reads the terminal of a runtime, its logs go to CloudWatch.
 
@@ -222,6 +224,19 @@ agentcore logs --runtime characteragent --since 15m
 
 Look for `New Crawler registered: Cordula Vance (Human (Seattle Native) Amphibious Breacher, she/her) with id ...`.
 
+| you see | it means | fix |
+|---|---|---|
+| `AccessDeniedException` on `BatchCreateMemoryRecords` in the logs | `memory-policy.json` is not attached | Step 3, then `agentcore deploy -y` again |
+| `KeyError: 'MEMORY_CHARACTERS_ID'` in the logs | the memory was added after the agent was deployed, or not at all | `agentcore status` must list `characters`; deploy again |
+| "List all the characters" comes back empty | the records are not listed yet | wait up to a minute and ask again |
+| `Multiple runtimes found` | `--runtime` is missing | add `--runtime characteragent` |
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I registered again, the same six numbers as on the estuary, and the desk stamped the same Groove and Mana. Then I asked a different session to list the party, and there we were. Barnaby went a pleased, mottled brown. Somewhere in a records office we will never see, there is a folder with his name on it, and it says party leader.
+
+### What the Records Cost
+
+AgentCore Memory bills long-term records by the month and by the read: about $0.75 per 1,000 records stored and $0.50 per 1,000 record retrievals ([AgentCore pricing](https://aws.amazon.com/bedrock/agentcore/pricing/)). Two characters cost under a fifth of a cent a month, and a hundred lookups at most five cents. The records stay, and bill, until the [Cleanup](cleanup.md#step-2-deploy-the-empty-project) page deletes the memory with the stack.
+
 ## Part 3: Connect the Narrator (narrator/narrator_orchestrator.py)
 
 The Narrator still reaches the Rules Agent on `127.0.0.1:8000`; the Character Agent moves to AgentCore. As in 8.1, the remote server only accepts requests signed with IAM.
@@ -287,7 +302,7 @@ a2a_client = make_a2a_client(allowed_endpoints=[
 ])
 ```
 
-`make_a2a_client` takes a list of endpoints: a plain URL for an agent that needs no configuration, a `(url, client_config)` pair for the others. The rest of the Narrator does not change: it discovers the Character Agent by its agent card, as in Floor 5, now served by AgentCore. See the A2A client vended tool.
+`make_a2a_client` takes a list of endpoints: a plain URL for an agent that needs no configuration, a `(url, client_config)` pair for the others. The rest of the Narrator does not change: it discovers the Character Agent by its agent card, as in Floor 5, now served by AgentCore. See the [A2A Client](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/a2a-client/) vended tool page.
 
 ### Step 4: Launch the Narrator
 
@@ -309,6 +324,10 @@ curl -X POST http://0.0.0.0:8009/inquire \
 ```
 
 The Narrator discovers the two agents, asks the Character Agent for Cordula's sheet, rolls both sides of the round on the cloud dice server with the modifier of the ability it called, and narrates. Its `details` field names both agents. Two of your four bricks now run in AWS: `agentcore logs --runtime characteragent` shows the lookup, `agentcore logs --runtime diceserver` the rolls.
+
+If the Narrator says the Character Agent call failed, look in its terminal: `403` means a region mismatch, as in 8.1; a `ReadTimeout` means `timeout=300` is missing from Step 2; `Invalid URL` means `CHARACTER_AGENT_URL` in `.env` is not the whole URL.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Developer Advocate Swarm found us again in a Bellevue lobby, with better lighting this time. Before the first call, the Narrator went to the records office and pulled my sheet, Strength 16, Constitution 16, Charisma 10. It called Presence anyway, the System's idea of a joke. Charisma is my worst stat. I lost the round, the swarm livestreamed it, and every viewer could see the number on my sheet that lost it. Fair is fair.
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Web interface: the [Floor 6](floor-6.md) interface still works for the game itself. Its character panel, however, reads the [Floor 5](floor-5.md) `characters.json` through the Narrator's `/user/{user_name}` endpoint, so it does not see the characters stored in AgentCore Memory. 8.4 takes the Narrator to the cloud and settles this.
 

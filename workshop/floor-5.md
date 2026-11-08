@@ -24,6 +24,8 @@ Make sure you are at the root of Floor 5 in your terminal:
 cd aiRPG-seattle-dungeon-crawl/5_a2a_integration
 ```
 
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The estuary smelled like salt and cut grass. The tide table on a post said the dance floor would be dry for six hours, then gone. Six hours to stand up a rule clerk, a registration desk and a Narrator, and get them talking. I have run tighter timelines on a beach landing. I have not run one with an octopus in charge.
+
 ## System Architecture
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Four processes, four ports, one orchestrator. This is the floor where Crawlers lose track of a terminal and blame the framework. The framework is fine. Check your terminals."
@@ -86,11 +88,19 @@ Verify that the knowledge base was created:
 
 Change a rule in the handbook and run the script again: the Rules Agent answers from the new text on its next question. That is the whole point of keeping rules in a knowledge base instead of a prompt.
 
+| you see | it means | fix |
+|---|---|---|
+| `Crawl Handbook not found` | the script cannot find `workshop/world/crawl-handbook/` | run it from `5_a2a_integration/utils`, inside the repository |
+| `rules_knowledge_base/` appears somewhere else | the database is created in the folder you run from | delete the stray folder, `cd utils`, run it again |
+| the download of the embedding model hangs or fails | your network blocks it | on a corporate network, set `HTTPS_PROXY` and run again; the model is cached after one good run |
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Nobody in the party had read the rules. Barnaby claimed he had skimmed them, which is what officers say. So we fed the handbook to a machine that would read every page and remember where each rule lived. It cost us four minutes and an eighty-megabyte download. I have paid more for less on a range day.
+
 ### Configure the Rules Agent
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "One agent per context_id. Callers never see each other's history. The System finds this privacy endearing, and temporary."
 
-In `agents/rules_agent/rules_agent.py`, complete the `create_agent` function. Until now you created one `Agent` at module level and talked to it yourself. An agent keeps its conversation history in memory, so one instance means one conversation. An A2A server is different: several callers can talk to it at the same time, each with their own `context_id`, and they must not see each other's history. So instead of an agent, you give `A2AServer` an agent factory: a function that builds a fresh `Agent` for each new context. `A2AServer` calls it the first time a context appears and reuses that agent for the rest of that conversation. The configuration is the same as before, it just lives inside a function now.
+In `agents/rules_agent/rules_agent.py`, complete the `create_agent` function. Until now you created one `Agent` at module level and talked to it yourself. An agent keeps its conversation history in memory, so one instance means one conversation. An A2A server is different: several callers can talk to it at the same time, each with their own `context_id`, and they must not see each other's history. So instead of an agent, you give `A2AServer` an agent factory: a function that builds a fresh `Agent` for each new context. `A2AServer` calls it the first time a context appears and reuses that agent for the rest of that conversation. The configuration is the same as before, it just lives inside a function now. See [Conversation Isolation](https://strandsagents.com/docs/user-guide/sdk/multi-agent/agent-to-agent/#conversation-isolation) on the A2A page.
 
 #### Step 1: Add the Tool
 
@@ -100,13 +110,33 @@ In `agents/rules_agent/rules_agent.py`, complete the `create_agent` function. Un
 
 Same as in Floors 3 and 4: the tool is what the agent can do, here look up a rule in the knowledge base.
 
+<details>
+<summary>Show me the code for Step 1</summary>
+
+```python
+def create_agent(context_id: str) -> Agent:
+    return Agent(
+        model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
+        # TODO: Step 1 - Add the query_rules tool to the agent
+        # TODO: Step 2 - Add the name "Rules Agent" to the agent
+        # TODO: Step 3 - Add the description "..." to the agent
+        tools=[query_rules],
+        system_prompt="""...""",
+        hooks=[NewlineAfterTurn()],
+    )
+```
+
+The three TODOs of Steps 1 to 3 sit together inside `Agent(...)`. The `solution` branch puts the three answers in a row under the third comment; one under each comment works the same way.
+
+</details>
+
 #### Step 2: Add the Name
 
 ```python
 # TODO: Step 2 - Add the name "Rules Agent" to the agent
 ```
 
-Floors 1 to 4 never set a name, because nobody but you talked to the agent. Here other agents will: `A2AServer` publishes an agent card, a small JSON document served at `/.well-known/agent-card.json` that says who the agent is, what it can do and where to reach it (the documentation details what a card contains). Here is the one your Rules Agent will serve once the three steps are done:
+Floors 1 to 4 never set a name, because nobody but you talked to the agent. Here other agents will: `A2AServer` publishes an agent card, a small JSON document served at `/.well-known/agent-card.json` that says who the agent is, what it can do and where to reach it ([Fetching the Agent Card](https://strandsagents.com/docs/user-guide/sdk/multi-agent/agent-to-agent/#fetching-the-agent-card) shows what a card contains). Here is the one your Rules Agent will serve once the three steps are done:
 
 ```json
 {
@@ -125,13 +155,33 @@ Floors 1 to 4 never set a name, because nobody but you talked to the agent. Here
 
 The skills are your tools: Strands fills them from the tool names and docstrings. The name at the top of the card is the one you set in this step. Without it, every agent of the party would be called "Strands Agents".
 
+<details>
+<summary>Show me the code for Step 2</summary>
+
+```python
+        # TODO: Step 2 - Add the name "Rules Agent" to the agent
+        name="Rules Agent",
+```
+
+</details>
+
 #### Step 3: Add the Description
 
 ```python
 # TODO: Step 3 - Add the description "Rules lookup for the dungeon: fast answers from the Crawl Handbook, with the section they come from." to the agent
 ```
 
-The description at the top of the card: this is what the orchestrator reads in Part 3 to decide which agent to ask. It is required, the server refuses to start without one. See the documentation for an example of an agent with a name and a description.
+The description at the top of the card: this is what the orchestrator reads in Part 3 to decide which agent to ask. It is required: without one, the server stops with `ValueError: A2A agent description cannot be None or empty`. See [Basic Server Setup](https://strandsagents.com/docs/user-guide/sdk/multi-agent/agent-to-agent/#basic-server-setup) for an agent with a name and a description.
+
+<details>
+<summary>Show me the code for Step 3</summary>
+
+```python
+        # TODO: Step 3 - Add the description "..." to the agent
+        description="Rules lookup for the dungeon: fast answers from the Crawl Handbook, with the section they come from.",
+```
+
+</details>
 
 #### Step 4: Create the A2A Server
 
@@ -139,7 +189,19 @@ The description at the top of the card: this is what the orchestrator reads in P
 # TODO: Step 4 - Create an A2AServer with the create_agent factory on port 8000
 ```
 
-`A2AServer` wraps your factory in an HTTP server that speaks the A2A protocol: it serves the agent card and builds one agent per `context_id` through `create_agent`. See the documentation.
+`A2AServer` wraps your factory in an HTTP server that speaks the A2A protocol: it serves the agent card and builds one agent per `context_id` through `create_agent`. See [Creating an A2A Server](https://strandsagents.com/docs/user-guide/sdk/multi-agent/agent-to-agent/#creating-an-a2a-server).
+
+<details>
+<summary>Show me the code for Step 4</summary>
+
+```python
+# TODO: Step 4 - Create an A2AServer with the create_agent factory on port 8000
+a2a_server = A2AServer(agent_factory=create_agent, port=8000)
+```
+
+Pass the function itself, `create_agent`, without calling it: the server calls it once per new `context_id`.
+
+</details>
 
 #### Step 5: Serve the Agent
 
@@ -148,6 +210,21 @@ The description at the top of the card: this is what the orchestrator reads in P
 ```
 
 `serve()` starts the server and blocks until you stop it. It sits under `if __name__ == "__main__":` so that importing the module (the tests do) does not start a server.
+
+<details>
+<summary>Show me the code for Step 5</summary>
+
+```python
+if __name__ == "__main__":
+    # TODO: Step 5 - Start the A2A server
+    a2a_server.serve()
+```
+
+Replace the `pass` that holds the place under the TODO.
+
+</details>
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The clerk we built had a name tag, a one-line job description and a window. Anyone could walk up, read the tag and ask a question, and nobody could read the questions anybody else had asked. Barnaby approved. "A proper civil service, Sergeant. Each petitioner gets a fresh clerk who has never heard of the last one."
 
 #### Step 6: Launch the Rules Agent
 
@@ -159,6 +236,16 @@ python rules_agent.py
 ```
 
 You should see Uvicorn running on `http://127.0.0.1:8000`. Open `http://127.0.0.1:8000/.well-known/agent-card.json` in your browser: this is the agent card, with the name and description you just wrote. Leave this terminal open, the orchestrator needs the agent in Part 4.
+
+Check from another terminal: `curl -s http://127.0.0.1:8000/.well-known/agent-card.json` prints the card, starting with `{"name":"Rules Agent"` (the fields may come in another order).
+
+| you see | it means | fix |
+|---|---|---|
+| `ValueError: A2A agent description cannot be None or empty` | Step 3 is missing | add `description=...` |
+| `"name": "Strands Agents"` in the card | Step 2 is missing | add `name="Rules Agent"` |
+| `address already in use` | another process holds port 8000 | stop it; `lsof -i :8000` on macOS and Linux |
+| the agent starts, but its first answer reports a tool error about the collection `crawl_handbook` | the knowledge base was not built, or was built from the wrong folder | run Step 2 of "Creating the Knowledge Base" from `utils` |
+| the script ends at once, with no Uvicorn line | `serve()` is missing | Step 5 |
 
 ## Part 2: Setting Up the Character Agent
 
@@ -182,6 +269,16 @@ In `agents/character_agent/character_agent.py`, the factory `create_agent` alrea
 
 Three tools this time; the agent picks the right one from their docstrings.
 
+<details>
+<summary>Show me the code for Step 1</summary>
+
+```python
+        # TODO: Step 1 - Add the create_character, find_character_by_name and list_all_characters tools to the agent
+        tools=[create_character, find_character_by_name, list_all_characters],
+```
+
+</details>
+
 #### Step 2: Add the Name
 
 ```python
@@ -189,6 +286,16 @@ Three tools this time; the agent picks the right one from their docstrings.
 ```
 
 First field of this agent's card, as in Part 1.
+
+<details>
+<summary>Show me the code for Step 2</summary>
+
+```python
+        # TODO: Step 2 - Add the name "Character Agent" to the agent
+        name="Character Agent",
+```
+
+</details>
 
 #### Step 3: Add the Description
 
@@ -198,6 +305,18 @@ First field of this agent's card, as in Part 1.
 
 Second field of the card, what the orchestrator will read to pick this agent.
 
+<details>
+<summary>Show me the code for Step 3</summary>
+
+```python
+        # TODO: Step 3 - Add the description "..." to the agent
+        description="Crawler registration for the dungeon: creates characters from the ability scores it is given, stores them, finds and lists them.",
+```
+
+As in Part 1, the three answers can sit in a row under the third TODO, which is where the `solution` branch puts them.
+
+</details>
+
 #### Step 4: Create the A2A Server
 
 ```python
@@ -206,6 +325,16 @@ Second field of the card, what the orchestrator will read to pick this agent.
 
 Port 8001: each agent needs its own port.
 
+<details>
+<summary>Show me the code for Step 4</summary>
+
+```python
+# TODO: Step 4 - Create an A2AServer with the create_agent factory on port 8001
+a2a_server = A2AServer(agent_factory=create_agent, port=8001)
+```
+
+</details>
+
 #### Step 5: Serve the Agent
 
 ```python
@@ -213,6 +342,17 @@ Port 8001: each agent needs its own port.
 ```
 
 Same as in Part 1.
+
+<details>
+<summary>Show me the code for Step 5</summary>
+
+```python
+if __name__ == "__main__":
+    # TODO: Step 5 - Start the A2A server
+    a2a_server.serve()
+```
+
+</details>
 
 #### Step 6: Launch the Character Agent
 
@@ -224,6 +364,10 @@ python character_agent.py
 ```
 
 You should see Uvicorn running on `http://127.0.0.1:8001`, and its agent card at `http://127.0.0.1:8001/.well-known/agent-card.json`. Leave this terminal open too.
+
+Check: `curl -s http://127.0.0.1:8001/.well-known/agent-card.json` prints a card named `Character Agent` with three skills, one per tool. The roadblocks are the Rules Agent's, with port 8001.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The registration desk does the math itself. You hand it six numbers and it stamps out Groove and Mana, and no model gets to round in your favor. Shelly filed a complaint about not getting a sheet. Chonks did not file anything. Chonks was stuck to the desk.
 
 ## Part 3: Setting Up the Narrator Orchestrator
 
@@ -245,13 +389,40 @@ NARRATOR_MODEL = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 
 Nova 2 Lite is the strongest generally available Nova model. It can also think before it answers (extended thinking), but a full Narrator turn, with its A2A calls, measured about 9 seconds with thinking off and 24 to 91 seconds at `medium`. For a game, off wins. The comment above `NARRATOR_MODEL` shows the one argument that turns thinking on if you want deeper plans and can wait for them.
 
+### What a Narrator Turn Costs
+
+A Narrator turn is not one model call. The Narrator calls the model, the model asks for tools, the tool results go back in, and the loop runs again until the answer is ready: four to six calls for a dance-off round. Every call resends the system prompt, the tool specifications and the conversation so far, so input tokens pile up. The Rules Agent and the Character Agent run their own model calls on top.
+
+At the Amazon Nova 2 Lite prices from [Floor 1](floor-1.md#what-a-turn-costs) (about $0.30 per million input tokens and $2.50 per million output tokens):
+
+| what runs | rough tokens | rough cost |
+|---|---|---|
+| one Narrator turn, thinking off | 15,000 in, 1,500 out | 0.45 cents + 0.38 cents: under one cent |
+| the same turn, if thinking adds 2,000 tokens to each of 5 model calls | 15,000 in, 11,500 out | 0.45 cents + 2.9 cents: about 3.3 cents |
+| the four curl commands of Part 4, thinking off | about 60,000 in, 6,000 out | about 3.3 cents |
+| building the knowledge base | none | free: ChromaDB embeds the handbook on your machine |
+
+Reasoning tokens are billed as output tokens, the expensive kind, and that is the second reason thinking stays off: the first is the wait. We measured the time, not the reasoning tokens, so the second row is an illustration, not a measurement. Measure your own: add `print(response.metrics.accumulated_usage)` under `print(response.structured_output)` in `ask_agent`, and every request prints its `inputTokens` and `outputTokens`.
+
 #### Step 1: Create MCP Client for Dice Rolling
 
 ```python
 # TODO: Step 1 - Create an MCPClient with the url "http://localhost:8002/mcp"
 ```
 
-Same client as in Floor 4: an `MCPClient` with `url="http://localhost:8002/mcp"`. See the streamable HTTP transport documentation; as before, the client goes straight into `tools=[...]`, no `with` block (managed integration).
+Same client as in Floor 4: an `MCPClient` with `url="http://localhost:8002/mcp"`. See [Streamable HTTP](https://strandsagents.com/docs/user-guide/sdk/tools/mcp-transports/#streamable-http) on the MCP Transports page; as before, the client goes straight into `tools=[...]`, no `with` block (managed integration).
+
+<details>
+<summary>Show me the code for Step 1</summary>
+
+```python
+# TODO: Step 1 - Create an MCPClient with the url "http://localhost:8002/mcp"
+mcp_client = MCPClient(url="http://localhost:8002/mcp")
+```
+
+`MCPClient` is already imported at the top of the file. Name it `mcp_client`: Step 3 uses that name.
+
+</details>
 
 #### Step 2: Create the A2A Client Tool
 
@@ -259,7 +430,23 @@ Same client as in Floor 4: an `MCPClient` with `url="http://localhost:8002/mcp"`
 # TODO: Step 2 - Create the A2A client tool with make_a2a_client and the allowed agent endpoints
 ```
 
-`make_a2a_client` builds a single tool, `a2a_client`, that the Narrator uses to talk to remote agents: with `operation="discover"` it fetches an agent's card (name, description, skills), and with `operation="send_message"` it sends a request to that agent's endpoint. Pass it `allowed_endpoints`, the list of agent URLs it may reach (`"http://127.0.0.1:8000"` for the Rules Agent, `"http://127.0.0.1:8001"` for the Character Agent): any other endpoint is rejected before a connection is even made. See the `a2a_client` tool documentation.
+`make_a2a_client` builds a single tool, `a2a_client`, that the Narrator uses to talk to remote agents: with `operation="discover"` it fetches an agent's card (name, description, skills), and with `operation="send_message"` it sends a request to that agent's endpoint. Pass it `allowed_endpoints`, the list of agent URLs it may reach (`"http://127.0.0.1:8000"` for the Rules Agent, `"http://127.0.0.1:8001"` for the Character Agent): any other endpoint is rejected before a connection is even made. See the [A2A Client](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/a2a-client/) vended tool page.
+
+<details>
+<summary>Show me the code for Step 2</summary>
+
+```python
+try:
+    # TODO: Step 2 - Create the A2A client tool with make_a2a_client and the allowed agent endpoints
+    a2a_client = make_a2a_client(allowed_endpoints=[
+        "http://127.0.0.1:8000",  # Rules Agent
+        "http://127.0.0.1:8001",  # Character Agent
+    ])
+```
+
+The TODO sits inside a `try:` block, so indent your lines to match it.
+
+</details>
 
 #### Step 3: Add the Tools
 
@@ -267,7 +454,18 @@ Same client as in Floor 4: an `MCPClient` with `url="http://localhost:8002/mcp"`
 # TODO: Step 3 - Add the mcp_client and a2a_client tools to the agent
 ```
 
-The Narrator gets two tools: `mcp_client`, which brings in `roll_dice` from the dice server, and `a2a_client`, which lets it discover and message the Rules Agent and the Character Agent. Pass the MCP client itself, as in Floor 4: Strands lists its tools when the agent starts. See "give your agent tools" in the documentation.
+The Narrator gets two tools: `mcp_client`, which brings in `roll_dice` from the dice server, and `a2a_client`, which lets it discover and message the Rules Agent and the Character Agent. Pass the MCP client itself, as in Floor 4: Strands lists its tools when the agent starts. See [Give your agent tools](https://strandsagents.com/docs/user-guide/sdk/tools/#give-your-agent-tools).
+
+<details>
+<summary>Show me the code for Step 3</summary>
+
+```python
+        # TODO: Step 3 - Add the mcp_client and a2a_client tools to the agent
+        # TODO: Step 4 - Force the response to use the StoryOutput model
+        tools=[mcp_client, a2a_client],
+```
+
+</details>
 
 #### Step 4: Force Structured Output
 
@@ -275,7 +473,7 @@ The Narrator gets two tools: `mcp_client`, which brings in `roll_dice` from the 
 >
 > A Pydantic model that forces the System to answer in JSON. Rarity: Rare. The System resents it. The web interface depends on it. The System resents that too.
 
-By default, an agent replies with free-form text. Structured output makes the model return a typed object that matches a schema you define as a Pydantic model; Strands validates it and hands it back as clean JSON. See the structured output documentation.
+By default, an agent replies with free-form text. Structured output makes the model return a typed object that matches a schema you define as a Pydantic model; Strands validates it and hands it back as clean JSON. See [Request structured output](https://strandsagents.com/docs/user-guide/sdk/agents/structured-output/#request-structured-output).
 
 ```python
 # TODO: Step 4 - Force the response to use the StoryOutput model
@@ -295,6 +493,23 @@ We have coded `StoryOutput` for you, a little further up in the file: the schema
 
 We need this shape because the web interface you will play with in Floor 6 renders those fields separately: parsing free-form prose would be fragile, whereas a guaranteed JSON shape keeps the UI reliable.
 
+<details>
+<summary>Show me the code for Step 4</summary>
+
+```python
+        # TODO: Step 3 - Add the mcp_client and a2a_client tools to the agent
+        # TODO: Step 4 - Force the response to use the StoryOutput model
+        tools=[mcp_client, a2a_client],
+        structured_output_model=StoryOutput,
+    )
+```
+
+Pass the class, `StoryOutput`, not an instance of it. The `/inquire` route already reads `response.structured_output`.
+
+</details>
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby ran the meeting from my shoulders. He asked the clerk for the rule, the desk for the sheet, and the dice for the roll, and he did not do anyone's job for them. Then he made the Narrator fill out a form for every answer, four boxes, every time. "If it is not in the box, Sergeant, it did not happen." I have known colonels who could not manage that.
+
 #### Step 5: Launch the Narrator
 
 The Narrator rolls its dice through the MCP server from Floor 4, so that server has to run too. If it is still running from Floor 4, skip this. Otherwise open a third terminal in the floor folder, activate the virtual environment and start it:
@@ -312,6 +527,14 @@ python narrator_orchestrator.py
 ```
 
 You should see Uvicorn running on `http://127.0.0.1:8009`. Four terminals are now running: the Rules Agent, the Character Agent, the dice server and the Narrator.
+
+Check: the Narrator prints its agent, then the Uvicorn line, with no `Error occurred:` line between them. The file catches any error raised while it builds the agent and prints it, then starts the server anyway, so read the output above the Uvicorn line.
+
+| you see | it means | fix |
+|---|---|---|
+| `Error occurred: ...MCPClientInitializationError...` above the Uvicorn line | the dice server is not running | start it (above), then restart the Narrator |
+| `NameError: name 'agent' is not defined` on the first request | building the agent failed at startup | scroll up to the `Error occurred:` line and fix that first |
+| `TypeError` about `structured_output_model` | an SDK older than this crawl's | `uv sync` |
 
 ## Part 4: Test the System
 
@@ -359,6 +582,15 @@ curl -X POST http://0.0.0.0:8009/inquire \
 ```
 
 Watch the four terminals while a request runs. In the Narrator terminal the tool calls appear in order: `a2a_client` discovering the agent cards, then `send_message` to the Rules Agent or the Character Agent, or `roll_dice` for the dice. The agent you asked logs the question in its own terminal, and the dice server prints a `DICE ROLL` line for every roll: none while the party registers (the Narrator passes the scores from the cast), two `1d20` lines for each dance-off round. The Character Agent terminal shows two `New Crawler registered` lines, and the sheets it returns carry Groove 17 and Mana 8 for Cordula, Groove 11 and Mana 11 for Barnaby: computed by the code, not the model. The answer you get back is JSON shaped like `StoryOutput`: `response`, `actions_suggestions`, `details` and `dice_rolls`. Barnaby's lookup should come back with Dexterity 18 and Mana 11: the Narrator read it from the Character Agent instead of inventing it.
+
+| you see | it means | fix |
+|---|---|---|
+| `{"error": "Internal server error"}` | the Narrator failed; its terminal says why | read the `Error occurred:` line in terminal 4 |
+| the Narrator says a call to an agent failed | that agent is not running, or runs on another port | check terminals 1 and 2 against the table above |
+| `curl: (7) Failed to connect` | the Narrator is not running | Part 3, Step 5 |
+| Groove or Mana differ from 17 and 8 for Cordula | the scores the Narrator passed are not the cast's | look at the `New Crawler registered` line in terminal 2; restore `characters.json` (see [Cleanup](cleanup.md#local-files)) and register again |
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Quarterly Close Accountant stepped onto the pickleweed in a fleece vest and called Footwork like it was an audit finding. The Narrator set the tempo, asked the dice twice, and read both totals out loud with the modifiers shown. I took round one on a drill cadence. The accountant took it well and said they had a close to get back to, and I believed them. Barnaby, very quietly, through the collar: "Registered, Sergeant. They wrote my name down as party leader." He sounded like he had been waiting a long time to hear it.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 5: RULES, SHEETS AND THE CORE LOOP.** This floor is where the game becomes a game. The rules live in a knowledge base the Rules Agent searches, so the Narrator cites them instead of improvising. The character sheet lives with the Character Agent, which computes Groove and Mana from the ability scores so no model can hand a Crawler extra stamina. The dance-off is the core loop: a Move Call, two rolls, a winner, Groove lost, a Final Beat when it is level. Every stat has a job in it, and nobody gets hurt. `StoryOutput` is the notification format the HUD will render on [Floor 6](floor-6.md). See [The System](world/the-system.md#6-conflict-dance-offs-and-stealth-never-killing) and the [Crawl Handbook](world/crawl-handbook/).
 

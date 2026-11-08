@@ -33,6 +33,24 @@ The code to write is given. Under each TODO, the sections show the code to paste
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Where to run this floor: it deploys real resources to your own AWS account: IAM roles, CloudFormation stacks and AgentCore resources. Use credentials allowed to create IAM roles, CloudFormation stacks and AgentCore resources. The commands use `us-west-2`; any AgentCore region works: set yours in the export of Step 1.
 
+## What Floor 8 Costs
+
+Floors 0 to 7 bill only for model calls. Floor 8 also leaves resources in your account until the [Cleanup](cleanup.md) page removes them. Most bill only when they are used; a few bill a little for as long as they exist. The rates below are the us-west-2 list prices as of November 2026, from the [AgentCore pricing page](https://aws.amazon.com/bedrock/agentcore/pricing/), the [Amazon Bedrock pricing page](https://aws.amazon.com/bedrock/pricing/) (Managed Knowledge Bases) and the [CloudWatch pricing page](https://aws.amazon.com/cloudwatch/pricing/). The AgentCore Runtime rates are also quoted in the AWS sample [Cost and Reliability](https://aws-samples.github.io/sample-ac-central/docs/operate/cost-and-reliability/) guide. Check them for your region before you start.
+
+| resource | section | how it bills | this workshop, roughly |
+|---|---|---|---|
+| AgentCore Runtime, four runtimes | 8.1 to 8.4 | per second: $0.0895 per vCPU-hour of CPU used and $0.00945 per GB-hour of memory, from the start of a session until it stops. CPU drops to zero while the agent waits for the model or a tool, and a session stops after 15 minutes without a request | an idle 0.5 GB session for its last 15 minutes: about a tenth of a cent. An afternoon of play: a few cents |
+| Amazon Nova 2 Lite | every section | per token, as on [Floor 1](floor-1.md#what-a-turn-costs) | under one cent a turn; a dollar or two for the whole floor |
+| AgentCore Memory, `characters` | 8.2 | $0.75 per 1,000 memory records a month, $0.50 per 1,000 record retrievals | two records: under a fifth of a cent a month |
+| AgentCore Memory, `conversations` | 8.4 | $1.00 per GB of events written, each event billed as at least 12 KB; $0.20 per GB read; $0.10 per GB-month stored | 400 events: 4.8 MB billed, half a cent |
+| Bedrock Managed Knowledge Base, `rules` | 8 and 8.3 | $5.00 per GB of raw data a month; $1.00 per 1,000 Retrieve calls; parsing and embeddings included | 13 KB of handbook: under a hundredth of a cent a month. 100 rules questions: 10 cents |
+| S3 bucket for the handbook | 8 and 8.3 | storage and requests | under a cent |
+| CloudWatch Logs and traces | 8.1 to 8.4 | $0.50 per GB of logs ingested, $0.03 per GB-month stored; $0.35 per GB of spans | a few MB: under a cent, but the runtime log groups never expire |
+
+The worked numbers: 0.5 GB x 0.25 hour x $0.00945 = $0.0012 for an idle session, and 13 KB x $5.00 per GB = $0.00006 a month for the handbook. The token counts and event counts are estimates for one learner playing a few dozen turns. A whole run of Floor 8 should stay under five dollars, most of it model calls. Your real numbers show up in [AWS Cost Explorer](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html), grouped by service, about a day later.
+
+Nothing here has a monthly minimum, and nothing bills by the hour while idle except storage. That is not a reason to keep it: the [Cleanup](cleanup.md) page removes every row of this table.
+
 ## Set Up the Project
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Everything from here costs money in somebody's AWS account. Possibly yours. Set AWS_DEFAULT_REGION in every terminal. The System will not remind you twice. The System has now reminded you twice."
@@ -66,6 +84,10 @@ export AWS_DEFAULT_REGION=us-west-2
 
 The CLI deploys to this region, and the code of the floor never names one: boto3, the AWS SDK for Python, reads `AWS_DEFAULT_REGION`, and every client of the floor takes its region from there. The variable takes precedence over the region of your AWS profile; without it, the CLI deploys to the region of your profile, and the Narrator looks for your runtimes there. Once deployed, the agents get the region of their runtime from AgentCore.
 
+Check: `agentcore --version` prints `0.31.1`, and `aws sts get-caller-identity` prints your account id. If `agentcore` is not found, open a new terminal: npm puts global commands on your PATH, and an older terminal does not see them. If `npm install -g` fails with `EACCES`, your npm installs global packages in a system folder: use a Node.js version manager such as nvm, or set an npm prefix in your home folder.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby made me read the version number out loud, twice, and write it on the back of my hand. "We will not upgrade mid-operation, Sergeant." I did not argue. I have watched a firmware update brick a landing craft on a beach.
+
 ### Step 2: Create the Project
 
 Run this command from `8_agentcore_production`, the folder that holds `diceserver/` and `narrator/`:
@@ -96,6 +118,10 @@ agentcore deploy -y
 `aws s3 cp --recursive` should list eleven uploads, one per handbook section. The files go into a new S3 bucket, the project declares a knowledge base that reads it, and `agentcore deploy` creates it in a few minutes. When the deployment ends, the knowledge base shows `Deployed` but is not ready yet: Bedrock goes on indexing the handbook. Nothing to wait for: 8.3 checks the indexing.
 
 These commands create resources in your AWS account: an S3 bucket and a knowledge base. Remove them at the end of the workshop, as described on the [Cleanup](cleanup.md) page.
+
+Check: `agentcore status` lists `rules` under Knowledge Bases as `Deployed`, with `Ingestion: IN_PROGRESS` or `COMPLETE`. If `aws s3 mb` fails with `BucketAlreadyExists`, the name is taken: bucket names are global, so add a suffix to `BUCKET` and keep it for the Cleanup page. If `agentcore deploy` fails, read [8.1, Part 2, Step 2](floor-8-1.md#step-2-deploy): its warnings cover the usual errors.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** We dropped the rule book into a bucket and walked away from it, which felt wrong. Bellevue is the kind of floor where the paperwork takes longer than the work. Barnaby called it a "long-lead item" and moved on to the dice.
 
 The project is ready: head to [8.1 The Dice Server](floor-8-1.md) to deploy its first brick.
 

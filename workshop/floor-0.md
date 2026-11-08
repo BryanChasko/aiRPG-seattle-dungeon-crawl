@@ -85,6 +85,8 @@ On Windows, use `python --version` instead of `python3 --version`.
 
 No git? Install it from [git-scm.com/downloads](https://git-scm.com/downloads), then open a new terminal and run `git --version` again.
 
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** First thing I did on the landing was inventory. Paddle, drysuit, float vest, bilge pumps, one kayak battery at eighty percent, one octopus in a dry bag, one dead phone. You do not move until you know what you have. Barnaby watched me count and flashed a slow, steady brown. I chose to take that as approval.
+
 ### Step 2: Claim Your Starter Safe Room (Clone the Repo)
 
 Grab the repository before the ceiling collapses and buries you in uncompiled garbage:
@@ -144,6 +146,8 @@ uv python find
 ```
 
 `uv python find` prints the path of the interpreter uv picked. Monty's camouflage is the `python3` on your PATH, which can be a different, older Python. That is fine: inside this project, `uv sync` and `uv run` always use the one uv picked, never the camouflage.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Monty was coiled around the handrail, and his pattern matched the rust so well I nearly put my hand on him. Barnaby went from red to dead white and pushed every arm he had against the far side of the bag. One constrictor does not trust another. I did not fight the snake. I read his tag, found out exactly who he was, and walked us past on the side he was not watching. Knowing which python you are dealing with is most of the job.
 
 | roadblock | fix |
 |---|---|
@@ -209,6 +213,8 @@ Check: your prompt now starts with the environment's name in parentheses, and `p
 | a new terminal forgot the environment | activation lasts for one terminal; run the activate command again in every new one (Floor 5 opens four) |
 | you would rather not activate at all | put `uv run` in front of any command instead: `uv run python simple_agent.py` |
 
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Safe Room was a maintenance closet halfway down the stairs, dry, with a door that locked from the inside. I topped off Barnaby's water, checked the pumps, and shut the door. Everything we installed stayed in that closet. That is the point of a Safe Room.
+
 ### Step 7: Check Your Pass to the Model (AWS)
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Every floor from 1 on talks to Amazon Nova. Find out now whether I will let you in, not halfway through [Floor 5](floor-5.md)."
@@ -227,6 +233,8 @@ A short reply such as `Ready` means you are set for every floor.
 | `ExpiredToken`, `TokenRetrievalError`, `Token has expired` | your sign-in expired | `aws sso login --profile <your profile>` and try again |
 | `AccessDeniedException` | your role may not invoke this model | open the Amazon Bedrock console in us-west-2, check model access for Amazon Nova 2 Lite, or ask your account admin for `bedrock:InvokeModel` on it |
 | `ValidationException` about the model id | a different region or a typo | keep `region_name='us-west-2'` and the model id exactly as above |
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** One word came back up the stairwell: ready. Not from Barnaby, not yet. From the thing the System runs on. That was enough. I clipped the bag to the frame, Barnaby wrapped two arms over my shoulders, and we went down.
 
 ## Floor Clear
 

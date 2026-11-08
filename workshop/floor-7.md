@@ -30,7 +30,7 @@ Open and modify the [`narrator_harness.py`](../7_strands_harness/narrator_harnes
 
 The Strands Agents SDK (`from strands import Agent`) is what you used so far: you assemble the agent loop yourself, tool by tool.
 
-Strands harness (`from strands_harness import create_harness`) is a pre-assembled agent built on that SDK. What you get back is a plain `Agent`, so everything you learned still applies and every default can be overridden. See what the default harness does in the documentation.
+Strands harness (`from strands_harness import create_harness`) is a pre-assembled agent built on that SDK. What you get back is a plain `Agent`, so everything you learned still applies and every default can be overridden. See [What the default harness does](https://strandsagents.com/docs/user-guide/harness/#what-the-default-harness-does) in the Strands harness docs.
 
 Out of the box, `create_harness()` gives you:
 
@@ -51,6 +51,10 @@ The harness reuses the services from Floors 4 and 5. In three terminals, start t
 
 `strands-harness` is already in the project dependencies: `uv sync` installed it. The file already passes `model="bedrock/us.amazon.nova-2-lite-v1:0"` and `effort="off"` to `create_harness`, as given code above the TODOs, so the Narrator runs on Amazon Nova 2 Lite like every other floor. Keep both lines exactly as they are. The harness turns Nova 2 reasoning on and would pick its high level by default, and with A2A calls in the loop a turn can take a minute or more, so `effort="off"` keeps each turn near ten seconds.
 
+Check before you start: `uv run python -c "import strands_harness; print('harness ready')"` prints `harness ready`, and the cards of both Floor 5 agents answer: `curl -s http://127.0.0.1:8000/.well-known/agent-card.json` and the same on port 8001.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** We woke up in the Safe Room on the bluffs to a System that did not know our names. The dice were still there, the clerk and the desk were still there, but the Narrator had lost the whole night. Barnaby did not move for a long time. Then he said, very evenly, "Sergeant, I should like that not to happen again." The armory on this floor sells armor that comes pre-assembled. We bought the kind with a memory.
+
 ## Step 1: Create the Narrator with create_harness
 
 The A2A client tool from Floor 5 is already in the file, unchanged: a remote agent is still just a tool. What changes is the Narrator around it.
@@ -63,9 +67,30 @@ The A2A client tool from Floor 5 is already in the file, unchanged: a remote age
 # TODO: Step 1 - Pass the INSTRUCTIONS to the harness
 ```
 
-One import, one factory: `create_harness` comes from `strands_harness` (see "use it as a library"). Each keyword replaces something you wired by hand in Floor 5.
+One import, one factory: `create_harness` comes from `strands_harness` (see [Use it as a library](https://strandsagents.com/docs/user-guide/harness/quickstart/#use-it-as-a-library)). Each keyword replaces something you wired by hand in Floor 5.
 
-`instructions`: your domain text, appended after the harness contract. Keep it narrow, the contract already covers general behaviour. Passing a full `system_prompt` instead would replace the contract entirely. See "add instructions".
+`instructions`: your domain text, appended after the harness contract. Keep it narrow, the contract already covers general behaviour. Passing a full `system_prompt` instead would replace the contract entirely. See [Add instructions](https://strandsagents.com/docs/user-guide/harness/configure/tools-and-instructions/#add-instructions).
+
+<details>
+<summary>Show me the code for Step 1</summary>
+
+```python
+from strands.vended_tools import make_a2a_client
+# TODO: Step 1 - Import create_harness from strands_harness
+from strands_harness import create_harness
+```
+
+```python
+agent = create_harness(
+    model="bedrock/us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, as in the other floors
+    effort="off",  # under the harness, Nova 2 reasons at high by default; off keeps a turn near ten seconds
+    # TODO: Step 1 - Pass the INSTRUCTIONS to the harness
+    instructions=INSTRUCTIONS,
+```
+
+`INSTRUCTIONS` is the string defined higher up in the file. The six keyword TODOs sit together inside `create_harness(...)`: put each answer under its own comment, or all of them in a row under the last one, as the `solution` branch does.
+
+</details>
 
 ## Step 2: Add the Dice MCP Server
 
@@ -73,7 +98,19 @@ One import, one factory: `create_harness` comes from `strands_harness` (see "use
 # TODO: Step 2 - Add the dice MCP server {"dice": {"url": "http://127.0.0.1:8002/mcp"}} to mcp_servers
 ```
 
-`mcp_servers`: a config mapping, the same `mcpServers` format other MCP clients use. No more `MCPClient`, no more transport import: the harness connects the server and registers its tools. The key becomes a prefix, so the dice tool is called `dice_roll_dice`. See "pass a config file or an inline mapping".
+`mcp_servers`: a config mapping, the same `mcpServers` format other MCP clients use. No more `MCPClient`, no more transport import: the harness connects the server and registers its tools. The key becomes a prefix, so the dice tool is called `dice_roll_dice`. See [Pass a config file or an inline mapping](https://strandsagents.com/docs/user-guide/harness/configure/mcp-servers/#pass-a-config-file-or-an-inline-mapping).
+
+<details>
+<summary>Show me the code for Step 2</summary>
+
+```python
+    # TODO: Step 2 - Add the dice MCP server {"dice": {"url": "http://127.0.0.1:8002/mcp"}} to mcp_servers
+    mcp_servers={"dice": {"url": "http://127.0.0.1:8002/mcp"}},
+```
+
+A server that cannot be reached gives the agent no tools instead of stopping it ([A failed server yields no tools, not a crash](https://strandsagents.com/docs/user-guide/harness/configure/mcp-servers/#a-failed-server-yields-no-tools-not-a-crash)), so start the dice server first.
+
+</details>
 
 ## Step 3: Add the A2A Client Tool
 
@@ -81,7 +118,17 @@ One import, one factory: `create_harness` comes from `strands_harness` (see "use
 # TODO: Step 3 - Add the a2a_client tool to the harness
 ```
 
-`tools`: your own tools, next to the built-ins. See "register your own tools".
+`tools`: your own tools, next to the built-ins. See [Register your own tools](https://strandsagents.com/docs/user-guide/harness/configure/tools-and-instructions/#register-your-own-tools).
+
+<details>
+<summary>Show me the code for Step 3</summary>
+
+```python
+    # TODO: Step 3 - Add the a2a_client tool to the harness
+    tools=[a2a_client],
+```
+
+</details>
 
 ## Step 4: Disable the Built-in Tools
 
@@ -91,7 +138,19 @@ One import, one factory: `create_harness` comes from `strands_harness` (see "use
 # TODO: Step 4 - Disable the built-in tools
 ```
 
-`builtin_tools=[]`: the harness ships with a set of built-in tools, enabled by default, that give the agent shell, file and web access. They are made for coding agents and a Narrator needs none of them: it has no business on your filesystem. Passing an empty list disables them all. See "select or disable built-in tools".
+`builtin_tools=[]`: the harness ships with a set of built-in tools, enabled by default, that give the agent shell, file and web access. They are made for coding agents and a Narrator needs none of them: it has no business on your filesystem. Passing an empty list disables them all. See [Select or disable built-in tools](https://strandsagents.com/docs/user-guide/harness/configure/tools-and-instructions/#select-or-disable-built-in-tools).
+
+<details>
+<summary>Show me the code for Step 4</summary>
+
+```python
+    # TODO: Step 4 - Disable the built-in tools
+    builtin_tools=[],
+```
+
+</details>
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The armor came with a shell, a file editor and a web browser bolted on. A Narrator with a shell is a scripter with better lighting, and I had already met Kiro. We took them off before we put the armor on.
 
 ## Step 5: Name the Session
 
@@ -101,7 +160,19 @@ One import, one factory: `create_harness` comes from `strands_harness` (see "use
 # TODO: Step 5 - Name the session "seattle-campaign"
 ```
 
-`session`: a named session persisted under `.agent/sessions`; start the server again with the same id and the campaign resumes. See "persist and resume by id".
+`session`: a named session persisted under `.agent/sessions`; start the server again with the same id and the campaign resumes. See [Persist and resume by id](https://strandsagents.com/docs/user-guide/harness/configure/sessions/#persist-and-resume-by-id).
+
+<details>
+<summary>Show me the code for Step 5</summary>
+
+```python
+    # TODO: Step 5 - Name the session "seattle-campaign"
+    session={"id": "seattle-campaign"},
+```
+
+The id is the campaign: change it, and the next start begins a fresh one.
+
+</details>
 
 ## Step 6: Force Structured Output
 
@@ -109,7 +180,18 @@ One import, one factory: `create_harness` comes from `strands_harness` (see "use
 # TODO: Step 6 - Force the response to use the StoryOutput model
 ```
 
-`structured_output_model` is not a parameter of `create_harness`, it is a parameter of the SDK `Agent`. `create_harness` has a fixed list of parameters, the ones you used in the steps above; every other keyword goes into a bag that it hands verbatim to the `Agent(...)` constructor at the end. The harness does not interpret it, it does not even look at it: the SDK `Agent` receives `structured_output_model=StoryOutput` exactly as in Floor 5. So anything `Agent` accepts can be passed here, and an explicit SDK value always wins over the harness sugar it corresponds to (a `system_prompt` would replace `instructions`). That is how you keep the `StoryOutput` contract the web interface expects. See "passthrough to the agent".
+`structured_output_model` is not a parameter of `create_harness`, it is a parameter of the SDK `Agent`. `create_harness` has a fixed list of parameters, the ones you used in the steps above; every other keyword goes into a bag that it hands verbatim to the `Agent(...)` constructor at the end. The harness does not interpret it, it does not even look at it: the SDK `Agent` receives `structured_output_model=StoryOutput` exactly as in Floor 5. So anything `Agent` accepts can be passed here, and an explicit SDK value always wins over the harness sugar it corresponds to (a `system_prompt` would replace `instructions`). That is how you keep the `StoryOutput` contract the web interface expects. See [Passthrough to the Agent](https://strandsagents.com/docs/user-guide/harness/reference/configuration/#passthrough-to-the-agent).
+
+<details>
+<summary>Show me the code for Step 6</summary>
+
+```python
+    # TODO: Step 6 - Force the response to use the StoryOutput model
+    structured_output_model=StoryOutput,
+)
+```
+
+</details>
 
 ## Step 7: Run and Compare
 
@@ -135,9 +217,35 @@ curl -X POST http://127.0.0.1:8009/inquire \
   -d '{"question": "Where did we stop last time, and what was Cordula'\''s Groove?"}'
 ```
 
-Where did the campaign go between the two runs? Look at the `7_strands_harness/.agent/` folder that appeared next to the file: this is where the harness keeps everything a session needs to survive a restart. Under `sessions/session/seattle-campaign/`, the id you chose in Step 5, `snapshot_latest.json` holds the whole conversation, every message exchanged with the Narrator, plus its system prompt and model state. At start-up the harness reads the snapshot for that id and the agent picks up where it stopped. The folder is gitignored, so it stays on your machine. Long-term memory, the facts the harness distils about the player across campaigns, lives in `.agent/memory` the same way, see "what memory does by default".
+Where did the campaign go between the two runs? Look at the `7_strands_harness/.agent/` folder that appeared next to the file: this is where the harness keeps everything a session needs to survive a restart. Under `sessions/session/seattle-campaign/`, the id you chose in Step 5, `snapshot_latest.json` holds the whole conversation, every message exchanged with the Narrator, plus its system prompt and model state. At start-up the harness reads the snapshot for that id and the agent picks up where it stopped. The folder is gitignored, so it stays on your machine. Long-term memory, the facts the harness distils about the player across campaigns, lives in `.agent/memory` the same way, see [What memory does by default](https://strandsagents.com/docs/user-guide/harness/configure/memory/#what-memory-does-by-default).
 
-Expect about the same speed as Floor 5: the file sets `effort="off"`, the same as the Floor 5 Narrator. Pass `"low"`, `"medium"` or `"high"` for deeper plans, at 30 seconds to over a minute a turn, see "set reasoning effort". Notice also how the Narrator likes to confirm before acting: that is the harness contract, written for coding agents. `instructions` is where you push back.
+Check: the second answer names the Ship Canal and Cordula's Groove, 17, from before the restart, and `7_strands_harness/.agent/sessions/session/seattle-campaign/snapshot_latest.json` exists.
+
+| you see | it means | fix |
+|---|---|---|
+| `NameError: name 'create_harness' is not defined` | the import of Step 1 is missing | add `from strands_harness import create_harness` |
+| the Narrator answers but never rolls, or invents rolls | the dice server was down at startup, so the harness registered no dice tool | start the dice server (`4_mcp_integration`), then restart this one |
+| the answer is plain text, and the web interface shows nothing | Step 6 is missing | `structured_output_model=StoryOutput` |
+| after the restart, the Narrator does not remember | no session, or a different id | Step 5, and the same id on both runs |
+| the Narrator asks to run a shell command | the built-in tools are still on | Step 4 |
+| a turn takes a minute or more | `effort` is no longer `"off"` | put back the given line |
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** We slept again, on purpose, to test it. The madrone dropped bark on my sleeping bag all night. In the morning I asked the System where we had stopped, and it told me: the Ship Canal, my Groove, the accountant, all of it. Barnaby flashed white, then red, then white, the pattern from the aquarium glass the morning the pier fell. I asked him what it meant. "It means I am still here, Sergeant." Then the Ferry-Line Commuter Horde came up the cliff path at dawn, travel mugs first, and we danced the whole bluff without forgetting a single step.
+
+Expect about the same speed as Floor 5: the file sets `effort="off"`, the same as the Floor 5 Narrator. Pass `"low"`, `"medium"` or `"high"` for deeper plans, at 30 seconds to over a minute a turn, see [Set reasoning effort](https://strandsagents.com/docs/user-guide/harness/configure/model/#set-reasoning-effort). Notice also how the Narrator likes to confirm before acting: that is the harness contract, written for coding agents. `instructions` is where you push back.
+
+### What the Effort Levels Cost
+
+The price per token does not change with `effort`: Amazon Nova 2 Lite bills about $0.30 per million input tokens and $2.50 per million output tokens at every level ([Floor 1](floor-1.md#what-a-turn-costs)). What changes is how many tokens a turn makes. Reasoning tokens are generated tokens, billed as output, and each level lets the model reason longer before it answers.
+
+| effort | turn time on this floor | what it adds to the bill |
+|---|---|---|
+| `"off"` | about 10 seconds | nothing: a turn costs about what a Floor 5 turn does, under one cent |
+| `"low"`, `"medium"`, `"high"` | 30 seconds to over a minute | the reasoning tokens of every model call in the turn, at the output price. Each level reasons longer than the one before; `"high"` is what the harness picks for Nova 2 when you pass no `effort` |
+
+A worked example: if reasoning adds 2,000 tokens to each of the five model calls of a dance-off turn, that is 10,000 more output tokens, 2.5 cents, about four times the cost of the same turn with `"off"`.
+
+Two harness defaults pull the other way. The contract adds its own text to every call, so each call sends more input tokens than on Floor 5, and prompt caching makes those repeated tokens cheaper on later calls ([prompt caching](https://strandsagents.com/docs/user-guide/sdk/model-providers/amazon-bedrock-prompt-caching/)). The token counts above are illustrations, not measurements: the result of `agent.invoke_async` in `ask_agent` carries `metrics.accumulated_usage`, with the turn's real `inputTokens` and `outputTokens`. Print it and compare `"off"` with `"low"` on the same question.
 
 Floor 5 vs Floor 7:
 
@@ -152,7 +260,7 @@ Floor 5 vs Floor 7:
 
 ## When to Use Which
 
-The docs put it plainly: reach for the harness when its defaults fit and you want a capable agent quickly; drop to the SDK when you need shapes the harness does not assume, a bespoke toolset, a custom loop, multi-agent orchestration. The two compose, since the harness returns a plain `Agent`. See "when to reach for which".
+The docs put it plainly: reach for the harness when its defaults fit and you want a capable agent quickly; drop to the SDK when you need shapes the harness does not assume, a bespoke toolset, a custom loop, multi-agent orchestration. The two compose, since the harness returns a plain `Agent`. See [When to reach for which](https://strandsagents.com/docs/user-guide/harness/composing-with-sdk/#when-to-reach-for-which).
 
 From here you can add any feature you want. Your Narrator could generate images of scenes and characters, remember the opponents the party out-danced and whether they became friends, run a campaign for several players at once, invent new Puget Sound locations as the story needs them, track Hype, sponsors and experience points, read its narration aloud, or roll both sides of a dance-off round in one call to the dice server. Sky is the limit.
 

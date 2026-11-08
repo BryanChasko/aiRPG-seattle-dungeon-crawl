@@ -30,7 +30,7 @@ This section works in two folders of `8_agentcore_production`:
 mcp = FastMCP(host="0.0.0.0", stateless_http=True)
 ```
 
-This is the only change to the Floor 4 server. Keep the name `mcp`: the `@mcp.tool()` decorator and `mcp.run(...)` below use it. AgentCore Runtime expects an MCP server at `0.0.0.0:8000/mcp`, which is FastMCP's default port and path, so `port=8002` goes away. `host="0.0.0.0"` makes the server reachable from outside its microVM (the default `127.0.0.1` only accepts local connections), and `stateless_http=True` lets any request be served without an MCP session kept in memory, the recommended mode for a simple tool server. `roll_dice`, its docstring and `mcp.run(transport="streamable-http")` are unchanged. See the AgentCore MCP documentation.
+This is the only change to the Floor 4 server. Keep the name `mcp`: the `@mcp.tool()` decorator and `mcp.run(...)` below use it. AgentCore Runtime expects an MCP server at `0.0.0.0:8000/mcp`, which is FastMCP's default port and path, so `port=8002` goes away. `host="0.0.0.0"` makes the server reachable from outside its microVM (the default `127.0.0.1` only accepts local connections), and `stateless_http=True` lets any request be served without an MCP session kept in memory, the recommended mode for a simple tool server. `roll_dice`, its docstring and `mcp.run(transport="streamable-http")` are unchanged. See [Deploy MCP servers in AgentCore Runtime](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-mcp.html) in the AgentCore Developer Guide.
 
 The `pyproject.toml` next to the server lists its only dependency, `mcp<2`: AgentCore installs it when it packages the code.
 
@@ -100,6 +100,14 @@ agentcore logs --runtime diceserver --since 15m
 ```
 
 You should find `Starting Dice Roll MCP Server...` and the `DICE ROLL: 1d20 = [...] -> ...` line of your call, the same log lines as in Floor 4, written this time by a server running in AWS.
+
+If `agentcore logs` shows nothing yet, wait a minute: logs reach CloudWatch with a short delay. If `call-tool` fails with `AccessDeniedException`, your credentials may not invoke AgentCore runtimes: check that `aws sts get-caller-identity` prints the account you deployed to, and that `AWS_DEFAULT_REGION` matches the region of `agentcore status`.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** One d20, rolled by a box we could not see, in a building none of us will ever walk into. The log said 14. Barnaby wanted to read the line himself, in CloudWatch, with his own arms, before he would believe it. He read it. Then he asked for a second roll, to be sure it was not a recording.
+
+### What the Dice Server Costs
+
+A runtime bills per second while a session runs: $0.0895 per vCPU-hour of CPU used and $0.00945 per GB-hour of memory, and CPU drops to zero while the server waits. A dice roll takes milliseconds of CPU, so the memory of the session is most of the bill: a session that stays open for its 15 idle minutes after your last roll, at about half a GB, costs about a tenth of a cent. With no session open, the deployed runtime costs nothing. The rest of [What Floor 8 Costs](floor-8.md#what-floor-8-costs) covers the other bricks.
 
 ## Part 3: Connect the Narrator (narrator/narrator_orchestrator.py)
 
@@ -180,6 +188,10 @@ agentcore logs --runtime diceserver --since 15m
 ```
 
 Your rolls are there, for example `DICE ROLL: 1d20 = [14] -> 14` followed by `DICE ROLL: 1d20 = [9] -> 9`. You can also play from the Floor 6 web interface: it talks to the Narrator on port 8009, exactly as before.
+
+If the Narrator says the roll failed, its terminal shows why: a `403` means the request was signed for another region than the runtime's (export `AWS_DEFAULT_REGION` in that terminal and restart the Narrator), and `ExpiredToken` means your sign-in expired.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Bonus-Season Investment Banker met us on a skybridge over Bellevue Way, cufflinks first, and called Presence like a sure thing. Both dice rolled somewhere in Oregon. I lost the round by two and lost two Groove, and I was fine with it: the roll was fair, and everybody could read it. Barnaby took the next call on Choreography, and the banker went back to the trading floor to think about bonus season.
 
 Keep the `gameprod` project and its deployment: the next sections add the other bricks to it. To remove everything at the end of the workshop, see the [Cleanup](cleanup.md) page.
 

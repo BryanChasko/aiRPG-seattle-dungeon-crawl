@@ -52,6 +52,14 @@ Under Knowledge Bases, `rules` shows `Deployed` as soon as the knowledge base ex
 
 If you change a handbook file later, copy it to the bucket again and run `agentcore run ingest`: Bedrock indexes the bucket again, and the cloud Rules Agent answers from the new rule.
 
+If `rules` is missing from `agentcore status`, the Floor 8 page's Step 3 did not deploy: run it again from `gameprod`. If the ingestion shows `FAILED`, check that `aws s3 ls s3://gameprod-rules-$(aws sts get-caller-identity --query Account --output text)/` lists the eleven handbook files, then run `agentcore run ingest`.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The rule book we dropped in the bucket two bricks ago had been read, cut up and filed while we worked. Nobody had to wait on it. That is how you run a long-lead item: start it first, check it last.
+
+### What the Knowledge Base Costs
+
+A Managed Knowledge Base bills $5.00 per GB of raw data a month and $1.00 per 1,000 Retrieve calls, with parsing and embeddings included ([Amazon Bedrock pricing](https://aws.amazon.com/bedrock/pricing/), Knowledge Bases). The handbook is about 13 KB, so storage is under a hundredth of a cent a month. Every rules question is one Retrieve call, a tenth of a cent. The S3 bucket that holds the source files costs under a cent. The stack deletes the knowledge base, and the [Cleanup](cleanup.md#step-3-delete-the-rules-bucket) page deletes the bucket.
+
 ## Part 2: Prepare the Rules Agent for the Cloud (rulesagent/rules_agent.py)
 
 The `query_rules` tool, its docstring, the prompts and the `create_agent` factory are the ones from Floor 5. Two things change: what the tool searches, and how the agent is served. In Floor 5 the agent already went through its tool to read the rules; only the body of the tool changes.
@@ -88,7 +96,7 @@ The code goes under the TODO, at the end of `query_rules`, after its docstring. 
 - `retrievalQuery={"text": query}`: the question, in plain English; the knowledge base computes its embedding
 - `retrievalConfiguration={"managedSearchConfiguration": {"numberOfResults": 3}}`: a managed knowledge base takes `managedSearchConfiguration`; the `vectorSearchConfiguration` you may find in other examples is for knowledge bases on your own vector store, and is rejected here
 
-The response has a `retrievalResults` list. Each result holds the passage in `result["content"]["text"]` and the file it came from in `result["location"]["s3Location"]["uri"]`, which `section_of` reads. The tool returns the passages as in Floor 5: `[Final Beat] ...`, separated by blank lines. See Retrieve and ManagedSearchConfiguration.
+The response has a `retrievalResults` list. Each result holds the passage in `result["content"]["text"]` and the file it came from in `result["location"]["s3Location"]["uri"]`, which `section_of` reads. The tool returns the passages as in Floor 5: `[Final Beat] ...`, separated by blank lines. See [Retrieve](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html) and [ManagedSearchConfiguration](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ManagedSearchConfiguration.html) in the Amazon Bedrock API Reference.
 
 ### Step 2: Serve the Agent on AgentCore
 
@@ -199,6 +207,14 @@ agentcore invoke --runtime rulesagent "How does the Final Beat work?"
 
 The agent searches the knowledge base once and answers with the section name, Final Beat, as in Floor 5: both roll 1d20 plus their Dexterity modifier, and the total closest to 20 without going over wins.
 
+| you see | it means | fix |
+|---|---|---|
+| `KeyError: 'KNOWLEDGE_BASE_RULES_ID'` in `agentcore logs --runtime rulesagent` | `envVars` is missing | Part 3, Step 2, then deploy again |
+| `AccessDeniedException` on `Retrieve` | `kb-policy.json` is not attached | Part 3, Step 2 |
+| `ValidationException` about `vectorSearchConfiguration` | the tool uses the configuration of a self-managed knowledge base | use `managedSearchConfiguration`, as in Part 2, Step 1 |
+| `ResourceNotFoundException` | the id in `envVars` is not your knowledge base's | copy the 10 characters after `knowledge-base/` from `agentcore status` |
+| an answer with no section name, or a vague one | the ingestion was not complete when you asked | wait for `Ingestion: COMPLETE` and ask again |
+
 ## Part 4: Connect the Narrator (narrator/narrator_orchestrator.py)
 
 The Rules Agent was the last brick on 127.0.0.1. It reuses the signed client configuration of 8.2: AgentCore keeps one session per runtime, so the same session id serves both agents.
@@ -262,6 +278,8 @@ curl -X POST http://0.0.0.0:8009/inquire \
 ```
 
 The Narrator asks the Rules Agent about stealth, then rolls on the cloud dice server and narrates. Its `details` field cites the handbook section. Three of your four bricks now run in AWS, and `agentcore logs --runtime rulesagent` shows the request. Only the Narrator is left on your machine: 8.4 moves it too.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder had set up a tripod at the top of the locks and was rehearsing to nobody. We asked the rule book, from the cloud, whether we could sneak past. It said yes, with a Dexterity check against ten plus the founder's best Wisdom modifier, and advantage if Barnaby hid us. He bent the light across my drysuit until I could not see my own boots. The dice said we made it. The founder never looked up from the slides.
 
 ## Floor Clear
 

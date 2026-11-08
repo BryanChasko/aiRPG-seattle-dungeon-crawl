@@ -48,6 +48,10 @@ The web interface runs in your browser and talks to the Narrator running on the 
 
 The character panel shows the sheet the Character Agent saved on Floor 5, with GROOVE and MANA under the six ability scores. If you skipped the Floor 5 registration, the first turn registers the party. Pick a suggested action, or type your own: "Challenge the Rain-Shell Tourist Pod to a dance-off" works, and so does "Have Barnaby sneak us past them".
 
+Check: the panel shows Cordula with GROOVE 17 and MANA 8 (or Barnaby with 11 and 11), and the first turn comes back as a notification, three choices and a battle log, within about ten seconds.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The screen came up in a dead storefront under Pioneer Square: my sheet on the left, the battle log down the side, three choices at the bottom, one of them a terrible idea, as advertised. For the first time since the pier folded I could see what the viewers saw. I did not love it. Barnaby, on the other hand, found the camera within a second and turned a color I can only call stage-ready.
+
 Monitor performance: watch your terminal logs to see how your Narrator processes requests:
 
 ```
@@ -63,6 +67,8 @@ Customization ideas:
 - Modify system prompts to change your Narrator's personality
 - Add new custom tools for different mechanics
 - Integrate additional MCP servers for new capabilities
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder wanted a dance-off for our "attention share." The Fremont Troll judged from the end of the arena, one stone eye on each of us. I called Endurance and held a drill cadence until the founder ran out of slides. Barnaby closed on Presence with a full-body light show, timed to the beat, hitting every mark. The log on the screen showed every roll. The ratings ticker in the corner went vertical. Barnaby noticed. He is going to be insufferable about it.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 6: THE HUD.** In a LitRPG the reader sees the System through its interface: the floating character sheet, the notification boxes, the battle log. The web interface is that HUD, and it can only exist because [Floor 5](floor-5.md) forced the Narrator into `StoryOutput`: `response` becomes the notification, `dice_rolls` the battle log, `actions_suggestions` the three choices (one of them always a terrible idea). Design the data first and the interface follows. See [The System](world/the-system.md#1-origin-and-interface).
 

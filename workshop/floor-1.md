@@ -59,6 +59,8 @@ Before creating your agent, enable debug logging to observe the agent's internal
 
 There are different log levels: DEBUG, INFO, WARNING, ERROR, and CRITICAL. We recommend DEBUG as a starting point: it is verbose, but it is the only level where Strands shows the request sent to the model and the response streamed back. Higher levels such as INFO stay almost silent, so raise the level once you have seen enough.
 
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Before I let anything talk, I want to hear what it says when it thinks nobody is listening. The debug log is that. It is long and it is boring, and it is the only honest record of what went out and what came back.
+
 <details>
 <summary>Show me the code for Step 1</summary>
 
@@ -104,6 +106,8 @@ agent = Agent(
 `Agent` is already imported at the top of the file. A model id as a plain string means "this model on Amazon Bedrock".
 
 </details>
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The terminal wanted one sentence: who is the System? I wrote what I had seen of it so far. Loud, theatrical, a little mean, exact about numbers. It turns out that one sentence is the difference between a broadcast and a warning siren.
 
 ### What a Turn Costs
 
@@ -151,6 +155,17 @@ python simple_agent.py
 ```
 
 If successful, your Narrator agent should answer in the System's voice and set the scene under the Seattle waterfront.
+
+Check: the answer streams into the terminal as it is written, addresses you as Crawler, and mentions the dungeon under Seattle. With Step 1 done, DEBUG lines from `strands` come first.
+
+| you see | it means | fix |
+|---|---|---|
+| `NoCredentialsError`, `ExpiredToken` or `AccessDeniedException` | the model call never reached Nova | run the check in [Floor 0, Step 7](floor-0.md#step-7-check-your-pass-to-the-model-aws) |
+| `NameError: name 'agent' is not defined` | Step 2 is missing, or the variable has another name | name it `agent` |
+| the script ends with no answer at all | Step 3 is missing | call `agent("...")` |
+| no DEBUG lines | Step 1 is missing, or `basicConfig` has no handler | copy the Step 1 block |
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Rain-Shell Tourist Pod was blocking the tide pools, twenty people in matching jackets with a guide holding a flag. They could not hear us. Then the System came back on, loud enough to rattle the glass, and every one of them turned around at once. And the collar on Barnaby's mantle clicked, and a voice came out of it, dry and very British. "Sergeant." A pause. "This water is four degrees too cold, and I should like that noted." I noted it. The tour guide lowered the flag and let us through.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 1: THE INTERFACE VOICE.** A LitRPG System talks in notifications, and how they sound sets the genre. A cold, analytic System makes a survival story; a cruel one makes horror; ours is a game-show host. Change one sentence of your system prompt (try "You are a calm, clinical survival System") and run the script again: same model, same question, a different book. See [The System](world/the-system.md#1-origin-and-interface).
 
