@@ -10,7 +10,7 @@ Files on this floor: [`web/src/views/NewGameView.vue`](../web/src/views/NewGameV
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 6.** Under Pioneer Square the old storefronts are still there, buried, and the Fremont Troll sits at the end of the arena like a judge who has seen too much. The audience could see us now. We could not see the show. We needed what the viewers had: the sheet, the rolls, the choices, all on one screen. Once we had it, Barnaby performed. I did not know an octopus could hit his marks. The ratings did.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience what you built. Pick who speaks for the party, point it at port 8009, and press Enter. No pressure. Only billions of viewers."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience the Narrator. Pick who speaks for the party, point the web interface at port 8009, and press Enter. No pressure. Only billions of viewers."
 
 ## Floor Objective
 
@@ -18,11 +18,11 @@ You've built a Narrator with custom tools, an MCP server and A2A agents. Test it
 
 ## Web Interface
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The arena is a public HTTPS page that calls your localhost. The browser allows it because 127.0.0.1 is you. Nobody else is invited. Yet."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The arena is a public HTTPS page that calls localhost. The browser allows it because 127.0.0.1 is this machine. No other machine is invited. Yet."
 
-Once all your agents and MCP servers are running, use the web interface at https://bryanchasko.github.io/aiRPG-seattle-dungeon-crawl/.
+Once the Narrator, Character Agent, Rules Agent and MCP servers are running, open the web interface at https://bryanchasko.github.io/aiRPG-seattle-dungeon-crawl/.
 
-The interface lives in this repository under `web/` (Vue 3 + Vite). To run it on your own machine instead, with Node.js 22.12 or later:
+The interface lives in this repository under `web/` (Vue 3 + Vite). To run the web interface on your own machine instead, with Node.js 22.12 or later:
 
 ```bash
 cd aiRPG-seattle-dungeon-crawl/web
@@ -36,27 +36,27 @@ npm run dev
 >
 > **[OPENING NIGHT JITTERS]**
 >
-> Reward: You received a [Bronze Box]. Inside: one character sheet, one Start button, and a stage light pointed directly at you.
+> Reward: The Crawler received a [Bronze Box]. Inside: one character sheet, one Start button, and a stage light pointed directly at you.
 
 In the web interface:
 
-- Pick who you play. The party is set: Cordula Vance (she/her, Human (Seattle Native), Amphibious Breacher) is the default, or speak as Barnaby (he/him, Uplifted Giant Pacific Octopus, Benthic Dragoon), the party leader. Shelly the geoduck and Chonks the spiny lumpsucker come along as companions either way
-- In Server URL, enter the URL shown in your Narrator Orchestrator terminal: `http://127.0.0.1:8009`
+- Pick the character to play. The party is set: Cordula Vance (she/her, Human (Seattle Native), Amphibious Breacher) is the default, or speak as Barnaby (he/him, Uplifted Giant Pacific Octopus, Benthic Dragoon), the party leader. Shelly the geoduck and Chonks the spiny lumpsucker travel with the party as companions for either character
+- In Server URL, enter the URL shown in the Narrator Orchestrator terminal: `http://127.0.0.1:8009`
 - Click Enter the Dungeon
 
-The web interface runs in your browser and talks to the Narrator running on the same machine. Browsers let this HTTPS page reach `http://127.0.0.1:8009` because it is localhost.
+The web interface runs in the browser and talks to the Narrator running on the same machine. Browsers let this HTTPS page reach `http://127.0.0.1:8009` because 127.0.0.1 is localhost.
 
-The character panel shows the sheet the Character Agent saved on Floor 5, with GROOVE and MANA under the six ability scores. If you skipped the Floor 5 registration, the first turn registers the party. Pick a suggested action, or type your own: "Challenge the Rain-Shell Tourist Pod to a dance-off" works, and so does "Have Barnaby sneak us past them". This floor's opponent is the Pitch-Deck Founder, with the Fremont Troll judging. Type this to face them:
+The character panel shows the sheet the Character Agent saved on Floor 5, with GROOVE and MANA under the six ability scores. If you skipped the Floor 5 registration, the first turn registers the party. Pick a suggested action, or type a custom action: "Challenge the Rain-Shell Tourist Pod to a dance-off" and "Have Barnaby sneak us past them" both work. This floor's opponent is the Pitch-Deck Founder, with the Fremont Troll judging. Type this prompt to face the Pitch-Deck Founder:
 
 ```
 Challenge the Pitch-Deck Founder to a dance-off in the Underground, with the Fremont Troll judging. Run all three rounds.
 ```
 
-Check: the panel shows Cordula with GROOVE 17 and MANA 8 (or Barnaby with 11 and 11), and the first turn comes back as a notification, three choices and a battle log, within about ten seconds.
+Check: the panel shows Cordula with GROOVE 17 and MANA 8 (or Barnaby with 11 and 11), and the Narrator returns the first turn as a notification, three choices and a battle log, within about ten seconds.
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The screen came up in a dead storefront under Pioneer Square: my sheet on the left, the battle log down the side, three choices at the bottom, one of them a terrible idea, as advertised. For the first time since the pier folded I could see what the viewers saw. I did not love it. Barnaby, on the other hand, found the camera within a second and turned a color I can only call stage-ready.
 
-Monitor performance: watch your terminal logs to see how your Narrator processes requests:
+Monitor performance: read the Narrator Orchestrator terminal log to follow each request:
 
 ```
 Processing request...
@@ -68,9 +68,9 @@ INFO:     127.0.0.1:53210 - "POST /inquire HTTP/1.1" 200 OK
 
 Customization ideas:
 
-- Modify system prompts to change your Narrator's personality
-- Add new custom tools for different mechanics
-- Integrate additional MCP servers for new capabilities
+- Edit the Narrator system prompt to change its personality
+- Add custom tools for new game mechanics
+- Connect more MCP servers to add tools
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder wanted a dance-off for our "attention share." The Fremont Troll judged from the end of the arena, one stone eye on each of us. I called Endurance and held a drill cadence until the founder ran out of slides. Barnaby closed on Presence with a full-body light show, timed to the beat, hitting every mark. The log on the screen showed every roll. The ratings ticker in the corner went vertical. Barnaby noticed. He is going to be insufferable about it.
 
@@ -82,49 +82,49 @@ Customization ideas:
 
 Browser:
 
-- Do not run this in Safari: it has not been tested
-- Use Google Chrome or Mozilla Firefox, both work
+- Do not run the web interface in Safari: Safari has not been tested
+- Use Google Chrome or Mozilla Firefox
 
 "Connection Refused" error:
 
-- Verify your Narrator is running on port 8009
-- Check that no firewall is blocking the connection
+- Confirm the Narrator Orchestrator is running on port 8009
+- Confirm no firewall blocks port 8009
 
 "Invalid Server URL" message:
 
-- Make sure the URL is exactly `http://127.0.0.1:8009`, with no space or path after the port
-- Check for typos in the URL entry
+- Enter exactly `http://127.0.0.1:8009`, with no space or path after the port
+- Fix typos in the Server URL field
 
 Slow response times:
 
-- Monitor your local machine's resource usage
-- Check your internet connection stability
-- Consider optimizing your agent's model configuration
+- Watch CPU and memory use on the local machine
+- Test the internet connection to Amazon Bedrock
+- Shorten the Narrator system prompt or reduce tool calls per turn (Amazon Nova 2 Lite stays the only model)
 
 ## Side Passages (optional)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The arena keeps two scores nobody showed us: the Hype the audience gives, and the deals the sponsors want.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The arena keeps two scores nobody showed us: Hype from the audience, deals from the sponsors.
 
 - [The Hype Meter](encounters/hype-meter.md), sidequest: a hook turns tool and model events into Hype, and a meter in the web interface shows it
-- [Sponsor Interrupt](encounters/sponsor-interrupt.md), sidequest: an interrupt pauses the turn so you accept or refuse a sponsor deal in the browser
+- [Sponsor Interrupt](encounters/sponsor-interrupt.md), sidequest: an interrupt pauses the turn so the player accepts or refuses a sponsor deal in the browser
 
 ## Floor Clear
 
-Floor cleared, Crawler. You've connected your Narrator to a web interface and tested it end to end.
+Floor cleared, Crawler. The Narrator is connected to the web interface and tested end to end.
 
 Loot you're keeping:
 
-- Connecting your local Narrator to the web interface
-- Testing your agent's responses through the web interface
-- Following your agent's tool calls in the terminal
+- Connecting the local Narrator to the web interface
+- Testing Narrator responses in the web interface
+- Following Narrator tool calls in the terminal log
 
-<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Explore [Floor 7](floor-7.md) for advanced enhancements you can add to your system.
+<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Explore [Floor 7](floor-7.md) for advanced enhancements to the System.
 
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[OPENING NIGHT]**
 >
-> Reward: You received a [Bronze Box]. Inside: a browser tab, a character sheet, and the faint smell of stage fright.
+> Reward: The Crawler received a [Bronze Box]. Inside: a browser tab, a character sheet, and the faint smell of stage fright.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "It works end to end. Do not tell the sponsors it was easy."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The Narrator works end to end. Do not tell the sponsors it was easy."

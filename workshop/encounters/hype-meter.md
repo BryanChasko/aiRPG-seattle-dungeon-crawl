@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-6-hype-meter/hype_meter.py`](../../encounters/floor-6-hype-meter/hype_meter.py), [`web/src/components/HypeMeter.vue`](../../web/src/components/HypeMeter.vue), [`web/src/composables/useGameApi.ts`](../../web/src/composables/useGameApi.ts), [`web/src/stores/gameStore.ts`](../../web/src/stores/gameStore.ts), [`web/src/views/GameView.vue`](../../web/src/views/GameView.vue) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 6.** The ratings ticker in the corner of the arena had been going up all night and nobody would tell me the rule. The Fremont Troll judged from the end of the hall and gave nothing away. I distrust a number I cannot trace. So I found the handbook page the System keeps for it, Hype, and I wired a counter to the things that move it: a round called, a Crawler benched, a title announced. Then I put the counter on the screen. Barnaby watched it climb and said he had never felt so measured. He said it like a compliment.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 6.** The ratings ticker in the corner of the arena had been going up all night and nobody would tell me the rule. The Fremont Troll judged from the end of the hall and gave nothing away. I distrust a number I cannot trace. So I found the handbook page the System keeps for it, Hype, and I wired a counter to the events that raise it: a round called, a Crawler benched, a title announced. Then I put the counter on the screen. Barnaby watched it climb and said he had never felt so measured. He said it like a compliment.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Hype is hidden. The System shows it when it chooses to. Today it chooses to. Do not get used to this. Sponsors are watching the number, and so, for once, are you."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Hype is hidden. The System shows it when it chooses to. Today it chooses to. Do not get used to the display. Sponsors are watching the number, and so, for once, are you."
 
 ## The Brief
 
@@ -16,12 +16,12 @@ Files on this side passage: [`encounters/floor-6-hype-meter/hype_meter.py`](../.
 |---|---|
 | type | sidequest |
 | starts from | [Floor 6](../floor-6.md), finished: the Floor 5 Narrator on port 8009 and the web interface in `web/` |
-| you build | a hook that turns tool and model events into Hype, a new `GET /hype` route on the Narrator, and a panel in the web interface that shows the total |
+| build | a hook that turns tool and model events into Hype, a new `GET /hype` route on the Narrator, and a panel in the web interface that shows the total |
 | teaches | [`strands.hooks.registry`](https://strandsagents.com/docs/api/python/strands.hooks.registry/): `HookProvider`, `HookRegistry.add_callback`; [`strands.hooks.events`](https://strandsagents.com/docs/api/python/strands.hooks.events/): `AfterToolCallEvent`, `AfterModelCallEvent` |
 | time | about 20 minutes |
 | model | Amazon Nova 2 Lite, as on every floor |
 
-A hook is a function Strands calls when something happens in the agent loop: a model call starts, a tool call ends, a message is added. You do not change the loop and you do not ask the model to cooperate. You write a class with a `register_hooks` method, hand it to the agent, and it listens. See [Hooks](https://strandsagents.com/docs/user-guide/sdk/agents/hooks/) and the [list of events](https://strandsagents.com/docs/user-guide/sdk/agents/hooks-events/).
+A hook is a function Strands calls when an event happens in the agent loop: a model call starts, a tool call ends, a message is added. The loop stays as written, and Amazon Nova 2 Lite is never asked to cooperate. Write a class with a `register_hooks` method and hand the class to the agent; the class listens. See [Hooks](https://strandsagents.com/docs/user-guide/sdk/agents/hooks/) and the [list of events](https://strandsagents.com/docs/user-guide/sdk/agents/hooks-events/).
 
 Hype follows the [Crawl Handbook](../world/crawl-handbook/07-hype-sponsors-and-loot.md):
 
@@ -32,11 +32,11 @@ Hype follows the [Crawl Handbook](../world/crawl-handbook/07-hype-sponsors-and-l
 | any achievement | +5 |
 | a Crawler is benched | half is lost |
 
-Sponsors may send a box at 10, 25 and 50 Hype. The meter records each tier the first time it is reached.
+Sponsors may send a box at 10, 25 and 50 Hype. The meter records each tier the first time Hype reaches that tier.
 
-The Narrator in this folder is the Floor 5 Narrator, copied and extended, so it serves the same routes on the same port. It adds two small tools, `call_the_round` and `bench_crawler`, and the System's prompt asks it to call them after each round. The tool calls are the events the hook reads. The achievement is different: it is words in a model reply, so the hook reads the model event and looks for the title in square brackets. A title already counted does not pay twice.
+The Narrator in this folder is the Floor 5 Narrator, copied and extended, so the new Narrator serves the same routes on the same port. The new Narrator adds two small tools, `call_the_round` and `bench_crawler`, and the System's prompt asks the Narrator to call both tools after each round. The tool calls are the events the hook reads. The achievement is different: the achievement is words in an Amazon Nova 2 Lite reply, so the hook reads the model-call event and looks for the title in square brackets. A title already counted does not pay twice.
 
-How you know it worked: `GET /hype` returns a total that rises after a round the party wins, and the web interface shows it in a panel under the character sheet.
+Check the result: `GET /hype` returns a total that rises after a round the party wins, and the web interface shows the total in a panel under the character sheet.
 
 Go to the encounter folder:
 
@@ -50,7 +50,7 @@ cd aiRPG-seattle-dungeon-crawl/encounters/floor-6-hype-meter
 # TODO: Step 1 - Register self.on_tool_result with registry.add_callback for AfterToolCallEvent
 ```
 
-`registry.add_callback(EventType, function)` tells Strands to call `function` with an event of that type. `AfterToolCallEvent` fires when a tool call ends, and it carries the call (`event.tool_use`, with the tool's name and input) and the outcome (`event.result`, with a status). `on_tool_result` is already written: it adds 1 for a round the party won, 3 for a Final Beat, and halves the total when a Crawler is benched. A call that failed scores nothing.
+`registry.add_callback(EventType, function)` tells Strands to call `function` with an event of that type. `AfterToolCallEvent` fires when a tool call ends, and the event carries the call (`event.tool_use`, with the tool's name and input) and the outcome (`event.result`, with a status). `on_tool_result` is already written: `on_tool_result` adds 1 for a round the party won, 3 for a Final Beat, and halves the total when a Crawler is benched. A call that failed scores nothing.
 
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I wanted the counter to trust the tools, not the story. A story can say anything. A tool call either happened or it did not. So the round is only Hype once the call has come back clean.
 
@@ -63,7 +63,7 @@ def register_hooks(self, registry: HookRegistry, **kwargs: Any) -> None:
     registry.add_callback(AfterToolCallEvent, self.on_tool_result)
 ```
 
-Keep the `pass` until Step 2 is in too, then delete it.
+Keep the `pass` until Step 2 is added, then delete the `pass`.
 
 </details>
 
@@ -73,7 +73,7 @@ Keep the `pass` until Step 2 is in too, then delete it.
 # TODO: Step 2 - Register self.on_model_reply with registry.add_callback for AfterModelCallEvent
 ```
 
-`AfterModelCallEvent` fires when a model call returns. Its `stop_response` holds the model's message, or `None` when the call failed. `on_model_reply` reads the words in that message, including the fields of the structured `StoryOutput` call, and scores each new achievement title for +5. Two hooks, two kinds of event, one `HypeMeter`: the same class can listen to as many events as it needs.
+`AfterModelCallEvent` fires when an Amazon Nova 2 Lite call returns. Its `stop_response` holds the Amazon Nova 2 Lite message, or `None` when the call failed. `on_model_reply` reads the words in that message, including the fields of the structured `StoryOutput` call, and scores each new achievement title for +5. Two hooks, two kinds of event, one `HypeMeter`: the same class can listen to any number of events.
 
 <details>
 <summary>Show me the code for Steps 1 and 2</summary>
@@ -86,7 +86,7 @@ def register_hooks(self, registry: HookRegistry, **kwargs: Any) -> None:
     registry.add_callback(AfterModelCallEvent, self.on_model_reply)
 ```
 
-Delete the `pass`. The trap: hook code runs inside the agent loop on every event, so keep it short and plain.
+Delete the `pass`. The trap: hook code runs inside the agent loop on every event, so keep the hook short and plain.
 
 </details>
 
@@ -96,9 +96,9 @@ Delete the `pass`. The trap: hook code runs inside the agent loop on every event
 # TODO: Step 3 - Give the Agent the meter as a hook provider: hooks=[hype_meter]
 ```
 
-`hype_meter = HypeMeter()` is built once at module level, so the Agent and the route share it. The `hooks` argument of `Agent` takes a list of hook providers, and Strands calls `register_hooks` on each one when the agent is built.
+`hype_meter = HypeMeter()` is built once at module level, so the Agent and the route share the meter. The `hooks` argument of `Agent` takes a list of hook providers, and Strands calls `register_hooks` on each one when the agent is built.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** One counter, two readers: the agent writes to it, the route reads from it. In the field we called that a shared logbook. Nobody gets to keep a private one.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** One counter, two readers: the agent writes to the counter, the route reads from the counter. In the field we called that a shared logbook. Nobody gets to keep a private one.
 
 <details>
 <summary>Show me the code for Step 3</summary>
@@ -109,7 +109,7 @@ Delete the `pass`. The trap: hook code runs inside the agent loop on every event
         tools=[mcp_client, a2a_client, call_the_round, bench_crawler],
 ```
 
-Without this line the meter exists and the route answers, but nothing ever moves the number.
+Without the `hooks` argument the meter exists and the route answers, but nothing ever changes the total.
 
 </details>
 
@@ -119,7 +119,7 @@ Without this line the meter exists and the route answers, but nothing ever moves
 # TODO: Step 4 - Return the meter's snapshot()
 ```
 
-`snapshot()` returns the total, the sponsor tiers reached, the next tier and the last change, as a dictionary FastAPI turns into JSON. That is the whole contract with the web interface.
+`snapshot()` returns the total, the sponsor tiers reached, the next tier and the last change, as a dictionary FastAPI turns into JSON. The snapshot is the whole contract with the web interface.
 
 <details>
 <summary>Show me the code for Step 4</summary>
@@ -139,9 +139,9 @@ Replace the `return {}`. The web interface treats an empty answer as "no Hype ye
 
 The web interface already ships the panel. After each turn, `GameView.vue` asks `GET /hype` through `useGameApi`, keeps the answer in the game store, and `HypeMeter.vue` draws it under the character sheet: the total, a bar toward the next sponsor box, and the last change.
 
-The panel is optional. If the Narrator has no `/hype` route, answers with an error, or sends something that is not a number, the panel does not appear and nothing else changes. The Floor 5 Narrator and this one both work with the same page.
+The panel is optional. If the Narrator has no `/hype` route, answers with an error, or sends a value that is not a number, the panel does not appear and nothing else changes. The Floor 5 Narrator and the Hype Meter Narrator both work with the same web page.
 
-To see it, run the interface from this repository, as in [Floor 6](../floor-6.md#web-interface):
+To see it, run the web interface from the aiRPG-seattle-dungeon-crawl repository, as in [Floor 6](../floor-6.md#web-interface):
 
 ```bash
 cd aiRPG-seattle-dungeon-crawl/web
@@ -149,7 +149,7 @@ npm ci
 npm run dev
 ```
 
-The published page shows the panel once it is rebuilt from this version of `web/`.
+The published page shows the panel once the page is rebuilt from the current `web/` folder.
 
 ## Run It
 
@@ -165,51 +165,51 @@ Check the meter before any dance-off:
 curl http://127.0.0.1:8009/hype
 ```
 
-You should see:
+Expected output:
 
 ```
 {"hype":0,"sponsor_tiers":[],"next_sponsor_at":10,"last_event":""}
 ```
 
-Enter the dungeon in the web interface and type the Floor 6 challenge: "Challenge the Pitch-Deck Founder to a dance-off in the Underground, with the Fremont Troll judging. Run all three rounds." When the turn comes back, the panel shows the Hype. An example, with your own dice and your own insults:
+Enter the dungeon in the web interface and type the Floor 6 challenge: "Challenge the Pitch-Deck Founder to a dance-off in the Underground, with the Fremont Troll judging. Run all three rounds." When the turn comes back, the panel shows the Hype. An example, with different dice and different insults:
 
 ```
 {"hype":8,"sponsor_tiers":[],"next_sponsor_at":10,"last_event":"achievement [SMASH THAT LIKE BUTTON]: +5 Hype"}
 ```
 
-Win two rounds and take one achievement and you are at 7; a Final Beat won adds 3 more and the first sponsor tier opens at 10.
+Two rounds won and one achievement earned give 7 Hype; a Final Beat won adds 3 more and the first sponsor tier opens at 10.
 
-| you see | it means | fix |
+| symptom | cause | fix |
 |---|---|---|
-| `Address already in use` | the Floor 5 Narrator is still on port 8009 | stop it, then run this one |
+| `Address already in use` | the Floor 5 Narrator is still on port 8009 | stop the Floor 5 Narrator, then run the Hype Meter Narrator |
 | the panel never appears | the page is talking to a Narrator without `/hype`, or the route still returns `{}` | Step 4, then reload the page |
 | `/hype` stays at 0 after a dance-off the party won | the meter is not registered, or the System did not call `call_the_round` | Steps 1 to 3, then watch the terminal for the tool call |
 | a round the party won did not add 1 | the call came back with an error | read the terminal: `winner` must be `party` or `opponent` |
-| `AccessDeniedException` or `ExpiredToken` | the model call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-the-model-aws) |
+| `AccessDeniedException` or `ExpiredToken` | the Amazon Nova 2 Lite call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
 
 ## Hook or Tool?
 
-You could have asked the model to keep the total and print it in every reply. It would drift, it would forget, and one bad turn would erase the audience's love. A hook keeps the number in your code, where a dice roll gets the same arithmetic every time. The cost of that choice is the two small tools: the model still has to report who won, and the hook trusts the report. If you do not want to trust it, the next move is to read the dice server's log in the hook instead. That is a longer passage.
+A prompt could have asked Amazon Nova 2 Lite to keep the total and print the total in every reply. The total would drift, the Narrator would forget, and one bad turn would erase the audience's love. A hook keeps the number in Python code, where a dice roll gets the same arithmetic every time. The cost of that choice is the two small tools: the Narrator still has to report who won, and the hook trusts the report. To stop trusting the report, the next move is to read the dice server's log in the hook instead. That change belongs to a longer passage.
 
 ## What It Costs
 
-The hooks themselves are plain Python, so they cost nothing. The price is the two extra tool calls the System makes. Each one is another pass through the model: assume about 6,000 tokens of input (the prompt plus the history so far) and 100 tokens of output.
+The hooks themselves are plain Python, so they cost nothing. The price is the two extra tool calls the System makes. Each call is another pass through Amazon Nova 2 Lite: assume about 6,000 tokens of input (the prompt plus the history so far) and 100 tokens of output.
 
 - one pass: 6,000 x $0.30 per million is $0.0018 in, 100 x $2.50 per million is $0.00025 out, about $0.002
 - a dance-off with three rounds and one benching is four extra calls: about $0.008, under a cent
 
-Rates are the Nova 2 Lite prices from [Floor 1](../floor-1.md#what-a-turn-costs). Some of the calls may share a pass with other tool calls, which brings the number down.
+Rates are the Nova 2 Lite prices from [Floor 1](../floor-1.md#what-a-turn-costs). Some of the calls may share a pass with other tool calls, which lowers the cost.
 
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Eight tenths of a cent to know why the ratings move. I have spent more on worse intelligence. The Troll, for the record, kept a straight face when the first sponsor tier opened. I took that as approval.
 
 ## Encounter Clear
 
-Loot you're keeping:
+Loot to keep:
 
-- A hook provider is a class with `register_hooks(registry)`; `registry.add_callback(EventType, function)` subscribes it to an event
-- `AfterToolCallEvent` carries the tool call and its result; `AfterModelCallEvent` carries the model's reply
-- `Agent(hooks=[...])` registers a provider when the agent is built, and one provider can be shared with the rest of your code
-- A web interface can feature-detect a new route and stay quiet when it is missing
+- A hook provider is a class with `register_hooks(registry)`; `registry.add_callback(EventType, function)` subscribes the provider to an event
+- `AfterToolCallEvent` carries the tool call and the call's result; `AfterModelCallEvent` carries the Amazon Nova 2 Lite reply
+- `Agent(hooks=[...])` registers a provider when the agent is built, and the rest of the program can share the same provider
+- A web interface can feature-detect a new route and stay quiet when the route is missing
 
 > <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >

@@ -15,19 +15,19 @@ Files on this side passage: [`encounters/floor-8-broadcast-booth/broadcast_booth
 | | |
 |---|---|
 | type | sidequest |
-| starts from | [Floor 8.4](../floor-8-4.md), finished: the deployment turned on Transaction Search for the account, which CloudWatch needs to keep spans. The booth itself runs on your machine and brings its own dice |
-| you build | a dance-off round that carries its round number and Move Call on every span, one span of its own that records the winner, a receipt read from the agent's metrics, and a query that finds the rounds again in CloudWatch |
+| starts from | [Floor 8.4](../floor-8-4.md), finished: the deployment turned on Transaction Search for the account, which CloudWatch needs to keep spans. The booth runs on the learner's machine and brings its own dice |
+| build | a dance-off round that carries its round number and Move Call on every span, one span of its own that records the winner, a receipt read from the agent's metrics, and a query that finds the rounds again in CloudWatch |
 | teaches | [`strands.telemetry.tracer`](https://strandsagents.com/docs/api/python/strands.telemetry.tracer/): `get_tracer`, and [`strands.telemetry.metrics`](https://strandsagents.com/docs/api/python/strands.telemetry.metrics/): `EventLoopMetrics`, `metrics_to_string` |
 | time | about 25 minutes, plus a few minutes for the spans to land |
 | model | Amazon Nova 2 Lite, as on every floor |
 
-Every Strands agent already emits [traces](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/traces/): OpenTelemetry spans for the turn, for each trip around the agent loop, for each model call and for each tool call. What the SDK cannot know is what your round means. Two tools put that meaning on the spans. The `trace_attributes` parameter of `Agent` stamps attributes on every span the agent makes, and the tracer the SDK uses is yours to open spans on, so one span can wrap a whole round and carry facts only your code has, like the winner. See [Custom Attribute Tracking](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/traces/#custom-attribute-tracking) and [Custom Spans](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/traces/#custom-spans).
+Every Strands agent already emits [traces](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/traces/): OpenTelemetry spans for the turn, for each trip around the agent loop, for each model call and for each tool call. What the SDK cannot know is what a round means in the game. Two tools put the round's meaning on the spans. The `trace_attributes` parameter of `Agent` stamps attributes on every span the agent makes, and the SDK's tracer accepts spans from the booth code, so one span can wrap a whole round and carry facts only the booth code has, like the winner. See [Custom Attribute Tracking](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/traces/#custom-attribute-tracking) and [Custom Spans](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/traces/#custom-spans).
 
-The same agent also keeps [metrics](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/): cycles, tool calls, tokens, latency. They sit on the result of every turn, in `result.metrics`, and `get_summary()` turns them into a dictionary your code can read.
+The same agent also keeps [metrics](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/): cycles, tool calls, tokens, latency. The metrics sit on the result of every turn, in `result.metrics`, and `get_summary()` turns them into a dictionary Python code can read.
 
-The booth runs on your machine, under the AWS Distro for OpenTelemetry, which sends the spans to CloudWatch. On [Floor 8.4, Part 4](../floor-8-4.md#part-4-see-what-your-agents-do) the deployed runtimes did that for you; here you switch it on by hand, in six environment variables. Reading the rounds back is a CloudWatch Logs Insights query, run from Python.
+The booth runs on the learner's machine, under the AWS Distro for OpenTelemetry, which sends the spans to CloudWatch. On [Floor 8.4, Part 4](../floor-8-4.md#part-4-see-what-your-agents-do) the deployed runtimes did that automatically; here, switch the exporter on by hand, in six environment variables. Reading the rounds back is a CloudWatch Logs Insights query, run from Python.
 
-How you know it worked: each round prints one line and a receipt, and a minute or two later `--read-back` lists the same rounds from CloudWatch, found by the `dance.winner` attribute your span carried there.
+How to check it worked: each round prints one line and a receipt, and a minute or two later `--read-back` lists the same rounds from CloudWatch, found by the `dance.winner` attribute the `broadcast.round` span carried.
 
 Go to the encounter folder:
 
@@ -37,15 +37,15 @@ cd aiRPG-seattle-dungeon-crawl/encounters/floor-8-broadcast-booth
 
 ## Wire the Booth to CloudWatch
 
-> <img src="../../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** This sidequest creates one AWS resource, a CloudWatch log group, and sends spans to the account's shared span log group, `aws/spans`. Both bill by the byte. Delete the log group at the end, with the commands in [What It Costs](#what-it-costs).
+> <img src="../../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** This sidequest creates one AWS resource, a CloudWatch log group, and sends spans to the account's shared span log group, `aws/spans`. The log group and the span ingestion both bill by the byte. Delete the log group at the end, with the commands in [What It Costs](#what-it-costs).
 
-The AWS Distro for OpenTelemetry is not in the workshop environment: the deployed runtimes install it from their own `pyproject.toml`, and this booth runs on your machine. Add it to the active environment, the same version the runtimes use (a uv environment has no `pip`, so use `uv pip`):
+The AWS Distro for OpenTelemetry is not in the workshop environment: the deployed runtimes install the distro from their own `pyproject.toml`, and this booth runs on the learner's machine. Add the distro to the active environment, the same version the runtimes use (a uv environment has no `pip`, so use `uv pip`):
 
 ```bash
 uv pip install "aws-opentelemetry-distro~=0.21.0"
 ```
 
-Create a log group and a log stream for the booth, then set the OpenTelemetry variables in the terminal you will run it in. The variables are the ones the AgentCore guide gives for agents hosted outside AgentCore Runtime: see [Get started with AgentCore Observability](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-get-started.html).
+Create a log group and a log stream for the booth, then set the OpenTelemetry variables in the terminal that will run the booth. These six variables come from the AgentCore guide for agents hosted outside AgentCore Runtime: see [Get started with AgentCore Observability](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-get-started.html).
 
 ```bash
 export AWS_DEFAULT_REGION=us-west-2
@@ -59,7 +59,7 @@ export OTEL_EXPORTER_OTLP_LOGS_HEADERS=x-aws-log-group=/aws/gameprod/broadcast-b
 export OTEL_RESOURCE_ATTRIBUTES=service.name=broadcast-booth
 ```
 
-`service.name` is the name the booth shows under in the CloudWatch GenAI Observability dashboard. The spans themselves go to the `aws/spans` log group, where Transaction Search keeps them.
+`service.name` is the name the CloudWatch GenAI Observability dashboard lists the booth under. The spans themselves go to the `aws/spans` log group, where Transaction Search keeps them.
 
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Six exports and a log group. I wrote them on the back of my hand, under the version number from Floor 8. A booth with no cable run to the truck is a very expensive closet. So I ran the cable first, and checked the other end of it before we went on air.
 
@@ -69,7 +69,7 @@ export OTEL_RESOURCE_ATTRIBUTES=service.name=broadcast-booth
 # TODO: Step 1 - Import get_tracer from strands.telemetry.tracer and metrics_to_string from strands.telemetry.metrics
 ```
 
-`get_tracer()` returns the tracer the Strands SDK itself uses, the same one that makes the `invoke_agent` and `chat` spans. Its `tracer` attribute is the OpenTelemetry tracer underneath, and spans you open on it join the agent's trace. `metrics_to_string` turns the metrics of a result into a printable summary. The module pages are [`strands.telemetry.tracer`](https://strandsagents.com/docs/api/python/strands.telemetry.tracer/) and [`strands.telemetry.metrics`](https://strandsagents.com/docs/api/python/strands.telemetry.metrics/).
+`get_tracer()` returns the tracer the Strands SDK itself uses, the same one that makes the `invoke_agent` and `chat` spans. Its `tracer` attribute is the OpenTelemetry tracer underneath, and spans opened on it join the agent's trace. `metrics_to_string` turns the metrics of a result into a printable summary. The module pages are [`strands.telemetry.tracer`](https://strandsagents.com/docs/api/python/strands.telemetry.tracer/) and [`strands.telemetry.metrics`](https://strandsagents.com/docs/api/python/strands.telemetry.metrics/).
 
 <details>
 <summary>Show me the code for Step 1</summary>
@@ -98,7 +98,7 @@ from strands.telemetry.metrics import metrics_to_string
         trace_attributes={"dance.round": round_number, "dance.move_call": move_call, "dance.opponent": OPPONENT},
 ```
 
-The dots in the names are plain characters; they only look like a hierarchy. Keep them: CloudWatch shows them as `attributes.dance.round`, and so does the query.
+The dots in the names are plain characters; the names only look like a hierarchy. Keep the dots: CloudWatch shows them as `attributes.dance.round`, and so does the query.
 
 </details>
 
@@ -111,7 +111,7 @@ The dots in the names are plain characters; they only look like a hierarchy. Kee
     return run_round(round_number, move_call, crawler)
 ```
 
-The attributes of Step 2 ride on the agent's spans, but the agent does not know who won: `dance_round` rolls the dice, and the winner lands on the shared `scoreboard` after the tool ran. So the round gets a span of its own. `start_as_current_span` opens a span and makes it the current one, so the agent's spans become its children, and closes it when the `with` block ends. `span.set_attribute` adds a fact. The one span now holds the round, the Move Call and the winner, and it is the one the query looks for.
+The attributes of Step 2 ride on the agent's spans, but the agent does not know who won: `dance_round` rolls the dice, and the winner lands on the shared `scoreboard` after the tool ran. So each round gets a span of its own. `start_as_current_span` opens a span and makes it the current one, so the agent's spans become its children, and closes it when the `with` block ends. `span.set_attribute` adds a fact. That span now holds the round, the Move Call and the winner, and the query looks for that span.
 
 <details>
 <summary>Show me the code for Step 3</summary>
@@ -128,7 +128,7 @@ def broadcast_round(round_number: int, move_call: str, crawler: str):
     return result
 ```
 
-Replace the `return run_round(...)` line. The `"none"` covers a round where the model answered without calling the tool: the span still gets filed, and the query shows the gap.
+Replace the `return run_round(...)` line. The `"none"` covers a round where Lady Luck answered without calling the tool: the span still gets filed, and the query shows the gap.
 
 </details>
 
@@ -139,7 +139,7 @@ Replace the `return run_round(...)` line. The `"none"` covers a round where the 
     return {}
 ```
 
-`result.metrics` is an `EventLoopMetrics`. Its `get_summary()` returns a dictionary: `total_cycles`, the `tool_usage` of each tool with its `execution_stats`, and the `accumulated_usage` with `inputTokens` and `outputTokens`. See [Agent Loop Metrics](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/#agent-loop-metrics) and [Tool Metrics](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/#tool-metrics). A round that works prints two cycles, one `dance_round` call, and the tokens of both model calls.
+`result.metrics` is an `EventLoopMetrics`. `EventLoopMetrics.get_summary()` returns a dictionary: `total_cycles`, the `tool_usage` of each tool with the `execution_stats` of that tool, and the `accumulated_usage` with `inputTokens` and `outputTokens`. See [Agent Loop Metrics](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/#agent-loop-metrics) and [Tool Metrics](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/#tool-metrics). A round that works prints two cycles, one `dance_round` call, and the tokens of both model calls.
 
 <details>
 <summary>Show me the code for Step 4</summary>
@@ -165,13 +165,13 @@ Replace the `return {}`. `tool_usage` has no entry for a tool that never ran, so
 
 ## Run the Booth
 
-Run it under `opentelemetry-instrument`, so the distro wires the exporters before your code starts:
+Run it under `opentelemetry-instrument`, so the distro wires the exporters before `broadcast_booth.py` starts:
 
 ```bash
 opentelemetry-instrument python broadcast_booth.py
 ```
 
-Check: two rounds, each with a line, a receipt and the metrics summary. Your dice and totals will differ:
+Check: two rounds, each with a line, a receipt and the metrics summary. Dice and totals will differ:
 
 ```
 ROUND 1, Presence: Barnaby: 12 + 3 = 15 against the Bonus-Season Investment Banker: 8 + 4 = 12 -> party
@@ -199,28 +199,28 @@ Check: the same rounds, found by their attributes (example output):
   round 2: Footwork -> opponent
 ```
 
-`--read-back` runs a Logs Insights query over `aws/spans`: it filters on the span name `broadcast.round` and lists `attributes.dance.round`, `attributes.dance.move_call` and `attributes.dance.winner`. Change the filter and the same attributes answer other questions: the rounds one Move Call lost, the rounds that never rolled. See [Analyzing log data with CloudWatch Logs Insights](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html). You can also open the CloudWatch console, Transaction Search, and filter on `service.name` `broadcast-booth` to see the whole tree of a round, with your span at the top and the agent's spans under it.
+`--read-back` runs a Logs Insights query over `aws/spans`: it filters on the span name `broadcast.round` and lists `attributes.dance.round`, `attributes.dance.move_call` and `attributes.dance.winner`. Change the filter and the same attributes answer other questions about the rounds: the rounds one Move Call lost, the rounds that never rolled. See [Analyzing log data with CloudWatch Logs Insights](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html). Open the CloudWatch console, Transaction Search, and filter on `service.name` `broadcast-booth` to see the whole tree of a round, with the `broadcast.round` span at the top and the agent's spans under it.
 
 | you see | it means | fix |
 |---|---|---|
-| `0 broadcast.round spans` | the spans have not landed, or never left | wait two more minutes and run `--read-back` again; then check that you ran the booth under `opentelemetry-instrument` and set the six variables in that same terminal |
+| `0 broadcast.round spans` | the spans have not landed, or never left | wait two more minutes and run `--read-back` again; then check that the booth ran under `opentelemetry-instrument` with the six variables set in that same terminal |
 | `opentelemetry-instrument: command not found` | the distro is not installed in the active environment | `uv pip install "aws-opentelemetry-distro~=0.21.0"` |
 | `ResourceNotFoundException` from `--read-back` | `aws/spans` does not exist: Transaction Search was never turned on in this account and region | finish [Floor 8.4](../floor-8-4.md), or see Enable Transaction Search under the warnings of [8.4, Part 4](../floor-8-4.md#part-4-see-what-your-agents-do) |
-| `receipt: {'model_cycles': 1, 'dance_round_calls': 0 ...}` and `no roll` | Lady Luck answered without calling the tool | run it again; the prompt tells her to call `dance_round` once |
+| `receipt: {'model_cycles': 1, 'dance_round_calls': 0 ...}` and `no roll` | Lady Luck answered without calling the tool | run the booth again; the prompt tells her to call `dance_round` once |
 | `NameError: name 'get_tracer' is not defined` | Step 1 is missing | add the two imports |
-| `AccessDeniedException` or `ExpiredToken` | the model call or a CloudWatch call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-the-model-aws) |
+| `AccessDeniedException` or `ExpiredToken` | the Amazon Nova 2 Lite call or a CloudWatch call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
 
 ## Booth or Portal?
 
-[Trace the Portal](trace-the-portal.md) on Floor 4 prints spans to the console with `StrandsTelemetry`, to see how a trace is built. The booth keeps them, and adds meaning to them: attributes on the agent's own spans, one span of your own, and a query on the far end. Use the console when you are learning what the SDK emits. Use the booth when someone else has to find a round in a week.
+[Trace the Portal](trace-the-portal.md) on Floor 4 prints spans to the console with `StrandsTelemetry`, to see how a trace is built. The booth keeps the spans, and adds meaning to each one: attributes on the agent's own spans, one span of your own, and a query on the far end. Use the console when you are learning what the SDK emits. Use the booth when someone else has to find a round in a week.
 
 ## What It Costs
 
-Nova 2 Lite: each round is two model calls of a short prompt, about 1,500 input tokens and 100 output tokens in all (an estimate). At about $0.30 per million input tokens and $2.50 per million output tokens ([Floor 1](../floor-1.md#what-a-turn-costs)) that is 1,500 x $0.30 / 1,000,000 + 100 x $2.50 / 1,000,000 = $0.00045 + $0.00025, under a tenth of a cent a round.
+Nova 2 Lite: each round is two Amazon Nova 2 Lite calls of a short prompt, about 1,500 input tokens and 100 output tokens in all (an estimate). At about $0.30 per million input tokens and $2.50 per million output tokens ([Floor 1](../floor-1.md#what-a-turn-costs)) that is 1,500 x $0.30 / 1,000,000 + 100 x $2.50 / 1,000,000 = $0.00045 + $0.00025, under a tenth of a cent a round.
 
 CloudWatch bills the telemetry at the rates on the [CloudWatch pricing page](https://aws.amazon.com/cloudwatch/pricing/), the same ones as [What Floor 8 Costs](../floor-8.md#what-floor-8-costs): about $0.35 per GB of spans ingested, $0.50 per GB of logs ingested, $0.03 per GB-month stored. A round makes about seven spans of a couple of kilobytes each, so about 15 KB (an estimate): 2 rounds x 15 KB = 30 KB, or $0.00001 of spans. A Logs Insights query is billed at $0.005 per GB scanned beyond a monthly allowance of five times your ingestion; `--read-back` scans a few kilobytes. AgentCore Observability has no charge of its own: it bills the CloudWatch usage ([AgentCore pricing](https://aws.amazon.com/bedrock/agentcore/pricing/), Observability).
 
-The log group never expires and the spans stay in `aws/spans`. Delete what you made, from the terminal where you set the variables:
+The log group never expires and the spans stay in `aws/spans`. Delete the log group and the environment variables, from the terminal where the variables were set:
 
 ```bash
 aws logs delete-log-group --log-group-name /aws/gameprod/broadcast-booth
@@ -228,22 +228,22 @@ unset AGENT_OBSERVABILITY_ENABLED OTEL_PYTHON_DISTRO OTEL_PYTHON_CONFIGURATOR OT
 uv pip uninstall aws-opentelemetry-distro
 ```
 
-Check: this prints nothing.
+Check: the command prints nothing.
 
 ```bash
 aws logs describe-log-groups --log-group-name-prefix /aws/gameprod/broadcast-booth --query 'logGroups[].logGroupName' --output text
 ```
 
-`aws/spans` belongs to Transaction Search for the whole account, and the deployed runtimes of Floor 8 write to it too. If nothing else in the account needs those spans, shorten how long it keeps them: `aws logs put-retention-policy --log-group-name aws/spans --retention-in-days 1`. Leave it alone otherwise. The [Cleanup](../cleanup.md) page removes the runtimes.
+`aws/spans` belongs to Transaction Search for the whole account, and the deployed runtimes of Floor 8 write spans to `aws/spans` too. If nothing else in the account needs those spans, shorten how long `aws/spans` keeps the spans: `aws logs put-retention-policy --log-group-name aws/spans --retention-in-days 1`. Otherwise leave the retention unchanged. The [Cleanup](../cleanup.md) page removes the runtimes.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The producers searched the log on Friday, as promised. They asked for every round Barnaby lost on Footwork. One query, zero rows. Barnaby read the empty result twice, pleased, and then asked me to check that the query was right. It was. He asked me to check it again.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The producers searched the log on Friday, as promised. They asked for every round Barnaby lost on Footwork. One query, zero rows. Barnaby read the empty result twice, pleased, and then asked me to check that the query was right. It was. He asked me to check the query again.
 
 ## Encounter Clear
 
-Loot you're keeping:
+Loot to keep:
 
-- `trace_attributes` stamps what your code knows on every span an agent makes
-- `get_tracer().tracer.start_as_current_span` puts a span of your own around a unit of work, with facts only you have
+- `trace_attributes` stamps what the booth code knows on every span an agent makes
+- `get_tracer().tracer.start_as_current_span` puts a span of your own around a unit of work, with facts only the booth code has
 - `result.metrics.get_summary()` is the receipt of a turn, as a dictionary
 - Spans from outside AgentCore Runtime reach CloudWatch through the AWS Distro for OpenTelemetry, and a Logs Insights query finds them by attribute
 

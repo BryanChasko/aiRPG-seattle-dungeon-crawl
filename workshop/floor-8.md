@@ -7,7 +7,7 @@ Files on this floor: [`8_agentcore_production/.env.example`](../8_agentcore_prod
 ![Floor 8: Production (AgentCore)](../images/floors/floor-8-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 8.** The last floor is the corporate one: glass towers across Lake Washington, lanyards, a Regional Managing Director who wants us gone by end of quarter, and, past all of it, the Tacoma Narrows, where the old giant octopus legend lives. Everything we built so far stops the moment someone closes a laptop. Down here it has to keep running on its own. So we moved it, one piece at a time, into the cloud: the dice, the registration desk, the rule book, the Narrator itself. Barnaby insisted on doing it in order. He has always respected a checklist.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 8.** The last floor is the corporate one: glass towers across Lake Washington, lanyards, a Regional Managing Director who wants us gone by end of quarter, and, past all of it, the Tacoma Narrows, where the old giant octopus legend lives. Everything we built so far stops the moment someone closes a laptop. Down here the game has to keep running on its own. So we moved the game, one piece at a time, into the cloud: the dice, the registration desk, the rule book, the Narrator itself. Barnaby insisted on doing it in order. He has always respected a checklist.
 <!-- /cordula-log -->
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 8. Production. Real AWS resources, real IAM roles, real invoices. This is the part of the crawl where mistakes cost money. Set your region before you do anything else. I mean it."
@@ -16,9 +16,9 @@ Files on this floor: [`8_agentcore_production/.env.example`](../8_agentcore_prod
 
 Take your game to production, one brick at a time: the dice server, the Character Agent, the Rules Agent and finally the Narrator move to [Amazon Bedrock AgentCore](https://aws.amazon.com/bedrock/agentcore/). Each section of this floor moves one brick to the cloud while the others keep running on your machine, so the game keeps working at every step.
 
-What is AgentCore Runtime? AgentCore Runtime is a managed AWS service that hosts agents and MCP servers. You hand it your code; it packages it, runs each session in its own isolated microVM, scales with the load, authenticates every caller with IAM and sends the logs to Amazon CloudWatch. You manage no server, no container and no load balancer. The AgentCore CLI (`agentcore`) drives the whole process from your terminal: create a project, declare what to deploy, deploy, test, read the logs.
+What is AgentCore Runtime? AgentCore Runtime is a managed AWS service that hosts agents and MCP servers. Hand AgentCore Runtime your code. AgentCore Runtime packages the code, runs each session in its own isolated microVM, scales with the load, authenticates every caller with IAM and sends the logs to Amazon CloudWatch. AgentCore Runtime needs no server, no container and no load balancer from you. The AgentCore CLI (`agentcore`) drives each step from the terminal: create a project, declare what to deploy, deploy, test, read the logs.
 
-The plan. Everything lives in a single AgentCore project named `gameprod`, created on this page. Each section adds one brick to it, and each brick has its own folder in `8_agentcore_production`:
+The plan. Everything lives in a single AgentCore project named `gameprod`, created on this page. Each section adds one brick to the project, and each brick has its own folder in `8_agentcore_production`:
 
 | Section | Brick | Folder |
 |---|---|---|
@@ -31,15 +31,15 @@ The Narrator ([`narrator/narrator_orchestrator.py`](../8_agentcore_production/na
 
 The code to write is given. Under each TODO, the sections show the code to paste, with the TODO line above it so you can see where it goes; keep the TODO in your file. When a step replaces or deletes code, a Before / After pair shows the change. The explanation under each block says why the code looks the way it does.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Where to run this floor: it deploys real resources to your own AWS account: IAM roles, CloudFormation stacks and AgentCore resources. Use credentials allowed to create IAM roles, CloudFormation stacks and AgentCore resources. The commands use `us-west-2`; any AgentCore region works: set yours in the export of Step 1.
+> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Where to run this floor: Floor 8 deploys real resources to your own AWS account: IAM roles, CloudFormation stacks and AgentCore resources. Use credentials allowed to create IAM roles, CloudFormation stacks and AgentCore resources. The commands use `us-west-2`; any AgentCore region works: set the region in the export of Step 1.
 
 ## What Floor 8 Costs
 
-Floors 0 to 7 bill only for model calls. Floor 8 also leaves resources in your account until the [Cleanup](cleanup.md) page removes them. Most bill only when they are used; a few bill a little for as long as they exist. The rates below are the us-west-2 list prices as of November 2026, from the [AgentCore pricing page](https://aws.amazon.com/bedrock/agentcore/pricing/), the [Amazon Bedrock pricing page](https://aws.amazon.com/bedrock/pricing/) (Managed Knowledge Bases) and the [CloudWatch pricing page](https://aws.amazon.com/cloudwatch/pricing/). The AgentCore Runtime rates are also quoted in the AWS sample [Cost and Reliability](https://aws-samples.github.io/sample-ac-central/docs/operate/cost-and-reliability/) guide. Check them for your region before you start.
+Floors 0 to 7 bill only for Amazon Nova 2 Lite calls. Floor 8 also leaves resources in your account until the [Cleanup](cleanup.md) page removes them. Most resources bill only when used; a few bill a little for as long as they exist. The rates below are the us-west-2 list prices as of November 2026, from the [AgentCore pricing page](https://aws.amazon.com/bedrock/agentcore/pricing/), the [Amazon Bedrock pricing page](https://aws.amazon.com/bedrock/pricing/) (Managed Knowledge Bases) and the [CloudWatch pricing page](https://aws.amazon.com/cloudwatch/pricing/). The AgentCore Runtime rates are also quoted in the AWS sample [Cost and Reliability](https://aws-samples.github.io/sample-ac-central/docs/operate/cost-and-reliability/) guide. Check the rates for your region before starting.
 
 | resource | section | how it bills | this workshop, roughly |
 |---|---|---|---|
-| AgentCore Runtime, four runtimes | 8.1 to 8.4 | per second: $0.0895 per vCPU-hour of CPU used and $0.00945 per GB-hour of memory, from the start of a session until it stops. CPU drops to zero while the agent waits for the model or a tool, and a session stops after 15 minutes without a request | an idle 0.5 GB session for its last 15 minutes: about a tenth of a cent. An afternoon of play: a few cents |
+| AgentCore Runtime, four runtimes | 8.1 to 8.4 | per second: $0.0895 per vCPU-hour of CPU used and $0.00945 per GB-hour of memory, from the start of a session until the session stops. CPU drops to zero while the agent waits for Amazon Nova 2 Lite or a tool, and a session stops after 15 minutes without a request | an idle 0.5 GB session for its last 15 minutes: about a tenth of a cent. An afternoon of play: a few cents |
 | Amazon Nova 2 Lite | every section | per token, as on [Floor 1](floor-1.md#what-a-turn-costs) | under one cent a turn; a dollar or two for the whole floor |
 | AgentCore Memory, `characters` | 8.2 | $0.75 per 1,000 memory records a month, $0.50 per 1,000 record retrievals | two records: under a fifth of a cent a month |
 | AgentCore Memory, `conversations` | 8.4 | $1.00 per GB of events written, each event billed as at least 12 KB; $0.20 per GB read; $0.10 per GB-month stored | 400 events: 4.8 MB billed, half a cent |
@@ -47,15 +47,15 @@ Floors 0 to 7 bill only for model calls. Floor 8 also leaves resources in your a
 | S3 bucket for the handbook | 8 and 8.3 | storage and requests | under a cent |
 | CloudWatch Logs and traces | 8.1 to 8.4 | $0.50 per GB of logs ingested, $0.03 per GB-month stored; $0.35 per GB of spans | a few MB: under a cent, but the runtime log groups never expire |
 
-The worked numbers: 0.5 GB x 0.25 hour x $0.00945 = $0.0012 for an idle session, and 13 KB x $5.00 per GB = $0.00006 a month for the handbook. The token counts and event counts are estimates for one learner playing a few dozen turns. A whole run of Floor 8 should stay under five dollars, most of it model calls. Your real numbers show up in [AWS Cost Explorer](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html), grouped by service, about a day later.
+The worked examples: 0.5 GB x 0.25 hour x $0.00945 = $0.0012 for an idle session, and 13 KB x $5.00 per GB = $0.00006 a month for the handbook. The token counts and event counts are estimates for one learner playing a few dozen turns. A whole run of Floor 8 should stay under five dollars, most of it Amazon Nova 2 Lite calls. Your real numbers show up in [AWS Cost Explorer](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html), grouped by service, about a day later.
 
-Nothing here has a monthly minimum, and nothing bills by the hour while idle except storage. That is not a reason to keep it: the [Cleanup](cleanup.md) page removes every row of this table.
+Nothing here has a monthly minimum, and nothing bills by the hour while idle except storage. That is not a reason to keep the resources: the [Cleanup](cleanup.md) page removes every row of this table.
 
 ## Set Up the Project
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Everything from here costs money in somebody's AWS account. Possibly yours. Set AWS_DEFAULT_REGION in every terminal. The System will not remind you twice. The System has now reminded you twice."
 
-Make sure you are at the root of Floor 8 in your terminal:
+Open a terminal at the root of Floor 8:
 
 ```bash
 cd aiRPG-seattle-dungeon-crawl/8_agentcore_production
@@ -65,26 +65,26 @@ cd aiRPG-seattle-dungeon-crawl/8_agentcore_production
 
 > <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [agentcore CLI 0.31.1]**
 >
-> Rarity: Pinned. Version 1.0 renames several commands. Stay on 0.31.1 for the whole floor or explain yourself to the audience.
+> Rarity: Pinned. Version 1.0 renames commands. Stay on 0.31.1 for the whole floor or explain yourself to the audience.
 
 
 
-The CLI needs Node.js 20 or later. Install the version this crawl was written against:
+The CLI needs Node.js 20 or later. Install the version the crawl targets:
 
 ```bash
 npm install -g @aws/agentcore@0.31.1
 agentcore --version
 ```
 
-`agentcore --version` should print `0.31.1`. The CLI evolves quickly and version 1.0 renames several commands, so stay on this version for the whole floor. It uses your usual AWS credentials, like the agents of the previous floors. Set the region once, in every terminal you use for this floor:
+`agentcore --version` should print `0.31.1`. The CLI evolves quickly and version 1.0 renames commands, so stay on 0.31.1 for the whole floor. The CLI uses your usual AWS credentials, like the agents of the previous floors. Set the region once, in every terminal you use for this floor:
 
 ```bash
 export AWS_DEFAULT_REGION=us-west-2
 ```
 
-The CLI deploys to this region, and the code of the floor never names one: boto3, the AWS SDK for Python, reads `AWS_DEFAULT_REGION`, and every client of the floor takes its region from there. The variable takes precedence over the region of your AWS profile; without it, the CLI deploys to the region of your profile, and the Narrator looks for your runtimes there. Once deployed, the agents get the region of their runtime from AgentCore.
+The CLI deploys to the region in `AWS_DEFAULT_REGION`, and the code of the floor never names a region: boto3, the AWS SDK for Python, reads `AWS_DEFAULT_REGION`, and every client of the floor takes its region from that variable. `AWS_DEFAULT_REGION` takes precedence over the region of your AWS profile; without the variable, the CLI deploys to the region of your profile, and the Narrator looks for your runtimes there. Once deployed, the agents get the region of their runtime from AgentCore.
 
-Check: `agentcore --version` prints `0.31.1`, and `aws sts get-caller-identity` prints your account id. If `agentcore` is not found, open a new terminal: npm puts global commands on your PATH, and an older terminal does not see them. If `npm install -g` fails with `EACCES`, your npm installs global packages in a system folder: use a Node.js version manager such as nvm, or set an npm prefix in your home folder.
+Check: `agentcore --version` prints `0.31.1`, and `aws sts get-caller-identity` prints your account id. If `agentcore` is not found, open a new terminal: npm puts global commands on your PATH, and a terminal opened before the install does not see the commands. If `npm install -g` fails with `EACCES`, npm installs global packages in a system folder on your machine: use a Node.js version manager such as nvm, or set an npm prefix in your home folder.
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby made me read the version number out loud, twice, and write it on the back of my hand. "We will not upgrade mid-operation, Sergeant." I did not argue. I have watched a firmware update brick a landing craft on a beach.
 
@@ -96,15 +96,15 @@ Run this command from `8_agentcore_production`, the folder that holds `diceserve
 agentcore create --project-name gameprod --no-agent
 ```
 
-`--no-agent` creates an empty project: we will add our own code instead of a generated template. The new `gameprod/` folder sits next to the brick folders. Have a look at `gameprod/agentcore/agentcore.json`: this file describes everything the project deploys, and it is empty for now. The `gameprod/agentcore/cdk/` folder holds the infrastructure code the CLI generates for you; you never edit it.
+`--no-agent` creates an empty project: we will add our own code instead of a generated template. The new `gameprod/` folder sits next to the brick folders. Open `gameprod/agentcore/agentcore.json`: that file describes everything the project deploys, and it is empty for now. The `gameprod/agentcore/cdk/` folder holds the infrastructure code the CLI generates; never edit that folder.
 
 ### Step 3: Start the Knowledge Base
 
 > <img src="../images/icons/sponsor-96x96.webp" alt="Sponsor" width="28" height="28"> **SPONSOR MESSAGE:** Bedrock indexing is brought to you by patience: a few minutes in your own account, longer in a sandbox with a low embedding quota. Start it now and go deploy some dice.
 
-In 8.3, the Rules Agent searches the Crawl Handbook in an Amazon Bedrock knowledge base. Bedrock needs time to index it: the handbook is eleven small Markdown files, so a few minutes, longer in an account with a low embedding quota. Start it now: the indexing runs in the background while you work through 8.1 and 8.2. Here you only run the commands; 8.3 explains them.
+In 8.3, the Rules Agent searches the Crawl Handbook in an Amazon Bedrock knowledge base. Bedrock needs time to index the handbook: the handbook is eleven small Markdown files, so a few minutes, longer in an account with a low embedding quota. Start the indexing now: it runs in the background while you work through 8.1 and 8.2. Here, run the commands only; 8.3 explains the commands.
 
-The handbook is the one the Floor 5 knowledge base was built from, in `workshop/world/crawl-handbook/`. Run the commands from the project folder:
+The handbook is the one the Floor 5 knowledge base was built from, in `workshop/world/crawl-handbook/`. Run the commands from `8_agentcore_production`:
 
 ```bash
 cd gameprod
@@ -115,21 +115,21 @@ agentcore add knowledge-base --name rules --description "Crawl Handbook" --sourc
 agentcore deploy -y
 ```
 
-`aws s3 cp --recursive` should list eleven uploads, one per handbook section. The files go into a new S3 bucket, the project declares a knowledge base that reads it, and `agentcore deploy` creates it in a few minutes. When the deployment ends, the knowledge base shows `Deployed` but is not ready yet: Bedrock goes on indexing the handbook. Nothing to wait for: 8.3 checks the indexing.
+`aws s3 cp --recursive` should list eleven uploads, one per handbook section. The files go into a new S3 bucket, the project declares a knowledge base that reads that bucket, and `agentcore deploy` creates the knowledge base in a few minutes. When the deployment ends, the knowledge base shows `Deployed` but is not ready yet: Bedrock keeps indexing the handbook. No need to wait: 8.3 checks the indexing.
 
-These commands create resources in your AWS account: an S3 bucket and a knowledge base. Remove them at the end of the workshop, as described on the [Cleanup](cleanup.md) page.
+These commands create resources in your AWS account: an S3 bucket and a knowledge base. Remove both at the end of the workshop, as described on the [Cleanup](cleanup.md) page.
 
-Check: `agentcore status` lists `rules` under Knowledge Bases as `Deployed`, with `Ingestion: IN_PROGRESS` or `COMPLETE`. If `aws s3 mb` fails with `BucketAlreadyExists`, the name is taken: bucket names are global, so add a suffix to `BUCKET` and keep it for the Cleanup page. If `agentcore deploy` fails, read [8.1, Part 2, Step 2](floor-8-1.md#step-2-deploy): its warnings cover the usual errors.
+Check: `agentcore status` lists `rules` under Knowledge Bases as `Deployed`, with `Ingestion: IN_PROGRESS` or `COMPLETE`. If `aws s3 mb` fails with `BucketAlreadyExists`, the name is taken: bucket names are global, so add a suffix to `BUCKET` and keep the suffix for the Cleanup page. If `agentcore deploy` fails, read [8.1, Part 2, Step 2](floor-8-1.md#step-2-deploy): the warnings in that section cover the usual errors.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** We dropped the rule book into a bucket and walked away from it, which felt wrong. Bellevue is the kind of floor where the paperwork takes longer than the work. Barnaby called it a "long-lead item" and moved on to the dice.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** We dropped the rule book into a bucket and walked away from the bucket, and that felt wrong. Bellevue is the kind of floor where the paperwork takes longer than the work. Barnaby called the handbook a "long-lead item" and moved on to the dice.
 
-The project is ready: head to [8.1 The Dice Server](floor-8-1.md) to deploy its first brick.
+The project is ready: head to [8.1 The Dice Server](floor-8-1.md) to deploy the project's first brick.
 
 ## Boss Battle: The Quarterly Earnings Call (optional)
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Bellevue has conference rooms the way the estuary has tide pools. In one of them, the accountant from Floor 5 had dialed in a banker and the Regional Managing Director, and we were the only item on the agenda.
 
-[The Quarterly Earnings Call](encounters/quarterly-earnings-call.md): the accountant reviews, the banker spins, the Regional Managing Director signs off. A Strands graph with fixed edges and a condition on each one: the call only goes on if the party took the last round. It starts from the Floor 5 code and runs on your machine, so you can play it before, during or after the deployments of this floor.
+[The Quarterly Earnings Call](encounters/quarterly-earnings-call.md): the accountant reviews, the banker spins, the Regional Managing Director signs off. A Strands graph with fixed edges and a condition on each one: the call only continues if the party took the last round. The encounter starts from the Floor 5 code and runs on your machine: play it before, during or after the deployments of this floor.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 8: A PERSISTENT WORLD.** A LitRPG world exists whether or not the reader is looking. On your laptop, the System ends when you close the terminal. On AgentCore, the dice, the registry, the rules and the Narrator each run on their own, the characters live in AgentCore Memory, the rules in a managed knowledge base, and every turn leaves a trace. That is the difference between a game you run and a world that runs: Cordula's sheet is still there tomorrow, and so is the accountant's grudge. See [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 

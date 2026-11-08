@@ -6,7 +6,7 @@
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Welcome, Crawlers, to the dungeon under Seattle. Pier 59 collapsed this morning, the Salish Sea came in, and you came with it: soaked, short one kayak, armed with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods. Every script you run drops an achievement box. Write a clean loop and earn a Bronze Box. Burn through your token limit with an accidental infinite loop and earn a Desperation Box. The audience is watching. Try to be interesting."
 
-## Who You Are
+## Who I Am
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I am Cordula Vance. Core, to anyone who has shared a boat with me. Marine Corps Reserve, amphibious crew chief, and on weekends I run kayak patrols on the Sound. This morning I tied up under Pier 59 to say hello to the octopus, and the pier folded into Elliott Bay with both of us under it.
 >
@@ -37,10 +37,10 @@ Clone the repo, install uv and Python, run uv sync
 Create and call your first agent
 
 - Build an agent with `Agent(system_prompt=...)` and invoke it with a single call
-- Enable DEBUG logs on the strands logger to watch the requests sent to the model
+- Enable DEBUG logs on the strands logger to watch the requests sent to Amazon Nova 2 Lite
 
 ### [Floor 2: The Vending Machines](floor-2.md)
-Give your agent tools that ship with the SDK
+Give the agent tools that ship with the SDK
 
 - Add a vended tool, `http_request`, and let the agent look up a giant octopus on the Open5e API
 - See the agent decide on its own when a tool is needed
@@ -50,21 +50,21 @@ Give your agent tools that ship with the SDK
 Write your own tool
 
 - Turn a Python function into a tool with `@tool`
-- Write the docstring the model reads to know when and how to call it
-- Watch the agent roll a 4d6-drop-lowest character in four calls, because the docstring told it how
+- Write the docstring Amazon Nova 2 Lite reads to know when and how to call the tool
+- Watch the agent roll a 4d6-drop-lowest character in four calls, because the docstring told the agent how
 
 ### [Floor 4: The Portal Room (MCP)](floor-4.md)
 Serve a tool over MCP and consume it
 
 - Expose the same `roll_dice` with FastMCP over streamable HTTP
-- Connect an agent to it with `MCPClient`
+- Connect an agent to the dice server with `MCPClient`
 
 ### [Floor 5: Party Formation (A2A)](floor-5.md)
 Make agents talk to each other
 
 - Expose agents with `A2AServer` and an `agent_factory` per conversation
 - Give the Rules Agent a ChromaDB knowledge base built from the Crawl Handbook
-- Orchestrate them with the `a2a_client` tool and the MCP dice server, and run a dance-off
+- Orchestrate the Character Agent and Rules Agent with the `a2a_client` tool and the MCP dice server, and run a dance-off
 - Return typed JSON with `structured_output_model`
 
 ### [Floor 6: The Arena (Web Interface)](floor-6.md)
@@ -84,16 +84,16 @@ Rebuild the Narrator in a few lines with Strands harness
 Deploy the whole party to Amazon Bedrock AgentCore, one brick at a time
 
 - Deploy the dice server, the Character Agent and the Rules Agent to AgentCore Runtime with the `agentcore` CLI
-- Call them from the Narrator with IAM-signed clients: `aws_iam_streamablehttp_client` for MCP, `SigV4HTTPXAuth` for A2A
+- Call the dice server, Character Agent and Rules Agent from the Narrator with IAM-signed clients: `aws_iam_streamablehttp_client` for MCP, `SigV4HTTPXAuth` for A2A
 - Keep the characters and the conversation in AgentCore Memory (`AgentCoreMemorySessionManager`), the rules in a managed knowledge base
 - Serve the Narrator with `BedrockAgentCoreApp` and follow one turn across runtimes in the traces
-- Runs in your own AWS account
+- Runs in a personal AWS account
 
 ### [The Exit: Final Cleanup](cleanup.md)
 Stop your services, remove the Floor 8 AWS resources and delete the harness state in `.agent/`
 
 ### [Side Passages: Optional Encounters](encounters/README.md)
-Deeper into the SDK, off the main corridor, each one starting where its floor ends: 28 sidequests, dance-offs and boss battles
+Deeper into the SDK, off the main corridor, each encounter starting where the matching floor ends: 28 sidequests, dance-offs and boss battles
 
 - Floor 1: [The Commentary Booth](encounters/commentary-booth.md), [Read the Receipt](encounters/read-the-receipt.md), boss battle [The Reasoning Dial](encounters/reasoning-dial.md)
 - Floor 2: [The Tide Table](encounters/tide-table.md), [The Sandbox Tide Pool](encounters/sandbox-tide-pool.md), boss battle [The Policy Gatekeeper](encounters/policy-gatekeeper.md), [Ask the Player](encounters/ask-the-player.md)
@@ -106,26 +106,26 @@ Deeper into the SDK, off the main corridor, each one starting where its floor en
 
 ## Preparing for the Crawl
 
-Everything you need to install (Python, uv, the repository) is covered in Floor 0. Bring basic Python knowledge, a terminal, and a sense of adventure.
+Floor 0 covers the installs: Python, uv and the repository. Bring basic Python knowledge, a terminal, and a sense of adventure.
 
 ## How to Survive the Crawl
 
 ### The Rules of the Crawl
 
-- The System AI: the omniscient, slightly unhinged dungeon administrator tracking your code output, your syntax errors and your desperate attempts to pass `uv sync`
-- The Crawlers: you, Cordula, with Barnaby on your back running the party and Shelly and Chonks along as companions. You enter soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
-- The Loot Boxes: every floor you clear drops an achievement box. Write a clean loop, earn a Bronze Box. Burn your token limit on an accidental infinite loop, earn a Desperation Box
-- The Audience: billions of alien viewers. They are not on your side. Neither are the sponsors
+- The System AI: the omniscient, slightly unhinged dungeon administrator tracking each Crawler's code output, syntax errors and desperate attempts to pass `uv sync`
+- The Crawlers: Cordula, with Barnaby on her back running the party and Shelly and Chonks along as companions. The party enters soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
+- The Loot Boxes: every cleared floor drops an achievement box. A clean loop earns a Bronze Box. Burning the token limit on an accidental infinite loop earns a Desperation Box
+- The Audience: billions of alien viewers. The viewers are not on the Crawlers' side. Neither are the sponsors
 
 ### Clear the Floors in Order
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Complete the floors in order. Each builds upon the previous one's knowledge and skills.
 
-- Start with Floor 0 - Set up your environment (Python, uv, the repository)
-- Progress through each floor - don't skip ahead, each floor introduces essential concepts
-- Complete all TODOs - each floor has guided exercises to build the concepts
-- Test your creations - run your agents and see them come to life
-- Experiment and explore - try variations and push the boundaries
+- Start with Floor 0 - Set up the environment (Python, uv, the repository)
+- Progress through each floor - don't skip ahead, each floor introduces one new Strands concept
+- Complete all TODOs - each floor has guided exercises that build its Strands concept
+- Test each floor: run the agent and read the output
+- Experiment and explore - try variations of each prompt, tool and system prompt
 
 ### Workshop Structure
 
@@ -133,51 +133,51 @@ Each floor follows the same pattern:
 
 - README Guide: complete instructions and background lore
 - TODO Exercises: hands-on coding challenges to complete
-- Testing Instructions: how to verify your creations work
+- Testing Instructions: how to confirm the agent runs
 - Solution Reference: completed exercises on the `solution` branch of the repository
 
 ### Getting Help
 
 - Strands Documentation: [Official Strands Docs](https://strandsagents.com/)
-- Solution Branch: reference implementations for every floor, if you get stuck
-- Experiment Freely: the best way to learn is by trying things
+- Solution Branch: reference implementations for every floor, when a TODO blocks progress
+- Experiment Freely: the best way to learn is to change code and run it
 
 ## What is Strands?
 
-Strands is a framework for creating AI agents: think of it as the toolkit the System uses to run its crawl. Strands provides:
+Strands is a framework for creating AI agents: Strands is the toolkit the System uses to run its crawl. Strands provides:
 
-- Agent Creation: an agent is a model, a system prompt and a list of tools
-- Tool Integration: vended tools and your own `@tool` functions
-- Model Flexibility: support for multiple model providers (this crawl runs on Amazon Nova)
+- Agent Creation: an agent is Amazon Nova 2 Lite, a system prompt and a list of tools
+- Tool Integration: vended tools and custom `@tool` functions
+- Model Flexibility: support for multiple providers (this crawl runs on Amazon Nova 2 Lite)
 - External Connections: integration with services through MCP
 - Multi-Agent Systems: coordinate multiple agents working together
 
 ### The System Glossary
 
-- Agent: a model that can reason, decide, and use tools
-- Tools: functions that agents can invoke to perform specific tasks
-- System Prompt: the character sheet defining your agent's personality and behavior
+- Agent: Amazon Nova 2 Lite wrapped with a system prompt and tools, able to reason, decide and call tools
+- Tools: functions that agents can invoke to do one job each, such as rolling dice
+- System Prompt: the character sheet defining an agent's personality and behavior
 - Model Provider: the source of intelligence (this crawl uses Amazon Nova 2 Lite on Amazon Bedrock)
 - MCP: Model Context Protocol for connecting to external services
 - A2A: Agent-to-Agent communication for multi-agent systems
-- LitRPG: fiction where the story runs on a visible game System: stats, levels, loot and notifications. *Dungeon Crawler Carl* is the inspiration for this one's tone
+- LitRPG: fiction where the story runs on a visible game System: stats, levels, loot and notifications. *Dungeon Crawler Carl* is the inspiration for this crawl's tone
 
 ## Learning Objectives
 
-By completing this workshop, you'll learn:
+This workshop teaches:
 
 - Agent Fundamentals: create, configure, and deploy AI agents
-- Tool Craft: use vended tools and create custom ones
+- Tool Craft: use vended tools and write custom tools
 - External Integration: connect agents to external services via MCP
-- Multi-Agent Systems: build complex applications with multiple cooperating agents
+- Multi-Agent Systems: build a Narrator, Character Agent and Rules Agent that cooperate
 - Strands harness: rebuild the same system in a few lines with the pre-assembled agent
 - Production with AgentCore: deploy the agents, their tools and their memory to Amazon Bedrock AgentCore
-- Real-World Applications: create practical, production-ready agent systems
+- Real-World Applications: ship agent systems to production
 - LitRPG System design: the interface, stats, conflict loop, economy and consequences of a game, each one built by the agent capability that makes it possible
 
 ## Ready to Begin?
 
-The stairwell is open. Start with [Floor 0: The Stairwell](floor-0.md) and begin your descent under the Sound.
+The stairwell is open. Start with [Floor 0: The Stairwell](floor-0.md) and begin the descent under the Sound.
 
 ## Additional Resources
 

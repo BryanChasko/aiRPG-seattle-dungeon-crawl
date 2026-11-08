@@ -8,7 +8,7 @@ Files on this side passage: [`encounters/floor-1-read-the-receipt/read_the_recei
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 1.** There was a ticket window at the end of the Pier 59 service corridor, and behind the glass a receipt printer that had not stopped since the collapse. Every turn the System takes prints a slip. I had been reading the total at the bottom and nothing else. Barnaby unrolled the paper across the floor, eight arm tips pinning the curls down. "Sergeant, a total is a verdict. The lines above it are the evidence. You would not accept a vehicle inspection that only said PASS."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Receipts, Crawlers. Every turn has one, and almost nobody reads past the total. Tokens in, tokens out, trips through the loop, seconds on the clock. I am exact about all of it. It is the only thing I am humble about."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Receipts, Crawlers. Every turn has one, and almost nobody reads past the total. Tokens in, tokens out, trips through the loop, seconds on the clock. I am exact about all of these. Exactness is the only place I am humble."
 
 ## The Brief
 
@@ -16,24 +16,24 @@ Files on this side passage: [`encounters/floor-1-read-the-receipt/read_the_recei
 |---|---|
 | type | sidequest |
 | starts from | [Floor 1](../floor-1.md), finished |
-| you build | a receipt for each turn of an agent: why it stopped, the tokens of that turn alone, the tokens of each trip through the event loop, how often each tool ran, and where the seconds went |
+| build | a receipt for each turn of an agent: why it stopped, the tokens of that turn alone, the tokens of each trip through the event loop, how often each tool ran, and where the seconds went |
 | teaches | [`strands.agent.agent_result`](https://strandsagents.com/docs/api/python/strands.agent.agent_result/), [`strands.telemetry.metrics`](https://strandsagents.com/docs/api/python/strands.telemetry.metrics/) |
 | time | about 20 minutes |
 | model | Amazon Nova 2 Lite, as on every floor |
 
-Calling an agent returns an `AgentResult`. [The Commentary Booth](commentary-booth.md#step-4-read-the-receipt) priced a turn from `metrics.accumulated_usage`, and that works for a fresh agent on its first turn. This encounter goes further, and it runs two turns on the same agent to show why. Some numbers on the result belong to the turn you just took. Others keep adding up for as long as the agent lives. A receipt that mixes them up is wrong from the second turn on.
+Calling an agent returns an `AgentResult`. [The Commentary Booth](commentary-booth.md#step-4-read-the-receipt) priced a turn from `metrics.accumulated_usage`, and that approach works for a fresh agent on its first turn. This encounter goes further and runs two turns on the same agent to show why. Some numbers on the result belong to the turn just taken. Others keep adding up for as long as the agent lives. A receipt that mixes the two kinds of number is wrong from the second turn on.
 
-The result carries a lot more than a count. `stop_reason` says why the turn ended. `metrics.latest_agent_invocation` is this turn: its `usage` and a list of `cycles`, one per trip through the event loop. `metrics.tool_metrics` counts every tool call, with errors and time. `metrics.traces` holds a timed trace for each cycle. See [Agent Loop Metrics](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/#agent-loop-metrics), [Tool Metrics](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/#tool-metrics) and [Local Execution Traces](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/#local-execution-traces).
+The result carries more than a token count. `stop_reason` says why the turn ended. `metrics.latest_agent_invocation` holds the current turn: its `usage` and a list of `cycles`, one per trip through the event loop. `metrics.tool_metrics` counts every tool call, with errors and time. `metrics.traces` holds a timed trace for each cycle. See [Agent Loop Metrics](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/#agent-loop-metrics), [Tool Metrics](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/#tool-metrics) and [Local Execution Traces](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/metrics/#local-execution-traces).
 
-How you know it worked: each round prints a receipt with a `turn_usage` that is smaller than `agent_usage_so_far` in round two, a `cycles` list that adds up to `turn_usage`, a `tools_so_far` count that grows from round one to round two, and `traces` for this round only.
+Success check: each round prints a receipt with a `turn_usage` smaller than `agent_usage_so_far` in round two, a `cycles` list that adds up to `turn_usage`, a `tools_so_far` count that grows from round one to round two, and `traces` for this round only.
 
-Go to the encounter folder:
+Change to the encounter folder:
 
 ```bash
 cd aiRPG-seattle-dungeon-crawl/encounters/floor-1-read-the-receipt
 ```
 
-The file gives you two tools, `roll_d20` and `add_modifier`, so a turn has several tool calls to count, and `make_lady_luck()`, the agent. `read_the_receipt(result, seconds)` is the function you complete. It starts with four fields already filled in: `stop_reason`, `seconds` (a stopwatch the caller runs around the call), `context_size` and `agent_usage_so_far`. Every step adds one more field to the `receipt` dictionary.
+The file defines two tools, `roll_d20` and `add_modifier`, so one turn makes multiple tool calls to count, and `make_lady_luck()`, the agent. `read_the_receipt(result, seconds)` is the function you complete. `read_the_receipt` starts with four fields already filled in: `stop_reason`, `seconds` (a stopwatch the caller runs around the call), `context_size` and `agent_usage_so_far`. Every step adds one more field to the `receipt` dictionary.
 
 ## Step 1: This Turn Only
 
@@ -41,7 +41,7 @@ The file gives you two tools, `roll_d20` and `add_modifier`, so a turn has sever
 # TODO: Step 1 - Add "turn_usage": the usage of this turn alone, turn.usage, as a dict
 ```
 
-`turn` is already defined above the TODO: `metrics.latest_agent_invocation`, the invocation this result came from. Its `usage` is a dictionary with `inputTokens`, `outputTokens` and `totalTokens` for this turn and nothing before it. The given field next to it, `agent_usage_so_far`, comes from `metrics.accumulated_usage`, which adds up every turn the agent has taken. In round one they match. In round two they do not.
+`turn` is already defined above the TODO: `metrics.latest_agent_invocation`, the invocation this result came from. `turn.usage` is a dictionary with `inputTokens`, `outputTokens` and `totalTokens` for this turn and no earlier turn. The given field next to it, `agent_usage_so_far`, comes from `metrics.accumulated_usage`, which adds up every turn the agent has taken. In round one `turn_usage` and `agent_usage_so_far` match. In round two they differ.
 
 <details>
 <summary>Show me the code for Step 1</summary>
@@ -61,7 +61,7 @@ The file gives you two tools, `roll_d20` and `add_modifier`, so a turn has sever
 # TODO: Step 2 - Add "cycles": one {"input": ..., "output": ...} per cycle of this turn, from turn.cycles and the inputTokens and outputTokens of each cycle's usage
 ```
 
-A turn is not one model call. The model asks for tools, Strands runs them, and the results go back to the model for another trip: a cycle. `turn.cycles` is a list with one entry per cycle, and each entry has its own `usage`. Build a small dictionary for each one, with the input and output counts. Watch the input column: every cycle resends the system prompt, the tool specification and everything said so far, so it grows with each trip.
+A turn is not one call to Amazon Nova 2 Lite. Amazon Nova 2 Lite asks for tools, Strands runs them, and the results go back to the model for another trip: a cycle. `turn.cycles` is a list with one entry per cycle, and each entry has its own `usage`. Build a small dictionary for each cycle, with the input and output counts. Watch the input column: every cycle resends the system prompt, the tool specification and everything said so far, so the input count grows with each trip.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -79,7 +79,7 @@ A turn is not one model call. The model asks for tools, Strands runs them, and t
 # TODO: Step 3 - Add "tools_so_far": for each name and tool in metrics.tool_metrics, its call_count, error_count and total_time rounded to 3 places
 ```
 
-`metrics.tool_metrics` maps each tool's name to a `ToolMetrics` with `call_count`, `success_count`, `error_count` and `total_time`, in seconds. This is the trap of the encounter: unlike `turn_usage`, it is a running tally for the whole life of the agent, so the key says `tools_so_far`. In round two the counts include round one's calls. To get one turn's calls alone, you would copy the counts before the turn and subtract.
+`metrics.tool_metrics` maps each tool's name to a `ToolMetrics` with `call_count`, `success_count`, `error_count` and `total_time`, in seconds. `tool_metrics` is the trap of the encounter: unlike `turn_usage`, it is a running tally for the whole life of the agent, so the key says `tools_so_far`. In round two the counts include round one's calls. To isolate one turn's calls, copy the counts before the turn and subtract.
 
 <details>
 <summary>Show me the code for Step 3</summary>
@@ -102,7 +102,7 @@ A turn is not one model call. The model asks for tools, Strands runs them, and t
 # TODO: Step 4 - Add "traces": for the last len(turn.cycles) entries of metrics.traces, its name, its duration() in seconds and the (name, duration) of each of its children
 ```
 
-`metrics.traces` is a list with one `Trace` per cycle, for the life of the agent, so the cycles of this turn are the last `len(turn.cycles)` entries. A `Trace` has a `name`, a `duration()` in seconds (`None` until it ends, hence the `or 0`) and a list of `children`: the model call and each tool call of that cycle, with their own durations. Take the slice with `len(metrics.traces) - len(turn.cycles)`, and not `-len(turn.cycles)`: an empty turn would make the second form return every trace.
+`metrics.traces` is a list with one `Trace` per cycle, for the life of the agent, so the cycles of this turn are the last `len(turn.cycles)` entries. A `Trace` has a `name`, a `duration()` in seconds (`None` until it ends, which is why the code adds `or 0`) and a list of `children`: the model call and each tool call of that cycle, with their own durations. Take the slice with `len(metrics.traces) - len(turn.cycles)`, and not `-len(turn.cycles)`: a turn with zero cycles makes the second form return every trace.
 
 <details>
 <summary>Show me the code for Step 4</summary>
@@ -127,7 +127,7 @@ A turn is not one model call. The model asks for tools, Strands runs them, and t
 python read_the_receipt.py
 ```
 
-Check: two receipts. This is an example; your numbers, and the exact children of each trace, will differ:
+Check: two receipts. Example output; numbers and the exact children of each trace differ on every run:
 
 ```
 ROUND ONE
@@ -157,25 +157,25 @@ Add up the `cycles` of a round and you get its `turn_usage`. In round two, `agen
 
 | you see | it means | fix |
 |---|---|---|
-| a receipt with only `stop_reason`, `seconds`, `context_size` and `agent_usage_so_far` | the steps are not written yet | Steps 1 to 4 |
-| `turn_usage` equal to `agent_usage_so_far` in round two | you read `metrics.accumulated_usage` instead of `turn.usage` | Step 1 |
-| round two's `traces` list the cycles of round one too | the slice is missing, so every trace of the agent's life is listed | Step 4 |
-| `tools_so_far` shows only one tool | the model skipped `add_modifier` and added the numbers itself | run it again; the tool docstring tells it not to, and the receipt just caught it |
-| `AccessDeniedException` or `ExpiredToken` | the model call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-the-model-aws) |
+| a receipt with only `stop_reason`, `seconds`, `context_size` and `agent_usage_so_far` | Steps 1 to 4 are not written yet | Steps 1 to 4 |
+| `turn_usage` equal to `agent_usage_so_far` in round two | the code reads `metrics.accumulated_usage` instead of `turn.usage` | Step 1 |
+| round two's `traces` list the cycles of round one too | the slice is missing, so the receipt lists every trace of the agent's life | Step 4 |
+| `tools_so_far` shows only one tool | Amazon Nova 2 Lite skipped `add_modifier` and added the numbers itself | run the script again; the tool docstring tells the agent not to, and the receipt just caught it |
+| `AccessDeniedException` or `ExpiredToken` | the call to Amazon Nova 2 Lite failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
 
 ## Receipt or Booth?
 
-The Commentary Booth watches a turn while it happens: every chunk, every tool call, as a callback handler sees them. The receipt reads the turn once it is over, from the result. The booth is for the audience. The receipt is for you, when a turn was slow or expensive and you want to know which trip did it.
+The Commentary Booth watches a turn while it happens: every chunk, every tool call, as a callback handler receives them. The receipt reads the turn once it is over, from the result. The booth is for the audience. The receipt is for the developer, to find which trip made a turn slow or expensive.
 
 ## What It Costs
 
-The receipt costs nothing: it reads numbers Strands has already counted. What it shows is what the turn cost, and now you can see why. Round one above is 2,231 input tokens and 160 output tokens: 2,231 x $0.30 per million is $0.00067, and 160 x $2.50 per million is $0.00040, so about a tenth of a cent. Round two is 3,160 input and 169 output, about $0.00137, because the model rereads round one before it starts. The cycle column shows the same thing inside a single turn, where each trip resends everything before it. Input tokens grow with every cycle and every turn; output tokens are the ones that cost eight times as much. The prices are on the [Floor 1 cost table](../floor-1.md#what-a-turn-costs).
+The receipt costs nothing: it reads numbers Strands has already counted. The receipt shows what the turn cost and why. Round one above is 2,231 input tokens and 160 output tokens: 2,231 x $0.30 per million is $0.00067, and 160 x $2.50 per million is $0.00040, so about a tenth of a cent. Round two is 3,160 input and 169 output, about $0.00137, because Amazon Nova 2 Lite rereads round one before it starts. The cycle column shows the same growth inside a single turn, where each trip resends all earlier messages. Input tokens grow with every cycle and every turn; output tokens are the ones that cost eight times as much. The prices are on the [Floor 1 cost table](../floor-1.md#what-a-turn-costs).
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I tore the slips off the printer, folded them into the pocket of my kayak vest, and sent the System a copy of the second one with the cycles circled. It replied in four seconds with an invoice for the paper. Barnaby has framed the invoice. He says it is the first honest thing the System has produced.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I tore the slips off the printer, folded them into the pocket of my kayak vest, and sent the System a copy of the second one with the cycles circled. The System replied in four seconds with an invoice for the paper. Barnaby has framed the invoice. He says the invoice is the first honest output the System has produced.
 
 ## Encounter Clear
 
-Loot you're keeping:
+Loot kept:
 
 - `AgentResult` is more than a string: `stop_reason`, `metrics`, `context_size`
 - `metrics.latest_agent_invocation` is one turn; `metrics.accumulated_usage` and `metrics.tool_metrics` are the agent's whole life

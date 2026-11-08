@@ -16,31 +16,31 @@ Files on this floor: [`1_strands_basics/simple_agent.py`](../1_strands_basics/si
 
 Summon your first agent with Strands: a Narrator that answers an adventurer with nothing more than an `Agent`, a system prompt and one call. Along the way, turn on debug logging to see what happens between your code and the model.
 
-Make sure you are at the root of Floor 1 in your terminal:
+Change to the Floor 1 folder in the terminal:
 
 ```bash
 cd aiRPG-seattle-dungeon-crawl/1_strands_basics
 ```
 
-Open and modify the [`simple_agent.py`](../1_strands_basics/simple_agent.py) file. You'll complete the TODO comments to create your first AI agent.
+Open [`simple_agent.py`](../1_strands_basics/simple_agent.py) and complete each TODO comment to create the first agent.
 
 ### How to Work a TODO
 
-Every floor works the same way, so this is the only time it is spelled out:
+Every floor follows the same routine, so this page spells it out once:
 
-- Open the file in any editor. With Visual Studio Code: `code simple_agent.py`. Any editor that saves plain text works.
-- Find each `# TODO: Step N - ...` comment. It says what to write, and the matching step on this page says how.
-- Write your code on the lines **under** the comment. Leave the comment in place: the pages, the tests and the `solution` branch all line up on it.
+- Open the file in any editor. With Visual Studio Code: `code simple_agent.py`. Any plain-text editor works.
+- Find each `# TODO: Step N - ...` comment. The comment says what to write; the matching step on this page says how.
+- Write code on the lines **under** the comment. Leave the comment in place: the pages, the tests and the `solution` branch all line up on it.
 - Save, then run the script from this folder: `python simple_agent.py`.
-- Stuck? Each step has a hint, a link to the right Strands page, and a **Show me the code** block you can open. Try the hint first. You can also ask the [study companion](../study/README.md): `python ../study/ask_the_system.py "how do I enable debug logging in Strands?"`.
+- Stuck? Each step has a hint, a link to the matching Strands page, and a **Show me the code** block. Read the hint first. Or ask the [study companion](../study/README.md): `python ../study/ask_the_system.py "how do I enable debug logging in Strands?"`.
 
-Your file will go from this:
+`simple_agent.py` goes from this:
 
 ```python
 # TODO: Step 2 - Create the agent with ...
 ```
 
-to this, with the comment kept and your code below it:
+to this, with the comment kept and the new code below it:
 
 ```python
 # TODO: Step 2 - Create the agent with ...
@@ -55,11 +55,11 @@ agent = Agent(...)
 # TODO: Step 1 - Add debug logging to see what your agent is thinking
 ```
 
-Before creating your agent, enable debug logging to observe the agent's internal reasoning process. Strands logs through Python's standard `logging` module, under the logger named `"strands"`: set that logger to `DEBUG`, then give Python somewhere to print the messages. See [Logging](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/logs/) in the Strands docs.
+Before creating your agent, enable debug logging to read the requests and responses between the agent and Amazon Nova 2 Lite. Strands logs through Python's standard `logging` module, under the logger named `"strands"`: set that logger to `DEBUG`, then add a handler that prints the log messages. See [Logging](https://strandsagents.com/docs/user-guide/sdk/observability-evaluation/logs/) in the Strands docs.
 
-There are different log levels: DEBUG, INFO, WARNING, ERROR, and CRITICAL. We recommend DEBUG as a starting point: it is verbose, but it is the only level where Strands shows the request sent to the model and the response streamed back. Higher levels such as INFO stay almost silent, so raise the level once you have seen enough.
+Python has five log levels: DEBUG, INFO, WARNING, ERROR and CRITICAL. Start with DEBUG. It is verbose, but DEBUG is the only level where Strands shows the request sent to Amazon Nova 2 Lite and the response streamed back. Higher levels such as INFO stay almost silent, so raise the level after reading enough output.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Before I let anything talk, I want to hear what it says when it thinks nobody is listening. The debug log is that. It is long and it is boring, and it is the only honest record of what went out and what came back.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Before I let anything talk, I want to hear what the System says when it thinks nobody is listening. The debug log is that record. The log is long and boring, and it is the only honest record of what went out and what came back.
 
 <details>
 <summary>Show me the code for Step 1</summary>
@@ -74,7 +74,7 @@ logging.basicConfig(
 )
 ```
 
-`getLogger("strands")` picks the SDK's logger, `setLevel` decides how much it says, and `basicConfig` with a `StreamHandler` prints it to your terminal.
+`getLogger("strands")` picks the SDK's logger, `setLevel` decides how much it says, and `basicConfig` with a `StreamHandler` prints the log messages to the terminal.
 
 </details>
 
@@ -82,15 +82,15 @@ logging.basicConfig(
 
 > <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [System Prompt]**
 >
-> One string that decides who your agent is. Write it carelessly and your agent turns careless. Write it in the voice of the System and it turns insufferable. Recommended.
+> One string that decides who your agent is. Write the prompt carelessly and the agent turns careless. Write the prompt in the voice of the System and the agent turns insufferable. Recommended.
 
 ```python
 # TODO: Step 2 - Create the agent with model "us.amazon.nova-2-lite-v1:0" and the following system prompt: "You are the System, the sardonic broadcast AI running a dungeon crawl under Seattle. Address the player as Crawler."
 ```
 
-The system prompt defines your agent's role, personality, and knowledge base. You pass it as the `system_prompt` argument when you create the `Agent`. See [Prompts](https://strandsagents.com/docs/user-guide/sdk/agents/prompts/) in the Strands docs.
+The system prompt defines your agent's role, personality, and knowledge base. Pass the prompt as the `system_prompt` argument when creating the `Agent`. See [Prompts](https://strandsagents.com/docs/user-guide/sdk/agents/prompts/) in the Strands docs.
 
-Pass the model every time. This crawl runs on one model, Amazon Nova 2 Lite, through the US cross-Region inference profile `us.amazon.nova-2-lite-v1:0`, so pass `model="us.amazon.nova-2-lite-v1:0"` to `Agent(...)`. Never leave it out: without a `model`, Strands picks one for you, and it is not the workshop's. Every later floor already passes it in the given code. The [Amazon Bedrock model provider page](https://strandsagents.com/docs/user-guide/sdk/model-providers/amazon-bedrock/) explains how Strands talks to Bedrock.
+Pass `model` to every `Agent`. This crawl runs on Amazon Nova 2 Lite only, through the US cross-Region inference profile `us.amazon.nova-2-lite-v1:0`, so pass `model="us.amazon.nova-2-lite-v1:0"` to `Agent(...)`. Never omit `model`: without it, Strands picks a default model, not Amazon Nova 2 Lite. Every later floor already passes `model` in the given code. The [Amazon Bedrock model provider page](https://strandsagents.com/docs/user-guide/sdk/model-providers/amazon-bedrock/) explains how Strands talks to Bedrock.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -103,15 +103,15 @@ agent = Agent(
 )
 ```
 
-`Agent` is already imported at the top of the file. A model id as a plain string means "this model on Amazon Bedrock".
+`Agent` is already imported at the top of the file. A plain string model id selects that model on Amazon Bedrock.
 
 </details>
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The terminal wanted one sentence: who is the System? I wrote what I had seen of it so far. Loud, theatrical, a little mean, exact about numbers. It turns out that one sentence is the difference between a broadcast and a warning siren.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The terminal wanted one sentence: who is the System? I wrote what I had seen of the System so far. Loud, theatrical, a little mean, exact about numbers. One sentence is the difference between a broadcast and a warning siren.
 
 ### What a Turn Costs
 
-Amazon Bedrock bills on-demand models by the token: the text you send (input) and the text the model writes back (output). Third-party price trackers list Amazon Nova 2 Lite at about $0.30 per million input tokens and $2.50 per million output tokens as of November 2026 ([LiteLLM](https://models.litellm.ai/models/nova-2-lite), [LLM Stats](https://www.llm-stats.com/models/nova-2-lite)). Confirm the current price for your region on the [Amazon Bedrock pricing page](https://aws.amazon.com/bedrock/pricing/) before you plan anything bigger than this workshop.
+Amazon Bedrock bills on-demand use by the token: the text sent to Amazon Nova 2 Lite (input) and the text it writes back (output). Third-party price trackers list Amazon Nova 2 Lite at about $0.30 per million input tokens and $2.50 per million output tokens as of November 2026 ([LiteLLM](https://models.litellm.ai/models/nova-2-lite), [LLM Stats](https://www.llm-stats.com/models/nova-2-lite)). Confirm the current price for your region on the [Amazon Bedrock pricing page](https://aws.amazon.com/bedrock/pricing/) before planning anything bigger than this workshop.
 
 | what runs | rough tokens | rough cost |
 |---|---|---|
@@ -120,10 +120,10 @@ Amazon Bedrock bills on-demand models by the token: the text you send (input) an
 | the whole workshop, with plenty of retries | a few hundred turns | a few dollars at most |
 | a support chat at 1,000 conversations a day, 10 turns each, 2,000 in and 300 out per turn | 20 million in, 3 million out per day | about $14 a day |
 
-The token counts are estimates, so measure yours: after Step 3, print `response.metrics.accumulated_usage` and you get `inputTokens`, `outputTokens` and `totalTokens` for the call. Two things move the bill most. Output costs about eight times what input does, so long answers cost more than long prompts. Reasoning tokens are generated tokens too, which is one reason the Narrator runs with reasoning off. Repeated prompts get cheaper with [prompt caching](https://strandsagents.com/docs/user-guide/sdk/model-providers/amazon-bedrock-prompt-caching/).
+The token counts are estimates, so measure them: after Step 3, print `response.metrics.accumulated_usage` to read `inputTokens`, `outputTokens` and `totalTokens` for the call. Two factors raise the bill most. Output costs about eight times what input does, so long answers cost more than long prompts. Reasoning tokens are generated tokens too, which is one reason the Narrator runs with reasoning off. Repeated prompts get cheaper with [prompt caching](https://strandsagents.com/docs/user-guide/sdk/model-providers/amazon-bedrock-prompt-caching/).
 
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Your AWS account must be allowed to invoke Amazon Nova 2 Lite in us-west-2. If the first call fails with AccessDeniedException, open the Amazon Bedrock console, check Model access for Nova 2 Lite, and try again.
+> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** The AWS account must be allowed to invoke Amazon Nova 2 Lite in us-west-2. If the first call fails with AccessDeniedException, open the Amazon Bedrock console, confirm Model access for Amazon Nova 2 Lite is granted, then run the script again.
 
 ## Step 3: Test Your Agent
 
@@ -131,7 +131,7 @@ The token counts are estimates, so measure yours: after Step 3, print `response.
 # TODO: Step 3 - Invoke your agent with a basic query such as "Hi, I just fell through Pier 59 into the dungeon and my kayak is gone. What now?"
 ```
 
-Time to test your agent. An `Agent` is callable: call it like a function with your message, and it returns the result of the turn while it streams the answer to your terminal. See the [Python quickstart](https://strandsagents.com/docs/user-guide/sdk/quickstart/python/) in the Strands docs.
+Test the agent. An `Agent` is callable: call it like a function with a message; the call returns the turn result and streams the answer to the terminal. See the [Python quickstart](https://strandsagents.com/docs/user-guide/sdk/quickstart/python/) in the Strands docs.
 
 <details>
 <summary>Show me the code for Step 3</summary>
@@ -146,26 +146,26 @@ print(response.metrics.accumulated_usage)  # optional: the tokens this turn used
 
 ## Step 4: Testing Your Creation
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Your own agent. It has never spoken before. Run the script and survive its first opinion of you.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** The agent you just built. The agent has never spoken before. Run the script and survive its first opinion of you.
 
-Once you've completed all TODOs, run your script:
+After completing every TODO, run the script:
 
 ```bash
 python simple_agent.py
 ```
 
-If successful, your Narrator agent should answer in the System's voice and set the scene under the Seattle waterfront.
+If the run succeeds, the Narrator answers in the System's voice and sets the scene under the Seattle waterfront.
 
-Check: the answer streams into the terminal as it is written, addresses you as Crawler, and mentions the dungeon under Seattle. With Step 1 done, DEBUG lines from `strands` come first.
+Check: the answer streams into the terminal as it is written, addresses the player as Crawler, and mentions the dungeon under Seattle. With Step 1 done, DEBUG lines from `strands` come first.
 
 | you see | it means | fix |
 |---|---|---|
-| `NoCredentialsError`, `ExpiredToken` or `AccessDeniedException` | the model call never reached Nova | run the check in [Floor 0, Step 7](floor-0.md#step-7-check-your-pass-to-the-model-aws) |
-| `NameError: name 'agent' is not defined` | Step 2 is missing, or the variable has another name | name it `agent` |
+| `NoCredentialsError`, `ExpiredToken` or `AccessDeniedException` | the request never reached Amazon Nova 2 Lite | run the check in [Floor 0, Step 7](floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
+| `NameError: name 'agent' is not defined` | Step 2 is missing, or the variable has a different name | name it `agent` |
 | the script ends with no answer at all | Step 3 is missing | call `agent("...")` |
 | no DEBUG lines | Step 1 is missing, or `basicConfig` has no handler | copy the Step 1 block |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Rain-Shell Tourist Pod was blocking the tide pools, twenty people in matching jackets with a guide holding a flag. They could not hear us. Then the System came back on, loud enough to rattle the glass, and every one of them turned around at once. And the collar on Barnaby's mantle clicked, and a voice came out of it, dry and very British. "Sergeant." A pause. "This water is four degrees too cold, and I should like that noted." I noted it. The tour guide lowered the flag and let us through.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Rain-Shell Tourist Pod was blocking the tide pools, twenty people in matching jackets with a guide holding a flag. They could not hear us. Then the System came back on, loud enough to rattle the glass, and every one of them turned around at once. The collar on Barnaby's mantle clicked, and a voice came out of it, dry and very British. "Sergeant." A pause. "This water is four degrees too cold, and I should like that noted." I noted it. The tour guide lowered the flag and let us through.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 1: THE INTERFACE VOICE.** A LitRPG System talks in notifications, and how they sound sets the genre. A cold, analytic System makes a survival story; a cruel one makes horror; ours is a game-show host. Change one sentence of your system prompt (try "You are a calm, clinical survival System") and run the script again: same model, same question, a different book. See [The System](world/the-system.md#1-origin-and-interface).
 
@@ -179,20 +179,20 @@ Check: the answer streams into the terminal as it is written, addresses you as C
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Two more doors off the aquarium lobby: a ticket window that prints a receipt for every turn, and the investment banker under the Pier 59 clock, waiting to see how fast the System can think.
 
-- [Read the Receipt](encounters/read-the-receipt.md), sidequest: the whole `AgentResult` of a turn, its stop reason, its tokens per trip through the event loop, its tool calls and where the seconds went
+- [Read the Receipt](encounters/read-the-receipt.md), sidequest: the whole `AgentResult` of a turn, the stop reason, the tokens per trip through the event loop, its tool calls and where the seconds went
 - [The Reasoning Dial](encounters/reasoning-dial.md), boss battle: a router over two settings of Amazon Nova 2 Lite, reasoning off for banter and on for a close Final Beat, with a fallback when the deep turn runs long
 
 ## Floor Clear
 
-Floor cleared, Crawler. You've created your first AI agent using Strands.
+Floor cleared, Crawler. You created your first agent with Strands.
 
-Loot you're keeping:
+Loot kept:
 
-- How to enable debug logging to observe your agent's reasoning
-- How to create an agent and define its behavior with a system prompt
-- How to invoke and test your agent
+- How to enable debug logging to read the agent's requests and responses
+- How to create an agent and set its behavior with a system prompt
+- How to invoke and test an agent
 
-<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [Floor 2](floor-2.md) to learn about equipping your agent with tools.
+<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Go to [Floor 2](floor-2.md) to give the agent tools.
 
 
 > <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**

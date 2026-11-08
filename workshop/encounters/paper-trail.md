@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-5-paper-trail/index_audit_report.py`](../../encounters/floor-5-paper-trail/index_audit_report.py), [`encounters/floor-5-paper-trail/audit-report.pdf`](../../encounters/floor-5-paper-trail/audit-report.pdf), [`encounters/floor-5-paper-trail/make_audit_report.py`](../../encounters/floor-5-paper-trail/make_audit_report.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 5.** After the dance-off, the Quarterly Close Accountant left in a hurry and left a binder behind on the pickleweed: AUDIT REPORT, two pages, signed. I do not read other people's mail. Barnaby does, and he says an audit of us is not other people's mail. The problem was that our rule clerk could only read Markdown, and this was a PDF. So we taught it to read paper.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 5.** After the dance-off, the Quarterly Close Accountant left in a hurry and left a binder behind on the pickleweed: AUDIT REPORT, two pages, signed. I do not read other people's mail. Barnaby does, and he says an audit of us is not other people's mail. The problem was that our rule clerk could only read Markdown, and the binder was a PDF. So we taught the rule clerk to read paper.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "An audit, Crawlers. Of you. The System has read it. The System laughed at Finding 2. Feed it to your Rules Agent and find out what an accountant thinks of your bookkeeping."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "An audit, Crawlers. Of you. The System has read the audit. The System laughed at Finding 2. Feed the audit to the Rules Agent and find out what an accountant thinks of your bookkeeping."
 
 ## The Brief
 
@@ -16,16 +16,16 @@ Files on this side passage: [`encounters/floor-5-paper-trail/index_audit_report.
 |---|---|
 | type | sidequest |
 | starts from | [Floor 5](../floor-5.md), finished: the knowledge base built and the Rules Agent working |
-| you build | a script that reads a PDF with `pypdf`, cuts it into passages and adds them to the Rules Agent's ChromaDB collection |
+| to build | a script that reads a PDF with `pypdf`, cuts it into passages and adds them to the Rules Agent's ChromaDB collection |
 | teaches | [`pypdf.PdfReader`](https://pypdf.readthedocs.io/en/stable/modules/PdfReader.html) and [text extraction](https://pypdf.readthedocs.io/en/stable/user/extract-text.html); adding documents to an existing knowledge base |
 | time | about 20 minutes |
 | model | Amazon Nova 2 Lite, as on every floor |
 
-The workshop this crawl is built on indexed its rule book from a PDF. The crawl keeps its rules in Markdown, so this is where the PDF technique comes back. The Floor 5 knowledge base is a ChromaDB collection of passages, each with a section name; a PDF is just another source of passages. Read each page's text, cut it the same way the handbook was cut, give every passage a section the Rules Agent can cite, and add it to the same collection. The Rules Agent needs no change at all: it searches the collection, whatever is in it.
+The workshop this crawl is built on indexed its rule book from a PDF. The crawl keeps its rules in Markdown, so the PDF technique returns here. The Floor 5 knowledge base is a ChromaDB collection of passages, each with a section name; a PDF is another source of passages. Read each page's text, cut the text the same way as the handbook, give every passage a section the Rules Agent can cite, and add it to the same collection. The Rules Agent needs no change: it searches the collection, whatever the collection holds.
 
-How you know it worked: the script reports the passages it added, and the Rules Agent answers a question about the audit with `[Audit Report, page 1]` or `page 2` in its sources.
+Success check: the script reports the passages added, and the Rules Agent answers a question about the audit with `[Audit Report, page 1]` or `page 2` in its sources.
 
-`audit-report.pdf` ships in the folder. `make_audit_report.py` is the script that wrote it, with nothing but the Python standard library, so you can see the file holds only text; you never need to run it. `pypdf` is in the workshop dependencies: if `uv sync` ran before this encounter existed, run it again.
+`audit-report.pdf` ships in the folder. `make_audit_report.py` is the script that wrote it, with nothing but the Python standard library, so the file visibly holds only text; running it is optional. `pypdf` is in the workshop dependencies: if `uv sync` ran before this encounter existed, run `uv sync` again.
 
 Go to the encounter folder:
 
@@ -39,7 +39,7 @@ cd aiRPG-seattle-dungeon-crawl/encounters/floor-5-paper-trail
 # TODO: Step 1 - Import PdfReader from pypdf
 ```
 
-`PdfReader` opens a PDF and gives you its pages. See [PdfReader](https://pypdf.readthedocs.io/en/stable/modules/PdfReader.html).
+`PdfReader` opens a PDF and returns its pages. See [PdfReader](https://pypdf.readthedocs.io/en/stable/modules/PdfReader.html).
 
 <details>
 <summary>Show me the code for Step 1</summary>
@@ -74,7 +74,7 @@ Replace the `return []` under the TODO.
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** A PDF is a picture of a page that happens to have words under it. Pulling the words back out is the whole trick. This one came out clean, two pages, five findings, one management response. Barnaby read Finding 2 and went the color of a stop sign.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** A PDF is a picture of a page with words under it. Pulling the words back out is the whole trick. This PDF came out clean, two pages, five findings, one management response. Barnaby read Finding 2 and went the color of a stop sign.
 
 ## Step 3: Cut and Label the Passages
 
@@ -82,7 +82,7 @@ Replace the `return []` under the TODO.
 # TODO: Step 3 - Cut each page into passages. Number pages from 1; give each passage the id "audit-report_p<page>_<n>" and the metadata {"section": "Audit Report, page <page>", "source": "audit-report.pdf"}
 ```
 
-`cut(text)` is given: it is the Floor 5 cut, passages of about 1,000 characters that overlap by 200. Loop over the pages with their numbers (`enumerate(pages, start=1)`), cut each one, and build one dictionary per passage with three keys: `id`, `text` and `metadata`. The section is what the Rules Agent prints in front of each passage, `[Audit Report, page 2]`, the way handbook passages show `[Final Beat]`. Each id must be unique in the collection, hence the page and the passage number.
+`cut(text)` is given: the Floor 5 cut, passages of about 1,000 characters that overlap by 200. Loop over the pages with their numbers (`enumerate(pages, start=1)`), cut each one, and build one dictionary per passage with three keys: `id`, `text` and `metadata`. The section is what the Rules Agent prints in front of each passage, `[Audit Report, page 2]`, the way handbook passages show `[Final Beat]`. Each id must be unique in the collection, hence the page and the passage number.
 
 <details>
 <summary>Show me the code for Step 3</summary>
@@ -112,7 +112,7 @@ python index_audit_report.py
 
 Check: one line, `3 passages from audit-report.pdf are in 'crawl_handbook' (N passages in all)`, where N is the handbook's passages plus three. Run it twice: the count stays the same, because the script upserts by id instead of adding.
 
-| you see | it means | fix |
+| output | cause | fix |
 |---|---|---|
 | `No knowledge base at ...` | the Floor 5 knowledge base is not built | run `python create_knowledge_base.py` from `5_a2a_integration/utils` |
 | `No passages: complete Steps 2 and 3` | `read_pages` or `passages` still returns `[]` | Steps 2 and 3 |
@@ -127,17 +127,17 @@ curl -X POST http://0.0.0.0:8009/inquire \
   -d '{"question": "Ask the Rules Agent what the Quarterly Close Accountant'\''s audit report found about our Groove, and whether the accountant has danced before."}'
 ```
 
-The Rules Agent terminal shows the passages it found, `[Audit Report, page 1]` and `[Audit Report, page 2]` among them, and the answer cites Finding 1 (Groove is a stat, not money) and Finding 4 (one dance-off, at a 2019 holiday party). If you rebuild the knowledge base with `create_knowledge_base.py`, it deletes the collection and starts over: run this script again afterwards.
+The Rules Agent terminal shows the passages it found, `[Audit Report, page 1]` and `[Audit Report, page 2]` among them, and the answer cites Finding 1 (Groove is a stat, not money) and Finding 4 (one dance-off, at a 2019 holiday party). After rebuilding the knowledge base with `create_knowledge_base.py`, which deletes the collection and starts over, run `index_audit_report.py` again.
 
 ## What It Costs
 
-Nothing on AWS for the indexing: `pypdf` and ChromaDB run on your machine, and the embedding model is the one Floor 5 already downloaded. The question costs a Narrator turn, under one cent ([Floor 5](../floor-5.md#what-a-narrator-turn-costs)).
+Nothing on AWS for the indexing: `pypdf` and ChromaDB run on the local machine, and the embedding model is the one Floor 5 already downloaded. The question costs a Narrator turn, under one cent ([Floor 5](../floor-5.md#what-a-narrator-turn-costs)).
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The rule clerk read the audit back to us with section and page, in the same bored voice it uses for the Final Beat. Finding 1 was fair. Finding 3 was fair too: I had not checked the tide before the dance-off, and the tide matters on this floor. It is on my checklist now. Finding 5 we kept to ourselves. Barnaby has filed a formal dispute of Finding 2. It is four pages long. I have not read it.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The rule clerk read the audit back to us with section and page, in the same bored voice it uses for the Final Beat. Finding 1 was fair. Finding 3 was fair too: I had not checked the tide before the dance-off, and the tide matters on this floor. The tide check is on my checklist now. Finding 5 we kept to ourselves. Barnaby has filed a formal dispute of Finding 2. The dispute is four pages long. I have not read the dispute.
 
 ## Encounter Clear
 
-Loot you're keeping:
+Loot kept:
 
 - How to read a PDF's text with `pypdf.PdfReader` and `extract_text()`
 - How to add a new source to an existing knowledge base: same cut, same collection, a section name to cite
@@ -147,6 +147,6 @@ Loot you're keeping:
 >
 > **[AUDITED AND UNBOTHERED]**
 >
-> Reward: You received a [Bronze Box]. Inside: a PDF reader, three new passages, and one management response the System has framed.
+> Reward: a [Bronze Box]. Inside: a PDF reader, three new passages, and one management response the System has framed.
 
 Back to [Floor 5](../floor-5.md#floor-clear), or on to [Floor 6](../floor-6.md).
