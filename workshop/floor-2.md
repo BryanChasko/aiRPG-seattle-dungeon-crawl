@@ -224,6 +224,15 @@ Check: `fibonacci_scroll.py` now sits in `2_vended_tools/`, and Kiro reports the
 - Approval prompts: tools run with the permissions of your Python process. With `HumanInTheLoop`, nothing that alters your system happens without your explicit approval.
 - Letting some tools through: `allowed_tools=["file_editor"]` lets a tool run freely while the others still ask. Use `["*"]` to disable the prompts entirely, for testing only.
 
+## Side Passages (optional)
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The eelgrass has more machines than the six on the main row, and Kiro has more scrolls than one.
+
+- [The Tide Table](encounters/tide-table.md), sidequest: today's real Seattle tides from NOAA, and a ruling on whether the Estuary dance floor is underwater
+- [The Sandbox Tide Pool](encounters/sandbox-tide-pool.md), sidequest: Kiro's scroll cast inside a Docker sandbox instead of your own shell
+- [The Policy Gatekeeper](encounters/policy-gatekeeper.md), boss battle: a Cedar policy and a risk classifier in front of Kiro, so you only see the risky calls
+- [Ask the Player](encounters/ask-the-player.md), sidequest: the Narrator stops mid-turn to ask you which Move Call to make
+
 ## Floor Clear
 
 Floor cleared, Crawler. You've equipped your agent with the `http_request` vended tool, and it can now decide on its own when to use it.

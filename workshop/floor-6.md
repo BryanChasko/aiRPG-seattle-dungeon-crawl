@@ -101,6 +101,13 @@ Slow response times:
 - Check your internet connection stability
 - Consider optimizing your agent's model configuration
 
+## Side Passages (optional)
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The arena keeps two scores nobody showed us: the Hype the audience gives, and the deals the sponsors want.
+
+- [The Hype Meter](encounters/hype-meter.md), sidequest: a hook turns tool and model events into Hype, and a meter in the web interface shows it
+- [Sponsor Interrupt](encounters/sponsor-interrupt.md), sidequest: an interrupt pauses the turn so you accept or refuse a sponsor deal in the browser
+
 ## Floor Clear
 
 Floor cleared, Crawler. You've connected your Narrator to a web interface and tested it end to end.

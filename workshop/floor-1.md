@@ -175,6 +175,13 @@ Check: the answer streams into the terminal as it is written, addresses you as C
 
 [The Commentary Booth](encounters/commentary-booth.md), a sidequest: replace the default callback handler with your own, stream the System's call of a dance-off as it happens, announce every tool call, and read the turn's receipt, tokens and dollars, from the `AgentResult`.
 
+## More Side Passages
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Two more doors off the aquarium lobby: a ticket window that prints a receipt for every turn, and the investment banker under the Pier 59 clock, waiting to see how fast the System can think.
+
+- [Read the Receipt](encounters/read-the-receipt.md), sidequest: the whole `AgentResult` of a turn, its stop reason, its tokens per trip through the event loop, its tool calls and where the seconds went
+- [The Reasoning Dial](encounters/reasoning-dial.md), boss battle: a router over two settings of Amazon Nova 2 Lite, reasoning off for banter and on for a close Final Beat, with a fallback when the deep turn runs long
+
 ## Floor Clear
 
 Floor cleared, Crawler. You've created your first AI agent using Strands.

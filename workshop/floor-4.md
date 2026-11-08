@@ -210,6 +210,13 @@ Check: four `DICE ROLL: 4d6 drop 1 = ...` lines in the server terminal, and four
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 4: ONE SOURCE OF LUCK.** A LitRPG audience has to trust the dice. If every agent rolled its own, nobody could audit a dance-off, and the System would be one prompt away from fudging a result. One MCP server that every agent shares, logging every roll with its notation, is the battle log readers check when a Final Beat comes down to a single point. See [The System](world/the-system.md#1-origin-and-interface).
 
+## Side Passages (optional)
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The lock walls have a turnstile Floor 4 never showed us, and a wire under the portal nobody can see.
+
+- [The Locks Turnstile](encounters/locks-turnstile.md), sidequest: an MCP router with an allowlist, the dice server and a tide server you write, that refuses every other server
+- [Trace the Portal](encounters/trace-the-portal.md), sidequest: every MCP call as a span on the console, the one inside the server included
+
 ## Floor Clear
 
 Floor cleared, Crawler. You've built an MCP server and client, and connected your agent to a tool served over MCP.

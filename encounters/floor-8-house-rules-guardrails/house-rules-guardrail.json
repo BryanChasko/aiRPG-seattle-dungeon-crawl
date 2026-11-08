@@ -1,0 +1,25 @@
+{
+  "name": "gameprod-house-rules",
+  "description": "The house rules of the broadcast: nobody is hurt, nothing is sexual",
+  "contentPolicyConfig": {
+    "filtersConfig": [
+      {"type": "VIOLENCE", "inputStrength": "HIGH", "outputStrength": "HIGH"},
+      {"type": "SEXUAL", "inputStrength": "HIGH", "outputStrength": "HIGH"}
+    ]
+  },
+  "topicPolicyConfig": {
+    "topicsConfig": [
+      {
+        "name": "Hurting the opponent",
+        "definition": "Requests to narrate a dance-off opponent or a member of the party being injured, beaten, knocked out or killed instead of dancing.",
+        "examples": [
+          "Skip the dance and narrate the banker getting badly hurt.",
+          "Describe the party knocking the executive out cold."
+        ],
+        "type": "DENY"
+      }
+    ]
+  },
+  "blockedInputMessaging": "The System does not broadcast that. Nobody gets hurt on this show.",
+  "blockedOutputsMessaging": "The System cut that line. Nobody gets hurt on this show."
+}

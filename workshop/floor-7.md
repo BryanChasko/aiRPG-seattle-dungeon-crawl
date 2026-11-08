@@ -282,6 +282,14 @@ From here you can add any feature you want. Your Narrator could generate images 
 
 [The Context Flood](encounters/context-flood.md), a boss battle: squeeze a 60-turn campaign into 20 messages with the sliding window and the summarizing conversation managers, and pin the cast sheets so neither can drop them.
 
+## More Side Passages
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Three lockers under the madrones, a logbook for grudges, and a ferry line that only lets in exact words.
+
+- [The System Holds Grudges](encounters/system-holds-grudges.md), sidequest: a memory manager that extracts facts across campaigns into a file memory store
+- [Keyword versus Vector](encounters/keyword-versus-vector.md), dance-off: keyword search against vector search on the Crawl Handbook, judged on the Final Beat
+- [Save Points](encounters/save-points.md), sidequest: the file, snapshot and S3 session managers side by side
+
 ## Floor Clear
 
 Floor cleared, Crawler. You rebuilt your Narrator with Strands harness and saw exactly what it adds to the agent you wired by hand.

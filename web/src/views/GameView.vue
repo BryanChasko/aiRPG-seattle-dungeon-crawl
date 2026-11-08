@@ -6,6 +6,7 @@
         :loading="statsLoading"
         :error="statsError"
       />
+      <HypeMeter :hype="store.hype" />
     </aside>
 
     <main class="game-view__main">
@@ -20,15 +21,22 @@
         {{ sendError }}
       </div>
 
+      <SponsorDealDialog
+        :deal="store.pendingDeal"
+        :disabled="sending"
+        @accept="handleDeal(true)"
+        @refuse="handleDeal(false)"
+      />
+
       <ActionSuggestions
-        v-if="!sending"
+        v-if="!sending && !store.pendingDeal"
         :suggestions="latestSuggestions"
         :disabled="sending"
         @select="handleAction"
       />
 
       <PlayerInput
-        :disabled="sending"
+        :disabled="sending || !!store.pendingDeal"
         @submit="handleAction"
       />
     </main>
@@ -44,6 +52,8 @@ import CharacterStatsPanel from '@/components/CharacterStatsPanel.vue'
 import MessageList from '@/components/MessageList.vue'
 import ActionSuggestions from '@/components/ActionSuggestions.vue'
 import PlayerInput from '@/components/PlayerInput.vue'
+import HypeMeter from '@/components/HypeMeter.vue'
+import SponsorDealDialog from '@/components/SponsorDealDialog.vue'
 import type { CharacterStats, ParsedMessage } from '@/types'
 
 const route = useRoute()
@@ -77,13 +87,40 @@ async function handleAction(text: string) {
   // Show user message immediately
   messages.value = [...messages.value, { role: 'user', text }]
   try {
-    const storyOutput = await api.sendInquiry(text)
-    messages.value = [...messages.value, { role: 'assistant', storyOutput }]
+    const { story, deal } = await api.sendInquiryWithDeal(text)
+    messages.value = [...messages.value, { role: 'assistant', storyOutput: story }]
+    store.setPendingDeal(deal)
   } catch (e) {
     sendError.value = e instanceof Error ? e.message : 'Failed to send message'
   } finally {
     sending.value = false
   }
+  await refreshHype()
+}
+
+// Only reachable when the Narrator paused the turn on a sponsor deal (Sponsor Interrupt)
+async function handleDeal(accepted: boolean) {
+  const deal = store.pendingDeal
+  if (!deal) return
+  const api = useGameApi(store.serverUrl)
+  sending.value = true
+  sendError.value = null
+  try {
+    const { story, deal: nextDeal } = await api.respondToDeal(deal.id, accepted)
+    messages.value = [...messages.value, { role: 'assistant', storyOutput: story }]
+    store.setPendingDeal(nextDeal)
+  } catch (e) {
+    sendError.value = e instanceof Error ? e.message : 'Failed to answer the sponsor'
+  } finally {
+    sending.value = false
+  }
+  await refreshHype()
+}
+
+// Only reachable with a Hype Meter Narrator; a plain Narrator answers null and the panel stays hidden
+async function refreshHype() {
+  const api = useGameApi(store.serverUrl)
+  store.setHype(await api.fetchHype())
 }
 
 onMounted(async () => {
@@ -107,6 +144,8 @@ onMounted(async () => {
   } finally {
     messagesLoading.value = false
   }
+
+  await refreshHype()
 })
 </script>
 

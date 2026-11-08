@@ -119,6 +119,31 @@ export interface CharacterStats {
   created_at: string
 }
 
+// ---- Floor 6 encounters (optional: only a Narrator that serves them sends these) ----
+
+/** GET /hype from The Hype Meter side passage. */
+export interface HypeSnapshot {
+  hype: number
+  sponsor_tiers: number[]
+  next_sponsor_at: number | null
+  last_event: string
+}
+
+/** The interrupt a Sponsor Interrupt Narrator returns from POST /inquire and POST /respond. */
+export interface SponsorDeal {
+  id: string
+  name: string
+  sponsor: string
+  offer: string
+  reward: string
+  cost: string
+}
+
+export interface InquiryResult {
+  story: StoryOutput
+  deal: SponsorDeal | null
+}
+
 // ---- Inquiry Request / Response ----
 
 export interface InquiryRequest {

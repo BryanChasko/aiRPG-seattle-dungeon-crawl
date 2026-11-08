@@ -606,6 +606,14 @@ Watch the four terminals while a request runs. In the Narrator terminal the tool
 
 [The Developer Advocate Swarm](encounters/developer-advocate-swarm.md): keynote, live demo, livestream and swag table pass the mic themselves, as a Strands swarm. The party wins by out-dancing whoever holds it. Its opposite, a graph whose order your code draws, waits on Floor 8: [The Quarterly Earnings Call](encounters/quarterly-earnings-call.md).
 
+## More Side Passages
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Three more errands on the estuary: Barnaby wants to make his own calls, the accountant wants a typed answer, and somebody has to staple the receipts.
+
+- [Barnaby Takes the Call](encounters/barnaby-takes-the-call.md), sidequest: an `A2AAgent` instead of the `a2a_client` tool, with every A2A event streamed
+- [Read the Room, Typed](encounters/read-the-room-typed.md), dance-off: the tempo and each Move Call picked as typed values by a decision model, against the Quarterly Close Accountant
+- [Subcontract the Paperwork](encounters/subcontract-the-paperwork.md), sidequest: a subagent tool that hires a one-off clerk on a pinned Amazon Nova 2 Lite
+
 ## Floor Clear
 
 Floor cleared, Crawler. You've built a complete multi-agent Narrator system with agent orchestration.
