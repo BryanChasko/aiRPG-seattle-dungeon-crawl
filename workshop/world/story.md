@@ -2,7 +2,7 @@
 
 > **System AI:** "Every season needs a narrator. I asked for the octopus. The network gave me the Marine."
 
-The crawl is told by Cordula "Core" Vance, in her own words. Each floor opens with an entry from her log: what fell, what stood in the way, and what the party built to get past it. The thing they build is the floor's Strands lesson. You read the adventure, then you write the code that wins it.
+The crawl is told by Cordula "Core" Vance, in her own words, and you play as her. Each floor opens with an entry from her log: what fell, what stood in the way, and what the party built to get past it. The thing they build is the floor's Strands lesson. You live the adventure, then you write the code that wins it.
 
 ## The Premise in One Paragraph
 
@@ -51,7 +51,7 @@ The optional encounters (sidequests, boss battles and dance-offs) hang off these
 - **Cordula** narrates. First person, past tense in her log, short sentences, a crew chief's eye for gear and exits. She does not panic; she inventories. She calls Barnaby "Professor."
 - **Barnaby** speaks through the collar: a distinguished British academic who considers humans clumsy, dry and land-bound, and respects Cordula's discipline above almost everything. He calls her "Sergeant." His lines get longer and stranger as he wakes up.
 - **The System** is the game-show host: petty, theatrical, exact about numbers. It never narrates the story; it interrupts it.
-- **You**, the reader, are the hands at the terminal. Cordula tells you what happened; the steps tell you what to type.
+- **You** are Cordula. The log is her inner monologue, in her words; the steps are what she types next, addressed to you.
 
 ## Rules the Story Keeps
 

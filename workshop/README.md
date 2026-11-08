@@ -6,14 +6,20 @@
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Welcome, Crawlers, to the dungeon under Seattle. Pier 59 collapsed this morning, the Salish Sea came in, and you came with it: soaked, short one kayak, armed with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods. Every script you run drops an achievement box. Write a clean loop and earn a Bronze Box. Burn through your token limit with an accidental infinite loop and earn a Desperation Box. The audience is watching. Try to be interesting."
 
-Welcome, Crawler, to the dungeon. This workshop takes you from your first agent to a production multi-agent system built with the Strands Agents SDK. Floor after floor, you build the System: the AI that runs *Dungeon Crawl: Seattle*, registers its Crawlers, looks up its own rules, rolls every die in the open and referees dance-offs against the accountants, investment bankers and developer advocates it dropped into the Puget Sound.
+## Who You Are
 
-## The World You Are Building
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I am Cordula Vance. Core, to anyone who has shared a boat with me. Marine Corps Reserve, amphibious crew chief, and on weekends I run kayak patrols on the Sound. This morning I tied up under Pier 59 to say hello to the octopus, and the pier folded into Elliott Bay with both of us under it.
+>
+> He rides on my back now, in my kayak's dry bag with two bilge pumps, and he runs the party. His name is Barnaby. Eight arms, a doctorate's worth of opinions, and, since the System clamped a collar on him, a British accent. A geoduck named Shelly and a lumpsucker named Chonks joined later. Nobody asked them.
+>
+> The System that did this is broken. Its voice, its dice, its rule book and its memory washed out across eight floors under the Sound, and the only way out is to put it back together, one piece per floor. Every piece I rebuild, Barnaby's collar picks up, and he wakes up a little more. I build every piece with the Strands Agents SDK: the first floor is one agent and one call, the last is the whole party running on Amazon Bedrock AgentCore. I write all of it.
+>
+> Nobody gets hurt down here. A fight is a dance-off, the opponents are accountants, bankers and developer advocates at work, and the worst that happens is I get Benched and wake up in a Safe Room. I keep a log. The log is what happened. The steps are what I type next.
 
-The crawl follows Cordula "Core" Vance, a Marine Corps Reserve crew chief who patrols the Sound by kayak, and Barnaby, the uplifted Giant Pacific Octopus who rides on her back in a water tank and leads the party, with Shelly the geoduck and Chonks the spiny lumpsucker. It is nonlethal by design: conflict is a dance-off or a stealthy way around one, and a Crawler who loses is Benched, never killed.
+What the System, the party and the rules are made of:
 
 - [World guide](world/README.md): everything the agents say about the world comes from these pages
-- [The Story](world/story.md): Cordula tells the crawl in her own words; every floor's obstacle is its Strands lesson
+- [The Story](world/story.md): the log, floor by floor; every floor's obstacle is its Strands lesson
 - [The System](world/the-system.md): the LitRPG design, one layer per workshop floor
 - [The Cast](world/cast.md) and [Seattle, Under the Sound](world/seattle.md)
 - [The Crawl Handbook](world/crawl-handbook/): the rules, and the Rules Agent's knowledge base
@@ -103,7 +109,7 @@ Everything you need to install (Python, uv, the repository) is covered in Floor 
 ### The Rules of the Crawl
 
 - The System AI: the omniscient, slightly unhinged dungeon administrator tracking your code output, your syntax errors and your desperate attempts to pass `uv sync`
-- The Crawlers: Cordula and Barnaby, played by you, with Shelly and Chonks along as companions. You enter soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
+- The Crawlers: you, Cordula, with Barnaby on your back running the party and Shelly and Chonks along as companions. You enter soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
 - The Loot Boxes: every floor you clear drops an achievement box. Write a clean loop, earn a Bronze Box. Burn your token limit on an accidental infinite loop, earn a Desperation Box
 - The Audience: billions of alien viewers. They are not on your side. Neither are the sponsors
 

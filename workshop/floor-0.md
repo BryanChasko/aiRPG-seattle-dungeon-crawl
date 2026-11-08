@@ -27,7 +27,7 @@
 >
 > A brass ring snapped shut around Barnaby's mantle, and his skin went a color I had never seen on an animal. He did not speak. He could not, not yet. But he looked at me, and then he looked at the stairwell behind me, the only way down that was not underwater, and I understood him anyway.
 >
-> The stairwell is where this workshop starts. The System is broken, and the only way out is to rebuild it, one piece per floor. What we build, the collar gives to Barnaby. You are the hands at the terminal. I will tell you what happened. The steps tell you what to type.
+> The stairwell is where this workshop starts. The System is broken, and the only way out is to rebuild it, one piece per floor. What we build, the collar gives to Barnaby. The terminal is mine. The log is what happened. The steps are what I type next.
 >
 > First thing on the stairs: a twenty-foot python.
 
@@ -44,7 +44,7 @@ Prepare your development environment: clone the workshop repo, install uv and Py
 
 ## The Crawl You Are Building
 
-This workshop builds the AI behind a LitRPG, *Dungeon Crawl: Seattle*. The System, a broadcast AI filming for alien viewers, collapsed the waterfront at Pier 59 and turned the Puget Sound underneath into an eight-floor dungeon. The leads are Cordula "Core" Vance, a Marine Corps Reserve crew chief who patrols the Sound by kayak, and Barnaby, an uplifted Giant Pacific Octopus who rides on her back in a water tank and runs the party. Shelly the geoduck and Chonks the spiny lumpsucker round it out. You play as this party. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
+This workshop builds the AI behind a LitRPG, *Dungeon Crawl: Seattle*. You are Cordula: the log above is yours, Barnaby rides on your back and runs the party, and Shelly the geoduck and Chonks the spiny lumpsucker join you on Floors 2 and 3. The System you rebuild is the broadcast AI that folded the waterfront into an eight-floor dungeon under the Sound. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
 
 The lore lives in the [world guide](world/README.md): [the setting](world/seattle.md), [the cast](world/cast.md), [the System design](world/the-system.md) and the [Crawl Handbook](world/crawl-handbook/), the rules your Rules Agent searches on Floor 5.
 
