@@ -7,6 +7,10 @@ Maintainer tools for the workshop pages and art. Learners never need these.
 | [`check_docs.py`](check_docs.py) | docs gate: relative links, images and anchors resolve, external links answer 200, no banned words, ASCII prose, the study pack is current. `--offline` skips the network |
 | [`airpg_render.py`](airpg_render.py) | art pipeline: a plan in [`../images/plans/`](../images/plans/) becomes request files, renders on Meta Muse Image 1.0, and is standardized to the house spec with a sidecar per image. `--check` verifies every shipped image |
 | [`contact_sheet.py`](contact_sheet.py) | review sheets of renders, one grid per size class |
+| [`sam_cutout.py`](sam_cutout.py) | SAM 3.1 cutouts: a character or object from a render as a transparent sprite, for compositing and motion |
+| [`motion.py`](motion.py) | animated payoffs from shipped art (Off-Beat wobble, loot pop, Benched, Ink Cloud), each with a still for reduced motion; no model calls |
+| [`publish_art.py`](publish_art.py) | uploads planned art to `s3://bryanchasko.com/airpg-art/` and writes [`../docs/art-placements.md`](../docs/art-placements.md): every image's S3 key, URL, page, spot, alt text and paste-ready line |
+| [`meta_api.py`](meta_api.py) | shared Meta Model API client (key lookup, retries); `models` lists what the key can call |
 
 The art rules, tokens and character model sheet are in [`../docs/visual-design-system.md`](../docs/visual-design-system.md); the prompt blocks in [`../images/plans/style.json`](../images/plans/style.json).
 

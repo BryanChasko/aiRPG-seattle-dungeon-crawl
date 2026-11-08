@@ -1,11 +1,11 @@
 {
  "model": "muse-image-1.0",
- "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a round deep teal enamel sponsor medallion, raised relief of an ocean wave curling over a kelp frond, sea-glass green inlay, brass rim, bioluminescent glints, a friendly aquatic collective. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a round glossy teal enamel sponsor medallion for a venture-funded water-tech startup, a single water drop over nine small curved arrows stacked like a pivot chart, startup-sticker sheen, sea-glass green inlay, brass rim, eager and shiny. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
  "n": 1,
  "size": "1024x1024",
  "output_format": "png",
  "endpoint": "POST https://api.meta.ai/v1/images/generations",
- "prompt_sha256": "c6749531d3e3586d634bfbf49658a32a6bed361909ce64094d651924a245b805",
+ "prompt_sha256": "1d3c556304090f4f3d007f7b567ea8d9e3dd58f9a1526c2070ab68f41c0c2267",
  "auth": "REDACTED",
  "output_sha256": null,
  "revised_prompt": null,

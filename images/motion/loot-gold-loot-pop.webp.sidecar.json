@@ -1,0 +1,34 @@
+{
+ "file": "loot-gold-loot-pop.webp",
+ "still": "loot-gold-loot-pop-still.webp",
+ "effect": "loot-pop",
+ "frames": 12,
+ "size": [
+  192,
+  192
+ ],
+ "frame_ms": [
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  1400
+ ],
+ "bytes": 17664,
+ "source": {
+  "image": "images/icons/loot-gold-96x96.webp",
+  "image_sha256": "6703cc556c26700a7feb2a4d7b7606a95845cac558d02aaae168d33a907cdcf0"
+ },
+ "tools": {
+  "pillow": "11.3.0"
+ },
+ "model_calls": 0,
+ "sha256": "9bc3687651784dbca5621a996f2a73dc7540f0f0a991daa1caea5fdaa5dfecc9"
+}

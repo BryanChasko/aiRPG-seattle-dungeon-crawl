@@ -1,12 +1,14 @@
 # Workshop copy-paste snippets
 
+Speaker icons in front of a bold name carry `alt=""`, so a screen reader says the name once. The System AI is the only AI speaker; there is no Narrator label.
+
 Conventions match the floor-5.md template: `floor-nav`, `floor-files`,
 `cordula-log` markers. Paths are relative to `workshop/`.
 
 ## System-AI quote
 
 ```markdown
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Your taunt here. The audience is watching."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Your taunt here. The audience is watching."
 ```
 
 Variants: swap the icon for `warning-96x96.webp` (**SYSTEM WARNING:**),
@@ -14,19 +16,12 @@ Variants: swap the icon for `warning-96x96.webp` (**SYSTEM WARNING:**),
 (**NEW ACHIEVEMENT UNLOCKED!**), `sponsor-96x96.webp`, `floor-boss-96x96.webp`,
 `stairwell-96x96.webp`. All seven icons exist in `images/icons/`.
 
-## Narrator line
-
-```markdown
-> **NARRATOR:** The tide turns. The east stairwell floods in nine minutes.
-```
-
-The Narrator is the game AI and speaks rarely: one plain present-tense line when the world changes, at most one per page. It has no icon in markdown and never uses the System AI icon.
 
 ## Cordula log
 
 ```markdown
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY N, WEEKDAY, MONTH D, FLOOR N.** One paragraph: where the party is, what broke, what the floor builds. Placeholder sentence about what the party does next.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY N, WEEKDAY, MONTH D, FLOOR N.** One paragraph: where the party is, what broke, what the floor builds. Placeholder sentence about what the party does next.
 <!-- /cordula-log -->
 ```
 
@@ -67,7 +62,7 @@ result = "your answer here"
 ## Achievement toast
 
 ```markdown
-> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[TITLE IN CAPS]**
 >
@@ -84,8 +79,20 @@ The HUD art lives in `assets/hud/` as script-free SMIL SVGs: `d20`, `final-beat-
 
 Move icons use `width="48"`. The SVGs honor `prefers-reduced-motion`.
 
+## Animated payoff (honors reduced motion)
+
+Clips live in `images/motion/`, each with a `-still.webp` rest frame. GitHub honors the `media` query, so a reader who asked for less motion sees the still:
+
+```markdown
+<picture><source srcset="../images/motion/loot-gold-loot-pop-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../images/motion/loot-gold-loot-pop.webp" alt="A Gold Box popping open" width="96"></picture>
+```
+
+Where each clip and render belongs, with ready-to-paste lines and S3 keys: `docs/art-placements.md`.
+
 ## Art rules
 
+- one AI look only: the System AI. No Narrator icon, label or style
+- no real company, logo or trademark in any art; sponsors are local tropes (`docs/visual-design-system.md` section 7a)
 - no images inside the crawl handbook: `workshop/world/crawl-handbook/` is the Rules Agent's knowledge base, so it stays text
 - no Shelly art before her Floor 2 welcome, no Chonks art before his Floor 3 welcome
 - new art comes from a plan in `images/plans/` rendered with `tools/airpg_render.py`, never a hand-written request

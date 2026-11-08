@@ -1,0 +1,32 @@
+{
+ "file": "opponent-accountant-offbeat.webp",
+ "still": "opponent-accountant-offbeat-still.webp",
+ "effect": "offbeat",
+ "frames": 10,
+ "size": [
+  440,
+  480
+ ],
+ "frame_ms": [
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90
+ ],
+ "bytes": 356740,
+ "source": {
+  "image": "images/cards/opponent-accountant-offbeat-640x640.webp",
+  "image_sha256": "22ae27ba84f31c0a31c6edc6db40f5432afb2044157e2ff051a46d22a8a7c67a"
+ },
+ "tools": {
+  "pillow": "11.3.0"
+ },
+ "model_calls": 0,
+ "sha256": "d4c3eeb9565e99d38142304a87cef9b4daca8061676726d2afa850973fdbee99"
+}
