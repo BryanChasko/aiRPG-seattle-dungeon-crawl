@@ -125,6 +125,13 @@ Check: `agentcore status` lists `rules` under Knowledge Bases as `Deployed`, wit
 
 The project is ready: head to [8.1 The Dice Server](floor-8-1.md) to deploy the project's first brick.
 
+## Cadabra on the Narrows (optional)
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Cadabra fired an engine on its pad across the Narrows, and its range software wants the last word on our run.
+
+- [Pad Explosion Aftermath](encounters/pad-explosion-aftermath.md), sidequest: evals: score the System AI's incident reports against a pad sheet, then adapt the prompt until every case passes
+- [Range Safety Officer Protocol](encounters/range-safety-officer.md), boss battle: interrupts raised from inside a tool, a two-key termination and a standing order, answered by id
+
 ## Boss Battle: The Quarterly Earnings Call (optional)
 
 ![The Bellevue corporate lobby, the arena for the Quarterly Earnings Call](../images/floors/bellevue-lobby-1200x675.webp)

@@ -94,16 +94,16 @@ Deploy the whole party to Amazon Bedrock AgentCore, one brick at a time
 Stop your services, remove the Floor 8 AWS resources and delete the harness state in `.agent/`
 
 ### [Side Passages: Optional Encounters](encounters/README.md)
-Deeper into the SDK, off the main corridor, each encounter starting where the matching floor ends: 28 sidequests, dance-offs and boss battles
+Deeper into the SDK, off the main corridor, each encounter starting where the matching floor ends: 34 sidequests, dance-offs and boss battles
 
 - Floor 1: [The Commentary Booth](encounters/commentary-booth.md), [Read the Receipt](encounters/read-the-receipt.md), boss battle [The Reasoning Dial](encounters/reasoning-dial.md)
 - Floor 2: [The Tide Table](encounters/tide-table.md), [The Sandbox Tide Pool](encounters/sandbox-tide-pool.md), boss battle [The Policy Gatekeeper](encounters/policy-gatekeeper.md), [Ask the Player](encounters/ask-the-player.md)
 - Floor 3: dance-off [The Concurrent Shuffle](encounters/concurrent-shuffle.md), [The Living Workbench](encounters/living-workbench.md)
-- Floor 4: [The Locks Turnstile](encounters/locks-turnstile.md), [Trace the Portal](encounters/trace-the-portal.md)
-- Floor 5: [The Paper Trail](encounters/paper-trail.md), boss battle [The Developer Advocate Swarm](encounters/developer-advocate-swarm.md), [Barnaby Takes the Call](encounters/barnaby-takes-the-call.md), dance-off [Read the Room, Typed](encounters/read-the-room-typed.md), [Subcontract the Paperwork](encounters/subcontract-the-paperwork.md)
-- Floor 6: [The Hype Meter](encounters/hype-meter.md), [Sponsor Interrupt](encounters/sponsor-interrupt.md)
-- Floor 7: boss battle [The Context Flood](encounters/context-flood.md), [The System AI Holds Grudges](encounters/system-holds-grudges.md), dance-off [Keyword versus Vector](encounters/keyword-versus-vector.md), [Save Points](encounters/save-points.md)
-- Floor 8: boss battle [The Quarterly Earnings Call](encounters/quarterly-earnings-call.md), [The Ferry Manifest](encounters/ferry-manifest.md), [The Grudge Ledger in the Cloud](encounters/grudge-ledger.md), [The Broadcast Booth](encounters/broadcast-booth.md), boss battle [House Rules as Guardrails](encounters/house-rules-guardrails.md), [Mid-Song Save](encounters/mid-song-save.md)
+- Floor 4: [The Locks Turnstile](encounters/locks-turnstile.md), [Trace the Portal](encounters/trace-the-portal.md), [The Warehouse Automation Grid](encounters/warehouse-automation-grid.md)
+- Floor 5: [The Paper Trail](encounters/paper-trail.md), boss battle [The Developer Advocate Swarm](encounters/developer-advocate-swarm.md), [Barnaby Takes the Call](encounters/barnaby-takes-the-call.md), dance-off [Read the Room, Typed](encounters/read-the-room-typed.md), [Subcontract the Paperwork](encounters/subcontract-the-paperwork.md), [The Delivery Drone Horde](encounters/delivery-drone-horde.md)
+- Floor 6: [The Hype Meter](encounters/hype-meter.md), [Sponsor Interrupt](encounters/sponsor-interrupt.md), [Launch Commit Criteria](encounters/launch-commit-criteria.md)
+- Floor 7: boss battle [The Context Flood](encounters/context-flood.md), [The System AI Holds Grudges](encounters/system-holds-grudges.md), dance-off [Keyword versus Vector](encounters/keyword-versus-vector.md), [Save Points](encounters/save-points.md), [Static Fire on the Pad](encounters/static-fire.md)
+- Floor 8: boss battle [The Quarterly Earnings Call](encounters/quarterly-earnings-call.md), [The Ferry Manifest](encounters/ferry-manifest.md), [The Grudge Ledger in the Cloud](encounters/grudge-ledger.md), [The Broadcast Booth](encounters/broadcast-booth.md), boss battle [House Rules as Guardrails](encounters/house-rules-guardrails.md), [Mid-Song Save](encounters/mid-song-save.md), [Pad Explosion Aftermath](encounters/pad-explosion-aftermath.md), boss battle [Range Safety Officer Protocol](encounters/range-safety-officer.md)
 
 ## Preparing for the Crawl
 
