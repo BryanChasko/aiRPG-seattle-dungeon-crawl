@@ -1,0 +1,13 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a round brass-rimmed contractor medallion, a sealed cardboard parcel with a small rocket fin and a single drone rotor attached, kraft-brown and steel, efficient and slightly ominous, no arrow, no smile. No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "0bb77bb7e2cdea13bfe636a95968145b22ff77d9ccd7659c0b20db27c6da1ddf",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null,
+ "plan": "images/plans/2026-11-08-batch-05.json"
+}

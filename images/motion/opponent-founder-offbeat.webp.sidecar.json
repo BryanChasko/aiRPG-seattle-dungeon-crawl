@@ -1,0 +1,32 @@
+{
+ "file": "opponent-founder-offbeat.webp",
+ "still": "opponent-founder-offbeat-still.webp",
+ "effect": "offbeat",
+ "frames": 10,
+ "size": [
+  440,
+  480
+ ],
+ "frame_ms": [
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90
+ ],
+ "bytes": 369198,
+ "source": {
+  "image": "images/cards/opponent-founder-offbeat-640x640.webp",
+  "image_sha256": "007e489dce259e7bdd24a9143b4029b710a0dd141cd73d3484657d2cb72db002"
+ },
+ "tools": {
+  "pillow": "11.3.0"
+ },
+ "model_calls": 0,
+ "sha256": "bad98227136ab5c9999f33c644af86021d003ae49788a4fa3f785d737e5bca7a"
+}

@@ -50,8 +50,8 @@ def sha256_file(p: Path) -> str:
 def check() -> int:
     bad = 0
     for webp in sorted((ROOT / "images").rglob("*.webp")):
-        if str(webp).endswith(".sidecar.json"):
-            continue
+        if str(webp).endswith(".sidecar.json") or webp.parent.name in ("motion", "sprites"):
+            continue  # clips and SAM sprites are not render classes; their sidecars differ
         side = Path(str(webp) + ".sidecar.json")
         name = webp.name
         try:
@@ -255,6 +255,8 @@ def plan(plan_file: str) -> Path:
     """Build every request in a plan from images/plans/style.json; write the manifest to the art dir."""
     style = json.loads(STYLE.read_text())
     p = json.loads(Path(plan_file).read_text())
+    if p.get("archive"):  # a record of renders made before plans existed; never re-render it
+        sys.exit(f"{plan_file} is an archive plan: it records shipped art and is not rendered")
     run_dir = ART_DIR / p["run"]
     renders = []
     for r in p["renders"]:

@@ -1,4 +1,4 @@
-# Visual Design System — aiRPG Seattle Dungeon Crawl
+# Visual Design System: aiRPG Seattle Dungeon Crawl
 
 Source of truth for art direction, image formats, and prompt language.
 Pipeline: [tools/airpg_render.py](../tools/airpg_render.py)
@@ -37,7 +37,7 @@ Per-class spec actually enforced in `CLASS_SPEC` + `check()`:
 | card | `*-640x640.webp` | 640x640 | webp lossy q84 | 36 to `#0B0E14` | 10px r2 alpha 10 |
 | floor | `*-1200x675.webp` | 1200x675 | webp lossy q82 | 50 to `#0B0E14` | 10px r2 alpha 10 |
 | banner | `*-1680x720.webp` | 1680x720 | webp lossy q84 (hero) | 50 to `#0B0E14` | 10px r2 alpha 10 |
-| icon | `*-96x96.webp` | 96x96 | webp lossy q88 | none (0) | none — `no dots, no vignette (UI glyph)` |
+| icon | `*-96x96.webp` | 96x96 | webp lossy q88 | none (0) | none - `no dots, no vignette (UI glyph)` |
 
 `--check` classifies by filename size tag, then requires: exact pixel size;
 sidecar present; `format` string match (`webp lossy q{q}`); a
@@ -92,16 +92,16 @@ Seattle sits on the homelands of Coast Salish peoples, including the Duwamish;
 Suquamish, Muckleshoot, Tulalip, Snoqualmie and other Salish Sea nations live
 and govern around the Sound. Binding rules for all art in this project:
 
-- No sacred ceremony in play — Winter Spirit Dancing never appears, as mechanic or scenery.
-- No imitation art — Formline and Coast Salish design (circles, crescents,
+- No sacred ceremony in play - Winter Spirit Dancing never appears, as mechanic or scenery.
+- No imitation art - Formline and Coast Salish design (circles, crescents,
   trigons, purposeful negative space) are living art systems. Gear, glyphs, and
   loot are NOT drawn in those styles. To use either style, commission a Native
   artist and credit that artist.
-- Credit what inspired the rules — the dance-off borrows one structural idea
+- Credit what inspired the rules - the dance-off borrows one structural idea
   (potlatch protocol's public display of law/lineage/strength; the powwow
   circuit's speeding drum to the final beat). Crawlers dance their own styles,
   never Indigenous ones.
-- Learn from the source — Duwamish Longhouse and Cultural Center, Daybreak Star
+- Learn from the source - Duwamish Longhouse and Cultural Center, Daybreak Star
   Indian Cultural Center, Burke Museum. Verify published claims against them.
 
 ## 6. Spend ledger ($21)
@@ -112,21 +112,39 @@ Starting budget `$21.00` (2026-11-08), Muse Image 1.0 at `$0.01` an image.
 (`| <run> | <n> image(s) | $<spent> |`). Never hand-edit a billed row.
 Spent through batch-05: see that ledger; the running total is in its last section.
 
-## 7. Two AIs, two looks
+## 7. One System AI, one look
 
-The Narrator (the game AI) and the System AI (the host) never share a visual.
-The System AI owns every notification frame, icon and loud color. The Narrator gets
-a quiet, faceless mark (`images/icons/narrator-96x96.webp`): a folded map or a tide
-line, no glow halo, no magenta. In markdown the Narrator line is a plain blockquote,
-`> **NARRATOR:** The tide turns.`, with the icon only where a page wants one.
+The System AI is the only AI character: it runs the crawl and narrates it. "Narrator" is its
+job and the name the code uses, never a second being, so there is no Narrator art, icon or
+style. Every speaking line uses the System AI icon (`images/icons/system-ai-96x96.webp`) and
+the label `**System AI:**`; its frames, glows and magenta-violet light are the one AI look.
+
+The System (the game: rules, stats, notifications, HUD, battle log, loot tables) is never drawn
+as a character. Its visuals are interface: the HUD SVGs in `assets/hud/`, the notification
+icons and the loot and sponsor icons.
+
+Speaker icons that sit in front of a bold name carry empty alt text (`alt=""`), so a screen
+reader says the name once.
+
+## 7a. Sponsors and contractors (local Pacific Northwest tropes, never a real company)
+
+| Name | Who they are | Badge direction |
+|---|---|---|
+| Bellevue Consortium | a tech monolith across the lake, famous for the Doors '94 operating system; sponsors the opponents, hates surprises, wants the party gone before the quarter closes June 30 | a half-open door glyph on cold steel enamel, glass towers over Lake Washington, brass rim; corporate, beige-desktop nostalgia; never a window grid or flag, never a real logo |
+| Hydros-9 Aquatic Collective | a venture-funded South Lake Union water-tech startup on its ninth pivot (hence the 9); adores Barnaby | a glossy teal enamel water drop over nine stacked pivot arrows, startup-sticker sheen, brass rim |
+| Benthic Collective | a Ballard fishing-and-kombucha cooperative; adores Barnaby | a fishing float and a kombucha jar on weathered brass, net texture |
+| Cadabra, Inc. | the crawl's fulfillment contractor: delivery drones drop every loot box, it rents the dungeon its obstacles, and it published Strands as an open toolkit | a cardboard parcel with a rocket fin and a drone rotor, brass rim; never a smile arrow, never a real logo |
+
+Never draw or name a real company, logo or trademark. Teaching text keeps real product names;
+these names are story only.
 
 ## 8. Character model sheet (what every render must keep)
 
-From `workshop/world/cast.md`. A render that breaks one of these is re-rolled, not shipped.
+From `workshop/world/cast.md` and the canon in `workshop/world/story.md`. A render that breaks one of these is re-rolled, not shipped.
 
 | Character | Must show | Must not show |
 |---|---|---|
 | Cordula | orange and black drysuit, float vest, black touring paddle, dark curly hair | weapons, bare feet |
-| Barnaby | red Giant Pacific Octopus, brass collar, clear backpack tank | a human face, armor |
+| Barnaby | a wild Giant Pacific Octopus past every record (about 190 lb, about 22 ft arm tip to arm tip), red with crimson and white flashes, old scars and barnacle-worn skin of a wild animal, the System AI's brass collar; on dry floors he rides the clear backpack tank (the Cephalopod Hydration Pack), on wet floors he swims free | a human face, armor, an aquarium, glass walls, a monster or kraken |
 | Shelly | geoduck: a small pale oblong shell with a long, thick siphon (the "neck") much bigger than the shell; carabiner on the shell ring | an oyster, a turtle, legs, a face on the shell |
 | Chonks | round green golf-ball fish covered in bumpy tubercles, big black eyes, suction disc | a long body, a seahorse shape, fins like wings |
