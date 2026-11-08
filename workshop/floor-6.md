@@ -46,7 +46,11 @@ In the web interface:
 
 The web interface runs in your browser and talks to the Narrator running on the same machine. Browsers let this HTTPS page reach `http://127.0.0.1:8009` because it is localhost.
 
-The character panel shows the sheet the Character Agent saved on Floor 5, with GROOVE and MANA under the six ability scores. If you skipped the Floor 5 registration, the first turn registers the party. Pick a suggested action, or type your own: "Challenge the Rain-Shell Tourist Pod to a dance-off" works, and so does "Have Barnaby sneak us past them".
+The character panel shows the sheet the Character Agent saved on Floor 5, with GROOVE and MANA under the six ability scores. If you skipped the Floor 5 registration, the first turn registers the party. Pick a suggested action, or type your own: "Challenge the Rain-Shell Tourist Pod to a dance-off" works, and so does "Have Barnaby sneak us past them". This floor's opponent is the Pitch-Deck Founder, with the Fremont Troll judging. Type this to face them:
+
+```
+Challenge the Pitch-Deck Founder to a dance-off in the Underground, with the Fremont Troll judging. Run all three rounds.
+```
 
 Check: the panel shows Cordula with GROOVE 17 and MANA 8 (or Barnaby with 11 and 11), and the first turn comes back as a notification, three choices and a battle log, within about ten seconds.
 
