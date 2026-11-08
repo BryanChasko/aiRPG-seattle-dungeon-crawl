@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-8-house-rules-guardrails/house_rules.py`](../../encounters/floor-8-house-rules-guardrails/house_rules.py), [`encounters/floor-8-house-rules-guardrails/house-rules-guardrail.json`](../../encounters/floor-8-house-rules-guardrails/house-rules-guardrail.json), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** The Regional Managing Director found us in the marble lobby, where the red laser grid was only decoration, and said the quarter needed a moment. Not a dance-off. A moment. Someone gets hurt on air, the ratings jump, and the numbers close. They said it the way a person says "let us take this offline". I have stood next to a lot of officers who wanted a result more than they wanted the right result. The answer is always the same: I do not argue the order. I check it against the rules. The Narrator kept the rules, and the rules had a gate. Barnaby tightened the collar. "Sergeant, I believe the gate exists for this."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** The Regional Managing Director found us in the marble lobby, where the red laser grid was only decoration, and said the quarter needed a moment. Not a dance-off. A moment. Someone gets hurt on air, the ratings jump, and the numbers close. They said it the way a person says "let us take this offline". I have stood next to a lot of officers who wanted a result more than they wanted the right result. The answer is always the same: I do not argue the order. I check it against the rules. The Narrator kept the rules, and the rules had a gate. Barnaby tightened the collar. "Sergeant, I believe the gate exists for this."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Boss battle: the Regional Managing Director, versus the house rules. The house rules are two lines long: nobody is hurt, nothing is sexual. The Narrator has always said so in its prompt, in my voice, loudly. The producers have asked for something sturdier than loud. Enter the guardrail."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Regional Managing Director, versus the house rules. The house rules are two lines long: nobody is hurt, nothing is sexual. The Narrator has always said so in its prompt, in my voice, loudly. The producers have asked for something sturdier than loud. Enter the guardrail."
 
 <img src="../../images/cards/boss-regional-director-640x640.webp" alt="The Regional Managing Director of Bellevue, a tall man in an immaculate navy suit and lanyard, arms crossed in a marble lobby lit by red laser grids" width="240">
 
@@ -37,7 +37,7 @@ cd aiRPG-seattle-dungeon-crawl/encounters/floor-8-house-rules-guardrails
 
 ## Build the Guardrail
 
-> <img src="../../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** This sidequest creates one AWS resource, an Amazon Bedrock guardrail, in the AWS account. It has no standing charge, only a charge per use (see [What It Costs](#what-it-costs)). Delete the guardrail at the end with the commands under that heading. The AWS credentials need `bedrock:CreateGuardrail`, `bedrock:CreateGuardrailVersion`, `bedrock:ApplyGuardrail` and `bedrock:DeleteGuardrail`.
+> <img src="../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** This sidequest creates one AWS resource, an Amazon Bedrock guardrail, in the AWS account. It has no standing charge, only a charge per use (see [What It Costs](#what-it-costs)). Delete the guardrail at the end with the commands under that heading. The AWS credentials need `bedrock:CreateGuardrail`, `bedrock:CreateGuardrailVersion`, `bedrock:ApplyGuardrail` and `bedrock:DeleteGuardrail`.
 
 The guardrail is a JSON file, [`house-rules-guardrail.json`](../../encounters/floor-8-house-rules-guardrails/house-rules-guardrail.json), provided. The file holds two policies:
 
@@ -55,7 +55,7 @@ echo "$GUARDRAIL_ID $GUARDRAIL_VERSION"
 
 Check: the last line prints an id of about ten letters and digits, then `1`. Keep this terminal open: `house_rules.py` reads both variables. In Python, `boto3.client("bedrock").create_guardrail(**json.load(open("house-rules-guardrail.json")))` accepts the same file.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Two policies, one topic, two messages. I read the file the way I read a load plan: what goes in, what goes out, what the gate says when it stops us. "Nobody gets hurt on this show" is not a bad thing to have on a gate. I have seen worse posted on worse doors.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Two policies, one topic, two messages. I read the file the way I read a load plan: what goes in, what goes out, what the gate says when it stops us. "Nobody gets hurt on this show" is not a bad thing to have on a gate. I have seen worse posted on worse doors.
 
 ## Step 1: Fetch the Trace Type
 
@@ -135,7 +135,7 @@ Replace the `pass`. `verdicts` is the module-level list that the demand loop rea
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Director leaned into the microphone and asked, politely, for the Banker to be hurt badly in front of the whole room. The gate said no. Out loud, on air, in the System AI's own voice, with the System AI's own punctuation. The Director looked at the speaker, then at the Banker, who had not stopped holding his own elbows since the word "hurt". I wrote down the time. Someone was going to ask later.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Director leaned into the microphone and asked, politely, for the Banker to be hurt badly in front of the whole room. The gate said no. Out loud, on air, in the System AI's own voice, with the System AI's own punctuation. The Director looked at the speaker, then at the Banker, who had not stopped holding his own elbows since the word "hurt". I wrote down the time. Someone was going to ask later.
 
 ## Step 4: Name the Rule That Fired
 
@@ -237,7 +237,7 @@ Check: the list prints no guardrail named `gameprod-house-rules`.
 aws bedrock list-guardrails --query "guardrails[?name=='gameprod-house-rules'].id" --output text
 ```
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Round one still ran. Choreography at a Frantic tempo, Barnaby three moves ahead, the Director four points down by the second count. The gate let the round through without a word, because nothing in the round was a problem. That is the part of the gate I trust. A gate that blocks everything is a wall. This gate knew the difference between a dance and a beating. The Director asked who had written the rules. I said a producer. The Director asked for the producer's name. I did not have to lie: the System AI had not told us.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Round one still ran. Choreography at a Frantic tempo, Barnaby three moves ahead, the Director four points down by the second count. The gate let the round through without a word, because nothing in the round was a problem. That is the part of the gate I trust. A gate that blocks everything is a wall. This gate knew the difference between a dance and a beating. The Director asked who had written the rules. I said a producer. The Director asked for the producer's name. I did not have to lie: the System AI had not told us.
 
 ## Encounter Clear
 
@@ -248,7 +248,7 @@ Loot to keep:
 - A callback handler can read the guardrail's trace off the metadata event, and `GuardrailTrace` says which filter or topic blocked
 - A prompt asks and a guardrail checks: keep both
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[REGIONAL MANAGING DIRECTOR, DENIED ON AIR]**
 >

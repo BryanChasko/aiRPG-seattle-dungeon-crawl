@@ -1,0 +1,2 @@
+# markdown is gated by tools/check_docs.py (links, anchors, images, banned words, ascii, study pack)
+*.md

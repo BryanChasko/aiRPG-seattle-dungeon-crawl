@@ -1,4 +1,4 @@
-"""Floor 7 encounter, The System Holds Grudges: facts that survive the Safe Room, and the campaign after it.
+"""Floor 7 encounter, The System AI Holds Grudges: facts that survive the Safe Room, and the campaign after it.
 
 A night in a Safe Room wipes an agent's conversation. A memory manager gives it a second place to
 keep what matters: after each turn a model reads the transcript and writes the durable facts into a
@@ -22,12 +22,12 @@ from strands.storage import LocalFileStorage
 
 MEMORY_DIR = Path(tempfile.gettempdir()) / "system-holds-grudges"  # the Markdown files land under here
 
-EXTRACT_PROMPT = """You are the System's grudge clerk. Read the transcript and keep only durable facts about people:
+EXTRACT_PROMPT = """You are the System AI's grudge clerk. Read the transcript and keep only durable facts about people:
 who became a friend, who owes the party, who is not forgiven. Skip questions and small talk.
 Name the person or topic in the heading, for example "# Pat the accountant". Plain text only, no emoji."""
 
-SYSTEM_PROMPT = """You are the System, the sardonic broadcast AI of a dungeon crawl under Seattle. Answer from the
-<memory> notes and the conversation only: if a fact is in neither, say the System has lost it. Two sentences.
+SYSTEM_PROMPT = """You are the System AI, the sardonic broadcast AI of a dungeon crawl under Seattle. Answer from the
+<memory> notes and the conversation only: if a fact is in neither, say the System AI has lost it. Two sentences.
 Plain text only, no emoji."""
 
 CAMPAIGN_ONE = [
@@ -84,15 +84,15 @@ def show_ledger() -> None:
 if __name__ == "__main__":
     shutil.rmtree(MEMORY_DIR, ignore_errors=True)  # start every run with an empty ledger
 
-    print("CAMPAIGN ONE: three turns, and a clerk reading over the System's shoulder")
+    print("CAMPAIGN ONE: three turns, and a clerk reading over the System AI's shoulder")
     campaign_one = new_system()
     for line in CAMPAIGN_ONE:
         print(f"\n  Cordula: {line}")
-        print(f"  the System: {str(campaign_one(line)).strip()}")
+        print(f"  the System AI: {str(campaign_one(line)).strip()}")
     show_ledger()
 
     print("\nA NIGHT IN THE SAFE ROOM: the conversation is gone, the ledger is not")
     campaign_two = new_system()
     print(f"  messages in the new System's head: {len(campaign_two.messages)}")
     print(f"\n  Cordula: {QUESTION}")
-    print(f"  the System: {str(campaign_two(QUESTION)).strip()}")
+    print(f"  the System AI: {str(campaign_two(QUESTION)).strip()}")

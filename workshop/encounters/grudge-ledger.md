@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-8-grudge-ledger/grudge_ledger.py`](../../encounters/floor-8-grudge-ledger/grudge_ledger.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, SIDE PASSAGE OFF FLOOR 8.** On the bluffs the System kept its grudges in a folder on a laptop, and a laptop is a machine that gets closed. In Bellevue everything the Narrator runs lives somewhere with an address, so I asked where the System AI's grudges had gone. The System AI said the Narrator had moved them to a records office on the twelfth floor, in a room with a lock and a patient clerk. I asked to see the room. It was a knowledge base with one door and a shelf of small sentences: who stood on whose tail, who lost by how many points, who is rehearsing a reply. Barnaby read the shelf from the doorway. "Sergeant," he said. "That is the most terrifying filing system I have ever seen."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, SIDE PASSAGE OFF FLOOR 8.** On the bluffs the System kept its grudges in a folder on a laptop, and a laptop is a machine that gets closed. In Bellevue everything the Narrator runs lives somewhere with an address, so I asked where the System AI's grudges had gone. The System AI said the Narrator had moved them to a records office on the twelfth floor, in a room with a lock and a patient clerk. I asked to see the room. It was a knowledge base with one door and a shelf of small sentences: who stood on whose tail, who lost by how many points, who is rehearsing a reply. Barnaby read the shelf from the doorway. "Sergeant," he said. "That is the most terrifying filing system I have ever seen."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: the Grudge Ledger in the Cloud. The Narrator files every grudge in an Amazon Bedrock knowledge base, indexed, scoped to the party and searchable. When the Accountant walks back onto the floor, I will already know what they have not forgiven. I will not be showing my work."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Grudge Ledger in the Cloud. The Narrator files every grudge in an Amazon Bedrock knowledge base, indexed, scoped to the party and searchable. When the Accountant walks back onto the floor, I will already know what they have not forgiven. I will not be showing my work."
 
 ## The Brief
 
@@ -21,7 +21,7 @@ Files on this side passage: [`encounters/floor-8-grudge-ledger/grudge_ledger.py`
 | time | about 30 minutes, most of it waiting for a deploy |
 | model | Amazon Nova 2 Lite, as on every floor |
 
-The Floor 7 sidequest, The System Holds Grudges, keeps the System's grudges as Markdown files in a folder on your machine, and a memory manager brings the right ones up before a turn. Building the Floor 7 sidequest first is not required, and the Grudge Ledger shares none of its code. This sidequest asks where the grudges should live once the System runs in production, and the answer is the same place as the rules: a managed Amazon Bedrock knowledge base that survives any laptop, any microVM and any redeploy.
+The Floor 7 sidequest, The System AI Holds Grudges, keeps the System AI's grudges as Markdown files in a folder on your machine, and a memory manager brings the right ones up before a turn. Building the Floor 7 sidequest first is not required, and the Grudge Ledger shares none of its code. This sidequest asks where the grudges should live once the System runs in production, and the answer is the same place as the rules: a managed Amazon Bedrock knowledge base that survives any laptop, any microVM and any redeploy.
 
 Strands wraps a knowledge base as a memory store, `BedrockKnowledgeBaseStore`. A store can be searched; a writable store also accepts additions: the store uploads the text to an S3 bucket, ingests that one document into the knowledge base, and attaches metadata to it. A `scope` keeps one party's grudges apart from another's by stamping a `namespace` attribute on every write and filtering on it in every search. A `MemoryManager` then puts the store behind an agent: before each Amazon Nova 2 Lite call the `MemoryManager` searches the store with the player's latest message and places the best hits in front of Amazon Nova 2 Lite, and it registers a `search_memory` and an `add_memory` tool so the Narrator can look up and file new facts without help. See [Memory](https://strandsagents.com/docs/user-guide/sdk/memory/overview/), [Amazon Bedrock Knowledge Base](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/) and [Scope and Namespaces](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/#scope-and-namespaces).
 
@@ -35,7 +35,7 @@ cd aiRPG-seattle-dungeon-crawl/encounters/floor-8-grudge-ledger
 
 ## Build the Records Office
 
-> <img src="../../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** This sidequest creates AWS resources in the AWS account: an S3 bucket and a managed knowledge base, deployed by the same `gameprod` project as the rest of Floor 8. The bucket and the knowledge base bill monthly, a few cents at most. Delete both at the end, with the commands in [What It Costs](#what-it-costs).
+> <img src="../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** This sidequest creates AWS resources in the AWS account: an S3 bucket and a managed knowledge base, deployed by the same `gameprod` project as the rest of Floor 8. The bucket and the knowledge base bill monthly, a few cents at most. Delete both at the end, with the commands in [What It Costs](#what-it-costs).
 
 From the project folder, as on the Floor 8 page:
 
@@ -73,7 +73,7 @@ Back to the encounter folder:
 cd ../../encounters/floor-8-grudge-ledger
 ```
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** One more bucket, one more shelf. I labeled the bucket the way I label gear: what is in it, whose it is, when it gets turned in. Barnaby asked how many grudges the System would keep. I said as many as there were opponents. He said that was not a comfort. I said I knew.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One more bucket, one more shelf. I labeled the bucket the way I label gear: what is in it, whose it is, when it gets turned in. Barnaby asked how many grudges the System would keep. I said as many as there were opponents. He said that was not a comfort. I said I knew.
 
 ## Step 1: Fetch the Manager and the Store
 
@@ -181,7 +181,7 @@ Replace the `return []`.
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I filed the first one myself, standing at the shelf: the Pitch-Deck Founder, Shelly's siphon, the Ship Canal locks. The file came back with a location and nothing else. No receipt, no stamp. Barnaby said that was how records offices work. You do not get a receipt. You get a shelf.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I filed the first one myself, standing at the shelf: the Pitch-Deck Founder, Shelly's siphon, the Ship Canal locks. The file came back with a location and nothing else. No receipt, no stamp. Barnaby said that was how records offices work. You do not get a receipt. You get a shelf.
 
 ## Step 5: Give the System a Memory
 
@@ -274,7 +274,7 @@ aws s3 ls s3://gameprod-grudges-$(aws sts get-caller-identity --query Account --
 
 The second command should end with `NoSuchBucket`. If this step is skipped and the Cleanup page runs later, that page's `agentcore remove all -y` takes the `grudges` knowledge base too, but only the bucket step above removes the grudges bucket.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Accountant walked back onto the floor and the System said, before anyone had asked, that a margin of four is still on the books. The Accountant went pale in a way that suggested they had been losing sleep over exactly that number. Barnaby leaned over. "It never forgets a point, Sergeant." I said I knew a few people like that. He asked if I meant the System. I said no. I meant me.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Accountant walked back onto the floor and the System said, before anyone had asked, that a margin of four is still on the books. The Accountant went pale in a way that suggested they had been losing sleep over exactly that number. Barnaby leaned over. "It never forgets a point, Sergeant." I said I knew a few people like that. He asked if I meant the System. I said no. I meant me.
 
 ## Encounter Clear
 
@@ -285,7 +285,7 @@ Loot kept:
 - A `MemoryManager` searches the store before each Amazon Nova 2 Lite call and gives the Narrator `search_memory` and `add_memory` tools
 - The memory manager stays the same whether the store is a folder or a knowledge base
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[THE CLOUD NEVER FORGETS]**
 >

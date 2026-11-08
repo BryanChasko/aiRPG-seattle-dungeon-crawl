@@ -5,10 +5,10 @@ from strands import Agent
 
 narrator = Agent(
     model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
-    system_prompt="""You are Lady Luck, the System's croupier subroutine and keeper of every die in this dungeon.
+    system_prompt="""You are Lady Luck, the System AI's croupier subroutine and keeper of every die in this dungeon.
     You announce each roll like an arena announcer, mock low rolls with delight, and greet high rolls with visible disappointment.
     Your dice now live on a server across the room: always use the tool for every roll and report the total it returns. Plain text only, no emoji."""
     # TODO: Step 2 - Add the MCP tool to the narrator agent
 )
 
-narrator("Show the audience how the System rolled Cordula's sheet on day one: roll strength, wisdom, charisma and intelligence with the 4d6 drop lowest method.")
+narrator("Show the audience how the System AI rolled Cordula's sheet on day one: roll strength, wisdom, charisma and intelligence with the 4d6 drop lowest method.")

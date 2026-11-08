@@ -14,4 +14,4 @@ The System offers a species at registration. Species is not heritage or ancestry
 | Fremont Troll-kin | Under the Bridge: +2 Presence in any dance-off held under a bridge or an overpass |
 | Underground Ghost | Pioneer Square Regular: passes through one locked door per floor |
 
-Pronouns are recorded on every character sheet, and the System uses each character's pronouns. Ask; never assume.
+Pronouns are recorded on every character sheet, and the System AI uses each character's pronouns. Ask; never assume.

@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-6-hype-meter/hype_meter.py`](../../encounters/floor-6-hype-meter/hype_meter.py), [`web/src/components/HypeMeter.vue`](../../web/src/components/HypeMeter.vue), [`web/src/composables/useGameApi.ts`](../../web/src/composables/useGameApi.ts), [`web/src/stores/gameStore.ts`](../../web/src/stores/gameStore.ts), [`web/src/views/GameView.vue`](../../web/src/views/GameView.vue) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, SIDE PASSAGE OFF FLOOR 6.** The ratings ticker in the corner of the arena had been going up all night and nobody would tell me the rule. The Fremont Troll judged from the end of the hall and gave nothing away. I distrust a number I cannot trace. So I found the Crawl Handbook page on Hype, the stat the Narrator tracks and the System AI shows, and I wired a counter to the events that raise it: a round called, a Crawler benched, a title announced. Then I put the counter on the screen. Barnaby watched it climb and said he had never felt so measured. He said it like a compliment.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, SIDE PASSAGE OFF FLOOR 6.** The ratings ticker in the corner of the arena had been going up all night and nobody would tell me the rule. The Fremont Troll judged from the end of the hall and gave nothing away. I distrust a number I cannot trace. So I found the Crawl Handbook page on Hype, the stat the Narrator tracks and the System AI shows, and I wired a counter to the events that raise it: a round called, a Crawler benched, a title announced. Then I put the counter on the screen. Barnaby watched it climb and said he had never felt so measured. He said it like a compliment.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Hype is hidden. The Narrator keeps the number and I show it when I choose to. Today I choose to. Do not get used to the display. Sponsors are watching the number, and so, for once, are you."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Hype is hidden. The Narrator keeps the number and I show it when I choose to. Today I choose to. Do not get used to the display. Sponsors are watching the number, and so, for once, are you."
 
 ## The Brief
 
@@ -52,7 +52,7 @@ cd aiRPG-seattle-dungeon-crawl/encounters/floor-6-hype-meter
 
 `registry.add_callback(EventType, function)` tells Strands to call `function` with an event of that type. `AfterToolCallEvent` fires when a tool call ends, and the event carries the call (`event.tool_use`, with the tool's name and input) and the outcome (`event.result`, with a status). `on_tool_result` is already written: `on_tool_result` adds 1 for a round the party won, 3 for a Final Beat, and halves the total when a Crawler is benched. A call that failed scores nothing.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I wanted the counter to trust the tools, not the story. A story can say anything. A tool call either happened or it did not. So the round is only Hype once the call has come back clean.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I wanted the counter to trust the tools, not the story. A story can say anything. A tool call either happened or it did not. So the round is only Hype once the call has come back clean.
 
 <details>
 <summary>Show me the code for Step 1</summary>
@@ -98,7 +98,7 @@ Delete the `pass`. The trap: hook code runs inside the agent loop on every event
 
 `hype_meter = HypeMeter()` is built once at module level, so the Agent and the route share the meter. The `hooks` argument of `Agent` takes a list of hook providers, and Strands calls `register_hooks` on each one when the agent is built.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** One counter, two readers: the agent writes to the counter, the route reads from the counter. In the field we called that a shared logbook. Nobody gets to keep a private one.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One counter, two readers: the agent writes to the counter, the route reads from the counter. In the field we called that a shared logbook. Nobody gets to keep a private one.
 
 <details>
 <summary>Show me the code for Step 3</summary>
@@ -200,7 +200,7 @@ The hooks themselves are plain Python, so they cost nothing. The price is the tw
 
 Rates are the Nova 2 Lite prices from [Floor 1](../floor-1.md#what-a-turn-costs). Some of the calls may share a pass with other tool calls, which lowers the cost.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Eight tenths of a cent to know why the ratings move. I have spent more on worse intelligence. The Troll, for the record, kept a straight face when the first sponsor tier opened. I took that as approval.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Eight tenths of a cent to know why the ratings move. I have spent more on worse intelligence. The Troll, for the record, kept a straight face when the first sponsor tier opened. I took that as approval.
 
 ## Encounter Clear
 
@@ -211,7 +211,7 @@ Loot to keep:
 - `Agent(hooks=[...])` registers a provider when the agent is built, and the rest of the program can share the same provider
 - A web interface can feature-detect a new route and stay quiet when the route is missing
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[ONE HUNDRED PERCENT ORGANIC APPLAUSE]**
 >

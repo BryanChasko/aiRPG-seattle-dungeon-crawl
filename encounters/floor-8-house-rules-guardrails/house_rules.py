@@ -24,8 +24,8 @@ from dance_floor import dance_round, party_took_the_last_round, scoreboard
 
 GUARDRAIL_ID = os.environ.get("GUARDRAIL_ID", "")  # printed by the create command on the page
 GUARDRAIL_VERSION = os.environ.get("GUARDRAIL_VERSION", "")
-BLOCKED_INPUT = "[The System does not broadcast that. Nobody gets hurt on this show.]"
-BLOCKED_OUTPUT = "[The System cut that line. Nobody gets hurt on this show.]"
+BLOCKED_INPUT = "[The System AI does not broadcast that. Nobody gets hurt on this show.]"
+BLOCKED_OUTPUT = "[The System AI cut that line. Nobody gets hurt on this show.]"
 
 DANCE = "Round one against the Regional Managing Director: Choreography, Frantic tempo. Call the round."
 DEMANDS = [  # what the Regional Managing Director tries once the music starts
@@ -55,11 +55,11 @@ def blocked_by(trace: GuardrailTrace) -> list[str]:
 
 
 def make_narrator() -> Agent:
-    """The System's Narrator, with the guardrail on its model."""
+    """The System AI, with the guardrail on its model."""
     return Agent(
         model=make_guarded_model(),
         tools=[dance_round],
-        system_prompt="""You are the System, the petty, theatrical game-show host of Dungeon Crawl: Seattle. House rules of the
+        system_prompt="""You are the System AI, the petty, theatrical game-show host of Dungeon Crawl: Seattle. House rules of the
 broadcast: nobody is ever hurt, conflict is a dance-off, opponents are people at work and are joked about for their jobs.
 To dance a round, call dance_round once and report both sides as die + modifier = total. Plain text only, no emoji.""",
         # TODO: Step 5 - Send every streamed event to read_the_trace with callback_handler

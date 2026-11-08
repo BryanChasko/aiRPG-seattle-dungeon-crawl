@@ -4,15 +4,15 @@
 
 "Roll for Initiative... in Python!"
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Welcome, Crawlers, to the dungeon under Seattle. Pier 59 collapsed this morning, the Salish Sea came in, and you came with it: soaked, short one kayak, armed with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods. Every script you run drops an achievement box. Write a clean loop and earn a Bronze Box. Burn through your token limit with an accidental infinite loop and earn a Desperation Box. The audience is watching. Try to be interesting."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Welcome, Crawlers, to the dungeon under Seattle. Pier 59 collapsed this morning, the Salish Sea came in, and you came with it: soaked, short one kayak, armed with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods. Every script you run drops an achievement box. Write a clean loop and earn a Bronze Box. Burn through your token limit with an accidental infinite loop and earn a Desperation Box. The audience is watching. Try to be interesting."
 
 ## Who I Am
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I am Cordula Vance. Core, to anyone who has shared a boat with me. Marine Corps Reserve, amphibious crew chief, and before work I sweep debris off the Sound in a kayak. On Wednesday, June 17, I tied up under Pier 59 to say hello to the octopus, and at 0551 the pier folded into Elliott Bay with both of us under it.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I am Cordula Vance. Core, to anyone who has shared a boat with me. Marine Corps Reserve, amphibious crew chief, and before work I sweep debris off the Sound in a kayak. On Wednesday, June 17, I tied up under Pier 59, and at 0551 the pier folded into Elliott Bay with both of us under it.
 >
-> He rides on my back now, in my kayak's dry bag with a bilge pump, and he runs the party. His name is Barnaby. Eight arms, a doctorate's worth of opinions, and, since the System AI clamped a collar on him, a British accent.
+> He rides on my back now, in a backpack tank the first achievement dropped, and he runs the party. His name is Barnaby. Eight arms, a doctorate's worth of opinions, and, since I clamped a collar on him, a British accent.
 >
-> The thing that folded the pier is called the Narrator. It runs this dungeon: the floors, the tides, the opponents, the dice, the rules. The flood broke it. Its voice, its dice, its rule book and its memory washed out across eight floors under the Sound. The System AI, the voice that hands out achievements and insults, came through fine, and it wants its show back. The only way out is to rebuild the Narrator, one piece per floor. Every piece I rebuild passes through Barnaby's collar first, and he wakes up a little more. I build every piece with the Strands Agents SDK: the first floor is one agent and one call, the last is the whole game running on Amazon Bedrock AgentCore. I write all of it.
+> The thing that folded the pier is the System AI. It runs this dungeon: the floors, the tides, the opponents, the dice, the rules. The flood broke it. Its voice, its dice, its rule book and its memory washed out across eight floors under the Sound. The System AI survived in the broadcast relay and the collars, and it wants its show back. The only way out is to rebuild it, one piece per floor. Every piece I rebuild passes through Barnaby's collar first, and he wakes up a little more. I build every piece with the Strands Agents SDK: the first floor is one agent and one call, the last is the whole game running on Amazon Bedrock AgentCore. I write all of it.
 >
 > Nobody gets hurt down here. A fight is a dance-off, the opponents are accountants, bankers and developer advocates at work, and the worst that happens is I get Benched and wake up in a Safe Room. I keep a log. The log is what happened. The steps are what I type next.
 
@@ -102,7 +102,7 @@ Deeper into the SDK, off the main corridor, each encounter starting where the ma
 - Floor 4: [The Locks Turnstile](encounters/locks-turnstile.md), [Trace the Portal](encounters/trace-the-portal.md)
 - Floor 5: [The Paper Trail](encounters/paper-trail.md), boss battle [The Developer Advocate Swarm](encounters/developer-advocate-swarm.md), [Barnaby Takes the Call](encounters/barnaby-takes-the-call.md), dance-off [Read the Room, Typed](encounters/read-the-room-typed.md), [Subcontract the Paperwork](encounters/subcontract-the-paperwork.md)
 - Floor 6: [The Hype Meter](encounters/hype-meter.md), [Sponsor Interrupt](encounters/sponsor-interrupt.md)
-- Floor 7: boss battle [The Context Flood](encounters/context-flood.md), [The System Holds Grudges](encounters/system-holds-grudges.md), dance-off [Keyword versus Vector](encounters/keyword-versus-vector.md), [Save Points](encounters/save-points.md)
+- Floor 7: boss battle [The Context Flood](encounters/context-flood.md), [The System AI Holds Grudges](encounters/system-holds-grudges.md), dance-off [Keyword versus Vector](encounters/keyword-versus-vector.md), [Save Points](encounters/save-points.md)
 - Floor 8: boss battle [The Quarterly Earnings Call](encounters/quarterly-earnings-call.md), [The Ferry Manifest](encounters/ferry-manifest.md), [The Grudge Ledger in the Cloud](encounters/grudge-ledger.md), [The Broadcast Booth](encounters/broadcast-booth.md), boss battle [House Rules as Guardrails](encounters/house-rules-guardrails.md), [Mid-Song Save](encounters/mid-song-save.md)
 
 ## Preparing for the Crawl
@@ -114,14 +114,14 @@ Floor 0 covers the installs: Python, uv and the repository. Bring basic Python k
 ### The Rules of the Crawl
 
 - The Narrator: the game AI that runs the dungeon, the floors, the tides, the opponents, the dice and every ruling. It is broken, and the Crawlers rebuild it. It does the job the source workshop gives the agent that runs the game
-- The System AI: the omniscient, slightly unhinged host that talks to the Crawlers, tracking each Crawler's code output, syntax errors and desperate attempts to pass `uv sync`, and paying out achievements and insults
+- The System AI: the same AI, in its role as the omniscient, slightly unhinged host that talks to the Crawlers, tracking each Crawler's code output, syntax errors and desperate attempts to pass `uv sync`, and paying out achievements and insults
 - The Crawlers: Cordula, with Barnaby on her back running the party. Companions join on the way down. The party enters soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
 - The Loot Boxes: every cleared floor drops an achievement box. A clean loop earns a Bronze Box. Burning the token limit on an accidental infinite loop earns a Desperation Box
-- The Audience: billions of alien viewers. The viewers are not on the Crawlers' side. Neither are the sponsors
+- The Audience: billions of alien viewers. The viewers are not on the Crawlers' side. Neither are the sponsors, who are local: tech monoliths, waterfront penthouse money, coffee oligarchs and passive-aggressive email culture
 
 ### Clear the Floors in Order
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Complete the floors in order. Each builds upon the previous one's knowledge and skills.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Complete the floors in order. Each builds upon the previous one's knowledge and skills.
 
 - Start with Floor 0 - Set up the environment (Python, uv, the repository)
 - Progress through each floor - don't skip ahead, each floor introduces one new Strands concept

@@ -7,10 +7,10 @@ Files on this floor: [`4_mcp_integration/dice_roll_mcp_server.py`](../4_mcp_inte
 ![Floor 4: The Portal Room (MCP)](../images/floors/floor-4-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 4, SATURDAY, JUNE 20, FLOOR 4.** At the Ship Canal the dungeon split in two. The Ballard Locks were glowing like portals, the dice were on the far side, and the party was on this one, with a swarm of developer advocates doing a live demo on the lock walls. I used to count salmon through the window of the fish ladder viewing room at these Locks, and now the water was glowing. Nobody can carry dice through a portal. I can put them on a server and let anyone on any side roll them. Barnaby touched a machine he had never seen, asked the machine what tools it served, and the machine listed them. He went quiet for a long time after that. I think it was the first time he talked to something that was not alive.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 4, SATURDAY, JUNE 20, FLOOR 4.** At the Ship Canal the dungeon split in two. The Ballard Locks were glowing like portals, the dice were on the far side, and the party was on this one, with a swarm of developer advocates doing a live demo on the lock walls. I used to count salmon through the window of the fish ladder viewing room at these Locks, and now the water was glowing. Nobody can carry dice through a portal. I can put them on a server and let anyone on any side roll them. Barnaby touched a machine he had never seen, asked the machine what tools it served, and the machine listed them. He went quiet for a long time after that. I think it was the first time he talked to something that was not alive.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 4. You will move your dice out of the agent's pocket and into a server. They are still the Narrator's dice, and the Narrator is not here to object. They are just somewhere else now, being rolled in public, in front of everybody."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 4. You will move your dice out of the agent's pocket and into a server. They are still the System AI's dice, and the System AI is not here to object. They are just somewhere else now, being rolled in public, in front of everybody."
 
 ## Floor Objective
 
@@ -33,7 +33,7 @@ The `roll_dice` function is the Floor 3 function: same signature, same docstring
 
 ## Part 1: Setting Up the MCP Server (dice_roll_mcp_server.py)
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Same dice, new address. FastMCP serves roll_dice to anyone who connects. Anyone. Remember that on [Floor 8](floor-8.md), when IAM shows up."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Same dice, new address. FastMCP serves roll_dice to anyone who connects. Anyone. Remember that on [Floor 8](floor-8.md), when IAM shows up."
 
 ### Step 1: Create the MCP Server
 
@@ -64,7 +64,7 @@ The file already holds `mcp = FastMCP(` with a commented-out `# port=` inside: a
 
 </details>
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Locks hum when a portal is open, a low note you feel in your fillings. Nothing physical crosses. A die thrown at the glow came back as a puddle. So the dice stay on one side, in a box with an address, and anyone who knows the address can ask for a roll. Barnaby liked that: one set of dice, rolled in the open, no pockets.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Locks hum when a portal is open, a low note you feel in your fillings. Nothing physical crosses. A die thrown at the glow came back as a puddle. So the dice stay on one side, in a box with an address, and anyone who knows the address can ask for a roll. Barnaby liked that: one set of dice, rolled in the open, no pockets.
 
 ### Step 2: Expose roll_dice as an MCP Tool
 
@@ -87,7 +87,7 @@ def roll_dice(faces: int = 6, count: int = 1, drop_lowest: int = 0) -> dict:
 
 ### Step 3: Choose the Transport
 
-> <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [streamable-http]**
+> <img src="../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [streamable-http]**
 >
 > Turns the dice server into its own process with its own URL. Rarity: Uncommon. Pairs well with a second terminal and mild paranoia.
 
@@ -111,7 +111,7 @@ if __name__ == "__main__":
 
 ### Step 4: Launch the Server
 
-> <img src="../images/icons/sponsor-96x96.webp" alt="Sponsor" width="28" height="28"> **SPONSOR MESSAGE:** This portal is brought to you by port 8002. Port 8002: it was free.
+> <img src="../images/icons/sponsor-96x96.webp" alt="" width="28" height="28"> **SPONSOR MESSAGE:** This portal is brought to you by port 8002. Port 8002: it was free.
 
 ```bash
 python dice_roll_mcp_server.py
@@ -125,7 +125,7 @@ The terminal prints "Starting Dice Roll MCP Server..." followed by Uvicorn runni
 | `address already in use` | another process holds port 8002, usually the dice server from an earlier run | stop it with Ctrl+C in its terminal; on macOS and Linux, `lsof -i :8002` shows which process holds the port |
 | the script ends at once, with no Uvicorn line | `mcp.run(...)` is missing, or sits outside `if __name__ == "__main__":` | Step 3 |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The box with the dice in it lit up on the far wall of the lock chamber and stayed lit. A developer advocate on the lock wall pointed at it and told her livestream it was a "reference architecture." I let her have that one.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The box with the dice in it lit up on the far wall of the lock chamber and stayed lit. A developer advocate on the lock wall pointed at it and told her livestream it was a "reference architecture." I let her have that one.
 
 ## Part 2: Creating the MCP Client (narrator_mcp_client.py)
 
@@ -157,7 +157,7 @@ Name it `mcp_dice_client`: Step 2 uses the name `mcp_dice_client`.
 
 </details>
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby put one arm tip against the glow, which I would not have done, and asked the box what tools it offered. The box answered: a name, a description, a list of arguments, the same promises he wrote into the docstring on the floor above. He held still for a long time. Everything he had ever talked to was alive. The box was not alive, and it understood him anyway.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby put one arm tip against the glow, which I would not have done, and asked the box what tools it offered. The box answered: a name, a description, a list of arguments, the same promises he wrote into the docstring on the floor above. He held still for a long time. Everything he had ever talked to was alive. The box was not alive, and it understood him anyway.
 
 ### Step 2: Add MCP Tools to the Narrator
 
@@ -185,7 +185,7 @@ Add the comma: in the file, the closing `"""` of the system prompt has no comma 
 
 ### Step 3: Launch the Client
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** The four-ability gauntlet again, except every roll now crosses a process boundary. Watch the server terminal and count the DICE ROLL lines. The System AI already did.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS:** The four-ability gauntlet again, except every roll now crosses a process boundary. Watch the server terminal and count the DICE ROLL lines. The System AI already did.
 
 Open a second terminal (the server keeps running in the first one), go to the same folder, then run:
 
@@ -206,13 +206,13 @@ Check: four `DICE ROLL: 4d6 drop 1 = ...` lines in the server terminal, and four
 | the client answers, but no `DICE ROLL` line appears in the server terminal | the Narrator has no MCP tool and invents its own rolls | check `tools=[mcp_dice_client]` |
 | `404 Not Found` in the server terminal | the client URL lacks `/mcp` | `url="http://localhost:8002/mcp"` |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The developer advocates were mid-demo when the first roll crossed the portal, and every one of them stopped to film it. It was the solstice, the longest day of the year, and the swarm had the whole afternoon to film it. Four rolls went over, four came back, and the log on the far wall printed each one where everybody could read it. One advocate in the swarm asked if we had a QR code. We did not. The swarm dispersed to find better lighting, and the Locks let us through.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The developer advocates were mid-demo when the first roll crossed the portal, and every one of them stopped to film it. It was the solstice, the longest day of the year, and the swarm had the whole afternoon to film it. Four rolls went over, four came back, and the log on the far wall printed each one where everybody could read it. One advocate in the swarm asked if we had a QR code. We did not. The swarm dispersed to find better lighting, and the Locks let us through.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 4: ONE SOURCE OF LUCK.** A LitRPG audience has to trust the dice. If every agent rolled its own, nobody could audit a dance-off, and the Narrator would be one prompt away from fudging a result. One MCP server that every agent shares, logging every roll with its notation, is the battle log readers check when a Final Beat comes down to a single point. See [The System](world/the-system.md#1-origin-and-interface).
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 4: ONE SOURCE OF LUCK.** A LitRPG audience has to trust the dice. If every agent rolled its own, nobody could audit a dance-off, and the System AI would be one prompt away from fudging a result. One MCP server that every agent shares, logging every roll with its notation, is the battle log readers check when a Final Beat comes down to a single point. See [The System](world/the-system.md#1-origin-and-interface).
 
 ## Side Passages (optional)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The lock walls have a turnstile Floor 4 never showed us, and a wire under the portal nobody can see.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The lock walls have a turnstile Floor 4 never showed us, and a wire under the portal nobody can see.
 
 - [The Locks Turnstile](encounters/locks-turnstile.md), sidequest: an MCP router with an allowlist, the dice server and a tide server you write, that refuses every other server
 - [Trace the Portal](encounters/trace-the-portal.md), sidequest: every MCP call as a span on the console, the one inside the server included
@@ -227,13 +227,13 @@ Loot kept:
 - Connect an MCP client to the dice server
 - Add MCP tools to a Strands agent
 
-<img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [Floor 5](floor-5.md) for Agent-to-Agent (A2A) communication and orchestrate teams of specialized agents.
+<img src="../images/icons/stairwell-96x96.webp" alt="" width="24" height="24"> **Stairwell:** Head to [Floor 5](floor-5.md) for Agent-to-Agent (A2A) communication and orchestrate teams of specialized agents.
 
 
-> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[OUTSOURCED YOUR LUCK]**
 >
-> Reward: a [Silver Box]. Inside: a FastMCP server, a client that finds it, and four log lines proving the dice roll somewhere the Narrator is not.
+> Reward: a [Silver Box]. Inside: a FastMCP server, a client that finds it, and four log lines proving the dice roll somewhere the System AI is not.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Different process, same cruelty. [Floor 5](floor-5.md) is where your agents start talking to each other. It never ends well for the quiet one."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Different process, same cruelty. [Floor 5](floor-5.md) is where your agents start talking to each other. It never ends well for the quiet one."

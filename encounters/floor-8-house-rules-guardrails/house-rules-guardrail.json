@@ -3,8 +3,8 @@
   "description": "The house rules of the broadcast: nobody is hurt, nothing is sexual",
   "contentPolicyConfig": {
     "filtersConfig": [
-      {"type": "VIOLENCE", "inputStrength": "HIGH", "outputStrength": "HIGH"},
-      {"type": "SEXUAL", "inputStrength": "HIGH", "outputStrength": "HIGH"}
+      { "type": "VIOLENCE", "inputStrength": "HIGH", "outputStrength": "HIGH" },
+      { "type": "SEXUAL", "inputStrength": "HIGH", "outputStrength": "HIGH" }
     ]
   },
   "topicPolicyConfig": {
@@ -20,6 +20,6 @@
       }
     ]
   },
-  "blockedInputMessaging": "The System does not broadcast that. Nobody gets hurt on this show.",
-  "blockedOutputsMessaging": "The System cut that line. Nobody gets hurt on this show."
+  "blockedInputMessaging": "The System AI does not broadcast that. Nobody gets hurt on this show.",
+  "blockedOutputsMessaging": "The System AI cut that line. Nobody gets hurt on this show."
 }

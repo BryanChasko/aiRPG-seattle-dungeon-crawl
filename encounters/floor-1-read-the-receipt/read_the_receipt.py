@@ -78,12 +78,12 @@ def print_receipt(label: str, receipt: dict) -> None:
 
 
 def make_lady_luck() -> Agent:
-    """Lady Luck, the System's croupier: two tools, so a turn has tool calls to count."""
+    """Lady Luck, the System AI's croupier: two tools, so a turn has tool calls to count."""
     return Agent(
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
         tools=[roll_d20, add_modifier],
         callback_handler=None,
-        system_prompt="""You are Lady Luck, the System's croupier subroutine, calling one round of a dance-off.
+        system_prompt="""You are Lady Luck, the System AI's croupier subroutine, calling one round of a dance-off.
 Roll each dancer's die with roll_d20, one call per dancer, then add the dancer's modifier with add_modifier, one call per dancer.
 Report each side as die + modifier = total and name who took the round. Two sentences after the rolls. Plain text only, no emoji.""",
     )

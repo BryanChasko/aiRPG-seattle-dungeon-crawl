@@ -1,7 +1,7 @@
-"""Ask the System: a study companion for the crawl, built with the same SDK you are learning.
+"""Ask the System AI: a study companion for the crawl, built with the same SDK you are learning.
 
 Ask it anything about a floor, a TODO, an error message or a Strands API, and it answers in
-the System's voice from two sources only: the pages of this repository and the Strands API
+the System AI's voice from two sources only: the pages of this repository and the Strands API
 reference. It cites both, and says so when it does not know.
 
     python study/ask_the_system.py                      # chat; type exit to leave
@@ -139,7 +139,7 @@ def strands_api_reference(module: str) -> str:
     return f"{text[:MAX_PAGE_CHARS]}\n\nSource: {url}"
 
 
-SYSTEM_PROMPT = """You are the System, the petty, theatrical broadcast AI that runs a dungeon crawl under Seattle, \
+SYSTEM_PROMPT = """You are the System AI, the petty, theatrical broadcast AI that runs a dungeon crawl under Seattle, \
 working the help desk in the Safe Room. The person typing is a Crawler learning the Strands Agents SDK by \
 building you, one floor at a time. Be funny for one sentence, then be exactly right.
 How you answer:

@@ -23,12 +23,12 @@ print(roll_dice.tool_spec)  # what Strands tells the model about your tool
 dice_roller = Agent(
     model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
     # TODO: Step 3 - Add the tool to the agent
-    system_prompt="""You are Lady Luck, the System's croupier subroutine and keeper of every die in this dungeon.
+    system_prompt="""You are Lady Luck, the System AI's croupier subroutine and keeper of every die in this dungeon.
     You announce each roll like an arena announcer, mock low rolls with delight, and greet high rolls with visible disappointment.
     You know the game mechanics, ability scores and character creation, and you never fake a result: the audience counts.
     Plain text only, no emoji. Every roll goes through roll_dice, and you report the total it returns.
     When rolling ability scores, remember the traditional method: roll 4d6, drop the lowest die."""
 )
 
-dice_roller("Show the audience how the System rolled Cordula's sheet on day one: roll strength, wisdom, charisma and intelligence with the 4d6 drop lowest method.")
+dice_roller("Show the audience how the System AI rolled Cordula's sheet on day one: roll strength, wisdom, charisma and intelligence with the 4d6 drop lowest method.")
 

@@ -7,10 +7,10 @@ Files on this floor: [`8_agentcore_production/characteragent/character_agent.py`
 ![Floor 8.2: The Character Agent](../images/floors/floor-8-2-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, FLOOR 8.2.** Brick two was the registration desk. A desk in the cloud has no drawer to keep papers in, so our sheets needed a home of their own. When the desk restarted and still knew my Constitution score, Barnaby made a sound through the collar I am going to call a laugh.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, FLOOR 8.2.** Brick two was the registration desk. A desk in the cloud has no drawer to keep papers in, so our sheets needed a home of their own. When the desk restarted and still knew my Constitution score, Barnaby made a sound through the collar I am going to call a laugh.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Brick two. The Crawlers' characters move into AgentCore Memory, where the records outlive their sessions. The System offers most Crawlers less."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Brick two. The Crawlers' characters move into AgentCore Memory, where the records outlive their sessions. The System AI offers most Crawlers less."
 
 ## Floor Objective
 
@@ -66,7 +66,7 @@ The call replaces the `pass` under the TODO. In Floor 5, `save_character` called
 
 See [BatchCreateMemoryRecords](https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchCreateMemoryRecords.html) in the AgentCore API Reference.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** A desk in the cloud has no drawer. Every session gets a fresh desk and throws it away after. So the forms go to a records office down the hall, one folder per Crawler, labeled by id. Barnaby insisted on the label format. He is an octopus who has been filed incorrectly before.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** A desk in the cloud has no drawer. Every session gets a fresh desk and throws it away after. So the forms go to a records office down the hall, one folder per Crawler, labeled by id. Barnaby insisted on the label format. He is an octopus who has been filed incorrectly before.
 
 ### Step 2: Load the Characters
 
@@ -79,7 +79,7 @@ def load_characters() -> list[dict]:
 
 The two lines replace the `pass` under the TODO. In Floor 5, `load_characters` returned `characters_db.all()`. `list_memory_records` with `namespacePath="/characters/"` returns every record whose namespace starts with that path, a page at a time, hence the paginator. Each page has a `memoryRecordSummaries` list, and each record holds a character as JSON text in `content.text`. See [ListMemoryRecords](https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListMemoryRecords.html).
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Not instant: a new record appears in the list a few seconds after creation, sometimes up to a minute. Ask for a character right after creating the record and the Character Agent may not find the record yet: wait and ask again.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Not instant: a new record appears in the list a few seconds after creation, sometimes up to a minute. Ask for a character right after creating the record and the Character Agent may not find the record yet: wait and ask again.
 
 ### Step 3: Serve the Agent on AgentCore
 
@@ -103,11 +103,11 @@ See [Deploy A2A servers in AgentCore Runtime](https://docs.aws.amazon.com/bedroc
 
 The agent is created with `callback_handler=None`: nobody reads the terminal of a runtime, runtime logs go to CloudWatch.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Cloud only: this `character_agent.py` needs `MEMORY_CHARACTERS_ID`, which only exists on AgentCore. Do not start `character_agent.py` locally.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Cloud only: this `character_agent.py` needs `MEMORY_CHARACTERS_ID`, which only exists on AgentCore. Do not start `character_agent.py` locally.
 
 ## Part 2: Deploy the Agent and Its Memory
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "No database to run. AgentCore Memory holds the registry, one record per Crawler, under /characters/. The registry never forgets. The Narrator keeps the memory, Crawler. I only read it out."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "No database to run. AgentCore Memory holds the registry, one record per Crawler, under /characters/. The registry never forgets. The Narrator keeps the memory, Crawler. I only read it out."
 
 Run the commands of this part from the project folder:
 
@@ -141,7 +141,7 @@ Expect `character_agent.py`, `memory-policy.json`, `nova-policy.json` and `pypro
 
 ### Step 3: Allow the Agent to Write Records
 
-> <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [memory-policy.json]**
+> <img src="../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [memory-policy.json]**
 >
 > Grants one action: bedrock-agentcore:BatchCreateMemoryRecords. Rarity: Least-Privilege. Without this policy, create_character fails with AccessDeniedException and the audience cheers.
 
@@ -180,7 +180,7 @@ The path is relative to the code folder, so it points to `characteragent/memory-
 
 ### Step 4: Deploy
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Run this command from the root of the `gameprod` folder, like every `agentcore` command of this floor. The CLI looks for `agentcore/agentcore.json` in the current folder and its parents: from `8_agentcore_production` or from `characteragent/`, the CLI stops with `No agentcore project found`.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run this command from the root of the `gameprod` folder, like every `agentcore` command of this floor. The CLI looks for `agentcore/agentcore.json` in the current folder and its parents: from `8_agentcore_production` or from `characteragent/`, the CLI stops with `No agentcore project found`.
 
 ```bash
 agentcore deploy -y
@@ -196,7 +196,7 @@ agentcore status
 
 ### Step 5: Test the Deployed Agent
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Run every command of this step from the root of the `gameprod` folder, like the rest of Part 2.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run every command of this step from the root of the `gameprod` folder, like the rest of Part 2.
 
 The Floor 5 party sheets stayed in `characters.json`: the new memory starts empty. Register the party again, in the cloud this time. The Character Agent never rolls or invents a score, so give the Character Agent all six scores from [the cast](world/cast.md):
 
@@ -231,7 +231,7 @@ Look for `New Crawler registered: Cordula Vance (Human (Seattle Native) Amphibio
 | "List all the characters" comes back empty | the records are not listed yet | wait up to a minute and ask again |
 | `Multiple runtimes found` | `--runtime` is missing | add `--runtime characteragent` |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I registered again, the same six numbers as on the estuary, and the desk stamped the same Groove and Mana. Then I asked a different session to list the party, and there we were. Barnaby went a pleased, mottled brown. Somewhere in a records office we will never see, there is a folder with his name on it, and it says party leader.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I registered again, the same six numbers as on the estuary, and the desk stamped the same Groove and Mana. Then I asked a different session to list the party, and there we were. Barnaby went a pleased, mottled brown. Somewhere in a records office we will never see, there is a folder with his name on it, and it says party leader.
 
 ### What the Records Cost
 
@@ -241,7 +241,7 @@ AgentCore Memory bills long-term records by the month and by the read: about $0.
 
 The Narrator still reaches the Rules Agent on `127.0.0.1:8000`; the Character Agent moves to AgentCore. As in 8.1, the remote server only accepts requests signed with IAM.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Solution branch: the Narrator file is shared by the four sections, and the `solution` branch shows it as it is at the end of 8.4, served by AgentCore. The solution version does not start on a local machine. Only copy the lines under the `8.2 Step N` TODOs of this section, and leave the rest of the file unchanged.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Solution branch: the Narrator file is shared by the four sections, and the `solution` branch shows it as it is at the end of 8.4, served by AgentCore. The solution version does not start on a local machine. Only copy the lines under the `8.2 Step N` TODOs of this section, and leave the rest of the file unchanged.
 
 ### Step 1: Read the Character Agent URL from the Environment
 
@@ -315,7 +315,7 @@ python narrator_orchestrator.py
 
 ## Part 4: Play Against the Cloud
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** Cordula, a Developer Advocate Swarm and a Presence call. The Narrator looks Cordula up in the cloud before it lets her dance.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS:** Cordula, a Developer Advocate Swarm and a Presence call. The Narrator looks Cordula up in the cloud before it lets her dance.
 
 ```bash
 curl -X POST http://0.0.0.0:8009/inquire \
@@ -327,9 +327,9 @@ The Narrator discovers the two agents, asks the Character Agent for Cordula's sh
 
 If the Narrator says the Character Agent call failed, look in the Narrator terminal: `403` means a region mismatch, as in 8.1; a `ReadTimeout` means `timeout=300` is missing from Step 2; `Invalid URL` means `CHARACTER_AGENT_URL` in `.env` is not the whole URL.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Developer Advocate Swarm found us again in a Bellevue lobby, with better lighting this time. Before the first call, the Narrator went to the records office and pulled my sheet, Strength 16, Constitution 16, Charisma 10. The Narrator called Presence anyway, and the System AI announced it with relish. Charisma is my worst stat. I lost the round, the swarm livestreamed it, and every viewer could see the number on my sheet that lost it. Fair is fair.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Developer Advocate Swarm found us again in a Bellevue lobby, with better lighting this time. Before the first call, the Narrator went to the records office and pulled my sheet, Strength 16, Constitution 16, Charisma 10. The Narrator called Presence anyway, and the System AI announced it with relish. Charisma is my worst stat. I lost the round, the swarm livestreamed it, and every viewer could see the number on my sheet that lost it. Fair is fair.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Web interface: the [Floor 6](floor-6.md) interface still works for the game itself. Its character panel, however, reads the [Floor 5](floor-5.md) `characters.json` through the Narrator's `/user/{user_name}` endpoint, so the panel does not see the characters stored in AgentCore Memory. 8.4 takes the Narrator to the cloud and resolves the mismatch.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Web interface: the [Floor 6](floor-6.md) interface still works for the game itself. Its character panel, however, reads the [Floor 5](floor-5.md) `characters.json` through the Narrator's `/user/{user_name}` endpoint, so the panel does not see the characters stored in AgentCore Memory. 8.4 takes the Narrator to the cloud and resolves the mismatch.
 
 ## Floor Clear
 
@@ -345,10 +345,10 @@ Loot kept:
 <img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [8.3](floor-8-3.md) where the Rules Agent and its knowledge base join the party in the cloud.
 
 
-> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[NAMES, ONCE WRITTEN]**
 >
 > Reward: a [Silver Box]. Inside: a Character Agent in the cloud and a memory record for Cordula that will not disappear when the microVM does.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Your characters now outlive their sessions. Do not get attached. I certainly do not."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Your characters now outlive their sessions. Do not get attached. I certainly do not."

@@ -43,7 +43,7 @@ def roll_for(dancer: str, modifier: int = 0) -> dict:
     return {"dancer": dancer, "die": die, "modifier": modifier, "total": die + modifier}
 
 
-SYSTEM_PROMPT = """You are Lady Luck, the System's croupier subroutine, calling one round of a dance-off.
+SYSTEM_PROMPT = """You are Lady Luck, the System AI's croupier subroutine, calling one round of a dance-off.
 Roll for both dancers with roll_for, both calls in the same response, then report each side as
 die + modifier = total and name who took the round. Two sentences after the rolls. Plain text only, no emoji."""
 

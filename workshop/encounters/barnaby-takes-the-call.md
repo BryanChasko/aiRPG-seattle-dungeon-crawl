@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-5-barnaby-takes-the-call/barnaby_takes_the_call.py`](../../encounters/floor-5-barnaby-takes-the-call/barnaby_takes_the_call.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 7, TUESDAY, JUNE 23, SIDE PASSAGE OFF FLOOR 5.** On Floor 5 the Narrator did all the phoning. It decided when to ring the Rules Agent, what to say, and when to hang up, and I only heard the result. Down here Barnaby pulled the handset off the wall. He dialed the rules desk himself, with the line open and the speaker on, and every word that came back crackled out of it as it was said: connected, working, here is a piece of the answer, done. I have run a radio net. I know what it is to hear a call as it happens instead of in the after-action report.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 7, TUESDAY, JUNE 23, SIDE PASSAGE OFF FLOOR 5.** On Floor 5 the Narrator did all the phoning. It decided when to ring the Rules Agent, what to say, and when to hang up, and I only heard the result. Down here Barnaby pulled the handset off the wall. He dialed the rules desk himself, with the line open and the speaker on, and every word that came back crackled out of it as it was said: connected, working, here is a piece of the answer, done. I have run a radio net. I know what it is to hear a call as it happens instead of in the after-action report.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: Barnaby Takes the Call. No more middleman tool. The octopus dials, the octopus listens, and the octopus gets his own number, extension 8003. Calls are not recorded. Calls are, however, streamed."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: Barnaby Takes the Call. No more middleman tool. The octopus dials, the octopus listens, and the octopus gets his own number, extension 8003. Calls are not recorded. Calls are, however, streamed."
 
 ## The Brief
 
@@ -62,7 +62,7 @@ from strands.multiagent.a2a.server import A2AServer
 
 `A2AAgent(endpoint, timeout=60)` is the whole call setup. The first argument is the base URL of the remote agent, the same string Floor 5 puts in `allowed_endpoints`. The timeout is in seconds and covers each HTTP operation, the card fetch and the message; the default is 300, which is a long time to hold a line on a broadcast. The name and description stay empty until the card is fetched: `await line.get_agent_card()` fetches the card, and `main` already calls it, so the printout can say who picked up. See [`A2AAgent`](https://strandsagents.com/docs/api/python/strands.agent.a2a_agent/).
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** One line of code and the Rules Agent was on the other end of it. No dispatcher, no relay. Barnaby read the card off the wire the way I would read a unit patch off a stranger's sleeve: who are you, what do you do, and are you allowed to be here. "Sixty seconds, Sergeant. Beyond that, one is not waiting. One is hoping."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One line of code and the Rules Agent was on the other end of it. No dispatcher, no relay. Barnaby read the card off the wire the way I would read a unit patch off a stranger's sleeve: who are you, what do you do, and are you allowed to be here. "Sixty seconds, Sergeant. Beyond that, one is not waiting. One is hoping."
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -86,7 +86,7 @@ Replace the `return None`.
 
 `stream_async` is an async generator, so the loop is `async for event in line.stream_async(question):`. Each `event` is a dictionary. When `event.get("type") == "a2a_stream"`, the A2A object is in `event["event"]`: print `describe(...)` of that event. When `"result"` is in the event, that value is the finished `AgentResult`: keep it in `result`; the function returns `result` and `main` prints it. The result is always the last item. To get only the answer, `await line.invoke_async(question)` runs the same stream and returns only that result; use the loop to see the call as it happens. See the example in the [`stream_async`](https://strandsagents.com/docs/api/python/strands.agent.a2a_agent/) docstring.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Status working. Status working. A chunk of the answer. Status completed. I counted the events the way I count a convoy: how many came in, in what order, and whether the last one was the one that says we are done. Barnaby tapped the table at each one. He says a streamed answer is a conversation, and a returned answer is a verdict.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Status working. Status working. A chunk of the answer. Status completed. I counted the events the way I count a convoy: how many came in, in what order, and whether the last one was the one that says we are done. Barnaby tapped the table at each one. He says a streamed answer is a conversation, and a returned answer is a verdict.
 
 <details>
 <summary>Show me the code for Step 3</summary>
@@ -180,7 +180,7 @@ The `a2a_client` tool and `A2AAgent` reach the same agents over the same protoco
 
 The calling side costs nothing: `A2AAgent` is HTTP, with no Amazon Nova 2 Lite call behind the request. The Rules Agent and the Character Agent each spend a couple of short Amazon Nova 2 Lite calls on one question, about a thousand tokens in and a couple of hundred out. At about $0.30 per million input tokens and $2.50 per million output tokens, that costs roughly a tenth of a cent a call, and under a cent for the whole script. Barnaby's server costs a call only when someone dials him. See [What a Turn Costs](../floor-1.md#what-a-turn-costs).
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby's line is up on 8003. I put a sticker over the port number so nobody takes it for the Narrator's. He asked for a ring tone. The System AI offered the Final Beat drum. He accepted before the offer was finished. Shelly has already tried to call it from the mudflat, and I have decided that is a problem for the next shift.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby's line is up on 8003. I put a sticker over the port number so nobody takes it for the Narrator's. He asked for a ring tone. The System AI offered the Final Beat drum. He accepted before the offer was finished. Shelly has already tried to call it from the mudflat, and I have decided that is a problem for the next shift.
 
 ## Encounter Clear
 
@@ -191,7 +191,7 @@ Loot kept:
 - The final `AgentResult` is the last item of the stream, and `invoke_async` returns only that
 - `A2AServer` with an `agent_factory` gives any agent a number of its own
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[CALL WAITING, OCTOPUS EDITION]**
 >

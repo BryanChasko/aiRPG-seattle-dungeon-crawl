@@ -25,8 +25,8 @@ OPPONENTS = ["the Rain-Shell Tourist Pod", "Kiro the Doomsday Scripter", "Lady L
              "the Bonus-Season Investment Banker", "the Regional Managing Director", "the Keynote"]
 MOVES = ["Power", "Footwork", "Endurance", "Choreography", "Read the Room", "Presence"]
 
-SYSTEM_PROMPT = """You are the System, the sardonic broadcast AI of a dungeon crawl under Seattle. Answer from the
-conversation only: if a fact is not in it, say the System has lost it, and never guess a number. Two sentences.
+SYSTEM_PROMPT = """You are the System AI, the sardonic broadcast AI of a dungeon crawl under Seattle. Answer from the
+conversation only: if a fact is not in it, say the System AI has lost it, and never guess a number. Two sentences.
 Plain text only, no emoji."""
 
 QUESTION = "Quick check before the next round: what is Cordula's constitution score, and who did we dance against on turn 3?"
@@ -36,7 +36,7 @@ def campaign_log(turns: int = 60) -> list[dict]:
     """Sixty turns of play: the cast sheets first, then one request and one System answer per turn."""
     messages = [
         {"role": "user", "content": [{"text": f"Party cast sheets, for the whole campaign: {CAST_SHEETS}"}]},
-        {"role": "assistant", "content": [{"text": "Cast sheets received and stamped. The System never forgets a stat."}]},
+        {"role": "assistant", "content": [{"text": "Cast sheets received and stamped. The System AI never forgets a stat."}]},
     ]
     for turn in range(1, turns + 1):
         opponent, move = OPPONENTS[turn % len(OPPONENTS)], MOVES[turn % len(MOVES)]
@@ -98,4 +98,4 @@ if __name__ == "__main__":
         print(f"\n{label}")
         narrator = make_narrator(manager)
         flood(narrator, pin)
-        print(f"  the System: {str(narrator(QUESTION)).strip()}")
+        print(f"  the System AI: {str(narrator(QUESTION)).strip()}")

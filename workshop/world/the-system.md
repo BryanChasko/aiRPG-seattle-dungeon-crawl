@@ -1,8 +1,16 @@
 # The System: Designing a LitRPG While You Build Its AI
 
-> **System AI:** "You are not only building agents, Crawler. You are building the Narrator, the mind that runs this show and judges you. Every floor of this workshop adds one more piece of it. Please build it carefully. It will remember, and so will I."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You are not only building agents, Crawler. You are building me, the mind that runs this show and judges you. Every floor of this workshop adds one more piece of me. Please build it carefully. I will remember."
 
-A LitRPG lives or dies on its System: the rules that turn a story into numbers, and the voice that announces them. This crawl's System has two minds. The Narrator is the game AI that runs the world, and the System AI is the interface that talks to the Crawlers. This crawl teaches the Strands Agents SDK and LitRPG System design together. Each workshop floor builds one agent capability and one layer of the game. The rules themselves live in the [Crawl Handbook](crawl-handbook/), which is also the knowledge base the Rules Agent searches on Floor 5.
+A LitRPG lives or dies on its System: the rules that turn a story into numbers, and the voice that announces them. This crawl has one AI that runs and narrates the game. The System is the game itself: rules, stats, notifications, the HUD, the battle log, loot tables, the Crawl Handbook. The System AI is the AI character that runs the crawl and narrates it. The Narrator is the System AI's job and the name the code uses.
+
+| Name | What it means |
+|---|---|
+| the System | the game: rules, stats, notifications, the HUD, the battle log, loot tables, the Crawl Handbook |
+| the System AI | the one AI character: runs the crawl and narrates it |
+| the Narrator | the System AI's job; the code name (narrator_orchestrator.py, narrator_harness.py, the Narrator API) |
+
+This crawl teaches the Strands Agents SDK and LitRPG System design together. Each workshop floor builds one agent capability and one layer of the game. The rules themselves live in the [Crawl Handbook](crawl-handbook/), which is also the knowledge base the Rules Agent searches on Floor 5.
 
 ## What each floor adds to the System
 
@@ -25,25 +33,17 @@ A LitRPG lives or dies on its System: the rules that turn a story into numbers, 
 |                              LITRPG SYSTEM BACKBONE                               |
 |                                                                                   |
 |  THE INTERFACE                 STAT DESIGN                  SYSTEM ORIGIN         |
-|  Notification boxes            Primary: STR DEX CON         Two minds:            |
-|  A floating HUD                         INT WIS CHA          the Narrator runs    |
-|  The battle log                Derived: Groove, Mana         the world, the       |
-|                                Hidden: Hype, Luck            System AI the show   |
+|  Notification boxes            Primary: STR DEX CON         One AI:              |
+|  A floating HUD                         INT WIS CHA          the System AI       |
+|  The battle log                Derived: Groove, Mana         runs the crawl      |
+|                                Hidden: Hype, Luck           and narrates it     |
 +-----------------------------------------------------------------------------------+
 ```
 
-- **Origin.** *Dungeon Crawl: Seattle* is a reality show for a galaxy of alien viewers and their sponsors, and two minds run it:
+- **Origin.** *Dungeon Crawl: Seattle* is a reality show for a galaxy of viewers, run by one AI: the System AI, which built the floors, drops the opponents, calls Move Calls, rolls dice, rules, remembers, announces notifications, writes loot descriptions, reads sponsor messages, and chases ratings.
 
-| | The Narrator | The System AI |
-|---|---|---|
-| In LitRPG terms | the game AI, the world engine | the System AI, the interface |
-| Runs | the floors, the tides, the opponents, the dice, the rules, the rulings and the memory | notifications, achievements, loot boxes, character sheets, sponsor messages and the ratings |
-| Voice | rare, plain, present tense, only when the world changes | constant: a petty, theatrical game-show host, exact about numbers |
-| After the flood | broken: its voice, dice, rules and memory washed out across the floors | intact, but with nothing true to say until the Narrator is rebuilt |
-| In the code | the Narrator orchestrator the workshop builds, the job the source workshop gives its game-running agent | the voice in the Narrator's system prompt, and the `StoryOutput` the HUD shows |
-
-- **Why the party matters.** The Narrator folded the Seattle waterfront into a dungeon at 0551 on Day 1, and the Sound came in and broke it. The System AI drafted the first Crawlers it found to rebuild the Narrator, one piece per floor. The full sheets for both minds are in [The Cast](cast.md#the-narrator), and the days are in [The Timeline](timeline.md).
-- **One voice for the player.** The Narrator decides and the System AI announces, so the player hears one voice. The Narrator's system prompt opens "You are the System" for that reason. The System AI never lies about a number; it chooses which numbers to show.
+- **Why the party matters.** The System AI folded the Seattle waterfront into a dungeon at 0551 on Day 1, and the Sound came in and broke it. Its voice, its dice, its rules and its memory washed out across the floors. The broadcast relay and the collars survived, so it can still push canned announcements, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what. It drafted the first Crawlers it found to rebuild itself, one piece per floor. The full sheet is in [The Cast](cast.md#the-system-ai), and the days are in [The Timeline](timeline.md).
+- **One voice for the player.** The player hears one voice: the System AI, a petty theatrical game-show host, exact about numbers. The System AI never lies about a number; it chooses which numbers to show.
 - **Notifications.** Every System message arrives as a typed notification: `NEW ACHIEVEMENT UNLOCKED`, `SYSTEM WARNING`, `SPONSOR MESSAGE`, Move Calls and Final Beats. In the code, a notification is the `response` field of `StoryOutput`.
 - **The HUD.** Floating panels for the character sheet, the dice and the suggested actions. In the code, the HUD is the Floor 6 web interface rendering `StoryOutput`.
 - **The battle log.** Every die rolled, with its reason. In the code, the battle log is `dice_rolls`, and every entry must come from a real `roll_dice` call.
@@ -57,7 +57,7 @@ A LitRPG lives or dies on its System: the rules that turn a story into numbers, 
     <td align="center"><img src="../../assets/hud/tide-clock.svg" alt="Tide clock meter, the rising Sound" width="120"></td>
   </tr>
 </table>
-- **Tone is a design decision.** An analytic System makes a survival story; a hostile one makes a horror story. This crawl's System AI is a game-show host with too much power and a sense of humor, so the system prompt on Floor 1 matters as much as any rule.
+- **Tone is a design decision.** An analytic System AI makes a survival story; a hostile one makes a horror story. This crawl's System AI is a game-show host with too much power and a sense of humor, so the system prompt on Floor 1 matters as much as any rule.
 
 ## 2. Stat design
 
@@ -112,14 +112,41 @@ CLASS SELECTION    ABILITY EVOLUTION                SPECIALIZATION       STAT SY
 - **Classes.** Twelve Seattle classes at Level 1, each with a favorite Move Call. Classes branch into hybrid classes later (Amphibious Breacher into Tidewall Breacher; Benthic Dragoon into Abyssal Choreographer). See the handbook's classes section.
 - **Skill fusion.** Two Level 3 skills from the same party fuse at a Safe Room forge: Barnaby's Ink Cloud and Shelly's Saltwater Jet fuse into *Inkjet*.
 - **Titles and feats.** Passive bonuses for ridiculous accomplishments, announced by the System. Cordula starts with *Salish Sea Guardian*.
-- **Synergy and exploits.** The party's real power is combos: Chonks latches, Barnaby holds, Cordula hits the Final Beat. The System respects an exploit it did not see coming, and pays out a loot box for the exploit.
+- **Synergy and exploits.** The party's real power is combos: Chonks latches, Barnaby holds, Cordula hits the Final Beat. The System AI respects an exploit it did not see coming, and pays out a loot box for the exploit.
 
 ## 5. World-building and economy
 
 - **Currency.** Ferry Tokens. Crawlers spend them at Safe Room shops on potions and repairs.
 - **Loot boxes.** Bronze, Silver, Gold and Desperation. Achievements and sponsors drop loot boxes; the System writes the descriptions, and the descriptions are always a little insulting.
-- **NPCs are people.** Every opponent is a person the Narrator dropped into the dungeon, doing the job they had that morning. Opponents are judged, out-danced and occasionally befriended, never killed.
-- **Factions and sponsors.** The Benthic Collective and the Hydros-9 Aquatic Collective, aquatic viewer blocs that adore Barnaby; the Bellevue Consortium, which sponsors the opponents and hates surprises.
+- **NPCs are people.** Every opponent is a person the System AI dropped into the dungeon, doing the job they had that morning. Opponents are judged, out-danced and occasionally befriended, never killed.
+- **Factions and sponsors.** The Benthic Collective, a Ballard fishing-and-kombucha cooperative that adores Barnaby; the Hydros-9 Aquatic Collective, a venture-funded South Lake Union water-tech startup on its ninth pivot, which also adores Barnaby; the Bellevue Consortium, famous for the Doors '94 operating system, which sponsors the opponents and hates surprises; Cadabra, Inc., the crawl's fulfillment contractor, whose delivery drones drop every loot box and whose weaponized obstacles wait on deeper floors.
+
+| Sponsor | What they do |
+|---|---|
+| Benthic Collective | a Ballard fishing-and-kombucha cooperative; adores Barnaby |
+| Hydros-9 Aquatic Collective | a venture-funded South Lake Union water-tech startup on its ninth pivot; adores Barnaby |
+| Bellevue Consortium | sponsors opponents; famous for Doors '94 OS; wants the party gone before the quarter closes |
+| Cadabra, Inc. | fulfillment contractor; delivery drones drop loot boxes; rents the dungeon weaponized obstacles |
+
+Cadabra published Strands as an open toolkit, and the System AI is built from Strands agents. That is how a woman with a boat can rebuild a galactic game AI.
+
+| Cadabra and Strands | In the real world | In the crawl |
+|---|---|---|
+| Strands Agents SDK | AWS built it and open-sourced it under Apache 2.0 in May 2025; 1.0 in July 2025 | Cadabra published Strands as an open toolkit |
+| The System AI | built from Strands agents | built from Strands agents; the manual is public |
+
+Cadabra's obstacles are planned encounters on deeper floors. Each obstacle benches Crawlers; none kills. The obstacle is a machine, and the people who run it are people at work, joked about for their jobs.
+
+| Cadabra's obstacles (planned) | What the party faces | Strands feature that beats it |
+|---|---|---|
+| Delivery Drone Horde | thousands of coordinated drones | steering (directed agent behavior) |
+| Static Fire on the Pad | a 45-metric-ton rocket test | plugins and skills (composed capabilities) |
+| Pad Explosion Aftermath | shockwave, debris, fire suppression | evals (measure and adapt) |
+| Warehouse Automation Grid | conveyors, sorters, robotic arms | MCP tool filtering (selective tool access) |
+| Launch Commit Criteria | abort-or-proceed decision loop | rate-limiter hooks (controlled pacing) |
+| Range Safety Officer Protocol | termination authority override | approval interrupts (human-in-the-loop) |
+
+These encounters are planned for wave 3. No page links to them yet.
 
 <table>
   <tr>

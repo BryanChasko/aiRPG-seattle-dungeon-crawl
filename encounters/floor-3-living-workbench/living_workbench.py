@@ -24,11 +24,11 @@ ASK = "Cordula and the Bonus-Season Investment Banker finished the round level. 
 
 
 def make_workbench() -> Agent:
-    """The System at the workbench. Its tools are whatever is in ./tools right now."""
+    """The System AI at the workbench. Its tools are whatever is in ./tools right now."""
     return Agent(
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
         callback_handler=None,
-        system_prompt="""You are the System, the game-show host of Dungeon Crawl: Seattle, settling a tied round. Every roll comes
+        system_prompt="""You are the System AI, the game-show host of Dungeon Crawl: Seattle, settling a tied round. Every roll comes
 from a tool; never roll, add or decide anything yourself. If the tool you need is not on the workbench, say "The drum is not on the
 workbench yet." and stop. Otherwise report what the tool returned. Two sentences. Plain text only, no emoji.""",
         # TODO: Step 1 - Load the tools in ./tools and watch the folder for changes: pass load_tools_from_directory=True

@@ -7,10 +7,10 @@ Files on this floor: [`8_agentcore_production/rulesagent/rules_agent.py`](../8_a
 ![Floor 8.3: The Rules Agent](../images/floors/floor-8-3-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, FLOOR 8.3.** Brick three was the rule book. Every Crawler on every server reads the same handbook now, which Barnaby considers the single most civilized thing the Narrator has ever done. Then a pitch-deck founder blocked the Locks and we got to use it. Then a pitch-deck founder blocked the Locks and we got to use it.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, FLOOR 8.3.** Brick three was the rule book. Every Crawler on every server reads the same handbook now, which Barnaby considers the single most civilized thing the Narrator has ever done. Then a pitch-deck founder blocked the Locks and we got to use it. Then a pitch-deck founder blocked the Locks and we got to use it.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Brick three. The rule book moves to a managed knowledge base, indexed by Bedrock at its own pace. Check the ingestion status before you deploy. Patience is a stat, and you have not leveled it."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Brick three. The rule book moves to a managed knowledge base, indexed by Bedrock at its own pace. Check the ingestion status before you deploy. Patience is a stat, and you have not leveled it."
 
 ## Floor Objective
 
@@ -33,7 +33,7 @@ This section works in two folders:
 
 ## Part 1: Check the Knowledge Base
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Ingestion: IN_PROGRESS means wait. Ingestion: COMPLETE means deploy. There is no third state you will enjoy."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Ingestion: IN_PROGRESS means wait. Ingestion: COMPLETE means deploy. There is no third state you will enjoy."
 
 Step 3 of Set Up the Project on the Floor 8 page started the knowledge base. Its commands did this:
 
@@ -41,7 +41,7 @@ Step 3 of Set Up the Project on the Floor 8 page started the knowledge base. Its
 - `agentcore add knowledge-base` declares a managed knowledge base named `rules` in `agentcore/agentcore.json`, with the bucket as its data source. The CLI gives the knowledge base, not the agents, the right to read the bucket.
 - `agentcore deploy` creates the knowledge base and its data source, then the CLI starts the ingestion: Bedrock reads, splits and indexes the handbook. The deployment finishes before the ingestion does.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Run `agentcore` from the root of the `gameprod` folder, like every `agentcore` command of this floor. The CLI looks for `agentcore/agentcore.json` in the current folder and its parents: from `8_agentcore_production` or from `rulesagent/`, the CLI stops with `No agentcore project found`. Check indexing status:
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run `agentcore` from the root of the `gameprod` folder, like every `agentcore` command of this floor. The CLI looks for `agentcore/agentcore.json` in the current folder and its parents: from `8_agentcore_production` or from `rulesagent/`, the CLI stops with `No agentcore project found`. Check indexing status:
 
 ```bash
 cd gameprod
@@ -54,7 +54,7 @@ After editing a handbook file, copy the file to the bucket again and run `agentc
 
 If `rules` is missing from `agentcore status`, Step 3 of the Floor 8 page did not deploy: run Step 3 again from `gameprod`. If the ingestion shows `FAILED`, confirm that `aws s3 ls s3://gameprod-rules-$(aws sts get-caller-identity --query Account --output text)/` lists the eleven handbook files, then run `agentcore run ingest`.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The rule book we dropped in the bucket two bricks ago had been read, cut up and filed while we worked. Nobody had to wait on it. That is how you run a long-lead item: start it first, check it last.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The rule book we dropped in the bucket two bricks ago had been read, cut up and filed while we worked. Nobody had to wait on it. That is how you run a long-lead item: start it first, check it last.
 
 ### What the Knowledge Base Costs
 
@@ -136,7 +136,7 @@ The listing shows `kb-policy.json`, `nova-policy.json`, `pyproject.toml` and `ru
 
 ### Step 2: Give the Agent the Knowledge Base
 
-> <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [kb-policy.json]**
+> <img src="../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [kb-policy.json]**
 >
 > Grants bedrock:Retrieve and nothing else. The Rules Agent can read the rule book. It cannot read the AWS account. The System AI can. The System AI is the exception.
 
@@ -180,7 +180,7 @@ The CLI may write the fields of the entry in another order, or add others: keep 
 
 ### Step 3: Deploy
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Run these commands from the root of the `gameprod` folder, like every `agentcore` command of this floor.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run these commands from the root of the `gameprod` folder, like every `agentcore` command of this floor.
 
 Wait for `Ingestion: COMPLETE` in `agentcore status`, then run:
 
@@ -193,13 +193,13 @@ agentcore status
 
 ### Step 4: Test the Deployed Agent
 
-> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[FINAL BEAT ENJOYER]**
 >
 > Reward: You received a [Silver Box]. Inside: one Final Beat ruling, one section name, and a Rules Agent who will explain the speeding drum at parties.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Run every command of this step from the root of the `gameprod` folder, as in the rest of Part 3.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run every command of this step from the root of the `gameprod` folder, as in the rest of Part 3.
 
 ```bash
 agentcore invoke --runtime rulesagent "How does the Final Beat work?"
@@ -219,7 +219,7 @@ The agent searches the knowledge base once and answers with the section name, Fi
 
 The Rules Agent was the last brick on 127.0.0.1. The Narrator reuses the signed client configuration of 8.2: AgentCore keeps one session per runtime, so the same session id serves both agents.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** On the `solution` branch, `narrator_orchestrator.py` is shared by the four sections, and the `solution` branch shows it as it is at the end of 8.4, served by AgentCore. That version does not start on a local machine. Only copy the lines under the `8.3 Step N` TODOs of this section, and leave the rest of the file unchanged.
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** On the `solution` branch, `narrator_orchestrator.py` is shared by the four sections, and the `solution` branch shows it as it is at the end of 8.4, served by AgentCore. That version does not start on a local machine. Only copy the lines under the `8.3 Step N` TODOs of this section, and leave the rest of the file unchanged.
 
 ### Step 1: Read the Rules Agent URL from the Environment
 
@@ -269,7 +269,7 @@ python narrator_orchestrator.py
 
 ## Part 5: Play Against the Cloud
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS:** A Pitch-Deck Founder blocks the Ship Canal locks. Sneak past or dance: the Rules Agent knows what each one costs, and the handbook backs it up.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS:** A Pitch-Deck Founder blocks the Ship Canal locks. Sneak past or dance: the Rules Agent knows what each one costs, and the handbook backs it up.
 
 ```bash
 curl -X POST http://0.0.0.0:8009/inquire \
@@ -279,14 +279,14 @@ curl -X POST http://0.0.0.0:8009/inquire \
 
 The Narrator asks the Rules Agent about stealth, then rolls on the cloud dice server and narrates. The response `details` field cites the handbook section. Three of the four bricks now run in AWS, and `agentcore logs --runtime rulesagent` shows the request. Only the Narrator still runs locally: 8.4 moves the Narrator too.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder had set up a tripod at the top of the locks and was rehearsing to nobody. We asked the rule book, from the cloud, whether we could sneak past. It said yes, with a Dexterity check against ten plus the founder's best Wisdom modifier, and advantage if Barnaby hid us. He bent the light across my drysuit until I could not see my own boots. Shelly dug in at my heel and Chonks stayed stuck to my forearm guard, so the party gave the founder nothing to look at. The dice said we made it. The founder never looked up from the slides.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder had set up a tripod at the top of the locks and was rehearsing to nobody. We asked the rule book, from the cloud, whether we could sneak past. It said yes, with a Dexterity check against ten plus the founder's best Wisdom modifier, and advantage if Barnaby hid us. He bent the light across my drysuit until I could not see my own boots. Shelly dug in at my heel and Chonks stayed stuck to my forearm guard, so the party gave the founder nothing to look at. The dice said we made it. The founder never looked up from the slides.
 
 ## Side Passages (optional)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The rule book moved to the cloud, and two things came with it: the ferry's manifest, and the System AI's grudges.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The rule book moved to the cloud, and two things came with it: the ferry's manifest, and the System AI's grudges.
 
 - [The Ferry Manifest](encounters/ferry-manifest.md), sidequest: the Rules Agent built from a configuration file that pins Amazon Nova 2 Lite
-- [The Grudge Ledger in the Cloud](encounters/grudge-ledger.md), sidequest: the System AI's grudges kept in a Bedrock knowledge base memory store
+- [The System AI Holds Grudges](encounters/grudge-ledger.md), sidequest: the System AI's grudges kept in a Bedrock knowledge base memory store
 
 ## Floor Clear
 
@@ -301,10 +301,10 @@ Loot to keep:
 <img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [8.4](floor-8-4.md) where the Narrator itself takes its seat in the cloud.
 
 
-> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[RTFM (AS A SERVICE)]**
 >
 > Reward: You received a [Silver Box]. Inside: a deployed Rules Agent, a bedrock:Retrieve permission with no friends, and the whole Crawl Handbook on demand.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The rule book lives in the cloud, and every session reads the same one. Fairness is a feature, not a promise."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The rule book lives in the cloud, and every session reads the same one. Fairness is a feature, not a promise."

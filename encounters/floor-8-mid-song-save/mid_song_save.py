@@ -34,7 +34,7 @@ def make_band() -> Agent:
     return Agent(
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
         tools=[dance_round],
-        system_prompt="""You are Lady Luck, the System's croupier subroutine, calling one round of a dance-off against the
+        system_prompt="""You are Lady Luck, the System AI's croupier subroutine, calling one round of a dance-off against the
 Bonus-Season Investment Banker. Call dance_round once with opponent="the Bonus-Season Investment Banker", move_call="Presence",
 crawler="Barnaby", opponent_modifier=2, tempo="Driving". Then report each side as die + modifier = total and name who took
 the round, in two sentences. Never roll or decide anything yourself. Plain text only, no emoji.""",

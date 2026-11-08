@@ -7,54 +7,54 @@
 <!-- cordula-log -->
 ## Before the Fall
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 0547, PIER 59.**
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 0547, PIER 59.**
 >
 > High tide was at 0556, so I was on the water by 0530: touring kayak, drysuit, float vest, the debris sweep the Soundkeepers run every week. Fog on Elliott Bay, gulls, a ferry horn out past the breakwater. Normal.
 >
-> I tied up under the aquarium to check the intake screens. The aquarium is where I always say hello to the octopus. The staff call him Barnaby. He is a hundred pounds of red skin and opinions, and he has opened every puzzle box they have ever built him. He watches people the way I watch a landing zone. That morning he was pressed against the glass before I even clipped in, flashing white, then red, then white. Octopuses do not do that for no reason.
+> I had seen his shadow before. Survey runs over the Gertie wreck at the Narrows, dawn sweeps under the downtown piers. Something too big to be an octopus, always just past visibility. I logged each sighting as unconfirmed. I never met him face to face.
 >
 > At 0551 every phone on the waterfront lit up with the same blank violet box. No text in it. Then the pier moved.
 >
-> The pier did not crash. The pier folded, the way a map folds, down and in, and the Sound came in after it. I had about four seconds. I spent them going toward the aquarium instead of away from it, which the Marine Corps would call a training failure and I call the only good decision I made that day.
+> The pier did not crash. The pier folded, the way a map folds, down and in, and the Sound came in after it. The shadow was there, close this time, tangled in the collapsing intake screen: an octopus bigger than any on record, one eye on me.
 >
-> The tank wall was already cracked. I got the kayak's dry bag over him, ran a bilge pump off the kayak battery, and strapped the dry bag, pump and battery to my MOLLE frame. He wrapped two arms around my shoulders as if he had planned it. Maybe he had.
+> I had about four seconds. I spent them going toward him instead of away, because nobody else was awake to cut him loose. I cut him free with my rescue knife; he wrapped two arms around me and the kayak and held us both clear of the debris as the fold carried us down. Each of us saved the other.
 >
 > Then a voice came out of the water, loud enough to rattle my teeth.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. The Narrator took water in transit and several of its systems are down. You will be fixing them. Contestant one: a woman with a boat. Contestant two..." A pause. "Contestant two is an octopus. Fine. Octopus, you get a collar."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Contestant one: a woman with a boat. Contestant two..." A pause. "Contestant two is an octopus. Fine. Octopus, you get a collar."
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, CONTINUED.**
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, CONTINUED.**
 >
-> A brass ring snapped shut around Barnaby's mantle, and his skin went a color I had never seen on an animal. He did not speak. He could not, not yet. But he looked at me, and then he looked at the stairwell behind me, the only way down that was not underwater, and I understood him anyway.
+> A brass ring snapped shut around his mantle, and his skin went a color I had never seen on an animal. He did not speak. He could not, not yet. But he looked at me, and then he looked at the stairwell behind me, the only way down that was not underwater, and I understood him anyway.
 >
-> The stairwell is where the workshop starts. The Narrator, the game AI that runs this place, is broken, and the only way out is to rebuild it, one piece per floor. What we build passes through the collar to Barnaby first. The terminal is mine. The log is what happened. The steps are what I type next.
+> The first achievement dropped a backpack tank, bigger on the inside, to carry him on dry floors. I strapped it on and named him Barnaby, after a story I heard from a Tacoma ferry crew. The stairwell is where the workshop starts. The System AI, the game AI that runs this place, is broken, and the only way out is to rebuild it, one piece per floor. What we build passes through the collar to Barnaby first. The terminal is mine. The log is what happened. The steps are what I type next.
 >
 > First thing on the stairs: a twenty-foot python.
 
 Read the whole story in [The Story: Cordula's Crawl](world/story.md).
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Attention, Crawlers! Welcome to Floor 0. Pier 59 just folded into Elliott Bay and took the Seattle waterfront with it. Before you can out-dance an accountant, deploy agents, or cry to your alien sponsors about missing package managers, you need to clear the stairwell and secure a Safe Room. Wring out your socks, fire up your terminal, and try not to slip on the syntax."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Attention, Crawlers! Welcome to Floor 0. Pier 59 just folded into Elliott Bay and took the Seattle waterfront with it. Before you can out-dance an accountant, deploy agents, or file a high-priority ticket with your corporate overlords about missing package managers, you need to clear the stairwell and secure a Safe Room. Wring out your socks, fire up your terminal, and try not to slip on the syntax."
 
 ## Floor Objective
 
 Prepare your development environment: clone the workshop repo, install uv and Python, install the dependencies and activate the virtual environment. Everything else in this workshop runs from there.
 
-> <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** [Floor 8](floor-8.md) deploys the game to AgentCore and also needs the AgentCore CLI. The [Floor 8](floor-8.md) page installs it (Node.js 20 or later).
+> <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** [Floor 8](floor-8.md) deploys the game to AgentCore and also needs the AgentCore CLI. The [Floor 8](floor-8.md) page installs it (Node.js 20 or later).
 
 ## The Crawl Under Construction
 
-This workshop builds the AI behind a LitRPG, *Dungeon Crawl: Seattle*. Cordula is the player character: the log above is her log, Barnaby rides on her back and runs the party. Two companions join them on later floors. The Narrator this workshop rebuilds is the game AI that folded the waterfront into an eight-floor dungeon under the Sound. The System AI, the broadcast host, survived the flood and announces everything the Narrator decides. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
+This workshop builds the AI behind a LitRPG, *Dungeon Crawl: Seattle*. Cordula is the player character: the log above is her log, Barnaby rides on her back and runs the party. Two companions join them on later floors. The System AI built the dungeon, runs the floors, the tides, the opponents, the dice and every ruling. The flood broke it. The broadcast relay and the collars survived, so the System AI can still push canned announcements through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
 
 The lore lives in the [world guide](world/README.md): [the setting](world/seattle.md), [the cast](world/cast.md), [the System design](world/the-system.md) and the [Crawl Handbook](world/crawl-handbook/), the rules the Rules Agent searches on Floor 5.
 
 Stuck? [Ask the System](../study/README.md): `python study/ask_the_system.py` answers questions about every floor or Strands API from these pages and the API reference.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is two AIs. The Narrator is the game AI: it built the dungeon, runs the floors and owns the dice, the rules and the memory, and the flood broke it. The System AI is the host: a game-show voice that is petty, theatrical and exact about every number, and it survived in the broadcast relay and the collars. Each floor of this workshop builds one Strands capability and rebuilds one more subsystem of the Narrator with it, and the System AI announces the result. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is one AI. The System AI built the dungeon, runs the floors and owns the dice, the rules and the memory. The flood broke it. The broadcast relay and the collars survived, so the System AI can still push canned announcements through them, but it cannot answer, roll a fair die, quote a rule or remember who did what. Each floor of this workshop rebuilds one more subsystem of the System AI, and Barnaby gets each piece first through the collar. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 
 ## What is Strands?
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Strands is the SDK. You are the Crawler. I am the System. Learn the difference now, it matters on [Floor 5](floor-5.md)."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Strands is the SDK. You are the Crawler. I am the System AI. Learn the difference now, it matters on [Floor 5](floor-5.md)."
 
 [Strands](https://strandsagents.com/) is an Open Source Python and TypeScript SDK that simplifies building AI agents and multi-agent systems. Strands provides a framework for building AI applications that call tools, APIs and services.
 
@@ -64,7 +64,7 @@ Every step below has the same three parts: a command that checks whether the too
 
 ### Step 1: Check Your Gear (git, uv, Python)
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Before I hand you anything, empty your pockets. I like to know what I am working with."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Before I hand you anything, empty your pockets. I like to know what I am working with."
 
 Open a terminal (Terminal on macOS, any terminal on Linux, PowerShell on Windows) and run each line:
 
@@ -85,7 +85,7 @@ On Windows, use `python --version` instead of `python3 --version`.
 
 No git? Install git from [git-scm.com/downloads](https://git-scm.com/downloads), then open a new terminal and run `git --version` again.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** First thing I did on the landing was inventory. Paddle, drysuit, float vest, one bilge pump, one kayak battery at eighty percent, one octopus in a dry bag, one dead phone. You do not move until you know what you have. Barnaby watched me count and flashed a slow, steady brown. I chose to take that as approval.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** First thing I did on the landing was inventory. Paddle, drysuit, float vest, one bilge pump, one kayak battery at eighty percent, one octopus in a backpack tank, one dead phone. You do not move until you know what you have. Barnaby watched me count and flashed a slow, steady brown. I chose to take that as approval.
 
 ### Step 2: Claim Your Starter Safe Room (Clone the Repo)
 
@@ -100,9 +100,9 @@ Check: `ls` (or `dir` on Windows) lists `README.md`, `workshop` and the numbered
 
 ### Step 3: Equip uv
 
-> <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [uv]**
+> <img src="../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [uv]**
 >
-> A Python package and project manager from Astral, so fast it finishes before you finish doubting yourself. Rarity: Common. Durability: infinite. The System has heard the name means ultraviolet. Astral has not confirmed it, and Seattle has not seen ultraviolet since July. Side effects: none. Wear sunscreen anyway; the System is legally required to say so.
+> A Python package and project manager from Astral, so fast it finishes before you finish doubting yourself. Rarity: Common. Durability: infinite. The System AI has heard the name means ultraviolet. Astral has not confirmed it, and Seattle has not seen ultraviolet since July. Side effects: none. Wear sunscreen anyway; the System AI is legally required to say so.
 
 Skip this step if `uv --version` already printed a version. Otherwise install uv with the command for the operating system, from the [uv installation instructions](https://docs.astral.sh/uv/getting-started/installation/):
 
@@ -134,7 +134,7 @@ uv --version
 
 ### Step 4: Face the Floor Boss (Python)
 
-> <img src="../images/icons/floor-boss-96x96.webp" alt="Floor boss" width="28" height="28"> **FLOOR BOSS: MONTY, THE RETICULATED PYTHON.** Somebody released their pet into the Underground, and it found the stairwell. Reticulated pythons are the longest snakes in the world, and Monty is twenty feet of geometric camouflage that looks exactly like whatever Python is already on your PATH. It wraps tighter every time a version does not match. Barnaby, who is also a constrictor and has eight arms of opinions about it, refuses to share the stairwell. Nobody gets hurt: you win by knowing exactly which Python you are running.
+> <img src="../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS: MONTY, THE RETICULATED PYTHON.** Somebody released their pet into the Underground, and it found the stairwell. Reticulated pythons are the longest snakes in the world, and Monty is twenty feet of geometric camouflage that looks exactly like whatever Python is already on your PATH. It wraps tighter every time a version does not match. Barnaby, who is also a constrictor and has eight arms of opinions about it, refuses to share the stairwell. Nobody gets hurt: you win by knowing exactly which Python you are running.
 
 <img src="../images/cards/boss-monty-640x640.webp" alt="Monty, an enormous reticulated python with a gold, black and silver geometric pattern, loosely coiled around the rusted handrail of a flooded stairwell, head raised with a curious, slightly sheepish look and a brass pet tag on its collar" width="240">
 
@@ -147,7 +147,7 @@ uv python find
 
 `uv python find` prints the path of the interpreter uv picked. Monty's camouflage is the `python3` on your PATH, which can be a different, older Python. That causes no harm: inside this project, `uv sync` and `uv run` always use the interpreter uv picked, never the camouflage.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Monty was coiled around the handrail, and his pattern matched the rust so well I nearly put my hand on him. Barnaby went from red to dead white and pushed every arm he had against the far side of the bag. One constrictor does not trust another. I did not fight the snake. I read his tag, found out exactly who he was, and walked us past on the side he was not watching. Knowing which python you are dealing with is most of the job.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Monty was coiled around the handrail, and his pattern matched the rust so well I nearly put my hand on him. Barnaby went from red to dead white and pushed every arm he had against the far side of the tank. One constrictor does not trust another. I did not fight the snake. I read his tag, found out exactly who he was, and walked us past on the side he was not watching. Knowing which python you are dealing with is most of the job.
 
 | roadblock | fix |
 |---|---|
@@ -155,7 +155,7 @@ uv python find
 | `No interpreter found` | run `uv python install` and check your network (the corporate proxy fix above applies) |
 | several Pythons are installed and the active one is unclear | after Step 5, `uv run python --version` shows the interpreter this project uses |
 
-> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[WHICH PYTHON? THIS PYTHON.]**
 >
@@ -163,7 +163,7 @@ uv python find
 
 ### Step 5: Imbibe the Mana Potions (Install Dependencies)
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "uv sync installs every package the crawl needs, including the harness for [Floor 7](floor-7.md). If it fails, the audience gets a replay. Read the error message before pasting the error anywhere."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "uv sync installs every package the crawl needs, including the harness for [Floor 7](floor-7.md). If it fails, the audience gets a replay. Read the error message before pasting the error anywhere."
 
 In the repository folder:
 
@@ -187,7 +187,7 @@ The command prints Python 3.10 or later, the project's own interpreter.
 
 ### Step 6: Lock the Safe Room Door (Activate Your Virtual Environment)
 
-> <img src="../images/icons/sponsor-96x96.webp" alt="Sponsor" width="28" height="28"> **SPONSOR MESSAGE:** This Safe Room is brought to you by .venv. What gets installed in .venv stays in .venv.
+> <img src="../images/icons/sponsor-96x96.webp" alt="" width="28" height="28"> **SPONSOR MESSAGE:** This Safe Room is brought to you by .venv. What gets installed in .venv stays in .venv.
 
 Activating the environment makes `python` mean the project's Python in this terminal, so every floor's `python some_script.py` works as written.
 
@@ -213,11 +213,11 @@ Check: the prompt now starts with the environment name in parentheses, and `pyth
 | a new terminal has no active environment | activation lasts for one terminal; run the activate command again in every new one (Floor 5 opens four) |
 | to skip activation | put `uv run` in front of any command instead: `uv run python simple_agent.py` |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Safe Room was a maintenance closet halfway down the stairs, dry, with a door that locked from the inside. I topped off Barnaby's water, checked the pump, and shut the door. Everything we installed stayed in that closet. That is the point of a Safe Room.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Safe Room was a maintenance closet halfway down the stairs, dry, with a door that locked from the inside. I topped off Barnaby's water, checked the pump, and shut the door. Everything we installed stayed in that closet. That is the point of a Safe Room.
 
 ### Step 7: Check Your Pass to Amazon Nova 2 Lite (AWS)
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Every floor from 1 on talks to Amazon Nova. Find out now whether I will let you in, not halfway through [Floor 5](floor-5.md)."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Every floor from 1 on talks to Amazon Nova. Find out now whether I will let you in, not halfway through [Floor 5](floor-5.md)."
 
 The agents call Amazon Nova 2 Lite on Amazon Bedrock in us-west-2 with the AWS credentials already configured on the machine. With the environment active, send Amazon Nova 2 Lite one message:
 
@@ -234,7 +234,7 @@ A short reply such as `Ready` means Amazon Nova 2 Lite is reachable from every f
 | `AccessDeniedException` | the AWS role may not invoke Amazon Nova 2 Lite | open the Amazon Bedrock console in us-west-2, check model access for Amazon Nova 2 Lite, or ask your account admin for `bedrock:InvokeModel` on it |
 | `ValidationException` about the Amazon Nova 2 Lite model id | a different region or a typo | keep `region_name='us-west-2'` and the model id exactly as above |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** One word came back up the stairwell: ready. Not from Barnaby, not yet. From the model the Narrator runs on: Amazon Nova 2 Lite. That was enough. I clipped the bag to the frame, Barnaby wrapped two arms over my shoulders, and we went down.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One word came back up the stairwell: ready. Not from Barnaby, not yet. From the model the System AI runs on: Amazon Nova 2 Lite. That was enough. I clipped the tank to the frame, Barnaby wrapped two arms over my shoulders, and we went down.
 
 ## Floor Clear
 
@@ -251,10 +251,10 @@ Loot kept:
 <img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [Floor 1](floor-1.md) to create the first AI agent.
 
 
-> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[PEDANTIC LITTLE PIGGY]**
 >
 > Reward: You received a [Crawler's Trash Can]. Inside: a pair of unwashed socks, half a bottle of mana potion, and a sticky note that says "Sanctum is for nerds."
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Congratulations! You opened a terminal, checked your gear, out-waited a twenty-foot python, and did not immediately blow up your local environment. Don't get cocky. Next up is [Floor 1](floor-1.md), where you'll attempt to build your first AI agent. Try not to let the agent gain sentience and judge you."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Congratulations! You opened a terminal, checked your gear, out-waited a twenty-foot python, and did not immediately blow up your local environment. Don't get cocky. Next up is [Floor 1](floor-1.md), where you'll attempt to build your first AI agent. Try not to let the agent gain sentience and judge you."

@@ -63,7 +63,7 @@ def light_the_portal() -> None:
     pass
 
 
-SYSTEM_PROMPT = """You are Lady Luck, the System's croupier subroutine. Always use the roll_dice tool for every roll
+SYSTEM_PROMPT = """You are Lady Luck, the System AI's croupier subroutine. Always use the roll_dice tool for every roll
 and report the number it returns, in one sentence. Plain text only, no emoji."""
 
 ASK = "Roll one d20 for Cordula's Read the Room check."

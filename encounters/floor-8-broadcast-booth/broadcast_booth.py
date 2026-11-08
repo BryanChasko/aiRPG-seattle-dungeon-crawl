@@ -1,6 +1,6 @@
 """Floor 8 encounter, The Broadcast Booth: stamp each dance-off round with span attributes and read them back in Amazon CloudWatch.
 
-The System broadcasts every round, and a broadcast keeps a log. Here each round is danced through the shared
+The System AI broadcasts every round, and a broadcast keeps a log. Here each round is danced through the shared
 dance floor and traced: the agent's spans carry the round number and the Move Call, one span wraps the whole
 round and records who won, and the agent's metrics become a small receipt. Run under the AWS Distro for
 OpenTelemetry, the spans reach CloudWatch, where --read-back finds them again by those attributes.
@@ -39,7 +39,7 @@ def make_booth(round_number: int, move_call: str, crawler: str) -> Agent:
         model="us.amazon.nova-2-lite-v1:0",  # Amazon Nova 2 Lite, US cross-Region inference profile
         name="broadcast-booth",
         tools=[dance_round],
-        system_prompt=f"""You are Lady Luck, the System's croupier subroutine, calling round {round_number} of a dance-off against
+        system_prompt=f"""You are Lady Luck, the System AI's croupier subroutine, calling round {round_number} of a dance-off against
 {OPPONENT}. Call dance_round once with opponent="{OPPONENT}", move_call="{move_call}", crawler="{crawler}",
 opponent_modifier=2, tempo="Driving". Then report each side as die + modifier = total and name who took the round,
 in two sentences. Never roll or decide anything yourself. Plain text only, no emoji.""",

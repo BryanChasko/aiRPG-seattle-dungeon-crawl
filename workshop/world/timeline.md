@@ -1,6 +1,6 @@
 # The Timeline: Fourteen Days Under the Sound
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Fourteen days, Crawlers. The tide keeps one clock, the quarter keeps the other, and the octopus keeps a third that nobody likes to mention."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Fourteen days, Crawlers. The tide keeps one clock, the quarter keeps the other, and the octopus keeps a third that nobody likes to mention."
 
 The crawl runs fourteen Earth days. It starts when Pier 59 folds into Elliott Bay at 0551 on Wednesday, June 17, 2026, and ends at sunrise on Alki on Tuesday, June 30, the last day of the quarter. Every time on this page is Seattle time.
 
@@ -17,7 +17,7 @@ The dungeon floods on the Sound's schedule, so the tides below are the tides the
 | 5 | Sunday, June 21 | [4](../floor-4.md) | L 0537 4.1 ft, H 1042 7.6 ft, L 1633 2.2 ft, H 2335 11.8 ft | The solstice, the longest day of the year. The dice cross the Locks, and the Developer Advocate Swarm demos on the lock walls. |
 | 6 | Monday, June 22 | [5](../floor-5.md) | L 0637 2.8 ft, H 1224 7.3 ft, L 1732 4.0 ft | The Estuary floods twice a day. The first dance-off is against the Quarterly Close Accountants, a week before their quarter closes. |
 | 7 | Tuesday, June 23 | [5](../floor-5.md) | H 0013 11.5 ft, L 0730 1.6 ft, H 1414 7.8 ft, L 1841 5.7 ft | The party is registered, the rules are cited, and the Developer Advocate Swarm comes back from the Locks. |
-| 8 | Wednesday, June 24 | [6](../floor-6.md) | H 0051 11.1 ft, L 0815 0.6 ft, H 1545 8.9 ft, L 2004 6.9 ft | The Underground and the Fremont Troll. The aquarium had this day on its calendar as Barnaby's return to the Sound. |
+| 8 | Wednesday, June 24 | [6](../floor-6.md) | H 0051 11.1 ft, L 0815 0.6 ft, H 1545 8.9 ft, L 2004 6.9 ft | The Underground and the Fremont Troll. |
 | 9 | Thursday, June 25 | [7](../floor-7.md) | H 0128 10.7 ft, L 0855 -0.3 ft, H 1651 9.9 ft, L 2126 7.6 ft | The Bluffs. The party spends the night in a Safe Room. |
 | 10 | Friday, June 26 | [7](../floor-7.md) | H 0206 10.3 ft, L 0932 -0.9 ft, H 1741 10.7 ft, L 2234 7.9 ft | The Ferry-Line Commuter Horde takes the cliff path at dawn, and the party wakes up still knowing who it is. |
 | 11 | Saturday, June 27 | [8](../floor-8.md), [8.1](../floor-8-1.md) | H 0244 10.0 ft, L 1007 -1.3 ft, H 1821 11.2 ft, L 2326 8.0 ft | Bellevue and the Narrows. The dice server goes to the cloud. The bankers are working the weekend. |
@@ -37,11 +37,10 @@ The dungeon floods on the Sound's schedule, so the tides below are the tides the
 | Who | Born | Age on Day 1 | How long the species lives |
 |---|---|---|---|
 | Cordula "Core" Vance | March 3, 1997, in Ballard | 29 | |
-| Barnaby | hatched about April 2023, off Possession Point | about 3 years and 2 months | three to five years |
+| Barnaby | hatched spring 2023, somewhere in the Sound | past three years | three to five years |
 | Shelly | spawned in the summer of 1966, in Elliott Bay | 59 | geoducks can live well past a century |
 | Chonks | hatched April 2025, on a bull kelp holdfast | 14 months | not well studied |
-| The Narrator | switched on for this season at 0551 on Day 1 | its first season on Earth | as long as the show runs |
-| The System AI | it claims a thousand years without sleep | older than the Narrator | until the show is cancelled |
+| The System AI | switched on for this season at 0551 on Day 1 | its first season on Earth | as long as the show runs |
 
 The full character sheets are in [The Cast](cast.md).
 
@@ -49,13 +48,18 @@ The full character sheets are in [The Cast](cast.md).
 
 | Date | What happened |
 |---|---|
+| November 7, 1940 | The first Tacoma Narrows Bridge, Galloping Gertie, collapses in a windstorm. The wreck becomes one of the largest artificial reefs in the world |
 | Summer 1966 | Shelly spawns in Elliott Bay and settles on a sand flat |
 | 1968 | Shelly digs in two feet deep and stops moving |
 | 1990 | The Fremont Troll goes up under the Aurora Bridge |
+| 1992 | The Gertie wreck is listed on the National Register of Historic Places to protect it from salvagers |
 | March 3, 1997 | Cordula is born in Ballard |
 | February 28, 2001 | The [Nisqually earthquake](https://en.wikipedia.org/wiki/2001_Nisqually_earthquake) shakes Seattle. Shelly sits through it. Cordula, almost four, remembers the dishes |
+| Spring 2023 | Barnaby hatches somewhere in the Sound |
+| August 12, 2024 | Cordula logs an unconfirmed sighting at the Gertie wreck |
+| October 3, 2024 | Cordula logs an unconfirmed sighting under Pier 57 |
 | 2007 | Cordula learns to paddle at Shilshole, age ten |
 | 2016 | Cordula enlists in the Marine Corps Reserve, age nineteen |
-| About April 2023 | Barnaby hatches off Possession Point |
-| April 2025 | Barnaby walks into a crab pot off Mukilteo and goes to the aquarium on Pier 59. Chonks hatches on a bull kelp holdfast |
+| February 19, 2026 | Cordula logs another unconfirmed sighting at the Gertie wreck |
+| April 2025 | Chonks hatches on a bull kelp holdfast |
 | June 17, 2026, 0551 | The pier folds |

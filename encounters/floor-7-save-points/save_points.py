@@ -24,8 +24,8 @@ from strands.storage import LocalFileStorage
 SAVE_DIR = Path(tempfile.gettempdir()) / "save-points"  # the file and snapshot save points land under here
 REGION = "us-west-2"
 
-SYSTEM_PROMPT = """You are the System, the sardonic broadcast AI of a dungeon crawl under Seattle. Answer from the
-conversation only: if a fact is not in it, say the System has lost it. One sentence.
+SYSTEM_PROMPT = """You are the System AI, the sardonic broadcast AI of a dungeon crawl under Seattle. Answer from the
+conversation only: if a fact is not in it, say the System AI has lost it. One sentence.
 Plain text only, no emoji."""
 
 TELL = "Safe Room on the bluffs, under the madrones. The code word for the ferry gate is Heron. Remember it."
@@ -63,16 +63,16 @@ def make_player(manager) -> Agent:
 
 
 def play(label: str, make_manager):
-    """Tell the System a secret, drop the agent, start a new one on the same save point and ask for it back."""
+    """Tell the System AI a secret, drop the agent, start a new one on the same save point and ask for it back."""
     print(f"\n{label}")
     first = make_player(make_manager())
     print(f"  Cordula: {TELL}")
-    print(f"  the System: {str(first(TELL)).strip()}")
+    print(f"  the System AI: {str(first(TELL)).strip()}")
     second_manager = make_manager()
     second = make_player(second_manager)  # restored while it is built: no model call yet
     print(f"  a new agent, built on the same save point, already holds {len(second.messages)} messages")
     print(f"  Cordula: {ASK}")
-    print(f"  the System: {str(second(ASK)).strip()}")
+    print(f"  the System AI: {str(second(ASK)).strip()}")
     return second_manager, second
 
 

@@ -1,14 +1,14 @@
-# Side Passage: The System Holds Grudges (Floor 7 Sidequest)
+# Side Passage: The System AI Holds Grudges (Floor 7 Sidequest)
 
 [Back to Floor 7](../floor-7.md) | [All encounters](README.md) | [Dungeon map](../README.md) <!-- floor-nav -->
 
 Files on this side passage: [`encounters/floor-7-system-holds-grudges/system_holds_grudges.py`](../../encounters/floor-7-system-holds-grudges/system_holds_grudges.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, SIDE PASSAGE OFF FLOOR 7.** The Safe Room on the bluffs takes the conversation and gives back a blank page. I know the drill from the Reserve: when the radio net goes down, I do not trust anyone's memory, I trust the logbook. So I wanted a logbook. Not the whole transcript, which is a pile. Just the entries: who became a friend, who owes us, who is not forgiven. Pat the accountant, for one, who shook my hand after the Estuary dance-off and handed me a Ferry Token. And the Pitch-Deck Founder, who stood on Shelly's siphon. Barnaby wants that grudge in ink.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, SIDE PASSAGE OFF FLOOR 7.** The Safe Room on the bluffs takes the conversation and gives back a blank page. I know the drill from the Reserve: when the radio net goes down, I do not trust anyone's memory, I trust the logbook. So I wanted a logbook. Not the whole transcript, which is a pile. Just the entries: who became a friend, who owes us, who is not forgiven. Pat the accountant, for one, who shook my hand after the Estuary dance-off and handed me a Ferry Token. And the Pitch-Deck Founder, who stood on Shelly's siphon. Barnaby wants that grudge in ink.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The System AI does not forget, Crawlers. The System AI merely borrows the Narrator's memory, and the Narrator loses it every time the Safe Room closes. Hand the Narrator a clerk and a folder and I will hold a grudge for as long as the folder lasts. Keep the folder somewhere dry."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The System AI does not forget, Crawlers. The System AI merely borrows the Narrator's memory, and the Narrator loses it every time the Safe Room closes. Hand the Narrator a clerk and a folder and I will hold a grudge for as long as the folder lasts. Keep the folder somewhere dry."
 
 ## The Brief
 
@@ -66,7 +66,7 @@ from strands.vended_memory_stores.file_memory_store.store import FileMemoryStore
 
 `ModelExtractor(model=..., system_prompt=...)` is an Amazon Nova 2 Lite call with one job: read a transcript, return the facts. The clerk uses whichever model the code names. Leave the model out and the clerk borrows the Narrator agent's model, also Amazon Nova 2 Lite here, but a clerk with a model named in the code is a clerk that can be swapped alone. `BedrockModel(model_id=...)` configures a model object when a string is not enough. The prompt is `EXTRACT_PROMPT`: it says what a fact is (a friend, a debt, a grudge) and what to skip (questions, small talk). The extractor adds its own output rule after `EXTRACT_PROMPT`, so no prompt can break the format.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Every unit has a clerk. Mine reads the whole shift log and writes down three lines. The skill is what the clerk leaves out. I told this one: friends, debts, grudges. Questions are not entries. Barnaby said that briefing was the first time anyone had made a filing system sound like a chain of command.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Every unit has a clerk. Mine reads the whole shift log and writes down three lines. The skill is what the clerk leaves out. I told this one: friends, debts, grudges. Questions are not entries. Barnaby said that briefing was the first time anyone had made a filing system sound like a chain of command.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -115,7 +115,7 @@ def make_store(extractor):
 
 `MemoryManager(stores=[store])`. Two defaults do the rest. `injection=True` searches the store before every Amazon Nova 2 Lite call, using the latest user message as the query, and prepends what the search finds. `search_tool_config=True` also gives the agent a `search_memory` tool, so the agent can search memory on purpose. Pass the manager to the agent as `memory_manager=`, which `make_system` already does.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Second campaign, same Safe Room, a blank Narrator. I asked which accountant I could trust. The System AI said Pat, and the Estuary, and the Ferry Token, in two sentences, from a file the Narrator had never seen in this life. Then I asked about the Founder and the System AI went quiet in a way I can only call pleased. The System AI holds a grudge better than any sergeant I served under.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Second campaign, same Safe Room, a blank Narrator. I asked which accountant I could trust. The System AI said Pat, and the Estuary, and the Ferry Token, in two sentences, from a file the Narrator had never seen in this life. Then I asked about the Founder and the System AI went quiet in a way I can only call pleased. The System AI holds a grudge better than any sergeant I served under.
 
 <details>
 <summary>Show me the code for Step 4</summary>
@@ -182,7 +182,7 @@ Loot to keep:
 - A `FileMemoryStore` keeps one Markdown file per topic, where you can read it
 - Memory is not a session: a session keeps what was said, memory keeps what was learned
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[THE LEDGER NEVER LIES]**
 >

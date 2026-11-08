@@ -1,17 +1,17 @@
 # Dance-Offs
 
-Conflict in the crawl is settled by a dance-off, never by violence. Opponents are people the Narrator dropped into the dungeon; the opponents want to win, not to hurt anyone.
+Conflict in the crawl is settled by a dance-off, never by violence. Opponents are people the System AI dropped into the dungeon; the opponents want to win, not to hurt anyone.
 
 Procedure:
 
-1. Tempo. The Narrator sets the tempo and the System AI announces it; the tempo sets the opponent's base bonus: Steady (opponent adds +0), Driving (+2) or Frantic (+4).
-2. Move Calls. A dance-off has three rounds. Each round the Narrator decides a Move Call and the System AI announces it; the Move Call names an ability: Power (Strength), Footwork (Dexterity), Endurance (Constitution), Choreography (Intelligence), Read the Room (Wisdom) or Presence (Charisma). The Narrator never calls the same move twice in a row.
+1. Tempo. The System AI sets the tempo and announces it; the tempo sets the opponent's base bonus: Steady (opponent adds +0), Driving (+2) or Frantic (+4).
+2. Move Calls. A dance-off has three rounds. Each round the System AI decides a Move Call and announces it; the Move Call names an ability: Power (Strength), Footwork (Dexterity), Endurance (Constitution), Choreography (Intelligence), Read the Room (Wisdom) or Presence (Charisma). The System AI never calls the same move twice in a row.
 3. Rolls. The Crawler rolls 1d20 plus the called ability modifier. The opponent rolls 1d20 plus the opponent's own ability modifier plus the tempo bonus. Every roll goes through roll_dice.
 4. Assists. Each round, one party member who is not dancing may assist: +2 to the dancer's roll, or use one ability that fits the Move Call (an Ink Cloud during Footwork, an Eight-Point Hold that keeps an opponent from answering the Move Call).
 5. Round result. The higher total wins the round. The loser loses Groove equal to the difference, at least 1 and at most 6. A tied round goes to the Final Beat.
 6. The winner is whoever takes two of three rounds. If the rounds end level, the Final Beat decides.
 
-Winning a dance-off: the opponent leaves the floor, often relieved, the party gains Hype, and the System may drop a loot box. Losing: the party loses Groove and the System announces the loss with relish.
+Winning a dance-off: the opponent leaves the floor, often relieved, the party gains Hype, and the System AI may drop a loot box. Losing: the party loses Groove and the System AI announces the loss with relish.
 
 Statuses that change dance-off rolls:
 
