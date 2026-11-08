@@ -600,12 +600,11 @@ Watch the four terminals while a request runs. In the Narrator terminal the tool
 
 [The Paper Trail](encounters/paper-trail.md), a sidequest: read the accountant's audit report with `pypdf` and add it to the Rules Agent's knowledge base, so the Rules Agent cites it by page like any handbook section.
 
-## Boss Battles: The Quarterly Earnings Call and The Developer Advocate Swarm (optional)
+## Boss Battle: The Developer Advocate Swarm (optional)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The accountant came back with a conference line, an investment banker and a Regional Managing Director. Behind them, the Developer Advocate Swarm had found better lighting. Two boss fights, and the same lesson from opposite ends: who decides who goes next.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Developer Advocate Swarm followed us down from the Locks, with better lighting this time. Four of them, one mic, and nobody deciding who went next.
 
-- [The Quarterly Earnings Call](encounters/quarterly-earnings-call.md): the accountant reviews, the banker spins, the Regional Managing Director signs off. A graph with fixed edges, and a condition on each edge: the call only goes on if the party took the last round
-- [The Developer Advocate Swarm](encounters/developer-advocate-swarm.md): keynote, live demo, livestream and swag table pass the mic themselves, as a swarm. The party wins by out-dancing whoever holds it
+[The Developer Advocate Swarm](encounters/developer-advocate-swarm.md): keynote, live demo, livestream and swag table pass the mic themselves, as a Strands swarm. The party wins by out-dancing whoever holds it. Its opposite, a graph whose order your code draws, waits on Floor 8: [The Quarterly Earnings Call](encounters/quarterly-earnings-call.md).
 
 ## Floor Clear
 

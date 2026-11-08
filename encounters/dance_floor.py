@@ -1,8 +1,9 @@
-"""The dance floor both Floor 5 boss battles share: one round of a dance-off, rolled and scored in code.
+"""The dance floor every dance-off encounter shares: one round of a dance-off, rolled and scored in code.
 
-Given code, nothing to complete. The rules are the Crawl Handbook's (Dance-Offs, The Final Beat), and
-every number is decided here, never by the model: the Floor 3 lesson. Each round lands on the
-scoreboard, which the boss battles read to decide what happens next.
+Given code, nothing to complete. It sits in encounters/, one folder above the encounters that use it,
+which add that folder to their import path. The rules are the Crawl Handbook's (Dance-Offs, The Final
+Beat), and every number is decided here, never by the model: the Floor 3 lesson. Each round lands on
+the scoreboard, which the boss battles read to decide what happens next.
 """
 
 import random
