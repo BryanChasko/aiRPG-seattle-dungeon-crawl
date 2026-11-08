@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-7-context-flood/context_flood.py`](../../encounters/floor-7-context-flood/context_flood.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 7.** Sixty turns. That is how long the campaign had run by the time we reached the bottom of the bluffs, and the System was carrying every word of it, every roll, every opponent, every bad joke, on every single call. The System was getting slow, and every call was getting expensive, and the tide was coming up the cliff path. Somebody had to decide what the System could afford to forget. Barnaby had one condition. "Whatever goes, Sergeant, our names stay."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAYS 9 AND 10, THURSDAY, JUNE 25 TO FRIDAY, JUNE 26, SIDE PASSAGE OFF FLOOR 7.** Sixty turns. That is how long the campaign had run by the time we reached the bottom of the bluffs, and the Narrator was carrying every word of it, every roll, every opponent, every bad joke, on every single call. The Narrator was getting slow, and every call was getting expensive, and the tide was coming up the cliff path. Somebody had to decide what the Narrator could afford to forget. Barnaby had one condition. "Whatever goes, Sergeant, our names stay."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Boss battle: the Context Flood. The Context Flood has no face and no lanyard. It is sixty turns of the party's own campaign, coming back to drown you. Choose what I forget, Crawlers. Choose badly and I forget you."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Boss battle: the Context Flood. The Context Flood has no face and no lanyard. It is sixty turns of the party's own campaign, coming back to drown you. Choose what the Narrator forgets, Crawlers. Choose badly and the Narrator forgets you."
 
 ## The Brief
 
@@ -74,7 +74,7 @@ Replace the `return None` under the TODO.
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The window is how I pack for a long patrol: the last ten days of supplies, and the rest stays on the dock. The window works until I need a note from day one. On day sixty-one, the System could not tell me my own Constitution score. The System said it had lost the score. At least the System did not guess.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The window is how I pack for a long patrol: the last ten turns of supplies, and the rest stays on the dock. The window works until I need a note from turn one. On turn sixty-one, the Narrator could not tell me my own Constitution score. It said, in the System AI's voice, that it had lost the score. At least the Narrator did not guess.
 
 ## Step 3: Pin the Cast Sheets
 
@@ -82,7 +82,7 @@ Replace the `return None` under the TODO.
 # TODO: Step 3 - Pin messages 0 and 1 with pin_message
 ```
 
-Message 0 is the cast sheets, message 1 the System's receipt for them. Pin both: a conversation must keep its user and assistant messages in pairs, and a pinned pair stays a pair. If the messages to keep are known from the start, both conversation managers also take `pin_first=2`, which pins the first two messages.
+Message 0 is the cast sheets, message 1 the Narrator's receipt for them. Pin both: a conversation must keep its user and assistant messages in pairs, and a pinned pair stays a pair. If the messages to keep are known from the start, both conversation managers also take `pin_first=2`, which pins the first two messages.
 
 <details>
 <summary>Show me the code for Step 3</summary>
@@ -125,7 +125,7 @@ def summarizing():
 python context_flood.py
 ```
 
-Check: three blocks. The first two are the same on every run; the third depends on the summary Amazon Nova 2 Lite writes, and the System's answers vary in wording:
+Check: three blocks. The first two are the same on every run; the third depends on the summary Amazon Nova 2 Lite writes, and the Narrator's answers vary in wording:
 
 ```
 SLIDING WINDOW, nothing pinned
@@ -154,13 +154,13 @@ Amazon Nova 2 Lite writes the summary, so the summarizing Narrator's answer is t
 | `cast sheets still first: False` in the second block | the pins are missing | Step 3 |
 | `40 messages` after the flood in the third block | `summarizing()` returned `None`, so the default window ran | Step 4 |
 | `122 messages -> 122 messages` in the third block | the summary call failed: the summary call is best-effort and logs a warning instead of stopping | check the AWS credentials as in [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
-| a Constitution score other than 16 | the System guessed | the Narrator prompt forbids guessing; if it happens with the sheets pinned, run the script again |
+| a Constitution score other than 16 | the Narrator guessed | the Narrator prompt forbids guessing; if it happens with the sheets pinned, run the script again |
 
 ## What It Costs
 
 The flood is a bill before it is a crash. Take one campaign turn: say each turn adds 1,000 tokens to the history and makes four Amazon Nova 2 Lite calls, each resending a 5,000-token base of system prompt and tool specifications. Turn 60 then sends about 4 x (5,000 + 60,000) = 260,000 input tokens. Over all sixty turns, with no manager, the total comes to about 8.5 million input tokens: about $2.56 at Amazon Nova 2 Lite's $0.30 per million ([Floor 1](../floor-1.md#what-a-turn-costs)). With a 20-message window the history never passes 10,000 tokens, every call stays under 15,000, and the same sixty turns cost about $1.03 in input. The summarizing manager costs one extra Amazon Nova 2 Lite call per reduction, a few cents, to keep the history the window drops. The flood in this file is small: the three runs cost under a cent together.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The third Narrator wrote itself a page of notes on everything before day fifty, kept the last ten days whole, and kept our cast sheets nailed to the front. I asked the Narrator anything and it answered. Barnaby asked the Narrator what it remembered about the first morning. The Narrator said: a woman with a boat, and an octopus with a collar. That was enough for him. The tide reached the cliff path and went back down, and the Commuter Horde went by in the fog, and nobody forgot anybody.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The third Narrator wrote itself a page of notes on everything before turn forty-eight, kept the last dozen turns whole, and kept our cast sheets nailed to the front. I asked the Narrator anything and it answered. Barnaby asked the Narrator what it remembered about the first morning. The Narrator said: a woman with a boat, and an octopus with a collar. That was enough for him. The tide reached the cliff path and went back down, and the Commuter Horde went by in the fog, and nobody forgot anybody.
 
 ## Encounter Clear
 

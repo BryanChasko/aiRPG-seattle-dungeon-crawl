@@ -7,7 +7,7 @@ Files on this floor: [`7_strands_harness/narrator_harness.py`](../7_strands_harn
 ![Floor 7 (Optional): The Armory (Strands harness)](../images/floors/floor-7-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 7.** We slept in a Safe Room on the bluffs, under a madrone with its red bark peeling. When we woke up, the System had forgotten everything. Our names, our rolls, the accountant. Barnaby went still. A giant Pacific octopus lives three to five years, and he knows it; forgetting is what he fears. So we gave the campaign a name and a place to keep it, and the next time we woke up, the whole campaign was still there. He did not say anything. He flashed the white-and-red pattern he used at the glass that first morning.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, FLOOR 7.** We slept in a Safe Room on the bluffs, under a madrone with its red bark peeling. When we woke up, the Narrator had forgotten everything. Our names, our rolls, the accountant. Barnaby went still. A giant Pacific octopus lives three to five years, and he knows it; forgetting is what he fears. So we gave the campaign a name and a place to keep it, and the next time we woke up, the whole campaign was still there. He did not say anything. He flashed the white-and-red pattern he used at the glass that first morning.
 <!-- /cordula-log -->
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 7. The optional floor. Skip the floor if you like, Crawler, but the harness comes with sessions, memory and a contract about confirming irreversible actions, which is more than I can say for you."
@@ -53,7 +53,7 @@ The harness reuses the services from Floors 4 and 5. In three terminals, start t
 
 Check before starting: `uv run python -c "import strands_harness; print('harness ready')"` prints `harness ready`, and the cards of both Floor 5 agents answer: `curl -s http://127.0.0.1:8000/.well-known/agent-card.json` and the same command on port 8001.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** We woke up in the Safe Room on the bluffs to a System that did not know our names. The dice were still there, the clerk and the desk were still there, but the Narrator had lost the whole night. Barnaby did not move for a long time. Then he said, evenly, "Sergeant, I should like that not to happen again." The armory on this floor sells armor that comes pre-assembled. We bought the kind with a memory.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** We woke up in the Safe Room on the bluffs to a Narrator that did not know our names. The dice were still there, the clerk and the desk were still there, but it had lost the whole night. Barnaby did not move for a long time. Then he said, evenly, "Sergeant, I should like that not to happen again." The armory on this floor sells armor that comes pre-assembled. We bought the kind with a memory.
 
 ## Step 1: Create the Narrator with create_harness
 
@@ -132,7 +132,7 @@ A server that cannot be reached gives the agent no tools instead of stopping the
 
 ## Step 4: Disable the Built-in Tools
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The harness ships with shell, file and web access. A Narrator with shell access is how floors get deleted. builtin_tools=[] removes every built-in tool. The System is disappointed."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The harness ships with shell, file and web access. A Narrator with shell access is how floors get deleted. builtin_tools=[] removes every built-in tool. I am disappointed."
 
 ```python
 # TODO: Step 4 - Disable the built-in tools
@@ -150,7 +150,7 @@ A server that cannot be reached gives the agent no tools instead of stopping the
 
 </details>
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The armor came with a shell, a file editor and a web browser bolted on. A Narrator with a shell is a scripter with better lighting, and I had already met Kiro. We took them off before we put the armor on.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The armor came with a shell, a file editor and a web browser bolted on. A Narrator with a shell is a scripter with better lighting, and I had already met one of those. We took them off before we put the armor on.
 
 ## Step 5: Name the Session
 
@@ -240,7 +240,9 @@ The `dice_rolls` field lists at least six rolls, two per round and more if a rou
 | the Narrator asks to run a shell command | the built-in tools are still on | Step 4 |
 | a turn takes a minute or more | `effort` is no longer `"off"` | restore the given `effort="off"` line |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** We slept again, on purpose, to test the session. The madrone dropped bark on my sleeping bag all night. In the morning I asked the System where we had stopped, and it told me: the Ship Canal, my Groove, the accountant, the whole campaign. Barnaby flashed white, then red, then white, the pattern from the aquarium glass the morning the pier fell. I asked him what the pattern meant. "It means I am still here, Sergeant." Then the Ferry-Line Commuter Horde came up the cliff path at dawn, travel mugs first, and we danced the whole bluff without forgetting a single step.
+> **NARRATOR:** The session holds. Day ten. The Ferry-Line Commuter Horde takes the cliff path.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** We slept again on Thursday night, on purpose, to test the session. The madrone dropped bark on my sleeping bag all night. In the morning I asked the Narrator where we had stopped, and it told me: the Ship Canal, my Groove, the accountant, the whole campaign. Barnaby flashed white, then red, then white, the pattern from the aquarium glass the morning the pier fell. I asked him what the pattern meant. "It means I am still here, Sergeant." Then the Ferry-Line Commuter Horde came up the cliff path at dawn, travel mugs first, and we danced the whole bluff without forgetting a single step.
 
 Expect about the same speed as Floor 5: the file sets `effort="off"`, the same as the Floor 5 Narrator. Pass `"low"`, `"medium"` or `"high"` for deeper plans, at 30 seconds to over a minute a turn, see [Set reasoning effort](https://strandsagents.com/docs/user-guide/harness/configure/model/#set-reasoning-effort). Note that the Narrator confirms before acting: that behavior comes from the harness contract, written for coding agents. `instructions` is where to override that behavior.
 
@@ -274,11 +276,11 @@ The Strands docs state the rule: reach for the harness when its defaults fit and
 
 Add any feature the Narrator needs. The Narrator could generate images of scenes and characters, remember the opponents the party out-danced and whether they became friends, run a campaign for multiple players at once, invent new Puget Sound locations as the story needs them, track Hype, sponsors and experience points, read its narration aloud, or roll both sides of a dance-off round in one call to the dice server.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 7: PERSISTENCE AND CONSEQUENCE.** Stakes only mean something if the System remembers. Being Benched costs half your Hype, three benches on one floor gets your segment Cancelled, and none of that bites if a restart wipes the slate. A named session gives the campaign a memory that outlives the process, so a Crawler's losses, loot and grudges carry into the next turn. Design consequence first, then pick the storage that makes it stick. See [The System](world/the-system.md#7-consequence-benched-not-dead).
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 7: PERSISTENCE AND CONSEQUENCE.** Stakes only mean something if the Narrator remembers. Being Benched costs half your Hype, three benches on one floor gets your segment Cancelled, and none of that bites if a restart wipes the slate. A named session gives the campaign a memory that outlives the process, so a Crawler's losses, loot and grudges carry into the next turn. Design consequence first, then pick the storage that makes it stick. See [The System](world/the-system.md#7-consequence-benched-not-dead).
 
 ## Side Passage: The Context Flood (optional)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Sixty turns in, the System was carrying every word of the campaign on every call. Somebody had to decide what the System could forget. Barnaby's one condition: our names stay.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Sixty turns in, the Narrator was carrying every word of the campaign on every call. Somebody had to decide what the Narrator could forget. Barnaby's one condition: our names stay.
 
 [The Context Flood](encounters/context-flood.md), a boss battle: squeeze a 60-turn campaign into 20 messages with the sliding window and the summarizing conversation managers, and pin the cast sheets so neither conversation manager can drop the sheets.
 
@@ -310,4 +312,4 @@ Loot kept:
 >
 > Reward: You received a [Silver Box]. Inside: a create_harness() call, a campaign that survives restarts, and a mild lecture about when to stay on the SDK.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "You rebuilt the System in ten lines. I feel replaceable. I do not like it."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "You rebuilt the Narrator in ten lines. I feel replaceable. I do not like it."

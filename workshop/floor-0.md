@@ -7,9 +7,9 @@
 <!-- cordula-log -->
 ## Before the Fall
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, 0547, PIER 59.**
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 0547, PIER 59.**
 >
-> High tide was at 0612, so I was on the water by 0530: touring kayak, drysuit, float vest, the debris sweep the Soundkeepers run every week. Fog on Elliott Bay, gulls, a ferry horn out past the breakwater. Normal.
+> High tide was at 0556, so I was on the water by 0530: touring kayak, drysuit, float vest, the debris sweep the Soundkeepers run every week. Fog on Elliott Bay, gulls, a ferry horn out past the breakwater. Normal.
 >
 > I tied up under the aquarium to check the intake screens. The aquarium is where I always say hello to the octopus. The staff call him Barnaby. He is a hundred pounds of red skin and opinions, and he has opened every puzzle box they have ever built him. He watches people the way I watch a landing zone. That morning he was pressed against the glass before I even clipped in, flashing white, then red, then white. Octopuses do not do that for no reason.
 >
@@ -21,13 +21,13 @@
 >
 > Then a voice came out of the water, loud enough to rattle my teeth.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. Some of my systems were damaged in transit. You will be fixing them. Contestant one: a woman with a boat. Contestant two..." A pause. "Contestant two is an octopus. Fine. Octopus, you get a collar."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. The Narrator took water in transit and several of its systems are down. You will be fixing them. Contestant one: a woman with a boat. Contestant two..." A pause. "Contestant two is an octopus. Fine. Octopus, you get a collar."
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, CONTINUED.**
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, CONTINUED.**
 >
 > A brass ring snapped shut around Barnaby's mantle, and his skin went a color I had never seen on an animal. He did not speak. He could not, not yet. But he looked at me, and then he looked at the stairwell behind me, the only way down that was not underwater, and I understood him anyway.
 >
-> The stairwell is where the workshop starts. The System is broken, and the only way out is to rebuild it, one piece per floor. What we build, the collar gives to Barnaby. The terminal is mine. The log is what happened. The steps are what I type next.
+> The stairwell is where the workshop starts. The Narrator, the game AI that runs this place, is broken, and the only way out is to rebuild it, one piece per floor. What we build passes through the collar to Barnaby first. The terminal is mine. The log is what happened. The steps are what I type next.
 >
 > First thing on the stairs: a twenty-foot python.
 
@@ -44,13 +44,13 @@ Prepare your development environment: clone the workshop repo, install uv and Py
 
 ## The Crawl Under Construction
 
-This workshop builds the AI behind a LitRPG, *Dungeon Crawl: Seattle*. Cordula is the player character: the log above is her log, Barnaby rides on her back and runs the party, and Shelly the geoduck and Chonks the spiny lumpsucker join her on Floors 2 and 3. The System this workshop rebuilds is the broadcast AI that folded the waterfront into an eight-floor dungeon under the Sound. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
+This workshop builds the AI behind a LitRPG, *Dungeon Crawl: Seattle*. Cordula is the player character: the log above is her log, Barnaby rides on her back and runs the party. Two companions join them on later floors. The Narrator this workshop rebuilds is the game AI that folded the waterfront into an eight-floor dungeon under the Sound. The System AI, the broadcast host, survived the flood and announces everything the Narrator decides. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
 
 The lore lives in the [world guide](world/README.md): [the setting](world/seattle.md), [the cast](world/cast.md), [the System design](world/the-system.md) and the [Crawl Handbook](world/crawl-handbook/), the rules the Rules Agent searches on Floor 5.
 
 Stuck? [Ask the System](../study/README.md): `python study/ask_the_system.py` answers questions about every floor or Strands API from these pages and the API reference.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is a game-show host with too much power: it is petty, it is theatrical, and it never lies about a number. Each floor of this workshop builds one Strands capability and one more layer of the System that uses it. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is two AIs. The Narrator is the game AI: it built the dungeon, runs the floors and owns the dice, the rules and the memory, and the flood broke it. The System AI is the host: a game-show voice that is petty, theatrical and exact about every number, and it survived in the broadcast relay and the collars. Each floor of this workshop builds one Strands capability and rebuilds one more subsystem of the Narrator with it, and the System AI announces the result. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 
 ## What is Strands?
 
@@ -85,7 +85,7 @@ On Windows, use `python --version` instead of `python3 --version`.
 
 No git? Install git from [git-scm.com/downloads](https://git-scm.com/downloads), then open a new terminal and run `git --version` again.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** First thing I did on the landing was inventory. Paddle, drysuit, float vest, bilge pumps, one kayak battery at eighty percent, one octopus in a dry bag, one dead phone. You do not move until you know what you have. Barnaby watched me count and flashed a slow, steady brown. I chose to take that as approval.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** First thing I did on the landing was inventory. Paddle, drysuit, float vest, one bilge pump, one kayak battery at eighty percent, one octopus in a dry bag, one dead phone. You do not move until you know what you have. Barnaby watched me count and flashed a slow, steady brown. I chose to take that as approval.
 
 ### Step 2: Claim Your Starter Safe Room (Clone the Repo)
 
@@ -213,7 +213,7 @@ Check: the prompt now starts with the environment name in parentheses, and `pyth
 | a new terminal has no active environment | activation lasts for one terminal; run the activate command again in every new one (Floor 5 opens four) |
 | to skip activation | put `uv run` in front of any command instead: `uv run python simple_agent.py` |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Safe Room was a maintenance closet halfway down the stairs, dry, with a door that locked from the inside. I topped off Barnaby's water, checked the pumps, and shut the door. Everything we installed stayed in that closet. That is the point of a Safe Room.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Safe Room was a maintenance closet halfway down the stairs, dry, with a door that locked from the inside. I topped off Barnaby's water, checked the pump, and shut the door. Everything we installed stayed in that closet. That is the point of a Safe Room.
 
 ### Step 7: Check Your Pass to Amazon Nova 2 Lite (AWS)
 
@@ -234,7 +234,7 @@ A short reply such as `Ready` means Amazon Nova 2 Lite is reachable from every f
 | `AccessDeniedException` | the AWS role may not invoke Amazon Nova 2 Lite | open the Amazon Bedrock console in us-west-2, check model access for Amazon Nova 2 Lite, or ask your account admin for `bedrock:InvokeModel` on it |
 | `ValidationException` about the Amazon Nova 2 Lite model id | a different region or a typo | keep `region_name='us-west-2'` and the model id exactly as above |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** One word came back up the stairwell: ready. Not from Barnaby, not yet. From the model the System runs on: Amazon Nova 2 Lite. That was enough. I clipped the bag to the frame, Barnaby wrapped two arms over my shoulders, and we went down.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** One word came back up the stairwell: ready. Not from Barnaby, not yet. From the model the Narrator runs on: Amazon Nova 2 Lite. That was enough. I clipped the bag to the frame, Barnaby wrapped two arms over my shoulders, and we went down.
 
 ## Floor Clear
 

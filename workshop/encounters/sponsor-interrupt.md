@@ -5,7 +5,7 @@
 Files on this side passage: [`encounters/floor-6-sponsor-interrupt/sponsor_interrupt.py`](../../encounters/floor-6-sponsor-interrupt/sponsor_interrupt.py), [`web/src/components/SponsorDealDialog.vue`](../../web/src/components/SponsorDealDialog.vue), [`web/src/composables/useGameApi.ts`](../../web/src/composables/useGameApi.ts), [`web/src/stores/gameStore.ts`](../../web/src/stores/gameStore.ts), [`web/src/views/GameView.vue`](../../web/src/views/GameView.vue) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 6.** The Pitch-Deck Founder caught us between rounds with a clicker in one hand and a contract in the other. The Bellevue Consortium pays for the opponents, and the Consortium had a deal for us: wear the logo for a floor, receive a box. The Troll said nothing. Barnaby read the first line out loud and then the System cut in and held the clock. Here is what I learned. The System can stop the turn. It cannot answer for us. When the deal came, the turn waited on me, and I took my time.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, SIDE PASSAGE OFF FLOOR 6.** The Pitch-Deck Founder caught us between rounds with a clicker in one hand and a contract in the other. The Bellevue Consortium pays for the opponents, and the Consortium had a deal for us: wear the logo for a floor, receive a box. The Troll said nothing. Barnaby read the first line out loud and then the System AI cut in and held the clock. Here is what I learned. The System AI can stop the turn. It cannot answer for us. When the deal came, the turn waited on me, and I took my time.
 <!-- /cordula-log -->
 
 > <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "A sponsor is on the line. The broadcast is holding. Please enjoy this tasteful pause while the Crawler reads the terms. The terms are long. The audience is patient. The audience is not as patient."
@@ -25,7 +25,7 @@ Files on this side passage: [`encounters/floor-6-sponsor-interrupt/sponsor_inter
 
 An interrupt pauses the agent loop and hands a question to a human. Strands calls this pause human-in-the-loop. A hook calls `event.interrupt(name, reason=...)`. On the first call, no answer exists yet: the loop stops, and the agent result comes back with `stop_reason == "interrupt"` and a list of `interrupts`, each with an `id`, the `name` and `reason` the hook passed. To resume, call the same agent again with a list of `interruptResponse` blocks, one per interrupt, holding the `id` and the answer. The hook runs a second time, and this time `event.interrupt(...)` returns the answer instead of stopping. See [Interrupts](https://strandsagents.com/docs/user-guide/sdk/interrupts/).
 
-Here the interrupt guards a tool. The Narrator in this folder is the Floor 5 Narrator, copied and extended, with one new tool, `sponsor_offer(sponsor, offer, reward, cost)`, which the System calls when a sponsor makes a deal. A hook on `BeforeToolCallEvent` runs immediately before any tool and, for `sponsor_offer`, raises the interrupt. If the player accepts, the tool runs. If the player refuses, the hook cancels the tool with a message, and the System retells the refusal.
+Here the interrupt guards a tool. The Narrator in this folder is the Floor 5 Narrator, copied and extended, with one new tool, `sponsor_offer(sponsor, offer, reward, cost)`, which the Narrator calls when a sponsor makes a deal, and which the System AI announces. A hook on `BeforeToolCallEvent` runs immediately before any tool and, for `sponsor_offer`, raises the interrupt. If the player accepts, the tool runs. If the player refuses, the hook cancels the tool with a message, and the Narrator retells the refusal in the System AI's voice.
 
 The route work is a protocol with the web interface:
 
@@ -36,7 +36,7 @@ The route work is a protocol with the web interface:
 
 When a turn pauses, `response` is a short holding notice in the `StoryOutput` shape, so a page that knows nothing about deals still has a story to draw.
 
-Check: in the web interface a dialog opens with the sponsor, the offer, the reward and the cost; Accept and Refuse each finish the turn, and the System's story reflects the answer.
+Check: in the web interface a dialog opens with the sponsor, the offer, the reward and the cost; Accept and Refuse each finish the turn, and the System AI's story reflects the answer.
 
 Go to the encounter folder:
 
@@ -81,7 +81,7 @@ Replace the `pass`. The Agent already receives the provider with `hooks=[sponsor
 # TODO: Step 3 - When the answer is not "accept", cancel the tool call by setting event.cancel_tool to a message the System can retell
 ```
 
-Setting `event.cancel_tool` to a string cancels the call; the string goes back to the Narrator as the tool's result, with an error status. Write the string as an instruction the System can retell: the Crawler refused, the sponsor sulks. If `event.cancel_tool` is set to `True` instead, Strands uses a default message.
+Setting `event.cancel_tool` to a string cancels the call; the string goes back to the Narrator as the tool's result, with an error status. Write the string as an instruction the Narrator can retell: the Crawler refused, the sponsor sulks. If `event.cancel_tool` is set to `True` instead, Strands uses a default message.
 
 <details>
 <summary>Show me the code for Steps 2 and 3</summary>
@@ -159,7 +159,7 @@ Replace `resume = []`. The same hook runs again, `event.interrupt` returns `"acc
 
 ## The Dialog in the Web Interface
 
-The web interface already ships the dialog. `useGameApi` posts the turn and reads the `interrupt` field; `GameView.vue` keeps the deal in the game store and shows `SponsorDealDialog.vue` above the text box, with Accept and Refuse. While a deal is open the suggestions and the text box are off, because the turn is waiting on exactly one answer. Each button calls `POST /respond`, adds the System's finished story to the log, and clears the dialog; if the Narrator pauses again on a second deal, the dialog opens again.
+The web interface already ships the dialog. `useGameApi` posts the turn and reads the `interrupt` field; `GameView.vue` keeps the deal in the game store and shows `SponsorDealDialog.vue` above the text box, with Accept and Refuse. While a deal is open the suggestions and the text box are off, because the turn is waiting on exactly one answer. Each button calls `POST /respond`, adds the System AI's finished story to the log, and clears the dialog; if the Narrator pauses again on a second deal, the dialog opens again.
 
 The dialog is optional, like the Hype panel. A Narrator that never sends `interrupt` never opens the dialog, and the Floor 5 Narrator works with the same page. Run the interface from this repository, as in [Floor 6](../floor-6.md#web-interface):
 
@@ -189,13 +189,13 @@ YOU OWE: one photo with the Fremont Troll
 [Accept the deal] [Refuse the deal]
 ```
 
-Press Accept: the turn finishes and the System hands over the box. Ask again and press Refuse: the System says the sponsor sulks. The terminal prints `Resuming the turn...` for each answer.
+Press Accept: the turn finishes and the System AI hands over the box. Ask again and press Refuse: the System AI says the sponsor sulks. The terminal prints `Resuming the turn...` for each answer.
 
 | symptom | cause | fix |
 |---|---|---|
 | `Address already in use` | the Floor 5 Narrator is still on port 8009 | stop the Floor 5 Narrator, then run `sponsor_interrupt.py` |
-| the System announces a deal and no dialog opens | the Narrator is running, but the hook is not registered, or `turn_payload` has no interrupt branch | Steps 1 and 4 |
-| the turn never pauses, the System carries on | `answer = "accept"` is still the placeholder | Step 2 |
+| the System AI announces a deal and no dialog opens | the Narrator is running, but the hook is not registered, or `turn_payload` has no interrupt branch | Steps 1 and 4 |
+| the turn never pauses, the Narrator carries on | `answer = "accept"` is still the placeholder | Step 2 |
 | Refuse does not change the story | a refusal does not cancel the tool | Step 3 |
 | the browser shows "Request failed with status 500" after a button press | `resume` is still an empty list, or the Narrator restarted and lost the paused turn | Step 5, then start a new turn |
 | typing while a deal is open | the text box is off on purpose | answer the deal |
@@ -203,14 +203,14 @@ Press Accept: the turn finishes and the System hands over the box. Ask again and
 
 ## Interrupt or Ask the Player?
 
-The System could ask the player a question in its story and wait for the next message. The System does that every turn. An interrupt is different: the code stops at an exact line, with the tool still unrun, and nothing proceeds on a guess. For a sponsor deal the stop matters, because the tool is the commitment. The cost: the script must keep the paused agent alive and give the browser a way to answer.
+The Narrator could ask the player a question in its story, in the System AI's voice, and wait for the next message. The Narrator does that every turn. An interrupt is different: the code stops at an exact line, with the tool still unrun, and nothing proceeds on a guess. For a sponsor deal the stop matters, because the tool is the commitment. The cost: the script must keep the paused agent alive and give the browser a way to answer.
 
 ## What It Costs
 
 The pause costs nothing: while the turn waits, Amazon Nova 2 Lite does not run and no tokens are billed. The deal adds about one extra pass through Amazon Nova 2 Lite, the pass that makes the `sponsor_offer` call. Assume 6,000 tokens in and 150 out.
 
 - 6,000 x $0.30 per million is $0.0018 in, 150 x $2.50 per million is $0.000375 out, about $0.002 per deal
-- a refused deal costs the same: the System still retells the refusal in the story the System was already writing
+- a refused deal costs the same: the Narrator still retells the refusal in the story the Narrator was already writing
 
 Rates are the Nova 2 Lite prices from [Floor 1](../floor-1.md#what-a-turn-costs).
 

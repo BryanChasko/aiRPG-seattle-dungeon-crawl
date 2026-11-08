@@ -5,7 +5,7 @@
 Files on this side passage: [`encounters/floor-3-living-workbench/living_workbench.py`](../../encounters/floor-3-living-workbench/living_workbench.py), [`encounters/floor-3-living-workbench/shelf/final_beat.py`](../../encounters/floor-3-living-workbench/shelf/final_beat.py), [`encounters/floor-3-living-workbench/tools/roll_d20.py`](../../encounters/floor-3-living-workbench/tools/roll_d20.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 3.** Past the last kelp holdfast there was a workbench bolted to the rock, with one tool hung on the pegboard: the dice. A tie came up on the table behind us, and the System said it could not settle the tie. No Final Beat on the bench. My first thought was the one I have in a motor pool: pull the aircraft, fit the part, spin it up again. Barnaby put an arm across the pegboard. "Sergeant, there is a folder. The System watches it. Put the part in the folder and the System takes the part, mid-sentence, without going down."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 3, FRIDAY, JUNE 19, SIDE PASSAGE OFF FLOOR 3.** Past the last kelp holdfast there was a workbench bolted to the rock, with one tool hung on the pegboard: the dice. A tie came up on the table behind us, and the System AI announced that the Narrator could not settle the tie. No Final Beat on the bench. My first thought was the one I have in a motor pool: pull the vehicle, fit the part, start it up again. Barnaby put an arm across the pegboard. "Sergeant, there is a folder. The Narrator watches it. Put the part in the folder and the Narrator takes the part, mid-sentence, without going down."
 <!-- /cordula-log -->
 
 > <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "A workbench. Hot-swappable. I want it on the record that I was not consulted, and that I have never once been caught without a tool. I am early for the tool."
@@ -27,7 +27,7 @@ The file added in this encounter is a tool, and a tool is made by the `@tool` de
 
 The tool is the Final Beat from the [Crawl Handbook](../world/crawl-handbook/04-final-beat.md): both sides roll, the total closest to 20 without going over wins, a total over 20 loses, and the drum goes again on a tie. The Final Beat function is written already, apart from the two lines that make it a tool, and waits on a shelf, in `shelf/final_beat.py`, outside the folder the agent watches. The script asks the agent to settle a tied round, copies the file into `tools/`, waits for the tool to appear, and asks again.
 
-Signs the run worked: the first turn ends with the System saying the drum is not on the workbench, the tool list grows from `['roll_d20']` to include `final_beat` without the agent being rebuilt, and the second turn settles the tie with rolled totals.
+Signs the run worked: the first turn ends with the Narrator saying the drum is not on the workbench, the tool list grows from `['roll_d20']` to include `final_beat` without the agent being rebuilt, and the second turn settles the tie with rolled totals.
 
 Open the encounter folder:
 
@@ -160,7 +160,7 @@ The script removes `tools/final_beat.py` when it finishes, so the next run start
 
 The folder and the watcher cost nothing; both run locally. The tool adds one specification to the input to Amazon Nova 2 Lite, about 150 tokens, and Amazon Nova 2 Lite bills those tokens on every call after the tool joins. A turn of about 1,000 input and 80 output tokens is 1,000 x $0.30 per million plus 80 x $2.50 per million, about $0.0005. The two turns are about a tenth of a cent in total. See the [Floor 1 cost table](../floor-1.md#what-a-turn-costs).
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby asked whether I would leave the bench open. I said no. A tool folder anyone can write to is a hangar door left up. He said that is the right instinct and also, regrettably, the same instinct that put a lock on the aquarium's snack cupboard. We shut the door and kept the key. The workbench stays for the shop. The crowd gets the finished kit.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby asked whether I would leave the bench open. I said no. A tool folder anyone can write to is a motor pool bay door left up. He said that is the right instinct and also, regrettably, the same instinct that put a lock on the aquarium's snack cupboard. We shut the door and kept the key. The workbench stays for the shop. The crowd gets the finished kit.
 
 ## Encounter Clear
 
@@ -176,6 +176,6 @@ Loot to keep:
 >
 > **[FIELD REPAIR, NO DOWNTIME]**
 >
-> Reward: You received a [Bronze Box]. Inside: a pegboard hook, a drum stick and a laminated card that reads "Pull the part, not the aircraft".
+> Reward: You received a [Bronze Box]. Inside: a pegboard hook, a drum stick and a laminated card that reads "Pull the part, not the vehicle".
 
 Back to [Floor 3](../floor-3.md#floor-clear), or on to [Floor 4](../floor-4.md).

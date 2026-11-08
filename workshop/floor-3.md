@@ -7,7 +7,7 @@ Files on this floor: [`3_custom_tools/agent_with_dice_roll_tool.py`](../3_custom
 ![Floor 3: The Crafting Table](../images/floors/floor-3-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 3.** The kelp cathedral goes straight up: bull kelp stipes as thick as my wrist, bulbs floating overhead like lanterns. Nothing down here could be decided, because the System's dice were lost in the flood, and a game without dice is an argument. So we made dice. Barnaby learned the hard way that a tool is only as good as the instructions on the box: the first version of our roller did exactly what we wrote, which was not what we meant. We rewrote the instructions until the roller did. A small green fish the size of a golf ball popped off a kelp holdfast and stuck itself to my forearm guard. It would not let go. I named him Chonks.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 3, FRIDAY, JUNE 19, FLOOR 3.** The Bull Kelp Cathedral goes straight up: bull kelp stipes as thick as my wrist, bulbs floating overhead like lanterns. Nothing down here could be decided, because the Narrator's dice were lost in the flood, and a game without dice is an argument. So we made dice. Barnaby learned the hard way that a tool is only as good as the instructions on the box: the first version of our roller did exactly what we wrote, which was not what we meant. We rewrote the instructions until the roller did. Shelly dug in at the foot of the first stipe in half a second and held our spot.
 <!-- /cordula-log -->
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 3. Craft your own gear, Crawler. Amazon Nova 2 Lite never reads your code, only the docstring you write for it. Write a lazy one and watch your agent dance to the wrong song."
@@ -193,7 +193,7 @@ Once TODOs are completed, run your script:
 python agent_with_dice_roll_tool.py
 ```
 
-The system prompt in the file turns the agent into Lady Luck, the System's croupier subroutine, who rolls every die on the broadcast. The script asks her to show the audience how the System rolled Cordula's sheet on day one: four ability scores (strength, wisdom, charisma and intelligence) with the 4d6-drop-lowest method: for each ability, roll four six-sided dice and keep the three highest. The run makes four tool calls, one per ability, each with `faces=6, count=4, drop_lowest=1`: sixteen dice, all rolled by `roll_dice`, which drops the lowest of each four and adds up the rest.
+The system prompt in the file turns the agent into Lady Luck, the Narrator's croupier, who rolls every die on the broadcast. Her prompt says "the System's croupier subroutine" because everything the Narrator says to a Crawler comes out in the System AI's voice. The script asks her to show the audience how the Narrator's dice rolled Cordula's sheet on day one: four ability scores (strength, wisdom, charisma and intelligence) with the 4d6-drop-lowest method: for each ability, roll four six-sided dice and keep the three highest. The run makes four tool calls, one per ability, each with `faces=6, count=4, drop_lowest=1`: sixteen dice, all rolled by `roll_dice`, which drops the lowest of each four and adds up the rest.
 
 The terminal shows the agent working through these steps:
 
@@ -213,7 +213,13 @@ Check: the terminal prints the new `tool_spec` first, then four `Tool #N: roll_d
 | sixteen calls with `count=1`, or a total that does not match the dice | the docstring does not say how to call 4d6 drop lowest | add the `count=4, drop_lowest=1` sentence and the "report the total" note |
 | no `Tool #` line at all | the tool is not on the agent | Step 3: `tools=[roll_dice]` |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Lady Luck dealt from a table of abalone shell and called every roll like a boxing announcer. Four calls, four totals, and she did not touch the arithmetic once. She hated that. Halfway through the third roll, a green fish the size of a golf ball let go of a kelp holdfast, drifted over, and stuck himself to my forearm guard with a sound like a plunger. He would not come off. Barnaby looked at him for a long moment and said, "Compact. Quiet. Aerodynamic." That was Chonks, hired.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Lady Luck dealt from a table of abalone shell and called every roll like a boxing announcer. Four calls, four totals, and she did not touch the arithmetic once. She hated that. Halfway through the third roll, a bulb overhead popped and the stipe it hung from whipped across the table. A green fish the size of a golf ball came off his holdfast, hit my forearm guard, and stuck there with a sound like a plunger. I pulled; he held. The second Companion Egg went warm, and the System AI announced the bind. The audience named him by poll, and Barnaby voted for "Projectile", but "Chonks" won with 61 percent. Barnaby studied him for a long moment and said, "Compact. Quiet. Aerodynamic." Shelly sent up a puff of sea mist, and Chonks gave one stubborn gurgle.
+
+> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+>
+> **[You Brought a Sticky Beach Ball to a Dance Battle]**
+>
+> Reward: Cordula and Barnaby. You bound a spherical, armor-plated fish that moves by vibrating its tiny fins and glaring. The audience has named him. You will live with the name. Companion Egg consumed: Chonks, Pacific spiny lumpsucker, Level 4 Rare Companion.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 3: HARD MATH.** Readers forgive a System for being cruel, never for being inconsistent. Ability scores, modifiers and dice are the math every later rule stands on, so they live in code, not in the model's head. In this crawl each of the six scores also maps to a dance-off Move Call: Strength is Power, Dexterity is Footwork, Constitution is Endurance, Intelligence is Choreography, Wisdom is Read the Room and Charisma is Presence. A score of 16 gives a +3 modifier: (score - 10) / 2, rounded down. See [ability scores](world/crawl-handbook/01-ability-scores.md) and [The System](world/the-system.md#2-stat-design).
 

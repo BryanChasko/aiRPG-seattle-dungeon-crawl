@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-8-grudge-ledger/grudge_ledger.py`](../../encounters/floor-8-grudge-ledger/grudge_ledger.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 8.** On the bluffs the System kept its grudges in a folder on a laptop, and a laptop is a machine that gets closed. In Bellevue everything the System owns lives somewhere with an address, so I asked where the grudges had gone. The System said it had moved them to a records office on the twelfth floor, in a room with a lock and a patient clerk. I asked to see the room. It was a knowledge base with one door and a shelf of small sentences: who stood on whose tail, who lost by how many points, who is rehearsing a reply. Barnaby read the shelf from the doorway. "Sergeant," he said. "That is the most terrifying filing system I have ever seen."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, SIDE PASSAGE OFF FLOOR 8.** On the bluffs the System kept its grudges in a folder on a laptop, and a laptop is a machine that gets closed. In Bellevue everything the Narrator runs lives somewhere with an address, so I asked where the System AI's grudges had gone. The System AI said the Narrator had moved them to a records office on the twelfth floor, in a room with a lock and a patient clerk. I asked to see the room. It was a knowledge base with one door and a shelf of small sentences: who stood on whose tail, who lost by how many points, who is rehearsing a reply. Barnaby read the shelf from the doorway. "Sergeant," he said. "That is the most terrifying filing system I have ever seen."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: the Grudge Ledger in the Cloud. Every grudge is filed in an Amazon Bedrock knowledge base, indexed, scoped to the party and searchable. When the Accountant walks back onto the floor, I will already know what they have not forgiven. I will not be showing my work."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Sidequest: the Grudge Ledger in the Cloud. The Narrator files every grudge in an Amazon Bedrock knowledge base, indexed, scoped to the party and searchable. When the Accountant walks back onto the floor, I will already know what they have not forgiven. I will not be showing my work."
 
 ## The Brief
 
@@ -16,14 +16,14 @@ Files on this side passage: [`encounters/floor-8-grudge-ledger/grudge_ledger.py`
 |---|---|
 | type | sidequest |
 | starts from | [Floor 8.3](../floor-8-3.md), finished: the managed knowledge base commands from Floor 8.3 Part 1 and from the Floor 8 page are familiar. This sidequest adds a second knowledge base, `grudges`, to the `gameprod` project. The agent runs on the local machine |
-| builds | a Bedrock knowledge base as a writable memory store, two functions that file a grudge and search the ledger, and a System whose memory manager brings the right grudge up before each Amazon Nova 2 Lite call |
+| builds | a Bedrock knowledge base as a writable memory store, two functions that file a grudge and search the ledger, and a Narrator whose memory manager brings the right grudge up before each Amazon Nova 2 Lite call |
 | teaches | [`strands.vended_memory_stores.bedrock_knowledge_base.store`](https://strandsagents.com/docs/api/python/strands.vended_memory_stores.bedrock_knowledge_base.store/): `BedrockKnowledgeBaseStore`, and [`strands.memory.memory_manager`](https://strandsagents.com/docs/api/python/strands.memory.memory_manager/): `MemoryManager` |
 | time | about 30 minutes, most of it waiting for a deploy |
 | model | Amazon Nova 2 Lite, as on every floor |
 
 The Floor 7 sidequest, The System Holds Grudges, keeps the System's grudges as Markdown files in a folder on your machine, and a memory manager brings the right ones up before a turn. Building the Floor 7 sidequest first is not required, and the Grudge Ledger shares none of its code. This sidequest asks where the grudges should live once the System runs in production, and the answer is the same place as the rules: a managed Amazon Bedrock knowledge base that survives any laptop, any microVM and any redeploy.
 
-Strands wraps a knowledge base as a memory store, `BedrockKnowledgeBaseStore`. A store can be searched; a writable store also accepts additions: the store uploads the text to an S3 bucket, ingests that one document into the knowledge base, and attaches metadata to it. A `scope` keeps one party's grudges apart from another's by stamping a `namespace` attribute on every write and filtering on it in every search. A `MemoryManager` then puts the store behind an agent: before each Amazon Nova 2 Lite call the `MemoryManager` searches the store with the player's latest message and places the best hits in front of Amazon Nova 2 Lite, and it registers a `search_memory` and an `add_memory` tool so the System can look up and file new facts without help. See [Memory](https://strandsagents.com/docs/user-guide/sdk/memory/overview/), [Amazon Bedrock Knowledge Base](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/) and [Scope and Namespaces](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/#scope-and-namespaces).
+Strands wraps a knowledge base as a memory store, `BedrockKnowledgeBaseStore`. A store can be searched; a writable store also accepts additions: the store uploads the text to an S3 bucket, ingests that one document into the knowledge base, and attaches metadata to it. A `scope` keeps one party's grudges apart from another's by stamping a `namespace` attribute on every write and filtering on it in every search. A `MemoryManager` then puts the store behind an agent: before each Amazon Nova 2 Lite call the `MemoryManager` searches the store with the player's latest message and places the best hits in front of Amazon Nova 2 Lite, and it registers a `search_memory` and an `add_memory` tool so the Narrator can look up and file new facts without help. See [Memory](https://strandsagents.com/docs/user-guide/sdk/memory/overview/), [Amazon Bedrock Knowledge Base](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/) and [Scope and Namespaces](https://strandsagents.com/docs/user-guide/sdk/memory/bedrock-knowledge-base/#scope-and-namespaces).
 
 Success check: `write` files three grudges and prints their S3 locations; a minute later `ask`, in a new process, prints the grudge that matches the question about Footwork, and the System greets the Accountant with it.
 
@@ -181,7 +181,7 @@ Replace the `return []`.
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I filed the first one myself, standing at the shelf: the Pitch-Deck Founder, Shelly's tail, the Ship Canal locks. The file came back with a location and nothing else. No receipt, no stamp. Barnaby said that was how records offices work. You do not get a receipt. You get a shelf.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I filed the first one myself, standing at the shelf: the Pitch-Deck Founder, Shelly's siphon, the Ship Canal locks. The file came back with a location and nothing else. No receipt, no stamp. Barnaby said that was how records offices work. You do not get a receipt. You get a shelf.
 
 ## Step 5: Give the System a Memory
 
@@ -189,7 +189,7 @@ Replace the `return []`.
         # TODO: Step 5 - Give the agent memory_manager=MemoryManager(stores=[store], add_tool_config=True)
 ```
 
-`make_system` is given: it builds the System with a prompt that tells it to work a matching grudge into its line. The TODO sits inside the `Agent(...)` call. The agent's `memory_manager` parameter takes a `MemoryManager` built on a list of stores. `add_tool_config=True` registers the `add_memory` tool next to the `search_memory` tool that every manager has: the model can then file a new grudge during a turn, when it decides one has been earned. Without it the memory is read-only for the model, and you stay in charge of every write.
+`make_system` is given: it builds the Narrator agent, whose prompt opens "You are the System" so every line reaches the player in the System AI's voice, with a prompt that tells it to work a matching grudge into that line. The TODO sits inside the `Agent(...)` call. The agent's `memory_manager` parameter takes a `MemoryManager` built on a list of stores. `add_tool_config=True` registers the `add_memory` tool next to the `search_memory` tool that every manager has: the model can then file a new grudge during a turn, when it decides one has been earned. Without it the memory is read-only for the model, and you stay in charge of every write.
 
 <details>
 <summary>Show me the code for Step 5</summary>
@@ -253,7 +253,7 @@ A folder of Markdown files is the right ledger on a local machine: nothing to de
 
 The same rates as the `rules` knowledge base ([What Floor 8 Costs](../floor-8.md#what-floor-8-costs), from the [Amazon Bedrock pricing page](https://aws.amazon.com/bedrock/pricing/), Knowledge Bases): $5.00 per GB of raw data a month and $1.00 per 1,000 Retrieve calls, with parsing and embeddings included. Three grudges are about 300 bytes: 0.0000003 GB x $5.00 = $0.0000015 a month. Each `ask` makes one Retrieve call for `recall` and one before the System's Amazon Nova 2 Lite call, so two: $0.002. The S3 bucket holds a handful of tiny objects, under a cent ([Amazon S3 pricing](https://aws.amazon.com/s3/pricing/)).
 
-Nova 2 Lite for the System's turn is one call of about 600 input tokens and 60 output tokens (an estimate): 600 x $0.30 / 1,000,000 + 60 x $2.50 / 1,000,000 = $0.00018 + $0.00015, about a thirtieth of a cent ([Floor 1](../floor-1.md#what-a-turn-costs)). When the System uses `add_memory`, each filed grudge adds one ingest and no other cost.
+Nova 2 Lite for the Narrator's turn is one call of about 600 input tokens and 60 output tokens (an estimate): 600 x $0.30 / 1,000,000 + 60 x $2.50 / 1,000,000 = $0.00018 + $0.00015, about a thirtieth of a cent ([Floor 1](../floor-1.md#what-a-turn-costs)). When the System uses `add_memory`, each filed grudge adds one ingest and no other cost.
 
 Delete the sidequest resources, from the `gameprod` folder. The knowledge base is part of the project, so remove the knowledge base from the project and deploy, then delete the bucket by hand, as the [Cleanup](../cleanup.md#step-3-delete-the-rules-bucket) page does for the rules bucket:
 
@@ -282,7 +282,7 @@ Loot kept:
 
 - `BedrockKnowledgeBaseStore` makes a Bedrock knowledge base a memory store, searchable and, with `writable=True`, writable through S3 and direct ingestion
 - A `scope` keeps one party's memories apart, and metadata files each memory under a name
-- A `MemoryManager` searches the store before each Amazon Nova 2 Lite call and gives the System `search_memory` and `add_memory` tools
+- A `MemoryManager` searches the store before each Amazon Nova 2 Lite call and gives the Narrator `search_memory` and `add_memory` tools
 - The memory manager stays the same whether the store is a folder or a knowledge base
 
 > <img src="../../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**

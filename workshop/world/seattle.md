@@ -2,7 +2,7 @@
 
 > **System AI:** "Welcome to Seattle, Crawlers. The rain is real, the coffee is strong, and as of this morning the waterfront is a dungeon. Please keep your hands, arms and tentacles inside the floor at all times."
 
-The crawl opens on the Seattle waterfront the moment the System arrives. The ground under Pier 59 folds into a dungeon that runs beneath Puget Sound, under the neighborhoods and out to Tacoma and Bellevue. This page is the setting guide: the places, the living things, the opponents, and how the game treats the cultures of the region.
+The crawl opens on the Seattle waterfront at 0551 on Day 1, Wednesday, June 17, when the Narrator folds the ground under Pier 59 into a dungeon that runs beneath Puget Sound, under the neighborhoods and out to Tacoma and Bellevue. This page is the setting guide: the places, the living things, the opponents, and how the game treats the cultures of the region.
 
 ## Whose land this is
 
@@ -15,20 +15,20 @@ Seattle sits on the homelands of Coast Salish peoples, including the Duwamish, w
 
 ## The dungeon floors
 
-Each dungeon floor is a real Puget Sound habitat that the System has dragged underground, lit with bioluminescence and filled with opponents.
+Each dungeon floor is a real Puget Sound habitat that the Narrator dragged underground, lit with bioluminescence and filled with opponents.
 
-| Dungeon floor | Biome | What grows and lives there | What the System does with it |
+| Dungeon floor | Biome | What grows and lives there | What the Narrator does with it |
 |---|---|---|---|
-| 1. Pier 59 Collapse | The Seattle Aquarium and the waterfront, folded into tide pools | Sea lettuce (*Ulva lactuca*) sheeting the logs and rocks, anemones, the aquarium's shattered tanks | The opening scramble: Cordula breaches the Ocean Pavilion glass and walks out with Barnaby |
+| 1. Pier 59 Collapse | The Seattle Aquarium and the waterfront, folded into tide pools | Sea lettuce (*Ulva lactuca*) sheeting the logs and rocks, anemones, the aquarium's shattered tanks | The opening scramble: Cordula breaches the glass of the octopus den and walks out with Barnaby |
 | 2. The Eelgrass Nursery | Shallow mud and sand flats under a few feet of water | Native eelgrass (*Zostera marina*) meadows sheltering Dungeness crabs, herring eggs and young salmon | A stealth floor: dance-offs are loud, and loud wakes the crabs |
 | 3. The Bull Kelp Cathedral | A towering underwater forest | Bull kelp (*Nereocystis luetkeana*) holdfasts gripping the rocks, hollow floating bulbs on stipes up to 100 feet long, sugar kelp (*Laminaria saccharina*) crinkled in the sheltered corners | A vertical floor: climb the stipes, dance on the bulbs, avoid popping a bulb |
 | 4. The Ship Canal | Ballard, Fremont and Lake Union, flooded at the locks | Floating homes on cedar log floats, the Ballard brewery district, Craftsman bungalows with deep porches | Taprooms become potion shops; houseboats become platforms that sway off the beat |
 | 5. The Estuary | Salt marsh where a river meets the Sound | Pickleweed (*Salicornia virginica*) whose salt-filled joints turn red in autumn, Pacific silverweed (*Argentina pacifica*) with yellow flowers and silver-backed leaves, dense meadows of Lyngby's sedge (*Carex lyngbyei*) hiding young fish | Half the floor floods with every tide: the dance floor surfaces, then drowns |
-| 6. The Underground | Pioneer Square's buried storefronts and the space under the Aurora Bridge | Dripping brick, old sidewalk prisms, and the Fremont Troll, a 1990 public sculpture the System has opinions about | A maze of dead-end storefronts; the Troll judges every dance-off held in its shadow |
+| 6. The Underground | Pioneer Square's buried storefronts and the space under the Aurora Bridge | Dripping brick, old sidewalk prisms, and the Fremont Troll, a 1990 public sculpture the System AI has opinions about | A maze of dead-end storefronts; the Troll judges every dance-off held in its shadow |
 | 7. The Bluffs | Steep shoreline cliffs above the high-tide line | Pacific madrone (*Arbutus menziesii*) with twisting trunks and peeling red-orange bark, wind-bent shore pine (*Pinus contorta*), Hooker's willow (*Salix hookeriana*) at the water's edge, Nootka rose (*Rosa nutkana*) and snowberry (*Symphoricarpos albus*) holding the slopes, Puget Sound gumweed (*Grindelia integrifolia*) with sticky yellow flowers on the rocky beaches | A cliff floor: the roots hold the bluff together, and anything that tears the roots out starts a landslide |
 | 8. Bellevue and the Narrows | Glass towers across Lake Washington, and the shipyards of Tacoma | Polished marble lobbies, laser-grid security, brick warehouses on Commencement Bay, the Tacoma Narrows where the giant octopus legend lives | The corporate floor: the final bosses wear lanyards |
 
-The habitats are why the leads win. Barnaby hunts eelgrass meadows and kelp forests for a living, and Cordula has spent years of weekends patrolling these shorelines in a kayak.
+The habitats are why the leads win. Barnaby hunts eelgrass meadows and kelp forests for a living, and Cordula has spent years of dawn debris sweeps with the Soundkeepers, paddling these shorelines by kayak.
 
 ## The cities
 
@@ -55,7 +55,7 @@ The dungeon does not throw monsters at the Crawlers. It throws professionals. Ev
 
 The bosses: the Regional Managing Director of Bellevue, the Quarterly Earnings Call (a boss that is a meeting), and the Keynote, which dances for forty-five minutes and never takes questions.
 
-One boss is not a person at work. Monty, a reticulated python someone released into the Underground, guards the Floor 0 stairwell. Reticulated pythons are the longest snakes in the world, and Monty's geometric camouflage makes him look like whichever Python comes first on the PATH. Nobody fights him: the party beats him by knowing which Python the Crawlers are running, and the System rehomes him to a licensed reptile rescue. Barnaby, a constrictor himself, keeps his distance.
+One boss is not a person at work. Monty, a reticulated python someone released into the Underground, guards the Floor 0 stairwell. Reticulated pythons are the longest snakes in the world, and Monty's geometric camouflage makes him look like whichever Python comes first on the PATH. Nobody fights him: the party beats him by knowing which Python the Crawlers are running, and the Narrator rules that he goes to a licensed reptile rescue. Barnaby, a constrictor himself, keeps his distance.
 
 <table>
 <tr>
@@ -79,7 +79,7 @@ One boss is not a person at work. Monty, a reticulated python someone released i
 
 - **The Ballard brewery district.** Fresh-hop season, maritime-industrial taprooms, and potions brewed on the premises. Loot uses invented brews, never real breweries' names: *Ballard Fresh-Hop Haze* (+20% Mana regeneration; anyone who sips it mid-round sways off the beat), *Ship Canal Lager* (cures Soggy), *Locks Porter* (heavy, slow, +2 Constitution for one floor).
 - **Ferries.** Ferry Tokens are the crawl's currency. Every Seattle native already knows a pocket of Ferry Tokens never lasts.
-- **The rain.** Wet terrain is the default. Cordula and Barnaby move better on it than anyone the System has ever broadcast.
+- **The rain.** Wet terrain is the default. Cordula and Barnaby move better on it than anyone the System AI has ever broadcast.
 
 ## Sources
 

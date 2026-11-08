@@ -16,7 +16,7 @@ This crawl is built on *Once Upon Agentic AI*, the AWS sample workshop that firs
 
 | original part | floor here | what you type (TODO steps) | how it is checked | what the crawl adds |
 |---|---|---|---|---|
-| 0. An Unexpected Adventure | [0. The Stairwell](floor-0.md) | clone, `uv sync`, activate the environment | `uv sync` succeeds | the premise of the System; SYSTEM DESIGN layer 0 |
+| 0. An Unexpected Adventure | [0. The Stairwell](floor-0.md) | clone, `uv sync`, activate the environment | `uv sync` succeeds | the premise: the Narrator is broken and the party rebuilds it; SYSTEM DESIGN layer 0 |
 | 1. The Art of Agent Summoning | [1. Agent Summoning](floor-1.md) | DEBUG logging, `Agent(model=..., system_prompt=...)`, the first call (3) | live on Amazon Nova 2 Lite; `test_floor1_agent_logging_prompt_and_model` | the agent pinned to Amazon Nova 2 Lite; an exercise on how the system prompt sets the genre |
 | 2. The Adventurer's Arsenal | [2. The Vending Machines](floor-2.md) | `http_request` on Open5e (2); bonus: `shell`, `file_editor`, `HumanInTheLoop(ask="stdio")` (4) | live on Amazon Nova 2 Lite; `test_floor2_http_request_is_a_tool`, `test_floor2_bonus_room_gates_shell_and_file_editor_behind_hitl` | a creature lookup tied to the party leader; the license note for the System Reference Document |
 | 3. The Art of Magical Forging | [3. The Crafting Table](floor-3.md) | `@tool`, the docstring, `tool_spec`, adding the tool (4) | live on Amazon Nova 2 Lite; five `test_floor3_*` tests (spec, math, errors, wiring) | `roll_dice(faces, count, drop_lowest)`, redesigned after Amazon Nova 2 Lite skipped rolls with a one-die tool; the docstring lesson told from that measurement |

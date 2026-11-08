@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-7-system-holds-grudges/system_holds_grudges.py`](../../encounters/floor-7-system-holds-grudges/system_holds_grudges.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 7.** The Safe Room on the bluffs takes the conversation and gives back a blank page. I know the drill from the Reserve: when the radio net goes down, I do not trust anyone's memory, I trust the logbook. So I wanted a logbook. Not the whole transcript, which is a pile. Just the entries: who became a friend, who owes us, who is not forgiven. Pat the accountant, for one, who shook my hand on the Pier 59 ferry deck and handed me a Ferry Token. And the Pitch-Deck Founder, who stood on Shelly's tail. Barnaby wants that grudge in ink.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, SIDE PASSAGE OFF FLOOR 7.** The Safe Room on the bluffs takes the conversation and gives back a blank page. I know the drill from the Reserve: when the radio net goes down, I do not trust anyone's memory, I trust the logbook. So I wanted a logbook. Not the whole transcript, which is a pile. Just the entries: who became a friend, who owes us, who is not forgiven. Pat the accountant, for one, who shook my hand after the Estuary dance-off and handed me a Ferry Token. And the Pitch-Deck Founder, who stood on Shelly's siphon. Barnaby wants that grudge in ink.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The System does not forget, Crawlers. The System is merely rate-limited by the Safe Room. Hand me a clerk and a folder and I will hold a grudge for as long as the folder lasts. Keep the folder somewhere dry."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "The System AI does not forget, Crawlers. The System AI merely borrows the Narrator's memory, and the Narrator loses it every time the Safe Room closes. Hand the Narrator a clerk and a folder and I will hold a grudge for as long as the folder lasts. Keep the folder somewhere dry."
 
 ## The Brief
 
@@ -25,7 +25,7 @@ A session, from [Save Points](save-points.md), keeps the whole conversation. Mem
 
 Three pieces, then, and each is a step: the extractor (what counts as a fact), the store (where facts live), and the manager (joins the extractor to the store). The store here is the [`FileMemoryStore`](https://strandsagents.com/docs/user-guide/sdk/memory/file-memory-store/): one Markdown file per topic, found again by matching words from the question against the file name and the file body. The extraction trigger says when the clerk works. `InvocationTrigger` runs it after every turn, the most thorough choice and one extra Amazon Nova 2 Lite call per turn; `IntervalTrigger(turns=5)` runs the clerk every fifth turn instead.
 
-Check that it worked: campaign one ends with a ledger of Markdown files, one headed for Pat and one for the Pitch-Deck Founder, and none for the question about the Final Beat. Then a new System with zero messages in its history answers from the ledger.
+Check that it worked: campaign one ends with a ledger of Markdown files, one headed for Pat and one for the Pitch-Deck Founder, and none for the question about the Final Beat. Then a new agent with zero messages in its history, the Narrator speaking in the System AI's voice, answers from the ledger.
 
 Go to the encounter folder:
 
@@ -64,7 +64,7 @@ from strands.vended_memory_stores.file_memory_store.store import FileMemoryStore
 # TODO: Step 2 - Return a ModelExtractor that uses a BedrockModel with model_id "us.amazon.nova-2-lite-v1:0" and EXTRACT_PROMPT as its system_prompt
 ```
 
-`ModelExtractor(model=..., system_prompt=...)` is an Amazon Nova 2 Lite call with one job: read a transcript, return the facts. The clerk uses whichever model the code names. Leave the model out and the clerk borrows the System agent's model, also Amazon Nova 2 Lite here, but a clerk with a model named in the code is a clerk that can be swapped alone. `BedrockModel(model_id=...)` configures a model object when a string is not enough. The prompt is `EXTRACT_PROMPT`: it says what a fact is (a friend, a debt, a grudge) and what to skip (questions, small talk). The extractor adds its own output rule after `EXTRACT_PROMPT`, so no prompt can break the format.
+`ModelExtractor(model=..., system_prompt=...)` is an Amazon Nova 2 Lite call with one job: read a transcript, return the facts. The clerk uses whichever model the code names. Leave the model out and the clerk borrows the Narrator agent's model, also Amazon Nova 2 Lite here, but a clerk with a model named in the code is a clerk that can be swapped alone. `BedrockModel(model_id=...)` configures a model object when a string is not enough. The prompt is `EXTRACT_PROMPT`: it says what a fact is (a friend, a debt, a grudge) and what to skip (questions, small talk). The extractor adds its own output rule after `EXTRACT_PROMPT`, so no prompt can break the format.
 
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Every unit has a clerk. Mine reads the whole shift log and writes down three lines. The skill is what the clerk leaves out. I told this one: friends, debts, grudges. Questions are not entries. Barnaby said that briefing was the first time anyone had made a filing system sound like a chain of command.
 
@@ -115,7 +115,7 @@ def make_store(extractor):
 
 `MemoryManager(stores=[store])`. Two defaults do the rest. `injection=True` searches the store before every Amazon Nova 2 Lite call, using the latest user message as the query, and prepends what the search finds. `search_tool_config=True` also gives the agent a `search_memory` tool, so the agent can search memory on purpose. Pass the manager to the agent as `memory_manager=`, which `make_system` already does.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Second campaign, same Safe Room, blank System. I asked which accountant I could trust. The System said Pat, and the ferry deck, and the Ferry Token, in two sentences, from a file it had never seen in this life. Then I asked about the Founder and the System went quiet in a way I can only call pleased. The System holds a grudge better than any sergeant I served under.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Second campaign, same Safe Room, a blank Narrator. I asked which accountant I could trust. The System AI said Pat, and the Estuary, and the Ferry Token, in two sentences, from a file the Narrator had never seen in this life. Then I asked about the Founder and the System AI went quiet in a way I can only call pleased. The System AI holds a grudge better than any sergeant I served under.
 
 <details>
 <summary>Show me the code for Step 4</summary>
@@ -159,7 +159,7 @@ A NIGHT IN THE SAFE ROOM: the conversation is gone, the ledger is not
 | `TypeError: 'NoneType' object is not callable` or `AttributeError` on `None` | a `make_` function still returns `None` | Steps 2, 3 and 4 |
 | `the ledger, 0 file(s)` | the clerk wrote nothing: no trigger, or Amazon Nova 2 Lite returned no facts | check `extraction={"trigger": ..., "extractor": ...}` in Step 3, then run it again |
 | a file for the Final Beat question | the clerk kept a question | tighten `EXTRACT_PROMPT`; the clerk is an Amazon Nova 2 Lite call, so it sometimes ignores the prompt |
-| the second campaign says the System has lost it | the store found no file for the words in the question | read the ledger's file names; ask with a word that appears in one file name |
+| the second campaign's answer says the Narrator has lost it | the store found no file for the words in the question | read the ledger's file names; ask with a word that appears in one file name |
 | `AccessDeniedException` or `ExpiredToken` | the Amazon Nova 2 Lite call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
 
 The files stay in `/tmp/system-holds-grudges/memory/grudges/` after the run. Open one in an editor. A readable memory is a fixable memory.
@@ -170,7 +170,7 @@ The Floor 7 harness gives the Narrator both, and the two answer different questi
 
 ## What It Costs
 
-Every turn is two Nova 2 Lite calls: the System's answer, and the clerk's read of the transcript. Campaign one is three turns, so six calls; campaign two is one more turn, so two more, plus a store lookup that costs nothing. At about 1,000 input tokens and 150 output tokens a call, eight calls are 8,000 input tokens x $0.30 per million = $0.0024 and 1,200 output tokens x $2.50 per million = $0.0030, so about half a cent a run. `IntervalTrigger(turns=5)` would run the clerk once every five turns, which cuts the clerk's share of a long campaign by four fifths. Rates and the worked turn are on [Floor 1](../floor-1.md#what-a-turn-costs). The ledger itself is files on the local disk.
+Every turn is two Nova 2 Lite calls: the Narrator's answer, and the clerk's read of the transcript. Campaign one is three turns, so six calls; campaign two is one more turn, so two more, plus a store lookup that costs nothing. At about 1,000 input tokens and 150 output tokens a call, eight calls are 8,000 input tokens x $0.30 per million = $0.0024 and 1,200 output tokens x $2.50 per million = $0.0030, so about half a cent a run. `IntervalTrigger(turns=5)` would run the clerk once every five turns, which cuts the clerk's share of a long campaign by four fifths. Rates and the worked turn are on [Floor 1](../floor-1.md#what-a-turn-costs). The ledger itself is files on the local disk.
 
 ## Encounter Clear
 

@@ -4,13 +4,13 @@
 
 > <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Side passages, Crawlers. Optional, unpaid, and the audience's favorite part. Every side passage starts where a floor ends and teaches a piece of the SDK the floor skipped. Skip the side passages if you like. The sponsors will notice."
 
-Each encounter hangs off a floor: the encounter starts from that floor's finished code, teaches a Strands SDK module the floor does not cover, and runs on Amazon Nova 2 Lite like everything else in the crawl. Cordula narrates each encounter, as she narrates the floors. Encounter code follows the floor pattern: TODO markers on `main`, answers on the `solution` branch, a Show me the code block under each step, and offline tests on `solution`.
+Each encounter hangs off a floor: the encounter starts from that floor's finished code, teaches a Strands SDK module the floor does not cover, and runs on Amazon Nova 2 Lite like everything else in the crawl. Cordula logs each encounter, as she logs the floors. Encounter code follows the floor pattern: TODO markers on `main`, answers on the `solution` branch, a Show me the code block under each step, and offline tests on `solution`.
 
 Every opponent of the crawl is playable in at least one floor or encounter. The floors run their own dance-offs through the Narrator (the Quarterly Close Accountant on Floor 5, the Pitch-Deck Founder on Floor 6, the Ferry-Line Commuter Horde on Floor 7, the investment banker, the swarm, the founder and the Keynote across Floor 8), and the boss battles and dance-offs below give each opponent its own code.
 
 | floor | encounter | type | what gets built | modules |
 |---|---|---|---|---|
-| 1 | [The Commentary Booth](commentary-booth.md) | sidequest | a callback handler that streams the System's call of a dance-off and announces each tool call, then a receipt for the turn | `strands.handlers.callback_handler`, `strands.agent.agent_result` |
+| 1 | [The Commentary Booth](commentary-booth.md) | sidequest | a callback handler that streams the System AI's call of a dance-off and announces each tool call, then a receipt for the turn | `strands.handlers.callback_handler`, `strands.agent.agent_result` |
 | 1 | [Read the Receipt](read-the-receipt.md) | sidequest | a receipt for each turn: why it stopped, the tokens of that turn alone and of each trip through the event loop, how often each tool ran, where the seconds went | `strands.agent.agent_result`, `strands.telemetry.metrics` |
 | 1 | [The Reasoning Dial](reasoning-dial.md) | boss battle | a router over two settings of Amazon Nova 2 Lite: reasoning off for banter, reasoning on for a close Final Beat, a classifier that picks and a fallback that drops back to off | `strands.models.routing` |
 | 2 | [The Tide Table](tide-table.md) | sidequest | today's real Seattle tides from NOAA, the party's notes in a notebook, and a ruling on whether the Estuary dance floor is underwater | `http_request`, `strands.vended_tools.notebook` |
@@ -34,7 +34,7 @@ Every opponent of the crawl is playable in at least one floor or encounter. The 
 | 7 | [Save Points](save-points.md) | sidequest | the same save point three ways, file, snapshot and S3, and a player who comes back from each | `strands.session` |
 | 8 | [The Quarterly Earnings Call](quarterly-earnings-call.md) | boss battle | the accountant, the banker and the Regional Managing Director as a graph: one move each, in order, and the call only goes on if the party took the last round | `strands.multiagent.graph` |
 | 8.3 | [The Ferry Manifest](ferry-manifest.md) | sidequest | the Rules Agent built from a configuration file, and a check that refuses any language model but Amazon Nova 2 Lite | `strands.experimental.agent_config` |
-| 8.3 | [The Grudge Ledger in the Cloud](grudge-ledger.md) | sidequest | a Bedrock knowledge base as a writable memory store for the System's grudges | `strands.vended_memory_stores.bedrock_knowledge_base` |
+| 8.3 | [The Grudge Ledger in the Cloud](grudge-ledger.md) | sidequest | a Bedrock knowledge base as a writable memory store for the System AI's grudges | `strands.vended_memory_stores.bedrock_knowledge_base` |
 | 8.4 | [The Broadcast Booth](broadcast-booth.md) | sidequest | span attributes for the round and the Move Call, read back in Amazon CloudWatch | `strands.telemetry.tracer`, `strands.telemetry.metrics` |
 | 8.4 | [House Rules as Guardrails](house-rules-guardrails.md) | boss battle | an Amazon Bedrock guardrail that holds the broadcast's house rules on every Narrator turn, against the Regional Managing Director | `strands.types.guardrails` |
 | 8.4 | [Mid-Song Save](mid-song-save.md) | sidequest | a dance-off round that pauses mid-round, saves where it stopped and picks up in a new process without throwing a die twice | `strands.experimental.checkpoint` |
@@ -43,4 +43,4 @@ Encounter code lives in [`encounters/`](../../encounters/), one folder per encou
 
 The crawl runs one language model, Amazon Nova 2 Lite. Two parts of the original plan reached past Amazon Nova 2 Lite: a cloud embedding service for Keyword versus Vector, and a third-party hosted decision service next to Read the Room, Typed. Neither part ships: Keyword versus Vector runs on local ChromaDB, and Read the Room, Typed decides on Nova 2 Lite.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Every floor down here has doors off the main corridor. Most doors lead to closets. Some open onto the System's best material. Barnaby wants to open every door. I want to finish the floor first. We compromise: finish the floor, then open one door.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Every floor down here has doors off the main corridor. Most doors lead to closets. Some open onto the System AI's best material. Barnaby wants to open every door. I want to finish the floor first. We compromise: finish the floor, then open one door.

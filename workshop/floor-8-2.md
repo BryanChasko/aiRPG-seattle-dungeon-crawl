@@ -7,7 +7,7 @@ Files on this floor: [`8_agentcore_production/characteragent/character_agent.py`
 ![Floor 8.2: The Character Agent](../images/floors/floor-8-2-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 8.2.** Brick two was the registration desk. A desk in the cloud has no drawer to keep papers in, so our sheets needed a home of their own. When the desk restarted and still knew my Constitution score, Barnaby made a sound through the collar I am going to call a laugh.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, FLOOR 8.2.** Brick two was the registration desk. A desk in the cloud has no drawer to keep papers in, so our sheets needed a home of their own. When the desk restarted and still knew my Constitution score, Barnaby made a sound through the collar I am going to call a laugh.
 <!-- /cordula-log -->
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Brick two. The Crawlers' characters move into AgentCore Memory, where the records outlive their sessions. The System offers most Crawlers less."
@@ -107,7 +107,7 @@ The agent is created with `callback_handler=None`: nobody reads the terminal of 
 
 ## Part 2: Deploy the Agent and Its Memory
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "No database to run. AgentCore Memory holds the registry, one record per Crawler, under /characters/. The registry never forgets. Neither does the System."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "No database to run. AgentCore Memory holds the registry, one record per Crawler, under /characters/. The registry never forgets. The Narrator keeps the memory, Crawler. I only read it out."
 
 Run the commands of this part from the project folder:
 
@@ -327,7 +327,7 @@ The Narrator discovers the two agents, asks the Character Agent for Cordula's sh
 
 If the Narrator says the Character Agent call failed, look in the Narrator terminal: `403` means a region mismatch, as in 8.1; a `ReadTimeout` means `timeout=300` is missing from Step 2; `Invalid URL` means `CHARACTER_AGENT_URL` in `.env` is not the whole URL.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Developer Advocate Swarm found us again in a Bellevue lobby, with better lighting this time. Before the first call, the Narrator went to the records office and pulled my sheet, Strength 16, Constitution 16, Charisma 10. It called Presence anyway, the System's idea of a joke. Charisma is my worst stat. I lost the round, the swarm livestreamed it, and every viewer could see the number on my sheet that lost it. Fair is fair.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The Developer Advocate Swarm found us again in a Bellevue lobby, with better lighting this time. Before the first call, the Narrator went to the records office and pulled my sheet, Strength 16, Constitution 16, Charisma 10. The Narrator called Presence anyway, and the System AI announced it with relish. Charisma is my worst stat. I lost the round, the swarm livestreamed it, and every viewer could see the number on my sheet that lost it. Fair is fair.
 
 > <img src="../images/icons/warning-96x96.webp" alt="Warning" width="28" height="28"> **SYSTEM WARNING:** Web interface: the [Floor 6](floor-6.md) interface still works for the game itself. Its character panel, however, reads the [Floor 5](floor-5.md) `characters.json` through the Narrator's `/user/{user_name}` endpoint, so the panel does not see the characters stored in AgentCore Memory. 8.4 takes the Narrator to the cloud and resolves the mismatch.
 

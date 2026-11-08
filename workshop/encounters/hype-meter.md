@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-6-hype-meter/hype_meter.py`](../../encounters/floor-6-hype-meter/hype_meter.py), [`web/src/components/HypeMeter.vue`](../../web/src/components/HypeMeter.vue), [`web/src/composables/useGameApi.ts`](../../web/src/composables/useGameApi.ts), [`web/src/stores/gameStore.ts`](../../web/src/stores/gameStore.ts), [`web/src/views/GameView.vue`](../../web/src/views/GameView.vue) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 6.** The ratings ticker in the corner of the arena had been going up all night and nobody would tell me the rule. The Fremont Troll judged from the end of the hall and gave nothing away. I distrust a number I cannot trace. So I found the handbook page the System keeps for it, Hype, and I wired a counter to the events that raise it: a round called, a Crawler benched, a title announced. Then I put the counter on the screen. Barnaby watched it climb and said he had never felt so measured. He said it like a compliment.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, SIDE PASSAGE OFF FLOOR 6.** The ratings ticker in the corner of the arena had been going up all night and nobody would tell me the rule. The Fremont Troll judged from the end of the hall and gave nothing away. I distrust a number I cannot trace. So I found the Crawl Handbook page on Hype, the stat the Narrator tracks and the System AI shows, and I wired a counter to the events that raise it: a round called, a Crawler benched, a title announced. Then I put the counter on the screen. Barnaby watched it climb and said he had never felt so measured. He said it like a compliment.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Hype is hidden. The System shows it when it chooses to. Today it chooses to. Do not get used to the display. Sponsors are watching the number, and so, for once, are you."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Hype is hidden. The Narrator keeps the number and I show it when I choose to. Today I choose to. Do not get used to the display. Sponsors are watching the number, and so, for once, are you."
 
 ## The Brief
 
@@ -34,7 +34,7 @@ Hype follows the [Crawl Handbook](../world/crawl-handbook/07-hype-sponsors-and-l
 
 Sponsors may send a box at 10, 25 and 50 Hype. The meter records each tier the first time Hype reaches that tier.
 
-The Narrator in this folder is the Floor 5 Narrator, copied and extended, so the new Narrator serves the same routes on the same port. The new Narrator adds two small tools, `call_the_round` and `bench_crawler`, and the System's prompt asks the Narrator to call both tools after each round. The tool calls are the events the hook reads. The achievement is different: the achievement is words in an Amazon Nova 2 Lite reply, so the hook reads the model-call event and looks for the title in square brackets. A title already counted does not pay twice.
+The Narrator in this folder is the Floor 5 Narrator, copied and extended, so the new Narrator serves the same routes on the same port. The new Narrator adds two small tools, `call_the_round` and `bench_crawler`, and the Narrator's system prompt, which opens "You are the System" and speaks in the System AI's voice, asks the Narrator to call both tools after each round. The tool calls are the events the hook reads. The achievement is different: the achievement is words in an Amazon Nova 2 Lite reply, so the hook reads the model-call event and looks for the title in square brackets. A title already counted does not pay twice.
 
 Check the result: `GET /hype` returns a total that rises after a round the party wins, and the web interface shows the total in a panel under the character sheet.
 
@@ -183,7 +183,7 @@ Two rounds won and one achievement earned give 7 Hype; a Final Beat won adds 3 m
 |---|---|---|
 | `Address already in use` | the Floor 5 Narrator is still on port 8009 | stop the Floor 5 Narrator, then run the Hype Meter Narrator |
 | the panel never appears | the page is talking to a Narrator without `/hype`, or the route still returns `{}` | Step 4, then reload the page |
-| `/hype` stays at 0 after a dance-off the party won | the meter is not registered, or the System did not call `call_the_round` | Steps 1 to 3, then watch the terminal for the tool call |
+| `/hype` stays at 0 after a dance-off the party won | the meter is not registered, or the Narrator did not call `call_the_round` | Steps 1 to 3, then watch the terminal for the tool call |
 | a round the party won did not add 1 | the call came back with an error | read the terminal: `winner` must be `party` or `opponent` |
 | `AccessDeniedException` or `ExpiredToken` | the Amazon Nova 2 Lite call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
 
@@ -193,7 +193,7 @@ A prompt could have asked Amazon Nova 2 Lite to keep the total and print the tot
 
 ## What It Costs
 
-The hooks themselves are plain Python, so they cost nothing. The price is the two extra tool calls the System makes. Each call is another pass through Amazon Nova 2 Lite: assume about 6,000 tokens of input (the prompt plus the history so far) and 100 tokens of output.
+The hooks themselves are plain Python, so they cost nothing. The price is the two extra tool calls the Narrator makes. Each call is another pass through Amazon Nova 2 Lite: assume about 6,000 tokens of input (the prompt plus the history so far) and 100 tokens of output.
 
 - one pass: 6,000 x $0.30 per million is $0.0018 in, 100 x $2.50 per million is $0.00025 out, about $0.002
 - a dance-off with three rounds and one benching is four extra calls: about $0.008, under a cent

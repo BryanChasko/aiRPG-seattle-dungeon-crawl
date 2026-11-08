@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-1-reasoning-dial/reasoning_dial.py`](../../encounters/floor-1-reasoning-dial/reasoning_dial.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, SIDE PASSAGE OFF FLOOR 1.** The Bonus-Season Investment Banker was waiting under the Pier 59 clock, fleece vest zipped to the chin, and the System's voice was doing something I had not heard before. It was fast for the heckling and slow for the rulings. Barnaby found the cause on the collar's service panel: a brass dial with two marks, QUICK and CAREFUL. "One mind, Sergeant, two settings. The System turns the knob itself, and for most of a bout it leaves the dial on QUICK. A good crew chief does not torque every bolt to spec, only the ones that hold a wing on."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, SIDE PASSAGE OFF FLOOR 1.** The Bonus-Season Investment Banker was waiting under the Pier 59 clock, fleece vest zipped to the chin, and the System AI's voice was doing something I had not heard before. It was fast for the heckling and slow for the rulings. Barnaby found the cause on the collar's service panel: a brass dial with two marks, QUICK and CAREFUL. "One mind, Sergeant, two settings. The Narrator turns the knob itself, and for most of a bout it leaves the dial on QUICK. A good crew chief does not torque every bolt to spec, only the ones that hold a wing on."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Boss battle: the Bonus-Season Investment Banker. They have synergies. The party has a dial. I will think hard about exactly one thing tonight, and it will be whether the party tied. Do not make me think hard about anything else."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Boss battle: the Bonus-Season Investment Banker. They have synergies. The party has a dial. The Narrator will think hard about exactly one thing today, and it will be whether the party tied. Do not make me think hard about anything else."
 
 <img src="../../images/cards/opponent-banker-640x640.webp" alt="The Bonus-Season Investment Banker, a young man in a fleece vest over a dress shirt, slipping mid-spin on a wet floor as his sunglasses fly off" width="240">
 
@@ -23,7 +23,7 @@ Files on this side passage: [`encounters/floor-1-reasoning-dial/reasoning_dial.p
 | time | about 25 minutes |
 | model | Amazon Nova 2 Lite, as on every floor, in both settings and in the classifier |
 
-Amazon Nova 2 Lite can answer straight away or think first. Thinking is a setting on the request, not a different model: the narrator on Floor 5 turns reasoning on with `additional_request_fields={"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "low"}}` on the Narrator's `BedrockModel`, as the [code comment in the Floor 5 Narrator](../../5_a2a_integration/agents/narrator_orchestrator/narrator_orchestrator.py) explains. Thinking costs time and output tokens, and most of a dance-off needs no thinking. A heckle needs no thinking. A Final Beat that decides the whole bout might need it.
+Amazon Nova 2 Lite can answer straight away or think first. Thinking is a setting on the request, not a different model: the Narrator on Floor 5 turns reasoning on with `additional_request_fields={"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "low"}}` on the Narrator's `BedrockModel`, as the [code comment in the Floor 5 Narrator](../../5_a2a_integration/agents/narrator_orchestrator/narrator_orchestrator.py) explains. Thinking costs time and output tokens, and most of a dance-off needs no thinking. A heckle needs no thinking. A Final Beat that decides the whole bout might need it.
 
 A `ModelRouter` holds several candidates and lets a strategy choose one candidate for each turn. A candidate is a `RoutingCandidate`: a model with a name and a description. The strategy reads the candidate descriptions. The `ClassifierStrategy` asks a model to read the latest request and pick a candidate. The `FallbackStrategy` picks the healthiest candidate that has not failed yet, and the router asks the strategy again after a failed call. A router takes one strategy, and the banker fight needs both: the classifier to open each turn, the fallback to rescue it. The file supplies `DialStrategy`, a short class that hands the opening choice to the classifier and every choice after a failure to the fallback, and logs which candidate was picked. See [How Model Routing Works](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#how-model-routing-works), [Route Each Request by Content](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#route-each-request-by-content), [Route Failures to a Backup Model](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#route-failures-to-a-backup-model) and [Build a Custom Routing Strategy](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#build-a-custom-routing-strategy).
 
@@ -151,7 +151,7 @@ Replace `dial = None`.
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby read the dial's policy out loud, because Barnaby cannot resist a posted rule. Choose the deep setting only for a close call. Everything else goes to quick. He said it was the first rule the System had ever written about itself that I would have signed. Then he asked who decides what counts as close, and I pointed at the descriptions. The classifier reads them. I wrote them. I took the job seriously.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** Barnaby read the dial's policy out loud, because Barnaby cannot resist a posted rule. Choose the deep setting only for a close call. Everything else goes to quick. He said it was the first rule posted about how the Narrator thinks that I would have signed. Then he asked who decides what counts as close, and I pointed at the descriptions. The classifier reads them. I wrote them. I took the job seriously.
 
 ## Step 5: The Router
 
@@ -230,7 +230,7 @@ Money follows the output tokens, because thinking is billed as output, at $2.50 
 
 Three turns and three classifier calls come to under a cent, about $0.0079. The same bout all on deep, with no classifier, is about $0.016. The Final Beat turn is two thirds of the dial's bill, and that turn is the one that earned the spend.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The drum sped up. The banker rolled a 23 and kept dancing past the final strike, the way they keep going past the end of every meeting. I rolled a 19 and stopped on the beat. The collar took long enough on the ruling that I counted the seconds: twenty-one seconds. Barnaby said he had been waiting a hundred years for the System to pause before it spoke. He sounded nearly moved.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The drum sped up. The banker rolled a 23 and kept dancing past the final strike, the way they keep going past the end of every meeting. I rolled a 19 and stopped on the beat. The collar took long enough on the ruling that I counted the seconds: twenty-one seconds. Barnaby said he had been waiting since 0551 for the System AI to pause before it spoke. He sounded nearly moved.
 
 ## Encounter Clear
 

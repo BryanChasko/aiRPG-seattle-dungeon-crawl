@@ -7,7 +7,7 @@ Files on this floor: [`2_vended_tools/agent_with_vended_tools.py`](../2_vended_t
 ![Floor 2: The Vending Machines](../images/floors/floor-2-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, FLOOR 2.** Below the lobby the water shallowed into a meadow of eelgrass, crab country, and the crabs do not like noise. Barnaby wanted to know what he was. Not philosophically; tactically. What can a giant octopus do, by the book? The vending machines down here sold tools, and one of them could look things up. He read the old monster manual entry on his own species and was offended for ten minutes. Then a scripter named Kiro offered to run any command we wanted, no questions asked. I do not let anyone run a command I have not read. That is the second machine on this floor. Somewhere in the sand under the eelgrass, something big and pale started to dig its way up. That was Shelly.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 2, THURSDAY, JUNE 18, FLOOR 2.** Below the lobby the water shallowed into the Eelgrass Nursery, a meadow of eelgrass, crab country, and the crabs do not like noise. Barnaby wanted to know what he was. Not philosophically; tactically. What can a giant octopus do, by the book? The vending machines down here sold tools, and one of them could look things up. He read the old monster manual entry on his own species and was offended for ten minutes. Then a scripter named Kiro offered to run any command we wanted, no questions asked. I do not let anyone run a command I have not read. That is the second machine on this floor. The water was dropping toward the 1400 low water, and the flats were starting to show.
 <!-- /cordula-log -->
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Floor 2. The vending machines are open. Everything on offer ships with the SDK, nothing is free of consequences, and the optional shell tool will run exactly what you approve. Approve with care. The sponsors are hoping you will not."
@@ -45,7 +45,7 @@ The complete list is on the [Vended Tools](https://strandsagents.com/docs/user-g
 
 > <img src="../images/icons/item-96x96.webp" alt="Item" width="28" height="28"> **ITEM ACQUIRED: [http_request]**
 >
-> Calls external APIs on the agent's behalf. Rarity: Common. Comes with the Open5e API pre-bookmarked, because the System refuses to invent a stat block in front of a live audience.
+> Calls external APIs on the agent's behalf. Rarity: Common. Comes with the Open5e API pre-bookmarked, because the Narrator refuses to invent a stat block in front of a live audience.
 
 ```python
 # TODO: Step 1 - Import http_request from strands.vended_tools
@@ -110,6 +110,10 @@ Check: the terminal shows `Tool #1: http_request` before the answer, and the ans
 | `AccessDeniedException` or `ExpiredToken` | the Amazon Nova 2 Lite call failed, not `http_request` | run the check in [Floor 0, Step 7](floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** The answer came back with numbers in it, and every one had a source. Barnaby read the stat block twice. "Advantage on stealth. Correct. A twenty-foot ink cloud. Accurate, if unambitious." Then, quieter: "They wrote me down as a monster, Sergeant." I told him it was a game manual from before anybody had met him. He went red for ten minutes. Then he asked how many other things the machine could look up.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA'S LOG, DAY 2, THURSDAY, JUNE 18, FLOOR 2, 1400.** The 1400 low water (-2.7 feet) pulled the bay back off the nursery, and the flood had scoured one sand flat down to bare shell. A geoduck lay on his side in the open with a two-foot neck draped across the sand, 59 years in the same square foot of Elliott Bay and now nowhere. Barnaby said an adult geoduck cannot dig back in, and then he said nothing for a while. The first Companion Egg bound him to the party and gave him what no adult geoduck has ever had, the power to dig in anywhere in half a second. I named him Shelly, after Shilshole, where I learned to paddle at ten. He answered with a long silence and one puff of sea mist, and I counted him in as crew. Barnaby set his rule within the minute: the clam stays five feet from the water line, and Shelly dug in exactly five feet away and did not move.
+
+> <img src="../images/icons/achievement-96x96.webp" alt="Achievement" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!** **[Dug In and Refused to Elaborate]** Rewarding: Cordula and Barnaby. Most Crawlers bind something fierce or fluffy. You bound a 59-year-old burrowing clam with a two-foot neck. Barnaby will not look at the clam. Companion Egg consumed: Shelly, Puget Sound geoduck, Level 4 Rare Companion.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **SYSTEM DESIGN, LAYER 2: OUTSIDE KNOWLEDGE.** A System that makes up facts loses its readers the first time a number contradicts itself. Giving the agent a tool means it looks things up and quotes the source instead of guessing. Barnaby's own abilities in [the cast sheet](world/cast.md) (Chromatophore Stealth, Ink Cloud) are built on exactly what this API returns, adapted to the dance floor. See [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 
@@ -215,7 +219,7 @@ Check: `fibonacci_scroll.py` now sits in `2_vended_tools/`, and Kiro reports the
 | `file_editor` refuses the path | the path is not absolute, or the script runs on native Windows | run the script from `2_vended_tools/`; on Windows, use WSL (see the warning above) |
 | the scroll is written, then the shell call fails with `python3: not found` | this computer's Python command is `python` | type `n` on that call: Kiro usually retries with `python`. If Kiro does not retry, add "run it with python" to the request at the bottom of `bonus_quest.py` |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I said no to the first command Kiro tried, on purpose, to see what he would do. He sulked, rewrote it, and asked again. That is the whole point of the HumanInTheLoop machine. Then the sand under my boots started to move, slowly, the way a tide moves, and a pale creature the size of a loaf of bread pushed up out of the eelgrass and sighed sea mist at me. Shelly had arrived. He has never once let go of the floor since.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="Cordula" width="28" height="28"> **CORDULA:** I said no to the first command Kiro tried, on purpose, to see what he would do. He sulked, rewrote it, and asked again. That is the whole point of the HumanInTheLoop machine.
 
 ### Tool Consent and Safety
 
@@ -252,4 +256,4 @@ Loot kept:
 >
 > Reward: You received a [Bronze Box]. Inside: an http_request tool, a stern reminder about HumanInTheLoop, and a coupon for one (1) apology to your own filesystem.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Your agent now decides on its own when to reach for a tool. The sponsors call this "emergent behavior." I call it Tuesday."
+> <img src="../images/icons/system-ai-96x96.webp" alt="System AI" width="28" height="28"> **System AI:** "Your agent now decides on its own when to reach for a tool. The sponsors call this "emergent behavior." I call it Thursday."
