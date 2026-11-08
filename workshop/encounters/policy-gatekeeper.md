@@ -138,7 +138,7 @@ hitl = HumanInTheLoop(classifier=risk_classifier, ask="stdio")
 # TODO: Step 5 - Pass interventions to the Agent in this order: ledger, then cedar, then hitl
 ```
 
-The order is the strategy. Handlers run in the order of the list and the first deny stops the line. Put `cedar` before `hitl` and a forbidden call is turned back before the classifier spends a model call on it or a human sees it. Put `ledger` first and the ledger records every call, forbidden ones included; swap `ledger` behind `cedar` and the ledger never hears about a denied call.
+The order is the strategy. Handlers run in the order of the list and the first deny stops the line. Put `cedar` before `hitl` and a forbidden call is turned back before the classifier spends a model call on it or a human sees it. Put `ledger` first and the ledger records every call, forbidden ones included; swap `ledger` behind `cedar` and the ledger never hears about a denied call. The classifier sees only the jobs the rulebook allows: in the example run below, the rulebook denies job 5 (`cat /etc/hosts`) before the classifier sees it, even though the `RISK_RULES` text says running any command is risky.
 
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby asked why the clerk does not just guard everything. A clerk who guards everything is the same as me approving forty calls by hand: after a while the hand says yes on its own. The rulebook turns back what must never happen, the clerk waves through what is dull, and the calls left for me are few enough to read. I would rather make four decisions with my head than forty with my thumb.
 

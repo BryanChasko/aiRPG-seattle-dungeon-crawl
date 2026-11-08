@@ -119,17 +119,19 @@ Add the argument inside the `Agent(...)` call in `make_watcher`. `trace_attribut
 python trace_the_portal.py
 ```
 
-The server prints its own startup and request lines to the same terminal. Scroll past the server lines to the `SPANS` heading. Check: one line per finished span, in the order they finished, then Lady Luck's sentence. The output below is an example, trimmed to the lines that matter. Ids, die and cycle count differ on every run:
+The server prints its own startup and request lines to the same terminal. Scroll past the server lines to the `SPANS` heading. Check: one line per finished span, in the order they finished, then Lady Luck's sentence. The output below is a real run. Trace and span ids are shortened to their last four hex characters (the trace id to six) for readability; the real ids are longer. Ids, die and cycle count differ on every run:
 
 ```
 SPANS, in the order they finish
-  chat                                 trace 3f9a1c  span 41b2  parent 9e07
-  portal.roll_dice                     trace 3f9a1c  span 7d10  parent c5e3
-  execute_tool roll_dice               trace 3f9a1c  span c5e3  parent 9e07
-  ...
-  invoke_agent Strands Agents          trace 3f9a1c  span 2a60  parent none
+  chat                                 trace 056c4d  span 248f  parent c157
+  portal.roll_dice                     trace 056c4d  span 6044  parent afc9
+  execute_tool roll_dice               trace 056c4d  span afc9  parent c157
+  execute_event_loop_cycle             trace 056c4d  span c157  parent 9804
+  chat                                 trace 056c4d  span 2d52  parent 76be
+  execute_event_loop_cycle             trace 056c4d  span 76be  parent 9804
+  invoke_agent Strands Agents          trace 056c4d  span 9804  parent none
 
-Lady Luck: Cordula rolled a 14 on her Read the Room check.
+Lady Luck: Cordula rolls a 13 on her Read the Room check.
 ```
 
 Find the tool call and the server span: `portal.roll_dice` has the same `trace` as `execute_tool roll_dice`, and its `parent` is that line's `span`. That parent link is the wire, drawn.
