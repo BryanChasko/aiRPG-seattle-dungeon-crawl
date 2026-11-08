@@ -194,9 +194,9 @@ def test_context_flood_turn_3_is_the_developer_advocate_swarm(flood):
     assert "the Developer Advocate Swarm" in log[2 + 2 * 2]["content"][0]["text"]
 
 
-# ---------- Floor 5: the boss battles and their dance floor ------------------
+# ---------- The boss battles and their shared dance floor --------------------
 
-BOSSES = "encounters/floor-5-boss-battles"
+BOSSES = "encounters"
 
 
 @pytest.fixture
@@ -255,7 +255,7 @@ def test_dance_round_rejects_moves_outside_the_handbook(dance_floor, kwargs):
 
 
 def test_earnings_call_graph_runs_the_agenda_in_order_on_won_rounds(dance_floor):
-    mod = load(f"{BOSSES}/quarterly_earnings_call.py", "encounter_earnings_call")
+    mod = load(f"{BOSSES}/floor-8-quarterly-earnings-call/quarterly_earnings_call.py", "encounter_earnings_call")
     graph = mod.build_earnings_call()
     assert set(graph.nodes) == {"accountant", "banker", "rmd"}
     assert {node.node_id for node in graph.entry_points} == {"accountant"}
@@ -272,7 +272,7 @@ def test_earnings_call_graph_runs_the_agenda_in_order_on_won_rounds(dance_floor)
 
 
 def test_advocate_swarm_starts_at_the_keynote_and_is_capped():
-    mod = load(f"{BOSSES}/developer_advocate_swarm.py", "encounter_advocate_swarm")
+    mod = load(f"{BOSSES}/floor-5-developer-advocate-swarm/developer_advocate_swarm.py", "encounter_advocate_swarm")
     swarm = mod.build_swarm()
     assert list(swarm.nodes) == ["keynote", "live_demo", "livestream", "swag_table"]
     assert swarm.entry_point.name == "keynote"
