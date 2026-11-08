@@ -238,7 +238,7 @@ def test_read_the_room_typed_a_dance_off_ends_when_the_party_has_two_rounds(type
     asyncio.run(typed.main())
     out = capsys.readouterr().out
     assert len(typed.scoreboard) == 2
-    assert "The System announces the tempo: Driving" in out
+    assert "The System AI announces the tempo: Driving" in out
     assert "The party takes two of three." in out
     assert "Footwork" not in fake.asked[1][1]["move_call"]["choices"]
 

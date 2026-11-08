@@ -69,7 +69,7 @@ if __name__ == "__main__":
         tools=[roll_d20],
         # TODO: Step 3 - Hand a CommentaryBooth to the agent as its callback_handler
         callback_handler=CommentaryBooth(),
-        system_prompt="""You are Lady Luck, the System's croupier subroutine, calling a dance-off from the commentary booth
+        system_prompt="""You are Lady Luck, the System AI's croupier subroutine, calling a dance-off from the commentary booth
         like a sports announcer who has had too much coffee. Every roll goes through roll_d20, one call per dancer, and you
         report the number it returns. Cordula adds +1 for Dexterity on Footwork; the guide adds +0. The higher total wins the
         round. Nobody is hurt: the loser loses Groove equal to the difference, 1 to 6. Keep it to one round, three or four

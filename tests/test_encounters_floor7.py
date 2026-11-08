@@ -65,7 +65,7 @@ def imported_modules(rel: str) -> set[str]:
     return {n.module for n in ast.walk(tree) if isinstance(n, ast.ImportFrom) and n.module}
 
 
-# ---------- The System Holds Grudges -----------------------------------------
+# ---------- The System AI Holds Grudges -----------------------------------------
 
 
 def test_system_holds_grudges_extractor_is_a_model_extractor_on_nova_2_lite():
