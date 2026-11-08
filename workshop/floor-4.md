@@ -216,6 +216,7 @@ Check: four `DICE ROLL: 4d6 drop 1 = ...` lines in the server terminal, and four
 
 - [The Locks Turnstile](encounters/locks-turnstile.md), sidequest: an MCP router with an allowlist, the dice server and a tide server you write, that refuses every other server
 - [Trace the Portal](encounters/trace-the-portal.md), sidequest: every MCP call as a span on the console, the one inside the server included
+- [The Warehouse Automation Grid](encounters/warehouse-automation-grid.md), sidequest: MCP tool filters, so an agent sees three of Cadabra's eight warehouse tools and never the one that trips the grid
 
 ## Floor Clear
 

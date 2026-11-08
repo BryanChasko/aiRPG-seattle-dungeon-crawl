@@ -135,18 +135,17 @@ Cadabra published Strands as an open toolkit, and the System AI is built from St
 | Strands Agents SDK | AWS built it and open-sourced it under Apache 2.0 in May 2025; 1.0 in July 2025 | Cadabra published Strands as an open toolkit |
 | The System AI | built from Strands agents | built from Strands agents; the manual is public |
 
-Cadabra's obstacles are planned encounters on deeper floors. Each obstacle benches Crawlers; none kills. The obstacle is a machine, and the people who run it are people at work, joked about for their jobs.
+Cadabra's obstacles are encounters on Floors 4 to 8. Each obstacle benches Crawlers; none kills. The obstacle is a machine, and the people who run it are people at work, joked about for their jobs.
 
-| Cadabra's obstacles (planned) | What the party faces | Strands feature that beats it |
+| Cadabra's obstacles | What the party faces | Strands feature that beats it |
 |---|---|---|
-| Delivery Drone Horde | thousands of coordinated drones | steering (directed agent behavior) |
-| Static Fire on the Pad | a 45-metric-ton rocket test | plugins and skills (composed capabilities) |
-| Pad Explosion Aftermath | shockwave, debris, fire suppression | evals (measure and adapt) |
-| Warehouse Automation Grid | conveyors, sorters, robotic arms | MCP tool filtering (selective tool access) |
-| Launch Commit Criteria | abort-or-proceed decision loop | rate-limiter hooks (controlled pacing) |
-| Range Safety Officer Protocol | termination authority override | approval interrupts (human-in-the-loop) |
+| [Delivery Drone Horde](../encounters/delivery-drone-horde.md), Floor 5 | thousands of coordinated drones | steering (directed agent behavior) |
+| [Static Fire on the Pad](../encounters/static-fire.md), Floor 7 | a 45-metric-ton rocket test | plugins and skills (composed capabilities) |
+| [Pad Explosion Aftermath](../encounters/pad-explosion-aftermath.md), Floor 8 | shockwave, debris, fire suppression | evals (measure and adapt) |
+| [Warehouse Automation Grid](../encounters/warehouse-automation-grid.md), Floor 4 | conveyors, sorters, robotic arms | MCP tool filtering (selective tool access) |
+| [Launch Commit Criteria](../encounters/launch-commit-criteria.md), Floor 6 | abort-or-proceed decision loop | rate-limiter hooks (controlled pacing) |
+| [Range Safety Officer Protocol](../encounters/range-safety-officer.md), Floor 8 | termination authority override | approval interrupts (human-in-the-loop) |
 
-These encounters are planned for wave 3. No page links to them yet.
 
 <table>
   <tr>

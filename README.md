@@ -32,7 +32,7 @@ A hands-on workshop that teaches the [Strands Agents SDK](https://strandsagents.
 
 - [Workshop guide](workshop/README.md): the dungeon map, every floor and every side passage
 - [Floor 0: The Stairwell](workshop/floor-0.md): clone the repository, install uv and Python, and check access to Amazon Nova 2 Lite
-- [Side Passages](workshop/encounters/README.md): 28 optional sidequests, dance-offs and boss battles, each one off a floor
+- [Side Passages](workshop/encounters/README.md): 34 optional sidequests, dance-offs and boss battles, each one off a floor
 - [The Exit](workshop/cleanup.md): stop the local services, remove the Floor 8 AWS resources and delete the generated files
 
 ### Quick Start

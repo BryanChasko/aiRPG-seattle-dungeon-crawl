@@ -621,6 +621,7 @@ Watch the four terminals while a request runs. In the Narrator terminal the tool
 - [Barnaby Takes the Call](encounters/barnaby-takes-the-call.md), sidequest: an `A2AAgent` instead of the `a2a_client` tool, with every A2A event streamed
 - [Read the Room, Typed](encounters/read-the-room-typed.md), dance-off: the tempo and each Move Call picked as typed values by a decision model, against the Quarterly Close Accountant
 - [Subcontract the Paperwork](encounters/subcontract-the-paperwork.md), sidequest: a subagent tool that hires a one-off clerk on a pinned Amazon Nova 2 Lite
+- [The Delivery Drone Horde](encounters/delivery-drone-horde.md), sidequest: a steering handler that keeps the party on course while Cadabra's drones beg for answers
 
 ## Floor Clear
 

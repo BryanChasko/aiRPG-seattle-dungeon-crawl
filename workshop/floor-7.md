@@ -295,6 +295,7 @@ Add any feature the Narrator needs. The Narrator could generate images of scenes
 - [The System AI Holds Grudges](encounters/system-holds-grudges.md), sidequest: a memory manager that extracts facts across campaigns into a file memory store
 - [Keyword versus Vector](encounters/keyword-versus-vector.md), dance-off: keyword search against vector search on the Crawl Handbook, judged on the Final Beat
 - [Save Points](encounters/save-points.md), sidequest: the file, snapshot and S3 session managers side by side
+- [Static Fire on the Pad](encounters/static-fire.md), sidequest: a plugin that bundles tools and a hook, and skills that load only when the hold call needs them
 
 ## Floor Clear
 
