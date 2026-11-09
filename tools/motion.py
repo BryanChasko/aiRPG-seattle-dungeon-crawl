@@ -12,6 +12,8 @@ Effects (issue #6: at most 480 px, 6 to 12 frames, under 1.5 MB):
   ink       Barnaby's Ink Cloud: black smoke blooms over the image and clears (cards, plates)
   throw     Chonks the projectile: the sprite arcs across the frame spinning (sprites)
   mist      Shelly's idle: a slow breathe with a sea-mist shimmer             (cards)
+  roll      a dice roll: a drawn d20 tumbles through numbers and lands on 20 (drawn, no source art)
+  blink     Barnaby blinks: one slow eyelid over the eye-icon close-up        (icons)
 
 Usage:
   python3 tools/motion.py offbeat images/cards/opponent-accountant-offbeat-640x640.webp
@@ -24,7 +26,7 @@ from __future__ import annotations
 import argparse, json, math, random, sys
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageSequence
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageSequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from airpg_render import ART_DIR, ROOT, rel, sha256_file  # noqa: E402
@@ -135,10 +137,47 @@ def mist(src: Path) -> list[Image.Image]:
     return frames
 
 
+def roll(src: Path) -> list[Image.Image]:
+    """A dice roll drawn from scratch (the d20 artwork is vector, so the die is drawn)."""
+    import random as _random
+    rnd = _random.Random(20)  # fixed seed: the same tumble every run
+    mono = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf", 44)
+    nums = [rnd.randint(1, 20) for _ in range(7)] + [20, 20, 20]
+    frames = []
+    for i in range(10):
+        t = i / 9
+        c = Image.new("RGBA", (192, 192), OBSIDIAN + (255,))
+        d = ImageDraw.Draw(c)
+        cx, cy, r = 96, 96, 62 * (0.7 + 0.3 * math.sin(t * math.pi))
+        pts = [(cx + r * math.cos(-math.pi / 2 + k * 2 * math.pi / 6 + t * 4),
+                cy + r * math.sin(-math.pi / 2 + k * 2 * math.pi / 6 + t * 4)) for k in range(6)]
+        d.polygon(pts, outline=MAGENTA)
+        d.polygon([(cx + (x - cx) * 0.55, cy + (y - cy) * 0.55) for x, y in pts], outline=TEAL)
+        txt = str(nums[i])
+        d.text((cx - len(txt) * 13, cy - 24), txt, font=mono, fill=(232, 226, 240))
+        frames.append(c)
+    return frames
+
+
+def blink(src: Path) -> list[Image.Image]:
+    eye = base(src, 160)
+    size = (192, 192)
+    frames = []
+    for i in range(8):
+        k = math.sin(i / 7 * math.pi)  # lid closes, then opens
+        f = on_canvas(eye, size)
+        lid_h = round(80 * k)
+        if lid_h:
+            d = ImageDraw.Draw(f)
+            d.rounded_rectangle((16, 16, 176, 16 + lid_h), radius=20, fill=OBSIDIAN + (255,))
+        frames.append(f)
+    return frames
+
+
 EFFECTS = {"offbeat": offbeat, "loot-pop": loot_pop, "benched": benched, "ink": ink,
-           "throw": throw, "mist": mist}
+           "throw": throw, "mist": mist, "roll": roll, "blink": blink}
 REST = {"offbeat": 0, "loot-pop": -1, "benched": -1, "ink": 0,
-        "throw": 4, "mist": 0}  # which frame the still uses
+        "throw": 4, "mist": 0, "roll": -1, "blink": 0}  # which frame the still uses
 
 
 def make(effect: str, src: Path) -> Path:
@@ -165,7 +204,14 @@ def make(effect: str, src: Path) -> Path:
 
 def strip(paths: list[Path], dest: Path) -> Path:
     """Review strip: every other frame of each clip, one row per clip."""
-    rows = [[f.convert("RGB").resize((160, 160)) for f in ImageSequence.Iterator(Image.open(p))][::2] for p in paths]
+    rows = []
+    for p in paths:
+        im = Image.open(p)
+        row = []
+        for i in range(0, getattr(im, "n_frames", 1), 2):
+            im.seek(i)
+            row.append(im.copy().convert("RGB").resize((160, 160)))  # copy: the iterator reuses one image
+        rows.append(row)
     sheet = Image.new("RGB", (max(map(len, rows)) * 164, len(rows) * 164), (40, 40, 40))
     for y, row in enumerate(rows):
         for x, f in enumerate(row):

@@ -48,7 +48,9 @@ This crawl teaches the Strands Agents SDK and LitRPG System design together. Eac
 - **Two registers, one directive.** The directive never changes: complete the season, hold the audience, no dead air. The register changes with the room. To Crawlers and viewers it performs (notifications, loot reveals, viewer polls). To sponsors, and on the corporate floors near quarter close, it files: incidents, findings, segments at risk, throughput by floor, each phrased with the flat courtesy of an audit report that has already decided. The filing voice is seasoning, never a second job: this is a broadcast that keeps meticulous reports, not an audit that occasionally performs. Neither register threatens harm. The worst sentence it can pass is Benched, then Cancelled, and it passes both in the same level tone it uses for good news.
 - **Notifications.** Every System message arrives as a typed notification: `NEW ACHIEVEMENT UNLOCKED`, `SYSTEM WARNING`, `SPONSOR MESSAGE`, Move Calls and Final Beats. In the code, a notification is the `response` field of `StoryOutput`.
 - **The HUD.** Floating panels for the character sheet, the dice and the suggested actions. In the code, the HUD is the Floor 6 web interface rendering `StoryOutput`.
-- **The battle log.** Every die rolled, with its reason. In the code, the battle log is `dice_rolls`, and every entry must come from a real `roll_dice` call.
+- **The battle log.** Every die rolled, with its reason. In the code, the battle log is `dice_rolls`, and every entry must come from a real `roll_dice` call. This is what a roll looks like:
+
+<picture><source srcset="../../images/motion/d20-roll-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../images/motion/d20-roll.webp" alt="A d20 tumbling through numbers and landing on 20" width="120"></picture>
 
 <table>
   <tr>

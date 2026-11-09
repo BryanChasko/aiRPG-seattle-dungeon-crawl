@@ -158,7 +158,9 @@ STEALTH            (smoke screen)      (gentle pin)        (locks, chests)
 </tr>
 </table>
 
-Barnaby's five chromatophore states, left to right across his cards: calm (the base card: dark charcoal and slate at rest), plotting, irritated (the first red blush over charcoal), stealth, academic. His collar glows faint violet at rest and burns brighter with his temper. Presence and the legend card are dance-off moments, not moods.
+Barnaby's five chromatophore states, left to right across his cards: calm (the base card: dark charcoal and slate at rest), plotting, irritated (the first red blush over charcoal), stealth, academic. His collar glows faint violet at rest and burns brighter with his temper. Presence and the legend card are dance-off moments, not moods. He also blinks, slowly, when he wants you to know he heard you:
+
+<picture><source srcset="../../images/motion/speaker-barnaby-eye-blink-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../images/motion/speaker-barnaby-eye-blink.webp" alt="Barnaby's eye closing in one slow blink and opening again" width="120"></picture>
 
 <table>
 <tr>

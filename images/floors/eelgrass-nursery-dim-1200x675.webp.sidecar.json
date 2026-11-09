@@ -1,0 +1,17 @@
+{
+ "file": "eelgrass-nursery-dim-1200x675.webp",
+ "size": [
+  1200,
+  675
+ ],
+ "format": "webp lossy q82",
+ "source": {
+  "image": "images/floors/eelgrass-nursery-1200x675.webp",
+  "image_sha256": "564e428fd3a2d15169be6681d3ea0c19626d870a0f16729799a5927996ed4e6f"
+ },
+ "transforms": [
+  "source plate's vignette feather 50 to #0B0E14 and ben-day 10px r2 alpha 10 ride along (derived image, not re-rendered)",
+  "pillow compose: desaturate 0.55, brightness 0.42, cool-blue blend 0.22 (lights-out stealth variant, no model call)"
+ ],
+ "sha256": "6929131d8dea4d12a75c7cff1026c15b9c4145fe69e363f67ca3b3f300679c87"
+}

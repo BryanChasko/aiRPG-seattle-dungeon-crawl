@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200" role="img" aria-label="Dice request crossing the Ballard Locks portal to the dice server">
+  <title>Dice across the Locks</title>
+  <desc>A client terminal on the left, the dice server on the right, two lock gates between them, one glowing die travelling across.</desc>
+  <style>
+    .static{display:none}
+    @media (prefers-reduced-motion: reduce){
+      .motion{display:none}
+      .static{display:inline}
+    }
+  </style>
+  <rect x="1" y="1" width="478" height="198" rx="10" fill="#0B0E14" stroke="#6A2C91" stroke-width="2"/>
+  <rect x="16" y="60" width="104" height="80" rx="8" fill="none" stroke="#B04CE0" stroke-width="3"/>
+  <rect x="360" y="60" width="104" height="80" rx="8" fill="none" stroke="#2EC4B6" stroke-width="3"/>
+  <g stroke="#8A6D3B" stroke-width="6">
+    <line x1="196" y1="30" x2="196" y2="170"/>
+    <line x1="216" y1="30" x2="216" y2="170"/>
+    <line x1="264" y1="30" x2="264" y2="170"/>
+    <line x1="284" y1="30" x2="284" y2="170"/>
+  </g>
+  <g class="motion">
+    <rect x="-14" y="-14" width="28" height="28" rx="6" fill="#B04CE0">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 82,100 L 398,100"/>
+    </rect>
+  </g>
+  <g class="static">
+    <rect x="226" y="86" width="28" height="28" rx="6" fill="#B04CE0"/>
+  </g>
+</svg>
