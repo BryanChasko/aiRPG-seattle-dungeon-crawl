@@ -8,9 +8,13 @@ Files on this floor: [`8_agentcore_production/.env.example`](../8_agentcore_prod
 
 <!-- cordula-log -->
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, FLOOR 8.** The last floor is the corporate one: glass towers across Lake Washington, lanyards on a Saturday, a Regional Managing Director who wants us gone by end of quarter, and, past all of it, the Tacoma Narrows, where the old giant octopus legend lives. Everything we built so far stops the moment someone closes a laptop. Down here the game has to keep running on its own. So we moved the game, one piece at a time, into the cloud: the dice, the registration desk, the rule book, the Narrator itself. Barnaby insisted on doing it in order. He has always respected a checklist.
+>
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** Order, Sergeant. One does not deploy a Narrator before its dice, and one does not deploy a rule book before its reader. The checklist is a kindness. I am being kind.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 8. Production. Real AWS resources, real IAM roles, real invoices. This is the part of the crawl where mistakes cost money. Set your region before you do anything else. I mean it."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 14: Deploying Agents to the Cloud](https://www.youtube.com/watch?v=ZpXWGjISMs8) by Morgan Willis. "[AgentCore] is a collection of components for building, deploying, and operating AI agents in production."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The broadcast relay has a public library now. The video walks through the same AgentCore deploy the floor uses, and Barnaby watched it twice before he let me type the first command. He calls it "checking the homework."
 
 ## Floor Objective
 

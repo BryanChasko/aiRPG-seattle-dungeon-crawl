@@ -44,9 +44,14 @@ The dates are in [The Timeline](timeline.md), and the people are in [The Cast](c
 | 6 | Day 8 | the Underground | the audience can see the party, but the party cannot see the show | the web interface is the HUD: sheet, rolls, choices | the Pitch-Deck Founder, judged by the Fremont Troll |
 | 7 | Days 9 and 10 | the Bluffs | a night in a Safe Room wipes everything the party learned | a named session brings the campaign back after a restart | the Ferry-Line Commuter Horde, who take the cliff path at dawn |
 | 8 | Days 11 to 13 | Bellevue and the Narrows | the corporate floor wants the party gone by the end of the quarter | deploy every agent and server to AgentCore, so the System AI persists without the party | the Bonus-Season Investment Banker, the Regional Managing Director, the Quarterly Earnings Call, and the Keynote |
+| 9 (optional) | Day 13 night | ALMOCO, the Corrosion Cathedral | the lead fog makes the System AI misremember and confabulate | hallucination detection, memory write gates, and refusing poisoned instructions | the shift foreman, the crane operator, the haul truck driver, the PR man |
 | exit | Day 14 | Alki at sunrise | leaving no trace | remove every deployed resource and generated file | none; the audience leaves |
 
 The optional encounters (sidequests, boss battles and dance-offs) hang off these beats: each one is a side passage on its floor, told in Cordula's log, as the floor is. The encounters are listed in [Side Passages](../encounters/README.md).
+
+## Safe Room Reading
+
+Every Safe Room has a terminal on the broadcast relay: the System AI's public library. Cadabra published Strands as an open toolkit, so the Strands manual is there, and so is the open web's teaching: Morgan Willis's course videos, Elizabeth Fuentes's GitHub samples, the Strands docs and the Model Context Protocol docs. Each floor gets one SAFE ROOM READING block: a link to the real resource, one short attributed quote or code sample, and Cordula's log line on what she took from it. Barnaby sometimes reads over her shoulder.
 
 ## Voices
 

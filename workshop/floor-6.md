@@ -12,6 +12,9 @@ Files on this floor: [`web/src/views/NewGameView.vue`](../web/src/views/NewGameV
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience the Narrator. Pick who speaks for the party, point the web interface at port 8009, and press Enter. No pressure. Only billions of viewers."
 
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 04: Adding Callbacks and Response Streaming](https://www.youtube.com/watch?v=Zamh36RWKz8) by Morgan Willis. "...callbacks are actually one of the main ways you can control how an agent's output surfaces into a user interface, an API server, or any sort of orchestration system."
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The broadcast booth played a course on a loop, and the part about callbacks stuck. The web interface is a callback: every chunk the System AI writes hits the screen the moment it leaves the model. I watched the dance-off appear one word at a time, and I understood why it paused where it did.
+
 ## Floor Objective
 
 You've built a Narrator with custom tools, an MCP server and A2A agents. Test it in real life with our basic web interface.
@@ -78,9 +81,41 @@ Customization ideas:
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 6: THE HUD.** In a LitRPG the reader sees the System through its interface: the floating character sheet, the notification boxes, the battle log. The web interface is that HUD, the System AI's screen for the Narrator's output, and it can only exist because [Floor 5](floor-5.md) forced the Narrator into `StoryOutput`: `response` becomes the notification, `dice_rolls` the battle log, `actions_suggestions` the three choices (one of them always a terrible idea). Design the data first and the interface follows. See [The System](world/the-system.md#1-origin-and-interface).
 
+## Check
+
+| check | expected |
+|---|---|
+| the panel shows GROOVE and MANA | Cordula: Groove 17, Mana 8; Barnaby: 11 and 11 |
+| the Narrator returns the first turn | a notification, three choices and a battle log, within about ten seconds |
+| the terminal log shows each request | "Processing request...", tool calls, "200 OK" |
+
+## Docs
+
+| what the web interface calls | Strands doc |
+|---|---|
+| `POST /inquire` with a question | [Agent invocation](https://strandsagents.com/docs/user-guide/sdk/agents/invocation/) |
+| `StoryOutput` structured response | [Structured output](https://strandsagents.com/docs/user-guide/sdk/agents/structured-output/) |
+| async `agent.invoke_async` | [Async invocation](https://strandsagents.com/docs/user-guide/sdk/agents/invocation/#async-invocation) |
+
+| what the web interface uses | Vue / Vite doc |
+|---|---|
+| Vue 3 Composition API | [Vue 3 documentation](https://vuejs.org/guide/introduction.html) |
+| Vite dev server | [Vite guide](https://vite.dev/guide/) |
+
+### What a Turn Costs
+
+Amazon Bedrock bills on-demand use by the token. Third-party price trackers list Amazon Nova 2 Lite at about $0.30 per million input tokens and $2.50 per million output tokens as of November 2026 ([LiteLLM](https://models.litellm.ai/models/nova-2-lite), [LLM Stats](https://www.llm-stats.com/models/nova-2-lite)). Confirm the current price on the [Amazon Bedrock pricing page](https://aws.amazon.com/bedrock/pricing/) before planning anything bigger than this workshop.
+
+| what runs | rough tokens | rough cost |
+|---|---|
+| one Floor 5 Narrator turn (several model calls, tool results fed back in) | 15,000 in, 1,500 out | under one cent |
+| the whole workshop, with plenty of retries | a few hundred turns | a few dollars at most |
+
+The token counts are estimates, so measure them: print `result.metrics.accumulated_usage` in the orchestrator to read `inputTokens` and `outputTokens` for each call. Output costs about eight times what input does, so long answers cost more than long prompts.
+
 ## Troubleshooting
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Safari has not been tested. The System does not test Safari. Chrome or Firefox, Crawler."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Safari has not been tested. The System AI does not test Safari. Chrome or Firefox, Crawler."
 
 Browser:
 

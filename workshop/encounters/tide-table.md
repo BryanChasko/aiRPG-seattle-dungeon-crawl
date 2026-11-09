@@ -117,7 +117,7 @@ Add `http_request` and `notebook` to the `tools` list. The prompt does the rest:
 # TODO: Step 4 - Read the party's notes: print the "notebooks" entry of the system agent's state
 ```
 
-The notebook tool stores pages in the agent's state under the key `notebooks`, a dictionary of notebook name to text. Reading `notebooks` from the script, outside the conversation, checks the System's notes against the System's ruling. The module docstring on the tool's [API page](https://strandsagents.com/docs/api/python/strands.vended_tools.notebook.notebook/) names the `notebooks` key.
+The notebook tool stores pages in the agent's state under the key `notebooks`, a dictionary of notebook name to text. Reading `notebooks` from the script, outside the conversation, checks the System AI's notes against the System AI's ruling. The module docstring on the tool's [API page](https://strandsagents.com/docs/api/python/strands.vended_tools.notebook.notebook/) names the `notebooks` key.
 
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The notebook is the logbook. When the System AI says the high is twelve point four at nine thirty-five tonight, I do not take the System AI's word. I open the log and read the line the System AI wrote when the number came in. If the ruling and the log disagree, the log wins.
 
@@ -175,7 +175,7 @@ Loot kept:
 
 - A real data source behind `http_request`, with the address built in code and checked by hand first
 - `notebook`: named pages of notes kept in the agent's state, readable from the script
-- The habit of checking the System's ruling against the log it wrote
+- The habit of checking the System AI's ruling against the log it wrote
 
 > <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >

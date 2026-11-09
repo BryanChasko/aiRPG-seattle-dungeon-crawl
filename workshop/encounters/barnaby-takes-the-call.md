@@ -88,6 +88,8 @@ Replace the `return None`.
 
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Status working. Status working. A chunk of the answer. Status completed. I counted the events the way I count a convoy: how many came in, in what order, and whether the last one was the one that says we are done. Barnaby tapped the table at each one. He says a streamed answer is a conversation, and a returned answer is a verdict.
 
+> <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** A returned answer is a verdict one cannot cross-examine. I prefer the stream.
+
 <details>
 <summary>Show me the code for Step 3</summary>
 

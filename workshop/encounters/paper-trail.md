@@ -147,6 +147,6 @@ Loot kept:
 >
 > **[AUDITED AND UNBOTHERED]**
 >
-> Reward: a [Bronze Box]. Inside: a PDF reader, three new passages, and one management response the System has framed.
+> Reward: a [Bronze Box]. Inside: a PDF reader, three new passages, and one management response the System AI has framed.
 
 Back to [Floor 5](../floor-5.md#floor-clear), or on to [Floor 6](../floor-6.md).

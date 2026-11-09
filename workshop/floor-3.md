@@ -131,7 +131,11 @@ A docstring must be the first statement of the function, so it goes right under 
 
 </details>
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Our first roller had no instructions on the box, and Amazon Nova 2 Lite treated the roller like a toy: one die at a time, sixteen calls, and the sums added up in its head came out wrong. Barnaby took that personally. He spent an hour on the docstring, arm by arm, reading each line back through the collar. "The System AI never sees the code, Sergeant. It sees what we promise the code does. So we promise precisely." I have written maintenance cards for amphibious vehicles. His were better.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Our first roller had no instructions on the box, and Amazon Nova 2 Lite treated the roller like a toy: one die at a time, sixteen calls, and the sums added up in its head came out wrong. Barnaby took that personally. He spent an hour on the docstring, arm by arm, reading each line back through the collar.
+>
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The System AI never sees the code, Sergeant. It sees what we promise the code does. So we promise precisely."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I have written maintenance cards for amphibious vehicles. His were better.
 
 ## Compare the Printed Specification
 
@@ -227,6 +231,10 @@ Check: the terminal prints the new `tool_spec` first, then four `Tool #N: roll_d
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 3: HARD MATH.** Readers forgive a System for being cruel, never for being inconsistent. Ability scores, modifiers and dice are the math every later rule stands on, so they live in code, not in the model's head. In this crawl each of the six scores also maps to a dance-off Move Call: Strength is Power, Dexterity is Footwork, Constitution is Endurance, Intelligence is Choreography, Wisdom is Read the Room and Charisma is Presence. A score of 16 gives a +3 modifier: (score - 10) / 2, rounded down. See [ability scores](world/crawl-handbook/01-ability-scores.md) and [The System](world/the-system.md#2-stat-design).
 
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Create custom tools](https://strandsagents.com/docs/user-guide/sdk/tools/custom-tools/) (Strands docs) and [Video 03: Give Your Agent Tools Using MCP](https://www.youtube.com/watch?v=PtdHZBbm1Ys) by Morgan Willis. "You've already seen how to use some of the built-in vended tools and turn Python functions into tools using the tool decorator."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The docs showed the @tool decorator and the docstring contract. The video put a decorated Python function next to the vended tools, and to the agent they were the same kind of thing. I wrote the docstring, ran the script, and the spec changed. The agent started calling the tool correctly.
+
 ## Side Passage: The Concurrent Shuffle (optional)
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Deeper in the kelp, a second table with slow dice and the Quarterly Close Accountant, early for once. Two dancers, two dice, and one of them always waiting for the other.
@@ -248,6 +256,18 @@ Loot kept:
 - How to turn a Python function into a tool with the `@tool` decorator
 - How to write a docstring that guides the agent's use of the tool
 - How to add `roll_dice` to an agent
+
+### What a Turn Costs
+
+Amazon Bedrock bills on-demand use by the token: the text sent to Amazon Nova 2 Lite (input) and the text it writes back (output). Third-party price trackers list Amazon Nova 2 Lite at about $0.30 per million input tokens and $2.50 per million output tokens as of November 2026. Confirm the current price for your region on the Amazon Bedrock pricing page before planning anything bigger than this workshop.
+
+| what runs | rough tokens | rough cost |
+|---|---|---|
+| this floor's script, once | 200 in, 350 out | under a tenth of a cent |
+| one Floor 5 Narrator turn (several model calls, tool results fed back in) | 15,000 in, 1,500 out | under one cent |
+| the whole workshop, with plenty of retries | a few hundred turns | a few dollars at most |
+
+The token counts are estimates, so measure them: after running an agent, print `response.metrics.accumulated_usage` to read `inputTokens`, `outputTokens` and `totalTokens` for the call.
 
 <img src="../images/icons/stairwell-96x96.webp" alt="" width="24" height="24"> **Stairwell:** Go to [Floor 4](floor-4.md) to learn the Model Context Protocol (MCP), which connects agents to external services.
 

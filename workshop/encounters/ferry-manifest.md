@@ -5,7 +5,7 @@
 Files on this side passage: [`encounters/floor-8-ferry-manifest/ferry_manifest.py`](../../encounters/floor-8-ferry-manifest/ferry_manifest.py), [`encounters/floor-8-ferry-manifest/rules-agent-manifest.json`](../../encounters/floor-8-ferry-manifest/rules-agent-manifest.json), [`encounters/floor-8-ferry-manifest/rules_tool.py`](../../encounters/floor-8-ferry-manifest/rules_tool.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** The last ferry across the Narrows leaves at 2140, and the ferry does not leave until the deck officer has a manifest in hand. Who is aboard, how many, what they carry. Anything not on the list stays on the dock, however loudly the passenger argues. A clerk in a hi-vis vest took my name, Barnaby's, Shelly's and Chonks's, checked each against a clipboard, and looked at the Rules Agent standing in the queue. "And this one?" Barnaby explained that the Rules Agent had always been assembled from parts, on the spot, by whoever happened to be building it. The clerk made a noise I know from every inspection I have ever stood in. "No. A list. In writing. Or it does not sail."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** The last ferry across the Narrows leaves at 2140, and the ferry does not leave until the deck officer has a manifest in hand. Who is aboard, how many, what they carry. Anything not on the list stays on the dock, however loudly the passenger argues. A clerk in a hi-vis vest took my name, Barnaby's, Shelly's and Chonks's, checked each against a clipboard, and looked at the Rules Agent standing in the queue. "And this one?" <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The Rules Agent is assembled from parts, on the spot, by whoever builds it."
 <!-- /cordula-log -->
 
 > <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Ferry Manifest. The Rules Agent will be assembled from a JSON file: a name, a model, a prompt, a list of tools. Four lines. I did not think a rules lawyer could fit on a form. I stand corrected, and I have the form."
@@ -117,7 +117,7 @@ Replace the `return None`.
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The second deck officer ran a finger down the form, stopped at the model line and read it aloud, as deck officers do. Then the second deck officer tried to add a fifth line. A description, for the passenger card. The form would not take it. Unknown field, rejected at the gate. I admired the form. Barnaby said that was the price of a short form, and that the A2A agent card of 8.3 is why the Rules Agent still has a code version.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The second deck officer ran a finger down the form, stopped at the model line and read it aloud, as deck officers do. Then the second deck officer tried to add a fifth line. A description, for the passenger card. The form would not take it. Unknown field, rejected at the gate. I admired the form. <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The price of a short form. The A2A agent card of 8.3 is why the Rules Agent still has a code version."
 
 ## Sail
 
@@ -157,7 +157,7 @@ No new AWS resource. Each question is two Amazon Nova 2 Lite calls of a short pr
 unset KNOWLEDGE_BASE_RULES_ID
 ```
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Rules Agent sailed on the 2140, name on the list, model on the list, one tool in its hand. At the Narrows the clerk waved the Rules Agent through without a second look. Shelly dug in on the car deck. Chonks stuck himself to the manifest. Barnaby read the whole form again on the crossing, in case it had changed. It had not. That was the best part of it.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Rules Agent sailed on the 2140, name on the list, model on the list, one tool in its hand. At the Narrows the clerk waved the Rules Agent through without a second look. Shelly dug in on the car deck. Chonks stuck himself to the manifest. <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The form has not changed. That is the best part of it."
 
 ## Encounter Clear
 

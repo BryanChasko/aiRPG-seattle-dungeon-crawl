@@ -4,7 +4,7 @@ Amazon Nova 2 Lite can answer straight away (reasoning off) or think first (reas
 ModelRouter holds both settings as candidates and a strategy picks one for each turn: a
 classifier reads the request and sends quick banter to reasoning off and a close Final Beat to
 reasoning on, and a fallback drops to reasoning off when the deeper turn times out. The
-Bonus-Season Investment Banker is the opponent; every roll goes through the shared dance floor.
+Rain-Shell Tourist Pod is the opponent; every roll goes through the shared dance floor.
 
 Run it from this folder, with the workshop environment active:
     python reasoning_dial.py
@@ -44,7 +44,7 @@ def call_the_drum(opponent: str, crawler: str = "Cordula") -> dict:
     Report what it returns; never roll, add or decide anything yourself.
 
     Args:
-        opponent: Who the party dances against, for example "the Bonus-Season Investment Banker".
+        opponent: Who the party dances against, for example "the Rain-Shell Tourist Pod".
         crawler: Who dances for the party, "Cordula" or "Barnaby". Defaults to "Cordula".
 
     Returns:
@@ -121,19 +121,19 @@ def make_system() -> Agent:
         tools=[dance_round, call_the_drum],
         callback_handler=None,
         system_prompt="""You are the System AI, the game-show host of Dungeon Crawl: Seattle, calling a dance-off between Cordula and
-the Bonus-Season Investment Banker, a person at work in a fleece vest who is very proud of their quarterly synergy. Nobody is hurt.
+the guide of the Rain-Shell Tourist Pod, a person at work in a bright rain shell who is very proud of the pod's walking-tour itinerary. Nobody is hurt.
 Every roll goes through a tool: dance_round for a round, call_the_drum for a Final Beat. Report what the tool returned, never
 roll or add anything yourself. Keep every answer to two sentences. Plain text only, no emoji.""",
     )
 
 
 BOUT = [
-    ("banter", "The Bonus-Season Investment Banker takes the floor, tugs their fleece vest, and asks Cordula, loudly, "
-               "whether she has considered synergy. Heckle the banker back in one line."),
-    ("a round", "Footwork round against the Bonus-Season Investment Banker, Steady tempo, opponent_modifier 1. Cordula dances. "
+    ("banter", "The guide of the Rain-Shell Tourist Pod takes the floor, raises a little flag, and asks Cordula, loudly, "
+               "whether she has considered the pod's walking tour. Heckle the guide back in one line."),
+    ("a round", "Footwork round against the Rain-Shell Tourist Pod, Steady tempo, opponent_modifier 1. Cordula dances. "
                 "Roll it with dance_round and report both totals."),
-    ("the Final Beat", "The banker and Cordula finished the last round level. This is a close call: the Final Beat decides the whole "
-                       "bout. Call the drum for Cordula against the Bonus-Season Investment Banker, then rule on the winner with care."),
+    ("the Final Beat", "The pod and Cordula finished the last round level. This is a close call: the Final Beat decides the whole "
+                       "bout. Call the drum for Cordula against the Rain-Shell Tourist Pod, then rule on the winner with care."),
 ]
 
 
@@ -151,6 +151,6 @@ if __name__ == "__main__":
     if not scoreboard or scoreboard[-1]["move_call"] != "Final Beat":
         print("  The drum never sounded: no Final Beat on the scoreboard. Run it again.")
     elif party_took_the_last_round():
-        print("  The party took the Final Beat. The banker has gone to restructure.")
+        print("  The party took the Final Beat. The pod has gone to find a gift shop.")
     else:
-        print("  The banker took the Final Beat and keeps the floor. Run it again.")
+        print("  The pod took the Final Beat and keeps the floor. Run it again.")

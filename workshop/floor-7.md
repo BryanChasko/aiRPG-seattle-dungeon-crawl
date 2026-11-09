@@ -14,6 +14,9 @@ Files on this floor: [`7_strands_harness/narrator_harness.py`](../7_strands_harn
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 7. The optional floor. Skip the floor if you like, Crawler, but the harness comes with sessions, memory and a contract about confirming irreversible actions, which is more than I can say for you."
 
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 09: Persistent Memory with Session Managers](https://www.youtube.com/watch?v=_QcD5KBe3ZQ) by Morgan Willis. "Under the hood, session managers are implemented as hook providers. That means persistence is really just another harness behavior layered into the agent life cycle through hooks."
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The manual said memory is a harness behavior. That meant the Narrator could remember without me building a second brain. I plugged in a session, and the campaign survived its first restart.
+
 ## Floor Objective
 
 Across Floors 1 to 5 you assembled the Narrator piece by piece: an agent, tools, an MCP server, remote agents over A2A, structured output. Strands harness is the other way in: one call, `create_harness()`, returns a fully assembled agent with a tuned system prompt, built-in tools, sessions, long-term memory, context management and prompt caching. On this floor you rebuild the Floor 5 orchestrator with it, keeping the same API and the same web interface, and you compare the two.
@@ -244,9 +247,11 @@ The `dice_rolls` field lists at least six rolls, two per round and more if a rou
 | the Narrator asks to run a shell command | the built-in tools are still on | Step 4 |
 | a turn takes a minute or more | `effort` is no longer `"off"` | restore the given `effort="off"` line |
 
-> **NARRATOR:** The session holds. Day ten. The Ferry-Line Commuter Horde takes the cliff path.
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** The session holds. Day ten. The Ferry-Line Commuter Horde takes the cliff path.
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** We slept again on Thursday night, on purpose, to test the session. The madrone dropped bark on my sleeping bag all night. In the morning I asked the Narrator where we had stopped, and it told me: the Ship Canal, my Groove, the accountant, the whole campaign. Barnaby flashed white, then red, then white, the pattern from the intake screen the morning the pier fell. I asked him what the pattern meant. "It means I am still here, Sergeant." Then the Ferry-Line Commuter Horde came up the cliff path at dawn, travel mugs first, and we danced the whole bluff without forgetting a single step.
+
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** The harness remembers. I suppose I shall have to remember what I said, too. A pity. I rather enjoyed the ambiguity.
 
 Expect about the same speed as Floor 5: the file sets `effort="off"`, the same as the Floor 5 Narrator. Pass `"low"`, `"medium"` or `"high"` for deeper plans, at 30 seconds to over a minute a turn, see [Set reasoning effort](https://strandsagents.com/docs/user-guide/harness/configure/model/#set-reasoning-effort). Note that the Narrator confirms before acting: that behavior comes from the harness contract, written for coding agents. `instructions` is where to override that behavior.
 

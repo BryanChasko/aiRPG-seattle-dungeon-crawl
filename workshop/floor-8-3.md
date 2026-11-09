@@ -7,10 +7,14 @@ Files on this floor: [`8_agentcore_production/rulesagent/rules_agent.py`](../8_a
 ![Floor 8.3: The Rules Agent](../images/floors/floor-8-3-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, FLOOR 8.3.** Brick three was the rule book. Every Crawler on every server reads the same handbook now, which Barnaby considers the single most civilized thing the Narrator has ever done. Then a pitch-deck founder blocked the Locks and we got to use it. Then a pitch-deck founder blocked the Locks and we got to use it.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, FLOOR 8.3.** Brick three was the rule book. Every Crawler on every server reads the same handbook now, which Barnaby considers the single most civilized thing the Narrator has ever done. Then a pitch-deck founder blocked the Locks and we got to use it.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Brick three. The rule book moves to a managed knowledge base, indexed by Bedrock at its own pace. Check the ingestion status before you deploy. Patience is a stat, and you have not leveled it."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [why-agents-fail-sample-for-amazon-agentcore](https://github.com/elizabethfuentes12/why-agents-fail-sample-for-amazon-agentcore) by Elizabeth Fuentes. "AI agents hallucinate statistics, pick wrong tools, ignore business rules, and claim success when operations fail."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The failure samples explain what goes wrong when an agent has the wrong tool or the wrong knowledge. The rule book on this floor is the opposite: a knowledge base that answers only what is in it, and cites the section. Barnaby read the Graph-RAG demo, nodded once, and went back to the handbook.
+>
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** One handbook, one truth, indexed by section. That is civilization. The Pitch-Deck Founder at the Locks, on the other hand, is a recurring inconvenience. I remember him.
 
 ## Floor Objective
 
@@ -98,6 +102,24 @@ The code goes under the TODO, at the end of `query_rules`, after the docstring o
 
 The response has a `retrievalResults` list. Each result holds the passage in `result["content"]["text"]` and the file it came from in `result["location"]["s3Location"]["uri"]`, which `section_of` reads. The tool returns the passages as in Floor 5: `[Final Beat] ...`, separated by blank lines. See [Retrieve](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html) and [ManagedSearchConfiguration](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ManagedSearchConfiguration.html) in the Amazon Bedrock API Reference.
 
+<details>
+<summary>Show me the code for Step 1</summary>
+
+```python
+    # TODO: Step 1 - Retrieve the 3 passages closest to the query from the knowledge base and prefix each one with its section
+    results = knowledge_base.retrieve(
+        knowledgeBaseId=KNOWLEDGE_BASE_ID,
+        retrievalQuery={"text": query},
+        retrievalConfiguration={"managedSearchConfiguration": {"numberOfResults": 3}},
+    )["retrievalResults"]
+    return "\n\n".join(
+        f"[{section_of(result)}] {result['content']['text']}"
+        for result in results
+    )
+```
+
+</details>
+
 ### Step 2: Serve the Agent on AgentCore
 
 ```python
@@ -113,6 +135,21 @@ if __name__ == "__main__":
 The `serve_a2a` call replaces the `pass` under the TODO. It matches the call for the Character Agent in 8.2, Part 1, Step 3.
 
 As in 8.2, the agent is created with `callback_handler=None`, and the Rules Agent needs `KNOWLEDGE_BASE_RULES_ID`, which only exists on AgentCore: do not start the Rules Agent locally.
+
+<details>
+<summary>Show me the code for Step 2</summary>
+
+```python
+if __name__ == "__main__":
+    # TODO: Step 2 - Serve the create_agent factory with serve_a2a on all interfaces, with the agent card of an A2AServer built on the same factory
+    serve_a2a(
+        StrandsA2AExecutor(agent_factory=create_agent, enable_a2a_compliant_streaming=True),
+        agent_card=A2AServer(agent_factory=create_agent).public_agent_card,
+        host="0.0.0.0",
+    )
+```
+
+</details>
 
 ## Part 3: Deploy the Rules Agent
 
@@ -232,6 +269,16 @@ RULES_AGENT_URL = os.environ["RULES_AGENT_URL"]
 
 The three brick URLs are now in `.env`, none in the code.
 
+<details>
+<summary>Show me the code for 8.3 Step 1</summary>
+
+```python
+# TODO: 8.3 Step 1 - Read RULES_AGENT_URL from the environment
+RULES_AGENT_URL = os.environ["RULES_AGENT_URL"]
+```
+
+</details>
+
 ### Step 2: Point the A2A Client at the Cloud
 
 Before:
@@ -257,6 +304,33 @@ a2a_client = make_a2a_client(allowed_endpoints=[
 ```
 
 Both entries of `make_a2a_client` are now `(url, client_config)` pairs.
+
+<details>
+<summary>Show me the code for 8.3 Step 2</summary>
+
+Before:
+
+```python
+a2a_client = make_a2a_client(allowed_endpoints=[
+    # TODO: 8.3 Step 2 - Replace the local Rules Agent with RULES_AGENT_URL and agentcore_config
+    "http://127.0.0.1:8000",  # Rules Agent
+    # TODO: 8.2 Step 3 - Replace the local Character Agent with CHARACTER_AGENT_URL and agentcore_config
+    (CHARACTER_AGENT_URL, agentcore_config),  # Character Agent, on AgentCore
+])
+```
+
+After:
+
+```python
+a2a_client = make_a2a_client(allowed_endpoints=[
+    # TODO: 8.3 Step 2 - Replace the local Rules Agent with RULES_AGENT_URL and agentcore_config
+    (RULES_AGENT_URL, agentcore_config),  # Rules Agent, on AgentCore
+    # TODO: 8.2 Step 3 - Replace the local Character Agent with CHARACTER_AGENT_URL and agentcore_config
+    (CHARACTER_AGENT_URL, agentcore_config),  # Character Agent, on AgentCore
+])
+```
+
+</details>
 
 ### Step 3: Launch the Narrator
 
