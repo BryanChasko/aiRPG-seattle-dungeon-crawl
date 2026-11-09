@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 200 200">
+  <!-- Barnaby mark: wild Giant Pacific Octopus reduced to clean vector geometry.
+       domed mantle, 8 curling arm paths, 2 eyes, blackened-brass collar as teal accent.
+       single-color violet #B04CE0 line/fill treatment, teal #2EC4B6 accent. no text, no raster. -->
+  <g fill="none" stroke="#B04CE0" stroke-width="10" stroke-linecap="round">
+    <!-- left arms, outer to inner: outer arms hang longest, inner arms shortest,
+         so the tips form a scalloped edge instead of merging into one mass -->
+    <path d="M64,110 C44,118 32,134 34,154 C35,167 48,171 51,161 C53,154 46,150 42,154"/>
+    <path d="M74,113 C60,124 52,140 55,156 C57,167 68,169 70,160 C71,153 64,150 61,154"/>
+    <path d="M84,115 C75,127 70,142 73,155 C75,164 84,165 85,157 C86,151 80,149 78,152"/>
+    <path d="M93,116 C89,128 87,141 90,152 C92,160 100,160 100,153 C100,147 94,146 92,149"/>
+    <!-- right arms, mirrored -->
+    <path d="M136,110 C156,118 168,134 166,154 C165,167 152,171 149,161 C147,154 154,150 158,154"/>
+    <path d="M126,113 C140,124 148,140 145,156 C143,167 132,169 130,160 C129,153 136,150 139,154"/>
+    <path d="M116,115 C125,127 130,142 127,155 C125,164 116,165 115,157 C114,151 120,149 122,152"/>
+    <path d="M107,116 C111,128 113,141 110,152 C108,160 100,160 100,153 C100,147 106,146 108,149"/>
+  </g>
+  <!-- domed mantle over the arm roots -->
+  <path d="M100,18 C132,18 148,46 146,92 C145,106 128,114 100,114 C72,114 55,106 54,92 C52,46 68,18 100,18 Z"
+        fill="#B04CE0"/>
+  <!-- collar: blackened-brass band rendered as the teal accent, with a small pendant -->
+  <path d="M58,94 Q100,118 142,94 L138,106 Q100,128 62,106 Z" fill="#2EC4B6"/>
+  <!-- eyes: obsidian cutouts so the single-color mantle reads, teal glints -->
+  <circle cx="79" cy="70" r="11" fill="#0B0E14"/>
+  <circle cx="121" cy="70" r="11" fill="#0B0E14"/>
+  <circle cx="75.5" cy="66.5" r="3.5" fill="#2EC4B6"/>
+  <circle cx="117.5" cy="66.5" r="3.5" fill="#2EC4B6"/>
+</svg>
