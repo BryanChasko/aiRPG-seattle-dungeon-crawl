@@ -6,7 +6,7 @@ The System offers a species at registration. Species is not heritage or ancestry
 |---|---|
 | Human (Seattle Native) | Rain-Proof: immune to Soggy; advantage on checks to navigate the city above |
 | Human (Transplant) | Fresh Eyes: once per floor, reroll a failed Read the Room check |
-| Uplifted Giant Pacific Octopus | Eight Arms: may assist and dance in the same round; needs salt water within reach; about 190 pounds and about 22 feet arm tip to arm tip; dark charcoal and slate at rest, crimson and white only in a dance-off or in fury |
+| Uplifted Giant Pacific Octopus | Eight Arms: may assist and dance in the same round, and may work up to four independent stations at once (a terminal, a lookup, a prop, a held door), one pair of arms per station; a dance-off still takes one Move Call and one roll per round, and the Final Beat needs every arm stopped on the same strike; needs salt water within reach; about 190 pounds and about 22 feet arm tip to arm tip; dark charcoal and slate at rest, crimson and white only in a dance-off or in fury |
 | Uplifted Crow | Remembers Faces: advantage against any opponent that character has danced with before |
 | Harbor Seal | Slick: +2 Footwork on wet floors |
 | Sea Otter | Tool User: carries one extra item; +1 Choreography |

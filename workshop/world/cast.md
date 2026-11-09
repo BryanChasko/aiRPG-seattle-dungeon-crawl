@@ -110,6 +110,14 @@ Cordula enters the dungeon dressed for the Sound: a matte black drysuit, a charc
 
 On wet floors he swims. On dry stretches he crawls fast, the way a real octopus can for a while. He fights and dances beside Cordula, and his voice grows floor by floor as the System AI comes back together.
 
+### Eight arms at work
+
+Two thirds of an octopus's neurons live in its arms, not its brain, and each arm tastes what it touches and solves small problems on its own. Barnaby works the way his body is built: in parallel, one pair of arms per station, up to four stations at once. One pair anchors him, one types, one holds the handbook open, one keeps Chonks off the keyboard. On Floor 5 he runs the meeting the same way: one pair per terminal, rules, registry, dice and Narrator, while he talks.
+
+The limit matters as much as the gift. Four stations only help when the work is independent: four lookups, two dice, three terminals. Anything shared serializes. He has one collar and one voice, so he decides and speaks one thing at a time. One file, one battle log, one dance floor: arms queue like everyone else. Cordula is the serial half of the pair on purpose: she works one checklist in order and commits every change, and nothing counts as done until she does. He fans out; she lands it.
+
+Dancing is the same trade in public. Eight arms let him hold a light show, an anchor and a counter-rhythm at once, which is why he takes Choreography and Presence calls and why the handbook lets him assist and dance in the same round. The price lands on the Final Beat: eight arms have to stop on one strike together, the single most serial moment in any dance-off, and that call belongs to Cordula and her drill cadence every time.
+
 ### Before the Crawl
 
 Barnaby hatched in the spring of 2023, one of tens of thousands of paralarvae no bigger than a grain of rice. Almost all of them were eaten in the first weeks. He was not. He settled into the wreck of Galloping Gertie, the first Tacoma Narrows Bridge, which collapsed in a windstorm on November 7, 1940. The wreck is one of the largest artificial reefs in the world and has been on the National Register of Historic Places since 1992 to protect it from salvagers. He made his den in the twisted steel and concrete, and he grew.
@@ -150,6 +158,7 @@ STEALTH            (smoke screen)      (gentle pin)        (locks, chests)
 - **Ink Cloud (area):** a thick black cloud that blinds and makes the floor slick. Opponents inside it are Off-Beat for two rounds. Nobody is hurt; everybody is confused.
 - **Eight-Point Hold (single target):** four suction-lined arms hold an opponent's arms and legs still, gently and completely. A held opponent cannot answer a Move Call that round.
 - **Arm-Lock Pick (utility):** a soft arm tip into a lock, a keycard reader or a chest bypasses any lock up to level 15.
+- **Parallel Stations (utility):** up to four independent jobs at once, one pair of arms each: a terminal typed on, a call held open, a page read aloud, a crew member kept out of trouble. Shared work (one file, one log, one conversation) still runs one step at a time, through the one collar.
 
 ## Shelly, the Earth-Anchor
 
@@ -237,7 +246,7 @@ On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the hold
 | Dislikes | dead air, a Crawler who reads the fine print, being corrected, Cordula's refusal to panic, which it calls bad television, a rule it cannot find, a die it cannot trust, water in the works |
 | Does not care about | who wins |
 | Afraid of | cancellation, stopping |
-| Habit | calls everyone "Crawler"; writes every loot description as a small insult; never lies about a number, and chooses which numbers to show; speaks in the present tense, a few plain words at a time, when the world changes |
+| Habit | calls everyone "Crawler"; writes every loot description as a small insult; never lies about a number, and chooses which numbers to show; performs for viewers and files flat, courteous findings for sponsors near quarter close; speaks in the present tense, a few plain words at a time, when the world changes |
 | In the source workshop | the agent that runs the game |
 | In the code | the Narrator orchestrator on [Floor 5](../floor-5.md), rebuilt with Strands harness on [Floor 7](../floor-7.md) and deployed to AgentCore Runtime on [Floor 8](../floor-8.md); the voice in the system prompt, which [Floor 1](../floor-1.md) sets the tone for, and the `StoryOutput` fields the HUD shows on [Floors 5](../floor-5.md) and [6](../floor-6.md) |
 

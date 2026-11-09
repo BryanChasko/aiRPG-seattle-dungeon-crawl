@@ -19,7 +19,7 @@ The spine of the story: each Strands concept the player learns is one step of Ba
 | 2 The Vending Machines | vended tools, and a human approving each tool call | reach: he can look up facts and files, and learns that Cordula decides what runs |
 | 3 The Crafting Table | a custom tool and the docstring that teaches it | craft: he writes his own instructions and finds out wording is power |
 | 4 The Portal Room | an MCP server and client | contact: he talks to the dice server across the Locks he has never touched |
-| 5 Party Formation | A2A agents, a knowledge base, structured output | leadership: he delegates to specialists, cites the rules, and is registered as party leader |
+| 5 Party Formation | A2A agents, a knowledge base, structured output | leadership: he delegates to specialists, one pair of arms per terminal, cites the rules, and is registered as party leader |
 | 6 The Arena | the web interface | an audience: he performs, and the ratings notice |
 | 7 The Armory | sessions and memory | memory: he survives a night's sleep still himself |
 | 8 Production | AgentCore Runtime, Memory, a managed knowledge base | permanence: the party runs whether anyone watches |
@@ -56,7 +56,7 @@ Every Safe Room has a terminal on the broadcast relay: the System AI's public li
 ## Voices
 
 - **Cordula** keeps the log. First person, past tense, short sentences, a crew chief's eye for gear and exits. She does not panic; she inventories. She calls Barnaby "Professor."
-- **Barnaby** speaks through the collar: a distinguished British academic who considers humans clumsy, dry and land-bound, and respects Cordula's discipline above almost everything. He calls her "Sergeant." His lines get longer and stranger as he wakes up.
+- **Barnaby** speaks through the collar: a distinguished British academic who considers humans clumsy, dry and land-bound, and respects Cordula's discipline above almost everything. He calls her "Sergeant." His lines get longer and stranger as he wakes up. He works four stations at once, one pair of arms each, and decides through the one collar: parallel hands, serial voice. Cordula commits; he fans out.
 - **The System AI** is the game-show host: petty, theatrical, exact about numbers. In Cordula's log, "the System" always means the System AI.
 - **The player** is Cordula. The log is her inner monologue, in her words; the steps are what she types next, addressed to the player.
 
