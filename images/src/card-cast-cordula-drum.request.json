@@ -1,0 +1,13 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy character card illustration, square, single subject centered with generous margin, waist-up or full body, high contrast, sharp detail, obsidian black and slate grey background with deep Puget Sound teal and sea-glass green, neon magenta-violet System rim light, warm sodium-orange accent light, rainy Pacific Northwest atmosphere, darker edges. Friendly, funny, game-show energy, never menacing, no weapons drawn. Subject: Cordula Vance, a Marine Corps Reserve crew chief in her late twenties with dark curly hair, a matte black drysuit, a charcoal tactical float vest and grey webbing, black on black on grey with no orange and no high-visibility color, a sheathed curved karambit knife on the outside of each calf, holding a black touring kayak paddle, no tank on her back drumming the Final Beat with her black touring paddle on the taut skin of a huge barnacled harbour buoy used as a war drum, mid-strike, water spraying off the buoy skin, metronome-steady face, the drummer who never misses a count A blank glowing violet interface frame edge at the card border, with no writing. No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "c03c34499b06f4f15ec84ab1ad8172b7c86d9d885ff851dbad0d11fbeba361eb",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null,
+ "plan": "images/plans/2026-11-09-batch-09.json"
+}
