@@ -10,6 +10,8 @@ Effects (issue #6: at most 480 px, 6 to 12 frames, under 1.5 MB):
   loot-pop  a loot box or token pops in with a glow ring                    (icons)
   benched   a card drains to grey from the top and dims, then holds         (cards)
   ink       Barnaby's Ink Cloud: black smoke blooms over the image and clears (cards, plates)
+  throw     Chonks the projectile: the sprite arcs across the frame spinning (sprites)
+  mist      Shelly's idle: a slow breathe with a sea-mist shimmer             (cards)
 
 Usage:
   python3 tools/motion.py offbeat images/cards/opponent-accountant-offbeat-640x640.webp
@@ -109,8 +111,34 @@ def ink(src: Path) -> list[Image.Image]:
     return frames
 
 
-EFFECTS = {"offbeat": offbeat, "loot-pop": loot_pop, "benched": benched, "ink": ink}
-REST = {"offbeat": 0, "loot-pop": -1, "benched": -1, "ink": 0}  # which frame the still uses
+def throw(src: Path) -> list[Image.Image]:
+    im = base(src, 160)
+    size = (480, 300)
+    frames = []
+    for i in range(9):
+        t = i / 8
+        dx = round(-160 + t * 320)
+        dy = round(-110 * 4 * t * (1 - t))  # parabola: rises mid-flight
+        frames.append(on_canvas(im, size, dx=dx, dy=dy, angle=t * 540))
+    return frames
+
+
+def mist(src: Path) -> list[Image.Image]:
+    im = on_canvas(base(src, 400), (400, 400))
+    frames = []
+    for i in range(8):
+        t = i / 8 * 2 * math.pi
+        breathed = im.resize((400 + round(6 * math.sin(t)), 400 + round(6 * math.sin(t))), Image.LANCZOS)
+        c = on_canvas(breathed, (400, 400))
+        shimmer = ImageEnhance.Brightness(c).enhance(1.0 + 0.05 * math.sin(t + 1))
+        frames.append(shimmer)
+    return frames
+
+
+EFFECTS = {"offbeat": offbeat, "loot-pop": loot_pop, "benched": benched, "ink": ink,
+           "throw": throw, "mist": mist}
+REST = {"offbeat": 0, "loot-pop": -1, "benched": -1, "ink": 0,
+        "throw": 4, "mist": 0}  # which frame the still uses
 
 
 def make(effect: str, src: Path) -> Path:

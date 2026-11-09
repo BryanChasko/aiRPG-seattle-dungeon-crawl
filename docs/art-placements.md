@@ -307,6 +307,68 @@ S3: `s3://bryanchasko.com/airpg-art/icons/fog-index-96x96.webp`
 | [`system-eye-96x96.webp`](https://bryanchasko.com/airpg-art/icons/system-eye-96x96.webp) | `docs/image-reuse-audit.md`: System AI speaker variant for watching and judging lines | placed |
 | [`system-signal-96x96.webp`](https://bryanchasko.com/airpg-art/icons/system-signal-96x96.webp) | `docs/image-reuse-audit.md`: System AI speaker variant for announcements and notifications | placed |
 
+## 2026-11-09-batch-09
+
+| image | page and spot | status |
+|---|---|---|
+| [`cast-cordula-vault-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-cordula-vault-640x640.webp) | `workshop/world/cast.md`: Cordula section, beside the Gear line about the paddle as a vaulting pole | placed |
+| [`cast-cordula-drum-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-cordula-drum-640x640.webp) | `workshop/world/cast.md`: Cordula section, beside the Final Beat line | placed |
+| [`cast-barnaby-plotting-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-barnaby-plotting-640x640.webp) | `workshop/world/cast.md`: Barnaby section, expression sheet row, plotting | placed |
+| [`cast-barnaby-irritated-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-barnaby-irritated-640x640.webp) | `workshop/world/cast.md`: Barnaby section, expression sheet row, irritated | placed |
+| [`cast-barnaby-academic-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-barnaby-academic-640x640.webp) | `workshop/world/cast.md`: Barnaby section, expression sheet row, academic | placed |
+| [`cast-chonks-flare-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-chonks-flare-640x640.webp) | `workshop/world/cast.md`: Chonks section, beside the Spine Flare ability | placed |
+| [`cast-shelly-jet-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-shelly-jet-640x640.webp) | `workshop/world/cast.md`: Shelly section, beside the Saltwater Jet ability | placed |
+| [`boss-monty-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-monty-offbeat-640x640.webp) | `workshop/floor-8.md`: boss section, beside the Monty dance-off result | ready to place |
+| [`boss-earnings-call-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-earnings-call-offbeat-640x640.webp) | `workshop/floor-8.md`: boss section, beside the Earnings Call dance-off result | ready to place |
+| [`boss-regional-director-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-regional-director-offbeat-640x640.webp) | `workshop/floor-8.md`: boss section, beside the Regional Director dance-off result | ready to place |
+| [`boss-the-keynote-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-the-keynote-offbeat-640x640.webp) | `workshop/floor-8.md`: boss section, beside the Keynote dance-off result | ready to place |
+
+### `boss-monty-offbeat-640x640.webp` on `workshop/floor-8.md`
+
+Where: boss section, beside the Monty dance-off result.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/boss-monty-offbeat-640x640.webp`
+
+```markdown
+![Monty the giant python tied in a knot mid dance-off, head bobbing a half-beat late](../images/cards/boss-monty-offbeat-640x640.webp)
+```
+
+### `boss-earnings-call-offbeat-640x640.webp` on `workshop/floor-8.md`
+
+Where: boss section, beside the Earnings Call dance-off result.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/boss-earnings-call-offbeat-640x640.webp`
+
+```markdown
+![The Quarterly Earnings Call Off-Beat: charts and ringing phones losing the beat, papers flying](../images/cards/boss-earnings-call-offbeat-640x640.webp)
+```
+
+### `boss-regional-director-offbeat-640x640.webp` on `workshop/floor-8.md`
+
+Where: boss section, beside the Regional Director dance-off result.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/boss-regional-director-offbeat-640x640.webp`
+
+```markdown
+![The Regional Director Off-Beat, stumbling over his own shoes, tie flying, clipboard scattering](../images/cards/boss-regional-director-offbeat-640x640.webp)
+```
+
+### `boss-the-keynote-offbeat-640x640.webp` on `workshop/floor-8.md`
+
+Where: boss section, beside the Keynote dance-off result.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/boss-the-keynote-offbeat-640x640.webp`
+
+```markdown
+![The Keynote Off-Beat: a presenter silhouette frozen on the big screen with a loading spinner](../images/cards/boss-the-keynote-offbeat-640x640.webp)
+```
+
+## 2026-11-09-batch-09b
+
+| image | page and spot | status |
+|---|---|---|
+| [`cast-shelly-bind-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-shelly-bind-640x640.webp) | `workshop/world/cast.md`: Shelly section, beside the Siphon Bind ability | placed |
+
 ## motion
 
 | image | page and spot | status |
@@ -321,6 +383,8 @@ S3: `s3://bryanchasko.com/airpg-art/icons/fog-index-96x96.webp`
 | [`loot-gold-loot-pop.webp`](https://bryanchasko.com/airpg-art/motion/loot-gold-loot-pop.webp) | `workshop/world/the-system.md`: section 5, loot boxes | ready to place |
 | [`loot-desperation-loot-pop.webp`](https://bryanchasko.com/airpg-art/motion/loot-desperation-loot-pop.webp) | `workshop/world/the-system.md`: section 5, loot boxes | ready to place |
 | [`ferry-token-loot-pop.webp`](https://bryanchasko.com/airpg-art/motion/ferry-token-loot-pop.webp) | `workshop/world/the-system.md`: section 5, Currency bullet | ready to place |
+| [`cast-chonks-green-fish-throw.webp`](https://bryanchasko.com/airpg-art/motion/cast-chonks-green-fish-throw.webp) | `workshop/world/cast.md`: Chonks section, beside the Suction Latch ability (thrown, he seals on) | placed |
+| [`cast-shelly-mist.webp`](https://bryanchasko.com/airpg-art/motion/cast-shelly-mist.webp) | `workshop/world/cast.md`: Shelly section, beside the base card: the calm idle | placed |
 
 ### `opponent-accountant-offbeat.webp` on `workshop/world/the-system.md`
 
@@ -421,57 +485,3 @@ S3: `s3://bryanchasko.com/airpg-art/motion/ferry-token-loot-pop.webp`
 ```markdown
 <picture><source srcset="../../images/motion/ferry-token-loot-pop-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../images/motion/ferry-token-loot-pop.webp" alt="A Ferry Token popping in" width="240"></picture>
 ```
-
-## Backlog dedupe (2026-11-09, hand note)
-
-Three lanes appended below; four needs appear twice. Canonical row first,
-duplicate second: the cover cliffhanger banner (Art backlog row 1; Cover
-backlog confirms the gertie-wreck-den dual-use question), the wordmark
-recompose (Cover backlog; Requested asks the SVG build of the same new
-lettering), the social share crop (Art backlog; Requested repeats it with the
-repo social-preview upload), the favicon set (Requested is the fuller ask:
-SVG source plus 32px, 180px and 192/512; Art backlog row 4 is the smaller
-version). Per-lead web portraits and the generic avatar appear only in
-Requested. Art team: fold into `images/plans/` and regenerate; the next
-`tools/publish_art.py` run overwrites hand notes.
-
-## Art backlog (requests for the art team, 2026-11-09)
-
-Requests only. Nothing below exists yet unless the status column says so.
-Each row needs a plan in `images/plans/` rendered with
-`tools/airpg_render.py`; writers place the file when it lands and move the
-row into a batch section above. Spoiler rule applies to every row: no Shelly
-before Floor 2, no Chonks before Floor 3, in image, caption or alt text.
-
-| Slot | Size | Subject | Status |
-|---|---|---|---|
-| `README.md` cover hero, replacing `images/banner-1680x720.webp` in place | banner 1680x720 webp | Cliffhanger tease only: the Galloping Gertie wreck in dark water, one huge octopus arm curling out of a girder den, a shadow bigger than the wreck, one eye catching sodium light. Cordula small at the edge with her paddle, looking in. No full Barnaby, no dance, no crimson-white flash: the reveal is earned later. Nobody else from the party in frame. | requested; current banner shows the full dance and spends the reveal |
-| `workshop/floor-9.md` floor plate at the top | floor 1200x675 webp | Already rendered: `images/floors/floor-9-1200x675.webp` (batch-07 above). No new render needed. The page does not exist yet, so the plate is unplaced until the Floor 9 build lands; the almoco-nave plate and the four Floor 9 opponent cards in batch-07 wait with it. | art done, waiting on the page |
-| `web/index.html` social share image (`og:image`) | 1200x630 webp | The cover cliffhanger above, cropped for a share card: wreck, one arm, one eye, wordmark space left dark at the top. No party members beyond the tease, no text baked in. The site head has no `og:image` tag yet; the web lane adds the tag when this file lands. | requested |
-| `web/public/favicon.ico` plus an SVG favicon | 32x32 ico, scalable SVG | One small glyph that reads at tab size: a brass-rimmed violet System frame corner, or a single octopus arm curl. `web/index.html` already links `/favicon.ico` and `web/public/` has no such file, so the tab icon 404s today. Dark background `#0B0E14`, no text. | requested |
-| `README.md` cover, small Barnaby tease for narrow screens | card 640x640 webp | Square crop-safe companion to the cliffhanger banner: anemone-covered girder, one arm, one eye, darkness doing the rest. Lets the cover keep the tease when the wide banner crops badly. Same ban: no full body, no dance. | requested, only if the cover lane needs it after seeing the banner crop |
-
-## Cover backlog (hand notes, not generated)
-
-- Wordmark: `images/wordmark-1200x240.webp` still carries the old name baked in. Recompose with the title "Seattle Strands Dungeon Crawl" and the line "A Visual Lit aiRPG Workshop", then update the cover alt text in `README.md` to match the new image. Art team owns `images/` and the composing tool.
-- Cover tease: `images/floors/gertie-wreck-den-1200x675.webp` (wreck, den, one arm) now also serves as the `README.md` cover sighting. It is still listed above as ready to place on `workshop/cleanup.md`. Art team to confirm dual use, or render a dedicated cover fold-moment tease (Pier 59 folds at 0551, shadow, one arm or one eye only, no full body, no dance) and swap the cover.
-
-## Requested (web lane, hand-appended below the generated list)
-
-Everything above this heading is generated. This section is the web lane's ask
-list: new image needs found while building the play page. Nothing here exists
-yet; the art team owns every render and every binary. Spoiler rule for every
-entry surface: later-floor companions are never shown or named before they
-join, and Barnaby on an entry surface is a tease only (wreck, shadow, one
-arm, one eye), never the full dance reveal. Conflict is dance-offs; nobody
-is hurt.
-
-| request | format | slot | notes |
-|---|---|---|---|
-| Favicon set from one SVG source | svg + 32x32 png, 180x180 apple-touch, 192/512 maskable png | web/public/ (today the page points at the existing dice/d20.svg as a stopgap) | System AI eye or d20 glyph in the HUD line style, single accent on #0B0E14, legible at 16px |
-| Wordmark as true SVG (outlined paths) | svg, horizontal about 1200x240 and compact stacked about 480x240 | README header and web site header (today the header is text; the repo wordmark is raster only) | MedievalSharp/Cinzel display lettering; must read on obsidian #0B0E14; light variant welcome |
-| Social share crop | webp 1200x630 (same art at 1280x640 for the repo social preview upload) | web/index.html og:image and twitter:image, plus repo settings (absent today) | Spoiler-safe tease composition; keep one side darker for the wordmark lockup |
-| Web-sized lead portraits | webp, one per Crawler, sized for web/public | Play-as picker and character panel (today both leads share web/public/avatar-placeholder.jpeg) | Source cards already exist in images/cards/ on main; the art lane cuts the web copies so no binary is hand-copied |
-| Generic Crawler avatar | webp 96x96 | Replaces web/public/avatar-placeholder.jpeg (a JPEG, outside the format plan) | Hooded silhouette, rim light, no face, not any cast member |
-| Spoiler-safe landing backdrop plate | webp 1200x675 | Optional landing page backdrop | Stairwell and Sound mood only; no later-floor companions; Barnaby tease grammar only |
-| Descent map | inline-friendly svg, viewBox about 1200x675, no scripts | Optional: beside the labelled floor grid, which stays the accessible text version | Stairwell cross-section, floor nodes, one route line; no companion figures at early depths |

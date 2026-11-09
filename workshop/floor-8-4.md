@@ -355,6 +355,8 @@ Check: the character panel shows the sheet registered in 8.2, and the first turn
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** On Monday, the day before the quarter closed, the Keynote was the last thing on the corporate floor: a stage on the Narrows bridge deck, a confidence monitor, a Regional Managing Director in the front row with a lanyard and a stopwatch. Everything we had built ran somewhere else now, and the only thing on my laptop was the bridge to the screen. Barnaby called the moves before the Narrator did. He had read every turn of this campaign in the logs, and he knew how it went. We took the Keynote on Choreography, three moves ahead, and the RMD stopped the stopwatch and clapped.
 
+<img src="../images/cards/boss-the-keynote-offbeat-640x640.webp" alt="The Keynote Off-Beat: a presenter silhouette frozen on the big screen with a loading spinner" width="240">
+
 ## Part 4: See What Your Agents Do
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Traces show every thought the Narrator had during a turn, across four runtimes. Most of them were about you."

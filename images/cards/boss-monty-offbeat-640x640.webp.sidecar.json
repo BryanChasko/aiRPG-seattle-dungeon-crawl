@@ -1,0 +1,39 @@
+{
+ "file": "boss-monty-offbeat-640x640.webp",
+ "bytes": 101204,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "5f90560e8c06b59edaa44deceeadaba5f88897190b9e8cbeeab897b2b9e2036e",
+  "size": "1024x1024"
+ },
+ "sha256": "0bbaa38e250ef03bc3088c1d04954d6beddfb91e13c2ed16c0e05368aca399b1",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-boss-monty-offbeat.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-09/raw/card-boss-monty-offbeat.png",
+  "raw_sha256": "d9cd2fb7454fea1705eedf37ff97475e8ba5b10d125a0fbd9aacfccd1c3b7021",
+  "request": "images/src/card-boss-monty-offbeat.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "13.0.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

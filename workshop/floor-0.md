@@ -147,6 +147,10 @@ This crawl needs Python 3.10 or later. Installing Python by hand is not needed: 
 </tr>
 </table>
 
+Had Monty danced instead of being identified, this is how he would have lost the beat:
+
+<img src="../images/cards/boss-monty-offbeat-640x640.webp" alt="Monty the giant python tied in a knot mid dance-off, head bobbing a half-beat late" width="240">
+
 ```bash
 uv python install
 uv python find

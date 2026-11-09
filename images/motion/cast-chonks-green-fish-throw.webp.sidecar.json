@@ -1,0 +1,31 @@
+{
+ "file": "cast-chonks-green-fish-throw.webp",
+ "still": "cast-chonks-green-fish-throw-still.webp",
+ "effect": "throw",
+ "frames": 9,
+ "size": [
+  480,
+  300
+ ],
+ "frame_ms": [
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90
+ ],
+ "bytes": 61462,
+ "source": {
+  "image": "images/sprites/cast-chonks-green-fish.webp",
+  "image_sha256": "f670b075e852efab783283a5e20dceadff82c632a3c3aceb0676afa359182318"
+ },
+ "tools": {
+  "pillow": "13.0.0"
+ },
+ "model_calls": 0,
+ "sha256": "314a1612418692660d78e621a0e3415e539d8a014bc06febe00e81d9d05373bc"
+}

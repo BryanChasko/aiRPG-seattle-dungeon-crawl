@@ -12,6 +12,10 @@ Files on this side passage: [`encounters/floor-8-house-rules-guardrails/house_ru
 
 <img src="../../images/cards/boss-regional-director-640x640.webp" alt="The Regional Managing Director of Bellevue, a tall man in an immaculate navy suit and lanyard, arms crossed in a marble lobby lit by red laser grids" width="240">
 
+And when the guardrail trips him mid-move:
+
+<img src="../../images/cards/boss-regional-director-offbeat-640x640.webp" alt="The Regional Director Off-Beat, stumbling over his own shoes, tie flying, clipboard scattering" width="240">
+
 ## The Brief
 
 | | |
