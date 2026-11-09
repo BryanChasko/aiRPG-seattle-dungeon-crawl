@@ -27,6 +27,7 @@ This crawl builds on *Once Upon Agentic AI*, the AWS sample workshop that first 
 | 8. Push to Production with AgentCore | [8](floor-8.md), [8.1](floor-8-1.md) to [8.4](floor-8-4.md) | dice server for AgentCore (1); memory records and `serve_a2a` (3); `retrieve` and `serve_a2a` (2); IAM-signed MCP and A2A, `BedrockAgentCoreApp`, `AgentCoreMemorySessionManager`, the entrypoint (15) | unit tests: `test_floor8_*` (4), `test_story_output_matches_across_floors` | the Crawl Handbook in a Bedrock knowledge base; `nova-policy.json`; SYSTEM DESIGN layer 8, a persistent world |
 | 9. Fog Resilience (optional) | [9. The Corrosion Cathedral](floor-9.md) | verifier agent with typed verdicts (3); `FogGate` hook on `MessageAddedEvent` (3); `PoisonScreen` intervention on `before_tool_call` (2) | unit tests: `test_floor9_*` (27) | the lead-fog rule; Wisdom and memory as the debuffed stats; the foreman dance |
 | Final cleanup | [The Exit](cleanup.md) | remove the AWS resources and generated files | `describe-stacks` returns not found | the empty registry restored with one `git checkout` |
+| Infinity (optional) | [Floor Infinity](floor-infinity.md) | tiered reset with inventory-first and a verify pass (2) | unit tests: `test_floor_infinity_*` | the never-touch list; the fresh-clone proof |
 
 ## Yes, And
 

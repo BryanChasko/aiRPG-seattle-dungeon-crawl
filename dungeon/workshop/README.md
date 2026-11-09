@@ -103,6 +103,9 @@ Make the System AI fog-proof on Night 13
 ### [The Exit: Final Cleanup](cleanup.md)
 Stop your services, remove the Floor 8 AWS resources and delete the harness state in `.agent/`
 
+### [Floor Infinity (Optional): Reset the Multiverse](floor-infinity.md)
+Remove everything the crawl installed, in tiers, and prove the machine is like new
+
 ### [Side Passages: Optional Encounters](encounters/README.md)
 Deeper into the SDK, off the main corridor, each encounter starting where the matching floor ends: 34 sidequests, dance-offs and boss battles
 
