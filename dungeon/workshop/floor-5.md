@@ -9,7 +9,7 @@ Files on this floor: [`5_a2a_integration/agents/rules_agent/rules_agent.py`](../
 ![Estuary dance floor at low tide](../../art/images/floors/estuary-dancefloor-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 6, MONDAY, JUNE 22, FLOOR 5.** The estuary floods twice a day. The dance floor is there, then it is not. This is where the System AI finally opened the migration window, which meant rules, and nobody in the party had read them. We built a clerk to read the rule book, a registration desk to stamp our sheets, and a Narrator to run the game, each one doing one job and talking to the others. Barnaby ran the meeting. He was good at it. He delegated, he cited the handbook, he made the Narrator answer in a format the HUD could read. Then a Quarterly Close Accountant stepped onto the pickleweed and challenged us to a dance-off, and we found out whether any of it worked.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 6, MONDAY, JUNE 22, FLOOR 5.** The estuary floods twice a day. The dance floor is there, then it is not. The open migration window meant rules, and nobody in the party had read them. We built a clerk to read the rule book, a registration desk to stamp our sheets, and a Narrator to run the game, each one doing one job and talking to the others. Barnaby ran the meeting. He was good at it. He delegated, he cited the handbook, he made the Narrator answer in a format the HUD could read. Then a Quarterly Close Accountant stepped onto the pickleweed and challenged us to a dance-off, and we found out whether any of it worked.
 <!-- /cordula-log -->
 
 > <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 5. A party. How sweet. Three agents, four terminals, one orchestrator, and a very real chance you forget to start one of them. The review board is watching."
@@ -251,7 +251,7 @@ Replace the `pass` placeholder under the TODO.
 
 #### Step 6: Launch the Rules Agent
 
-Open a new terminal in the floor folder (`5_a2a_integration`), activate the virtual environment (a new terminal does not keep the one from Floor 0: `source ../.venv/bin/activate`) and start the Rules Agent from the `agents/rules_agent` folder:
+Open a new terminal in the floor folder (`5_a2a_integration`), activate the virtual environment (a new terminal does not keep the one from Floor 0: `source ../../.venv/bin/activate` from the floor folder) and start the Rules Agent from the `agents/rules_agent` folder:
 
 ```bash
 cd agents/rules_agent

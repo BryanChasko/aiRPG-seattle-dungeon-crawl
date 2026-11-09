@@ -30,13 +30,13 @@ Prepare your development environment: clone the workshop repo, install uv and Py
 
 ## The Crawl Under Construction
 
-This workshop rebuilds the AI behind *Dungeon Crawl: Seattle*, a live cloud-migration test and compliance audit the System AI was running when the Sound flooded dry-city infrastructure mid-window. It evaluates efficiency, runs performance stress-tests (the dance-offs), files metric reports, and chases its quarterly throughput SLA. The quarter closes June 30. Cordula is the player character: the log above is her log, Barnaby is the party leader. Two companions join them on later floors. The System AI built the dungeon, runs the floors, the tides, the opponents, the dice and every ruling. The flood broke it. The status-report relay and the collars survived, so the System AI can still push canned status reports through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
+This workshop rebuilds the AI behind *Dungeon Crawl: Seattle*, a live cloud-migration test and compliance audit the System AI was running when the Sound flooded dry-city infrastructure mid-window. It evaluates efficiency, runs performance stress-tests (the dance-offs), files metric reports, and chases its quarterly throughput SLA. The quarter closes June 30. Cordula is the player character: the log above is her log, Barnaby is the party leader. Two companions join them on later floors. The System AI built the dungeon, runs the floors, the tides, the opponents, the dice and every ruling. The flood broke it. The status-report relay and the collar survived, so the System AI can still push canned status reports through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
 
 The lore lives in the [world guide](world/README.md): [the setting](world/seattle.md), [the cast](world/cast.md), [the System design](world/the-system.md) and the [Crawl Handbook](world/crawl-handbook/), the rules the Rules Agent searches on Floor 5.
 
 Stuck? [Ask the System](../study/README.md): `python dungeon/study/ask_the_system.py` answers questions about every floor or Strands API from these pages and the API reference.
 
-> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is one AI. The System AI built the dungeon, runs the floors and owns the dice, the rules and the memory. The flood broke it. The status-report relay and the collars survived, so the System AI can still push canned status reports through them, but it cannot answer, roll a fair die, quote a rule or remember who did what. Each floor of this workshop rebuilds one more subsystem of the System AI, and Barnaby gets each piece first through the collar. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is one AI. The System AI built the dungeon, runs the floors and owns the dice, the rules and the memory. The flood broke it. The status-report relay and the collar survived, so the System AI can still push canned status reports through them, but it cannot answer, roll a fair die, quote a rule or remember who did what. Each floor of this workshop rebuilds one more subsystem of the System AI, and Barnaby gets each piece first through the collar. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 
 ## What is Strands?
 
@@ -71,7 +71,7 @@ On Windows, use `python --version` instead of `python3 --version`.
 
 No git? Install git from [git-scm.com/downloads](https://git-scm.com/downloads), then open a new terminal and run `git --version` again.
 
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** First thing I did on the landing was inventory. Paddle, drysuit, float vest, one bilge pump, one kayak battery at eighty percent, one octopus in a black misting harness, one dead phone. You do not move until you know what you have. Barnaby watched me count and flashed a slow, steady brown. I chose to take that as approval.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** First thing I did on the landing was inventory. Paddle, drysuit, float vest, one bilge pump, one kayak battery at eighty percent, no kayak, one octopus in a black misting harness, one dead phone. You do not move until you know what you have. Barnaby watched me count and flashed a slow, steady brown. I chose to take that as approval.
 
 ### Step 2: Claim Your Starter Safe Room (Clone the Repo)
 
@@ -122,7 +122,7 @@ uv --version
 
 <table>
 <tr>
-<td valign="top" width="50%"><img src="../../art/images/cards/boss-monty-640x640.webp" alt="Monty, an enormous reticulated python with a gold, black and silver geometric pattern, loosely coiled around the rusted handrail of a flooded stairwell, head raised with a curious, slightly sheepish look and a brass pet tag on its collar" width="320"></td>
+<td valign="top" width="50%"><img src="../../art/images/cards/boss-monty-640x640.webp" alt="Monty, an enormous reticulated python with a gold, black and silver geometric pattern, loosely coiled around the rusted handrail of a flooded stairwell, head raised with a curious, slightly sheepish look and a brass pet tag wired to a rusted ring" width="320"></td>
 <td valign="top" width="50%">
 
 > <img src="../../art/images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS: MONTY, THE RETICULATED PYTHON.** Somebody released their pet into the Underground, and it found the stairwell. Reticulated pythons are the longest snakes in the world, and Monty is twenty feet of geometric camouflage that looks exactly like whatever Python is already on your PATH. It wraps tighter every time a version does not match. Barnaby, who is also a constrictor and has eight arms of opinions about it, refuses to share the stairwell. Nobody gets hurt: you win by knowing exactly which Python you are running.

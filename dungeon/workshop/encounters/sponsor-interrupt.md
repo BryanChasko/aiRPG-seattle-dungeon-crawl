@@ -17,7 +17,7 @@ Files on this side passage: [`encounters/floor-6-sponsor-interrupt/sponsor_inter
 | | |
 |---|---|
 | type | sidequest |
-| starts from | [Floor 6](../floor-6.md), finished: the Floor 5 Narrator on port 8009 and the web interface in `web/` |
+| starts from | [Floor 6](../floor-6.md), finished: the Floor 5 Narrator on port 8009 and the web interface in `site/web/` |
 | you build | a hook that stops the turn before a sponsor deal runs, a `POST /respond` route that resumes it, and a dialog in the web interface where the player accepts or refuses |
 | teaches | [`strands.interrupt`](https://strandsagents.com/docs/api/python/strands.interrupt/): `Interrupt`, the interrupt state; [`strands.types.interrupt`](https://strandsagents.com/docs/api/python/strands.types.interrupt/): how a hook raises one and how the agent resumes; [`strands.hooks.events`](https://strandsagents.com/docs/api/python/strands.hooks.events/): `BeforeToolCallEvent` |
 | time | about 25 minutes |

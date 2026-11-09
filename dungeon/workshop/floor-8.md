@@ -110,7 +110,7 @@ agentcore create --project-name gameprod --no-agent
 
 In 8.3, the Rules Agent searches the Crawl Handbook in an Amazon Bedrock knowledge base. Bedrock needs time to index the handbook: the handbook is eleven small Markdown files, so a few minutes, longer in an account with a low embedding quota. Start the indexing now: it runs in the background while you work through 8.1 and 8.2. Here, run the commands only; 8.3 explains the commands.
 
-The handbook is the one the Floor 5 knowledge base was built from, in `workshop/world/crawl-handbook/`. Run the commands from `8_agentcore_production`:
+The handbook is the one the Floor 5 knowledge base was built from, in `dungeon/workshop/world/crawl-handbook/` from the repo root. Run the commands from `8_agentcore_production`:
 
 ```bash
 cd gameprod

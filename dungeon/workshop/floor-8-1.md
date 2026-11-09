@@ -113,7 +113,7 @@ agentcore invoke call-tool --runtime diceserver --tool roll_dice --input '{"face
 agentcore logs --runtime diceserver --since 15m
 ```
 
-The logs contain `Starting Dice Roll MCP Server...` and the `DICE ROLL: 1d20 = [...] -> ...` line of that call, the same log lines as in Floor 4, written this time by a server running in AWS.
+The logs contain `Starting Dice Roll MCP Server...` and the `[SYSTEM] DICE ROLL: 1d20 = [...] -> ...` line of that call, the same log lines as in Floor 4, written this time by a server running in AWS.
 
 If `agentcore logs` shows nothing yet, wait a minute: logs reach CloudWatch with a short delay. If `call-tool` fails with `AccessDeniedException`, the signed-in credentials may not invoke AgentCore runtimes: check that `aws sts get-caller-identity` prints the account you deployed to, and that `AWS_DEFAULT_REGION` matches the region of `agentcore status`.
 
@@ -201,7 +201,7 @@ The Rules Agent and the Character Agent from Floor 5 must be running (terminals 
 
 ```bash
 export AWS_DEFAULT_REGION=us-west-2
-cd ../narrator
+cd ../narrator  # from the gameprod folder; from 8_agentcore_production itself, use cd narrator
 python narrator_orchestrator.py
 ```
 
@@ -226,7 +226,7 @@ cd ../gameprod
 agentcore logs --runtime diceserver --since 15m
 ```
 
-The log holds both rolls, for example `DICE ROLL: 1d20 = [14] -> 14` followed by `DICE ROLL: 1d20 = [9] -> 9`. Play from the Floor 6 web interface too: the web interface talks to the Narrator on port 8009, exactly as before.
+The log holds both rolls, for example `[SYSTEM] DICE ROLL: 1d20 = [14] -> 14` followed by `[SYSTEM] DICE ROLL: 1d20 = [9] -> 9`. Play from the Floor 6 web interface too: the web interface talks to the Narrator on port 8009, exactly as before.
 
 If the Narrator says the roll failed, the Narrator's terminal shows the cause: a `403` means the request was signed for another region than the runtime's (export `AWS_DEFAULT_REGION` in that terminal and restart the Narrator), and `ExpiredToken` means the AWS sign-in expired.
 

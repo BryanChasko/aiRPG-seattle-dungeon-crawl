@@ -224,13 +224,13 @@ Answer each prompt as it appears:
 
 Type `n` on one call to see how Kiro reacts to a refusal.
 
-Check: `fibonacci_scroll.py` now sits in `2_vended_tools/`, and Kiro reports the first ten Fibonacci numbers, `0, 1, 1, 2, 3, 5, 8, 13, 21, 34` (some runs start at 1 instead of 0). Run `python fibonacci_scroll.py` directly: the script prints the same numbers.
+Check: `fibonacci_scroll.py` now sits in the floor folder, and Kiro reports the first ten Fibonacci numbers, `0, 1, 1, 2, 3, 5, 8, 13, 21, 34` (some runs start at 1 instead of 0). Run `python fibonacci_scroll.py` directly: the script prints the same numbers.
 
 | output | cause | fix |
 |---|---|---|
 | no `Approve` prompt at all, and the file appears anyway | `HumanInTheLoop` is not on the agent | check Step 2: `interventions=[HumanInTheLoop(ask="stdio")]` |
 | `ModuleNotFoundError: No module named 'strands.vended_interventions'` | an older Strands SDK | `uv sync`, then check the version as in Step 2 of the main floor |
-| `file_editor` refuses the path | the path is not absolute, or the script runs on native Windows | run the script from `2_vended_tools/`; on Windows, use WSL (see the warning above) |
+| `file_editor` refuses the path | the path is not absolute, or the script runs on native Windows | run the script from the floor folder; on Windows, use WSL (see the warning above) |
 | the scroll is written, then the shell call fails with `python3: not found` | this computer's Python command is `python` | type `n` on that call: Kiro usually retries with `python`. If Kiro does not retry, add "run it with python" to the request at the bottom of `bonus_quest.py` |
 
 > <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I said no to the first command Kiro tried, on purpose, to see what he would do. He sulked, rewrote it, and asked again. That is the whole point of the HumanInTheLoop machine.

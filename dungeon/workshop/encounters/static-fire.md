@@ -8,7 +8,7 @@ Files on this side passage: [`encounters/floor-7-static-fire/static_fire.py`](..
 > <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, SIDE PASSAGE OFF FLOOR 7.** Low water at 0855, minus 0.3 feet, and the tidal flat below the bluffs lay bare to the madrone roots. A rocket stood on it. Forty-five metric tons of payload rating, a Cadabra logo the size of a ferry, and a gantry with a lanyard-wearing Range Safety Officer on top who had a 214-line checklist and had read every line out loud to the gulls. Static fire at 0858. Three minutes on the clock and three jobs on the table: read the clock, sweep the beach, make the call. I can do one job at a time. The System AI had already started the broadcast. Barnaby had a view. "Sergeant. Three duties, and only one of you."
 <!-- /cordula-log -->
 
-> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Crawlers, a heavy-lift rocket, a tidal flat and a beach full of people who did not read the signage. Cadabra's engine test is scheduled, funded and, I am told, fully insured. Your range desk needs a countdown reader, a debris check and a hold call. I will be watching the third one closely. The viewers have money on it."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Crawlers, a heavy-lift rocket, a tidal flat and a beach full of people who did not read the signage. Cadabra's engine test is scheduled, funded and, I am told, fully insured. Your range desk needs a countdown reader, a debris check and a hold call. I will be watching the third one closely. The sponsors have money on it."
 
 ## The Brief
 

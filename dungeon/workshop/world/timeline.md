@@ -10,7 +10,7 @@ The dungeon floods on the Sound's schedule, so the tides below are the tides the
 
 | Day | Date | Floor | Tides (H high, L low) | What happens |
 |---|---|---|---|---|
-| 1 | Wednesday, June 17 | [0](../floor-0.md), [1](../floor-1.md), then [2](../floor-2.md) by night | H 0556 10.7 ft, L 1311 -3.6 ft, H 2052 12.4 ft | Cordula's log opens at 0547. Sunrise is 0511. The pier folds at 0551, five minutes before high water, and Floor 0 takes minutes. The 1311 low water drains the Floor 1 tide pools, and the Rain-Shell Tourist Pod comes for them. |
+| 1 | Wednesday, June 17 | [0](../floor-0.md), [1](../floor-1.md), then toward [2](../floor-2.md) by night | H 0556 10.7 ft, L 1311 -3.6 ft, H 2052 12.4 ft | Cordula's log opens at 0547. Sunrise is 0511. The pier folds at 0551, five minutes before high water, and Floor 0 takes minutes. The 1311 low water drains the Floor 1 tide pools, and the Rain-Shell Tourist Pod comes for them. |
 | 2 | Thursday, June 18 | [2](../floor-2.md) | L 0223 7.1 ft, H 0657 10.0 ft, L 1400 -2.7 ft, H 2135 12.4 ft | The Eelgrass Nursery. At the 1400 low water the flood has scoured a sand flat down to a 59-year-old geoduck, and Shelly joins the party. |
 | 3 | Friday, June 19 | [3](../floor-3.md) | L 0326 6.3 ft, H 0803 9.2 ft, L 1450 -1.3 ft, H 2217 12.2 ft | The Bull Kelp Cathedral. A bulb pops, a stipe whips, and Chonks joins the party. Lady Luck deals the dice. |
 | 4 | Saturday, June 20 | [4](../floor-4.md) | L 0432 5.3 ft, H 0917 8.3 ft, L 1540 0.3 ft, H 2257 12.1 ft | The Ship Canal and the Locks, the water Cordula grew up on. |
@@ -41,7 +41,7 @@ The dungeon floods on the Sound's schedule, so the tides below are the tides the
 | Barnaby | hatched spring 2023, somewhere in the Sound | past three years | three to five years |
 | Shelly | spawned in the summer of 1966, in Elliott Bay | 59 | geoducks can live well past a century |
 | Chonks | hatched April 2025, on a bull kelp holdfast | 14 months | not well studied |
-| The System AI | switched on for this season at 0551 on Day 1 | its first season on Earth | as long as the show runs |
+| The System AI | switched on for this quarter at 0551 on Day 1 | its first quarter in the water | as long as the migration runs |
 
 The full character sheets are in [The Cast](cast.md).
 
@@ -56,11 +56,10 @@ The full character sheets are in [The Cast](cast.md).
 | 1992 | The Gertie wreck is listed on the National Register of Historic Places to protect it from salvagers |
 | March 3, 1997 | Cordula is born in Ballard |
 | February 28, 2001 | The [Nisqually earthquake](https://en.wikipedia.org/wiki/2001_Nisqually_earthquake) shakes Seattle. Shelly sits through it. Cordula, almost four, remembers the dishes |
+| 2016 | Cordula enlists in the Marine Corps Reserve, age nineteen |
 | Spring 2023 | Barnaby hatches somewhere in the Sound |
+| April 2025 | Chonks hatches on a bull kelp holdfast |
 | August 12, 2025 | Cordula logs an unconfirmed sighting at the Gertie wreck |
 | October 3, 2025 | Cordula logs an unconfirmed sighting under Pier 57 |
 | February 19, 2026 | Cordula logs another unconfirmed sighting at the Gertie wreck |
-| 2016 | Cordula enlists in the Marine Corps Reserve, age nineteen |
-| February 19, 2026 | Cordula logs another unconfirmed sighting at the Gertie wreck |
-| April 2025 | Chonks hatches on a bull kelp holdfast |
 | June 17, 2026, 0551 | The pier folds, tripping a cached migration script that plays the pre-fold asset scan as the GOOD MORNING broadcast |

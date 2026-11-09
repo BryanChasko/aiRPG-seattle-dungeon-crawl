@@ -47,7 +47,7 @@ Every opponent of the crawl is playable in at least one floor or encounter. The 
 
 Canon: the `Hype` field name is legacy from the broadcast build; the review board reads it as executive visibility.
 
-Encounter code lives in [`encounters/`](../../encounters/), one folder per encounter, outside the floor folders: the floors stay exactly as their pages describe them. Dance-offs and boss battles roll through one shared file, [`encounters/dance_floor.py`](../../encounters/dance_floor.py), and that file scores every round by the [Crawl Handbook](../world/crawl-handbook/).
+Encounter code lives in `dungeon/encounters/` ([link](../../encounters/)), one folder per encounter, outside the floor folders: the floors stay exactly as their pages describe them. Dance-offs and boss battles roll through one shared file, [`dance_floor.py`](../../encounters/dance_floor.py), and that file scores every round by the [Crawl Handbook](../world/crawl-handbook/).
 
 The crawl runs one language model, Amazon Nova 2 Lite. Two parts of the original plan reached past Amazon Nova 2 Lite: a cloud embedding service for Keyword versus Vector, and a third-party hosted decision service next to Read the Room, Typed. Neither part ships: Keyword versus Vector runs on local ChromaDB, and Read the Room, Typed decides on Nova 2 Lite.
 

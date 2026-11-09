@@ -11,11 +11,11 @@ A Visual Lit aiRPG: a LitRPG you can see, run by one System AI, built one floor 
 
 ## Who I Am
 
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I am Cordula Vance. Core, to anyone who has shared a boat with me. Marine Corps Reserve, amphibious crew chief, and before work I sweep debris off the Sound in a kayak. On Wednesday, June 17, I tied up under Pier 59, and at 0551 the pier folded into Elliott Bay with both of us under it.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I am Cordula Vance. Core, to anyone who has shared a boat with me. Marine Corps Reserve, amphibious crew chief, and before work I sweep debris off the Sound in a kayak. On Wednesday, June 17, I tied up under Pier 59, and at 0551 the pier folded into Elliott Bay with the octopus and me under it.
 >
-> He fights beside me now, a kraken-scale octopus who refuses to confirm or deny the King Octopus legend. His name is Barnaby. Eight arms, a doctorate's worth of opinions, and, since I clamped a collar on him, a British accent.
+> He fights beside me now, a kraken-scale octopus who refuses to confirm or deny the King Octopus legend. His name is Barnaby. Eight arms, a doctorate's worth of opinions, and, since the System AI clamped a collar on him, a British accent.
 >
-> The thing that folded the pier is the System AI. It runs this dungeon: the floors, the tides, the opponents, the dice, the rules. The flood broke it. Its voice, its dice, its rule book and its memory washed out across eight floors under the Sound. The System AI survived in the broadcast relay and the collars, and it wants its migration back. The only way out is to rebuild it, one piece per floor. Every piece I rebuild passes through Barnaby's collar first, and he wakes up a little more. I build every piece with the Strands Agents SDK: the first floor is one agent and one call, the last is the whole game running on Amazon Bedrock AgentCore. I write all of it.
+> The thing that folded the pier is the System AI. It runs this dungeon: the floors, the tides, the opponents, the dice, the rules. The flood broke it. Its voice, its dice, its rule book and its memory washed out across eight floors under the Sound. The System AI survived in the broadcast relay and the collar, and it wants its pieces back. The only way out is to rebuild it, one piece per floor. Every piece I rebuild passes through Barnaby's collar first, and he wakes up a little more. I build every piece with the Strands Agents SDK: the first floor is one agent and one call, the last is the whole game running on Amazon Bedrock AgentCore. I write all of it.
 >
 > Nobody gets hurt down here. A fight is a dance-off, the opponents are accountants, bankers and developer advocates at work, and the worst that happens is I get Benched and wake up in a Safe Room. I keep a log. The log is what happened. The steps are what I type next.
 
@@ -120,7 +120,7 @@ Floor 0 covers the installs: Python, uv and the repository. Bring basic Python k
 - The System AI: the same AI, in its role as the omniscient, slightly unhinged host that talks to the Crawlers, tracking each Crawler's code output, syntax errors and desperate attempts to pass `uv sync`, and paying out achievements and insults
 - The Crawlers: Cordula, with Barnaby beside her running the party. Companions join on the way down. The party enters soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
 - The Loot Boxes: every cleared floor drops an achievement box. A clean loop earns a Bronze Box. Burning the token limit on an accidental infinite loop earns a Desperation Box
-- The Review Board: billions of stakeholders watching. The stakeholders are not on the Crawlers' side. Neither are the sponsors, who are local: tech monoliths, waterfront penthouse money, coffee oligarchs and passive-aggressive email culture
+- The Review Board: a Consortium review board watching. The board is not on the Crawlers' side. Neither are the sponsors, who are local: tech monoliths, waterfront penthouse money, coffee oligarchs and passive-aggressive email culture
 
 ### Clear the Floors in Order
 

@@ -323,7 +323,7 @@ The Floor 6 web interface runs in a browser and calls `http://127.0.0.1:8009` wi
 Stop the local Narrator (it uses port 8009), then start the proxy from the Floor 8 folder, with the virtual environment activated and the region set as on the Floor 8 page (`export AWS_DEFAULT_REGION=us-west-2`):
 
 ```bash
-cd ../ui_proxy
+cd ../ui_proxy  # from the gameprod folder; from 8_agentcore_production itself, use cd ui_proxy
 python ui_proxy.py
 ```
 
