@@ -112,7 +112,7 @@ Floors bill for Amazon Nova 2 Lite calls: see [What a Turn Costs](dungeon/worksh
 **Preflight check**
 
 ```bash
-uv run python 0_stairwell/preflight.py
+uv run python dungeon/0_stairwell/preflight.py
 ```
 
 </details>
