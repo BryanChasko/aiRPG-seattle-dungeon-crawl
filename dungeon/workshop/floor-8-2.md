@@ -245,7 +245,7 @@ agentcore status
 
 > <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run every command of this step from the root of the `gameprod` folder, like the rest of Part 2.
 
-The Floor 5 party sheets stayed in `characters.json`: the new memory starts empty. Register the party again, in the cloud this time. The Character Agent never rolls or invents a score, so give the Character Agent all six scores from [the cast](world/cast.md):
+The Floor 5 party sheets stayed in `characters.json`: the new memory starts empty. Register the party again, in the cloud this time, each Crawler exactly once: registering twice writes a second record, and the lookup returns both. The Character Agent never rolls or invents a score, so give the Character Agent all six scores from [the cast](world/cast.md):
 
 ```bash
 agentcore invoke --runtime characteragent "Register Cordula Vance, pronouns she/her, a Human (Seattle Native) Amphibious Breacher, with strength 16, dexterity 13, constitution 16, intelligence 12, wisdom 14, charisma 10"

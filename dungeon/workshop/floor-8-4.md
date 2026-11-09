@@ -7,7 +7,7 @@ Files on this floor: [`8_agentcore_production/narrator/narrator_orchestrator.py`
 ![Floor 8.4: The Narrator in the Cloud](../../art/images/floors/floor-8-4-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, FLOOR 8.4.** The last brick was the Narrator, the engine whose words come out in the System AI's voice, and it is a strange thing to move while it is still running the floors. After that, the whole show ran in the cloud, the party's memory included, one day before the quarter closed. At the Keynote, the final boss, Barnaby did not need me to tell him what came next. He already knew. He had been here before, in the logs.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, FLOOR 8.4.** The last brick was the Narrator, the engine whose words come out in the System AI's voice, and it is a strange thing to move while it is still running the floors. After that, the whole crawl ran in the cloud, the party's memory included, one day before the quarter closed. At the Keynote, the final boss, Barnaby did not need me to tell him what came next. He already knew. He had been here before, in the logs.
 <!-- /cordula-log -->
 
 > <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Final brick, Crawlers. The Narrator moves into AgentCore Runtime. Its conversation goes to AgentCore Memory, and its traces go to CloudWatch, where you may study its every thought. I would not stare. It is shy."
@@ -18,7 +18,7 @@ Move the last brick to production: deploy the Narrator itself to AgentCore Runti
 
 Why the Narrator changes. Until now the Narrator was a FastAPI server on port 8009 with its own routes (`/inquire`, `/messages`, `/user`). An HTTP runtime on AgentCore exposes a single route, `/invocations`, and only to callers signed with IAM. AgentCore Runtime also runs each session in its own microVM, which stops after a period without traffic and is replaced on every deployment: a conversation kept in the agent's process memory would be lost with the microVM.
 
-What is AgentCore Memory short-term memory? In 8.2 the characters were records in AgentCore Memory. An AgentCore Memory also stores events: the messages of a conversation, filed by actor and session. Strands saves and restores a conversation through a session manager, and the `bedrock-agentcore` package provides one that writes these events to AgentCore Memory, `AgentCoreMemorySessionManager`: every message is saved as it is added, and an agent created for an existing session starts with its whole history.
+AgentCore Memory also stores events: the messages of a conversation, filed by actor and session. `AgentCoreMemorySessionManager`, from the `bedrock-agentcore` package, saves every message as it is added, so an agent created for an existing session starts with its whole history.
 
 Part 1 needs the `gameprod` project with the three bricks deployed in 8.1 to 8.3. Change to the Floor 8 folder in the terminal:
 
@@ -28,7 +28,7 @@ cd seattle-strands-dungeon-crawl/dungeon/8_agentcore_production
 
 This section works in two folders:
 
-- The Narrator ([`narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py)), as left in 8.3, now with its own [`pyproject.toml`](../../pyproject.toml) and [`invoke-policy.json`](../8_agentcore_production/narrator/invoke-policy.json)
+- The Narrator ([`narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py)), as left in 8.3, now with its own [`pyproject.toml`](../8_agentcore_production/narrator/pyproject.toml) and [`invoke-policy.json`](../8_agentcore_production/narrator/invoke-policy.json)
 - The UI proxy ([`ui_proxy/ui_proxy.py`](../8_agentcore_production/ui_proxy/ui_proxy.py)), provided code, with no TODO to complete
 
 ## Part 1: Prepare the Narrator for the Cloud (narrator/narrator_orchestrator.py)
@@ -44,35 +44,7 @@ The tools, `StoryOutput`, `NARRATOR_MODEL` and the system prompt do not change: 
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 ```
 
-Under this TODO, everything from `app = FastAPI(...)` down to the end of the `/inquire` route is replaced by a single line: the CORS middleware, `QuestionRequest` and the four routes (`/health`, `/messages`, `/user`, `/inquire`) go away.
-
-Before:
-
-```python
-# TODO: 8.4 Step 1 - Replace the FastAPI app and its endpoints with a BedrockAgentCoreApp
-app = FastAPI(title="Narrator API")
-origins = ["*"]
-app.add_middleware(
-    CORSMiddleware,
-    ...
-)
-
-class QuestionRequest(BaseModel):
-    question: str
-
-@app.get("/health")
-...
-
-@app.post("/inquire")
-async def ask_agent(request: QuestionRequest):
-    ...
-        return JSONResponse(content={"error": "Internal server error"}, status_code=500)
-
-# The URLs of your runtimes are read from the .env file of the floor folder (see .env.example)
-load_dotenv()
-```
-
-After:
+Under this TODO, everything from `app = FastAPI(...)` down to the end of the `/inquire` route is replaced by a single line: the CORS middleware, `QuestionRequest` and the four routes (`/health`, `/messages`, `/user`, `/inquire`) go away, and only the `BedrockAgentCoreApp` remains (their imports go in Step 5):
 
 ```python
 # TODO: 8.4 Step 1 - Replace the FastAPI app and its endpoints with a BedrockAgentCoreApp
@@ -127,50 +99,24 @@ async def invoke(payload, context):
     return response.structured_output.model_dump()
 ```
 
-The entrypoint is the function `BedrockAgentCoreApp` calls for every request on `/invocations`; `@app.entrypoint` registers the function:
-
-- `payload` is the JSON body of the request, as a dictionary. `agentcore invoke` sends `{"prompt": "..."}`, and the proxy also sends `{"messages": true}` to read the history.
-- `context.session_id` is the session id of the request. Pass it to `get_narrator` to get this session's Narrator.
-- With `{"messages": true}`, the entrypoint returns `narrator.messages`, as the `/messages` route did.
-- Otherwise the entrypoint answers the prompt and returns `response.structured_output.model_dump()`: the entrypoint returns JSON, so the `StoryOutput` becomes a dictionary.
+The entrypoint answers `{"prompt": "..."}` with a `StoryOutput` dictionary and `{"messages": true}` with the history, for the session in `context.session_id`.
 
 ### Step 4: Run the App
 
-Before:
-
 ```python
 if __name__ == "__main__":
     # TODO: 8.4 Step 4 - Replace uvicorn.run with the run method of the BedrockAgentCoreApp
-    uvicorn.run(app, port=8009)
-```
-
-After:
-
-```python
-if __name__ == "__main__":
-    # TODO: 8.4 Step 4 - Replace uvicorn.run with the run method of the BedrockAgentCoreApp
-    app.run()
+    app.run()  # was: uvicorn.run(app, port=8009)
 ```
 
 `app.run()` serves on port 8080, the port AgentCore Runtime expects for an HTTP agent.
 
 ### Step 5: Delete the Local Server Imports
 
-Before:
-
 ```python
 # TODO: 8.4 Step 5 - Delete the fastapi, uvicorn and tinydb imports
-import uvicorn
-from fastapi import FastAPI
-from fastapi.responses import JSONResponse
-from fastapi.middleware.cors import CORSMiddleware
-from tinydb import TinyDB, Query
-```
-
-After:
-
-```python
-# TODO: 8.4 Step 5 - Delete the fastapi, uvicorn and tinydb imports
+# (delete: import uvicorn; from fastapi import FastAPI; from fastapi.responses import JSONResponse;
+#  from fastapi.middleware.cors import CORSMiddleware; from tinydb import TinyDB, Query)
 ```
 
 Nothing in `narrator_orchestrator.py` uses these five imports anymore, and AgentCore does not install the packages: the Narrator's `pyproject.toml` does not list them, so one leftover import stops the runtime at startup.
@@ -213,11 +159,7 @@ The listing shows `narrator_orchestrator.py`, `invoke-policy.json`, `nova-policy
 
 ### Step 3: Configure the Narrator's Runtime
 
-In the cloud, the Narrator needs two things the local machine provided until now.
-
-The URLs of the other bricks. The `.env` file does not travel: the CLI only packages the `narrator/` folder, and `.env` sits in the floor folder. On AgentCore, `load_dotenv()` finds no file and does nothing; the three URL variables come from the `envVars` of the runtime, as `KNOWLEDGE_BASE_RULES_ID` does for the Rules Agent in 8.3. The code does not change: on a local machine the Narrator reads the URLs from a file, in the cloud from the settings of the runtime.
-
-The right to call the other runtimes. The Narrator calls the dice server, the Character Agent and the Rules Agent with the credentials of its runtime role, and the CLI gives that role no right to call other runtimes. `narrator/invoke-policy.json` adds that permission: `bedrock-agentcore:InvokeAgentRuntime`, and `bedrock-agentcore:GetAgentCard` for the A2A agent cards, on the runtimes of the project only (`runtime/gameprod_*`). `nova-policy.json` lets the runtime role call Amazon Nova 2 Lite and nothing else: `bedrock:InvokeModel` and `bedrock:InvokeModelWithResponseStream` on the US cross-Region inference profile `us.amazon.nova-2-lite-v1:0` and on the `amazon.nova-2-lite-v1:0` foundation model it routes to in each US Region.
+In the cloud, the Narrator needs two things the local machine provided until now: the URLs of the other bricks, and the right to call them. The `.env` file does not travel (the CLI only packages the `narrator/` folder), so `load_dotenv()` finds nothing and the three URL variables come from the runtime's `envVars`, as `KNOWLEDGE_BASE_RULES_ID` does for the Rules Agent in 8.3. The code does not change. The runtime role gets no right to call other runtimes by default; `narrator/invoke-policy.json` adds `bedrock-agentcore:InvokeAgentRuntime` and `bedrock-agentcore:GetAgentCard` on the project's runtimes only (`runtime/gameprod_*`), and `nova-policy.json` lets it call Amazon Nova 2 Lite and nothing else (`bedrock:InvokeModel` and `bedrock:InvokeModelWithResponseStream` on the US cross-Region inference profile `us.amazon.nova-2-lite-v1:0` and the `amazon.nova-2-lite-v1:0` foundation model it routes to).
 
 Open `agentcore/agentcore.json`. The `narrator` entry is already there, under `runtimes`: `agentcore add agent` wrote it in Step 2. As in 8.3, do not copy the whole block below; add the `envVars` and `additionalPolicies` lines at the end of the entry, with a comma after the line before them (`...` stands for the lines already in the file), and copy the three URLs from the `.env` file:
 
@@ -249,17 +191,6 @@ Open `agentcore/agentcore.json`. The `narrator` entry is already there, under `r
 }
 ```
 
-The lines to add, ready to copy, before replacing the three placeholders:
-
-```json
-"envVars": [
-  {"name": "DICE_SERVER_URL", "value": "<your diceserver URL>"},
-  {"name": "CHARACTER_AGENT_URL", "value": "<your characteragent URL>"},
-  {"name": "RULES_AGENT_URL", "value": "<your rulesagent URL>"}
-],
-"additionalPolicies": ["invoke-policy.json", "nova-policy.json"]
-```
-
 > <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Replace the three `<your ... URL>` placeholders with the URLs from the `.env` file, the whole URL between the quotes, for example `"value": "https://bedrock-agentcore.us-west-2.amazonaws.com/runtimes/<encoded runtime ARN>/invocations"`. The deployed Narrator never reads the `.env` file: in the cloud, these `envVars` are the only values the Narrator gets. If the deploy runs with the placeholders still in place, the first call fails with `Invalid endpoint URL '<your diceserver URL>': missing URL scheme` in `agentcore logs --runtime narrator`: replace them, then deploy again.
 
 The CLI may write the fields of the entry in another order, or add others: keep those fields as written.
@@ -286,14 +217,14 @@ agentcore invoke --runtime narrator --session-id seattle-campaign-test-of-floor-
   'Cordula challenges the Quarterly Close Accountant to a dance-off. Run round one.'
 ```
 
-A session id must be at least 33 characters long. The Narrator discovers the Character Agent and the Rules Agent, asks the Rules Agent for the dance-off procedure, rolls both sides on the dice server and answers with a `StoryOutput` in JSON after 30 to 60 seconds. Then ask a question only the conversation can answer, with the same session id:
+A session id must be at least 33 characters long. The Narrator consults both agents, rolls both sides on the dice server, and answers with a `StoryOutput` in JSON after 30 to 60 seconds. Then ask a question only the conversation can answer, with the same session id:
 
 ```bash
 agentcore invoke --runtime narrator --session-id seattle-campaign-test-of-floor-8-4-0001 \
   "Remind me: who did Cordula dance against, which move did you call, and what did we roll?"
 ```
 
-The answer comes from the history. Even after the session's microVM is stopped or the Narrator redeployed, the answer would be the same: the new Narrator agent reloads the conversation from the `conversations` memory. Read the logs of the run:
+The answer comes from the history: even after the microVM stops or the Narrator redeploys, the new agent reloads the conversation from the `conversations` memory. Read the logs of the run:
 
 ```bash
 agentcore logs --runtime narrator --since 15m
@@ -311,12 +242,7 @@ The Narrator runtime bills like the other runtimes, per second while a session r
 
 > <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The browser has no AWS credentials. The proxy does. It signs every request and forwards it to the Narrator. The System AI approves of intermediaries who know their place."
 
-The Floor 6 web interface runs in a browser and calls `http://127.0.0.1:8009` without any AWS credentials. The browser cannot call the runtime directly. The proxy is a small local FastAPI server that keeps the three routes of the Floor 5 Narrator and forwards each request to the runtime with the credentials of the active AWS profile:
-
-- it finds the ARN of the `gameprod_narrator` runtime and the id of the `characters` memory by listing them, so no ARN or id needs copying
-- `/inquire` and `/messages` call `invoke_agent_runtime` with `{"prompt": ...}` and `{"messages": true}`, the two payloads of the Narrator entrypoint
-- `/user/{user_name}` reads the character sheet directly from the memory of the Character Agent, as the Character Agent itself does in 8.2
-- every request uses the same `SESSION_ID`: one session id is one campaign. Change `SESSION_ID` to start a new game.
+The Floor 6 web interface runs in a browser at `http://127.0.0.1:8009` with no AWS credentials, so the proxy (a small local FastAPI server keeping the Floor 5 Narrator's three routes) forwards each request to the runtime signed with the active AWS profile's credentials. It finds the Narrator ARN and the `characters` memory id by listing them, so nothing needs copying: `/inquire` and `/messages` call `invoke_agent_runtime` with the two entrypoint payloads, `/user/{user_name}` reads the sheet from the Character Agent's memory as in 8.2, and every request shares one `SESSION_ID`: one session id, one campaign. Change `SESSION_ID` to start a new game.
 
 ### Step 1: Launch the Proxy
 
@@ -361,9 +287,7 @@ Check: the character panel shows the sheet registered in 8.2, and the first turn
 
 > <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Traces show every thought the Narrator had during a turn, across four runtimes. Most of them were about you."
 
-A Narrator turn now crosses several runtimes, and the runtime's terminal is gone: AgentCore records each turn as a trace instead. The `pyproject.toml` of the Narrator, the Character Agent and the Rules Agent lists `aws-opentelemetry-distro`, the AWS distribution of OpenTelemetry. AgentCore starts the three runtimes with `opentelemetry-instrument`, and the distribution sends a span for each step of the agent loop to CloudWatch. Strands creates the spans itself, so the code needs no additions. The dice server has no model and keeps tracing off (`"enableOtel": false` in `agentcore.json`): its rolls appear on the Narrator's side. See [AgentCore Observability](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html) in the AgentCore Developer Guide.
-
-Traces cost little at this size: CloudWatch bills about $0.35 per GB of spans ingested ([AgentCore pricing](https://aws.amazon.com/bedrock/agentcore/pricing/), Observability), and a workshop's worth of turns is a few MB, under a cent.
+A Narrator turn now crosses several runtimes with no terminal to watch, so AgentCore records each turn as a trace instead: the three agent `pyproject.toml` files list `aws-opentelemetry-distro`, AgentCore starts them with `opentelemetry-instrument`, and Strands creates the spans itself, so the code needs no additions. The dice server has no model and keeps tracing off (`"enableOtel": false` in `agentcore.json`); its rolls appear on the Narrator's side. A workshop's worth of turns is a few MB of spans, under a cent ([AgentCore pricing](https://aws.amazon.com/bedrock/agentcore/pricing/), Observability). See [AgentCore Observability](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html) in the AgentCore Developer Guide.
 
 ### Step 1: List the Traces
 
@@ -392,7 +316,7 @@ gameprod_narrator
             └─ execute_tool query_rules  a search in the knowledge base
 ```
 
-This tree is the agent loop of Floor 1, drawn: each cycle calls Amazon Nova 2 Lite, which answers or asks for tools. The trace crosses the A2A call, so the Rules Agent's work appears inside the Narrator's turn, and the duration of each span shows where the time goes, usually in the `chat` spans. The Narrator shows as `Strands Agents` because the Narrator has no name, unlike the Rules Agent. The Rules Agent's runtime also adds many short `a2a.utils.helpers.append_artifact_to_task` spans from the A2A SDK: ignore them.
+This tree is the agent loop of Floor 1, drawn: the trace crosses the A2A call, so the Rules Agent's work appears inside the Narrator's turn, and span durations show the time going mostly to the `chat` spans. The Narrator shows as `Strands Agents` because it has no name, unlike the Rules Agent; ignore the many short `a2a.utils.helpers.append_artifact_to_task` spans from the A2A SDK.
 
 > <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby read the trace of the Eight-Point Hold turn the way I read an after-action report: who called whom, how long each one took, where the time went. Most of it went to thinking, which he said was correct. Then he found his own name in the input of a model call and went very still, and I let him have the minute.
 
@@ -421,6 +345,10 @@ print('Session stopped')
 The next request starts a new session on the latest version. The campaign is not lost: the conversation lives in the `conversations` memory, not in the microVM. If the command fails with `ResourceNotFoundException`, no session was open, and the error has another cause: read `agentcore logs --runtime narrator` from the `gameprod` folder. If `SESSION_ID` in `ui_proxy.py` was changed, use that value in the command.
 
 The AWS CLI has the same operation, `aws bedrock-agentcore stop-runtime-session`, but only in recent versions: an older AWS CLI answers `Invalid choice: 'bedrock-agentcore'`. The Python version above uses the boto3 package of the workshop environment, which always includes the operation.
+
+The Narrator says an agent call failed with the endpoint "not in the allowed endpoints list". The Narrator's `a2a_client` matches the endpoint character for character, and the model retyped the long encoded URL instead of copying it. The Narrator's system prompt carries the verbatim-copy rule; retry the turn and it copies the URL exactly.
+
+The narration ignores the Groove rules: a loss bigger than 6, or a Move Call with the wrong ability modifier. That is the model improvising, not a broken wire: the dice and the sheets are correct in the logs and the memory. Re-run the round.
 
 To remove everything at the end of the workshop, see the [Cleanup](cleanup.md) page.
 
