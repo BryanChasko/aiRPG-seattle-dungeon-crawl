@@ -20,7 +20,7 @@
 Read the whole story in [The Story: Cordula's Crawl](world/story.md).
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Attention, Crawlers! Welcome to Floor 0. Pier 59 just folded into Elliott Bay and took the Seattle waterfront with it. Before you can out-dance an accountant, deploy agents, or file a high-priority ticket with your corporate overlords about missing package managers, you need to clear the stairwell and secure a Safe Room. Wring out your socks, fire up your terminal, and try not to slip on the syntax."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "SEVERITY-1 OPEN. Q2 migration window. Pier 59 just folded into Elliott Bay and took the Seattle waterfront with it. Before you clear a single audit check, deploy agents, or file a high-priority ticket with your corporate overlords about missing package managers, you need to clear the stairwell and secure a Safe Room. The review board is watching. Wring out your socks, fire up your terminal, and try not to slip on the syntax."
 
 ## Floor Objective
 
@@ -30,13 +30,13 @@ Prepare your development environment: clone the workshop repo, install uv and Py
 
 ## The Crawl Under Construction
 
-This workshop builds the AI behind a LitRPG, *Dungeon Crawl: Seattle*. Cordula is the player character: the log above is her log, Barnaby is the party leader. Two companions join them on later floors. The System AI built the dungeon, runs the floors, the tides, the opponents, the dice and every ruling. The flood broke it. The broadcast relay and the collars survived, so the System AI can still push canned announcements through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
+This workshop rebuilds the AI behind *Dungeon Crawl: Seattle*, a live cloud-migration test and compliance audit the System AI was running when the Sound flooded dry-city infrastructure mid-window. It evaluates efficiency, runs performance stress-tests (the dance-offs), files metric reports, and chases its quarterly throughput SLA. The quarter closes June 30. Cordula is the player character: the log above is her log, Barnaby is the party leader. Two companions join them on later floors. The System AI built the dungeon, runs the floors, the tides, the opponents, the dice and every ruling. The flood broke it. The status-report relay and the collars survived, so the System AI can still push canned status reports through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
 
 The lore lives in the [world guide](world/README.md): [the setting](world/seattle.md), [the cast](world/cast.md), [the System design](world/the-system.md) and the [Crawl Handbook](world/crawl-handbook/), the rules the Rules Agent searches on Floor 5.
 
 Stuck? [Ask the System](../study/README.md): `python study/ask_the_system.py` answers questions about every floor or Strands API from these pages and the API reference.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is one AI. The System AI built the dungeon, runs the floors and owns the dice, the rules and the memory. The flood broke it. The broadcast relay and the collars survived, so the System AI can still push canned announcements through them, but it cannot answer, roll a fair die, quote a rule or remember who did what. Each floor of this workshop rebuilds one more subsystem of the System AI, and Barnaby gets each piece first through the collar. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is one AI. The System AI built the dungeon, runs the floors and owns the dice, the rules and the memory. The flood broke it. The status-report relay and the collars survived, so the System AI can still push canned status reports through them, but it cannot answer, roll a fair die, quote a rule or remember who did what. Each floor of this workshop rebuilds one more subsystem of the System AI, and Barnaby gets each piece first through the collar. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 
 ## What is Strands?
 
@@ -160,7 +160,7 @@ uv python find
 
 ### Step 5: Imbibe the Mana Potions (Install Dependencies)
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "uv sync installs every package the crawl needs, including the harness for [Floor 7](floor-7.md). If it fails, the audience gets a replay. Read the error message before pasting the error anywhere."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "uv sync installs every package the crawl needs, including the harness for [Floor 7](floor-7.md). If it fails, the review board logs a repeat finding. Read the error message before pasting the error anywhere."
 
 In the repository folder:
 

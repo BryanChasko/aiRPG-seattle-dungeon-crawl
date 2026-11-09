@@ -72,7 +72,7 @@ The `solution` branch folds the import into the first line instead, `from strand
 >
 > **[THE SPEC SHEET OF SHAME]**
 >
-> Reward: You received a [Cracked Mirror]. It shows your tool_spec before the docstring: description 'roll_dice', and nothing else. The audience laughed for eleven seconds.
+> Reward: You received a [Cracked Mirror]. It shows your tool_spec before the docstring: description 'roll_dice', and nothing else. The review board flagged it in eleven seconds.
 
 `roll_dice` has no docstring. Before writing one, read what Amazon Nova 2 Lite receives about `roll_dice`: right after the function, the script prints `roll_dice.tool_spec`, the exact specification Strands sends to Amazon Nova 2 Lite. Run the script after finishing Step 1. The output starts with:
 
@@ -197,7 +197,7 @@ Once TODOs are completed, run your script:
 python agent_with_dice_roll_tool.py
 ```
 
-The system prompt in the file turns the agent into Lady Luck, the System AI's croupier, who rolls every die on the broadcast. Her prompt says "the System AI's croupier subroutine" because everything the System AI says to a Crawler comes out in its own voice. The script asks her to show the audience how the dice rolled Cordula's sheet on day one: four ability scores (strength, wisdom, charisma and intelligence) with the 4d6-drop-lowest method: for each ability, roll four six-sided dice and keep the three highest. The run makes four tool calls, one per ability, each with `faces=6, count=4, drop_lowest=1`: sixteen dice, all rolled by `roll_dice`, which drops the lowest of each four and adds up the rest.
+The system prompt in the file turns the agent into Lady Luck, the System AI's croupier, who rolls every die for the status reports. Her prompt says "the System AI's croupier subroutine" because everything the System AI says to a Crawler comes out in its own voice. The script asks her to show the review board how the dice rolled Cordula's sheet on day one: four ability scores (strength, wisdom, charisma and intelligence) with the 4d6-drop-lowest method: for each ability, roll four six-sided dice and keep the three highest. The run makes four tool calls, one per ability, each with `faces=6, count=4, drop_lowest=1`: sixteen dice, all rolled by `roll_dice`, which drops the lowest of each four and adds up the rest.
 
 The terminal shows the agent working through these steps:
 
@@ -219,13 +219,13 @@ Check: the terminal prints the new `tool_spec` first, then four `Tool #N: roll_d
 
 ![Lady Luck's abalone-shell table in the Bull Kelp Cathedral, with kelp bulbs floating overhead like lanterns](../images/floors/kelp-cathedral-bulbs-1200x675.webp)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Lady Luck dealt from a table of abalone shell and called every roll like a boxing announcer. Four calls, four totals, and she did not touch the arithmetic once. She hated that. Halfway through the third roll, a bulb overhead popped and the stipe it hung from whipped across the table. A green fish the size of a golf ball came off his holdfast, hit my forearm guard, and stuck there with a sound like a plunger. I pulled; he held. The second Companion Egg went warm, and the System AI announced the bind. The audience named him by poll, and Barnaby voted for "Projectile", but "Chonks" won with 61 percent. Barnaby studied him for a long moment and said, "Compact. Quiet. Aerodynamic." Shelly sent up a puff of sea mist, and Chonks gave one stubborn gurgle.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Lady Luck dealt from a table of abalone shell and called every roll like a boxing announcer. Four calls, four totals, and she did not touch the arithmetic once. She hated that. Halfway through the third roll, a bulb overhead popped and the stipe it hung from whipped across the table. A green fish the size of a golf ball came off his holdfast, hit my forearm guard, and stuck there with a sound like a plunger. I pulled; he held. The second Companion Egg went warm, and the System AI announced the bind. The review board named him by stakeholder escalation, and Barnaby voted for "Projectile", but "Chonks" won with 61 percent. Barnaby studied him for a long moment and said, "Compact. Quiet. Aerodynamic." Shelly sent up a puff of sea mist, and Chonks gave one stubborn gurgle.
 
 > <img src="../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[You Brought a Sticky Beach Ball to a Dance Battle]**
 >
-> Reward: Cordula and Barnaby. You bound a spherical, armor-plated fish that moves by vibrating its tiny fins and glaring. The audience has named him. You will live with the name. Companion Egg consumed: Chonks, Pacific spiny lumpsucker, Level 4 Rare Companion.
+> Reward: Cordula and Barnaby. You bound a spherical, armor-plated fish that moves by vibrating its tiny fins and glaring. The review board has named him. You will live with the name. Companion Egg consumed: Chonks, Pacific spiny lumpsucker, Level 4 Rare Companion.
 
 <img src="../images/cards/cast-chonks-buckler-640x640.webp" alt="" width="200">
 

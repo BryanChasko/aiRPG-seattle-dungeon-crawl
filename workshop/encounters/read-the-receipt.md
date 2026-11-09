@@ -165,7 +165,7 @@ Add up the `cycles` of a round and you get its `turn_usage`. In round two, `agen
 
 ## Receipt or Booth?
 
-The Commentary Booth watches a turn while it happens: every chunk, every tool call, as a callback handler receives them. The receipt reads the turn once it is over, from the result. The booth is for the audience. The receipt is for the developer, to find which trip made a turn slow or expensive.
+The Commentary Booth watches a turn while it happens: every chunk, every tool call, as a callback handler receives them. The receipt reads the turn once it is over, from the result. The booth is for the review board. The receipt is for the developer, to find which trip made a turn slow or expensive.
 
 ## What It Costs
 
