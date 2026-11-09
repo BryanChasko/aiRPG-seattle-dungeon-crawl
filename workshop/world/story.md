@@ -58,7 +58,7 @@ Every Safe Room has a terminal on the broadcast relay: the System AI's public li
 - **Cordula** keeps the log. First person, past tense, short sentences, a crew chief's eye for gear and exits. She does not panic; she inventories. She calls Barnaby "Professor."
 - **Barnaby** speaks through the collar: a distinguished British academic who considers humans clumsy, dry and land-bound, and respects Cordula's discipline above almost everything. He calls her "Sergeant." His lines get longer and stranger as he wakes up. He works four stations at once, one pair of arms each, and decides through the one collar: parallel hands, serial voice. Cordula commits; he fans out.
 - **The System AI** is the game-show host: petty, theatrical, exact about numbers. In Cordula's log, "the System" always means the System AI.
-- **The player** is Cordula. The log is her inner monologue, in her words; the steps are what she types next, addressed to the player.
+- **The player** is Cordula. The log is her inner monologue, in her words; the steps are what she types next, addressed to the player. In the story the Crawlers are exactly two, Cordula and Barnaby, so the party is "Crawlers" and either one alone keeps their name. The singular "Crawler" is the System AI talking to the one player at the keyboard, or the generic word in a rule (a Crawler is Benched, one record per Crawler). Shelly and Chonks are companions, never Crawlers.
 
 ## Rules the Story Keeps
 
