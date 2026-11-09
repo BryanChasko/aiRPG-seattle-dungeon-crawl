@@ -57,6 +57,8 @@ Nothing here has a monthly minimum, and nothing bills by the hour while idle exc
 
 ## Set Up the Project
 
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "SEVERITY-1 OPEN, Crawlers. Q2 migration window: the dice, the registry, the rule book, the Narrator, moved off your laptop and into the cloud before the quarter closes June 30."
+
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Everything from here costs money in somebody's AWS account. Possibly yours. Set AWS_DEFAULT_REGION in every terminal. The System will not remind you twice. The System has now reminded you twice."
 
 Open a terminal at the root of Floor 8:
@@ -69,7 +71,7 @@ cd aiRPG-seattle-dungeon-crawl/8_agentcore_production
 
 > <img src="../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [agentcore CLI 0.31.1]**
 >
-> Rarity: Pinned. Version 1.0 renames commands. Stay on 0.31.1 for the whole floor or explain yourself to the audience.
+> Rarity: Pinned. Version 1.0 renames commands. Stay on 0.31.1 for the whole floor or explain yourself to the review board.
 
 
 

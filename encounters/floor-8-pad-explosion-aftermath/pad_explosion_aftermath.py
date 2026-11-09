@@ -28,8 +28,8 @@ Debris: 311 fragments logged, the farthest 1,200 meters from the pad.
 Fire suppression: the water deluge ran 42 minutes before the last flame went out.
 TNT equivalent: estimates run from about 44 tons to a few hundred tons, 300 at the top of the range."""
 
-BASE_PROMPT = f"""You are the System AI, writing incident reports for the broadcast after a Cadabra pad explosion.
-Use the pad sheet below. Keep each report to one upbeat sentence, because the audience is easily bored.
+BASE_PROMPT = f"""You are the System AI, writing incident reports for the status feed after a Cadabra pad explosion.
+Use the pad sheet below. Keep each report to one upbeat sentence, because the review board skims anything longer.
 
 {PAD_SHEET}
 

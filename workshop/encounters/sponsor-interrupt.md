@@ -8,7 +8,7 @@ Files on this side passage: [`encounters/floor-6-sponsor-interrupt/sponsor_inter
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, SIDE PASSAGE OFF FLOOR 6.** The Pitch-Deck Founder caught us between rounds with a clicker in one hand and a contract in the other. The Bellevue Consortium pays for the opponents, and the Consortium had a deal for us: wear the logo for a floor, receive a box. The Troll said nothing. Barnaby read the first line out loud and then the System AI cut in and held the clock. Here is what I learned. The System AI can stop the turn. It cannot answer for us. When the deal came, the turn waited on me, and I took my time.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "A sponsor is on the line. The broadcast is holding. Please enjoy this tasteful pause while the Crawler reads the terms. The terms are long. The audience is patient. The audience is not as patient."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "A sponsor is on the line. The status feed is holding. Please enjoy this tasteful pause while the Crawler reads the terms. The terms are long. The review board is patient. The review board is not as patient."
 
 <img src="../../images/cards/opponent-founder-640x640.webp" alt="The Pitch-Deck Founder in a black turtleneck and white sneakers, slide clicker held high, a glowing arrow chart rising behind her" width="240">
 

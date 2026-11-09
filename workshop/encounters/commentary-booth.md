@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-1-commentary-booth/commentary_booth.py`](../../encounters/floor-1-commentary-booth/commentary_booth.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, SIDE PASSAGE OFF FLOOR 1.** Behind the aquarium's old gift shop there was a door marked BROADCAST, and behind it a glass booth with two chairs, a dead microphone and a window onto the tide pools. The System AI had a voice again, but it spoke in finished paragraphs, minutes late, like a press release. A dance-off needs a play-by-play: every word as it happens, every roll the moment it is called. Barnaby sat in the second chair with three arms on the mixing board. "If we are going to be on television, Sergeant, we will at least know what the broadcast costs."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, SIDE PASSAGE OFF FLOOR 1.** Behind the aquarium's old gift shop there was a door marked STATUS, and behind it a glass booth with two chairs, a dead microphone and a window onto the tide pools. The System AI had a voice again, but it spoke in finished paragraphs, minutes late, like an audit memo. A stress-test needs a play-by-play: every word as it happens, every roll the moment it is called. Barnaby sat in the second chair with three arms on the mixing board. "If we are going to be on the record, Sergeant, we will at least know what the record costs."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The commentary booth. Here you decide what the audience hears while the Narrator thinks. Every word, every tool call, every token on the bill. I recommend you do not read the bill out loud."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The commentary booth. Here you decide what the review board hears while the Narrator thinks. Every word, every tool call, every token on the bill. I recommend you do not read the bill out loud."
 
 ## The Brief
 
@@ -21,7 +21,7 @@ Files on this side passage: [`encounters/floor-1-commentary-booth/commentary_boo
 | time | about 20 minutes |
 | model | Amazon Nova 2 Lite, as on every floor |
 
-On Floor 1 the answer appeared in the terminal without a prompt: Strands gave the Floor 1 agent a default callback handler, `PrintingCallbackHandler`, that prints text as it streams and a `Tool #N` line for each tool call. A callback handler is any callable the agent calls with keyword arguments for every event of a turn. Replace the default with a custom handler to decide what the audience sees. Then read the `AgentResult` the call returns and price the turn with the Floor 1 cost table.
+On Floor 1 the answer appeared in the terminal without a prompt: Strands gave the Floor 1 agent a default callback handler, `PrintingCallbackHandler`, that prints text as it streams and a `Tool #N` line for each tool call. A callback handler is any callable the agent calls with keyword arguments for every event of a turn. Replace the default with a custom handler to decide what the review board sees. Then read the `AgentResult` the call returns and price the turn with the Floor 1 cost table.
 
 Success check: the narration streams word by word, one `PLAY-BY-PLAY: roll_d20` line appears per roll, and the run ends with a `RECEIPT:` line holding the stop reason, the tokens and the dollars.
 
