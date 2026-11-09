@@ -13,6 +13,7 @@ Maintainer tools for the workshop pages and art. Learners never need these.
 | [`publish_art.py`](publish_art.py) | uploads planned art to `s3://bryanchasko.com/airpg-art/` and writes [`../docs/art-placements.md`](../docs/art-placements.md): every image's S3 key, URL, page, spot, alt text and paste-ready line |
 | [`meta_api.py`](meta_api.py) | shared Meta Model API client (key lookup, retries); `models` lists what the key can call |
 | [`compose_readme_art.py`](compose_readme_art.py) | README type/chrome slots drawn with Pillow (title wordmark, animated HUD groove strip + reduced-motion still); the no-text render rule keeps lettering out of the image model |
+| [`panel_crops.py`](panel_crops.py) | comic-panel variety from shipped art: SAM-boxed speaker headshots (96x96, legible at 28px) and square action panels (480x480) cropped from on-model renders; see [`../docs/image-reuse-audit.md`](../docs/image-reuse-audit.md) |
 
 The art rules, tokens and character model sheet are in [`../docs/visual-design-system.md`](../docs/visual-design-system.md); the prompt blocks in [`../images/plans/style.json`](../images/plans/style.json).
 

@@ -1,0 +1,31 @@
+{
+ "file": "panel-chonks-pool-480x480.webp",
+ "size": [
+  480,
+  480
+ ],
+ "format": "webp lossy q90",
+ "source": {
+  "image": "images/banner-1680x720.webp",
+  "image_sha256": "8e0ae5d3c65f57b7ac1f4023baa8bc883da041b91b23f192d3d65b401d72b835"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "rel",
+  "spec": "(0.4, 0.68, 0.53, 1.0)",
+  "box": [
+   672,
+   489,
+   890,
+   720
+  ],
+  "expand": 1.0,
+  "confidence": null,
+  "note": "Chonks watching from the tide pool"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos"
+ ],
+ "sha256": "d431a585cca239d7356c390b6ad7a701d3cc8cd5b95149318e13eafe1f37db86"
+}

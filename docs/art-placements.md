@@ -300,6 +300,13 @@ S3: `s3://bryanchasko.com/airpg-art/icons/fog-index-96x96.webp`
 ![A round fog-index gauge with a teal ring, its needle lost in grey haze](../images/icons/fog-index-96x96.webp)
 ```
 
+## 2026-11-09-batch-08
+
+| image | page and spot | status |
+|---|---|---|
+| [`system-eye-96x96.webp`](https://bryanchasko.com/airpg-art/icons/system-eye-96x96.webp) | `docs/image-reuse-audit.md`: System AI speaker variant for watching and judging lines | placed |
+| [`system-signal-96x96.webp`](https://bryanchasko.com/airpg-art/icons/system-signal-96x96.webp) | `docs/image-reuse-audit.md`: System AI speaker variant for announcements and notifications | placed |
+
 ## motion
 
 | image | page and spot | status |

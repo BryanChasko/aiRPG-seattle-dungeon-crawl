@@ -1,0 +1,31 @@
+{
+ "file": "panel-dance-cordula-480x480.webp",
+ "size": [
+  480,
+  480
+ ],
+ "format": "webp lossy q90",
+ "source": {
+  "image": "images/banner-1680x720.webp",
+  "image_sha256": "8e0ae5d3c65f57b7ac1f4023baa8bc883da041b91b23f192d3d65b401d72b835"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "rel",
+  "spec": "(0.15, 0.04, 0.42, 0.98)",
+  "box": [
+   252,
+   28,
+   705,
+   705
+  ],
+  "expand": 1.0,
+  "confidence": null,
+  "note": "Cordula's half of the hero dance-off"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos"
+ ],
+ "sha256": "bbccbc4ef780aa2a57492e1f1c74a9b792195a50a6823b52e52a596745590fc3"
+}

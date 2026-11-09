@@ -1,0 +1,32 @@
+{
+ "file": "speaker-cordula-benched-96x96.webp",
+ "size": [
+  96,
+  96
+ ],
+ "format": "webp lossy q88",
+ "source": {
+  "image": "images/cards/cast-cordula-benched-640x640.webp",
+  "image_sha256": "67a533382d7f249d35049ba6fbaa9146a201bd6794e1d3e4c218453cebb87329"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "sam",
+  "spec": "woman's face",
+  "box": [
+   285,
+   88,
+   355,
+   195
+  ],
+  "expand": 1.6,
+  "confidence": 0.9139785170555115,
+  "note": "Cordula tired, for post-round and cost lines"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos",
+  "no dots, no vignette (speaker headshot)"
+ ],
+ "sha256": "f1dd49d415f2f43035ba011657c7d5c8719bb8156c3b7703e7508529b3981016"
+}

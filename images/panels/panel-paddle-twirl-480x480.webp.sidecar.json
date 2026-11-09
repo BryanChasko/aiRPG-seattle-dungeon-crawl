@@ -1,0 +1,31 @@
+{
+ "file": "panel-paddle-twirl-480x480.webp",
+ "size": [
+  480,
+  480
+ ],
+ "format": "webp lossy q90",
+ "source": {
+  "image": "images/cards/cast-cordula-drill-640x640.webp",
+  "image_sha256": "df7670e20dddd286f08b37c6bfdf6eebbda0d16d1ccc45e1eb24e5ca4d8b8be4"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "rel",
+  "spec": "(0.06, 0.0, 0.72, 0.48)",
+  "box": [
+   38,
+   0,
+   460,
+   307
+  ],
+  "expand": 1.0,
+  "confidence": null,
+  "note": "the paddle mid-twirl overhead, object in motion"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos"
+ ],
+ "sha256": "a45887877685e305231d8e6df6141dafbdce29b984e200e92bf402b598deef2d"
+}

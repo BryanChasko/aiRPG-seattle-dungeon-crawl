@@ -50,8 +50,8 @@ def sha256_file(p: Path) -> str:
 def check() -> int:
     bad = 0
     for webp in sorted((ROOT / "images").rglob("*.webp")):
-        if str(webp).endswith(".sidecar.json") or webp.parent.name in ("motion", "sprites"):
-            continue  # clips and SAM sprites are not render classes; their sidecars differ
+        if str(webp).endswith(".sidecar.json") or webp.parent.name in ("motion", "sprites", "panels"):
+            continue  # clips, SAM sprites and panel crops are not render classes; their sidecars differ
         side = Path(str(webp) + ".sidecar.json")
         name = webp.name
         try:

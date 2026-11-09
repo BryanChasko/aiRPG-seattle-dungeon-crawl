@@ -1,0 +1,32 @@
+{
+ "file": "speaker-chonks-face-96x96.webp",
+ "size": [
+  96,
+  96
+ ],
+ "format": "webp lossy q88",
+ "source": {
+  "image": "images/cards/cast-chonks-640x640.webp",
+  "image_sha256": "1162524846190dd2efef17bf26779c68d8ab2ccc570849f96fa343173171b686"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "sam",
+  "spec": "green fish",
+  "box": [
+   104,
+   65,
+   495,
+   432
+  ],
+  "expand": 1.15,
+  "confidence": 0.8827838897705078,
+  "note": "Chonks is all head; the whole fish is the headshot"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos",
+  "no dots, no vignette (speaker headshot)"
+ ],
+ "sha256": "447831c7a2eed21161d7e11d2891f8a3b9d89dc60c88511c574fe9410993b737"
+}

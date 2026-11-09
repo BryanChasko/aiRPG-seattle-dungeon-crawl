@@ -1,0 +1,31 @@
+{
+ "file": "panel-barnaby-tentacle-480x480.webp",
+ "size": [
+  480,
+  480
+ ],
+ "format": "webp lossy q90",
+ "source": {
+  "image": "images/cards/cast-barnaby-640x640.webp",
+  "image_sha256": "8ac544f862d89cde8d48a901aa6b853532d248a3cc162fa50af1bd74785337c6"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "sam",
+  "spec": "curled octopus tentacle",
+  "box": [
+   70,
+   241,
+   330,
+   605
+  ],
+  "expand": 1.3,
+  "confidence": 0.6908212304115295,
+  "note": "one curled arm, suckers up"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos"
+ ],
+ "sha256": "bfc52587cce8576ecd4d3c88080f43063ab0e12fe12f05b1adef91e573394c42"
+}
