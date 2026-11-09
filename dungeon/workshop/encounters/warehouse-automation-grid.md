@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-4-warehouse-automation-grid/warehouse_grid.py`](../../encounters/floor-4-warehouse-automation-grid/warehouse_grid.py), [`encounters/floor-4-warehouse-automation-grid/grid_server.py`](../../encounters/floor-4-warehouse-automation-grid/grid_server.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 4, SATURDAY, JUNE 20, SIDE PASSAGE OFF FLOOR 4.** A warehouse on the Ship Canal, a stone's throw from the Locks, with a door in the lock wall that opened onto it. Cadabra rents the dungeon its obstacles, and this was the rental: four conveyor belts, a sorter, six robotic arms, all of it wired to one control panel with eight switches. Three of the switches say LOOK. Four say MOVE. One says SCAN AND RELEASE ALL, in the same friendly font as the others. The systems integrator who installed it stood by the panel with a clipboard and a lanyard and the calm of a person whose invoice has already cleared. "Just give the agent everything," they said. "Easier to maintain." I have signed for a lot of gear. I do not hand a crew every switch on the panel. I hand each person the one they run.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 4, SATURDAY, JUNE 20, SIDE PASSAGE OFF FLOOR 4.** A warehouse on the Ship Canal, a stone's throw from the Locks, with a door in the lock wall that opened onto it. Cadabra rents the dungeon its obstacles, and this was the rental: four conveyor belts, a sorter, six robotic arms, all of it wired to one control panel with eight switches. Three of the switches say LOOK. Four say MOVE. One says SCAN AND RELEASE ALL, in the same friendly font as the others. The systems integrator who installed it stood by the panel with a clipboard and a lanyard and the calm of a person whose invoice has already cleared. "Just give the agent everything," they said. "Easier to maintain." I have signed for a lot of gear. I do not hand a crew every switch on the panel. I hand each person the one they run.
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Warehouse Automation Grid. Eight tools, one parcel, and a belt that has been stalled since breakfast. The review board is hoping nobody presses the friendly one. Cadabra's delivery drones are hovering by the skylight, in case. I have always said a fulfillment contractor can smell a bad permission model from across the Sound."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Warehouse Automation Grid. Eight tools, one parcel, and a belt that has been stalled since breakfast. The review board is hoping nobody presses the friendly one. Cadabra's delivery drones are hovering by the skylight, in case. I have always said a fulfillment contractor can smell a bad permission model from across the Sound."
 
 ## The Brief
 
@@ -63,7 +63,7 @@ ALLOWED: list = []
 
 One pattern covers the three tools you want and anything that grows later with the same prefixes. A compiled regex is matched with `match`, which anchors at the start of the name, so `^` is a habit and not a requirement. The patterns are checked against the name the server declares, not a name with a `prefix` added by the client.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I wrote LOOK on a card and handed it to the filter. List, belt, scan. Three words, three verbs that leave the floor exactly as they found it. Barnaby watched me write it and asked why not just list the three tools by name. "Sergeant, a regex is a rule about shapes. A name is a rule about a thing." I told him I wanted a rule that still held when the integrator added a fourth look. He wrote that down. Then I read the eight names against it, and the eighth one got through.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I wrote LOOK on a card and handed it to the filter. List, belt, scan. Three words, three verbs that leave the floor exactly as they found it. Barnaby watched me write it and asked why not just list the three tools by name. "Sergeant, a regex is a rule about shapes. A name is a rule about a thing." I told him I wanted a rule that still held when the integrator added a fourth look. He wrote that down. Then I read the eight names against it, and the eighth one got through.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -119,7 +119,7 @@ Replace the `return None`. The filters hide tools from the agent. They do not st
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Eight names went in and three came out. I listed both sides by hand before I trusted it, no model in the loop, the way I count a crew before the boat leaves the dock. The integrator watched the second list print and went quiet about maintainability. The panel still has eight switches. The attendant only sees three of them.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Eight names went in and three came out. I listed both sides by hand before I trusted it, no model in the loop, the way I count a crew before the boat leaves the dock. The integrator watched the second list print and went quiet about maintainability. The panel still has eight switches. The attendant only sees three of them.
 
 ## Step 5: Hand the Attendant Its Filtered Tools
 
@@ -194,7 +194,7 @@ Loot kept:
 - A broad `allowed` pattern needs a short `rejected` list for the tool that has a friendly name and a dangerous job
 - The filter limits this agent. The server still needs its own access rules
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[LEAST PRIVILEGE, MOST PARCELS]**
 >

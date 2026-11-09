@@ -5,12 +5,12 @@
 Files on this side passage: [`encounters/floor-1-reasoning-dial/reasoning_dial.py`](../../encounters/floor-1-reasoning-dial/reasoning_dial.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, SIDE PASSAGE OFF FLOOR 1.** The Rain-Shell Tourist Pod blocked the tide pools at the minus tide, matching windbreakers and shared disappointment about the aquarium, and the System AI's voice was doing something I had not heard before. It was fast for the heckling and slow for the rulings. Barnaby found the cause on the collar's service panel: a brass dial with two marks, QUICK and CAREFUL. "Two settings, Sergeant. The System AI turns the knob itself, and for most of a bout it leaves the dial on QUICK. A good crew chief does not torque every bolt to spec, only the ones that hold a wing on."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, SIDE PASSAGE OFF FLOOR 1.** The Rain-Shell Tourist Pod blocked the tide pools at the minus tide, matching windbreakers and shared disappointment about the aquarium, and the System AI's voice was doing something I had not heard before. It was fast for the heckling and slow for the rulings. Barnaby found the cause on the collar's service panel: a brass dial with two marks, QUICK and CAREFUL. "Two settings, Sergeant. The System AI turns the knob itself, and for most of a bout it leaves the dial on QUICK. A good crew chief does not torque every bolt to spec, only the ones that hold a wing on."
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Rain-Shell Tourist Pod. They have matching windbreakers. The party has a dial. I will think hard about exactly one thing today, and it will be whether the party tied. Do not make me think hard about anything else."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Rain-Shell Tourist Pod. They have matching windbreakers. The party has a dial. I will think hard about exactly one thing today, and it will be whether the party tied. Do not make me think hard about anything else."
 
-<img src="../../../images/cards/opponent-tourist-pod-640x640.webp" alt="The Rain-Shell Tourist Pod, three visitors in matching blue windbreakers with phones out, disappointed about the aquarium" width="240">
+<img src="../../../art/images/cards/opponent-tourist-pod-640x640.webp" alt="The Rain-Shell Tourist Pod, three visitors in matching blue windbreakers with phones out, disappointed about the aquarium" width="240">
 
 ## The Brief
 
@@ -90,7 +90,7 @@ Replace `quick = None`.
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The pod opened with a sentence about refund policies. The collar answered before they finished it. One line, no pause, a heckle about the windbreakers. The crowd on the pier laughed at the speed as much as the joke.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The pod opened with a sentence about refund policies. The collar answered before they finished it. One line, no pause, a heckle about the windbreakers. The crowd on the pier laughed at the speed as much as the joke.
 
 ## Step 3: The Deep Candidate
 
@@ -151,7 +151,7 @@ Replace `dial = None`.
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby read the dial's policy out loud, because Barnaby cannot resist a posted rule. Choose the deep setting only for a close call. Everything else goes to quick. He said it was the first rule posted about how the System AI thinks that he would have signed. Then he asked who decides what counts as close, and I pointed at the descriptions. The classifier reads them. I wrote them. I took the job seriously.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby read the dial's policy out loud, because Barnaby cannot resist a posted rule. Choose the deep setting only for a close call. Everything else goes to quick. He said it was the first rule posted about how the System AI thinks that he would have signed. Then he asked who decides what counts as close, and I pointed at the descriptions. The classifier reads them. I wrote them. I took the job seriously.
 
 ## Step 5: The Router
 
@@ -230,7 +230,7 @@ Money follows the output tokens, because thinking is billed as output, at $2.50 
 
 Three turns and three classifier calls come to under a cent, about $0.0079. The same bout all on deep, with no classifier, is about $0.016. The Final Beat turn is two thirds of the dial's bill, and that turn is the one that earned the spend.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The drum sped up. The pod rolled a 23 and kept dancing past the final strike, the way they keep going past the exit and take photos anyway. I rolled a 19 and stopped on the beat. The collar took long enough on the ruling that I counted the seconds: twenty-one seconds. Barnaby said he had been waiting since 0551 for the System AI to pause before it spoke. He sounded nearly moved.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The drum sped up. The pod rolled a 23 and kept dancing past the final strike, the way they keep going past the exit and take photos anyway. I rolled a 19 and stopped on the beat. The collar took long enough on the ruling that I counted the seconds: twenty-one seconds. Barnaby said he had been waiting since 0551 for the System AI to pause before it spoke. He sounded nearly moved.
 
 ## Encounter Clear
 
@@ -242,7 +242,7 @@ Loot kept:
 - `FallbackStrategy` answers the router's question after a failed call, and a read timeout turns a slow call into one
 - A custom strategy can hand different questions to different strategies, as `DialStrategy` does
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[TURNS THE KNOB ONLY WHEN IT MATTERS]**
 >

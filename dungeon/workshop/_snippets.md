@@ -32,7 +32,7 @@ the alt text always carries the words.
 ## System-AI quote
 
 ```markdown
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Your taunt here. The review board is watching."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Your taunt here. The review board is watching."
 ```
 
 Variants: swap the icon for `warning-96x96.webp` (**SYSTEM WARNING:**),
@@ -45,7 +45,7 @@ Variants: swap the icon for `warning-96x96.webp` (**SYSTEM WARNING:**),
 
 ```markdown
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY N, WEEKDAY, MONTH D, FLOOR N.** One paragraph: where the party is, what broke, what the floor builds. Placeholder sentence about what the party does next.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY N, WEEKDAY, MONTH D, FLOOR N.** One paragraph: where the party is, what broke, what the floor builds. Placeholder sentence about what the party does next.
 <!-- /cordula-log -->
 ```
 
@@ -56,18 +56,18 @@ Days and dates come from `workshop/world/timeline.md`.
 Paste under the plate image when a floor references a shared location plate:
 
 ```markdown
-![Floor N: Title](../../images/floors/floor-N-1200x675.webp)
+![Floor N: Title](../../art/images/floors/floor-N-1200x675.webp)
 ```
 
-- Eelgrass nursery (Floor 2): `![Eelgrass nursery](../../images/floors/eelgrass-nursery-1200x675.webp)`
-- Kelp cathedral bulbs (Floor 3): `![Kelp cathedral bulbs](../../images/floors/kelp-cathedral-bulbs-1200x675.webp)`
-- Estuary dance floor (Floor 5): `![Estuary dance floor](../../images/floors/estuary-dancefloor-1200x675.webp)`
-- Estuary flooded (Floor 5): `![Estuary flooded](../../images/floors/estuary-flooded-1200x675.webp)`
-- Underground troll (Floor 6): `![Underground troll](../../images/floors/underground-troll-1200x675.webp)`
-- Safe Room (Floor 7): `![Safe Room](../../images/floors/safe-room-1200x675.webp)`
-- Bluffs cliff (Floor 7): `![Bluffs cliff](../../images/floors/bluffs-cliff-1200x675.webp)`
-- Bellevue lobby (Floor 8): `![Bellevue lobby](../../images/floors/bellevue-lobby-1200x675.webp)`
-- The Exit (cleanup): `![The Exit](../../images/floors/exit-1200x675.webp)`
+- Eelgrass nursery (Floor 2): `![Eelgrass nursery](../../art/images/floors/eelgrass-nursery-1200x675.webp)`
+- Kelp cathedral bulbs (Floor 3): `![Kelp cathedral bulbs](../../art/images/floors/kelp-cathedral-bulbs-1200x675.webp)`
+- Estuary dance floor (Floor 5): `![Estuary dance floor](../../art/images/floors/estuary-dancefloor-1200x675.webp)`
+- Estuary flooded (Floor 5): `![Estuary flooded](../../art/images/floors/estuary-flooded-1200x675.webp)`
+- Underground troll (Floor 6): `![Underground troll](../../art/images/floors/underground-troll-1200x675.webp)`
+- Safe Room (Floor 7): `![Safe Room](../../art/images/floors/safe-room-1200x675.webp)`
+- Bluffs cliff (Floor 7): `![Bluffs cliff](../../art/images/floors/bluffs-cliff-1200x675.webp)`
+- Bellevue lobby (Floor 8): `![Bellevue lobby](../../art/images/floors/bellevue-lobby-1200x675.webp)`
+- The Exit (cleanup): `![The Exit](../../art/images/floors/exit-1200x675.webp)`
 
 ## Expected-output details block
 
@@ -86,7 +86,7 @@ result = "your answer here"
 ## Achievement toast
 
 ```markdown
-> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[TITLE IN CAPS]**
 >
@@ -98,7 +98,7 @@ result = "your answer here"
 The HUD art lives in `assets/hud/` as script-free SMIL SVGs: `d20`, `final-beat-drum`, `groove-bar`, `hype-tick`, `mana-pips`, `tide-clock`, and the move icons `move-power`, `move-footwork`, `move-endurance`, `move-choreography`, `move-readroom`, `move-presence`.
 
 ```markdown
-<img src="../../assets/hud/groove-bar.svg" alt="Groove meter" width="120">
+<img src="../../site/assets/hud/groove-bar.svg" alt="Groove meter" width="120">
 ```
 
 Move icons use `width="48"`. The SVGs honor `prefers-reduced-motion`.
@@ -108,7 +108,7 @@ Move icons use `width="48"`. The SVGs honor `prefers-reduced-motion`.
 Clips live in `images/motion/`, each with a `-still.webp` rest frame. GitHub honors the `media` query, so a reader who asked for less motion sees the still:
 
 ```markdown
-<picture><source srcset="../../images/motion/loot-gold-loot-pop-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../images/motion/loot-gold-loot-pop.webp" alt="A Gold Box popping open" width="96"></picture>
+<picture><source srcset="../../art/images/motion/loot-gold-loot-pop-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../art/images/motion/loot-gold-loot-pop.webp" alt="A Gold Box popping open" width="96"></picture>
 ```
 
 Where each clip and render belongs, with ready-to-paste lines and S3 keys: `docs/art-placements.md`.
@@ -124,10 +124,10 @@ commands full width under the table.
 ```markdown
 <table>
 <tr>
-<td valign="top" width="50%"><img src="../../images/cards/boss-NAME-640x640.webp" alt="Describe who is in the picture, where, and what they are doing" width="320"></td>
+<td valign="top" width="50%"><img src="../../art/images/cards/boss-NAME-640x640.webp" alt="Describe who is in the picture, where, and what they are doing" width="320"></td>
 <td valign="top" width="50%">
 
-> <img src="../../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS: NAME, THE TITLE.** One paragraph: who blocks the way, what the confusion is, and how the Crawler wins. Nobody gets hurt: say what winning looks like.
+> <img src="../../art/images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS: NAME, THE TITLE.** One paragraph: who blocks the way, what the confusion is, and how the Crawler wins. Nobody gets hurt: say what winning looks like.
 
 One short paragraph with the check the picture teaches: what to run, install or confirm. End by pointing at the commands right under this card.
 

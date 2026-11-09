@@ -2,8 +2,8 @@
 """Review sheet for rendered art: one labeled grid per size class (cards, floors, icons).
 
 Usage:
-  python3 art/contact_sheet.py images/cards/cast-shelly-anchor-640x640.webp images/floors ...
-  python3 art/contact_sheet.py --plan images/plans/2026-11-08-batch-05.json
+  python3 art/contact_sheet.py art/images/cards/cast-shelly-anchor-640x640.webp art/images/floors ...
+  python3 art/contact_sheet.py --plan art/images/plans/2026-11-08-batch-05.json
 
 Writes <art dir>/<run or "review">/sheet-<class>.png ($AIRPG_ART_DIR, default
 ~/writing/art/once-upon-agentic-ai/experiments) and prints the paths. Needs Pillow.
@@ -53,7 +53,7 @@ def main() -> int:
     if a.plan:
         p = json.loads(Path(a.plan).read_text())
         run = p["run"]
-        files += [ROOT / r["out"] for r in p["renders"] if (ROOT / r["out"]).exists()]
+        files += [ART / r["out"] for r in p["renders"] if (ART / r["out"]).exists()]
     if not files:
         ap.print_help(); return 1
     for tag, (name, tw, th, cols) in LAYOUT.items():

@@ -20,7 +20,7 @@ import json, sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from airpg_render import ROOT, rel, sha256_file  # noqa: E402
+from airpg_render import ART, ROOT, rel, sha256_file  # noqa: E402
 from sam_cutout import segment, masks  # noqa: E402
 
 from PIL import Image  # noqa: E402
@@ -58,11 +58,11 @@ def square_box(box, w: int, h: int, expand: float):
 
 def cut(job) -> None:
     name, src, out, kind, spec, expand, pick, note = job
-    img = Image.open(ROOT / src).convert("RGB")
+    img = Image.open(ART / src).convert("RGB")
     w, h = img.size
     conf = None
     if kind == "sam":
-        found = list(masks(segment(ROOT / src, spec)))
+        found = list(masks(segment(ART / src, spec)))
         if not found:
             print(f"FAIL {name}: SAM found no {spec!r} in {src}"); return
         key = (lambda m: (m[1].right - m[1].left) * (m[1].bottom - m[1].top)) if pick == "area" \
@@ -74,12 +74,12 @@ def cut(job) -> None:
     crop = img.crop(square_box(box, w, h, expand))
     size = (96, 96) if out.startswith("images/icons/") else (480, 480)
     crop = crop.resize(size, Image.LANCZOS)
-    outp = ROOT / out
+    outp = ART / out
     outp.parent.mkdir(parents=True, exist_ok=True)
     is_icon = size == (96, 96)
     crop.save(outp, "WEBP", quality=88 if is_icon else 90, method=6)
     side = {"file": outp.name, "size": list(size), "format": "webp lossy q88" if is_icon else "webp lossy q90",
-            "source": {"image": src, "image_sha256": sha256_file(ROOT / src)},
+            "source": {"image": src, "image_sha256": sha256_file(ART / src)},
             "crop": {"by": "art/panel_crops.py", "kind": kind, "spec": str(spec),
                      "box": list(box), "expand": expand, "confidence": conf, "note": note},
             "transforms": ["square crop to the panel box", "resize lanczos",

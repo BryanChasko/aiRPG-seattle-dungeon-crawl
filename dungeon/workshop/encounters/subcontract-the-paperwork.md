@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-5-subcontract-the-paperwork/subcontract_the_paperwork.py`](../../encounters/floor-5-subcontract-the-paperwork/subcontract_the_paperwork.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 6, MONDAY, JUNE 22, SIDE PASSAGE OFF FLOOR 5.** The ferry run to Bainbridge Island left us with a stack of receipts and no one willing to staple them. On Floor 5 the Narrator would have phoned a Rules Agent or a Character Agent, each one living in its own terminal with its own port. Down here the Narrator did something smaller. The Narrator hired a clerk for the afternoon. One task in, one form out, and the clerk was gone before I finished my coffee. I have signed for contractors in a motor pool. I know the three questions: what may the contractor touch, what rules does the contractor work under, and who vouches for the contractor.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 6, MONDAY, JUNE 22, SIDE PASSAGE OFF FLOOR 5.** The ferry run to Bainbridge Island left us with a stack of receipts and no one willing to staple them. On Floor 5 the Narrator would have phoned a Rules Agent or a Character Agent, each one living in its own terminal with its own port. Down here the Narrator did something smaller. The Narrator hired a clerk for the afternoon. One task in, one form out, and the clerk was gone before I finished my coffee. I have signed for contractors in a motor pool. I know the three questions: what may the contractor touch, what rules does the contractor work under, and who vouches for the contractor.
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: Subcontract the Paperwork. The Narrator may hire one clerk per task. The clerk has a stamp, a calculator and strict instructions. The clerk does not have opinions, and the clerk may not hire another clerk. Shelly's siphon appears on the form as a line item. It is, as always, not finished."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: Subcontract the Paperwork. The Narrator may hire one clerk per task. The clerk has a stamp, a calculator and strict instructions. The clerk does not have opinions, and the clerk may not hire another clerk. Shelly's siphon appears on the form as a line item. It is, as always, not finished."
 
 ## The Brief
 
@@ -64,7 +64,7 @@ from strands.vended_tools.subagent.subagent import make_subagent
 
 The tool names in a preset are looked up in the parent's tools. The clerk can only borrow a tool the Narrator owns, which is why Step 4 gives the Narrator `add_up` too. A name the parent does not own is skipped with a log warning, and the clerk would be left to add by hand. See [`Preset`](https://strandsagents.com/docs/api/python/strands.multiagent.spec/).
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** A contractor gets a badge for the rooms the job needs and no others. This clerk got one room: the calculator. I liked that. Barnaby read the rules over my shoulder and asked why the clerk was forbidden to add numbers by hand. I said because a person who adds by hand will eventually add wrong. "Quite, Sergeant. It is the same reason one does not eyeball a fuel load."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** A contractor gets a badge for the rooms the job needs and no others. This clerk got one room: the calculator. I liked that. Barnaby read the rules over my shoulder and asked why the clerk was forbidden to add numbers by hand. I said because a person who adds by hand will eventually add wrong. "Quite, Sergeant. It is the same reason one does not eyeball a fuel load."
 
 ## Step 3: Pin the Model
 
@@ -103,7 +103,7 @@ Replace the `return None`. The trap: the Narrator reads the `description` when i
 
 The Narrator needs two things in its `tools` list: `clerk_tool`, so the Narrator can hire, and `add_up`, so the clerk has something to borrow. `add_up` is a plain `@tool` function, the kind written on Floor 3. The Narrator's system prompt tells the Narrator never to file anything itself, so `add_up` sits on its list for the clerk's sake. A clerk cannot hire a clerk either: the `strands.vended_tools.subagent` module limits delegation depth, and a child is built one level down.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Narrator handed over the whole task in one paragraph: who bought how many tokens, Chonks's snack, the siphon line. The Narrator left nothing out, because the clerk could not call back. I have written that kind of order before. If the person reading the order cannot reach me, the order has to stand on its own.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Narrator handed over the whole task in one paragraph: who bought how many tokens, Chonks's snack, the siphon line. The Narrator left nothing out, because the clerk could not call back. I have written that kind of order before. If the person reading the order cannot reach me, the order has to stand on its own.
 
 <details>
 <summary>Show me the code for Step 4</summary>
@@ -148,7 +148,7 @@ The Rules Agent of Floor 5 is shared: many callers, one running service, one set
 
 Two Amazon Nova 2 Lite turns complete the run. The Narrator reads the task and hires the clerk (about 600 tokens in, 150 out). The clerk reads its rules and the task, calls `add_up`, and writes the form (about 700 in, 200 out, across two Amazon Nova 2 Lite calls). Then the Narrator writes its two sentences (about 900 in, 80 out). At about $0.30 per million input tokens and $2.50 per million output tokens, the total is roughly 3,000 tokens in and 700 out: about $0.003 for the whole run, a third of a cent. `add_up` runs in code and costs nothing. See [What a Turn Costs](../floor-1.md#what-a-turn-costs).
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Nine tokens, stamped and filed. The System AI said the clerk would like the log to note that the form was submitted on time. I asked whether the clerk got a name. The System AI said no, a clerk is a role. Barnaby said that is how most of the ferry system runs, and he meant it as praise.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Nine tokens, stamped and filed. The System AI said the clerk would like the log to note that the form was submitted on time. I asked whether the clerk got a name. The System AI said no, a clerk is a role. Barnaby said that is how most of the ferry system runs, and he meant it as praise.
 
 ## Encounter Clear
 
@@ -160,7 +160,7 @@ Loot to keep:
 - Pin the model with `model=Fixed(...)`: the default inherits the Narrator's model
 - A clerk borrows tools from the Narrator by name, so the Narrator has to own them
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[CONTRACTOR OF RECORD]**
 >

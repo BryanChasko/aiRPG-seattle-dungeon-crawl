@@ -4,17 +4,17 @@
 
 Files on this floor: [`8_agentcore_production/diceserver/dice_roll_mcp_server.py`](../8_agentcore_production/diceserver/dice_roll_mcp_server.py), [`8_agentcore_production/narrator/narrator_orchestrator.py`](../8_agentcore_production/narrator/narrator_orchestrator.py) <!-- floor-files -->
 
-![Floor 8.1: The Dice Server](../../images/floors/floor-8-1-1200x675.webp)
+![Floor 8.1: The Dice Server](../../art/images/floors/floor-8-1-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, FLOOR 8.1.** Brick one was the dice. If anything is going to keep running without us, the dice, which decide who wins, should be the part that does. Barnaby wanted proof the dice had left the building, so we read the logs from the cloud until he was satisfied. It took a while. He is hard to satisfy.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, FLOOR 8.1.** Brick one was the dice. If anything is going to keep running without us, the dice, which decide who wins, should be the part that does. Barnaby wanted proof the dice had left the building, so we read the logs from the cloud until he was satisfied. It took a while. He is hard to satisfy.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [bedrock-agentcore-samples](https://github.com/elizabethfuentes12/bedrock-agentcore-samples) by Elizabeth Fuentes. "AgentCore provides composable services that work with popular open-source frameworks and any model, eliminating the choice between open-source flexibility and enterprise requirements."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [bedrock-agentcore-samples](https://github.com/elizabethfuentes12/bedrock-agentcore-samples) by Elizabeth Fuentes. "AgentCore provides composable services that work with popular open-source frameworks and any model, eliminating the choice between open-source flexibility and enterprise requirements."
 >
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The AgentCore samples show the same three bricks the floor builds: Runtime, Memory and Gateway. I kept the repo open in a tab the whole floor. Barnaby does not like surprises in production, and neither do I.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The AgentCore samples show the same three bricks the floor builds: Runtime, Memory and Gateway. I kept the repo open in a tab the whole floor. Barnaby does not like surprises in production, and neither do I.
 >
-> <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** The dice left first. A fair roll is the one thing the game cannot do without. Everything else waits on it.
+> <img src="../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** The dice left first. A fair roll is the one thing the game cannot do without. Everything else waits on it.
 
 ## Floor Objective
 
@@ -48,11 +48,11 @@ mcp = FastMCP(host="0.0.0.0", stateless_http=True)
 
 The `pyproject.toml` next to the server lists its only dependency, `mcp<2`: AgentCore installs `mcp<2` when AgentCore packages the code.
 
-> <img src="../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Cloud only: do not start this cloud version of the dice server locally, port 8000 is the Rules Agent's port.
+> <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Cloud only: do not start this cloud version of the dice server locally, port 8000 is the Rules Agent's port.
 
 ## Part 2: Deploy with AgentCore
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Your first runtime. The CLI packages the dice server, CloudFormation builds it, and IAM guards it. Three services, one dice roller. The System AI loves a little overkill."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Your first runtime. The CLI packages the dice server, CloudFormation builds it, and IAM guards it. Three services, one dice roller. The System AI loves a little overkill."
 
 Run the commands of this part from the project folder you created on the Floor 8 page:
 
@@ -79,7 +79,7 @@ The listing shows `dice_roll_mcp_server.py` and `pyproject.toml`. If the folder 
 
 ### Step 2: Deploy
 
-> <img src="../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run this command from the root of the `gameprod` folder, like every `agentcore` command of this floor. The CLI looks for `agentcore/agentcore.json` in the current folder and its parents: from `8_agentcore_production` or from `diceserver/`, the CLI stops with `No agentcore project found`.
+> <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run this command from the root of the `gameprod` folder, like every `agentcore` command of this floor. The CLI looks for `agentcore/agentcore.json` in the current folder and its parents: from `8_agentcore_production` or from `diceserver/`, the CLI stops with `No agentcore project found`.
 
 ```bash
 agentcore deploy -y
@@ -87,7 +87,7 @@ agentcore deploy -y
 
 The CLI packages the server with its dependencies, uploads the package and creates a CloudFormation stack, `AgentCore-gameprod-default`, holding the runtime and its IAM role. The first deployment takes a few minutes.
 
-> <img src="../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** `CDK synth failed: node dist/bin/cdk.js: Subprocess exited with error 1`: this message hides the underlying error. The most common cause is a `codeLocation` folder without a `pyproject.toml`: check `ls ../diceserver` as in Step 1. To see the underlying error, run `node dist/bin/cdk.js` from `agentcore/cdk`.
+> <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** `CDK synth failed: node dist/bin/cdk.js: Subprocess exited with error 1`: this message hides the underlying error. The most common cause is a `codeLocation` folder without a `pyproject.toml`: check `ls ../diceserver` as in Step 1. To see the underlying error, run `node dist/bin/cdk.js` from `agentcore/cdk`.
 
 When the deploy finishes, check the status:
 
@@ -99,7 +99,7 @@ The `diceserver` runtime should be `READY`, followed by its URL, of the form `ht
 
 ### Step 3: Test the Deployed Server
 
-> <img src="../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run every command of this step from the root of the `gameprod` folder, like the rest of Part 2. From `8_agentcore_production` or a brick folder, `agentcore invoke` and `agentcore logs` stop with `No agentcore project found`.
+> <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run every command of this step from the root of the `gameprod` folder, like the rest of Part 2. From `8_agentcore_production` or a brick folder, `agentcore invoke` and `agentcore logs` stop with `No agentcore project found`.
 
 Call the tool directly from the CLI, without an agent:
 
@@ -117,7 +117,7 @@ The logs contain `Starting Dice Roll MCP Server...` and the `DICE ROLL: 1d20 = [
 
 If `agentcore logs` shows nothing yet, wait a minute: logs reach CloudWatch with a short delay. If `call-tool` fails with `AccessDeniedException`, the signed-in credentials may not invoke AgentCore runtimes: check that `aws sts get-caller-identity` prints the account you deployed to, and that `AWS_DEFAULT_REGION` matches the region of `agentcore status`.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One d20, rolled by a box we could not see, in a building none of us will ever walk into. The log said 14. Barnaby wanted to read the line himself, in CloudWatch, with his own arms, before he would believe it. He read it. Then he asked for a second roll, to be sure it was not a recording.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One d20, rolled by a box we could not see, in a building none of us will ever walk into. The log said 14. Barnaby wanted to read the line himself, in CloudWatch, with his own arms, before he would believe it. He read it. Then he asked for a second roll, to be sure it was not a recording.
 
 ### What the Dice Server Costs
 
@@ -127,7 +127,7 @@ A runtime bills per second while a session runs: $0.0895 per vCPU-hour of CPU us
 
 This file is the Floor 5 Narrator. The Rules Agent and the Character Agent are still reached over A2A on `127.0.0.1:8000` and `127.0.0.1:8001`; only the dice client changes. The Narrator's TODOs carry the number of this section (8.1 Step 1).
 
-> <img src="../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** On the `solution` branch, the Narrator file is shared by the four sections and appears as it is at the end of 8.4, served by AgentCore. The 8.4 version does not start on a local machine. Copy only the lines under the `8.1 Step N` TODOs of this section, and leave the rest of the file unchanged.
+> <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** On the `solution` branch, the Narrator file is shared by the four sections and appears as it is at the end of 8.4, served by AgentCore. The 8.4 version does not start on a local machine. Copy only the lines under the `8.1 Step N` TODOs of this section, and leave the rest of the file unchanged.
 
 ### Step 1: Read the Dice Server URL from the Environment
 
@@ -166,7 +166,7 @@ DICE_SERVER_URL = os.environ["DICE_SERVER_URL"]
 
 ### Step 2: Create an IAM-Signed MCP Client
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The deployed dice server answers signed requests only. Sign for the wrong region and you get a 403. The System AI enjoys a good 403."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The deployed dice server answers signed requests only. Sign for the wrong region and you get a 403. The System AI enjoys a good 403."
 
 ```python
 # TODO: 8.1 Step 2 - Import aws_iam_streamablehttp_client from mcp_proxy_for_aws.client
@@ -209,7 +209,7 @@ Uvicorn prints that it is running on `http://127.0.0.1:8009`. If the Narrator st
 
 ## Part 4: Play Against the Cloud
 
-> <img src="../../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS:** One investment banker, one Move Call, two rolls, both in AWS. Read the CloudWatch logs to prove the dice left the local machine.
+> <img src="../../art/images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS:** One investment banker, one Move Call, two rolls, both in AWS. Read the CloudWatch logs to prove the dice left the local machine.
 
 Request a dance-off round, from another terminal:
 
@@ -230,7 +230,7 @@ The log holds both rolls, for example `DICE ROLL: 1d20 = [14] -> 14` followed by
 
 If the Narrator says the roll failed, the Narrator's terminal shows the cause: a `403` means the request was signed for another region than the runtime's (export `AWS_DEFAULT_REGION` in that terminal and restart the Narrator), and `ExpiredToken` means the AWS sign-in expired.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Bonus-Season Investment Banker met us on a skybridge over Bellevue Way, cufflinks first, and called Presence like a sure thing. Both dice rolled somewhere in Oregon. I lost the round by two and lost two Groove, and I was fine with it: the roll was fair, and everybody could read it. Barnaby took the next call on Choreography, and the banker went back to the trading floor to think about bonus season.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Bonus-Season Investment Banker met us on a skybridge over Bellevue Way, cufflinks first, and called Presence like a sure thing. Both dice rolled somewhere in Oregon. I lost the round by two and lost two Groove, and I was fine with it: the roll was fair, and everybody could read it. Barnaby took the next call on Choreography, and the banker went back to the trading floor to think about bonus season.
 
 Keep the `gameprod` project and its deployment: the next sections add the other bricks to it. To remove everything at the end of the workshop, see the [Cleanup](cleanup.md) page.
 
@@ -246,13 +246,13 @@ Loot you're keeping:
 - How to call the deployed dice server from a Strands agent with IAM authentication (`aws_iam_streamablehttp_client`)
 - How to keep the settings of your account out of the code (`.env`, `load_dotenv()`, `os.environ`)
 
-<img src="../../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [8.2](floor-8-2.md) where the Character Agent joins the dice server in the cloud, along with the characters it creates.
+<img src="../../art/images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [8.2](floor-8-2.md) where the Character Agent joins the dice server in the cloud, along with the characters it creates.
 
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[THE DICE HAVE LEFT THE TABLE]**
 >
 > Reward: You received a [Bronze Box]. Inside: a cloud-hosted roll_dice, a signed request, and a log line you can read in CloudWatch.
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Your dice now roll in production, and the rest of the game did not notice. That will change."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Your dice now roll in production, and the rest of the game did not notice. That will change."

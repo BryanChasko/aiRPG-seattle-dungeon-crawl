@@ -1,6 +1,6 @@
 # The World: Seattle, Under the Sound
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Welcome to Seattle, Crawlers. The rain is real, the coffee is strong, and as of this morning the waterfront is a dungeon. Please keep your hands, arms and tentacles inside the floor at all times."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Welcome to Seattle, Crawlers. The rain is real, the coffee is strong, and as of this morning the waterfront is a dungeon. Please keep your hands, arms and tentacles inside the floor at all times."
 
 The crawl opens on the Seattle waterfront at 0551 on Day 1, Wednesday, June 17, when the System AI folds the ground under Pier 59 into a dungeon that runs beneath Puget Sound, under the neighborhoods and out to Tacoma and Bellevue. This page is the setting guide: the places, the living things, the opponents, and how the game treats the cultures of the region.
 
@@ -74,19 +74,19 @@ One boss is not a person at work. Monty, a reticulated python someone released i
 
 <table>
 <tr>
-<td><img src="../../../images/cards/opponent-accountant-640x640.webp" alt="The Quarterly Close Accountant, a middle-aged woman in a grey suit with reading glasses pushed up, clutching a calculator while spreadsheet pages flutter around her mid-dance" width="160"></td>
-<td><img src="../../../images/cards/opponent-banker-640x640.webp" alt="The Bonus-Season Investment Banker, a young man in a fleece vest over a dress shirt, slipping mid-spin on a wet floor as his sunglasses fly off" width="160"></td>
-<td><img src="../../../images/cards/opponent-devrel-swarm-640x640.webp" alt="The Developer Advocate Swarm, five cheerful advocates in matching teal conference hoodies with laptops, stickers, a ring light and a camera, dancing in formation" width="160"></td>
+<td><img src="../../../art/images/cards/opponent-accountant-640x640.webp" alt="The Quarterly Close Accountant, a middle-aged woman in a grey suit with reading glasses pushed up, clutching a calculator while spreadsheet pages flutter around her mid-dance" width="160"></td>
+<td><img src="../../../art/images/cards/opponent-banker-640x640.webp" alt="The Bonus-Season Investment Banker, a young man in a fleece vest over a dress shirt, slipping mid-spin on a wet floor as his sunglasses fly off" width="160"></td>
+<td><img src="../../../art/images/cards/opponent-devrel-swarm-640x640.webp" alt="The Developer Advocate Swarm, five cheerful advocates in matching teal conference hoodies with laptops, stickers, a ring light and a camera, dancing in formation" width="160"></td>
 </tr>
 <tr>
-<td><img src="../../../images/cards/opponent-founder-640x640.webp" alt="The Pitch-Deck Founder in a black turtleneck and white sneakers, slide clicker held high, a glowing arrow chart rising behind her" width="160"></td>
-<td><img src="../../../images/cards/opponent-ferry-commuters-640x640.webp" alt="The Ferry-Line Commuter Horde, a long line of damp commuters in rain shells with coffee cups, line dancing on a ferry ramp in front of a green and white ferry" width="160"></td>
-<td><img src="../../../images/cards/opponent-tourist-pod-640x640.webp" alt="The Rain-Shell Tourist Pod, a family in brand-new bright rain shells with a paper map and a fish-shaped souvenir, doing a clumsy conga in the rain" width="160"></td>
+<td><img src="../../../art/images/cards/opponent-founder-640x640.webp" alt="The Pitch-Deck Founder in a black turtleneck and white sneakers, slide clicker held high, a glowing arrow chart rising behind her" width="160"></td>
+<td><img src="../../../art/images/cards/opponent-ferry-commuters-640x640.webp" alt="The Ferry-Line Commuter Horde, a long line of damp commuters in rain shells with coffee cups, line dancing on a ferry ramp in front of a green and white ferry" width="160"></td>
+<td><img src="../../../art/images/cards/opponent-tourist-pod-640x640.webp" alt="The Rain-Shell Tourist Pod, a family in brand-new bright rain shells with a paper map and a fish-shaped souvenir, doing a clumsy conga in the rain" width="160"></td>
 </tr>
 <tr>
-<td><img src="../../../images/cards/boss-regional-director-640x640.webp" alt="The Regional Managing Director of Bellevue, a tall man in an immaculate navy suit and lanyard, arms crossed in a marble lobby lit by red laser grids" width="160"></td>
-<td><img src="../../../images/cards/boss-earnings-call-640x640.webp" alt="The Quarterly Earnings Call, a giant grinning speakerphone with glowing buttons beneath three floating video-call tiles, sending violet sound waves over a flooded boardroom" width="160"></td>
-<td><img src="../../../images/cards/boss-the-keynote-640x640.webp" alt="The Keynote, a lone presenter in a headset striking a power pose on a fog-filled stage before a giant blank screen and rows of half-flooded seats" width="160"></td>
+<td><img src="../../../art/images/cards/boss-regional-director-640x640.webp" alt="The Regional Managing Director of Bellevue, a tall man in an immaculate navy suit and lanyard, arms crossed in a marble lobby lit by red laser grids" width="160"></td>
+<td><img src="../../../art/images/cards/boss-earnings-call-640x640.webp" alt="The Quarterly Earnings Call, a giant grinning speakerphone with glowing buttons beneath three floating video-call tiles, sending violet sound waves over a flooded boardroom" width="160"></td>
+<td><img src="../../../art/images/cards/boss-the-keynote-640x640.webp" alt="The Keynote, a lone presenter in a headset striking a power pose on a fog-filled stage before a giant blank screen and rows of half-flooded seats" width="160"></td>
 </tr>
 </table>
 

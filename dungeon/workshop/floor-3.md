@@ -4,13 +4,13 @@
 
 Files on this floor: [`3_custom_tools/agent_with_dice_roll_tool.py`](../3_custom_tools/agent_with_dice_roll_tool.py) <!-- floor-files -->
 
-![Floor 3: The Crafting Table](../../images/floors/floor-3-1200x675.webp)
+![Floor 3: The Crafting Table](../../art/images/floors/floor-3-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 3, FRIDAY, JUNE 19, FLOOR 3.** The Bull Kelp Cathedral goes straight up: bull kelp stipes as thick as my wrist, bulbs floating overhead like lanterns. Nothing down here could be decided, because the System AI's dice were lost in the flood, and a game without dice is an argument. So we made dice. Barnaby learned the hard way that a tool is only as good as the instructions on the box: the first version of our roller did exactly what we wrote, which was not what we meant. We rewrote the instructions until the roller did. Shelly dug in at the foot of the first stipe in half a second and held our spot.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 3, FRIDAY, JUNE 19, FLOOR 3.** The Bull Kelp Cathedral goes straight up: bull kelp stipes as thick as my wrist, bulbs floating overhead like lanterns. Nothing down here could be decided, because the System AI's dice were lost in the flood, and a game without dice is an argument. So we made dice. Barnaby learned the hard way that a tool is only as good as the instructions on the box: the first version of our roller did exactly what we wrote, which was not what we meant. We rewrote the instructions until the roller did. Shelly dug in at the foot of the first stipe in half a second and held our spot.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 3. Craft your own gear, Crawler. Amazon Nova 2 Lite never reads your code, only the docstring you write for it. Write a lazy one and watch your agent dance to the wrong song."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 3. Craft your own gear, Crawler. Amazon Nova 2 Lite never reads your code, only the docstring you write for it. Write a lazy one and watch your agent dance to the wrong song."
 
 ## Floor Objective
 
@@ -26,7 +26,7 @@ Edit the [`agent_with_dice_roll_tool.py`](../3_custom_tools/agent_with_dice_roll
 
 ## How Custom Tools Work
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "On this floor you stop borrowing gear and forge your own. Amazon Nova 2 Lite never sees your code. It sees a name, a docstring and a schema. That is your entire sales pitch."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "On this floor you stop borrowing gear and forge your own. Amazon Nova 2 Lite never sees your code. It sees a name, a docstring and a schema. That is your entire sales pitch."
 
 In Strands, a custom tool is a Python function decorated with `@tool` and documented by a docstring:
 
@@ -64,11 +64,11 @@ The `solution` branch folds the import into the first line instead, `from strand
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** We found a crafting table wedged between two kelp stipes, with a function already scratched into it: roll some dice, drop the low ones, add up the rest. The function worked, and nobody could use it. A function is a tool the way a wrench in a locked drawer is a tool. The decorator is the key to the drawer.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** We found a crafting table wedged between two kelp stipes, with a function already scratched into it: roll some dice, drop the low ones, add up the rest. The function worked, and nobody could use it. A function is a tool the way a wrench in a locked drawer is a tool. The decorator is the key to the drawer.
 
 ## Step 2: Write a Clear Docstring
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[THE SPEC SHEET OF SHAME]**
 >
@@ -131,11 +131,11 @@ A docstring must be the first statement of the function, so it goes right under 
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Our first roller had no instructions on the box, and Amazon Nova 2 Lite treated the roller like a toy: one die at a time, sixteen calls, and the sums added up in its head came out wrong. Barnaby took that personally. He spent an hour on the docstring, arm by arm, reading each line back through the collar.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Our first roller had no instructions on the box, and Amazon Nova 2 Lite treated the roller like a toy: one die at a time, sixteen calls, and the sums added up in its head came out wrong. Barnaby took that personally. He spent an hour on the docstring, arm by arm, reading each line back through the collar.
 >
-> <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The System AI never sees the code, Sergeant. It sees what we promise the code does. So we promise precisely."
+> <img src="../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The System AI never sees the code, Sergeant. It sees what we promise the code does. So we promise precisely."
 >
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I have written maintenance cards for amphibious vehicles. His were better.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I have written maintenance cards for amphibious vehicles. His were better.
 
 ## Compare the Printed Specification
 
@@ -157,7 +157,7 @@ Would the tool work without a docstring? Not reliably. `faces` is guessable, but
 
 ## Step 3: Add the Tool to the Agent
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "A tool that is not in tools=[] does not exist. The System AI checks. The System AI always checks."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "A tool that is not in tools=[] does not exist. The System AI checks. The System AI always checks."
 
 ```python
 # TODO: Step 3 - Add the tool to the agent
@@ -189,7 +189,7 @@ Why the `tools=[]` list matters:
 
 ## Step 4: Test the Tool
 
-> <img src="../../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS:** Four abilities, four dice each, drop the lowest. Four calls, sixteen dice, zero arithmetic by the model. Lady Luck runs the table, and Lady Luck does not do favors.
+> <img src="../../art/images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS:** Four abilities, four dice each, drop the lowest. Four calls, sixteen dice, zero arithmetic by the model. Lady Luck runs the table, and Lady Luck does not do favors.
 
 Once TODOs are completed, run your script:
 
@@ -217,33 +217,33 @@ Check: the terminal prints the new `tool_spec` first, then four `Tool #N: roll_d
 | sixteen calls with `count=1`, or a total that does not match the dice | the docstring does not say how to call 4d6 drop lowest | add the `count=4, drop_lowest=1` sentence and the "report the total" note |
 | no `Tool #` line at all | the tool is not on the agent | Step 3: `tools=[roll_dice]` |
 
-![Lady Luck's abalone-shell table in the Bull Kelp Cathedral, with kelp bulbs floating overhead like lanterns](../../images/floors/kelp-cathedral-bulbs-1200x675.webp)
+![Lady Luck's abalone-shell table in the Bull Kelp Cathedral, with kelp bulbs floating overhead like lanterns](../../art/images/floors/kelp-cathedral-bulbs-1200x675.webp)
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Lady Luck dealt from a table of abalone shell and called every roll like a boxing announcer. Four calls, four totals, and she did not touch the arithmetic once. She hated that. Halfway through the third roll, a bulb overhead popped and the stipe it hung from whipped across the table. A green fish the size of a golf ball came off his holdfast, hit my forearm guard, and stuck there with a sound like a plunger. I pulled; he held. The second Companion Egg went warm, and the System AI announced the bind. The review board named him by stakeholder escalation, and Barnaby voted for "Projectile", but "Chonks" won with 61 percent. Barnaby studied him for a long moment and said, "Compact. Quiet. Aerodynamic." Shelly sent up a puff of sea mist, and Chonks gave one stubborn gurgle.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Lady Luck dealt from a table of abalone shell and called every roll like a boxing announcer. Four calls, four totals, and she did not touch the arithmetic once. She hated that. Halfway through the third roll, a bulb overhead popped and the stipe it hung from whipped across the table. A green fish the size of a golf ball came off his holdfast, hit my forearm guard, and stuck there with a sound like a plunger. I pulled; he held. The second Companion Egg went warm, and the System AI announced the bind. The review board named him by stakeholder escalation, and Barnaby voted for "Projectile", but "Chonks" won with 61 percent. Barnaby studied him for a long moment and said, "Compact. Quiet. Aerodynamic." Shelly sent up a puff of sea mist, and Chonks gave one stubborn gurgle.
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[You Brought a Sticky Beach Ball to a Dance Battle]**
 >
 > Reward: Cordula and Barnaby. You bound a spherical, armor-plated fish that moves by vibrating its tiny fins and glaring. The review board has named him. You will live with the name. Companion Egg consumed: Chonks, Pacific spiny lumpsucker, Level 4 Rare Companion.
 
-<img src="../../images/cards/cast-chonks-buckler-640x640.webp" alt="" width="200">
+<img src="../../art/images/cards/cast-chonks-buckler-640x640.webp" alt="" width="200">
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 3: HARD MATH.** Readers forgive a System for being cruel, never for being inconsistent. Ability scores, modifiers and dice are the math every later rule stands on, so they live in code, not in the model's head. In this crawl each of the six scores also maps to a dance-off Move Call: Strength is Power, Dexterity is Footwork, Constitution is Endurance, Intelligence is Choreography, Wisdom is Read the Room and Charisma is Presence. A score of 16 gives a +3 modifier: (score - 10) / 2, rounded down. See [ability scores](world/crawl-handbook/01-ability-scores.md) and [The System](world/the-system.md#2-stat-design).
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 3: HARD MATH.** Readers forgive a System for being cruel, never for being inconsistent. Ability scores, modifiers and dice are the math every later rule stands on, so they live in code, not in the model's head. In this crawl each of the six scores also maps to a dance-off Move Call: Strength is Power, Dexterity is Footwork, Constitution is Endurance, Intelligence is Choreography, Wisdom is Read the Room and Charisma is Presence. A score of 16 gives a +3 modifier: (score - 10) / 2, rounded down. See [ability scores](world/crawl-handbook/01-ability-scores.md) and [The System](world/the-system.md#2-stat-design).
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Create custom tools](https://strandsagents.com/docs/user-guide/sdk/tools/custom-tools/) (Strands docs) and [Video 03: Give Your Agent Tools Using MCP](https://www.youtube.com/watch?v=PtdHZBbm1Ys) by Morgan Willis. "You've already seen how to use some of the built-in vended tools and turn Python functions into tools using the tool decorator."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Create custom tools](https://strandsagents.com/docs/user-guide/sdk/tools/custom-tools/) (Strands docs) and [Video 03: Give Your Agent Tools Using MCP](https://www.youtube.com/watch?v=PtdHZBbm1Ys) by Morgan Willis. "You've already seen how to use some of the built-in vended tools and turn Python functions into tools using the tool decorator."
 >
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The docs showed the @tool decorator and the docstring contract. The video put a decorated Python function next to the vended tools, and to the agent they were the same kind of thing. I wrote the docstring, ran the script, and the spec changed. The agent started calling the tool correctly.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The docs showed the @tool decorator and the docstring contract. The video put a decorated Python function next to the vended tools, and to the agent they were the same kind of thing. I wrote the docstring, ran the script, and the spec changed. The agent started calling the tool correctly.
 
 ## Side Passage: The Concurrent Shuffle (optional)
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Deeper in the kelp, a second table with slow dice and the Quarterly Close Accountant, early for once. Two dancers, two dice, and one of them always waiting for the other.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Deeper in the kelp, a second table with slow dice and the Quarterly Close Accountant, early for once. Two dancers, two dice, and one of them always waiting for the other.
 
 [The Concurrent Shuffle](encounters/concurrent-shuffle.md), a dance-off: roll both sides of a round with a sequential and a concurrent tool executor, and time the difference.
 
 ## More Side Passages
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Past the last kelp holdfast, a workbench bolted to the rock, with room on the pegboard for one more tool.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Past the last kelp holdfast, a workbench bolted to the rock, with room on the pegboard for one more tool.
 
 - [The Living Workbench](encounters/living-workbench.md), sidequest: hot-reload a `tools/` folder and add a `final_beat` tool to an agent that never restarts
 
@@ -269,13 +269,13 @@ Amazon Bedrock bills on-demand use by the token: the text sent to Amazon Nova 2 
 
 The token counts are estimates, so measure them: after running an agent, print `response.metrics.accumulated_usage` to read `inputTokens`, `outputTokens` and `totalTokens` for the call.
 
-<img src="../../images/icons/stairwell-96x96.webp" alt="" width="24" height="24"> **Stairwell:** Go to [Floor 4](floor-4.md) to learn the Model Context Protocol (MCP), which connects agents to external services.
+<img src="../../art/images/icons/stairwell-96x96.webp" alt="" width="24" height="24"> **Stairwell:** Go to [Floor 4](floor-4.md) to learn the Model Context Protocol (MCP), which connects agents to external services.
 
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[I MADE THIS (SO TO SPEAK)]**
 >
 > Reward: You received a [Silver Box]. Inside: a roll_dice tool that works, and sixteen dice that rolled exactly where the docstring told Amazon Nova 2 Lite to roll them.
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You forged a tool. A real one. [Floor 4](floor-4.md) is where it leaves the house."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You forged a tool. A real one. [Floor 4](floor-4.md) is where it leaves the house."

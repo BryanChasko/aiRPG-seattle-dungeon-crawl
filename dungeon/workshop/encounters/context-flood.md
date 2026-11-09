@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-7-context-flood/context_flood.py`](../../encounters/floor-7-context-flood/context_flood.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAYS 9 AND 10, THURSDAY, JUNE 25 TO FRIDAY, JUNE 26, SIDE PASSAGE OFF FLOOR 7.** Sixty turns. That is how long the campaign had run by the time we reached the bottom of the bluffs, and the Narrator was carrying every word of it, every roll, every opponent, every bad joke, on every single call. The Narrator was getting slow, and every call was getting expensive, and the tide was coming up the cliff path. Somebody had to decide what the Narrator could afford to forget. Barnaby had one condition. "Whatever goes, Sergeant, our names stay."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAYS 9 AND 10, THURSDAY, JUNE 25 TO FRIDAY, JUNE 26, SIDE PASSAGE OFF FLOOR 7.** Sixty turns. That is how long the campaign had run by the time we reached the bottom of the bluffs, and the Narrator was carrying every word of it, every roll, every opponent, every bad joke, on every single call. The Narrator was getting slow, and every call was getting expensive, and the tide was coming up the cliff path. Somebody had to decide what the Narrator could afford to forget. Barnaby had one condition. "Whatever goes, Sergeant, our names stay."
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Context Flood. The Context Flood has no face and no lanyard. It is sixty turns of the party's own campaign, coming back to drown you. Choose what the Narrator forgets, Crawlers. Choose badly and the Narrator forgets you."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Context Flood. The Context Flood has no face and no lanyard. It is sixty turns of the party's own campaign, coming back to drown you. Choose what the Narrator forgets, Crawlers. Choose badly and the Narrator forgets you."
 
 ## The Brief
 
@@ -74,7 +74,7 @@ Replace the `return None` under the TODO.
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The window is how I pack for a long patrol: the last ten turns of supplies, and the rest stays on the dock. The window works until I need a note from turn one. On turn sixty-one, the Narrator could not tell me my own Constitution score. It said, in the System AI's voice, that it had lost the score. At least the Narrator did not guess.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The window is how I pack for a long patrol: the last ten turns of supplies, and the rest stays on the dock. The window works until I need a note from turn one. On turn sixty-one, the Narrator could not tell me my own Constitution score. It said, in the System AI's voice, that it had lost the score. At least the Narrator did not guess.
 
 ## Step 3: Pin the Cast Sheets
 
@@ -162,7 +162,7 @@ Amazon Nova 2 Lite writes the summary, so the summarizing Narrator's answer is t
 
 The flood is a bill before it is a crash. Take one campaign turn: say each turn adds 1,000 tokens to the history and makes four Amazon Nova 2 Lite calls, each resending a 5,000-token base of system prompt and tool specifications. Turn 60 then sends about 4 x (5,000 + 60,000) = 260,000 input tokens. Over all sixty turns, with no manager, the total comes to about 8.5 million input tokens: about $2.56 at Amazon Nova 2 Lite's $0.30 per million ([Floor 1](../floor-1.md#what-a-turn-costs)). With a 20-message window the history never passes 10,000 tokens, every call stays under 15,000, and the same sixty turns cost about $1.03 in input. The summarizing manager costs one extra Amazon Nova 2 Lite call per reduction, a few cents, to keep the history the window drops. The flood in this file is small: the three runs cost under a cent together.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The third Narrator wrote itself a page of notes on everything before turn forty-eight, kept the last dozen turns whole, and kept our cast sheets nailed to the front. I asked the Narrator anything and it answered. Barnaby asked the Narrator what it remembered about the first morning. The Narrator said: a woman with a boat, and an octopus with a collar. That was enough for him. The tide reached the cliff path and went back down, and the Commuter Horde went by in the fog, and nobody forgot anybody.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The third Narrator wrote itself a page of notes on everything before turn forty-eight, kept the last dozen turns whole, and kept our cast sheets nailed to the front. I asked the Narrator anything and it answered. Barnaby asked the Narrator what it remembered about the first morning. The Narrator said: a woman with a boat, and an octopus with a collar. That was enough for him. The tide reached the cliff path and went back down, and the Commuter Horde went by in the fog, and nobody forgot anybody.
 
 ## Encounter Clear
 
@@ -173,7 +173,7 @@ Loot to keep:
 - `SummarizingConversationManager(summary_ratio=..., preserve_recent_messages=...)`: fold the oldest into a summary written by Amazon Nova 2 Lite
 - `pin_message` and `pin_first`: the messages no manager may drop
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[I REMEMBER YOU, CORDULA VANCE]**
 >

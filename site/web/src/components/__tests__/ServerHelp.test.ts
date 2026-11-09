@@ -21,12 +21,12 @@ describe('ServerHelp', () => {
     const wrapper = mount(ServerHelp)
     const hrefs = wrapper.findAll('a').map((a) => a.attributes('href') ?? '')
 
-    expect(hrefs).toContain('https://github.com/BryanChasko/aiRPG-seattle-dungeon-crawl')
+    expect(hrefs).toContain('https://github.com/BryanChasko/seattle-strands-dungeon-crawl')
     expect(hrefs).toContain(
-      'https://github.com/BryanChasko/aiRPG-seattle-dungeon-crawl/blob/main/workshop/floor-5.md',
+      'https://github.com/BryanChasko/seattle-strands-dungeon-crawl/blob/main/dungeon/workshop/floor-5.md',
     )
     expect(hrefs).toContain(
-      'https://github.com/BryanChasko/aiRPG-seattle-dungeon-crawl/blob/main/workshop/floor-6.md',
+      'https://github.com/BryanChasko/seattle-strands-dungeon-crawl/blob/main/dungeon/workshop/floor-6.md',
     )
   })
 })

@@ -22,7 +22,7 @@ import hashlib, json, math, os, sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from airpg_render import ART_DIR, ROOT, rel, sha256_file  # noqa: E402
+from airpg_render import ART, ART_DIR, ROOT, rel, sha256_file  # noqa: E402
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont  # noqa: E402
 
@@ -130,12 +130,12 @@ def save(im: Image.Image, out: Path, transforms: list[str], **save_kw) -> None:
 
 
 def main() -> int:
-    save(wordmark(), ROOT / "images" / "wordmark-1200x240.webp",
+    save(wordmark(), ART / "images" / "wordmark-1200x240.webp",
          ["pillow type composition: MedievalSharp title with violet glow, Cinzel tracked subtitle in teal",
           "ben-day 10px r2 alpha 10", "obsidian #0B0E14 panel so it reads on light and dark README themes"])
     frames = [hud_frame(i / 24) for i in range(24)]
     first, rest = frames[6], frames[7:] + frames[:6]  # start mid-fill, not empty
-    out = ROOT / "images" / "hud-strip-1200x120.webp"
+    out = ART / "images" / "hud-strip-1200x120.webp"
     out.parent.mkdir(parents=True, exist_ok=True)
     first.save(out, "WEBP", quality=88, method=6, save_all=True, append_images=rest,
                duration=90, loop=0)
@@ -148,7 +148,7 @@ def main() -> int:
             "sha256": sha256_file(out)}
     Path(str(out) + ".sidecar.json").write_text(json.dumps(side, indent=1) + "\n")
     print(f"OK {rel(out)} (1200, 120) animated sha {side['sha256'][:12]}")
-    save(hud_frame(0.25), ROOT / "images" / "hud-strip-1200x120-still.webp",
+    save(hud_frame(0.25), ART / "images" / "hud-strip-1200x120-still.webp",
          ["reduced-motion still of hud-strip-1200x120.webp at full groove"])
     return 0
 

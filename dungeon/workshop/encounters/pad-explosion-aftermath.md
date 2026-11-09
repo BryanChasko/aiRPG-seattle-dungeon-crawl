@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-8-pad-explosion-aftermath/pad_explosion_aftermath.py`](../../encounters/floor-8-pad-explosion-aftermath/pad_explosion_aftermath.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, SIDE PASSAGE OFF FLOOR 8.** A cutaway interrupted the Bellevue status feed: an old Cadabra engine test, the pad at Cape Canaveral, the flash, the long cloud. Nobody was on the pad. Cadabra's estimates of the blast run from about 44 tons of TNT to a few hundred, and the people who write the estimates run on the same coffee as everyone else in this dungeon. The System AI read three incident reports over the footage: the shockwave, the debris, the fire suppression. Every one of them was one upbeat sentence. None of them had a number in it. I have signed off on a lot of after-action reports. A report without a number is a mood. Barnaby had his collar tilted at the screen. <img src="../../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Sergeant, before we rebuild anything on that thing's say-so, we measure it."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, SIDE PASSAGE OFF FLOOR 8.** A cutaway interrupted the Bellevue status feed: an old Cadabra engine test, the pad at Cape Canaveral, the flash, the long cloud. Nobody was on the pad. Cadabra's estimates of the blast run from about 44 tons of TNT to a few hundred, and the people who write the estimates run on the same coffee as everyone else in this dungeon. The System AI read three incident reports over the footage: the shockwave, the debris, the fire suppression. Every one of them was one upbeat sentence. None of them had a number in it. I have signed off on a lot of after-action reports. A report without a number is a mood. Barnaby had his collar tilted at the screen. <img src="../../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Sergeant, before we rebuild anything on that thing's say-so, we measure it."
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Incident reports from the Cadabra pad, Crawlers, delivered in my usual style: warm, brief and entirely accurate. Accurate as in I never say a number that is wrong. What I say is a different question. Check my work if you like. The review board will."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Incident reports from the Cadabra pad, Crawlers, delivered in my usual style: warm, brief and entirely accurate. Accurate as in I never say a number that is wrong. What I say is a different question. Check my work if you like. The review board will."
 
 ## The Brief
 
@@ -59,7 +59,7 @@ A report with no number at all returns `False`: `any` of an empty list is `False
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I wrote the range on a card before I wrote the check, the way I write a torque value on the work order before anyone touches the bolt. Seven point two to eight point eight kilometers. The sheet says eight. A report that says eighty is not close, it is somebody else's disaster.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I wrote the range on a card before I wrote the check, the way I write a torque value on the work order before anyone touches the bolt. Seven point two to eight point eight kilometers. The sheet says eight. A report that says eighty is not close, it is somebody else's disaster.
 
 ## Step 2: Score a Report
 
@@ -120,7 +120,7 @@ The loop gives up after `rounds` rounds (3 by default). A case that still fails 
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Four lines added to a briefing, one per miss. That is a debrief done right: what the crew missed, written down in the crew's own words, and handed back before the next run. <img src="../../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "It is an auditor with a catchphrase, Sergeant. It will take the notes and claim the idea."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Four lines added to a briefing, one per miss. That is a debrief done right: what the crew missed, written down in the crew's own words, and handed back before the next run. <img src="../../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "It is an auditor with a catchphrase, Sergeant. It will take the notes and claim the idea."
 
 ## Step 5: Put the System AI on the Stand
 
@@ -197,7 +197,7 @@ Writing `figures=((44, 44), (200, 400))` for the TNT case forced a decision that
 
 The drill costs nothing. A live run makes one Amazon Nova 2 Lite call per case per round: about 300 tokens in (the prompt and the pad sheet) and 40 out. Four cases make 1,200 tokens in and 160 out, at about $0.30 per million input tokens and $2.50 per million output tokens: roughly four hundredths of a cent for the round, under a tenth of a cent for three rounds. The rates are on [Floor 1](../floor-1.md#what-a-turn-costs) and the [Amazon Bedrock pricing page](https://aws.amazon.com/bedrock/pricing/). Nothing is left running in your account.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Round two, four green lines. The System AI read the new report over the same footage, and this time there were numbers in it: eight kilometers, twelve hundred meters, forty-two minutes, and a TNT range with two ends. The pad crew's incident clerk watched from the Cadabra feed, they/them, headset askew, and said into the open channel that nobody had asked for the minutes before. <img src="../../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Trust, Sergeant, is what is left when you have checked."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Round two, four green lines. The System AI read the new report over the same footage, and this time there were numbers in it: eight kilometers, twelve hundred meters, forty-two minutes, and a TNT range with two ends. The pad crew's incident clerk watched from the Cadabra feed, they/them, headset askew, and said into the open channel that nobody had asked for the minutes before. <img src="../../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Trust, Sergeant, is what is left when you have checked."
 
 ## Encounter Clear
 
@@ -209,7 +209,7 @@ Loot kept:
 - Measure and adapt: a failed case becomes one correction line, and the experiment runs again
 - Building a fresh `Agent` per question so each case is graded alone
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[TRUST, BUT WITH A RUBRIC]**
 >

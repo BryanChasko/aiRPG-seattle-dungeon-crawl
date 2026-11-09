@@ -2,14 +2,14 @@
 
 [Dungeon map](README.md) | [Next: Floor 1](floor-1.md) <!-- floor-nav -->
 
-![Floor 0: The Stairwell](../../images/floors/floor-0-1200x675.webp)
+![Floor 0: The Stairwell](../../art/images/floors/floor-0-1200x675.webp)
 
 <!-- cordula-log -->
 ## After the Fold
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17.** The meeting is on the way in: [how Barnaby and I met](../../README.md#the-meeting). The fold carried us down to the stairwell, the System AI collared him, and I named him. What follows is what we found at the bottom.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17.** The meeting is on the way in: [how Barnaby and I met](../../README.md#the-meeting). The fold carried us down to the stairwell, the System AI collared him, and I named him. What follows is what we found at the bottom.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, CONTINUED.**
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, CONTINUED.**
 >
 > A blackened brass ring snapped shut around his mantle, and his skin went a color I had never seen on an animal. He did not speak. He could not, not yet. But he looked at me, and then he looked at the stairwell behind me, the only way down that was not underwater, and I understood him anyway.
 >
@@ -20,13 +20,13 @@
 Read the whole story in [The Story: Cordula's Crawl](world/story.md).
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "SEVERITY-1 OPEN. Q2 migration window. Pier 59 just folded into Elliott Bay and took the Seattle waterfront with it. Before you clear a single audit check, deploy agents, or file a high-priority ticket with your corporate overlords about missing package managers, you need to clear the stairwell and secure a Safe Room. The review board is watching. Wring out your socks, fire up your terminal, and try not to slip on the syntax."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "SEVERITY-1 OPEN. Q2 migration window. Pier 59 just folded into Elliott Bay and took the Seattle waterfront with it. Before you clear a single audit check, deploy agents, or file a high-priority ticket with your corporate overlords about missing package managers, you need to clear the stairwell and secure a Safe Room. The review board is watching. Wring out your socks, fire up your terminal, and try not to slip on the syntax."
 
 ## Floor Objective
 
 Prepare your development environment: clone the workshop repo, install uv and Python, install the dependencies and activate the virtual environment. Everything else in this workshop runs from there.
 
-> <img src="../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** [Floor 8](floor-8.md) deploys the game to AgentCore and also needs the AgentCore CLI. The [Floor 8](floor-8.md) page installs it (Node.js 20 or later). Check Node.js now with `node --version`: a version of 20 or higher is ready, and `node: command not found` means Node.js is not installed yet (it is only needed on Floor 8).
+> <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** [Floor 8](floor-8.md) deploys the game to AgentCore and also needs the AgentCore CLI. The [Floor 8](floor-8.md) page installs it (Node.js 20 or later). Check Node.js now with `node --version`: a version of 20 or higher is ready, and `node: command not found` means Node.js is not installed yet (it is only needed on Floor 8).
 
 ## The Crawl Under Construction
 
@@ -36,11 +36,11 @@ The lore lives in the [world guide](world/README.md): [the setting](world/seattl
 
 Stuck? [Ask the System](../study/README.md): `python dungeon/study/ask_the_system.py` answers questions about every floor or Strands API from these pages and the API reference.
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is one AI. The System AI built the dungeon, runs the floors and owns the dice, the rules and the memory. The flood broke it. The status-report relay and the collars survived, so the System AI can still push canned status reports through them, but it cannot answer, roll a fair die, quote a rule or remember who did what. Each floor of this workshop rebuilds one more subsystem of the System AI, and Barnaby gets each piece first through the collar. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is one AI. The System AI built the dungeon, runs the floors and owns the dice, the rules and the memory. The flood broke it. The status-report relay and the collars survived, so the System AI can still push canned status reports through them, but it cannot answer, roll a fair die, quote a rule or remember who did what. Each floor of this workshop rebuilds one more subsystem of the System AI, and Barnaby gets each piece first through the collar. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 
 ## What is Strands?
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Strands is the SDK. You are the Crawler. I am the System AI. Learn the difference now, it matters on [Floor 5](floor-5.md)."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Strands is the SDK. You are the Crawler. I am the System AI. Learn the difference now, it matters on [Floor 5](floor-5.md)."
 
 [Strands](https://strandsagents.com/) is an Open Source Python and TypeScript SDK that simplifies building AI agents and multi-agent systems. Strands provides a framework for building AI applications that call tools, APIs and services.
 
@@ -50,7 +50,7 @@ Every step below has the same three parts: a command that checks whether the too
 
 ### Step 1: Check Your Gear (git, uv, Python)
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Before I hand you anything, empty your pockets. I like to know what I am working with."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Before I hand you anything, empty your pockets. I like to know what I am working with."
 
 Open a terminal (Terminal on macOS, any terminal on Linux, PowerShell on Windows) and run each line:
 
@@ -71,7 +71,7 @@ On Windows, use `python --version` instead of `python3 --version`.
 
 No git? Install git from [git-scm.com/downloads](https://git-scm.com/downloads), then open a new terminal and run `git --version` again.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** First thing I did on the landing was inventory. Paddle, drysuit, float vest, one bilge pump, one kayak battery at eighty percent, one octopus in a black misting harness, one dead phone. You do not move until you know what you have. Barnaby watched me count and flashed a slow, steady brown. I chose to take that as approval.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** First thing I did on the landing was inventory. Paddle, drysuit, float vest, one bilge pump, one kayak battery at eighty percent, one octopus in a black misting harness, one dead phone. You do not move until you know what you have. Barnaby watched me count and flashed a slow, steady brown. I chose to take that as approval.
 
 ### Step 2: Claim Your Starter Safe Room (Clone the Repo)
 
@@ -86,7 +86,7 @@ Check: `ls` (or `dir` on Windows) lists `README.md`, `workshop` and the numbered
 
 ### Step 3: Equip uv
 
-> <img src="../../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [uv]**
+> <img src="../../art/images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [uv]**
 >
 > A Python package and project manager from Astral, so fast it finishes before you finish doubting yourself. Rarity: Common. Durability: infinite. The System AI has heard the name means ultraviolet. Astral has not confirmed it, and Seattle has not seen ultraviolet since July. Side effects: none. Wear sunscreen anyway; the System AI is legally required to say so.
 
@@ -122,10 +122,10 @@ uv --version
 
 <table>
 <tr>
-<td valign="top" width="50%"><img src="../../images/cards/boss-monty-640x640.webp" alt="Monty, an enormous reticulated python with a gold, black and silver geometric pattern, loosely coiled around the rusted handrail of a flooded stairwell, head raised with a curious, slightly sheepish look and a brass pet tag on its collar" width="320"></td>
+<td valign="top" width="50%"><img src="../../art/images/cards/boss-monty-640x640.webp" alt="Monty, an enormous reticulated python with a gold, black and silver geometric pattern, loosely coiled around the rusted handrail of a flooded stairwell, head raised with a curious, slightly sheepish look and a brass pet tag on its collar" width="320"></td>
 <td valign="top" width="50%">
 
-> <img src="../../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS: MONTY, THE RETICULATED PYTHON.** Somebody released their pet into the Underground, and it found the stairwell. Reticulated pythons are the longest snakes in the world, and Monty is twenty feet of geometric camouflage that looks exactly like whatever Python is already on your PATH. It wraps tighter every time a version does not match. Barnaby, who is also a constrictor and has eight arms of opinions about it, refuses to share the stairwell. Nobody gets hurt: you win by knowing exactly which Python you are running.
+> <img src="../../art/images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS: MONTY, THE RETICULATED PYTHON.** Somebody released their pet into the Underground, and it found the stairwell. Reticulated pythons are the longest snakes in the world, and Monty is twenty feet of geometric camouflage that looks exactly like whatever Python is already on your PATH. It wraps tighter every time a version does not match. Barnaby, who is also a constrictor and has eight arms of opinions about it, refuses to share the stairwell. Nobody gets hurt: you win by knowing exactly which Python you are running.
 
 This crawl needs Python 3.10 or later. Installing Python by hand is not needed: uv downloads a compatible Python the first time a project needs one. To download Python now and see which interpreter uv will use, run the commands right under this card.
 
@@ -135,7 +135,7 @@ This crawl needs Python 3.10 or later. Installing Python by hand is not needed: 
 
 Had Monty danced instead of being identified, this is how he would have lost the beat:
 
-<img src="../../images/cards/boss-monty-offbeat-640x640.webp" alt="Monty the giant python tied in a knot mid dance-off, head bobbing a half-beat late" width="240">
+<img src="../../art/images/cards/boss-monty-offbeat-640x640.webp" alt="Monty the giant python tied in a knot mid dance-off, head bobbing a half-beat late" width="240">
 
 ```bash
 uv python install
@@ -144,7 +144,7 @@ uv python find
 
 `uv python find` prints the path of the interpreter uv picked. Monty's camouflage is the `python3` on your PATH, which can be a different, older Python. That causes no harm: inside this project, `uv sync` and `uv run` always use the interpreter uv picked, never the camouflage.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Monty was coiled around the handrail, and his pattern matched the rust so well I nearly put my hand on him. Barnaby went from red to dead white and pushed every arm he had against the far side of the tank. One constrictor does not trust another. I did not fight the snake. I read his tag, found out exactly who he was, and walked us past on the side he was not watching. Knowing which python you are dealing with is most of the job.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Monty was coiled around the handrail, and his pattern matched the rust so well I nearly put my hand on him. Barnaby went from red to dead white and pushed every arm he had against the far side of the tank. One constrictor does not trust another. I did not fight the snake. I read his tag, found out exactly who he was, and walked us past on the side he was not watching. Knowing which python you are dealing with is most of the job.
 
 | roadblock | fix |
 |---|---|
@@ -152,7 +152,7 @@ uv python find
 | `No interpreter found` | run `uv python install` and check your network (the corporate proxy fix above applies) |
 | several Pythons are installed and the active one is unclear | after Step 5, `uv run python --version` shows the interpreter this project uses |
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[WHICH PYTHON? THIS PYTHON.]**
 >
@@ -160,7 +160,7 @@ uv python find
 
 ### Step 5: Imbibe the Mana Potions (Install Dependencies)
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "uv sync installs every package the crawl needs, including the harness for [Floor 7](floor-7.md). If it fails, the review board logs a repeat finding. Read the error message before pasting the error anywhere."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "uv sync installs every package the crawl needs, including the harness for [Floor 7](floor-7.md). If it fails, the review board logs a repeat finding. Read the error message before pasting the error anywhere."
 
 In the repository folder:
 
@@ -184,7 +184,7 @@ The command prints Python 3.10 or later, the project's own interpreter.
 
 ### Step 6: Lock the Safe Room Door (Activate Your Virtual Environment)
 
-> <img src="../../images/icons/sponsor-96x96.webp" alt="" width="28" height="28"> **SPONSOR MESSAGE:** This Safe Room is brought to you by .venv. What gets installed in .venv stays in .venv.
+> <img src="../../art/images/icons/sponsor-96x96.webp" alt="" width="28" height="28"> **SPONSOR MESSAGE:** This Safe Room is brought to you by .venv. What gets installed in .venv stays in .venv.
 
 Activating the environment makes `python` mean the project's Python in this terminal, so every floor's `python some_script.py` works as written.
 
@@ -210,11 +210,11 @@ Check: the prompt now starts with the environment name in parentheses, and `pyth
 | a new terminal has no active environment | activation lasts for one terminal; run the activate command again in every new one (Floor 5 opens four) |
 | to skip activation | put `uv run` in front of any command instead: `uv run python simple_agent.py` |
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Safe Room was a maintenance closet halfway down the stairs, dry, with a door that locked from the inside. I misted Barnaby's harness, coiled the line, and shut the door. Everything we installed stayed in that closet. That is the point of a Safe Room.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Safe Room was a maintenance closet halfway down the stairs, dry, with a door that locked from the inside. I misted Barnaby's harness, coiled the line, and shut the door. Everything we installed stayed in that closet. That is the point of a Safe Room.
 
 ### Step 7: Check Your Pass to Amazon Nova 2 Lite (AWS)
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Every floor from 1 on talks to Amazon Nova. Find out now whether I will let you in, not halfway through [Floor 5](floor-5.md)."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Every floor from 1 on talks to Amazon Nova. Find out now whether I will let you in, not halfway through [Floor 5](floor-5.md)."
 
 The agents call Amazon Nova 2 Lite on Amazon Bedrock in us-west-2 with the AWS credentials already configured on the machine. With the environment active, send Amazon Nova 2 Lite one message:
 
@@ -231,11 +231,11 @@ A short reply such as `Ready` means Amazon Nova 2 Lite is reachable from every f
 | `AccessDeniedException` | the AWS role may not invoke Amazon Nova 2 Lite | open the Amazon Bedrock console in us-west-2, check model access for Amazon Nova 2 Lite, or ask your account admin for `bedrock:InvokeModel` on it |
 | `ValidationException` about the Amazon Nova 2 Lite model id | a different region or a typo | keep `region_name='us-west-2'` and the model id exactly as above |
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One word came back up the stairwell: ready. Not from Barnaby, not yet. From the model the System AI runs on: Amazon Nova 2 Lite. That was enough. Barnaby matched my pace on eight arms, and we went down.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One word came back up the stairwell: ready. Not from Barnaby, not yet. From the model the System AI runs on: Amazon Nova 2 Lite. That was enough. Barnaby matched my pace on eight arms, and we went down.
 
 ### Step 8: Preflight Check
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "One script, every check. It exits 0 when you are ready and prints each problem with its fix when you are not. The alternative is finding out on Floor 6 that Node is missing, live, in front of everyone."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "One script, every check. It exits 0 when you are ready and prints each problem with its fix when you are not. The alternative is finding out on Floor 6 that Node is missing, live, in front of everyone."
 
 From the repository root:
 
@@ -262,7 +262,7 @@ uv run python dungeon/0_stairwell/preflight.py --live
 
 Check: the last line starts with `0 failed`. Each FAIL has a matching FIX line under the checks; do what it says and run the script again.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I run the same checks before every dive: air, light, line, knife. The script is that checklist for a laptop. It passed, and the stairwell went on down.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I run the same checks before every dive: air, light, line, knife. The script is that checklist for a laptop. It passed, and the stairwell went on down.
 
 ## Floor Clear
 
@@ -277,17 +277,17 @@ Loot kept:
 - Ran the preflight check
 - Proved your AWS credentials can reach Amazon Nova 2 Lite
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Python quickstart](https://strandsagents.com/docs/user-guide/sdk/quickstart/python/) (Strands docs). "Strands is an Open Source Python and TypeScript SDK that simplifies building AI agents and multi-agent systems."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Python quickstart](https://strandsagents.com/docs/user-guide/sdk/quickstart/python/) (Strands docs). "Strands is an Open Source Python and TypeScript SDK that simplifies building AI agents and multi-agent systems."
 >
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The quickstart showed the three-line agent: import Agent, instantiate with a model and a prompt, call it with a string. I read it once and knew what Floor 1 would ask for. One page, one pattern, ready to type.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The quickstart showed the three-line agent: import Agent, instantiate with a model and a prompt, call it with a string. I read it once and knew what Floor 1 would ask for. One page, one pattern, ready to type.
 
-<img src="../../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [Floor 1](floor-1.md) to create the first AI agent.
+<img src="../../art/images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [Floor 1](floor-1.md) to create the first AI agent.
 
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[PEDANTIC LITTLE PIGGY]**
 >
 > Reward: You received a [Crawler's Trash Can]. Inside: a pair of unwashed socks, half a bottle of mana potion, and a sticky note that says "Sanctum is for nerds."
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Congratulations! You opened a terminal, checked your gear, out-waited a twenty-foot python, and did not immediately blow up your local environment. Don't get cocky. Next up is [Floor 1](floor-1.md), where you'll attempt to build your first AI agent. Try not to let the agent gain sentience and judge you."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Congratulations! You opened a terminal, checked your gear, out-waited a twenty-foot python, and did not immediately blow up your local environment. Don't get cocky. Next up is [Floor 1](floor-1.md), where you'll attempt to build your first AI agent. Try not to let the agent gain sentience and judge you."

@@ -1,6 +1,6 @@
 # The Timeline: Fourteen Days Under the Sound
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Fourteen days, Crawlers. The tide keeps one clock, the quarter keeps the other, and the octopus keeps a third that nobody likes to mention."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Fourteen days, Crawlers. The tide keeps one clock, the quarter keeps the other, and the octopus keeps a third that nobody likes to mention."
 
 The crawl runs fourteen Earth days. It starts when Pier 59 folds into Elliott Bay at 0551 on Wednesday, June 17, 2026, and ends at sunrise on Alki on Tuesday, June 30, the last day of the quarter. Every time on this page is Seattle time.
 

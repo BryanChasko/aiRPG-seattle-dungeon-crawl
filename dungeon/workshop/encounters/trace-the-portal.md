@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-4-trace-the-portal/trace_the_portal.py`](../../encounters/floor-4-trace-the-portal/trace_the_portal.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 5, SUNDAY, JUNE 21, SIDE PASSAGE OFF FLOOR 4.** The portal worked. That was the problem. A die went in on one side of the Ship Canal and a number came out on the other, and in between there was a wire I could not see. The Developer Advocate Swarm on the lock wall called it "effortless" and charged for the word. I do not take a call on faith. I want the log: who sent it, when it crossed, who caught it, how long it sat. Barnaby had one arm on the portal frame. "Sergeant, you have asked for a flight recorder." I had. Every piece of gear that carries something across a gap gets one.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 5, SUNDAY, JUNE 21, SIDE PASSAGE OFF FLOOR 4.** The portal worked. That was the problem. A die went in on one side of the Ship Canal and a number came out on the other, and in between there was a wire I could not see. The Developer Advocate Swarm on the lock wall called it "effortless" and charged for the word. I do not take a call on faith. I want the log: who sent it, when it crossed, who caught it, how long it sat. Barnaby had one arm on the portal frame. "Sergeant, you have asked for a flight recorder." I had. Every piece of gear that carries something across a gap gets one.
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: Trace the Portal. Every call through the portal is now a span, with a trace id, a parent and a timestamp. I would say the review board will find it fascinating. The review board is a console. The console will print one line per span and then go home."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: Trace the Portal. Every call through the portal is now a span, with a trace id, a parent and a timestamp. I would say the review board will find it fascinating. The review board is a console. The console will print one line per span and then go home."
 
 ## The Brief
 
@@ -71,7 +71,7 @@ Write the call in `light_the_portal`. `StrandsTelemetry()` creates a tracer prov
 
 Call `mcp_instrumentation()` with no arguments, once, before the server starts: the call patches the transport and the session class the server's sessions are built from. `trace_the_portal.py` starts the server after `light_the_portal()` for that reason. The call is safe to repeat; the second and later calls do nothing. Under the `mcp` 2.x line the call does nothing at all, because that release line carries the context natively; this workshop pins `mcp` below 2.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Order of operations. Recorder on first, then the portal opens. I have seen a flight recorder installed after the flight. It records the landing very well. Barnaby said that was an unkind thing to say about a landing. He was not wrong. I moved the recorder up the checklist anyway.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Order of operations. Recorder on first, then the portal opens. I have seen a flight recorder installed after the flight. It records the landing very well. Barnaby said that was an unkind thing to say about a landing. He was not wrong. I moved the recorder up the checklist anyway.
 
 <details>
 <summary>Show me the code for Steps 2 and 3</summary>
@@ -163,7 +163,7 @@ Loot kept:
 - `trace_attributes` tags a trace so you can find it again
 - Why the recorder goes on before the portal opens
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[FLIGHT RECORDER ONLINE]**
 >

@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-2-sandbox-tide-pool/tide_pool.py`](../../encounters/floor-2-sandbox-tide-pool/tide_pool.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 2, THURSDAY, JUNE 18, SIDE PASSAGE OFF FLOOR 2.** On the bonus floor I let Kiro the Doomsday Scripter cast a scroll on my own gear, and I stood next to the approval prompt the whole time with a finger on the key. The scroll worked. The approval prompt also made me a tired safety officer. The eelgrass held a better answer: a tide pool the size of a bathtub, rock walls, nothing in it that matters. I put the explosive in the pool. If the explosive goes off, the pool gets a new rock. Barnaby lowered himself in to test the depth. "Sergeant, I submit that this is the first sensible arrangement we have been offered."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 2, THURSDAY, JUNE 18, SIDE PASSAGE OFF FLOOR 2.** On the bonus floor I let Kiro the Doomsday Scripter cast a scroll on my own gear, and I stood next to the approval prompt the whole time with a finger on the key. The scroll worked. The approval prompt also made me a tired safety officer. The eelgrass held a better answer: a tide pool the size of a bathtub, rock walls, nothing in it that matters. I put the explosive in the pool. If the explosive goes off, the pool gets a new rock. Barnaby lowered himself in to test the depth. "Sergeant, I submit that this is the first sensible arrangement we have been offered."
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Sandbox Tide Pool. Kiro the Doomsday Scripter, a crawler who treats code as demolition magic, will detonate scrolls in a container instead of on a crawler's machine. The viewers are disappointed. The insurers are thrilled."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Sandbox Tide Pool. Kiro the Doomsday Scripter, a crawler who treats code as demolition magic, will detonate scrolls in a container instead of on a crawler's machine. The viewers are disappointed. The insurers are thrilled."
 
 ## The Brief
 
@@ -66,7 +66,7 @@ pool = None
 
 `DockerSandbox(container, working_dir=..., user=...)` takes the name of a running container. `working_dir` is where commands start; the directory must exist and be writable by the user; `/tmp` is both. `user` is who the commands run as: `nobody` is a user with no home and no power, so even a scroll that behaves badly cannot do much to the container. Without `user`, commands run as the image's default user, often root.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Two walls on the pool, not one. The container is the first wall: the scroll can only touch what is inside the container. The user is the second: inside the container the scroll still carries nothing. Nobody asked for a belt and braces. A crew chief puts a second strap on any load she would hate to lose.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Two walls on the pool, not one. The container is the first wall: the scroll can only touch what is inside the container. The user is the second: inside the container the scroll still carries nothing. Nobody asked for a belt and braces. A crew chief puts a second strap on any load she would hate to lose.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -106,7 +106,7 @@ Trap: the container has to exist and be running before the agent's first tool ca
 
 Sandbox methods are async, because a sandbox may be a container, a server across the network or a cloud runtime. `asyncio.run(...)` runs one coroutine to completion from synchronous code. `read_text` goes through the same `docker exec` as everything else, so what `read_text` returns is what is in the pool, not what is on the host disk.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The last line of the run is the one I care about. That line asks whether a `scroll.py` landed in my folder. None did. Everything Kiro wrote is in the pool and nowhere else, which means I can drain the pool and the scroll is gone, with no cleanup list. Barnaby said draining the pool is the only cleanup he has ever approved of.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The last line of the run is the one I care about. That line asks whether a `scroll.py` landed in my folder. None did. Everything Kiro wrote is in the pool and nowhere else, which means I can drain the pool and the scroll is gone, with no cleanup list. Barnaby said draining the pool is the only cleanup he has ever approved of.
 
 <details>
 <summary>Show me the code for Step 4</summary>
@@ -172,7 +172,7 @@ Loot kept:
 - The agent's `sandbox` parameter, and the tools a sandbox brings with it
 - Running commands as a user with no power, inside a container with no mounts
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[BATHTUB DEMOLITION]**
 >

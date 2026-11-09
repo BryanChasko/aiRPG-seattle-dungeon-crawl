@@ -5,12 +5,12 @@
 Files on this side passage: [`encounters/floor-7-keyword-versus-vector/keyword_versus_vector.py`](../../encounters/floor-7-keyword-versus-vector/keyword_versus_vector.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 10, FRIDAY, JUNE 26, SIDE PASSAGE OFF FLOOR 7.** The Ferry-Line Commuter Horde caught us at dawn on the ramp below the bluffs, in rain shells, holding coffee, and they did not want to fight. They wanted to board. They hold a strict view of the line: a passenger boards if every word on the ticket matches the manifest, and not otherwise. Barnaby has a view too. He thinks the manifest should be read for what it means. Neither of us had the Handbook page open, and the tie came up in round one, and nobody could find the tie rule fast. So we turned the argument into a dance-off and let the Handbook judge. Two searchers, one question each round, one right answer to find: the Final Beat.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 10, FRIDAY, JUNE 26, SIDE PASSAGE OFF FLOOR 7.** The Ferry-Line Commuter Horde caught us at dawn on the ramp below the bluffs, in rain shells, holding coffee, and they did not want to fight. They wanted to board. They hold a strict view of the line: a passenger boards if every word on the ticket matches the manifest, and not otherwise. Barnaby has a view too. He thinks the manifest should be read for what it means. Neither of us had the Handbook page open, and the tie came up in round one, and nobody could find the tie rule fast. So we turned the argument into a dance-off and let the Handbook judge. Two searchers, one question each round, one right answer to find: the Final Beat.
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Dance-off: the Ferry-Line Commuter Horde against the meaning of words. Five rounds. Each searcher gets five passages to show me where the Final Beat is. Lower number wins. A miss loses to anything. Level ranks are a draw. The System AI does not break ties by hand, only by the Handbook."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Dance-off: the Ferry-Line Commuter Horde against the meaning of words. Five rounds. Each searcher gets five passages to show me where the Final Beat is. Lower number wins. A miss loses to anything. Level ranks are a draw. The System AI does not break ties by hand, only by the Handbook."
 
-<img src="../../../images/cards/opponent-ferry-commuters-640x640.webp" alt="The Ferry-Line Commuter Horde, a long line of damp commuters in rain shells with coffee cups, line dancing on a ferry ramp in front of a green and white ferry" width="240">
+<img src="../../../art/images/cards/opponent-ferry-commuters-640x640.webp" alt="The Ferry-Line Commuter Horde, a long line of damp commuters in rain shells with coffee cups, line dancing on a ferry ramp in front of a green and white ferry" width="240">
 
 ## The Brief
 
@@ -64,7 +64,7 @@ from strands.storage.search.bm25 import Bm25SearchStrategy
 
 `LocalFileStorage(folder, search_strategy=...)`. The provided code under the TODO writes each Handbook passage into the folder as a file, and writing a file is what indexes it: BM25 only indexes files written through the LocalFileStorage. The index itself is a SQLite file the strategy keeps beside the folder.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I filed twenty passages into the lane and the clerk indexed them as they landed. Fast. The first time I asked the clerk a question, the clerk asked me back every word I had said. Every one. A commuter with a ticket and no patience.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I filed twenty passages into the lane and the clerk indexed them as they landed. Fast. The first time I asked the clerk a question, the clerk asked me back every word I had said. Every one. A commuter with a ticket and no patience.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -123,7 +123,7 @@ Replace the `return []`. The trap: a vector search always returns `TOP` passages
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Round one, the Horde put the question to their lane and got nothing back. The ramp went quiet. Barnaby's lane answered with five passages and the right one was near the top. He did not gloat. He tapped the Handbook with an arm tip, once, and the Horde filed onto the ferry to think about it. The Horde leaves the floor the moment the ferry docks. The Handbook says so.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Round one, the Horde put the question to their lane and got nothing back. The ramp went quiet. Barnaby's lane answered with five passages and the right one was near the top. He did not gloat. He tapped the Handbook with an arm tip, once, and the Horde filed onto the ferry to think about it. The Horde leaves the floor the moment the ferry docks. The Handbook says so.
 
 ## Run the Dance-Off
 
@@ -176,7 +176,7 @@ Loot kept:
 - A retrieval can be scored in code: the rank of the one passage known to be right
 - A vector search never comes back empty, and that is the reason to score it
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[THE FINAL BEAT, FOUND]**
 >

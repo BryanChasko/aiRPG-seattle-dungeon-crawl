@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Animated payoffs for the markdown pages: small looping webp clips made from shipped art.
 
-No model calls: every clip is built with Pillow from a card, icon or sprite already in images/.
+No model calls: every clip is built with Pillow from a card, icon or sprite already in art/images/.
 Each clip ships with a still (its rest frame), so pages can honor prefers-reduced-motion with
 the <picture> pattern in workshop/_snippets.md.
 
@@ -16,11 +16,11 @@ Effects (issue #6: at most 480 px, 6 to 12 frames, under 1.5 MB):
   blink     Barnaby blinks: one slow eyelid over the eye-icon close-up        (icons)
 
 Usage:
-  python3 art/motion.py offbeat images/cards/opponent-accountant-offbeat-640x640.webp
-  python3 art/motion.py loot-pop images/icons/loot-gold-96x96.webp
-  python3 art/motion.py --all            every effect listed in images/plans/motion.json
+  python3 art/motion.py offbeat art/images/cards/opponent-accountant-offbeat-640x640.webp
+  python3 art/motion.py loot-pop art/images/icons/loot-gold-96x96.webp
+  python3 art/motion.py --all            every effect listed in art/images/plans/motion.json
 
-Writes images/motion/<stem>-<effect>.webp, <stem>-<effect>-still.webp and a sidecar each.
+Writes art/images/motion/<stem>-<effect>.webp, <stem>-<effect>-still.webp and a sidecar each.
 """
 from __future__ import annotations
 import argparse, json, math, random, sys
@@ -29,13 +29,13 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageSequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from airpg_render import ART_DIR, ROOT, rel, sha256_file  # noqa: E402
+from airpg_render import ART, ART_DIR, ROOT, rel, sha256_file  # noqa: E402
 
 OBSIDIAN = (11, 14, 20)
 MAGENTA = (255, 43, 214)
 TEAL = (31, 191, 117)
-OUT_DIR = ROOT / "images" / "motion"
-PLAN = ROOT / "images" / "plans" / "motion.json"
+OUT_DIR = ART / "images" / "motion"
+PLAN = ART / "images" / "plans" / "motion.json"
 FRAME_MS = 90
 
 
@@ -228,7 +228,7 @@ def main() -> int:
     ap.add_argument("--all", action="store_true")
     a = ap.parse_args()
     if a.all:
-        made = [make(item["effect"], ROOT / item["source"]) for item in json.loads(PLAN.read_text())["clips"]]
+        made = [make(item["effect"], ART / item["source"]) for item in json.loads(PLAN.read_text())["clips"]]
         print(strip(made, ART_DIR / "review" / "motion-strip.png"))
         return 0
     if not (a.effect and a.source):

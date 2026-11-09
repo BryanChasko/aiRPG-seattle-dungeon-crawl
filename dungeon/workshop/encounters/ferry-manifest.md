@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-8-ferry-manifest/ferry_manifest.py`](../../encounters/floor-8-ferry-manifest/ferry_manifest.py), [`encounters/floor-8-ferry-manifest/rules-agent-manifest.json`](../../encounters/floor-8-ferry-manifest/rules-agent-manifest.json), [`encounters/floor-8-ferry-manifest/rules_tool.py`](../../encounters/floor-8-ferry-manifest/rules_tool.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** The last ferry across the Narrows leaves at 2140, and the ferry does not leave until the deck officer has a manifest in hand. Who is aboard, how many, what they carry. Anything not on the list stays on the dock, however loudly the passenger argues. A clerk in a hi-vis vest took my name, Barnaby's, Shelly's and Chonks's, checked each against a clipboard, and looked at the Rules Agent standing in the queue. "And this one?" <img src="../../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The Rules Agent is assembled from parts, on the spot, by whoever builds it."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** The last ferry across the Narrows leaves at 2140, and the ferry does not leave until the deck officer has a manifest in hand. Who is aboard, how many, what they carry. Anything not on the list stays on the dock, however loudly the passenger argues. A clerk in a hi-vis vest took my name, Barnaby's, Shelly's and Chonks's, checked each against a clipboard, and looked at the Rules Agent standing in the queue. "And this one?" <img src="../../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The Rules Agent is assembled from parts, on the spot, by whoever builds it."
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Ferry Manifest. The Rules Agent will be assembled from a JSON file: a name, a model, a prompt, a list of tools. Four lines. I did not think a rules lawyer could fit on a form. I stand corrected, and I have the form."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Ferry Manifest. The Rules Agent will be assembled from a JSON file: a name, a model, a prompt, a list of tools. Four lines. I did not think a rules lawyer could fit on a form. I stand corrected, and I have the form."
 
 ## The Brief
 
@@ -42,7 +42,7 @@ export KNOWLEDGE_BASE_RULES_ID=<your-knowledge-base-id>
 
 The AWS credentials need `bedrock:Retrieve` on the knowledge base.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Four lines on a form. Name, model, prompt, tools. I held the file up to the deck officer's lamp and read it the way I read a manifest: line by line, nothing implied. It said the model and it said which one. Nobody was going to wake up on the Narrows with a different crew than the one on the list. That is the entire reason you write a manifest.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Four lines on a form. Name, model, prompt, tools. I held the file up to the deck officer's lamp and read it the way I read a manifest: line by line, nothing implied. It said the model and it said which one. Nobody was going to wake up on the Narrows with a different crew than the one on the list. That is the entire reason you write a manifest.
 
 ## Step 1: Fetch the Builder
 
@@ -117,7 +117,7 @@ Replace the `return None`.
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The second deck officer ran a finger down the form, stopped at the model line and read it aloud, as deck officers do. Then the second deck officer tried to add a fifth line. A description, for the passenger card. The form would not take it. Unknown field, rejected at the gate. I admired the form. <img src="../../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The price of a short form. The A2A agent card of 8.3 is why the Rules Agent still has a code version."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The second deck officer ran a finger down the form, stopped at the model line and read it aloud, as deck officers do. Then the second deck officer tried to add a fifth line. A description, for the passenger card. The form would not take it. Unknown field, rejected at the gate. I admired the form. <img src="../../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The price of a short form. The A2A agent card of 8.3 is why the Rules Agent still has a code version."
 
 ## Sail
 
@@ -157,7 +157,7 @@ No new AWS resource. Each question is two Amazon Nova 2 Lite calls of a short pr
 unset KNOWLEDGE_BASE_RULES_ID
 ```
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Rules Agent sailed on the 2140, name on the list, model on the list, one tool in its hand. At the Narrows the clerk waved the Rules Agent through without a second look. Shelly dug in on the car deck. Chonks stuck himself to the manifest. <img src="../../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The form has not changed. That is the best part of it."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Rules Agent sailed on the 2140, name on the list, model on the list, one tool in its hand. At the Narrows the clerk waved the Rules Agent through without a second look. Shelly dug in on the car deck. Chonks stuck himself to the manifest. <img src="../../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "The form has not changed. That is the best part of it."
 
 ## Encounter Clear
 
@@ -168,7 +168,7 @@ Loot kept:
 - A manifest is validated for its shape, and the model id a manifest pins is checked in code
 - A manifest suits an agent run locally, and code suits an agent served over A2A
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[IT'S ON THE LIST]**
 >

@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-6-launch-commit-criteria/launch_commit_criteria.py`](../../encounters/floor-6-launch-commit-criteria/launch_commit_criteria.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, SIDE PASSAGE OFF FLOOR 6.** A service tunnel off the Underground under Pioneer Square opened into a Cadabra launch console: a 45-metric-ton rocket standing on a pad that had no business fitting under a sidewalk, and one bench of screens. The Launch Operations Lead had written a countdown loop that asked the System AI for a go/no-go the instant the last answer landed. No pause. No gap. Tick, tick, tick. The System AI answered every one, and every answer was a model call, and the meter on the wall counted them the way a taxi meter does in traffic. Barnaby watched it for ten seconds. "Sergeant. That is not a countdown. That is a person leaning on a doorbell." On a checklist, you poll each station once, you wait for the read-back, and you do not poll again until something could have changed. I have called more go/no-go polls than I can count. Nobody ever called one every breath.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, SIDE PASSAGE OFF FLOOR 6.** A service tunnel off the Underground under Pioneer Square opened into a Cadabra launch console: a 45-metric-ton rocket standing on a pad that had no business fitting under a sidewalk, and one bench of screens. The Launch Operations Lead had written a countdown loop that asked the System AI for a go/no-go the instant the last answer landed. No pause. No gap. Tick, tick, tick. The System AI answered every one, and every answer was a model call, and the meter on the wall counted them the way a taxi meter does in traffic. Barnaby watched it for ten seconds. "Sergeant. That is not a countdown. That is a person leaning on a doorbell." On a checklist, you poll each station once, you wait for the read-back, and you do not poll again until something could have changed. I have called more go/no-go polls than I can count. Nobody ever called one every breath.
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Launch control has asked me for a go/no-go forty times since you sat down, Crawler. Forty. I answered all forty. I would like it noted that I enjoy being needed, and that I would also like lunch."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Launch control has asked me for a go/no-go forty times since you sat down, Crawler. Forty. I answered all forty. I would like it noted that I enjoy being needed, and that I would also like lunch."
 
 Adapted from the tool-count limiter in the Strands Agents Course (`samples/05-hooks/rate_limiter.py`, MIT-0).
 
@@ -68,7 +68,7 @@ Replace the `pass`. The trap: register the bound method (`self.pace_the_poll`), 
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Two callbacks, one clipboard. The tool check watches the polls and the model check watches the spend. I like a checklist that keeps its own tally. It means nobody has to remember how many times we asked.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Two callbacks, one clipboard. The tool check watches the polls and the model check watches the spend. I like a checklist that keeps its own tally. It means nobody has to remember how many times we asked.
 
 ## Step 2: Spend a Budget of Polls
 
@@ -119,7 +119,7 @@ The trap: `self.clock` is `time.monotonic`, a clock that only moves forward. `ti
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Twenty seconds between polls. In the Reserve we called it a read-back interval: you ask, they answer, you wait for the thing to change before you ask again. The Lead said twenty seconds was "a lot of dead air". I told the Lead that a rocket does not get warmer faster because you asked more often.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Twenty seconds between polls. In the Reserve we called it a read-back interval: you ask, they answer, you wait for the thing to change before you ask again. The Lead said twenty seconds was "a lot of dead air". I told the Lead that a rocket does not get warmer faster because you asked more often.
 
 ## Step 4: Cancel the Model Calls Past the Budget
 
@@ -191,7 +191,7 @@ Assume about 3,000 tokens in and 120 out for each Amazon Nova 2 Lite call, and t
 
 The budget of three polls in this script ends a countdown long before an hour. The hour figures show why a limiter matters on a loop that runs without anyone watching.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** All four stations went green on the second poll, twenty seconds after the first. The Lead watched the wall and said it felt slower. It was slower. It was also done. Barnaby tapped one arm on the console and said the rocket had been ready since the first poll and the Lead had simply not waited to hear it. I wrote that down. Then I closed the checklist and we walked back out through the tunnel.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** All four stations went green on the second poll, twenty seconds after the first. The Lead watched the wall and said it felt slower. It was slower. It was also done. Barnaby tapped one arm on the console and said the rocket had been ready since the first poll and the Lead had simply not waited to hear it. I wrote that down. Then I closed the checklist and we walked back out through the tunnel.
 
 ## Encounter Clear
 
@@ -203,7 +203,7 @@ Loot to keep:
 - A rate limiter is two rules: a minimum interval and a budget. Count only the calls you let through, and use a monotonic clock
 - A hook on the Agent paces every caller; a sleep in one loop paces one loop
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[T-MINUS NEVER]**
 >

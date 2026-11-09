@@ -14,35 +14,35 @@
    "class": "card",
    "out": "images/cards/cast-cordula-640x640.webp",
    "subject": "{CORDULA}, standing full body in shallow floodwater on dark stone, grinning, her black touring paddle held upright beside her like a color-guard staff, rain beading on matte black neoprene, calm and ready, the night operator of the party",
-   "place": {"replaces": true, "page": "workshop/world/cast.md", "where": "party table and Cordula section speaker card", "alt": "Cordula Vance grinning in a matte black drysuit, charcoal vest and grey webbing, karambits sheathed on her calves, holding a black kayak paddle upright"}
+   "place": {"replaces": true, "page": "dungeon/workshop/world/cast.md", "where": "party table and Cordula section speaker card", "alt": "Cordula Vance grinning in a matte black drysuit, charcoal vest and grey webbing, karambits sheathed on her calves, holding a black kayak paddle upright"}
   },
   {
    "name": "card-cast-cordula-drill",
    "class": "card",
    "out": "images/cards/cast-cordula-drill-640x640.webp",
    "subject": "{CORDULA} dancing her drill-cadence style mid-step, black paddle spinning in a color-guard twirl, every move exactly on the beat, water spraying from her boots in a dark arena, fierce grin, endurance dancer who never misses a count",
-   "place": {"replaces": true, "page": "workshop/world/cast.md", "where": "Cordula section, beside the drill image", "alt": "Cordula dancing her drill-cadence style in black on black on grey, paddle twirling, water spraying from her boots"}
+   "place": {"replaces": true, "page": "dungeon/workshop/world/cast.md", "where": "Cordula section, beside the drill image", "alt": "Cordula dancing her drill-cadence style in black on black on grey, paddle twirling, water spraying from her boots"}
   },
   {
    "name": "card-cast-cordula-benched",
    "class": "card",
    "out": "images/cards/cast-cordula-benched-640x640.webp",
    "subject": "{CORDULA} benched and spent after a dance-off, sitting on a wet stone bench wrapped in a dark grey blanket over her drysuit, black paddle resting across her knees, sheathed karambits on her calves, tired crooked grin, steam rising off a tin cup beside her",
-   "place": {"replaces": true, "page": "workshop/world/cast.md", "where": "Cordula section, beside the benched image", "alt": "Cordula benched after a dance-off, wrapped in a dark blanket, paddle across her knees, tired grin"}
+   "place": {"replaces": true, "page": "dungeon/workshop/world/cast.md", "where": "Cordula section, beside the benched image", "alt": "Cordula benched after a dance-off, wrapped in a dark blanket, paddle across her knees, tired grin"}
   },
   {
    "name": "card-cast-barnaby",
    "class": "card",
    "out": "images/cards/cast-barnaby-640x640.webp",
    "subject": "{BARNABY} at rest on wet dark dungeon stone beside a tide channel, wearing a black misting hydration harness on his mantle with a fine spray keeping his skin wet, one great eye on the viewer, arms spread wide enough to fill the frame, immense, calm and dry-witted, moving entirely under his own power",
-   "place": {"replaces": true, "page": "workshop/world/cast.md", "where": "party table and Barnaby speaker card", "alt": "Barnaby, a kraken-scale Giant Pacific Octopus, dark charcoal and slate at rest, black misting harness on his mantle, blackened brass collar glowing faint violet"}
+   "place": {"replaces": true, "page": "dungeon/workshop/world/cast.md", "where": "party table and Barnaby speaker card", "alt": "Barnaby, a kraken-scale Giant Pacific Octopus, dark charcoal and slate at rest, black misting harness on his mantle, blackened brass collar glowing faint violet"}
   },
   {
    "name": "card-cast-shelly",
    "class": "card",
    "out": "images/cards/cast-shelly-640x640.webp",
    "subject": "Shelly the geoduck at home in his tide flat: {GEODUCK}, the shell half buried in wet sand among eelgrass, the long siphon neck curving up and puffing a soft cloud of sea mist, a steel carabiner clipped to a stout ring on the shell, placid and immovable",
-   "place": {"replaces": true, "page": "workshop/world/cast.md", "where": "party table and Shelly section base card", "alt": "Shelly the geoduck, a small pale shell half buried in sand among eelgrass, his long siphon puffing sea mist, a carabiner clipped to his shell"}
+   "place": {"replaces": true, "page": "dungeon/workshop/world/cast.md", "where": "party table and Shelly section base card", "alt": "Shelly the geoduck, a small pale shell half buried in sand among eelgrass, his long siphon puffing sea mist, a carabiner clipped to his shell"}
   }
  ]
 }

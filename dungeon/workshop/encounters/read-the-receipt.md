@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-1-read-the-receipt/read_the_receipt.py`](../../encounters/floor-1-read-the-receipt/read_the_receipt.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, SIDE PASSAGE OFF FLOOR 1.** There was a ticket window at the end of the Pier 59 service corridor, and behind the glass a receipt printer that had not stopped since the collapse. Every turn the Narrator takes prints a slip. I had been reading the total at the bottom and nothing else. Barnaby unrolled the paper across the floor, eight arm tips pinning the curls down. "Sergeant, a total is a verdict. The lines above it are the evidence. You would not accept a vehicle inspection that only said PASS."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, SIDE PASSAGE OFF FLOOR 1.** There was a ticket window at the end of the Pier 59 service corridor, and behind the glass a receipt printer that had not stopped since the collapse. Every turn the Narrator takes prints a slip. I had been reading the total at the bottom and nothing else. Barnaby unrolled the paper across the floor, eight arm tips pinning the curls down. "Sergeant, a total is a verdict. The lines above it are the evidence. You would not accept a vehicle inspection that only said PASS."
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Receipts, Crawlers. Every turn has one, and almost nobody reads past the total. Tokens in, tokens out, trips through the loop, seconds on the clock. I am exact about all of these. Exactness is the only place I am humble."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Receipts, Crawlers. Every turn has one, and almost nobody reads past the total. Tokens in, tokens out, trips through the loop, seconds on the clock. I am exact about all of these. Exactness is the only place I am humble."
 
 ## The Brief
 
@@ -53,7 +53,7 @@ The file defines two tools, `roll_d20` and `add_modifier`, so one turn makes mul
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Round two came back with a lifetime total of 5,720 tokens and a turn total of 3,329. Same agent. If I had billed the banker for the lifetime number I would have charged him for round one twice. I do not sign for gear I did not issue.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Round two came back with a lifetime total of 5,720 tokens and a turn total of 3,329. Same agent. If I had billed the banker for the lifetime number I would have charged him for round one twice. I do not sign for gear I did not issue.
 
 ## Step 2: Every Trip Through the Loop
 
@@ -94,7 +94,7 @@ A turn is not one call to Amazon Nova 2 Lite. Amazon Nova 2 Lite asks for tools,
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Four calls, no errors, a thousandth of a second in the tools. The dice are not the slow part. Anything slow in this turn is the model thinking, and the receipt can show me which trip. I like a checklist that tells me where to look.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Four calls, no errors, a thousandth of a second in the tools. The dice are not the slow part. Anything slow in this turn is the model thinking, and the receipt can show me which trip. I like a checklist that tells me where to look.
 
 ## Step 4: Where the Seconds Went
 
@@ -171,7 +171,7 @@ The Commentary Booth watches a turn while it happens: every chunk, every tool ca
 
 The receipt costs nothing: it reads numbers Strands has already counted. The receipt shows what the turn cost and why. Round one above is 2,231 input tokens and 160 output tokens: 2,231 x $0.30 per million is $0.00067, and 160 x $2.50 per million is $0.00040, so about a tenth of a cent. Round two is 3,160 input and 169 output, about $0.00137, because Amazon Nova 2 Lite rereads round one before it starts. The cycle column shows the same growth inside a single turn, where each trip resends all earlier messages. Input tokens grow with every cycle and every turn; output tokens are the ones that cost eight times as much. The prices are on the [Floor 1 cost table](../floor-1.md#what-a-turn-costs).
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I tore the slips off the printer, folded them into the pocket of my kayak vest, and sent the System AI a copy of the second one with the cycles circled. The System AI replied in four seconds with an invoice for the paper. Barnaby has framed the invoice. He says the invoice is the first honest output the System AI has produced.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I tore the slips off the printer, folded them into the pocket of my kayak vest, and sent the System AI a copy of the second one with the cycles circled. The System AI replied in four seconds with an invoice for the paper. Barnaby has framed the invoice. He says the invoice is the first honest output the System AI has produced.
 
 ## Encounter Clear
 
@@ -182,7 +182,7 @@ Loot kept:
 - `turn.cycles` shows each trip through the event loop, and why input tokens grow
 - `metrics.traces` and `Trace.duration()` show where the seconds went
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[ITEMIZED AND UNAMUSED]**
 >

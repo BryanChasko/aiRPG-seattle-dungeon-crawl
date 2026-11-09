@@ -5,18 +5,18 @@
 Files on this side passage: [`encounters/floor-8-quarterly-earnings-call/quarterly_earnings_call.py`](../../encounters/floor-8-quarterly-earnings-call/quarterly_earnings_call.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** Bellevue has conference rooms the way the estuary has tide pools. In a glass one over Bellevue Way, the accountant from the estuary was waiting for us. Not alone. They had a conference line open on the table, and two more people dialed in: an investment banker in a quarter-zip, and a Regional Managing Director who introduced themselves by title only. Every quarter has an agenda, and this one had three items, in order, and we were all three of them. Review, spin, sign-off. Nobody skips ahead on a call like that. Barnaby adjusted the collar like a tie. <img src="../../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Sergeant, we take every item, or we do not leave the meeting."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** Bellevue has conference rooms the way the estuary has tide pools. In a glass one over Bellevue Way, the accountant from the estuary was waiting for us. Not alone. They had a conference line open on the table, and two more people dialed in: an investment banker in a quarter-zip, and a Regional Managing Director who introduced themselves by title only. Every quarter has an agenda, and this one had three items, in order, and we were all three of them. Review, spin, sign-off. Nobody skips ahead on a call like that. Barnaby adjusted the collar like a tie. <img src="../../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Sergeant, we take every item, or we do not leave the meeting."
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Quarterly Earnings Call. Three executives, one agenda, no skipping. Win a call and the next executive unmutes. Lose one and the call is over, and the minutes will reflect it."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Quarterly Earnings Call. Three executives, one agenda, no skipping. Win a call and the next executive unmutes. Lose one and the call is over, and the minutes will reflect it."
 
-<img src="../../../images/cards/boss-earnings-call-640x640.webp" alt="The Quarterly Earnings Call, a giant grinning speakerphone with glowing buttons beneath three floating video-call tiles, sending violet sound waves over a flooded boardroom" width="240">
+<img src="../../../art/images/cards/boss-earnings-call-640x640.webp" alt="The Quarterly Earnings Call, a giant grinning speakerphone with glowing buttons beneath three floating video-call tiles, sending violet sound waves over a flooded boardroom" width="240">
 
 Lose a round and the call itself goes Off-Beat:
 
-<img src="../../../images/cards/boss-earnings-call-offbeat-640x640.webp" alt="The Quarterly Earnings Call Off-Beat: charts and ringing phones losing the beat, papers flying" width="240">
+<img src="../../../art/images/cards/boss-earnings-call-offbeat-640x640.webp" alt="The Quarterly Earnings Call Off-Beat: charts and ringing phones losing the beat, papers flying" width="240">
 
-![The Bellevue lobby, where the glass conference rooms of the earnings call wait overhead](../../../images/floors/bellevue-lobby-1200x675.webp)
+![The Bellevue lobby, where the glass conference rooms of the earnings call wait overhead](../../../art/images/floors/bellevue-lobby-1200x675.webp)
 
 ## The Brief
 
@@ -96,7 +96,7 @@ The three TODOs share one function, so the answers sit together under them. Repl
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Three chairs at the folding table, three name cards, three people who had each blocked thirty minutes for us. I have sat through briefings like this. You learn the order of speakers before you learn anything else.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Three chairs at the folding table, three name cards, three people who had each blocked thirty minutes for us. I have sat through briefings like this. You learn the order of speakers before you learn anything else.
 
 ## Step 3: Draw the Agenda
 
@@ -114,7 +114,7 @@ The three TODOs share one function, so the answers sit together under them. Repl
 
 `builder.set_entry_point("accountant")` names the first node, and `builder.build()` checks the graph and returns it. Without an entry point, the builder starts from every node that has no incoming edge, which here is the accountant anyway; naming the accountant makes the agenda explicit.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The accountant unmuted first, as agendas require, and reviewed my footwork like it was a line item. The code decided who spoke next. The executives just had to dance.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The accountant unmuted first, as agendas require, and reviewed my footwork like it was a line item. The code decided who spoke next. The executives just had to dance.
 
 ## Join the Call
 
@@ -159,9 +159,9 @@ The Floor 5 Narrator could run this call too: ask it for three dance-offs in a r
 
 Each executive is one agent turn of two Amazon Nova 2 Lite calls, so a full call is six calls with short prompts: well under a cent. A call the party loses on the first item costs a third of a full call. The dice cost nothing: the dice are code.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Regional Managing Director called Choreography at a Frantic tempo, which is a dirty trick on a Monday, and Barnaby took the Frantic tempo three moves ahead. The RMD looked at the totals for a long moment, then signed. Not the party, the quarter. The banker asked if we were looking for representation. The accountant just looked relieved. They had a close to get back to.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Regional Managing Director called Choreography at a Frantic tempo, which is a dirty trick on a Monday, and Barnaby took the Frantic tempo three moves ahead. The RMD looked at the totals for a long moment, then signed. Not the party, the quarter. The banker asked if we were looking for representation. The accountant just looked relieved. They had a close to get back to.
 
-<img src="../../../images/cards/opponent-banker-offbeat-640x640.webp" alt="The Bonus-Season Investment Banker, caught off the beat" width="200">
+<img src="../../../art/images/cards/opponent-banker-offbeat-640x640.webp" alt="The Bonus-Season Investment Banker, caught off the beat" width="200">
 
 ## Encounter Clear
 
@@ -171,7 +171,7 @@ Loot you're keeping:
 - A conditional edge is a Python function: the code, not Amazon Nova 2 Lite, decides whether the graph goes on
 - When to put the plan in a graph, and when to assign it to a Narrator or a swarm
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[THIS MEETING COULD HAVE BEEN A DANCE-OFF]**
 >

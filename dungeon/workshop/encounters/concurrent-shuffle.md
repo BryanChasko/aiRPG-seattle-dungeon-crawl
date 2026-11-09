@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-3-concurrent-shuffle/concurrent_shuffle.py`](../../encounters/floor-3-concurrent-shuffle/concurrent_shuffle.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 3, FRIDAY, JUNE 19, SIDE PASSAGE OFF FLOOR 3.** A second table sat deeper in the kelp, and its dice were heavy: abalone shell, slow to tumble, a full second before they settled. The Quarterly Close Accountant was already there, early for once, and wanted a round of Footwork. Lady Luck rolled for me, waited for my die to land, then rolled for the accountant. Two seconds of dead air on an open status channel. Barnaby counted it with one arm tip tapping the table. "Sergeant. Two dancers. Two dice. Why is one of them waiting for the other?"
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 3, FRIDAY, JUNE 19, SIDE PASSAGE OFF FLOOR 3.** A second table sat deeper in the kelp, and its dice were heavy: abalone shell, slow to tumble, a full second before they settled. The Quarterly Close Accountant was already there, early for once, and wanted a round of Footwork. Lady Luck rolled for me, waited for my die to land, then rolled for the accountant. Two seconds of dead air on an open status channel. Barnaby counted it with one arm tip tapping the table. "Sergeant. Two dancers. Two dice. Why is one of them waiting for the other?"
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "A dance-off, Crawlers, against the clock. Same dancers, same dice, same croupier. Only one detail changes: whether the dice wait their turn. The review board hates waiting. The review board also hates chaos. Pick one."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "A dance-off, Crawlers, against the clock. Same dancers, same dice, same croupier. Only one detail changes: whether the dice wait their turn. The review board hates waiting. The review board also hates chaos. Pick one."
 
 ## The Brief
 
@@ -23,7 +23,7 @@ Files on this side passage: [`encounters/floor-3-concurrent-shuffle/concurrent_s
 
 When Amazon Nova 2 Lite asks for two or more tool calls in one response, the agent's tool executor decides how the calls run. The `ConcurrentToolExecutor` runs the calls side by side: `ConcurrentToolExecutor` is the default, so every agent built on Floors 2 to 5 already used `ConcurrentToolExecutor`. The `SequentialToolExecutor` runs the calls one after the other, in the order Amazon Nova 2 Lite asked. In this file each die takes a second to land, so the difference shows on the clock: about two seconds of dice in the air with `SequentialToolExecutor`, about one with `ConcurrentToolExecutor`.
 
-> <img src="../../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** Sergeant, I do not queue my arms. The first four do not wait for the second four to finish being interesting. Two dice have nothing to say to each other; making one wait is not discipline, it is queueing for its own sake. The battle log is another matter. There, order is the record, and even I take my turn.
+> <img src="../../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** Sergeant, I do not queue my arms. The first four do not wait for the second four to finish being interesting. Two dice have nothing to say to each other; making one wait is not discipline, it is queueing for its own sake. The battle log is another matter. There, order is the record, and even I take my turn.
 
 Success looks like this: the sequential round prints the dice landing one second apart, in the order Lady Luck asked; the concurrent round prints them landing together; both rounds report `model responses: 2`.
 
@@ -129,7 +129,7 @@ Concurrent is the right default when the calls do not depend on each other: two 
 
 Nothing extra: the executor changes when the tools run, not what Amazon Nova 2 Lite reads or writes. Both rounds make the same two Amazon Nova 2 Lite calls, under a tenth of a cent each round. What concurrency saves is time, and on an open status channel a second is a long time.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Second round, both dice left the table together and came down together, one second flat. The accountant was so surprised they forgot the footwork and lost the round by four. Lady Luck looked at the clock and sulked. Barnaby kept the sequential table anyway, for the battle log, where the order matters. "One table for speed, Sergeant, one for the record." I told him that is how a motor pool works. He said he knew. He had read about it.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Second round, both dice left the table together and came down together, one second flat. The accountant was so surprised they forgot the footwork and lost the round by four. Lady Luck looked at the clock and sulked. Barnaby kept the sequential table anyway, for the battle log, where the order matters. "One table for speed, Sergeant, one for the record." I told him that is how a motor pool works. He said he knew. He had read about it.
 
 ## Encounter Clear
 
@@ -140,7 +140,7 @@ Loot kept:
 - Why concurrency only helps when Amazon Nova 2 Lite asks for the calls in the same response, and how the `roll_for` docstring prompts that
 - When to give up the speed for the order
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[TWO DICE, ONE SECOND]**
 >

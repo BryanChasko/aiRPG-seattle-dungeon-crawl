@@ -4,7 +4,7 @@ Maintainer art tools. Learners never need these. The docs gate lives at [`../dun
 
 | tool | what it does |
 |---|---|
-| [`airpg_render.py`](airpg_render.py) | art pipeline: a plan in [`../images/plans/`](../images/plans/) becomes request files, renders on Meta Muse Image 1.0, and is standardized to the house spec with a sidecar per image. `--check` verifies every shipped image |
+| [`airpg_render.py`](airpg_render.py) | art pipeline: a plan in [`images/plans/`](images/plans/) becomes request files, renders on Meta Muse Image 1.0, and is standardized to the house spec with a sidecar per image. `--check` verifies every shipped image |
 | [`contact_sheet.py`](contact_sheet.py) | review sheets of renders, one grid per size class |
 | [`sam_cutout.py`](sam_cutout.py) | SAM 3.1 cutouts: a character or object from a render as a transparent sprite, for compositing and motion |
 | [`sam_probe.py`](sam_probe.py) | one-shot SAM 3.1 diagnostic (no retries): prints status, Retry-After, request id and the parsed error; `--playground` uses the files-upload + streaming shape, `--control` calls a muse-* model on the same key |
@@ -14,15 +14,15 @@ Maintainer art tools. Learners never need these. The docs gate lives at [`../dun
 | [`compose_readme_art.py`](compose_readme_art.py) | README type/chrome slots drawn with Pillow (title wordmark, animated HUD groove strip + reduced-motion still); the no-text render rule keeps lettering out of the image model |
 | [`panel_crops.py`](panel_crops.py) | comic-panel variety from shipped art: SAM-boxed speaker headshots (96x96, legible at 28px) and square action panels (480x480) cropped from on-model renders; see [`../docs/image-reuse-audit.md`](../docs/image-reuse-audit.md) |
 
-The art rules, tokens and character model sheet are in [`../docs/visual-design-system.md`](../docs/visual-design-system.md); the prompt blocks in [`../images/plans/style.json`](../images/plans/style.json).
+The art rules, tokens and character model sheet are in [`../docs/visual-design-system.md`](../docs/visual-design-system.md); the prompt blocks in [`images/plans/style.json`](images/plans/style.json).
 
 New art, start to finish:
 
 ```bash
-# 1. write images/plans/<date>-batch-NN.json: run name, then one entry per render (name, class, out, subject)
-python3 art/airpg_render.py --plan images/plans/<run>.json     # requests and manifest, no API call
-python3 art/airpg_render.py --render images/plans/<run>.json   # render; rerun after a rate limit, raws are reused
-python3 art/contact_sheet.py --plan images/plans/<run>.json    # look at every image before linking it
+# 1. write art/images/plans/<date>-batch-NN.json: run name, then one entry per render (name, class, out, subject)
+python3 art/airpg_render.py --plan art/images/plans/<run>.json     # requests and manifest, no API call
+python3 art/airpg_render.py --render art/images/plans/<run>.json   # render; rerun after a rate limit, raws are reused
+python3 art/contact_sheet.py --plan art/images/plans/<run>.json    # look at every image before linking it
 python3 art/airpg_render.py --check
 python3 dungeon/check_docs.py
 ```

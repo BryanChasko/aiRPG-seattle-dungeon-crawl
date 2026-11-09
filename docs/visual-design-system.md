@@ -49,7 +49,7 @@ ben-day dot grid (icons: center-crop 12% margin + resize instead).
 ## 3. Prompt style blocks
 
 The blocks, endings and character model sheet live in one file,
-[`images/plans/style.json`](../images/plans/style.json). `art/airpg_render.py --plan`
+[`images/plans/style.json`](../art/images/plans/style.json). `art/airpg_render.py --plan`
 builds every request from it, so no request is written by hand: a plan in
 `images/plans/` names each render's class, output and subject, and `{GEODUCK}`-style
 tokens pull in the model sheet. The blocks below are the same text, for reading.

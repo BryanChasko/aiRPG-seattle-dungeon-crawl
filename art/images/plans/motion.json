@@ -5,7 +5,7 @@
    "effect": "offbeat",
    "source": "images/cards/opponent-accountant-offbeat-640x640.webp",
    "place": {
-    "page": "workshop/world/the-system.md",
+    "page": "dungeon/workshop/world/the-system.md",
     "where": "section 6, beside the Off-Beat status in the dance-off description",
     "alt": "A Quarterly Close Accountant wobbling off the beat"
    }
@@ -14,7 +14,7 @@
    "effect": "offbeat",
    "source": "images/cards/opponent-banker-offbeat-640x640.webp",
    "place": {
-    "page": "workshop/encounters/quarterly-earnings-call.md",
+    "page": "dungeon/workshop/encounters/quarterly-earnings-call.md",
     "where": "replace the still banker card after the closing log",
     "alt": "A Bonus-Season Investment Banker wobbling off the beat"
    }
@@ -23,7 +23,7 @@
    "effect": "offbeat",
    "source": "images/cards/opponent-founder-offbeat-640x640.webp",
    "place": {
-    "page": "workshop/floor-6.md",
+    "page": "dungeon/workshop/floor-6.md",
     "where": "next to Cordula's note that the founder ran out of slides",
     "alt": "A Pitch-Deck Founder wobbling off the beat as her chart tilts"
    }
@@ -32,7 +32,7 @@
    "effect": "benched",
    "source": "images/cards/cast-cordula-drill-640x640.webp",
    "place": {
-    "page": "workshop/world/the-system.md",
+    "page": "dungeon/workshop/world/the-system.md",
     "where": "section 7, beside the Benched bullet, in place of the still Benched card",
     "alt": "Cordula's card draining to grey as she is Benched"
    }
@@ -41,7 +41,7 @@
    "effect": "ink",
    "source": "images/cards/cast-barnaby-presence-640x640.webp",
    "place": {
-    "page": "workshop/world/cast.md",
+    "page": "dungeon/workshop/world/cast.md",
     "where": "Barnaby section, beside the Ink Cloud ability",
     "alt": "Barnaby's Ink Cloud blooming black over the card and clearing"
    }
@@ -50,7 +50,7 @@
    "effect": "loot-pop",
    "source": "images/icons/loot-bronze-96x96.webp",
    "place": {
-    "page": "workshop/_snippets.md",
+    "page": "dungeon/workshop/_snippets.md",
     "where": "Achievement toast, as the optional animated icon",
     "alt": "A Bronze Box popping open"
    }
@@ -59,7 +59,7 @@
    "effect": "loot-pop",
    "source": "images/icons/loot-silver-96x96.webp",
    "place": {
-    "page": "workshop/world/the-system.md",
+    "page": "dungeon/workshop/world/the-system.md",
     "where": "section 5, loot boxes",
     "alt": "A Silver Box popping open"
    }
@@ -68,7 +68,7 @@
    "effect": "loot-pop",
    "source": "images/icons/loot-gold-96x96.webp",
    "place": {
-    "page": "workshop/world/the-system.md",
+    "page": "dungeon/workshop/world/the-system.md",
     "where": "section 5, loot boxes",
     "alt": "A Gold Box popping open"
    }
@@ -77,7 +77,7 @@
    "effect": "loot-pop",
    "source": "images/icons/loot-desperation-96x96.webp",
    "place": {
-    "page": "workshop/world/the-system.md",
+    "page": "dungeon/workshop/world/the-system.md",
     "where": "section 5, loot boxes",
     "alt": "A Desperation Box popping open"
    }
@@ -86,7 +86,7 @@
    "effect": "loot-pop",
    "source": "images/icons/ferry-token-96x96.webp",
    "place": {
-    "page": "workshop/world/the-system.md",
+    "page": "dungeon/workshop/world/the-system.md",
     "where": "section 5, Currency bullet",
     "alt": "A Ferry Token popping in"
    }
@@ -95,7 +95,7 @@
    "source": "images/sprites/cast-chonks-green-fish.webp",
    "effect": "throw",
    "place": {
-    "page": "workshop/world/cast.md",
+    "page": "dungeon/workshop/world/cast.md",
     "where": "Chonks section, beside the Suction Latch ability (thrown, he seals on)",
     "alt": "Chonks spinning through the air in a throwing arc, about to latch"
    }
@@ -104,7 +104,7 @@
    "source": "images/cards/cast-shelly-640x640.webp",
    "effect": "mist",
    "place": {
-    "page": "workshop/world/cast.md",
+    "page": "dungeon/workshop/world/cast.md",
     "where": "Shelly section, beside the base card: the calm idle",
     "alt": "Shelly at rest in his tide flat, breathing slow, sea mist shimmering"
    }
@@ -113,7 +113,7 @@
    "source": "assets/hud/d20.svg",
    "effect": "roll",
    "place": {
-    "page": "workshop/world/the-system.md",
+    "page": "dungeon/workshop/world/the-system.md",
     "where": "battle log section, beside the dice_rolls description: what a roll looks like",
     "alt": "A d20 tumbling through numbers and landing on 20"
    }
@@ -122,7 +122,7 @@
    "source": "images/icons/speaker-barnaby-eye-96x96.webp",
    "effect": "blink",
    "place": {
-    "page": "workshop/world/cast.md",
+    "page": "dungeon/workshop/world/cast.md",
     "where": "Barnaby section, beside the expression sheet: one slow blink",
     "alt": "Barnaby's eye closing in one slow blink and opening again"
    }

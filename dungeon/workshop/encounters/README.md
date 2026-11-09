@@ -2,7 +2,7 @@
 
 [Dungeon map](../README.md) | [Floor 1](../floor-1.md) | [Floor 2](../floor-2.md) | [Floor 3](../floor-3.md) | [Floor 4](../floor-4.md) | [Floor 5](../floor-5.md) | [Floor 6](../floor-6.md) | [Floor 7](../floor-7.md) | [Floor 8](../floor-8.md) <!-- floor-nav -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Side passages, Crawlers. Optional, unpaid, and the review board's favorite part. Every side passage starts where a floor ends and teaches a piece of the SDK the floor skipped. Skip the side passages if you like. The sponsors will notice."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Side passages, Crawlers. Optional, unpaid, and the review board's favorite part. Every side passage starts where a floor ends and teaches a piece of the SDK the floor skipped. Skip the side passages if you like. The sponsors will notice."
 
 Each encounter hangs off a floor: the encounter starts from that floor's finished code, teaches a Strands SDK module the floor does not cover, and runs on Amazon Nova 2 Lite like everything else in the crawl. Cordula logs each encounter, as she logs the floors. Encounter code follows the floor pattern: TODO markers on `main`, answers on the `solution` branch, a Show me the code block under each step, and offline tests on `solution`.
 
@@ -51,4 +51,4 @@ Encounter code lives in [`encounters/`](../../encounters/), one folder per encou
 
 The crawl runs one language model, Amazon Nova 2 Lite. Two parts of the original plan reached past Amazon Nova 2 Lite: a cloud embedding service for Keyword versus Vector, and a third-party hosted decision service next to Read the Room, Typed. Neither part ships: Keyword versus Vector runs on local ChromaDB, and Read the Room, Typed decides on Nova 2 Lite.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Every floor down here has doors off the main corridor. Most doors lead to closets. Some open onto the System AI's best material. Barnaby wants to open every door. I want to finish the floor first. We compromise: finish the floor, then open one door.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Every floor down here has doors off the main corridor. Most doors lead to closets. Some open onto the System AI's best material. Barnaby wants to open every door. I want to finish the floor first. We compromise: finish the floor, then open one door.

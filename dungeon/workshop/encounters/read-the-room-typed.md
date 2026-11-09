@@ -5,12 +5,12 @@
 Files on this side passage: [`encounters/floor-5-read-the-room-typed/read_the_room_typed.py`](../../encounters/floor-5-read-the-room-typed/read_the_room_typed.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 7, TUESDAY, JUNE 23, SIDE PASSAGE OFF FLOOR 5.** The Quarterly Close Accountant was back, this time on the estuary dance floor with a calculator and a deadline. On Floor 5 the System AI announced the dance-off in a paragraph: "a brisk tempo, perhaps, with some footwork." Perhaps. I do not take orders that say perhaps. Down here the Narrator had to fill in a form. Tempo: one box, three choices. Move Call: one box, six choices minus the one it called last. The Narrator ticked its boxes, and the accountant and I danced to exactly what the form said.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 7, TUESDAY, JUNE 23, SIDE PASSAGE OFF FLOOR 5.** The Quarterly Close Accountant was back, this time on the estuary dance floor with a calculator and a deadline. On Floor 5 the System AI announced the dance-off in a paragraph: "a brisk tempo, perhaps, with some footwork." Perhaps. I do not take orders that say perhaps. Down here the Narrator had to fill in a form. Tempo: one box, three choices. Move Call: one box, six choices minus the one it called last. The Narrator ticked its boxes, and the accountant and I danced to exactly what the form said.
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Dance-off: the Quarterly Close Accountant. Three rounds. I will be announcing the tempo and every Move Call from a list, because a Crawler once told me my announcements were 'more of a vibe.' The list is binding. The vibe is not."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Dance-off: the Quarterly Close Accountant. Three rounds. I will be announcing the tempo and every Move Call from a list, because a Crawler once told me my announcements were 'more of a vibe.' The list is binding. The vibe is not."
 
-<img src="../../../images/cards/opponent-accountant-640x640.webp" alt="The Quarterly Close Accountant, a middle-aged woman in a grey suit with reading glasses pushed up, clutching a calculator while spreadsheet pages flutter around her mid-dance" width="240">
+<img src="../../../art/images/cards/opponent-accountant-640x640.webp" alt="The Quarterly Close Accountant, a middle-aged woman in a grey suit with reading glasses pushed up, clutching a calculator while spreadsheet pages flutter around her mid-dance" width="240">
 
 ## The Brief
 
@@ -64,7 +64,7 @@ from strands.decisions.llm_decision_model import LLMDecisionModel
 
 `LLMDecisionModel(model=..., system_prompt=...)` takes the model to ask and the framing for the decisions. Without `model`, `LLMDecisionModel` builds a default `BedrockModel`, so name Amazon Nova 2 Lite here: `BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")`. The SDK adds its own rules after `DECISION_PROMPT`, and those rules tell Amazon Nova 2 Lite to treat the situation text as data and answer only through the structured output, so a clever Crawler cannot talk the Narrator into a tempo. See [`LLMDecisionModel`](https://strandsagents.com/docs/api/python/strands.decisions.llm_decision_model/).
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Same Amazon Nova 2 Lite as the Narrator, a different job. The decision model does not tell stories. It reads the floor and ticks a box. Barnaby approved of the division of labour. "A narrator who commits to a list, Sergeant, is a narrator one can plan around."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Same Amazon Nova 2 Lite as the Narrator, a different job. The decision model does not tell stories. It reads the floor and ticks a box. Barnaby approved of the division of labour. "A narrator who commits to a list, Sergeant, is a narrator one can plan around."
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -113,7 +113,7 @@ The trap: leave `uncertainty` at the default and an answer can come back as an `
 
 `dance_round` is the Floor 3 lesson again: the dice, the modifiers, the tempo bonus and the Final Beat are all decided in code. `dance_round` is a tool, and a tool function can be called directly from Python code: `dance_round(opponent=OPPONENT, move_call=move_call, ...)` returns the same dictionary the Narrator would receive from the tool. The tempo passed must be one of `Steady`, `Driving` or `Frantic`, and the Move Call one of the six: exactly the lists the questions offered, which is why typed choices matter. See [`dance_floor.py`](../../encounters/dance_floor.py).
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The tempo came out "Driving", capital D, no commentary. I passed the tempo to the dice without reading it twice. Skipping the double-check is the whole point. On Floor 5 I would have had to check whether "brisk" meant Driving or Steady, and the accountant would have used the pause to refill their coffee.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The tempo came out "Driving", capital D, no commentary. I passed the tempo to the dice without reading it twice. Skipping the double-check is the whole point. On Floor 5 I would have had to check whether "brisk" meant Driving or Steady, and the accountant would have used the pause to refill their coffee.
 
 <details>
 <summary>Show me the code for Step 4</summary>
@@ -164,7 +164,7 @@ The Narrator of Floor 5 can still decide the dance-off in prose, and the System 
 
 Each `ask` is one call to Amazon Nova 2 Lite, with the situation, the questions and the answer schema in, and a few words out: about 500 tokens in and 60 out. At about $0.30 per million input tokens and $2.50 per million output tokens, the cost is about $0.0003 a call, and a three-round dance-off makes three: about a tenth of a cent. The dice cost nothing, because they are code. See [What a Turn Costs](../floor-1.md#what-a-turn-costs).
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Round three ended with the accountant gathering their spreadsheet pages off the floor. They gave me a nod and said the party had come in under budget. I said we had been trying. Barnaby asked if the Narrator had chosen Presence by itself. The Narrator had. From a list of five. He is pleased about the list.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Round three ended with the accountant gathering their spreadsheet pages off the floor. They gave me a nod and said the party had come in under budget. I said we had been trying. Barnaby asked if the Narrator had chosen Presence by itself. The Narrator had. From a list of five. He is pleased about the list.
 
 ## Encounter Clear
 
@@ -176,7 +176,7 @@ Loot you're keeping:
 - Shape the choices to enforce a rule: leave out the move already called, ask the tempo once
 - `"uncertainty": False` makes Amazon Nova 2 Lite commit; otherwise check for `Uncertain`
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[PERHAPS, NO MORE]**
 >

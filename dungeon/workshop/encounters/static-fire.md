@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-7-static-fire/static_fire.py`](../../encounters/floor-7-static-fire/static_fire.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, SIDE PASSAGE OFF FLOOR 7.** Low water at 0855, minus 0.3 feet, and the tidal flat below the bluffs lay bare to the madrone roots. A rocket stood on it. Forty-five metric tons of payload rating, a Cadabra logo the size of a ferry, and a gantry with a lanyard-wearing Range Safety Officer on top who had a 214-line checklist and had read every line out loud to the gulls. Static fire at 0858. Three minutes on the clock and three jobs on the table: read the clock, sweep the beach, make the call. I can do one job at a time. The System AI had already started the broadcast. Barnaby had a view. "Sergeant. Three duties, and only one of you."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, SIDE PASSAGE OFF FLOOR 7.** Low water at 0855, minus 0.3 feet, and the tidal flat below the bluffs lay bare to the madrone roots. A rocket stood on it. Forty-five metric tons of payload rating, a Cadabra logo the size of a ferry, and a gantry with a lanyard-wearing Range Safety Officer on top who had a 214-line checklist and had read every line out loud to the gulls. Static fire at 0858. Three minutes on the clock and three jobs on the table: read the clock, sweep the beach, make the call. I can do one job at a time. The System AI had already started the broadcast. Barnaby had a view. "Sergeant. Three duties, and only one of you."
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Crawlers, a heavy-lift rocket, a tidal flat and a beach full of people who did not read the signage. Cadabra's engine test is scheduled, funded and, I am told, fully insured. Your range desk needs a countdown reader, a debris check and a hold call. I will be watching the third one closely. The viewers have money on it."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Crawlers, a heavy-lift rocket, a tidal flat and a beach full of people who did not read the signage. Cadabra's engine test is scheduled, funded and, I am told, fully insured. Your range desk needs a countdown reader, a debris check and a hold call. I will be watching the third one closely. The viewers have money on it."
 
 ## The Brief
 
@@ -37,7 +37,7 @@ cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-7-static-fire
 
 Given code: the pad clock (`pad_clock`), the beach (`beach_scan`), the exclusion radius of 500 meters, the `range_log` list, two `Skill` objects (`HOLD_CALL` and `PAD_CALLOUT`), the range desk prompt and the `make_director` function. A `Skill` is a name, a description and instructions; nothing in it calls a model.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Pre-launch is a checklist, and a checklist is a division of labor. One person reads the clock. One person walks the perimeter. One person holds the authority to stop it. I have never seen one person do all three on a live range, and I have seen what happens when one tries. The agent needs the same split. Tools for the reading and the walking, a written rule for the call.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Pre-launch is a checklist, and a checklist is a division of labor. One person reads the clock. One person walks the perimeter. One person holds the authority to stop it. I have never seen one person do all three on a live range, and I have seen what happens when one tries. The agent needs the same split. Tools for the reading and the walking, a written rule for the call.
 
 ## Step 1: Import the Pieces
 
@@ -69,7 +69,7 @@ Three rules for a plugin class. It needs a `name`: a stable string, set as a cla
 
 Write careful docstrings. Amazon Nova 2 Lite chooses between `read_countdown` and `debris_check` by reading them.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The hook is the range log. Before any tool runs, the hook writes its name on the list. It does not decide anything and it does not touch the tool. It watches. Every range has one person doing only that, and after an incident, that list is the first thing anyone asks for.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The hook is the range log. Before any tool runs, the hook writes its name on the list. It does not decide anything and it does not touch the tool. It watches. Every range has one person doing only that, and after an incident, that list is the first thing anyone asks for.
 
 <details>
 <summary>Show me the code for Step 2</summary>
@@ -137,7 +137,7 @@ skills_plugin = AgentSkills(skills=[HOLD_CALL, PAD_CALLOUT])
 
 This line is inside the `Agent(...)` call in `make_director`. `plugins=` takes a list of `Plugin` instances. When the agent is built, each plugin is initialized with the agent, and the agent registers the plugin's tools and hooks. The crew adds `read_countdown` and `debris_check`; `AgentSkills` adds the `skills` tool and, before each run, appends the list of skill names and descriptions to the system prompt. The plugins do not know about each other, and they do not need to.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby read the Agent call over my shoulder. "Two plugins, Sergeant. A squad and a field manual." I told him the squad is the crew and the manual is the skills. He said the manual is the better idea: nobody carries every page into the field, only the table of contents, and you open to the page when the situation arrives. He then asked what T-minus meant. He knew. He wanted to hear a Marine say it.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby read the Agent call over my shoulder. "Two plugins, Sergeant. A squad and a field manual." I told him the squad is the crew and the manual is the skills. He said the manual is the better idea: nobody carries every page into the field, only the table of contents, and you open to the page when the situation arrives. He then asked what T-minus meant. He knew. He wanted to hear a Marine say it.
 
 <details>
 <summary>Show me the code for Step 4</summary>
@@ -193,7 +193,7 @@ The same rules could sit in `SYSTEM_PROMPT`: the 500 meters, the pressure band, 
 
 A run makes three or four Amazon Nova 2 Lite calls: the two readings, the skill activations, the callout. Each call carries the system prompt, the skill list and three tool definitions, roughly 500 to 1,100 input tokens. About 3,400 input tokens at $0.30 per million is $0.0010, and about 350 output tokens at $2.50 per million is $0.0009: about two tenths of a cent a run. The tools, the hook and the plugins cost nothing. Rates and the math behind a turn are on [What a Turn Costs](../floor-1.md#what-a-turn-costs).
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** HOLD at T-minus 3:00. The Range Safety Officer on the gantry looked at the kayak tour, then at the clipboard, then at their own clipboard, and found a line 143 that said "confirm beach is empty". They had not confirmed it. They sat down on the gantry. The tour paddled off, one vest at a time, with the clipboard held high like a flag. The rocket stayed on the pad, humming. The System AI called it a scrub and sold the replay. Barnaby asked for the range log. I handed it over. Four lines. He read all four.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** HOLD at T-minus 3:00. The Range Safety Officer on the gantry looked at the kayak tour, then at the clipboard, then at their own clipboard, and found a line 143 that said "confirm beach is empty". They had not confirmed it. They sat down on the gantry. The tour paddled off, one vest at a time, with the clipboard held high like a flag. The rocket stayed on the pad, humming. The System AI called it a scrub and sold the replay. Barnaby asked for the range log. I handed it over. Four lines. He read all four.
 
 ## Encounter Clear
 
@@ -204,7 +204,7 @@ Loot kept:
 - `AgentSkills` and `Skill`: progressive disclosure, with names in the prompt and instructions behind the `skills` tool
 - Two plugins on one agent, with unique names
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[HOLD AT T-MINUS THREE]**
 >

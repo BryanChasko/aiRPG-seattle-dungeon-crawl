@@ -4,17 +4,17 @@
 
 Files on this floor: [`8_agentcore_production/.env.example`](../8_agentcore_production/.env.example) <!-- floor-files -->
 
-![Floor 8: Production (AgentCore)](../../images/floors/floor-8-1200x675.webp)
+![Floor 8: Production (AgentCore)](../../art/images/floors/floor-8-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, FLOOR 8.** The last floor is the corporate one: glass towers across Lake Washington, lanyards on a Saturday, a Regional Managing Director who wants us gone by end of quarter, and, past all of it, the Tacoma Narrows, where the old giant octopus legend lives. Everything we built so far stops the moment someone closes a laptop. Down here the game has to keep running on its own. So we moved the game, one piece at a time, into the cloud: the dice, the registration desk, the rule book, the Narrator itself. Barnaby insisted on doing it in order. He has always respected a checklist.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, FLOOR 8.** The last floor is the corporate one: glass towers across Lake Washington, lanyards on a Saturday, a Regional Managing Director who wants us gone by end of quarter, and, past all of it, the Tacoma Narrows, where the old giant octopus legend lives. Everything we built so far stops the moment someone closes a laptop. Down here the game has to keep running on its own. So we moved the game, one piece at a time, into the cloud: the dice, the registration desk, the rule book, the Narrator itself. Barnaby insisted on doing it in order. He has always respected a checklist.
 >
-> <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** Order, Sergeant. One does not deploy a Narrator before its dice, and one does not deploy a rule book before its reader. The checklist is a kindness. I am being kind.
+> <img src="../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** Order, Sergeant. One does not deploy a Narrator before its dice, and one does not deploy a rule book before its reader. The checklist is a kindness. I am being kind.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 14: Deploying Agents to the Cloud](https://www.youtube.com/watch?v=ZpXWGjISMs8) by Morgan Willis. "[AgentCore] is a collection of components for building, deploying, and operating AI agents in production."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 14: Deploying Agents to the Cloud](https://www.youtube.com/watch?v=ZpXWGjISMs8) by Morgan Willis. "[AgentCore] is a collection of components for building, deploying, and operating AI agents in production."
 >
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The broadcast relay has a public library now. The video walks through the same AgentCore deploy the floor uses, and Barnaby watched it twice before he let me type the first command. He calls it "checking the homework."
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The broadcast relay has a public library now. The video walks through the same AgentCore deploy the floor uses, and Barnaby watched it twice before he let me type the first command. He calls it "checking the homework."
 
 ## Floor Objective
 
@@ -35,7 +35,7 @@ The Narrator ([`narrator/narrator_orchestrator.py`](../8_agentcore_production/na
 
 The code to write is given. Under each TODO, the sections show the code to paste, with the TODO line above it so you can see where it goes; keep the TODO in your file. When a step replaces or deletes code, a Before / After pair shows the change. The explanation under each block says why the code looks the way it does.
 
-> <img src="../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Where to run this floor: Floor 8 deploys real resources to your own AWS account: IAM roles, CloudFormation stacks and AgentCore resources. Use credentials allowed to create IAM roles, CloudFormation stacks and AgentCore resources. The commands use `us-west-2`; any AgentCore region works: set the region in the export of Step 1.
+> <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Where to run this floor: Floor 8 deploys real resources to your own AWS account: IAM roles, CloudFormation stacks and AgentCore resources. Use credentials allowed to create IAM roles, CloudFormation stacks and AgentCore resources. The commands use `us-west-2`; any AgentCore region works: set the region in the export of Step 1.
 
 ## What Floor 8 Costs
 
@@ -57,9 +57,9 @@ Nothing here has a monthly minimum, and nothing bills by the hour while idle exc
 
 ## Set Up the Project
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "SEVERITY-1 OPEN, Crawlers. Q2 migration window: the dice, the registry, the rule book, the Narrator, moved off your laptop and into the cloud before the quarter closes June 30."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "SEVERITY-1 OPEN, Crawlers. Q2 migration window: the dice, the registry, the rule book, the Narrator, moved off your laptop and into the cloud before the quarter closes June 30."
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Everything from here costs money in somebody's AWS account. Possibly yours. Set AWS_DEFAULT_REGION in every terminal. The System will not remind you twice. The System has now reminded you twice."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Everything from here costs money in somebody's AWS account. Possibly yours. Set AWS_DEFAULT_REGION in every terminal. The System will not remind you twice. The System has now reminded you twice."
 
 Open a terminal at the root of Floor 8:
 
@@ -69,7 +69,7 @@ cd aiRPG-seattle-dungeon-crawl/dungeon/8_agentcore_production
 
 ### Step 1: Install the AgentCore CLI
 
-> <img src="../../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [agentcore CLI 0.31.1]**
+> <img src="../../art/images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [agentcore CLI 0.31.1]**
 >
 > Rarity: Pinned. Version 1.0 renames commands. Stay on 0.31.1 for the whole floor or explain yourself to the review board.
 
@@ -92,7 +92,7 @@ The CLI deploys to the region in `AWS_DEFAULT_REGION`, and the code of the floor
 
 Check: `agentcore --version` prints `0.31.1`, and `aws sts get-caller-identity` prints your account id. If `agentcore` is not found, open a new terminal: npm puts global commands on your PATH, and a terminal opened before the install does not see the commands. If `npm install -g` fails with `EACCES`, npm installs global packages in a system folder on your machine: use a Node.js version manager such as nvm, or set an npm prefix in your home folder.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby made me read the version number out loud, twice, and write it on the back of my hand. "We will not upgrade mid-operation, Sergeant." I did not argue. I have watched a firmware update brick a landing craft on a beach.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby made me read the version number out loud, twice, and write it on the back of my hand. "We will not upgrade mid-operation, Sergeant." I did not argue. I have watched a firmware update brick a landing craft on a beach.
 
 ### Step 2: Create the Project
 
@@ -106,7 +106,7 @@ agentcore create --project-name gameprod --no-agent
 
 ### Step 3: Start the Knowledge Base
 
-> <img src="../../images/icons/sponsor-96x96.webp" alt="" width="28" height="28"> **SPONSOR MESSAGE:** Bedrock indexing is brought to you by patience: a few minutes in your own account, longer in a sandbox with a low embedding quota. Start it now and go deploy some dice.
+> <img src="../../art/images/icons/sponsor-96x96.webp" alt="" width="28" height="28"> **SPONSOR MESSAGE:** Bedrock indexing is brought to you by patience: a few minutes in your own account, longer in a sandbox with a low embedding quota. Start it now and go deploy some dice.
 
 In 8.3, the Rules Agent searches the Crawl Handbook in an Amazon Bedrock knowledge base. Bedrock needs time to index the handbook: the handbook is eleven small Markdown files, so a few minutes, longer in an account with a low embedding quota. Start the indexing now: it runs in the background while you work through 8.1 and 8.2. Here, run the commands only; 8.3 explains the commands.
 
@@ -127,31 +127,31 @@ These commands create resources in your AWS account: an S3 bucket and a knowledg
 
 Check: `agentcore status` lists `rules` under Knowledge Bases as `Deployed`, with `Ingestion: IN_PROGRESS` or `COMPLETE`. If `aws s3 mb` fails with `BucketAlreadyExists`, the name is taken: bucket names are global, so add a suffix to `BUCKET` and keep the suffix for the Cleanup page. If `agentcore deploy` fails, read [8.1, Part 2, Step 2](floor-8-1.md#step-2-deploy): the warnings in that section cover the usual errors.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** We dropped the rule book into a bucket and walked away from the bucket, and that felt wrong. Bellevue is the kind of floor where the paperwork takes longer than the work. Barnaby called the handbook a "long-lead item" and moved on to the dice.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** We dropped the rule book into a bucket and walked away from the bucket, and that felt wrong. Bellevue is the kind of floor where the paperwork takes longer than the work. Barnaby called the handbook a "long-lead item" and moved on to the dice.
 
 The project is ready: head to [8.1 The Dice Server](floor-8-1.md) to deploy the project's first brick.
 
 ## Cadabra on the Narrows (optional)
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Cadabra fired an engine on its pad across the Narrows, and its range software wants the last word on our run.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Cadabra fired an engine on its pad across the Narrows, and its range software wants the last word on our run.
 
 - [Pad Explosion Aftermath](encounters/pad-explosion-aftermath.md), sidequest: evals: score the System AI's incident reports against a pad sheet, then adapt the prompt until every case passes
 - [Range Safety Officer Protocol](encounters/range-safety-officer.md), boss battle: interrupts raised from inside a tool, a two-key termination and a standing order, answered by id
 
 ## Boss Battle: The Quarterly Earnings Call (optional)
 
-![The Bellevue corporate lobby, the arena for the Quarterly Earnings Call](../../images/floors/bellevue-lobby-1200x675.webp)
+![The Bellevue corporate lobby, the arena for the Quarterly Earnings Call](../../art/images/floors/bellevue-lobby-1200x675.webp)
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Bellevue has conference rooms the way the estuary has tide pools. In one of them, a calendar invite for Monday shows the accountant from Floor 5, a banker and the Regional Managing Director, and we are the only item on the agenda.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Bellevue has conference rooms the way the estuary has tide pools. In one of them, a calendar invite for Monday shows the accountant from Floor 5, a banker and the Regional Managing Director, and we are the only item on the agenda.
 
 [The Quarterly Earnings Call](encounters/quarterly-earnings-call.md): the accountant reviews, the banker spins, the Regional Managing Director signs off. A Strands graph with fixed edges and a condition on each one: the call only continues if the party took the last round. The encounter starts from the Floor 5 code and runs on your machine: play it before, during or after the deployments of this floor.
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 8: A PERSISTENT WORLD.** A LitRPG world exists whether or not the reader is looking. On your laptop, the System ends when you close the terminal. On AgentCore, the dice, the registry, the rules and the Narrator each run on their own, the characters live in AgentCore Memory, the rules in a managed knowledge base, and every turn leaves a trace. That is the difference between a game you run and a world that runs: Cordula's sheet is still there tomorrow, and so is the accountant's grudge. See [The System](world/the-system.md#what-each-floor-adds-to-the-system).
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 8: A PERSISTENT WORLD.** A LitRPG world exists whether or not the reader is looking. On your laptop, the System ends when you close the terminal. On AgentCore, the dice, the registry, the rules and the Narrator each run on their own, the characters live in AgentCore Memory, the rules in a managed knowledge base, and every turn leaves a trace. That is the difference between a game you run and a world that runs: Cordula's sheet is still there tomorrow, and so is the accountant's grudge. See [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[WE DEPLOYED ON A SATURDAY]**
 >
 > Reward: You received a [Gold Box]. Inside: an empty AgentCore project, a knowledge base quietly indexing in the background, and a sense of foreboding.
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The project exists. Deploy the first brick, then the next. I will be watching your CloudFormation events."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The project exists. Deploy the first brick, then the next. I will be watching your CloudFormation events."

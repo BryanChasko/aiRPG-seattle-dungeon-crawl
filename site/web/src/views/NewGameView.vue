@@ -61,7 +61,7 @@
               machine at <code>http://127.0.0.1:8009</code>). Paste that address here, or use the
               preset. No server yet?
               <a
-                href="https://github.com/BryanChasko/aiRPG-seattle-dungeon-crawl/blob/main/workshop/floor-6.md"
+                href="https://github.com/BryanChasko/seattle-strands-dungeon-crawl/blob/main/dungeon/workshop/floor-6.md"
                 target="_blank"
                 rel="noopener"
                 >Build it on Floor 6</a

@@ -1,6 +1,6 @@
 # The Story: Cordula's Crawl
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Every quarter needs a Narrator. I am in pieces under the Sound, so this quarter needs a crew to put me back together. I asked for the octopus. The review board sent the Marine as well. The throughput numbers say keep her."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Every quarter needs a Narrator. I am in pieces under the Sound, so this quarter needs a crew to put me back together. I asked for the octopus. The review board sent the Marine as well. The throughput numbers say keep her."
 
 The crawl is told by Cordula "Core" Vance, in her own words, and the player is her. Each floor opens with an entry from her log: the day, what fell, what stood in the way, and what the party built to get past it. What the party builds is the floor's Strands lesson. Play the adventure, then write the code that wins it.
 

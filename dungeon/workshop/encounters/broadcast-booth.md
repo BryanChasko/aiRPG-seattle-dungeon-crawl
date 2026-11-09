@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-8-broadcast-booth/broadcast_booth.py`](../../encounters/floor-8-broadcast-booth/broadcast_booth.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** Behind the glass wall of the Bellevue conference room there was a second room, smaller, dark, full of blinking gear. A broadcast booth. Somebody had labeled every dial with masking tape and a marker, which I respect. The System AI keeps a log of every round it airs, it told us, and a log is only worth something if you can find the line you want in it. I asked how it files a round. By number, by move, by who won, it said. I asked who reads the log. The producers, it said, and a very small number of accountants. <img src="../../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Sergeant. We are being recorded. I should like to be recorded correctly."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** Behind the glass wall of the Bellevue conference room there was a second room, smaller, dark, full of blinking gear. A broadcast booth. Somebody had labeled every dial with masking tape and a marker, which I respect. The System AI keeps a log of every round it airs, it told us, and a log is only worth something if you can find the line you want in it. I asked how it files a round. By number, by move, by who won, it said. I asked who reads the log. The producers, it said, and a very small number of accountants. <img src="../../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Sergeant. We are being recorded. I should like to be recorded correctly."
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Broadcast Booth. Every round of every dance-off is stamped with its number and its Move Call, wrapped in a span of its own, and filed in Amazon CloudWatch. The producers will be searching it before the quarter closes. Label things properly. I hate a bad label."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Broadcast Booth. Every round of every dance-off is stamped with its number and its Move Call, wrapped in a span of its own, and filed in Amazon CloudWatch. The producers will be searching it before the quarter closes. Label things properly. I hate a bad label."
 
 ## The Brief
 
@@ -37,7 +37,7 @@ cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-8-broadcast-booth
 
 ## Wire the Booth to CloudWatch
 
-> <img src="../../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** This sidequest creates one AWS resource, a CloudWatch log group, and sends spans to the account's shared span log group, `aws/spans`. The log group and the span ingestion both bill by the byte. Delete the log group at the end, with the commands in [What It Costs](#what-it-costs).
+> <img src="../../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** This sidequest creates one AWS resource, a CloudWatch log group, and sends spans to the account's shared span log group, `aws/spans`. The log group and the span ingestion both bill by the byte. Delete the log group at the end, with the commands in [What It Costs](#what-it-costs).
 
 The AWS Distro for OpenTelemetry is not in the workshop environment: the deployed runtimes install the distro from their own `pyproject.toml`, and this booth runs on the learner's machine. Add the distro to the active environment, the same version the runtimes use (a uv environment has no `pip`, so use `uv pip`):
 
@@ -61,7 +61,7 @@ export OTEL_RESOURCE_ATTRIBUTES=service.name=broadcast-booth
 
 `service.name` is the name the CloudWatch GenAI Observability dashboard lists the booth under. The spans themselves go to the `aws/spans` log group, where Transaction Search keeps them.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Six exports and a log group. I wrote them on the back of my hand, under the version number from Floor 8. A booth with no cable run to the truck is a very expensive closet. So I ran the cable first, and checked the other end of it before we went on air.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Six exports and a log group. I wrote them on the back of my hand, under the version number from Floor 8. A booth with no cable run to the truck is a very expensive closet. So I ran the cable first, and checked the other end of it before we went on air.
 
 ## Step 1: Fetch the Tracer and the Metrics Printer
 
@@ -102,7 +102,7 @@ The dots in the names are plain characters; the names only look like a hierarchy
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Round one was a Presence call against the Bonus-Season Investment Banker. Barnaby took the mic, +3 against their +4, and the dial labeled ROUND went to one. The dial labeled MOVE went to Presence. Every wire off that board carried both labels. That is how you find a particular wire at two in the morning.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Round one was a Presence call against the Bonus-Season Investment Banker. Barnaby took the mic, +3 against their +4, and the dial labeled ROUND went to one. The dial labeled MOVE went to Presence. Every wire off that board carried both labels. That is how you find a particular wire at two in the morning.
 
 ## Step 3: Wrap the Round in a Span
 
@@ -236,7 +236,7 @@ aws logs describe-log-groups --log-group-name-prefix /aws/gameprod/broadcast-boo
 
 `aws/spans` belongs to Transaction Search for the whole account, and the deployed runtimes of Floor 8 write spans to `aws/spans` too. If nothing else in the account needs those spans, shorten how long `aws/spans` keeps the spans: `aws logs put-retention-policy --log-group-name aws/spans --retention-in-days 1`. Otherwise leave the retention unchanged. The [Cleanup](../cleanup.md) page removes the runtimes.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The producers searched the log that night, as promised. They asked for every round Barnaby lost on Presence. One query, zero rows. Barnaby read the empty result twice, pleased, and then asked me to check that the query was right. It was. <img src="../../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Check the query again."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The producers searched the log that night, as promised. They asked for every round Barnaby lost on Presence. One query, zero rows. Barnaby read the empty result twice, pleased, and then asked me to check that the query was right. It was. <img src="../../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Check the query again."
 
 ## Encounter Clear
 
@@ -247,7 +247,7 @@ Loot to keep:
 - `result.metrics.get_summary()` is the receipt of a turn, as a dictionary
 - Spans from outside AgentCore Runtime reach CloudWatch through the AWS Distro for OpenTelemetry, and a Logs Insights query finds them by attribute
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[LABELED, FILED AND FINDABLE]**
 >

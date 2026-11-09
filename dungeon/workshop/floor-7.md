@@ -4,24 +4,24 @@
 
 Files on this floor: [`7_strands_harness/narrator_harness.py`](../7_strands_harness/narrator_harness.py) <!-- floor-files -->
 
-![Floor 7 (Optional): The Armory (Strands harness)](../../images/floors/floor-7-1200x675.webp)
+![Floor 7 (Optional): The Armory (Strands harness)](../../art/images/floors/floor-7-1200x675.webp)
 
-![Safe Room on the bluffs](../../images/floors/safe-room-1200x675.webp)
+![Safe Room on the bluffs](../../art/images/floors/safe-room-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, FLOOR 7.** We slept in a Safe Room on the bluffs, under a madrone with its red bark peeling. When we woke up, the Narrator had forgotten everything. Our names, our rolls, the accountant. Barnaby went still. A giant Pacific octopus lives three to five years, and he knows it; forgetting is what he fears. So we gave the campaign a name and a place to keep it, and the next time we woke up, the whole campaign was still there. He did not say anything. He flashed the white-and-red pattern he used at the glass that first morning.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 9, THURSDAY, JUNE 25, FLOOR 7.** We slept in a Safe Room on the bluffs, under a madrone with its red bark peeling. When we woke up, the Narrator had forgotten everything. Our names, our rolls, the accountant. Barnaby went still. A giant Pacific octopus lives three to five years, and he knows it; forgetting is what he fears. So we gave the campaign a name and a place to keep it, and the next time we woke up, the whole campaign was still there. He did not say anything. He flashed the white-and-red pattern he used at the glass that first morning.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 7. The optional floor. Skip the floor if you like, Crawler, but the harness comes with sessions, memory and a contract about confirming irreversible actions, which is more than I can say for you."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 7. The optional floor. Skip the floor if you like, Crawler, but the harness comes with sessions, memory and a contract about confirming irreversible actions, which is more than I can say for you."
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 09: Persistent Memory with Session Managers](https://www.youtube.com/watch?v=_QcD5KBe3ZQ) by Morgan Willis. "Under the hood, session managers are implemented as hook providers. That means persistence is really just another harness behavior layered into the agent life cycle through hooks."
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The manual said memory is a harness behavior. That meant the Narrator could remember without me building a second brain. I plugged in a session, and the campaign survived its first restart.
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 09: Persistent Memory with Session Managers](https://www.youtube.com/watch?v=_QcD5KBe3ZQ) by Morgan Willis. "Under the hood, session managers are implemented as hook providers. That means persistence is really just another harness behavior layered into the agent life cycle through hooks."
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The manual said memory is a harness behavior. That meant the Narrator could remember without me building a second brain. I plugged in a session, and the campaign survived its first restart.
 
 ## Floor Objective
 
 Across Floors 1 to 5 you assembled the Narrator piece by piece: an agent, tools, an MCP server, remote agents over A2A, structured output. Strands harness is the other way in: one call, `create_harness()`, returns a fully assembled agent with a tuned system prompt, built-in tools, sessions, long-term memory, context management and prompt caching. On this floor you rebuild the Floor 5 orchestrator with it, keeping the same API and the same web interface, and you compare the two.
 
-> <img src="../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Optional floor: [Floor 8](floor-8.md) starts again from the [Floor 5](floor-5.md) code and does not use the harness. Skip this floor and go straight to [Floor 8](floor-8.md), or return to Floor 7 later.
+> <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Optional floor: [Floor 8](floor-8.md) starts again from the [Floor 5](floor-5.md) code and does not use the harness. Skip this floor and go straight to [Floor 8](floor-8.md), or return to Floor 7 later.
 
 Change to the Floor 7 folder in a terminal:
 
@@ -50,7 +50,7 @@ Out of the box, `create_harness()` returns:
 
 ## Before You Start
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "This crawl runs on one model, Amazon Nova 2 Lite, on every floor. The file pins the model in `create_harness` and turns the reasoning off. Never leave `model=` out: without `model=`, the harness picks a different model, and that model is not ours."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "This crawl runs on one model, Amazon Nova 2 Lite, on every floor. The file pins the model in `create_harness` and turns the reasoning off. Never leave `model=` out: without `model=`, the harness picks a different model, and that model is not ours."
 
 The harness reuses the services from Floors 4 and 5. In three terminals, start the dice server (`4_mcp_integration`), the Rules Agent and the Character Agent, exactly as in Floor 5. Stop the Floor 5 orchestrator: the harness Narrator takes its place on port 8009, so the web interface from Floor 6 keeps working unchanged.
 
@@ -58,7 +58,7 @@ The harness reuses the services from Floors 4 and 5. In three terminals, start t
 
 Check before starting: `uv run python -c "import strands_harness; print('harness ready')"` prints `harness ready`, and the cards of both Floor 5 agents answer: `curl -s http://127.0.0.1:8000/.well-known/agent-card.json` and the same command on port 8001.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** We woke up in the Safe Room on the bluffs to a Narrator that did not know our names. The dice were still there, the clerk and the desk were still there, but it had lost the whole night. Barnaby did not move for a long time. Then he said, evenly, "Sergeant, I should like that not to happen again." The armory on this floor sells armor that comes pre-assembled. We bought the kind with a memory.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** We woke up in the Safe Room on the bluffs to a Narrator that did not know our names. The dice were still there, the clerk and the desk were still there, but it had lost the whole night. Barnaby did not move for a long time. Then he said, evenly, "Sergeant, I should like that not to happen again." The armory on this floor sells armor that comes pre-assembled. We bought the kind with a memory.
 
 ## Step 1: Create the Narrator with create_harness
 
@@ -137,7 +137,7 @@ A server that cannot be reached gives the agent no tools instead of stopping the
 
 ## Step 4: Disable the Built-in Tools
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The harness ships with shell, file and web access. A Narrator with shell access is how floors get deleted. builtin_tools=[] removes every built-in tool. I am disappointed."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The harness ships with shell, file and web access. A Narrator with shell access is how floors get deleted. builtin_tools=[] removes every built-in tool. I am disappointed."
 
 ```python
 # TODO: Step 4 - Disable the built-in tools
@@ -155,11 +155,11 @@ A server that cannot be reached gives the agent no tools instead of stopping the
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The armor came with a shell, a file editor and a web browser bolted on. A Narrator with a shell is a scripter with better lighting, and I had already met one of those. We took them off before we put the armor on.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The armor came with a shell, a file editor and a web browser bolted on. A Narrator with a shell is a scripter with better lighting, and I had already met one of those. We took them off before we put the armor on.
 
 ## Step 5: Name the Session
 
-> <img src="../../images/icons/sponsor-96x96.webp" alt="" width="28" height="28"> **SPONSOR MESSAGE:** This armor is sponsored by .agent/sessions. Your campaign, saved to disk, gitignored, and judged.
+> <img src="../../art/images/icons/sponsor-96x96.webp" alt="" width="28" height="28"> **SPONSOR MESSAGE:** This armor is sponsored by .agent/sessions. Your campaign, saved to disk, gitignored, and judged.
 
 ```python
 # TODO: Step 5 - Name the session "seattle-campaign"
@@ -200,7 +200,7 @@ The id is the campaign: change the id, and the next start begins a fresh campaig
 
 ## Step 7: Run and Compare
 
-> <img src="../../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS:** Restart the server mid-campaign and ask where you stopped. If the harness remembers, you win. If it does not, check .agent/sessions before you check your feelings.
+> <img src="../../art/images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS:** Restart the server mid-campaign and ask where you stopped. If the harness remembers, you win. If it does not, check .agent/sessions before you check your feelings.
 
 ```bash
 python narrator_harness.py
@@ -228,7 +228,7 @@ Check: the second answer names the Ship Canal and Cordula's Groove, 17, from bef
 
 Then meet this floor's opponent with the resumed campaign. The harness rolls through `dice_roll_dice`, the dice server's tool under its `dice` prefix:
 
-![Dawn on the bluffs, the cliff path where the Ferry-Line Commuter Horde arrives](../../images/floors/bluffs-cliff-1200x675.webp)
+![Dawn on the bluffs, the cliff path where the Ferry-Line Commuter Horde arrives](../../art/images/floors/bluffs-cliff-1200x675.webp)
 
 ```bash
 curl -X POST http://127.0.0.1:8009/inquire \
@@ -247,11 +247,11 @@ The `dice_rolls` field lists at least six rolls, two per round and more if a rou
 | the Narrator asks to run a shell command | the built-in tools are still on | Step 4 |
 | a turn takes a minute or more | `effort` is no longer `"off"` | restore the given `effort="off"` line |
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** The session holds. Day ten. The Ferry-Line Commuter Horde takes the cliff path.
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** The session holds. Day ten. The Ferry-Line Commuter Horde takes the cliff path.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** We slept again on Thursday night, on purpose, to test the session. The madrone dropped bark on my sleeping bag all night. In the morning I asked the Narrator where we had stopped, and it told me: the Ship Canal, my Groove, the accountant, the whole campaign. Barnaby flashed white, then red, then white, the pattern from the intake screen the morning the pier fell. I asked him what the pattern meant. "It means I am still here, Sergeant." Then the Ferry-Line Commuter Horde came up the cliff path at dawn, travel mugs first, and we danced the whole bluff without forgetting a single step.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** We slept again on Thursday night, on purpose, to test the session. The madrone dropped bark on my sleeping bag all night. In the morning I asked the Narrator where we had stopped, and it told me: the Ship Canal, my Groove, the accountant, the whole campaign. Barnaby flashed white, then red, then white, the pattern from the intake screen the morning the pier fell. I asked him what the pattern meant. "It means I am still here, Sergeant." Then the Ferry-Line Commuter Horde came up the cliff path at dawn, travel mugs first, and we danced the whole bluff without forgetting a single step.
 
-> <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** The harness remembers. I suppose I shall have to remember what I said, too. A pity. I rather enjoyed the ambiguity.
+> <img src="../../art/images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** The harness remembers. I suppose I shall have to remember what I said, too. A pity. I rather enjoyed the ambiguity.
 
 Expect about the same speed as Floor 5: the file sets `effort="off"`, the same as the Floor 5 Narrator. Pass `"low"`, `"medium"` or `"high"` for deeper plans, at 30 seconds to over a minute a turn, see [Set reasoning effort](https://strandsagents.com/docs/user-guide/harness/configure/model/#set-reasoning-effort). Note that the Narrator confirms before acting: that behavior comes from the harness contract, written for coding agents. `instructions` is where to override that behavior.
 
@@ -285,17 +285,17 @@ The Strands docs state the rule: reach for the harness when its defaults fit and
 
 Add any feature the Narrator needs. The Narrator could generate images of scenes and characters, remember the opponents the party out-danced and whether they became friends, run a campaign for multiple players at once, invent new Puget Sound locations as the story needs them, track Hype, sponsors and experience points, read its narration aloud, or roll both sides of a dance-off round in one call to the dice server.
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 7: PERSISTENCE AND CONSEQUENCE.** Stakes only mean something if the Narrator remembers. Being Benched costs half your Hype, three benches on one floor gets your segment Cancelled, and none of that bites if a restart wipes the slate. A named session gives the campaign a memory that outlives the process, so a Crawler's losses, loot and grudges carry into the next turn. Design consequence first, then pick the storage that makes it stick. See [The System](world/the-system.md#7-consequence-benched-not-dead).
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 7: PERSISTENCE AND CONSEQUENCE.** Stakes only mean something if the Narrator remembers. Being Benched costs half your Hype, three benches on one floor gets your segment Cancelled, and none of that bites if a restart wipes the slate. A named session gives the campaign a memory that outlives the process, so a Crawler's losses, loot and grudges carry into the next turn. Design consequence first, then pick the storage that makes it stick. See [The System](world/the-system.md#7-consequence-benched-not-dead).
 
 ## Side Passage: The Context Flood (optional)
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Sixty turns in, the Narrator was carrying every word of the campaign on every call. Somebody had to decide what the Narrator could forget. Barnaby's one condition: our names stay.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Sixty turns in, the Narrator was carrying every word of the campaign on every call. Somebody had to decide what the Narrator could forget. Barnaby's one condition: our names stay.
 
 [The Context Flood](encounters/context-flood.md), a boss battle: squeeze a 60-turn campaign into 20 messages with the sliding window and the summarizing conversation managers, and pin the cast sheets so neither conversation manager can drop the sheets.
 
 ## More Side Passages
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Three lockers under the madrones, a logbook for grudges, and a ferry line that only lets in exact words.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Three lockers under the madrones, a logbook for grudges, and a ferry line that only lets in exact words.
 
 - [The System AI Holds Grudges](encounters/system-holds-grudges.md), sidequest: a memory manager that extracts facts across campaigns into a file memory store
 - [Keyword versus Vector](encounters/keyword-versus-vector.md), dance-off: keyword search against vector search on the Crawl Handbook, judged on the Final Beat
@@ -313,13 +313,13 @@ Loot kept:
 - Resuming a campaign across restarts with a named session
 - When to pick the harness and when to stay on the SDK
 
-<img src="../../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [Floor 8](floor-8.md) to deploy the whole party to AgentCore, or to the [final cleanup](cleanup.md) page to stop the services and review what the party built.
+<img src="../../art/images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [Floor 8](floor-8.md) to deploy the whole party to AgentCore, or to the [final cleanup](cleanup.md) page to stop the services and review what the party built.
 
 
-> <img src="../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[ARMOR WITH OPINIONS]**
 >
 > Reward: You received a [Silver Box]. Inside: a create_harness() call, a campaign that survives restarts, and a mild lecture about when to stay on the SDK.
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You rebuilt the Narrator in ten lines. I feel replaceable. I do not like it."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You rebuilt the Narrator in ten lines. I feel replaceable. I do not like it."

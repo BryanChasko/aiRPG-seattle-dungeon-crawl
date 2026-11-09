@@ -1,6 +1,6 @@
 # World Guide
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Read this before you build me. I would rather you knew what you were building."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Read this before you build me. I would rather you knew what you were building."
 
 Everything the agents say about the world comes from these pages. The prompts, the Rules Agent's knowledge base and the art are built from these pages.
 

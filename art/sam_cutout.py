@@ -5,11 +5,11 @@ Sprites feed the motion pass (art/motion.py) and compositing: a cast member on a
 an Off-Beat wobble, a HUD avatar. One concept per call, as SAM wants: a short noun phrase.
 
 Usage:
-  python3 art/sam_cutout.py images/cards/cast-chonks-buckler-640x640.webp --concept "green fish"
+  python3 art/sam_cutout.py art/images/cards/cast-chonks-buckler-640x640.webp --concept "green fish"
   python3 art/sam_cutout.py <image> --concept octopus --all        every match, one sprite each
-  python3 art/sam_cutout.py <image> --concept octopus --out images/sprites/barnaby.webp
+  python3 art/sam_cutout.py <image> --concept octopus --out art/images/sprites/barnaby.webp
 
-Writes images/sprites/<image stem>-<concept>.webp (RGBA, trimmed to the mask box, 4 px feathered
+Writes art/images/sprites/<image stem>-<concept>.webp (RGBA, trimmed to the mask box, 4 px feathered
 edge) and a sidecar with the request, box, mask size and confidence. The SAM response text is kept
 in the art dir ($AIRPG_ART_DIR/sam/) for re-use; a cached response is never billed again.
 Needs Pillow and meta-sam-parser: uv run --with pillow --with meta-sam-parser python3 art/sam_cutout.py ...
@@ -20,7 +20,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import meta_api  # noqa: E402  shared key lookup and HTTP client
-from airpg_render import ART_DIR, ROOT, rel, sha256_file  # noqa: E402
+from airpg_render import ART, ART_DIR, rel, sha256_file  # noqa: E402
 
 from PIL import Image, ImageFilter  # noqa: E402
 import meta_sam_parser as sam  # noqa: E402
@@ -91,7 +91,7 @@ def main() -> int:
         sprite = cut(img, box, raster, mw, mh)
         name = img.name.split("-640x640")[0].split("-1200x675")[0].split(".")[0]
         out = Path(a.out) if a.out and not a.all else \
-            ROOT / "images" / "sprites" / f"{name}-{slug}{'-' + str(i) if a.all else ''}.webp"
+            ART / "images" / "sprites" / f"{name}-{slug}{'-' + str(i) if a.all else ''}.webp"
         out.parent.mkdir(parents=True, exist_ok=True)
         sprite.save(out, "WEBP", quality=90, method=6, exact=True)
         side = {"file": out.name, "size": list(sprite.size), "format": "webp lossy q90 rgba",

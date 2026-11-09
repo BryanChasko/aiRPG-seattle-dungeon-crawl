@@ -1,6 +1,6 @@
 # Ask the System: the Study Companion
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You may ask me questions. I will answer them correctly and make you feel slightly worse about needing to ask."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You may ask me questions. I will answer them correctly and make you feel slightly worse about needing to ask."
 
 `ask_the_system.py` is a help desk for the crawl, built with the Strands Agents SDK this workshop teaches. Ask the System about any floor, any TODO, any error message or any Strands API. The System answers in its voice from two sources only, this repository's pages and the Strands API reference, and cites both.
 

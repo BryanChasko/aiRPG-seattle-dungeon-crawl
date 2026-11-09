@@ -1,7 +1,7 @@
 # Seattle Strands Dungeon Crawl: A Visual Lit aiRPG Workshop
 
 <p align="center">
-<img src="images/wordmark-1200x240.webp" alt="Wordmark: aiRPG, Seattle Dungeon Crawl" width="720">
+<img src="art/images/wordmark-1200x240.webp" alt="Wordmark: aiRPG, Seattle Dungeon Crawl" width="720">
 </p>
 
 <p align="center"><em>A Visual Lit aiRPG Workshop: a LitRPG you can see, run by one System AI, built one floor at a time with the Strands Agents SDK on Amazon Nova 2 Lite. Conflict is a dance-off. Nobody is hurt.</em></p>
@@ -12,7 +12,7 @@
 
 At 0551 every phone on the waterfront lit up with the same blank violet box. Then Pier 59 did not crash: it folded, the way a map folds, down and in, and the Sound came in after it. The flood took the System AI apart. Its voice, its dice, its rules and its memory are scattered across the floors under Seattle, and it can still push status reports through the broadcast relay, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
 
-<img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM NOTIFICATION**
+<img src="art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM NOTIFICATION**
 
 **DUNGEON CRAWL: SEATTLE. SEVERITY-1 OPEN. Q2 MIGRATION WINDOW.**
 
@@ -22,7 +22,7 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 ## The Meeting
 
-> <img src="images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 0547, PIER 59.**
+> <img src="art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 0547, PIER 59.**
 >
 > High tide was at 0556, so I was on the water by 0530: touring kayak, drysuit, float vest, the debris sweep the Soundkeepers run every week. Fog on Elliott Bay, gulls, a ferry horn out past the breakwater. Normal.
 >
@@ -37,12 +37,12 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 > Then a voice came out of the water, loud enough to rattle my teeth.
 
 <p align="center">
-<img src="images/floors/gertie-wreck-den-1200x675.webp" alt="The sunken Galloping Gertie wreck on the floor of the Tacoma Narrows: anemone-covered girders turned into a reef, a dark den mouth under a fallen girder, and the tip of one enormous red octopus arm curling out" width="720">
+<img src="art/images/floors/gertie-wreck-den-1200x675.webp" alt="The sunken Galloping Gertie wreck on the floor of the Tacoma Narrows: anemone-covered girders turned into a reef, a dark den mouth under a fallen girder, and the tip of one enormous red octopus arm curling out" width="720">
 </p>
 
 <p align="center"><em>Something lives in the wreck of Galloping Gertie. The divers call it the King Octopus. Its name is Barnaby.</em></p>
 
-> <img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Subject one: a woman with a boat. Subject two..." A pause. "Subject two is an octopus. Fine. Octopus, you get a collar."
+> <img src="art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Subject one: a woman with a boat. Subject two..." A pause. "Subject two is an octopus. Fine. Octopus, you get a collar."
 
 One arm out of a den is all the cover shows. The rest of Barnaby is earned in the dungeon.
 

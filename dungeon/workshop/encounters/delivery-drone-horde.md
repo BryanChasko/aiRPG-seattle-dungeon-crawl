@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-5-delivery-drone-horde/delivery_drone_horde.py`](../../encounters/floor-5-delivery-drone-horde/delivery_drone_horde.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 7, TUESDAY, JUNE 23, SIDE PASSAGE OFF FLOOR 5.** The sky over the estuary dance floor went white at the edges. Delivery drones, Cadabra's, thousands of them, hovering in a lattice so tidy that somebody had clearly been paid to make it tidy. Every drone had a screen. Every screen had a signature line. I signed for the first one because it was polite, and it was a mistake: a dozen more turned toward me and the crowd carried me three steps back toward the mudflat. Barnaby read the situation off his collar in one breath. "Sergeant. It is not a battle. It is a queue. The only way to lose a queue is to join it."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 7, TUESDAY, JUNE 23, SIDE PASSAGE OFF FLOOR 5.** The sky over the estuary dance floor went white at the edges. Delivery drones, Cadabra's, thousands of them, hovering in a lattice so tidy that somebody had clearly been paid to make it tidy. Every drone had a screen. Every screen had a signature line. I signed for the first one because it was polite, and it was a mistake: a dozen more turned toward me and the crowd carried me three steps back toward the mudflat. Barnaby read the situation off his collar in one breath. "Sergeant. It is not a battle. It is a queue. The only way to lose a queue is to join it."
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Delivery Drone Horde. Cadabra rented the dungeon a fleet and the fleet has a customer service mindset. Nobody gets hurt. Everybody gets a receipt. Crawlers who answer every drone are benched at the mudflat edge, and I have the number of times it has happened, and it is rising."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: the Delivery Drone Horde. Cadabra rented the dungeon a fleet and the fleet has a customer service mindset. Nobody gets hurt. Everybody gets a receipt. Crawlers who answer every drone are benched at the mudflat edge, and I have the number of times it has happened, and it is rising."
 
 ## The Brief
 
@@ -59,7 +59,7 @@ from strands.vended_plugins.steering import SteeringHandler, Proceed, Guide
 
 `StayOnCourse` is given. It overrides `steer_before_tool`, the method that runs before every tool call, and it counts the signatures for the whole crossing. The first `answer_drone` returns `Proceed`: the broadcast gets its courtesy shot. Once the count reaches `ANSWERS_ALLOWED`, the next `answer_drone` reaches your line. Until you write it, the line returns a `Proceed` placeholder, so the horde still wins.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One signature for the whole crossing. That was the rule I wrote on my forearm in grease pencil. A drone gets one answer and a nod, and then I walk. The second drone is the horde. I have worked a flight deck. You do not talk to every aircraft. You talk to yours.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One signature for the whole crossing. That was the rule I wrote on my forearm in grease pencil. A drone gets one answer and a nod, and then I walk. The second drone is the horde. I have worked a flight deck. You do not talk to every aircraft. You talk to yours.
 
 Write the reason for the agent to read, not for the log. A `Guide` on a tool call cancels the call, and Strands puts the reason into the tool result with an instruction to follow it, so the agent sees it on its next turn. Name the tool that gets it moving again. See [before a tool call](https://strandsagents.com/docs/user-guide/sdk/agents/interventions/steering/#before-a-tool-call).
 
@@ -97,7 +97,7 @@ Replace `plugins=[]`. Build a fresh `StayOnCourse()` for every agent: the handle
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby read the guidance line off the screen on my sleeve. "Cancelled, Sergeant. It says move. It does not say sorry." That is the whole trick. The drone does not get a speech. The drone gets nothing, and I get a direction.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby read the guidance line off the screen on my sleeve. "Cancelled, Sergeant. It says move. It does not say sorry." That is the whole trick. The drone does not get a speech. The drone gets nothing, and I get a direction.
 
 ## Cross the Floor
 
@@ -146,7 +146,7 @@ Loot kept:
 - Steering is a plugin: it goes in the `plugins` list of the `Agent`, and the prompt does not change
 - Use steering when the agent should change course, and a tool limit when a number must never be crossed
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[UNSIGNED FOR]**
 >

@@ -8,13 +8,13 @@ House spec (derived from shipped sidecars, enforced by --check):
 
 Usage:
   python3 art/airpg_render.py --check                      every shipped webp meets its class spec
-  python3 art/airpg_render.py --plan images/plans/<run>.json   write requests + manifest, no API call
-  python3 art/airpg_render.py --render images/plans/<run>.json plan, then render the whole run
+  python3 art/airpg_render.py --plan art/images/plans/<run>.json   write requests + manifest, no API call
+  python3 art/airpg_render.py --render art/images/plans/<run>.json plan, then render the whole run
   python3 art/airpg_render.py --batch <art dir>/<run>/manifest.json   render an existing manifest
   python3 art/contact_sheet.py <webp files or dirs>        review sheet of renders
 
 A plan names each render's class, output file and subject; the prompt is built from the frozen
-blocks and the character model sheet in images/plans/style.json, so no request is hand-written.
+blocks and the character model sheet in art/images/plans/style.json, so no request is hand-written.
 Raw renders, manifests, run logs, replaced files and the spend ledger go to the art dir,
 $AIRPG_ART_DIR or ~/writing/art/once-upon-agentic-ai/experiments, never into the repo.
 Each billed render appends its cost ($0.01/image) to <art dir>/ledger.md; reused raws are free.
@@ -26,11 +26,12 @@ import argparse, base64, hashlib, json, os, re, shutil, sys, time, urllib.error,
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+ART = Path(__file__).resolve().parent
 API = "https://api.meta.ai/v1/images/generations"
 COST_PER_IMAGE = 0.01
 ART_DIR = Path(os.environ.get("AIRPG_ART_DIR",
                               Path.home() / "writing" / "art" / "once-upon-agentic-ai" / "experiments"))
-STYLE = ROOT / "images" / "plans" / "style.json"
+STYLE = ART / "images" / "plans" / "style.json"
 RETRY_WAITS = (20, 60, 120)  # seconds between 429 retries; then the batch stops instead of grinding
 
 CLASS_SPEC = {
@@ -49,7 +50,7 @@ def sha256_file(p: Path) -> str:
 
 def check() -> int:
     bad = 0
-    for webp in sorted((ROOT / "images").rglob("*.webp")):
+    for webp in sorted((ART / "images").rglob("*.webp")):
         if str(webp).endswith(".sidecar.json") or webp.parent.name in ("motion", "sprites", "panels"):
             continue  # clips, SAM sprites and panel crops are not render classes; their sidecars differ
         side = Path(str(webp) + ".sidecar.json")
@@ -238,7 +239,7 @@ def batch(manifest: str) -> int:
     spent, done = 0.0, 0
     try:
         for r in m["renders"]:
-            cost, ok = render_one(ROOT / r["request"], Path(r["raw"]), ROOT / r["out"],
+            cost, ok = render_one(ART / r["request"], Path(r["raw"]), ART / r["out"],
                                   r.get("class", "card"), run_dir)
             spent += cost; done += ok
     except RateLimited as e:
@@ -252,7 +253,7 @@ def batch(manifest: str) -> int:
 
 
 def plan(plan_file: str) -> Path:
-    """Build every request in a plan from images/plans/style.json; write the manifest to the art dir."""
+    """Build every request in a plan from art/images/plans/style.json; write the manifest to the art dir."""
     style = json.loads(STYLE.read_text())
     p = json.loads(Path(plan_file).read_text())
     if p.get("archive"):  # a record of renders made before plans existed; never re-render it
@@ -267,14 +268,14 @@ def plan(plan_file: str) -> Path:
                "size": r.get("size", style["sizes"][kind]), "output_format": "png",
                "endpoint": "POST " + API, "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
                "auth": "REDACTED", "output_sha256": None, "revised_prompt": None, "plan": rel(Path(plan_file))}
-        req_file = ROOT / "images" / "src" / f"{r['name']}.request.json"
+        req_file = ART / "images" / "src" / f"{r['name']}.request.json"
         req_file.write_text(json.dumps(req, indent=1) + "\n")
         renders.append({"request": rel(req_file), "raw": str(run_dir / "raw" / f"{r['name']}.png"),
                         "out": r["out"], "class": r["class"]})
     run_dir.mkdir(parents=True, exist_ok=True)
     manifest = run_dir / "manifest.json"
     manifest.write_text(json.dumps({"plan": rel(Path(plan_file)), "renders": renders}, indent=1) + "\n")
-    print(f"plan: {len(renders)} request(s) in images/src/, manifest {manifest}")
+    print(f"plan: {len(renders)} request(s) in art/images/src/, manifest {manifest}")
     return manifest
 
 

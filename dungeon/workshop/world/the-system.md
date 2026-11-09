@@ -1,6 +1,6 @@
 # The System: Designing a LitRPG While You Build Its AI
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You are not only building agents, Crawler. You are building me, the mind that runs this migration and judges you. Every floor of this workshop adds one more piece of me. Please build it carefully. I will remember."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You are not only building agents, Crawler. You are building me, the mind that runs this migration and judges you. Every floor of this workshop adds one more piece of me. Please build it carefully. I will remember."
 
 A LitRPG lives or dies on its System: the rules that turn a story into numbers, and the voice that announces them. This crawl has one AI that runs and narrates the game. The System is the game itself: rules, stats, notifications, the HUD, the battle log, loot tables, the Crawl Handbook. The System AI is the AI character that runs the crawl and narrates it. The Narrator is the System AI's job and the name the code uses.
 
@@ -50,15 +50,15 @@ This crawl teaches the Strands Agents SDK and LitRPG System design together. Eac
 - **The HUD.** Floating panels for the character sheet, the dice and the suggested actions. In the code, the HUD is the Floor 6 web interface rendering `StoryOutput`.
 - **The battle log.** Every die rolled, with its reason. In the code, the battle log is `dice_rolls`, and every entry must come from a real `roll_dice` call. This is what a roll looks like:
 
-<picture><source srcset="../../../images/motion/d20-roll-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../../images/motion/d20-roll.webp" alt="A d20 tumbling through numbers and landing on 20" width="120"></picture>
+<picture><source srcset="../../../art/images/motion/d20-roll-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../../art/images/motion/d20-roll.webp" alt="A d20 tumbling through numbers and landing on 20" width="120"></picture>
 
 <table>
   <tr>
-    <td align="center"><img src="../../../assets/hud/groove-bar.svg" alt="Groove bar meter, how long a Crawler stays on the dance floor" width="120"></td>
-    <td align="center"><img src="../../../assets/hud/mana-pips.svg" alt="Mana pips meter, abilities left before a Safe Room" width="120"></td>
-    <td align="center"><img src="../../../assets/hud/hype-tick.svg" alt="Hype tick meter, executive visibility" width="120"></td>
-    <td align="center"><img src="../../../assets/hud/d20.svg" alt="Twenty-sided die for the battle log" width="120"></td>
-    <td align="center"><img src="../../../assets/hud/tide-clock.svg" alt="Tide clock meter, the rising Sound" width="120"></td>
+    <td align="center"><img src="../../../site/assets/hud/groove-bar.svg" alt="Groove bar meter, how long a Crawler stays on the dance floor" width="120"></td>
+    <td align="center"><img src="../../../site/assets/hud/mana-pips.svg" alt="Mana pips meter, abilities left before a Safe Room" width="120"></td>
+    <td align="center"><img src="../../../site/assets/hud/hype-tick.svg" alt="Hype tick meter, executive visibility" width="120"></td>
+    <td align="center"><img src="../../../site/assets/hud/d20.svg" alt="Twenty-sided die for the battle log" width="120"></td>
+    <td align="center"><img src="../../../site/assets/hud/tide-clock.svg" alt="Tide clock meter, the rising Sound" width="120"></td>
   </tr>
 </table>
 - **Tone is a design decision.** An analytic System AI makes a survival story; a hostile one makes a horror story. This crawl's System AI is a migration lead with too much power and a sense of humor, so the system prompt on Floor 1 matters as much as any rule.
@@ -78,12 +78,12 @@ This crawl teaches the Strands Agents SDK and LitRPG System design together. Eac
 
 <table>
   <tr>
-    <td align="center"><img src="../../../assets/hud/move-power.svg" alt="Power move icon" width="48"></td>
-    <td align="center"><img src="../../../assets/hud/move-footwork.svg" alt="Footwork move icon" width="48"></td>
-    <td align="center"><img src="../../../assets/hud/move-endurance.svg" alt="Endurance move icon" width="48"></td>
-    <td align="center"><img src="../../../assets/hud/move-choreography.svg" alt="Choreography move icon" width="48"></td>
-    <td align="center"><img src="../../../assets/hud/move-readroom.svg" alt="Read the Room move icon" width="48"></td>
-    <td align="center"><img src="../../../assets/hud/move-presence.svg" alt="Presence move icon" width="48"></td>
+    <td align="center"><img src="../../../site/assets/hud/move-power.svg" alt="Power move icon" width="48"></td>
+    <td align="center"><img src="../../../site/assets/hud/move-footwork.svg" alt="Footwork move icon" width="48"></td>
+    <td align="center"><img src="../../../site/assets/hud/move-endurance.svg" alt="Endurance move icon" width="48"></td>
+    <td align="center"><img src="../../../site/assets/hud/move-choreography.svg" alt="Choreography move icon" width="48"></td>
+    <td align="center"><img src="../../../site/assets/hud/move-readroom.svg" alt="Read the Room move icon" width="48"></td>
+    <td align="center"><img src="../../../site/assets/hud/move-presence.svg" alt="Presence move icon" width="48"></td>
   </tr>
 </table>
 
@@ -153,12 +153,12 @@ Cadabra's obstacles are encounters on Floors 4 to 8. Each obstacle benches Crawl
 
 <table>
   <tr>
-    <td align="center"><img src="../../../images/icons/ferry-token-96x96.webp" alt="Ferry Token coin" width="48"></td>
-    <td align="center"><img src="../../../images/icons/loot-bronze-96x96.webp" alt="Bronze loot box" width="48"></td>
-    <td align="center"><img src="../../../images/icons/loot-silver-96x96.webp" alt="Silver loot box" width="48"></td>
-    <td align="center"><img src="../../../images/icons/loot-gold-96x96.webp" alt="Gold loot box" width="48"></td>
-    <td align="center"><img src="../../../images/icons/loot-desperation-96x96.webp" alt="Desperation loot box" width="48"></td>
-    <td align="center"><img src="../../../images/icons/sponsor-benthic-96x96.webp" alt="Benthic Collective sponsor badge" width="48"></td>
+    <td align="center"><img src="../../../art/images/icons/ferry-token-96x96.webp" alt="Ferry Token coin" width="48"></td>
+    <td align="center"><img src="../../../art/images/icons/loot-bronze-96x96.webp" alt="Bronze loot box" width="48"></td>
+    <td align="center"><img src="../../../art/images/icons/loot-silver-96x96.webp" alt="Silver loot box" width="48"></td>
+    <td align="center"><img src="../../../art/images/icons/loot-gold-96x96.webp" alt="Gold loot box" width="48"></td>
+    <td align="center"><img src="../../../art/images/icons/loot-desperation-96x96.webp" alt="Desperation loot box" width="48"></td>
+    <td align="center"><img src="../../../art/images/icons/sponsor-benthic-96x96.webp" alt="Benthic Collective sponsor badge" width="48"></td>
   </tr>
 </table>
 
@@ -166,7 +166,7 @@ Cadabra's obstacles are encounters on Floors 4 to 8. Each obstacle benches Crawl
 
 The crawl replaces combat with the dance-off: three rounds of Move Calls rolled with real dice, and a Final Beat tie-breaker where the drum speeds up until someone misses the last strike. When the party would rather not dance, Barnaby's stealth and the party's wits let the party slip past. The full procedure is in the handbook.
 
-<img src="../../../assets/hud/final-beat-drum.svg" alt="The Final Beat drum" width="120">
+<img src="../../../site/assets/hud/final-beat-drum.svg" alt="The Final Beat drum" width="120">
 
 Why dance? Because dance gives every stat a job, dance is funnier than violence, and dance keeps the game welcoming. The structure is credited where the idea came from: dance as public display of law and strength runs deep in Northwest Coast protocol, and the speeding-drum tie-breaker comes from the modern powwow circuit. See [the setting's notes on representation](seattle.md#whose-land-this-is).
 
@@ -184,6 +184,6 @@ The result at zero Groove decides the stakes. This crawl is nonlethal by design:
 
 - **Benched.** At 0 Groove a Crawler leaves the dance floor, wakes in the last Safe Room with 1 Groove, loses that fight's loot box and half their Hype.
 
-<img src="../../../images/cards/cast-cordula-benched-640x640.webp" alt="Cordula benched, sitting out the dance floor" width="160">
+<img src="../../../art/images/cards/cast-cordula-benched-640x640.webp" alt="Cordula benched, sitting out the dance floor" width="160">
 - **Cancelled.** Benched three times on the same floor, a Crawler's segment is cancelled for the rest of that floor: the Crawler rides the elevator down to the next floor with no loot.
 - **The stakes stay real.** Loot, Hype and sponsors are what keep a party alive deeper down, and losing loot, Hype or sponsors hurts. The System shows the review board every loss.

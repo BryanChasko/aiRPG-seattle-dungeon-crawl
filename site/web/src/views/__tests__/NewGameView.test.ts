@@ -113,10 +113,10 @@ describe('NewGameView', () => {
       expect(text).toContain('8002')
       expect(text).toContain('8009')
       const hrefs = wrapper.findAll('a').map((a) => a.attributes('href') ?? '')
-      expect(hrefs.some((h) => h.endsWith('/workshop/floor-5.md'))).toBe(true)
-      expect(hrefs.some((h) => h.endsWith('/workshop/floor-6.md'))).toBe(true)
+      expect(hrefs.some((h) => h.endsWith('/dungeon/workshop/floor-5.md'))).toBe(true)
+      expect(hrefs.some((h) => h.endsWith('/dungeon/workshop/floor-6.md'))).toBe(true)
       expect(
-        hrefs.some((h) => h === 'https://github.com/BryanChasko/aiRPG-seattle-dungeon-crawl'),
+        hrefs.some((h) => h === 'https://github.com/BryanChasko/seattle-strands-dungeon-crawl'),
       ).toBe(true)
     })
   })

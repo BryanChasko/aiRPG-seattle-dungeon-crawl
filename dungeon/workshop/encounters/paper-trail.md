@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-5-paper-trail/index_audit_report.py`](../../encounters/floor-5-paper-trail/index_audit_report.py), [`encounters/floor-5-paper-trail/audit-report.pdf`](../../encounters/floor-5-paper-trail/audit-report.pdf), [`encounters/floor-5-paper-trail/make_audit_report.py`](../../encounters/floor-5-paper-trail/make_audit_report.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 7, TUESDAY, JUNE 23, SIDE PASSAGE OFF FLOOR 5.** After the dance-off, the Quarterly Close Accountant left in a hurry and left a binder behind on the pickleweed: AUDIT REPORT, two pages, signed. I do not read other people's mail. Barnaby does, and he says an audit of us is not other people's mail. The problem was that our rule clerk could only read Markdown, and the binder was a PDF. So we taught the rule clerk to read paper.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 7, TUESDAY, JUNE 23, SIDE PASSAGE OFF FLOOR 5.** After the dance-off, the Quarterly Close Accountant left in a hurry and left a binder behind on the pickleweed: AUDIT REPORT, two pages, signed. I do not read other people's mail. Barnaby does, and he says an audit of us is not other people's mail. The problem was that our rule clerk could only read Markdown, and the binder was a PDF. So we taught the rule clerk to read paper.
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "An audit, Crawlers. Of you. The System AI has read the audit. The System AI laughed at Finding 2. Feed the audit to the Rules Agent and find out what an accountant thinks of your bookkeeping."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "An audit, Crawlers. Of you. The System AI has read the audit. The System AI laughed at Finding 2. Feed the audit to the Rules Agent and find out what an accountant thinks of your bookkeeping."
 
 ## The Brief
 
@@ -74,7 +74,7 @@ Replace the `return []` under the TODO.
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** A PDF is a picture of a page with words under it. Pulling the words back out is the whole trick. This PDF came out clean, two pages, five findings, one management response. Barnaby read Finding 2 and went the color of a stop sign.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** A PDF is a picture of a page with words under it. Pulling the words back out is the whole trick. This PDF came out clean, two pages, five findings, one management response. Barnaby read Finding 2 and went the color of a stop sign.
 
 ## Step 3: Cut and Label the Passages
 
@@ -133,7 +133,7 @@ The Rules Agent terminal shows the passages it found, `[Audit Report, page 1]` a
 
 Nothing on AWS for the indexing: `pypdf` and ChromaDB run on the local machine, and the embedding model is the one Floor 5 already downloaded: `all-MiniLM-L6-v2`, 79.3 MB, which took about 2 to 3 minutes in the live run, downloads once and is cached after that. The question costs a Narrator turn, under one cent ([Floor 5](../floor-5.md#what-a-narrator-turn-costs)).
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The rule clerk read the audit back to us with section and page, in the same bored voice it uses for the Final Beat. Finding 1 was fair. Finding 3 was fair too: I had not checked the tide before the dance-off, and the tide matters on this floor. The tide check is on my checklist now. Finding 5 we kept to ourselves. Barnaby has filed a formal dispute of Finding 2. The dispute is four pages long. I have not read the dispute.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The rule clerk read the audit back to us with section and page, in the same bored voice it uses for the Final Beat. Finding 1 was fair. Finding 3 was fair too: I had not checked the tide before the dance-off, and the tide matters on this floor. The tide check is on my checklist now. Finding 5 we kept to ourselves. Barnaby has filed a formal dispute of Finding 2. The dispute is four pages long. I have not read the dispute.
 
 ## Encounter Clear
 
@@ -143,7 +143,7 @@ Loot kept:
 - How to add a new source to an existing knowledge base: same cut, same collection, a section name to cite
 - Why `upsert` with stable ids makes an indexing script safe to run twice
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[AUDITED AND UNBOTHERED]**
 >

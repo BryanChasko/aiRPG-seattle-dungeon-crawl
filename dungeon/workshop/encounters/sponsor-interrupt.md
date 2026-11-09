@@ -2,15 +2,15 @@
 
 [Back to Floor 6](../floor-6.md) | [All encounters](README.md) | [Dungeon map](../README.md) <!-- floor-nav -->
 
-Files on this side passage: [`encounters/floor-6-sponsor-interrupt/sponsor_interrupt.py`](../../encounters/floor-6-sponsor-interrupt/sponsor_interrupt.py), [`web/src/components/SponsorDealDialog.vue`](../../../web/src/components/SponsorDealDialog.vue), [`web/src/composables/useGameApi.ts`](../../../web/src/composables/useGameApi.ts), [`web/src/stores/gameStore.ts`](../../../web/src/stores/gameStore.ts), [`web/src/views/GameView.vue`](../../../web/src/views/GameView.vue) <!-- floor-files -->
+Files on this side passage: [`encounters/floor-6-sponsor-interrupt/sponsor_interrupt.py`](../../encounters/floor-6-sponsor-interrupt/sponsor_interrupt.py), [`web/src/components/SponsorDealDialog.vue`](../../../site/web/src/components/SponsorDealDialog.vue), [`web/src/composables/useGameApi.ts`](../../../site/web/src/composables/useGameApi.ts), [`web/src/stores/gameStore.ts`](../../../site/web/src/stores/gameStore.ts), [`web/src/views/GameView.vue`](../../../site/web/src/views/GameView.vue) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, SIDE PASSAGE OFF FLOOR 6.** The Pitch-Deck Founder caught us between rounds with a clicker in one hand and a contract in the other. The Bellevue Consortium pays for the opponents, and the Consortium had a deal for us: wear the logo for a floor, receive a box. The Troll said nothing. Barnaby read the first line out loud and then the System AI cut in and held the clock. Here is what I learned. The System AI can stop the turn. It cannot answer for us. When the deal came, the turn waited on me, and I took my time.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, SIDE PASSAGE OFF FLOOR 6.** The Pitch-Deck Founder caught us between rounds with a clicker in one hand and a contract in the other. The Bellevue Consortium pays for the opponents, and the Consortium had a deal for us: wear the logo for a floor, receive a box. The Troll said nothing. Barnaby read the first line out loud and then the System AI cut in and held the clock. Here is what I learned. The System AI can stop the turn. It cannot answer for us. When the deal came, the turn waited on me, and I took my time.
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "A sponsor is on the line. The status feed is holding. Please enjoy this tasteful pause while the Crawler reads the terms. The terms are long. The review board is patient. The review board is not as patient."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "A sponsor is on the line. The status feed is holding. Please enjoy this tasteful pause while the Crawler reads the terms. The terms are long. The review board is patient. The review board is not as patient."
 
-<img src="../../../images/cards/opponent-founder-640x640.webp" alt="The Pitch-Deck Founder in a black turtleneck and white sneakers, slide clicker held high, a glowing arrow chart rising behind her" width="240">
+<img src="../../../art/images/cards/opponent-founder-640x640.webp" alt="The Pitch-Deck Founder in a black turtleneck and white sneakers, slide clicker held high, a glowing arrow chart rising behind her" width="240">
 
 ## The Brief
 
@@ -73,7 +73,7 @@ Replace the `pass`. The Agent already receives the provider with `hooks=[sponsor
 
 `event.interrupt("sponsor_deal", reason=reason)` is the whole mechanism. The name identifies the interrupt, and the name must be unique among the interrupts the hooks raise. The reason is any JSON-friendly value; here the reason holds the sponsor, the offer, the reward and the cost, which is exactly what the dialog needs. On the first pass the call raises an exception that Strands catches to stop the loop. On the resume it returns whatever the player answered, so the line reads like a plain function call and the code after the call runs only once there is an answer.
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One call, and the turn stopped. No flag to set, no state to save. The pause was a checklist item I could not tick until somebody signed. I have flown with worse systems. I have flown with no systems.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One call, and the turn stopped. No flag to set, no state to save. The pause was a checklist item I could not tick until somebody signed. I have flown with worse systems. I have flown with no systems.
 
 ## Step 3: Let a Refusal Cancel the Tool
 
@@ -164,7 +164,7 @@ The web interface already ships the dialog. `useGameApi` posts the turn and read
 The dialog is optional, like the Hype panel. A Narrator that never sends `interrupt` never opens the dialog, and the Floor 5 Narrator works with the same page. Run the interface from this repository, as in [Floor 6](../floor-6.md#web-interface):
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/web
+cd aiRPG-seattle-dungeon-crawl/site/web
 npm ci
 npm run dev
 ```
@@ -215,7 +215,7 @@ The pause costs nothing: while the turn waits, Amazon Nova 2 Lite does not run a
 
 Rates are the Nova 2 Lite prices from [Floor 1](../floor-1.md#what-a-turn-costs).
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I refused the first deal. The Founder took it well, for a person who had just rehearsed it for four hours. The second deal had a fine-print clause about the Troll. I accepted the deal before Barnaby could finish reading, and I will hear about that. Two answers, two different turns, and both were mine.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I refused the first deal. The Founder took it well, for a person who had just rehearsed it for four hours. The second deal had a fine-print clause about the Troll. I accepted the deal before Barnaby could finish reading, and I will hear about that. Two answers, two different turns, and both were mine.
 
 ## Encounter Clear
 
@@ -226,7 +226,7 @@ Loot to keep:
 - `event.cancel_tool` turns a refusal into a tool result the Narrator can retell
 - A web interface can feature-detect a new field and open a dialog only when it appears
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[READ THE FINE PRINT]**
 >

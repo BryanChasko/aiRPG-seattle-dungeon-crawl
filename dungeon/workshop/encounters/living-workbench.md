@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-3-living-workbench/living_workbench.py`](../../encounters/floor-3-living-workbench/living_workbench.py), [`encounters/floor-3-living-workbench/shelf/final_beat.py`](../../encounters/floor-3-living-workbench/shelf/final_beat.py), [`encounters/floor-3-living-workbench/tools/roll_d20.py`](../../encounters/floor-3-living-workbench/tools/roll_d20.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 3, FRIDAY, JUNE 19, SIDE PASSAGE OFF FLOOR 3.** Past the last kelp holdfast there was a workbench bolted to the rock, with one tool hung on the pegboard: the dice. A tie came up on the table behind us, and the System AI announced that it could not settle the tie. No Final Beat on the bench. My first thought was the one I have in a motor pool: pull the vehicle, fit the part, start it up again. Barnaby put an arm across the pegboard. "Sergeant, there is a folder. I watch it. Put the part in the folder and I take the part, mid-sentence, without going down."
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 3, FRIDAY, JUNE 19, SIDE PASSAGE OFF FLOOR 3.** Past the last kelp holdfast there was a workbench bolted to the rock, with one tool hung on the pegboard: the dice. A tie came up on the table behind us, and the System AI announced that it could not settle the tie. No Final Beat on the bench. My first thought was the one I have in a motor pool: pull the vehicle, fit the part, start it up again. Barnaby put an arm across the pegboard. "Sergeant, there is a folder. I watch it. Put the part in the folder and I take the part, mid-sentence, without going down."
 <!-- /cordula-log -->
 
-> <img src="../../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "A workbench. Hot-swappable. I want it on the record that I was not consulted, and that I have never once been caught without a tool. I am early for the tool."
+> <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "A workbench. Hot-swappable. I want it on the record that I was not consulted, and that I have never once been caught without a tool. I am early for the tool."
 
 ## The Brief
 
@@ -55,7 +55,7 @@ One argument on the `Agent`, in `make_workbench()`. Without the argument the age
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One flag, and a pegboard that had been decoration became inventory. The first turn came back with a list of one: the dice. I read the list twice. I always read the list twice before I change it.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One flag, and a pegboard that had been decoration became inventory. The first turn came back with a list of one: the dice. I read the list twice. I always read the list twice before I change it.
 
 ## Step 2: Import the Decorator
 
@@ -125,7 +125,7 @@ Replace the `pass`. The watcher reacts to a file that is modified, and a copy wr
 
 </details>
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I copied the file and counted. One second, two. The pegboard did not change, but the list did: dice, then dice and the Final Beat. The same agent, the same conversation, no restart. In the Reserve we called that a field repair. The tie came up again and the drum sounded, and that was the whole job.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I copied the file and counted. One second, two. The pegboard did not change, but the list did: dice, then dice and the Final Beat. The same agent, the same conversation, no restart. In the Reserve we called that a field repair. The tie came up again and the drum sounded, and that was the whole job.
 
 ## Work the Bench
 
@@ -160,7 +160,7 @@ The script removes `tools/final_beat.py` when it finishes, so the next run start
 
 The folder and the watcher cost nothing; both run locally. The tool adds one specification to the input to Amazon Nova 2 Lite, about 150 tokens, and Amazon Nova 2 Lite bills those tokens on every call after the tool joins. A turn of about 1,000 input and 80 output tokens is 1,000 x $0.30 per million plus 80 x $2.50 per million, about $0.0005. The two turns are about a tenth of a cent in total. See the [Floor 1 cost table](../floor-1.md#what-a-turn-costs).
 
-> <img src="../../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby asked whether I would leave the bench open. I said no. A tool folder anyone can write to is a motor pool bay door left up. He said that is the right instinct and also, regrettably, the same instinct that put a lock on the aquarium's snack cupboard. We shut the door and kept the key. The workbench stays for the shop. The crowd gets the finished kit.
+> <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby asked whether I would leave the bench open. I said no. A tool folder anyone can write to is a motor pool bay door left up. He said that is the right instinct and also, regrettably, the same instinct that put a lock on the aquarium's snack cupboard. We shut the door and kept the key. The workbench stays for the shop. The crowd gets the finished kit.
 
 ## Encounter Clear
 
@@ -172,7 +172,7 @@ Loot to keep:
 - A failed reload is logged and not raised, so a missing tool means a log to read
 - Hot reload is for development; list the tools in code when the agent goes in front of the crowd
 
-> <img src="../../../images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
+> <img src="../../../art/images/icons/achievement-96x96.webp" alt="" width="28" height="28"> **NEW ACHIEVEMENT UNLOCKED!**
 >
 > **[FIELD REPAIR, NO DOWNTIME]**
 >

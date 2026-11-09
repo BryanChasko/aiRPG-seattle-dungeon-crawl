@@ -3,15 +3,15 @@
 A Visual Lit aiRPG: a LitRPG you can see, run by one System AI, built one floor at a time with the Strands Agents SDK on Amazon Nova 2 Lite. Conflict is a dance-off. Nobody gets hurt.
 
 <!-- art slot: hero, 1600x600, art team -->
-![Cordula in a matte black drysuit on the flooded floor of collapsed Pier 59, kayak paddle in hand, bull kelp overhead, dark water and wreck girders behind her, and the Space Needle showing through the breach](../../images/banner-1680x720.webp)
+![Cordula in a matte black drysuit on the flooded floor of collapsed Pier 59, kayak paddle in hand, bull kelp overhead, dark water and wreck girders behind her, and the Space Needle showing through the breach](../../art/images/banner-1680x720.webp)
 
 "Roll for Initiative... in Python!"
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Welcome, Crawlers, to the dungeon under Seattle. Pier 59 collapsed this morning, the Salish Sea came in, and you came with it: soaked, short one kayak, armed with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods. Every script you run drops an achievement box. Write a clean loop and earn a Bronze Box. Burn through your token limit with an accidental infinite loop and earn a Desperation Box. The review board is watching. Try to be interesting."
+> <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Welcome, Crawlers, to the dungeon under Seattle. Pier 59 collapsed this morning, the Salish Sea came in, and you came with it: soaked, short one kayak, armed with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods. Every script you run drops an achievement box. Write a clean loop and earn a Bronze Box. Burn through your token limit with an accidental infinite loop and earn a Desperation Box. The review board is watching. Try to be interesting."
 
 ## Who I Am
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I am Cordula Vance. Core, to anyone who has shared a boat with me. Marine Corps Reserve, amphibious crew chief, and before work I sweep debris off the Sound in a kayak. On Wednesday, June 17, I tied up under Pier 59, and at 0551 the pier folded into Elliott Bay with both of us under it.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I am Cordula Vance. Core, to anyone who has shared a boat with me. Marine Corps Reserve, amphibious crew chief, and before work I sweep debris off the Sound in a kayak. On Wednesday, June 17, I tied up under Pier 59, and at 0551 the pier folded into Elliott Bay with both of us under it.
 >
 > He fights beside me now, a kraken-scale octopus who refuses to confirm or deny the King Octopus legend. His name is Barnaby. Eight arms, a doctorate's worth of opinions, and, since I clamped a collar on him, a British accent.
 >
@@ -124,7 +124,7 @@ Floor 0 covers the installs: Python, uv and the repository. Bring basic Python k
 
 ### Clear the Floors in Order
 
-> <img src="../../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Complete the floors in order. Each builds upon the previous one's knowledge and skills.
+> <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Complete the floors in order. Each builds upon the previous one's knowledge and skills.
 
 - Start with Floor 0 - Set up the environment (Python, uv, the repository)
 - Progress through each floor - don't skip ahead, each floor introduces one new Strands concept
