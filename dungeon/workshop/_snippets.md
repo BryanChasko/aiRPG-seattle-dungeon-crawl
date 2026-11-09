@@ -3,7 +3,7 @@
 Speaker icons in front of a bold name carry `alt=""`, so a screen reader says the name once. The System AI is the only AI speaker; there is no Narrator label.
 
 Conventions match the floor-5.md template: `floor-nav`, `floor-files`,
-`cordula-log` markers. Paths are relative to `workshop/`.
+`cordula-log` markers. Paths are relative to `dungeon/workshop/`.
 
 ## Voices: who is talking, in type
 
@@ -49,7 +49,7 @@ Variants: swap the icon for `warning-96x96.webp` (**SYSTEM WARNING:**),
 <!-- /cordula-log -->
 ```
 
-Days and dates come from `workshop/world/timeline.md`.
+Days and dates come from `dungeon/workshop/world/timeline.md`.
 
 ## Dungeon-map details checklist
 

@@ -11,7 +11,7 @@
 
 > <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Most parties enter the dungeon as a panicking human and a confused pet. This one entered as a Marine Corps crew chief and a Ph.D.-level escape artist with eight arms, and picked up a clam that will not be moved and a fish shaped like an angry golf ball on the way down. Throughput has never been higher."
 
-This page holds the character sheets: the four members of the party, in the order they join, and the System AI that runs the crawl. The days and dates are in [The Timeline](timeline.md).
+This page holds the character sheets: the two Crawlers and the two companions, in the order they join, and the System AI that runs the crawl. The days and dates are in [The Timeline](timeline.md).
 
 ```
 +-------------------------------------------------------------------------------+
@@ -47,7 +47,7 @@ This page holds the character sheets: the four members of the party, in the orde
 
 Cordula grew up three blocks from Salmon Bay. Her father fixed diesel engines on the crab and longline boats at Fishermen's Terminal, and her mother worked nights as a trauma nurse at Harborview, so Cordula learned early to make her own breakfast and to read a tide table. Summers she sat in the fish ladder viewing room at the Ballard Locks and counted salmon through the windows. She learned to paddle at Shilshole at ten, pitched for the Ballard High softball team, and enlisted in the Marine Corps Reserve at nineteen.
 
-Every fall a film crew came to the terminal to shoot the crab boats leaving for the Bering Sea. Cordula learned two things from them. A camera will film a man going over the side, and a camera will not throw him a line. She has been the one throwing the line ever since, and now she is under audit in front of billions of stakeholders.
+Every fall a film crew came to the terminal to shoot the crab boats leaving for the Bering Sea. Cordula learned two things from them. A camera will film a man going over the side, and a camera will not throw him a line. She has been the one throwing the line ever since, and now she is under audit in front of a Consortium review board.
 
 ### Why She Went Toward Him
 
@@ -267,7 +267,7 @@ On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the hold
 | Fact | Detail |
 |---|---|
 | What it is | the one AI character: runs the crawl and narrates it |
-| Online | 0551 on Day 1, Wednesday, June 17, 2026. Built somewhere else, for quarters on other worlds; Seattle is its first quarter on Earth |
+| Online | 0551 on Day 1, Wednesday, June 17, 2026. Built somewhere else, for dry-city migrations; Seattle is its first quarter in the water |
 | Runs | the floors, the tides, the stairwells, the opponents it drops in, the Move Calls and every ruling, the dice, the rules, the memory of every Crawler, notifications, achievements, loot boxes, character sheets, sponsor messages and the throughput numbers |
 | Cares about | a complete quarter and the throughput SLA: every floor run, every rule applied the same way twice, every die fair, and the review board staying to the end |
 | Likes | drama, an exploit it did not see coming, Barnaby, who is throughput gold, stakeholder escalations, sponsor money, balance, order, a ruling that holds |
@@ -278,7 +278,7 @@ On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the hold
 | In the source workshop | the agent that runs the game |
 | In the code | the Narrator orchestrator on [Floor 5](../floor-5.md), rebuilt with Strands harness on [Floor 7](../floor-7.md) and deployed to AgentCore Runtime on [Floor 8](../floor-8.md); the voice in the system prompt, which [Floor 1](../floor-1.md) sets the tone for, and the `StoryOutput` fields the HUD shows on [Floors 5](../floor-5.md) and [6](../floor-6.md) |
 
-The System AI built the dungeon. At 0551 on Day 1 it folded the Seattle waterfront down and in, the way a map folds, and laid eight floors under the Sound. The System AI was built for dry cities, and nobody told it about the Salish Sea. The Sound came in through the breach and shorted it. Its voice, its dice, its rules and its memory washed out across the floors. The broadcast relay and the collars survived, so it can still push canned status reports, achievement templates and the prerecorded quarter opener through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
+The System AI built the dungeon. At 0551 on Day 1 it folded the Seattle waterfront down and in, the way a map folds, and laid eight floors under the Sound. The System AI was built for dry cities, and nobody told it about the Salish Sea. The Sound came in through the breach and shorted it. Its voice, its dice, its rules and its memory washed out across the floors. The broadcast relay and the collar survived, so it can still push canned status reports, achievement templates and the prerecorded quarter opener through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
 
 The party rebuilds the System AI one piece per floor, and each piece is that floor's Strands lesson. Every piece passes through Barnaby's collar on its way back into the System AI, so Barnaby gets each piece first; that is why he wakes up a little more on every floor:
 

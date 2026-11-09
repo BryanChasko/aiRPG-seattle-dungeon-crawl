@@ -5,7 +5,7 @@
 ![The Exit: Final Cleanup](../../art/images/floors/exit-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, THE EXIT.** We came up on the beach at Alki at sunrise, 0515, the skyline across the bay and the rain finally easing off. I packed out everything we brought in, as on any patrol: every deployment, every log, every file. The Sound was right there. He had come from the wreck at the Narrows, where the King Octopus legend lives, and the Sound would take him back whenever he was ready. I told him it was open and the choice was his. Barnaby looked at the water for a long time. Then he looked at me.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, THE EXIT.** We came up on the beach at Alki at sunrise, 0515, the skyline across the bay and the rain finally easing off. I packed out everything we brought in, as on any patrol: every deployment, every log, every file. The Sound was right there. Barnaby had come from the wreck at the Narrows, where the King Octopus legend lives, and the Sound would take him back whenever he was ready. I told him it was open and the choice was his. Barnaby looked at the water for a long time. Then he looked at me.
 <!-- /cordula-log -->
 
 > <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The crawl is over and the quarter closes at midnight. Stop the servers, tear down the stack, delete the bucket and the log groups. Any resource left running keeps billing the account, and I do not forgive invoices."
@@ -129,8 +129,8 @@ The CDK bootstrap stack: on the first deployment, the CLI bootstrapped the regio
 
 Every item below is generated during the workshop and gitignored, delete freely:
 
-- `5_a2a_integration/utils/rules_knowledge_base/`: the ChromaDB knowledge base built from the Crawl Handbook
-- `7_strands_harness/.agent/`: the Strands harness sessions and memory
+- `dungeon/5_a2a_integration/utils/rules_knowledge_base/`: the ChromaDB knowledge base built from the Crawl Handbook
+- `dungeon/7_strands_harness/.agent/`: the Strands harness sessions and memory
 - `.venv/` at the repository root, if the Python environment is no longer needed
 
 [`5_a2a_integration/agents/character_agent/characters.json`](../5_a2a_integration/agents/character_agent/characters.json) ships with the repository, empty. Restore the file to clear the party's Floor 5 registration:
@@ -143,7 +143,7 @@ git checkout -- dungeon/5_a2a_integration/agents/character_agent/characters.json
 
 ## The Last Log
 
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, ALKI, 0515.** High water had come at 0442, an hour and a quarter earlier than on the morning the pier fell, and the sun was up at 0515. I told him the truth: the System AI was rebuilt, the collar would keep working, and the Sound was open, whenever he wanted it. He did not have to be carried to be the party leader. He never did. I held out the open water and told him it was his call. He looked at the Sound for a long time. Then he poured himself across the sand and into the shallows, charcoal going to crimson going to white, moving fast the way a real octopus can for a stretch, and was gone. I sat on the sand for a while. Shelly dug in next to my boot. Chonks stuck himself to my forearm guard. At 0631 the collar pinged in my earpiece. "Sergeant. The Narrows. Next Tuesday. Bring the kayak." That is the end of the crawl. It is not the end of the patrol.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, ALKI, 0515.** High water had come at 0442, an hour and a quarter earlier than on the morning the pier fell, and the sun was up at 0515. I told him the truth: the System AI was rebuilt, the collar would keep working, and the Sound was open, whenever he wanted it. He did not have to be carried to be the party leader. He never did. I held out the open water and told him it was his call. He looked at the Sound for a long time. Then he poured himself across the sand and into the shallows, charcoal going to crimson going to white, moving fast the way a real octopus can for a stretch, and was gone. I sat on the sand for a while. Shelly dug in next to my boot. Chonks stuck himself to my forearm guard. At 0631 the collar pinged in my earpiece. "Sergeant. The Narrows. Next Tuesday. Bring a kayak." That is the end of the crawl. It is not the end of the patrol.
 
 ## Floor Clear
 

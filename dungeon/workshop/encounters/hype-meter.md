@@ -15,7 +15,7 @@ Files on this side passage: [`encounters/floor-6-hype-meter/hype_meter.py`](../.
 | | |
 |---|---|
 | type | sidequest |
-| starts from | [Floor 6](../floor-6.md), finished: the Floor 5 Narrator on port 8009 and the web interface in `web/` |
+| starts from | [Floor 6](../floor-6.md), finished: the Floor 5 Narrator on port 8009 and the web interface in `site/web/` |
 | build | a hook that turns tool and model events into Visibility, a new `GET /hype` route on the Narrator, and a panel in the web interface that shows the total |
 | teaches | [`strands.hooks.registry`](https://strandsagents.com/docs/api/python/strands.hooks.registry/): `HookProvider`, `HookRegistry.add_callback`; [`strands.hooks.events`](https://strandsagents.com/docs/api/python/strands.hooks.events/): `AfterToolCallEvent`, `AfterModelCallEvent` |
 | time | about 20 minutes |

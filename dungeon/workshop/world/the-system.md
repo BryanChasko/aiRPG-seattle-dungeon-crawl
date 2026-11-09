@@ -116,7 +116,7 @@ CLASS SELECTION    ABILITY EVOLUTION                SPECIALIZATION       STAT SY
 - **Classes.** Twelve Seattle classes at Level 1, each with a favorite Move Call. Classes branch into hybrid classes later (Amphibious Breacher into Tidewall Breacher; Benthic Dragoon into Abyssal Choreographer). See the handbook's classes section.
 - **Skill fusion.** Two Level 3 skills from the same party fuse at a Safe Room forge: Barnaby's Ink Cloud and Shelly's Saltwater Jet fuse into *Inkjet*.
 - **Titles and feats.** Passive bonuses for ridiculous accomplishments, announced by the System. Cordula starts with *Salish Sea Guardian*.
-- **Synergy and exploits.** The party's real power is combos: Chonks latches, Barnaby holds, Cordula hits the Final Beat. Barnaby fights and dances beside Cordula, taking Choreography and Presence calls while she takes Power, Footwork and the Final Beat. The System AI respects an exploit it did not see coming, and pays out a loot box for the exploit.
+- **Synergy and exploits.** The party's real power is combos: Chonks latches, Barnaby holds, Cordula hits the Final Beat. Barnaby fights and dances beside Cordula, taking Choreography and Presence calls while she takes Power, Endurance, Footwork and the Final Beat. The System AI respects an exploit it did not see coming, and pays out a loot box for the exploit.
 
 ## 5. World-building and economy
 

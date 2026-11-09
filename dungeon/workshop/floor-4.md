@@ -201,11 +201,11 @@ Open a second terminal (the server keeps running in the first one), go to the sa
 python narrator_mcp_client.py
 ```
 
-The run goes in order. The client connects to `http://localhost:8002/mcp`, Strands asks the server for its tool list and receives the `roll_dice` specification, the one Floor 3 printed, built this time by FastMCP from the `roll_dice` docstring. The client sends the same request as Floor 3: Lady Luck rolls four ability scores with 4d6 drop lowest. The difference is where the rolls happen. Watch the server terminal: every call arrives there as a log line such as `DICE ROLL: 4d6 drop 1 = [5, 2, 6, 3] -> 14`, four of them, while the narration appears in the client terminal. Same agent, same tool, but the dice now live in another process.
+The run goes in order. The client connects to `http://localhost:8002/mcp`, Strands asks the server for its tool list and receives the `roll_dice` specification, the one Floor 3 printed, built this time by FastMCP from the `roll_dice` docstring. The client sends the same request as Floor 3: Lady Luck rolls four ability scores with 4d6 drop lowest. The difference is where the rolls happen. Watch the server terminal: every call arrives there as a log line such as `[SYSTEM] DICE ROLL: 4d6 drop 1 = [5, 2, 6, 3] -> 14`, four of them, while the narration appears in the client terminal. Same agent, same tool, but the dice now live in another process.
 
 After the character is created, stop the client with Ctrl+C. Before Floor 5, keep the server terminal running: the Narrator will roll its dice through the same dice server.
 
-Check: four `DICE ROLL: 4d6 drop 1 = ...` lines in the server terminal, and four totals in the client terminal that match them one for one.
+Check: four `[SYSTEM] DICE ROLL: 4d6 drop 1 = ...` lines in the server terminal, and four totals in the client terminal that match them one for one.
 
 | you see | it means | fix |
 |---|---|---|

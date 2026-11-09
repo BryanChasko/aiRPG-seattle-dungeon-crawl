@@ -33,7 +33,7 @@ The habitats are why the leads win. Barnaby hunts eelgrass meadows and kelp fore
 
 ## ALMOCO, the Corrosion Cathedral
 
-Floor 9 is ALMOCO, the American Lead Mining & Operational Company: a fictional mid-century industrial conglomerate whose smelter stood on the Ruston shore at Point Defiance, a mile from the Narrows. The System AI rebuilt it at its 1970s worst, because, it says, the ratings were better.
+Floor 9 is ALMOCO, the American Lead Mining & Operational Company: a fictional mid-century industrial conglomerate whose smelter stood on the Ruston shore at Point Defiance, a mile from the Narrows. The System AI rebuilt it at its 1970s worst, because, it says, the throughput numbers were better.
 
 The look is Techno-Gothic: a corrosion cathedral sprawled along the shoreline like a rotting iron leviathan. Black slag-concrete foundations cracked by old tremors and crusted yellow-grey with lead oxide and arsenic; walls that sweat sulfur; three soot-caked brick stacks, 500 feet tall, breathing a sweet, metallic grey fog that settles like a shroud; furnace fire flickering behind iron vents at night, so the stacks look like smoldering obelisks.
 
@@ -61,7 +61,7 @@ The dungeon does not throw monsters at the Crawlers. It throws professionals. Ev
 
 | Opponent | Where | How they dance | Weakness |
 |---|---|---|---|
-| Quarterly Close Accountant | Floor 1 and up | Precise, slow, perfectly on the count, accrual basis | Improvisation: they cannot dance to a beat they did not reconcile |
+| Quarterly Close Accountant | Floor 5 and up | Precise, slow, perfectly on the count, accrual basis | Improvisation: they cannot dance to a beat they did not reconcile |
 | Bonus-Season Investment Banker | Bellevue | Leverages every move, borrows the Crawler's own choreography | Overextension: they bet the whole round on the big finish |
 | Developer Advocate Swarm | Ship Canal and up | Enthusiastic, always mid-demo, never stops offering a free tier | Live demos: the move works perfectly until someone is watching |
 | Pitch-Deck Founder | The Underground | Every move is a pivot | Questions: ask about the business model and the Founder freezes |

@@ -122,7 +122,7 @@ uv --version
 
 <table>
 <tr>
-<td valign="top" width="50%"><img src="../../art/images/cards/boss-monty-640x640.webp" alt="Monty, an enormous reticulated python with a gold, black and silver geometric pattern, loosely coiled around the rusted handrail of a flooded stairwell, head raised with a curious, slightly sheepish look and a brass pet tag on its collar" width="320"></td>
+<td valign="top" width="50%"><img src="../../art/images/cards/boss-monty-640x640.webp" alt="Monty, an enormous reticulated python with a gold, black and silver geometric pattern, loosely coiled around the rusted handrail of a flooded stairwell, head raised with a curious, slightly sheepish look and a brass pet tag wired to a rusted ring" width="320"></td>
 <td valign="top" width="50%">
 
 > <img src="../../art/images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS: MONTY, THE RETICULATED PYTHON.** Somebody released their pet into the Underground, and it found the stairwell. Reticulated pythons are the longest snakes in the world, and Monty is twenty feet of geometric camouflage that looks exactly like whatever Python is already on your PATH. It wraps tighter every time a version does not match. Barnaby, who is also a constrictor and has eight arms of opinions about it, refuses to share the stairwell. Nobody gets hurt: you win by knowing exactly which Python you are running.
