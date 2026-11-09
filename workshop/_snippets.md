@@ -89,6 +89,34 @@ Clips live in `images/motion/`, each with a `-still.webp` rest frame. GitHub hon
 
 Where each clip and render belongs, with ready-to-paste lines and S3 keys: `docs/art-placements.md`.
 
+## Boss layout (image beside the brief, never below it)
+
+Copy-paste form of the Visual Lit alignment rules in
+`docs/visual-design-system.md` section 9. Worked example: Monty in
+`workshop/floor-0.md` Step 4. Swap the card, alt text, boss name and check
+paragraph; keep the card at `width="320"`, one image for the beat, and the
+commands full width under the table.
+
+```markdown
+<table>
+<tr>
+<td valign="top" width="50%"><img src="../images/cards/boss-NAME-640x640.webp" alt="Describe who is in the picture, where, and what they are doing" width="320"></td>
+<td valign="top" width="50%">
+
+> <img src="../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS: NAME, THE TITLE.** One paragraph: who blocks the way, what the confusion is, and how the Crawler wins. Nobody gets hurt: say what winning looks like.
+
+One short paragraph with the check the picture teaches: what to run, install or confirm. End by pointing at the commands right under this card.
+
+</td>
+</tr>
+</table>
+```
+
+Then the code block, the plain-language result, the roadblock table and the
+achievement toast, in that order, full width. No second copy of the boss card
+on the same screen. No character in the art, caption or alt text before the
+floor where the party meets them (Shelly: Floor 2, Chonks: Floor 3).
+
 ## Art rules
 
 - one AI look only: the System AI. No Narrator icon, label or style

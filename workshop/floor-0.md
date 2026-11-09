@@ -134,11 +134,18 @@ uv --version
 
 ### Step 4: Face the Floor Boss (Python)
 
+<table>
+<tr>
+<td valign="top" width="50%"><img src="../images/cards/boss-monty-640x640.webp" alt="Monty, an enormous reticulated python with a gold, black and silver geometric pattern, loosely coiled around the rusted handrail of a flooded stairwell, head raised with a curious, slightly sheepish look and a brass pet tag on its collar" width="320"></td>
+<td valign="top" width="50%">
+
 > <img src="../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS: MONTY, THE RETICULATED PYTHON.** Somebody released their pet into the Underground, and it found the stairwell. Reticulated pythons are the longest snakes in the world, and Monty is twenty feet of geometric camouflage that looks exactly like whatever Python is already on your PATH. It wraps tighter every time a version does not match. Barnaby, who is also a constrictor and has eight arms of opinions about it, refuses to share the stairwell. Nobody gets hurt: you win by knowing exactly which Python you are running.
 
-<img src="../images/cards/boss-monty-640x640.webp" alt="Monty, an enormous reticulated python with a gold, black and silver geometric pattern, loosely coiled around the rusted handrail of a flooded stairwell, head raised with a curious, slightly sheepish look and a brass pet tag on its collar" width="240">
+This crawl needs Python 3.10 or later. Installing Python by hand is not needed: uv downloads a compatible Python the first time a project needs one. To download Python now and see which interpreter uv will use, run the commands right under this card.
 
-This crawl needs Python 3.10 or later. Installing Python by hand is not needed: uv downloads a compatible Python the first time a project needs one. To download Python now and see which interpreter uv will use, run:
+</td>
+</tr>
+</table>
 
 ```bash
 uv python install
