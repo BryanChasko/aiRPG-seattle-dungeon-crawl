@@ -50,21 +50,8 @@ One arm out of a den is all the cover shows. The rest of Barnaby is earned in th
 
 ---
 
-## Your Lead
-
-<p align="center">
-<a href="workshop/world/cast.md#cordula-core-vance"><img src="images/cards/cast-cordula-640x640.webp" alt="Cordula Vance grinning in a matte black drysuit, charcoal float vest and grey webbing, karambits sheathed on her calves, holding a black touring paddle upright, inside a violet card frame" width="320"></a>
-</p>
-
-<p align="center"><strong>Cordula Vance</strong> -- commits every change</p>
-
-> <img src="images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, CONTINUED.**
->
-> I hold the terminal and keep the log; the steps on every floor are what I type next. The octopus comes with me: the voice in the water claimed him, and I am not leaving him for the intake screen. Two more crew join us on later floors. You will meet them when the dungeon decides you are ready.
-
----
-
-## What You Build
+<details>
+<summary><strong>What you build</strong></summary>
 
 You rebuild the System AI of a LitRPG dungeon crawl under Seattle. You start with one agent on a terminal and finish with a production multi-agent System AI:
 
@@ -75,33 +62,14 @@ You rebuild the System AI of a LitRPG dungeon crawl under Seattle. You start wit
 
 Every agent on every floor runs on Amazon Nova 2 Lite. Each floor rebuilds one more subsystem, and the full design map is in [The System](workshop/world/the-system.md).
 
----
-
-## The Descent
-
-Places and concepts only. The full map, with story and plate art for every floor, is the [Dungeon Map](workshop/README.md#the-dungeon-map).
-
-| Floor | Place | Concept |
-|---|---|---|
-| [0](workshop/floor-0.md) | The Stairwell, under Pier 59 | `setup` |
-| [1](workshop/floor-1.md) | The Pier 59 Collapse | `Agent()` |
-| [2](workshop/floor-2.md) | The Eelgrass Nursery | `vended tools` |
-| [3](workshop/floor-3.md) | The Bull Kelp Cathedral | `@tool` |
-| [4](workshop/floor-4.md) | The Ship Canal | `MCP` |
-| [5](workshop/floor-5.md) | The Estuary | `A2A` |
-| [6](workshop/floor-6.md) | The Underground | `web` |
-| [7](workshop/floor-7.md) | The Bluffs | `harness` (optional) |
-| [8](workshop/floor-8.md) | Bellevue and the Narrows | `AgentCore` |
-| [8.1](workshop/floor-8-1.md) | The floating bridge | `MCP on Runtime` |
-| [8.2](workshop/floor-8-2.md) | The ferry terminal | `Memory` |
-| [8.3](workshop/floor-8-3.md) | The sunken library | `knowledge base` |
-| [8.4](workshop/floor-8-4.md) | Above the Narrows | `A2A on Runtime` |
-| 9 | The Corrosion Cathedral | Optional, coming soon |
-| [The Exit](workshop/cleanup.md) | Alki at sunrise | `cleanup` |
+</details>
 
 ---
 
-## How You Learn
+---
+
+<details>
+<summary><strong>How you learn</strong></summary>
 
 Every Safe Room has a terminal on the broadcast relay. The Strands manual is there, and so is the open web's teaching. Read the docs, watch an explainer, read a working sample, then type it yourself.
 
@@ -110,6 +78,10 @@ Every Safe Room has a terminal on the broadcast relay. The Strands manual is the
 - Morgan Willis, "Building AI agent harnesses with Strands Agents", 14 free videos -- [start with video 01](https://www.youtube.com/watch?v=NAEX4ORLkbQ), or read Bryan's [companion page](https://bryanchasko.com/strands-agents-course/)
 - Elizabeth Fuentes, [Strands samples on GitHub](https://github.com/elizabethfuentes12) -- MIT-0 licensed, model-agnostic
 - [Strands Agents SDK](https://strandsagents.com/)
+
+The full floor map, with story and plate art for every floor, is the [Dungeon Map](workshop/README.md#the-dungeon-map).
+
+</details>
 
 ---
 
@@ -195,7 +167,5 @@ This crawl builds on Once Upon Agentic AI, the AWS sample workshop that first ta
 **Stuck?**: [`study/ask_the_system.py`](study/README.md) is a study companion built with Strands. Ask it about any floor, TODO, error or Strands API, and it answers from this repository and the Strands API reference, with citations.
 
 ---
-
-[Enter the dungeon: Floor 0](workshop/floor-0.md)
 
 _The System AI is watching. Happy crawling, Crawler._
