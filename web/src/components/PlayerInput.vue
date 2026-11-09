@@ -53,7 +53,7 @@ function handleSubmit() {
   font-family: var(--font-body);
   font-size: 1rem;
   padding: 0.6rem 0.75rem;
-  border: 1px solid #3a3550;
+  border: 1px solid var(--color-stroke);
   border-radius: 8px;
   background-color: var(--color-bg-card);
   color: var(--color-ink);
@@ -61,8 +61,7 @@ function handleSubmit() {
 }
 
 .player-input-field:focus {
-  outline: none;
-  border-color: #6c6585;
+  border-color: var(--color-gold);
 }
 
 .player-input-field::placeholder {
@@ -79,7 +78,7 @@ function handleSubmit() {
   font-family: var(--font-ui);
   font-size: 1rem;
   color: #fff;
-  background-color: #1fbf75;
+  background-color: var(--color-emerald-dark);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -87,11 +86,11 @@ function handleSubmit() {
 }
 
 .player-input-btn:hover:not(:disabled) {
-  background-color: #18a865;
+  background-color: #0b6b42;
 }
 
 .player-input-btn:active:not(:disabled) {
-  background-color: #128a52;
+  background-color: #084f30;
 }
 
 .player-input-btn:disabled {

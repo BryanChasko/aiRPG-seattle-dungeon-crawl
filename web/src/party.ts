@@ -1,18 +1,20 @@
 import type { CharacterForm } from './types'
 
-export type PartyLead = Omit<CharacterForm, 'serverUrl'> & { role: string }
+export type PartyLead = Omit<CharacterForm, 'serverUrl'> & { role: string; pickerLabel: string }
 
-// The set party (workshop/world/cast.md). The player speaks as one of the two Crawlers.
+// The set party (workshop/world/cast.md). The player plays as one of the two Crawlers.
 export const PARTY_LEADS: PartyLead[] = [
   {
     name: 'Cordula Vance',
+    pickerLabel: 'Cordula Vance: Human',
     pronouns: 'she/her',
     species: 'Human (Seattle Native)',
     characterClass: 'Amphibious Breacher',
-    role: 'Crawler, tank and carrier',
+    role: 'Crawler, party tank, breacher (of doors, never of people)',
   },
   {
     name: 'Barnaby',
+    pickerLabel: 'Barnaby: Giant Pacific Octopus',
     pronouns: 'he/him',
     species: 'Uplifted Giant Pacific Octopus',
     characterClass: 'Benthic Dragoon',

@@ -10,7 +10,7 @@ Files on this floor: [`web/src/views/NewGameView.vue`](../web/src/views/NewGameV
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, FLOOR 6.** Under Pioneer Square the old storefronts are still there, buried, and the Fremont Troll sits at the end of the arena like a judge who has seen too much. The audience could see us now. We could not see the show. We needed what the viewers had: the sheet, the rolls, the choices, all on one screen. Once we had it, Barnaby performed. I did not know an octopus could hit his marks. The ratings did.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience the Narrator. Pick who speaks for the party, point the web interface at port 8009, and press Enter. No pressure. Only billions of viewers."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience the Narrator. Pick who you play as, point the web interface at port 8009, and press Enter. No pressure. Only billions of viewers."
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 04: Adding Callbacks and Response Streaming](https://www.youtube.com/watch?v=Zamh36RWKz8) by Morgan Willis. "...callbacks are actually one of the main ways you can control how an agent's output surfaces into a user interface, an API server, or any sort of orchestration system."
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The broadcast booth played a course on a loop, and the part about callbacks stuck. The web interface is a callback: every chunk the System AI writes hits the screen the moment it leaves the model. I watched the dance-off appear one word at a time, and I understood why it paused where it did.
@@ -43,8 +43,8 @@ npm run dev
 
 In the web interface:
 
-- Pick the character to play. The party is set: Cordula Vance (she/her, Human (Seattle Native), Amphibious Breacher) is the default, or speak as Barnaby (he/him, Uplifted Giant Pacific Octopus, Benthic Dragoon), the party leader. Shelly the geoduck and Chonks the spiny lumpsucker travel with the party as companions for either character
-- In Server URL, enter the URL shown in the Narrator Orchestrator terminal: `http://127.0.0.1:8009`
+- Pick the character to play. The party is set: Cordula Vance (she/her, Human (Seattle Native), Amphibious Breacher) is the default, or play as Barnaby (he/him, Uplifted Giant Pacific Octopus, Benthic Dragoon), the party leader. Shelly the geoduck and Chonks the spiny lumpsucker travel with the party as companions for either character
+- In Server URL, enter the URL shown in the Narrator Orchestrator terminal: `http://127.0.0.1:8009` (the play page also accepts it ready-filled: open https://bryanchasko.github.io/aiRPG-seattle-dungeon-crawl/?server=http%3A%2F%2F127.0.0.1%3A8009 and the field arrives set)
 - Click Enter the Dungeon
 
 The web interface runs in the browser and talks to the Narrator running on the same machine. Browsers treat localhost as a secure origin, so this HTTPS page may call `http://127.0.0.1:8009`, but Chrome and Edge now ask permission before a public page can reach a service on the same machine. When the prompt appears, allow it. If Enter the Dungeon shows "Failed to fetch" and no prompt appeared, open the site settings for the page (the icon left of the address bar), allow local network access, then reload.

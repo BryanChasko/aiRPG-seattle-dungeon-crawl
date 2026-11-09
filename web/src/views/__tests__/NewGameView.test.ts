@@ -5,8 +5,11 @@ import NewGameView from '../NewGameView.vue'
 
 const pushMock = vi.fn()
 
+const routeQuery = vi.hoisted(() => ({ value: {} as Record<string, string> }))
+
 vi.mock('vue-router', () => ({
   useRouter: () => ({ push: pushMock }),
+  useRoute: () => ({ query: routeQuery.value }),
 }))
 
 function mockFetchFailure(status = 500) {
@@ -31,6 +34,8 @@ describe('NewGameView', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
     pushMock.mockClear()
+    routeQuery.value = {}
+    localStorage.clear()
   })
 
   afterEach(() => {
@@ -57,14 +62,17 @@ describe('NewGameView', () => {
       const select = wrapper.find('#party-member')
       const options = select.findAll('option')
 
-      expect(options.map(o => o.text())).toEqual(['Cordula Vance', 'Barnaby'])
+      expect(options.map((o) => o.text())).toEqual([
+        'Cordula Vance: Human',
+        'Barnaby: Giant Pacific Octopus',
+      ])
       expect((select.element as HTMLSelectElement).value).toBe('Cordula Vance')
       expect(wrapper.find('#lead-pronouns').text()).toBe('she/her')
       expect(wrapper.find('#lead-species').text()).toBe('Human (Seattle Native)')
       expect(wrapper.find('#lead-class').text()).toBe('Amphibious Breacher')
     })
 
-    it('shows Barnaby\'s sheet when he speaks for the party', async () => {
+    it("shows Barnaby's sheet when the player plays as him", async () => {
       const wrapper = mountComponent()
       await wrapper.find('#party-member').setValue('Barnaby')
 
@@ -74,12 +82,38 @@ describe('NewGameView', () => {
       expect(wrapper.find('#lead-role').text()).toBe('Party leader')
     })
 
-    it('lists Shelly and Chonks as companions', () => {
+    it('names no later-floor companions on the entry surface', () => {
       const wrapper = mountComponent()
-      const companions = wrapper.find('.companions').text()
 
-      expect(companions).toContain('Shelly the geoduck')
-      expect(companions).toContain('Chonks the spiny lumpsucker')
+      expect(wrapper.text()).not.toContain('Shelly')
+      expect(wrapper.text()).not.toContain('Chonks')
+      expect(wrapper.find('.companions').text()).toContain('later floors')
+    })
+
+    it('labels the picker Play as and seeds the server from a deep link', () => {
+      routeQuery.value = { server: 'http://127.0.0.1:8009/' }
+      const wrapper = mountComponent()
+
+      expect(wrapper.text()).toContain('Play as')
+      expect((wrapper.find('#server-url').element as HTMLInputElement).value).toBe(
+        'http://127.0.0.1:8009',
+      )
+    })
+
+    it('teaches the four-terminal launch under the server field', () => {
+      const wrapper = mountComponent()
+      const text = wrapper.text()
+
+      expect(text).toContain('8000')
+      expect(text).toContain('8001')
+      expect(text).toContain('8002')
+      expect(text).toContain('8009')
+      const hrefs = wrapper.findAll('a').map((a) => a.attributes('href') ?? '')
+      expect(hrefs.some((h) => h.endsWith('/workshop/floor-5.md'))).toBe(true)
+      expect(hrefs.some((h) => h.endsWith('/workshop/floor-6.md'))).toBe(true)
+      expect(
+        hrefs.some((h) => h === 'https://github.com/BryanChasko/aiRPG-seattle-dungeon-crawl'),
+      ).toBe(true)
     })
   })
 
@@ -142,6 +176,24 @@ describe('NewGameView', () => {
       const errorEl = wrapper.find('.submit-error')
       expect(errorEl.exists()).toBe(true)
       expect(errorEl.text()).toContain('Request failed with status 500')
+      expect(errorEl.text()).toContain('8009')
+    })
+
+    it('maps a failed fetch to the four-terminal recovery words', async () => {
+      globalThis.fetch = vi.fn().mockRejectedValue(new TypeError('Failed to fetch'))
+
+      const wrapper = mountComponent()
+      await wrapper.find('#server-url').setValue('http://127.0.0.1:8009')
+
+      await wrapper.find('form').trigger('submit.prevent')
+      await flushPromises()
+
+      const errorEl = wrapper.find('.submit-error')
+      expect(errorEl.text()).toContain('Could not reach the game server')
+      expect(errorEl.text()).not.toContain('Failed to fetch')
+      expect(errorEl.text()).toContain('8000')
+      expect(errorEl.text()).toContain('8001')
+      expect(errorEl.text()).toContain('8002')
     })
   })
 })

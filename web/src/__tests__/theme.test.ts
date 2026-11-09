@@ -54,13 +54,33 @@ describe('System Theme CSS Custom Properties (Req 9.1)', () => {
 
 describe('Theme fallback handling (Req 9.8)', () => {
   it('body has a solid background-color fallback before texture image', () => {
-    // The body should set background-color (solid fallback) before background-image (texture)
+    // The body should set background-color (solid fallback) before background-image (texture),
+    // with a dark scrim layered over the tile so text stays readable on the texture.
     expect(themeCss).toMatch(/body[\s\S]*?background-color:\s*var\(--color-bg-page\)/)
-    expect(themeCss).toMatch(/body[\s\S]*?background-image:\s*var\(--texture-wood\)/)
+    expect(themeCss).toMatch(/body[\s\S]*?background-image:[^;]*var\(--texture-wood\)/)
   })
 
   it('parchment panel class has solid color fallback before texture', () => {
-    expect(themeCss).toMatch(/\.panel-parchment[\s\S]*?background-color:\s*var\(--color-parchment\)/)
-    expect(themeCss).toMatch(/\.panel-parchment[\s\S]*?background-image:\s*var\(--texture-parchment\)/)
+    const noComments = themeCss.replace(/\/\*[\s\S]*?\*\//g, '')
+    expect(noComments).toMatch(
+      /\.panel-parchment\s*\{[^}]*background-color:\s*var\(--color-parchment\)/,
+    )
+    expect(noComments).toMatch(
+      /\.panel-parchment[\s\S]*?background-image:[^;]*var\(--texture-parchment\)/,
+    )
+  })
+
+  it('glass panels fall back to solid and respect reduced transparency and motion', () => {
+    expect(themeCss).toContain('--panel-glass-bg:')
+    expect(themeCss).toContain('@supports (backdrop-filter: blur(8px))')
+    expect(themeCss).toContain('prefers-reduced-transparency: reduce')
+    expect(themeCss).toContain('prefers-reduced-motion: reduce')
+  })
+
+  it('defines a type scale and a readable stroke token', () => {
+    expect(themeCss).toContain('--text-sm:')
+    expect(themeCss).toContain('--text-3xl:')
+    expect(themeCss).toContain('--color-stroke:')
+    expect(themeCss).toContain('--focus-ring:')
   })
 })
