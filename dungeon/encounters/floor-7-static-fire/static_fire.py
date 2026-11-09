@@ -1,6 +1,6 @@
 """Floor 7 encounter, Static Fire on the Pad: one rocket test, three capabilities, composed as plugins and skills.
 
-Cadabra, Inc. is test-firing a heavy-lift rocket rated for 45 metric tons on the tidal flat below the
+Cadabra is test-firing a heavy-lift rocket rated for 45 metric tons on the tidal flat below the
 bluffs, and the range desk has three jobs at once: read the countdown, check the debris, make the hold call.
 The first two are tools and a hook, packaged as one Plugin you write. The third is a skill: a block of
 instructions the agent loads only when it needs them, served by the AgentSkills plugin. Both plug into the

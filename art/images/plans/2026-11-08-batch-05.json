@@ -46,7 +46,7 @@
    "place": {"replaces": true, "page": "dungeon/workshop/world/the-system.md", "where": "section 5 icon row (already placed)", "alt": "Benthic Collective sponsor medallion: a glass fishing float and a kombucha jar on a coil of net"}},
   {"name": "icon-sponsor-cadabra", "class": "icon", "out": "images/icons/sponsor-cadabra-96x96.webp",
    "subject": "a round brass-rimmed contractor medallion, a sealed cardboard parcel with a small rocket fin and a single drone rotor attached, kraft-brown and steel, efficient and slightly ominous, no arrow, no smile.",
-   "place": {"page": "dungeon/workshop/world/the-system.md", "where": "section 5 icon row, last", "alt": "Cadabra, Inc. contractor medallion: a cardboard parcel with a rocket fin and a drone rotor"}},
+   "place": {"page": "dungeon/workshop/world/the-system.md", "where": "section 5 icon row, last", "alt": "Cadabra contractor medallion: a cardboard parcel with a rocket fin and a drone rotor"}},
   {"name": "header-welcome-shelly", "class": "floor", "out": "images/floors/welcome-shelly-1200x675.webp",
    "subject": "a wide bare sand flat at a minus low tide under the dungeon, the water pulled far back, eelgrass meadow at the edges, and in the middle of the scoured sand {GEODUCK}, lying on its side in the open with its long siphon draped across the sand, a puff of sea mist rising from the siphon tip, a single warm lantern beside it, quiet and tender.",
    "place": {"page": "dungeon/workshop/floor-2.md", "where": "right before Shelly's welcome log (Day 2, 1400 low water)", "alt": "A geoduck lying on bare scoured sand at low tide, its long siphon draped across the flat, sea mist rising beside a lantern"}},

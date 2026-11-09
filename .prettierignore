@@ -1,2 +1,5 @@
 # markdown is gated by tools/check_docs.py (links, anchors, images, banned words, ascii, study pack)
 *.md
+# art pipeline JSON keeps its own 1-space style; validated by art/publish_art.py + the docs gate, not prettier
+art/images/plans/*.json
+art/images/**/*.sidecar.json

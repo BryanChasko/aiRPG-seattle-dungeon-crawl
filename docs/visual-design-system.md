@@ -136,7 +136,7 @@ tag and shape, never by color, and the play page mirrors them with matching
 | Bellevue Consortium | a tech monolith across the lake, famous for the Doors '94 operating system; sponsors the opponents, hates surprises, wants the party gone before the quarter closes June 30 | a half-open door glyph on cold steel enamel, glass towers over Lake Washington, brass rim; corporate, beige-desktop nostalgia; never a window grid or flag, never a real logo |
 | Hydros-9 Aquatic Collective | a venture-funded South Lake Union water-tech startup on its ninth pivot (hence the 9); adores Barnaby | a glossy teal enamel water drop over nine stacked pivot arrows, startup-sticker sheen, brass rim |
 | Benthic Collective | a Ballard fishing-and-kombucha cooperative; adores Barnaby | a fishing float and a kombucha jar on weathered brass, net texture |
-| Cadabra, Inc. | the crawl's fulfillment contractor: delivery drones drop every loot box, it rents the dungeon its obstacles, and it published Strands as an open toolkit | a cardboard parcel with a rocket fin and a drone rotor, brass rim; never a smile arrow, never a real logo |
+| Cadabra | the crawl's fulfillment contractor: delivery drones drop every loot box, it rents the dungeon its obstacles; Strands is Amazon's open toolkit, not theirs | a cardboard parcel with a rocket fin and a drone rotor, brass rim; never a smile arrow, never a real logo |
 
 Never draw or name a real company, logo or trademark. Teaching text keeps real product names;
 these names are story only.

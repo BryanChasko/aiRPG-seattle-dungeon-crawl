@@ -162,7 +162,7 @@ Where: section 5 icon row, last.
 S3: `s3://bryanchasko.com/airpg-art/icons/sponsor-cadabra-96x96.webp`
 
 ```markdown
-![Cadabra, Inc. contractor medallion: a cardboard parcel with a rocket fin and a drone rotor](../../../art/images/icons/sponsor-cadabra-96x96.webp)
+![Cadabra contractor medallion: a cardboard parcel with a rocket fin and a drone rotor](../../../art/images/icons/sponsor-cadabra-96x96.webp)
 ```
 
 ### `welcome-shelly-1200x675.webp` on `dungeon/workshop/floor-2.md`
