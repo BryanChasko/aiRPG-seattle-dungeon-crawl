@@ -166,4 +166,4 @@ Loot to keep:
 >
 > Reward: You received a [Bronze Box]. Inside: one rubber stamp, one calculator with a very good battery, and a Ferry Token receipt with a line item that never finishes.
 
-Back to [Floor 5](../floor-5.md#floor-clear), or on to [Floor 6](../floor-6.md).
+Back to [Floor 5](../floor-5-3.md#floor-clear), or on to [Floor 6](../floor-6.md).

@@ -148,4 +148,4 @@ Loot kept:
 >
 > Reward: The party received a [Gold Box]. Inside: one microphone, four handoffs, and a pair of conference socks Barnaby refuses to return.
 
-Back to [Floor 5](../floor-5.md#floor-clear), or on to [Floor 6](../floor-6.md).
+Back to [Floor 5](../floor-5-3.md#floor-clear), or on to [Floor 6](../floor-6.md).

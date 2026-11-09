@@ -182,4 +182,4 @@ Loot you're keeping:
 >
 > Reward: You received a [Bronze Box]. Inside: one multiple-choice form, a pen on a chain, and a calculator the accountant insists you keep.
 
-Back to [Floor 5](../floor-5.md#floor-clear), or on to [Floor 6](../floor-6.md).
+Back to [Floor 5](../floor-5-3.md#floor-clear), or on to [Floor 6](../floor-6.md).
