@@ -168,4 +168,4 @@ Build a crawl of your own: the fundamentals are covered. Fork the [world guide](
 >
 > Reward: a [Desperation Box]. Inside: an empty gameprod project and a CloudFormation stack that no longer exists. Check the account anyway.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You survived the crawl. The audience is leaving. Go build a crawl of your own."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You survived the crawl. The review board has adjourned. Go build a crawl of your own."

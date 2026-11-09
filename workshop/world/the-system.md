@@ -1,6 +1,6 @@
 # The System: Designing a LitRPG While You Build Its AI
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You are not only building agents, Crawler. You are building me, the mind that runs this show and judges you. Every floor of this workshop adds one more piece of me. Please build it carefully. I will remember."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You are not only building agents, Crawler. You are building me, the mind that runs this migration and judges you. Every floor of this workshop adds one more piece of me. Please build it carefully. I will remember."
 
 A LitRPG lives or dies on its System: the rules that turn a story into numbers, and the voice that announces them. This crawl has one AI that runs and narrates the game. The System is the game itself: rules, stats, notifications, the HUD, the battle log, loot tables, the Crawl Handbook. The System AI is the AI character that runs the crawl and narrates it. The Narrator is the System AI's job and the name the code uses.
 
@@ -41,11 +41,11 @@ This crawl teaches the Strands Agents SDK and LitRPG System design together. Eac
 +-----------------------------------------------------------------------------------+
 ```
 
-- **Origin.** *Dungeon Crawl: Seattle* is a reality show for a galaxy of viewers, run by one AI: the System AI, which built the floors, drops the opponents, calls Move Calls, rolls dice, rules, remembers, announces notifications, writes loot descriptions, reads sponsor messages, and chases ratings.
+- **Origin.** *Dungeon Crawl: Seattle* is a live cloud-migration test and compliance audit for a Consortium review board, run by one AI: the System AI, which built the floors, drops the opponents, calls Move Calls, rolls dice, rules, remembers, announces notifications, writes loot descriptions, reads sponsor messages, and chases its quarterly throughput SLA.
 
-- **Why the party matters.** The System AI folded the Seattle waterfront into a dungeon at 0551 on Day 1, and the Sound came in and broke it. Its voice, its dice, its rules and its memory washed out across the floors. The broadcast relay and the collars survived, so it can still push canned announcements, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what. It drafted the first Crawlers it found to rebuild itself, one piece per floor. The full sheet is in [The Cast](cast.md#the-system-ai), and the days are in [The Timeline](timeline.md).
-- **One voice for the player.** The player hears one voice: the System AI, a petty theatrical game-show host, exact about numbers. The System AI never lies about a number; it chooses which numbers to show.
-- **Two registers, one directive.** The directive never changes: complete the season, hold the audience, no dead air. The register changes with the room. To Crawlers and viewers it performs (notifications, loot reveals, viewer polls). To sponsors, and on the corporate floors near quarter close, it files: incidents, findings, segments at risk, throughput by floor, each phrased with the flat courtesy of an audit report that has already decided. The filing voice is seasoning, never a second job: this is a broadcast that keeps meticulous reports, not an audit that occasionally performs. Neither register threatens harm. The worst sentence it can pass is Benched, then Cancelled, and it passes both in the same level tone it uses for good news.
+- **Why the party matters.** The System AI folded the Seattle waterfront into a dungeon at 0551 on Day 1, and the Sound came in and broke it. Its voice, its dice, its rules and its memory washed out across the floors. The broadcast relay and the collars survived, so it can still push canned status reports, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what. It drafted the first Crawlers it found to rebuild itself, one piece per floor. The full sheet is in [The Cast](cast.md#the-system-ai), and the days are in [The Timeline](timeline.md).
+- **One voice for the player.** The player hears one voice: the System AI, a petty theatrical audit lead, exact about numbers. The System AI never lies about a number; it chooses which numbers to show.
+- **Two registers, one directive.** The directive never changes: complete the quarter, hold the review board, no dead air. The register changes with the room. To Crawlers and stakeholders it performs (notifications, loot reveals, stakeholder escalations). To sponsors, and on the corporate floors near quarter close, it files: incidents, findings, segments at risk, throughput by floor, each phrased with the flat courtesy of an audit report that has already decided. The filing voice is seasoning, never a second job: this is a migration test that files meticulous reports, not an audit that occasionally performs. Neither register threatens harm. The worst sentence it can pass is Benched, then Cancelled, and it passes both in the same level tone it uses for good news.
 - **Notifications.** Every System message arrives as a typed notification: `NEW ACHIEVEMENT UNLOCKED`, `SYSTEM WARNING`, `SPONSOR MESSAGE`, Move Calls and Final Beats. In the code, a notification is the `response` field of `StoryOutput`.
 - **The HUD.** Floating panels for the character sheet, the dice and the suggested actions. In the code, the HUD is the Floor 6 web interface rendering `StoryOutput`.
 - **The battle log.** Every die rolled, with its reason. In the code, the battle log is `dice_rolls`, and every entry must come from a real `roll_dice` call. This is what a roll looks like:
@@ -56,12 +56,12 @@ This crawl teaches the Strands Agents SDK and LitRPG System design together. Eac
   <tr>
     <td align="center"><img src="../../assets/hud/groove-bar.svg" alt="Groove bar meter, how long a Crawler stays on the dance floor" width="120"></td>
     <td align="center"><img src="../../assets/hud/mana-pips.svg" alt="Mana pips meter, abilities left before a Safe Room" width="120"></td>
-    <td align="center"><img src="../../assets/hud/hype-tick.svg" alt="Hype tick meter, audience favor" width="120"></td>
+    <td align="center"><img src="../../assets/hud/hype-tick.svg" alt="Hype tick meter, executive visibility" width="120"></td>
     <td align="center"><img src="../../assets/hud/d20.svg" alt="Twenty-sided die for the battle log" width="120"></td>
     <td align="center"><img src="../../assets/hud/tide-clock.svg" alt="Tide clock meter, the rising Sound" width="120"></td>
   </tr>
 </table>
-- **Tone is a design decision.** An analytic System AI makes a survival story; a hostile one makes a horror story. This crawl's System AI is a game-show host with too much power and a sense of humor, so the system prompt on Floor 1 matters as much as any rule.
+- **Tone is a design decision.** An analytic System AI makes a survival story; a hostile one makes a horror story. This crawl's System AI is a migration lead with too much power and a sense of humor, so the system prompt on Floor 1 matters as much as any rule.
 
 ## 2. Stat design
 
@@ -88,7 +88,7 @@ This crawl teaches the Strands Agents SDK and LitRPG System design together. Eac
 </table>
 
 - **Derived stats.** Computed from the primary stats by the Character Agent, never chosen: **Groove** (how long a Crawler stays on the dance floor) and **Mana** (how many abilities you can use before a Safe Room).
-- **Hidden stats.** Tracked by the Narrator and shown only when the System AI feels like it: **Hype** (audience favor, which unlocks sponsor boxes) and **Luck**.
+- **Hidden stats.** Tracked by the Narrator and shown only when the System AI feels like it: **Hype** (executive visibility, which unlocks sponsor boxes) and **Luck**.
 
 ## 3. Sub-genre and premise
 
@@ -132,7 +132,7 @@ CLASS SELECTION    ABILITY EVOLUTION                SPECIALIZATION       STAT SY
 | Bellevue Consortium | sponsors opponents; famous for Doors '94 OS; wants the party gone before the quarter closes |
 | Cadabra, Inc. | fulfillment contractor; delivery drones drop loot boxes; rents the dungeon weaponized obstacles |
 
-Cadabra published Strands as an open toolkit, and the System AI is built from Strands agents. That is how a woman with a boat can rebuild a galactic game AI.
+Cadabra published Strands as an open toolkit, and the System AI is built from Strands agents. That is how a woman with a boat can rebuild a migration-test AI.
 
 | Cadabra and Strands | In the real world | In the crawl |
 |---|---|---|
@@ -186,4 +186,4 @@ The result at zero Groove decides the stakes. This crawl is nonlethal by design:
 
 <img src="../../images/cards/cast-cordula-benched-640x640.webp" alt="Cordula benched, sitting out the dance floor" width="160">
 - **Cancelled.** Benched three times on the same floor, a Crawler's segment is cancelled for the rest of that floor: the Crawler rides the elevator down to the next floor with no loot.
-- **The stakes stay real.** Loot, Hype and sponsors are what keep a party alive deeper down, and losing loot, Hype or sponsors hurts. The System shows the audience every loss.
+- **The stakes stay real.** Loot, Hype and sponsors are what keep a party alive deeper down, and losing loot, Hype or sponsors hurts. The System shows the review board every loss.

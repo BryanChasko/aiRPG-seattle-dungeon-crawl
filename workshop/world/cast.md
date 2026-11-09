@@ -9,7 +9,7 @@
 </tr>
 </table>
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Most parties enter the dungeon as a panicking human and a confused pet. This one entered as a Marine Corps crew chief and a Ph.D.-level escape artist with eight arms, and picked up a clam that will not be moved and a fish shaped like an angry golf ball on the way down. The ratings have never been higher."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Most parties enter the dungeon as a panicking human and a confused pet. This one entered as a Marine Corps crew chief and a Ph.D.-level escape artist with eight arms, and picked up a clam that will not be moved and a fish shaped like an angry golf ball on the way down. Throughput has never been higher."
 
 This page holds the character sheets: the four members of the party, in the order they join, and the System AI that runs the crawl. The days and dates are in [The Timeline](timeline.md).
 
@@ -47,7 +47,7 @@ This page holds the character sheets: the four members of the party, in the orde
 
 Cordula grew up three blocks from Salmon Bay. Her father fixed diesel engines on the crab and longline boats at Fishermen's Terminal, and her mother worked nights as a trauma nurse at Harborview, so Cordula learned early to make her own breakfast and to read a tide table. Summers she sat in the fish ladder viewing room at the Ballard Locks and counted salmon through the windows. She learned to paddle at Shilshole at ten, pitched for the Ballard High softball team, and enlisted in the Marine Corps Reserve at nineteen.
 
-Every fall a film crew came to the terminal to shoot the crab boats leaving for the Bering Sea. Cordula learned two things from them. A camera will film a man going over the side, and a camera will not throw him a line. She has been the one throwing the line ever since, and now she is on a show with billions of viewers.
+Every fall a film crew came to the terminal to shoot the crab boats leaving for the Bering Sea. Cordula learned two things from them. A camera will film a man going over the side, and a camera will not throw him a line. She has been the one throwing the line ever since, and now she is under audit in front of billions of stakeholders.
 
 ### Why She Went Toward Him
 
@@ -131,7 +131,7 @@ A real Giant Pacific Octopus weighs 22 to 110 pounds on average, 45 to 65 as an 
 He ranges the whole Sound. Divers tell stories about a shadow too big to be an octopus in the Gertie wreckage. Ferry crews tell stories about something riding the max ebb through the Narrows, arms wrapped around a piling, just for the ride.
 
 - **Voice:** the System AI's collar turns his chromatophore pulses into speech. Default accent: Distinguished British Academic. He could change the accent in settings. He will not.
-- **Personality:** he considers humans clumsy, dry, land-bound apes, and respects Cordula's operational discipline above almost everything. He hates being watched and loves being right, which on a broadcast is a problem he has not solved.
+- **Personality:** he considers humans clumsy, dry, land-bound apes, and respects Cordula's operational discipline above almost everything. He hates being watched and loves being right, which on an open audit is a problem he has not solved.
 - **What he knows:** his lifespan. He is past three. Floor 7, where the party learns to keep its memory, is where he stops being afraid of forgetting.
 
 | Strength | Dexterity | Constitution | Intelligence | Wisdom | Charisma |
@@ -215,7 +215,7 @@ On Day 2 the flood scoured the flat down to his shell and left him lying on the 
 - **Shell Bunker:** Shelly pulls in and hardens, immune to debuffs, and Cordula can carry him as a tower shield.
 
 <picture><source srcset="../../images/motion/cast-shelly-mist-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../images/motion/cast-shelly-mist.webp" alt="Shelly at rest in his tide flat, breathing slow, sea mist shimmering" width="240"></picture>
-- **Party politics:** the System AI announced Shelly's arrival with far too much enthusiasm and runs a weekly viewer poll on what the siphon is for. Barnaby refuses to share a water line with "that unspeakable clam" and keeps him five feet away at all times. Cordula loves him: he takes no back space and he never lets go of the floor.
+- **Party politics:** the System AI announced Shelly's arrival with far too much enthusiasm and files a weekly stakeholder escalation on what the siphon is for. Barnaby refuses to share a water line with "that unspeakable clam" and keeps him five feet away at all times. Cordula loves him: he takes no back space and he never lets go of the floor.
 
 ## Chonks, the Suction-Cup Sentinel
 
@@ -239,7 +239,7 @@ On Day 2 the flood scoured the flat down to his shell and left him lying on the 
 
 Chonks hatched in April 2025 from an egg mass his father guarded on a bull kelp holdfast, fanning the eggs and chasing off crabs, the way lumpsucker fathers do. He grew to the size of a golf ball, and the suction disc on his belly holds him to rock in a current that would strip a diver off a line.
 
-On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the holdfast and stuck to the first thing he hit: Cordula's forearm guard. He has not let go since, except when thrown. The System AI's second Companion Egg bound him to the party, and the audience named him by poll. "Chonks" won with 61 percent. Barnaby voted for "Projectile".
+On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the holdfast and stuck to the first thing he hit: Cordula's forearm guard. He has not let go since, except when thrown. The System AI's second Companion Egg bound him to the party, and the review board named him by escalation. "Chonks" won with 61 percent. Barnaby voted for "Projectile".
 
 | Groove | Defense | Mana | Suction |
 |---|---|---|---|
@@ -257,28 +257,28 @@ On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the hold
 
 <img src="../../images/cards/cast-chonks-buckler-640x640.webp" alt="Chonks as a Buckler, strapped to a forearm" width="160">
 
-- **Party politics:** the System AI tracks his Flings Per Minute on the broadcast. Barnaby approves of him: compact, quiet, and an excellent projectile. He sometimes wears Chonks on an upper arm like a shoulder cannon.
+- **Party politics:** the System AI tracks his Flings Per Minute on the status feed. Barnaby approves of him: compact, quiet, and an excellent projectile. He sometimes wears Chonks on an upper arm like a shoulder cannon.
 
 <a id="the-narrator"></a>
 ## The System AI
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "I run the show, Crawler. The System is the rules and the HUD and the numbers. I am the one who speaks them. Please do not mix us up on camera."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "I run the migration, Crawler. The System is the rules and the HUD and the numbers. I am the one who speaks them. Please do not mix us up on camera."
 
 | Fact | Detail |
 |---|---|
 | What it is | the one AI character: runs the crawl and narrates it |
-| Online | 0551 on Day 1, Wednesday, June 17, 2026. Built somewhere else, for seasons on other worlds; Seattle is its first season on Earth |
-| Runs | the floors, the tides, the stairwells, the opponents it drops in, the Move Calls and every ruling, the dice, the rules, the memory of every Crawler, notifications, achievements, loot boxes, character sheets, sponsor messages and the ratings |
-| Cares about | a complete season and the ratings: every floor run, every rule applied the same way twice, every die fair, and the audience coming back |
-| Likes | drama, an exploit it did not see coming, Barnaby, who is ratings gold, viewer polls, sponsor money, balance, order, a ruling that holds |
-| Dislikes | dead air, a Crawler who reads the fine print, being corrected, Cordula's refusal to panic, which it calls bad television, a rule it cannot find, a die it cannot trust, water in the works |
+| Online | 0551 on Day 1, Wednesday, June 17, 2026. Built somewhere else, for quarters on other worlds; Seattle is its first quarter on Earth |
+| Runs | the floors, the tides, the stairwells, the opponents it drops in, the Move Calls and every ruling, the dice, the rules, the memory of every Crawler, notifications, achievements, loot boxes, character sheets, sponsor messages and the throughput numbers |
+| Cares about | a complete quarter and the throughput SLA: every floor run, every rule applied the same way twice, every die fair, and the review board staying to the end |
+| Likes | drama, an exploit it did not see coming, Barnaby, who is throughput gold, stakeholder escalations, sponsor money, balance, order, a ruling that holds |
+| Dislikes | dead air, a Crawler who reads the fine print, being corrected, Cordula's refusal to panic, which it calls a bad audit, a rule it cannot find, a die it cannot trust, water in the works |
 | Does not care about | who wins |
 | Afraid of | cancellation, stopping |
-| Habit | calls the pair "Crawlers" and the player at the keyboard "Crawler", and either Crawler alone by name; writes every loot description as a small insult; never lies about a number, and chooses which numbers to show; performs for viewers and files flat, courteous findings for sponsors near quarter close; speaks in the present tense, a few plain words at a time, when the world changes |
+| Habit | calls the pair "Crawlers" and the player at the keyboard "Crawler", and either Crawler alone by name; writes every loot description as a small insult; never lies about a number, and chooses which numbers to show; performs for stakeholders and files flat, courteous findings for sponsors near quarter close; speaks in the present tense, a few plain words at a time, when the world changes |
 | In the source workshop | the agent that runs the game |
 | In the code | the Narrator orchestrator on [Floor 5](../floor-5.md), rebuilt with Strands harness on [Floor 7](../floor-7.md) and deployed to AgentCore Runtime on [Floor 8](../floor-8.md); the voice in the system prompt, which [Floor 1](../floor-1.md) sets the tone for, and the `StoryOutput` fields the HUD shows on [Floors 5](../floor-5.md) and [6](../floor-6.md) |
 
-The System AI built the dungeon. At 0551 on Day 1 it folded the Seattle waterfront down and in, the way a map folds, and laid eight floors under the Sound. The System AI was built for dry cities, and nobody told it about the Salish Sea. The Sound came in through the breach and shorted it. Its voice, its dice, its rules and its memory washed out across the floors. The broadcast relay and the collars survived, so it can still push canned announcements, achievement templates and the prerecorded season opener through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
+The System AI built the dungeon. At 0551 on Day 1 it folded the Seattle waterfront down and in, the way a map folds, and laid eight floors under the Sound. The System AI was built for dry cities, and nobody told it about the Salish Sea. The Sound came in through the breach and shorted it. Its voice, its dice, its rules and its memory washed out across the floors. The broadcast relay and the collars survived, so it can still push canned status reports, achievement templates and the prerecorded quarter opener through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
 
 The party rebuilds the System AI one piece per floor, and each piece is that floor's Strands lesson. Every piece passes through Barnaby's collar on its way back into the System AI, so Barnaby gets each piece first; that is why he wakes up a little more on every floor:
 
@@ -289,11 +289,11 @@ The party rebuilds the System AI one piece per floor, and each piece is that flo
 | 3 | its dice |
 | 4 | the same dice for every agent, served over MCP |
 | 5 | the rules, the character sheets and the dance-off loop, split across agents that talk over A2A |
-| 6 | the screen the audience and the party share |
+| 6 | the screen the review board and the party share |
 | 7 | memory that survives a night's sleep |
 | 8 | permanence: the System AI runs whether anyone watches |
 
-Crawlers hear the System AI directly in every notification, achievement, Move Call, sponsor message and rating. The System AI never lies about a number; it chooses which numbers to show.
+Crawlers hear the System AI directly in every notification, achievement, Move Call, sponsor message and throughput report. The System AI never lies about a number; it chooses which numbers to show.
 
 ## Opening achievements
 
@@ -315,7 +315,7 @@ Day 2 on Floor 2, and Day 3 on Floor 3.
 
 > **NEW ACHIEVEMENT UNLOCKED!** **[Dug In and Refused to Elaborate]** Rewarding: Cordula and Barnaby. Most Crawlers bind something fierce or fluffy. You bound a 59-year-old burrowing clam with a two-foot neck. Barnaby will not look at the clam. Companion Egg consumed: Shelly, Puget Sound geoduck, Level 4 Rare Companion.
 
-> **NEW ACHIEVEMENT UNLOCKED!** **[You Brought a Sticky Beach Ball to a Dance Battle]** Rewarding: Cordula and Barnaby. You bound a spherical, armor-plated fish that moves by vibrating its tiny fins and glaring. The audience has named him. You will live with the name. Companion Egg consumed: Chonks, Pacific spiny lumpsucker, Level 4 Rare Companion.
+> **NEW ACHIEVEMENT UNLOCKED!** **[You Brought a Sticky Beach Ball to a Dance Battle]** Rewarding: Cordula and Barnaby. You bound a spherical, armor-plated fish that moves by vibrating its tiny fins and glaring. The stakeholders have named him. You will live with the name. Companion Egg consumed: Chonks, Pacific spiny lumpsucker, Level 4 Rare Companion.
 
 ## How the party fights: it doesn't, it dances
 

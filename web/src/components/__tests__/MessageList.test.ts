@@ -39,13 +39,13 @@ describe('MessageList', () => {
   it('shows loading indicator when loading is true', () => {
     const wrapper = mountList({ messages: [], loading: true, error: null })
     expect(wrapper.find('.loading-indicator').exists()).toBe(true)
-    expect(wrapper.text()).toContain('Loading the broadcast')
+    expect(wrapper.text()).toContain('Loading the status feed')
   })
 
   it('shows error message when error prop is set', () => {
     const wrapper = mountList({ messages: [], loading: false, error: 'Network error' })
     expect(wrapper.find('.list-error').exists()).toBe(true)
-    expect(wrapper.text()).toContain('Broadcast history could not be loaded')
+    expect(wrapper.text()).toContain('Status history could not be loaded')
   })
 
   it('shows empty state when messages array is empty', () => {
