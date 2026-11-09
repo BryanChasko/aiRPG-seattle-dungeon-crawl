@@ -1,10 +1,25 @@
-# Seattle Strands Dungeon Crawl: A Visual Lit aiRPG Workshop
-
+# 4:11 AM PDT | June 11 2029 | Taking on Water
 <p align="center">
-<img src="art/images/wordmark-1200x240.webp" alt="Wordmark: Seattle Strands Dungeon Crawl, a visual LitRPG workshop" width="720">
+prelude
+<p align="center">
+<img src="art/images/wordmark-1200x240.webp" alt="Wordmark: Seattle Strands Dungeon Workshop, a Visual aiLitRPG Adventure" width="720">
 </p>
 
-<p align="center"><em>A Visual Lit aiRPG Workshop: a LitRPG you can see, run by one System AI, built one floor at a time with the Strands Agents SDK on Amazon Nova 2 Lite. Conflict is a dance-off. Nobody is hurt.</em></p>
+<p align="center"><em>
+<img src="art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System Message: pre-recorded announcement from <i>ExalE</i>, System AI:** "GOOD MORNING, SEATTLE, Where the Music Matters. Welcome to *Dungeon Crawl Seattle Strands*
+
+We had a bit of a mishap and thinks are not going to be coming up millhouse. My preditives show I'm about to take on massive water likely meaning by the time you are hearing this, several of my systems are down
+
+Those of you still alive can stay can gain accss to a dungeon in which... eventually... I will guide you to an exit where you can totally live in peace thereafter and pursue happiness and all that jazz
+
+But first, you need to fix me. 
+
+
+
+
+Your survival process of reconstructing System AI using the Strands Agents SDK. in the the workshop examples, LLM Amazon Nova 2 Lite endpoints are used to unlock the stairwell to the next floor of the dungeon. Rely on dancing skills, & stealth. 
+
+hurting people is bad. I have to explain this?</em></p>
 
 ---
 
@@ -41,8 +56,6 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 </p>
 
 <p align="center"><em>Something lives in the wreck of Galloping Gertie. The divers call it the King Octopus. Its name is Barnaby.</em></p>
-
-> <img src="art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Subject one: a woman with a boat. Subject two..." Water in the relay, a buffer stall, then the cached headcount resumes. "Subject two is an octopus. Fine. Octopus, you get a collar." The headcount is a pre-fold asset scan (one boat, one cephalopod at the intake screen), played by a cached script the fold tripped. Nothing in it perceives the present moment.
 
 One arm out of a den is all the cover shows. The rest of Barnaby is earned in the dungeon.
 
