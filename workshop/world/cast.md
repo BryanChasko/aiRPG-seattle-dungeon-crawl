@@ -246,7 +246,7 @@ On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the hold
 | Dislikes | dead air, a Crawler who reads the fine print, being corrected, Cordula's refusal to panic, which it calls bad television, a rule it cannot find, a die it cannot trust, water in the works |
 | Does not care about | who wins |
 | Afraid of | cancellation, stopping |
-| Habit | calls everyone "Crawler"; writes every loot description as a small insult; never lies about a number, and chooses which numbers to show; speaks in the present tense, a few plain words at a time, when the world changes |
+| Habit | calls everyone "Crawler"; writes every loot description as a small insult; never lies about a number, and chooses which numbers to show; performs for viewers and files flat, courteous findings for sponsors near quarter close; speaks in the present tense, a few plain words at a time, when the world changes |
 | In the source workshop | the agent that runs the game |
 | In the code | the Narrator orchestrator on [Floor 5](../floor-5.md), rebuilt with Strands harness on [Floor 7](../floor-7.md) and deployed to AgentCore Runtime on [Floor 8](../floor-8.md); the voice in the system prompt, which [Floor 1](../floor-1.md) sets the tone for, and the `StoryOutput` fields the HUD shows on [Floors 5](../floor-5.md) and [6](../floor-6.md) |
 
