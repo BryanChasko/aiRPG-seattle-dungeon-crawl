@@ -82,7 +82,7 @@ git clone https://github.com/BryanChasko/aiRPG-seattle-dungeon-crawl.git
 cd aiRPG-seattle-dungeon-crawl
 ```
 
-Check: `ls` (or `dir` on Windows) lists `README.md`, `workshop` and the numbered floor folders. Every command from here runs inside the aiRPG-seattle-dungeon-crawl folder.
+Check: `ls` (or `dir` on Windows) lists `README.md`, `dungeon`, `site` and `art`. Every command from here runs inside the aiRPG-seattle-dungeon-crawl folder.
 
 ### Step 3: Equip uv
 
