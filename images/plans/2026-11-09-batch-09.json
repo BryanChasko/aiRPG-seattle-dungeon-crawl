@@ -1,0 +1,83 @@
+{
+ "run": "2026-11-09-batch-09",
+ "why": "Issue #3 character expression sheets: the states the cast cards don't cover yet. Cordula's paddle-vault and paddle-drum (canon gear line: the paddle is a vaulting pole, a doorstop, a drum, a color-guard staff); Barnaby's plotting, irritated and academic chromatophore states (calm=base and stealth already ship); Chonks Spine Flare and Shelly Saltwater Jet (both canon abilities with no card); Off-Beat dance-off versions of the four bosses (every standard opponent already has one).",
+ "renders": [
+  {
+   "name": "card-cast-cordula-vault",
+   "class": "card",
+   "out": "images/cards/cast-cordula-vault-640x640.webp",
+   "subject": "{CORDULA} mid vault over a flooded dungeon gap, both hands on her black touring paddle planted like a pole-vault pole, body extended horizontal above churning water, karambit sheaths visible on her calves, fierce joyful grin, athletic peak moment",
+   "place": {"page": "workshop/world/cast.md", "where": "Cordula section, beside the Gear line about the paddle as a vaulting pole", "alt": "Cordula vaulting over floodwater on her planted black paddle like a pole-vaulter, body extended mid-air"}
+  },
+  {
+   "name": "card-cast-cordula-drum",
+   "class": "card",
+   "out": "images/cards/cast-cordula-drum-640x640.webp",
+   "subject": "{CORDULA} drumming the Final Beat with her black touring paddle on the taut skin of a huge barnacled harbour buoy used as a war drum, mid-strike, water spraying off the buoy skin, metronome-steady face, the drummer who never misses a count",
+   "place": {"page": "workshop/world/cast.md", "where": "Cordula section, beside the Final Beat line", "alt": "Cordula drumming the Final Beat with her paddle on a barnacled buoy repurposed as a war drum"}
+  },
+  {
+   "name": "card-cast-barnaby-plotting",
+   "class": "card",
+   "out": "images/cards/cast-barnaby-plotting-640x640.webp",
+   "subject": "{BARNABY} plotting: two arm-tips steepled together under his gaze like a schemer's fingers, one eye half-lidded and narrowed, the other arms coiled in neat thoughtful loops, faint violet collar glow, the look of an octopus three moves ahead",
+   "place": {"page": "workshop/world/cast.md", "where": "Barnaby section, expression sheet row, plotting", "alt": "Barnaby plotting with arm-tips steepled and one eye narrowed, collar glowing faint violet"}
+  },
+  {
+   "name": "card-cast-barnaby-irritated",
+   "class": "card",
+   "out": "images/cards/cast-barnaby-irritated-640x640.webp",
+   "subject": "{BARNABY} irritated: arms folded in a crossed knot, skin mottled with the first red blush of temper over the charcoal, one eye fixed on the viewer with a flat stare, collar glow burning brighter violet, deeply unimpressed",
+   "place": {"page": "workshop/world/cast.md", "where": "Barnaby section, expression sheet row, irritated", "alt": "Barnaby irritated with arms knotted and skin blushing red over charcoal, collar glowing hot"}
+  },
+  {
+   "name": "card-cast-barnaby-academic",
+   "class": "card",
+   "out": "images/cards/cast-barnaby-academic-640x640.webp",
+   "subject": "{BARNABY} the academic: studying a huge open waterproof handbook held in two arms, one arm-tip turning the page, another arm holding a pencil stub, eyes intent, collar glowing a steady scholarly violet, the Ph.D.-level escape artist at work",
+   "place": {"page": "workshop/world/cast.md", "where": "Barnaby section, expression sheet row, academic", "alt": "Barnaby studying an open waterproof handbook, one arm turning the page, collar glowing steady violet"}
+  },
+  {
+   "name": "card-cast-chonks-flare",
+   "class": "card",
+   "out": "images/cards/cast-chonks-flare-640x640.webp",
+   "subject": "{LUMPSUCKER} performing his Spine Flare: puffed up twice as round while suction-latched onto a brass ship's-wheel spoke, every spine erect and bristling, eyes squeezed to furious slits, daring anyone to grab him, comically defiant",
+   "place": {"page": "workshop/world/cast.md", "where": "Chonks section, beside the Spine Flare ability", "alt": "Chonks puffed round with every spine erect while latched to a brass wheel spoke, eyes squeezed shut"}
+  },
+  {
+   "name": "card-cast-shelly-jet",
+   "class": "card",
+   "out": "images/cards/cast-shelly-jet-640x640.webp",
+   "subject": "Shelly the geoduck firing his Saltwater Jet: {GEODUCK} braced in cracked stone, a high-pressure fan of seawater blasting sideways from the siphon tip and shoving back a tumbling wave of mud and grit, the carabiner glinting on his shell ring, immovable artillery",
+   "place": {"page": "workshop/world/cast.md", "where": "Shelly section, beside the Saltwater Jet ability", "alt": "Shelly braced in stone, firing a high-pressure fan of seawater from his siphon, mud tumbling back"}
+  },
+  {
+   "name": "card-boss-monty-offbeat",
+   "class": "card",
+   "out": "images/cards/boss-monty-offbeat-640x640.webp",
+   "subject": "Monty the giant python Off-Beat: a huge python tied in a knot trying to follow the choreography, head bobbing a half-beat late, tongue out in concentration, stage lights glaring, trying so hard and failing",
+   "place": {"page": "workshop/floor-8.md", "where": "boss section, beside the Monty dance-off result", "alt": "Monty the giant python tied in a knot mid dance-off, head bobbing a half-beat late"}
+  },
+  {
+   "name": "card-boss-earnings-call-offbeat",
+   "class": "card",
+   "out": "images/cards/boss-earnings-call-offbeat-640x640.webp",
+   "subject": "the Quarterly Earnings Call Off-Beat: a towering stack of bar charts and ringing phones in suits losing the beat, papers flying off the podium, one chart tipping over, the numbers themselves missing the count",
+   "place": {"page": "workshop/floor-8.md", "where": "boss section, beside the Earnings Call dance-off result", "alt": "The Quarterly Earnings Call Off-Beat: charts and ringing phones losing the beat, papers flying"}
+  },
+  {
+   "name": "card-boss-regional-director-offbeat",
+   "class": "card",
+   "out": "images/cards/boss-regional-director-offbeat-640x640.webp",
+   "subject": "the Regional Director Off-Beat: a stern manager in a grey suit stumbling over his own polished shoes mid dance move, tie flying, clipboard pages scattering, dignity departing the building",
+   "place": {"page": "workshop/floor-8.md", "where": "boss section, beside the Regional Director dance-off result", "alt": "The Regional Director Off-Beat, stumbling over his own shoes, tie flying, clipboard scattering"}
+  },
+  {
+   "name": "card-boss-the-keynote-offbeat",
+   "class": "card",
+   "out": "images/cards/boss-the-keynote-offbeat-640x640.webp",
+   "subject": "the Keynote Off-Beat: a glowing presenter silhouette on a giant stage screen frozen mid-slide with a spinning loading icon, a clicker dangling from a lanyard, the audience of spotlights waiting, buffering at the worst moment",
+   "place": {"page": "workshop/floor-8.md", "where": "boss section, beside the Keynote dance-off result", "alt": "The Keynote Off-Beat: a presenter silhouette frozen on the big screen with a loading spinner"}
+  }
+ ]
+}
