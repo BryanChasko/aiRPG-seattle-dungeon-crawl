@@ -8,6 +8,7 @@ Maintainer tools for the workshop pages and art. Learners never need these.
 | [`airpg_render.py`](airpg_render.py) | art pipeline: a plan in [`../images/plans/`](../images/plans/) becomes request files, renders on Meta Muse Image 1.0, and is standardized to the house spec with a sidecar per image. `--check` verifies every shipped image |
 | [`contact_sheet.py`](contact_sheet.py) | review sheets of renders, one grid per size class |
 | [`sam_cutout.py`](sam_cutout.py) | SAM 3.1 cutouts: a character or object from a render as a transparent sprite, for compositing and motion |
+| [`sam_probe.py`](sam_probe.py) | one-shot SAM 3.1 diagnostic (no retries): prints status, Retry-After, request id and the parsed error; `--playground` uses the files-upload + streaming shape, `--control` calls a muse-* model on the same key |
 | [`motion.py`](motion.py) | animated payoffs from shipped art (Off-Beat wobble, loot pop, Benched, Ink Cloud), each with a still for reduced motion; no model calls |
 | [`publish_art.py`](publish_art.py) | uploads planned art to `s3://bryanchasko.com/airpg-art/` and writes [`../docs/art-placements.md`](../docs/art-placements.md): every image's S3 key, URL, page, spot, alt text and paste-ready line |
 | [`meta_api.py`](meta_api.py) | shared Meta Model API client (key lookup, retries); `models` lists what the key can call |
