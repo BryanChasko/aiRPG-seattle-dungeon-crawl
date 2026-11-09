@@ -7,7 +7,7 @@ Files on this floor: [`8_agentcore_production/rulesagent/rules_agent.py`](../8_a
 ![Floor 8.3: The Rules Agent](../../art/images/floors/floor-8-3-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, FLOOR 8.3.** Brick three was the rule book. Every Crawler on every server reads the same handbook now, which Barnaby considers the single most civilized thing the Narrator has ever done. Then a pitch-deck founder blocked the Locks and we got to use it.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 12, FRIDAY, JUNE 22, FLOOR 8.3.** Brick three was the rule book. Every Crawler on every server reads the same handbook now, which Barnaby considers the single most civilized thing the Narrator has ever done. Then a pitch-deck founder blocked the Locks and we got to use it.
 <!-- /cordula-log -->
 
 > <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [why-agents-fail-sample-for-amazon-agentcore](https://github.com/elizabethfuentes12/why-agents-fail-sample-for-amazon-agentcore) by Elizabeth Fuentes. "AI agents hallucinate statistics, pick wrong tools, ignore business rules, and claim success when operations fail."

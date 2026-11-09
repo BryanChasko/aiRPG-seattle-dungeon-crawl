@@ -7,9 +7,9 @@
 <!-- cordula-log -->
 ## After the Fold
 
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17.** The meeting is on the way in: [how Barnaby and I met](../../README.md#the-meeting). The fold carried us down to the stairwell, the System AI collared him, and I named him. What follows is what we found at the bottom.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, MONDAY, JUNE 11.** The meeting is on the way in: [how Barnaby and I met](../../README.md#the-meeting). The fold carried us down to the stairwell, the System AI collared him, and I named him. What follows is what we found at the bottom.
 
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, CONTINUED.**
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, MONDAY, JUNE 11, CONTINUED.**
 >
 > A blackened brass ring snapped shut around his mantle, and his skin went a color I had never seen on an animal. He did not speak. He could not, not yet. But he looked at me, and then he looked at the stairwell behind me, the only way down that was not underwater, and I understood him anyway.
 >

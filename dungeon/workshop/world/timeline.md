@@ -2,7 +2,7 @@
 
 > <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Fourteen days, Crawlers. The tide keeps one clock, the quarter keeps the other, and the octopus keeps a third that nobody likes to mention."
 
-The crawl runs fourteen Earth days. It starts when Pier 59 folds into Elliott Bay at 0551 on Wednesday, June 17, 2026, and ends at sunrise on Alki on Tuesday, June 30, the last day of the quarter. Every time on this page is Seattle time.
+The crawl runs fourteen Earth days. It starts when Pier 59 folds into Elliott Bay at 0551 on Monday, June 11, 2029, and ends at sunrise on Alki on Sunday, June 24, six days before the quarter closes on June 30. Every time on this page is Seattle time.
 
 The dungeon floods on the Sound's schedule, so the tides below are the tides the party works around. The tide times and heights are NOAA predictions for the Seattle station, [9447130](https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=9447130), in feet above mean lower low water. A minus height is a low tide below that average, the kind that drains the tide pools and bares the sand flats. The sunrise times come from [sunrise-sunset.org](https://sunrise-sunset.org/).
 
@@ -10,21 +10,21 @@ The dungeon floods on the Sound's schedule, so the tides below are the tides the
 
 | Day | Date | Floor | Tides (H high, L low) | What happens |
 |---|---|---|---|---|
-| 1 | Wednesday, June 17 | [0](../floor-0.md), [1](../floor-1.md), then toward [2](../floor-2.md) by night | H 0556 10.7 ft, L 1311 -3.6 ft, H 2052 12.4 ft | Cordula's log opens at 0547. Sunrise is 0511. The pier folds at 0551, five minutes before high water, and Floor 0 takes minutes. The 1311 low water drains the Floor 1 tide pools, and the Rain-Shell Tourist Pod comes for them. |
-| 2 | Thursday, June 18 | [2](../floor-2.md) | L 0223 7.1 ft, H 0657 10.0 ft, L 1400 -2.7 ft, H 2135 12.4 ft | The Eelgrass Nursery. At the 1400 low water the flood has scoured a sand flat down to a 59-year-old geoduck, and Shelly joins the party. |
-| 3 | Friday, June 19 | [3](../floor-3.md) | L 0326 6.3 ft, H 0803 9.2 ft, L 1450 -1.3 ft, H 2217 12.2 ft | The Bull Kelp Cathedral. A bulb pops, a stipe whips, and Chonks joins the party. Lady Luck deals the dice. |
-| 4 | Saturday, June 20 | [4](../floor-4.md) | L 0432 5.3 ft, H 0917 8.3 ft, L 1540 0.3 ft, H 2257 12.1 ft | The Ship Canal and the Locks, the water Cordula grew up on. |
-| 5 | Sunday, June 21 | [4](../floor-4.md) | L 0537 4.1 ft, H 1042 7.6 ft, L 1633 2.2 ft, H 2335 11.8 ft | The solstice, the longest day of the year. The dice cross the Locks, and the Developer Advocate Swarm demos on the lock walls. |
-| 6 | Monday, June 22 | [5](../floor-5.md) | L 0637 2.8 ft, H 1224 7.3 ft, L 1732 4.0 ft | The Estuary floods twice a day. The first dance-off is against the Quarterly Close Accountants, a week before their quarter closes. |
-| 7 | Tuesday, June 23 | [5](../floor-5.md) | H 0013 11.5 ft, L 0730 1.6 ft, H 1414 7.8 ft, L 1841 5.7 ft | The party is registered, the rules are cited, and the Developer Advocate Swarm comes back from the Locks. |
-| 8 | Wednesday, June 24 | [6](../floor-6.md) | H 0051 11.1 ft, L 0815 0.6 ft, H 1545 8.9 ft, L 2004 6.9 ft | The Underground and the Fremont Troll. |
-| 9 | Thursday, June 25 | [7](../floor-7.md) | H 0128 10.7 ft, L 0855 -0.3 ft, H 1651 9.9 ft, L 2126 7.6 ft | The Bluffs. The party spends the night in a Safe Room. |
-| 10 | Friday, June 26 | [7](../floor-7.md) | H 0206 10.3 ft, L 0932 -0.9 ft, H 1741 10.7 ft, L 2234 7.9 ft | The Ferry-Line Commuter Horde takes the cliff path at dawn, and the party wakes up still knowing who it is. |
-| 11 | Saturday, June 27 | [8](../floor-8.md), [8.1](../floor-8-1.md) | H 0244 10.0 ft, L 1007 -1.3 ft, H 1821 11.2 ft, L 2326 8.0 ft | Bellevue and the Narrows. The dice server goes to the cloud. The bankers are working the weekend. |
-| 12 | Sunday, June 28 | [8.2](../floor-8-2.md), [8.3](../floor-8-3.md) | H 0323 9.8 ft, L 1041 -1.6 ft, H 1854 11.4 ft | The Character Agent and the Rules Agent go to the cloud. |
-| 13 | Monday, June 29 | [8.4](../floor-8-4.md) | L 0007 7.9 ft, H 0402 9.7 ft, L 1116 -1.7 ft, H 1923 11.5 ft | The Narrator goes to the cloud, and the Quarterly Earnings Call goes live, the day before the quarter closes. |
-| 13 | Monday, June 29, night | [9](../floor-9.md) (optional) | | ALMOCO, the Corrosion Cathedral, where the lead fog makes the System AI misremember. Barnaby fights beside Cordula. The elevator lets out at Alki at 0515 on June 30. |
-| 14 | Tuesday, June 30 | [the Exit](../cleanup.md) | L 0040 7.8 ft, H 0442 9.6 ft, L 1152 -1.8 ft, H 1948 11.5 ft | Sunrise on Alki at 0515. The party leaves no trace. The quarter closes at midnight. |
+| 1 | Monday, June 11 | [0](../floor-0.md), [1](../floor-1.md), then toward [2](../floor-2.md) by night | H 0356 10.0 ft, L 1109 -1.8 ft, H 1857 11.2 ft | Cordula's log opens at 0547. Sunrise is 0512. The pier folds at 0551, two hours after high water, on the morning ebb, and Floor 0 takes minutes. The 1109 low water drains the Floor 1 tide pools, and the Rain-Shell Tourist Pod comes for them. |
+| 2 | Tuesday, June 12 | [2](../floor-2.md) | H 0432 10.0 ft, L 1145 -2.2 ft, H 1928 11.5 ft | The Eelgrass Nursery. At the 1145 low water the flood has scoured a sand flat down to a 59-year-old geoduck, and Shelly joins the party. |
+| 3 | Wednesday, June 13 | [3](../floor-3.md) | H 0511 9.9 ft, L 1224 -2.3 ft, H 1959 11.7 ft | The Bull Kelp Cathedral. A bulb pops, a stipe whips, and Chonks joins the party. Lady Luck deals the dice. |
+| 4 | Thursday, June 14 | [4](../floor-4.md) | H 0554 9.7 ft, L 1304 -2.2 ft, H 2032 11.8 ft | The Ship Canal and the Locks, the water Cordula grew up on. |
+| 5 | Friday, June 15 | [4](../floor-4.md) | H 0642 9.5 ft, L 1345 -1.9 ft, H 2106 12.0 ft | The dice cross the Locks, and the Developer Advocate Swarm demos on the lock walls. |
+| 6 | Saturday, June 16 | [5](../floor-5.md) | H 0737 9.1 ft, L 1429 -1.1 ft, H 2142 12.1 ft | The Estuary floods twice a day. The first dance-off is against the Quarterly Close Accountants, two weeks before their quarter closes. |
+| 7 | Sunday, June 17 | [5](../floor-5.md) | H 0840 8.5 ft, L 1514 0.0 ft, H 2218 12.1 ft | The party is registered, the rules are cited, and the Developer Advocate Swarm comes back from the Locks. |
+| 8 | Monday, June 18 | [6](../floor-6.md) | H 0953 8.0 ft, L 1602 1.5 ft, H 2256 12.1 ft | The Underground and the Fremont Troll. |
+| 9 | Tuesday, June 19 | [7](../floor-7.md) | H 1119 7.7 ft, L 1656 3.2 ft, H 2336 12.0 ft | The Bluffs. The party spends the night in a Safe Room. |
+| 10 | Wednesday, June 20 | [7](../floor-7.md) | L 0637 1.5 ft, H 1257 7.9 ft, L 1759 4.9 ft | The Ferry-Line Commuter Horde takes the cliff path at dawn, and the party wakes up still knowing who it is. |
+| 11 | Thursday, June 21 | [8](../floor-8.md), [8.1](../floor-8-1.md) | H 0019 11.9 ft, L 0732 0.1 ft, H 1438 8.7 ft, L 1913 6.3 ft | Bellevue and the Narrows. The solstice, the longest day of the year. The dice server goes to the cloud. |
+| 12 | Friday, June 22 | [8.2](../floor-8-2.md), [8.3](../floor-8-3.md) | H 0104 11.8 ft, L 0824 -1.2 ft, H 1600 9.8 ft, L 2032 7.2 ft | The Character Agent and the Rules Agent go to the cloud. |
+| 13 | Saturday, June 23 | [8.4](../floor-8-4.md) | H 0152 11.7 ft, L 0914 -2.3 ft, H 1703 10.7 ft, L 2145 7.6 ft | The Narrator goes to the cloud, and the Quarterly Earnings Call goes live, a week before the quarter closes. |
+| 13 | Saturday, June 23, night | [9](../floor-9.md) (optional) | | ALMOCO, the Corrosion Cathedral, where the lead fog makes the System AI misremember. Barnaby fights beside Cordula. The elevator lets out at Alki at 0515 on June 24. |
+| 14 | Sunday, June 24 | [the Exit](../cleanup.md) | H 0242 11.5 ft, L 1002 -3.0 ft, H 1754 11.4 ft, L 2249 7.6 ft | Sunrise on Alki at 0515. The party leaves no trace. The quarter closes June 30, six days out. |
 
 ## Why Fourteen Days
 
@@ -62,4 +62,4 @@ The full character sheets are in [The Cast](cast.md).
 | August 12, 2025 | Cordula logs an unconfirmed sighting at the Gertie wreck |
 | October 3, 2025 | Cordula logs an unconfirmed sighting under Pier 57 |
 | February 19, 2026 | Cordula logs another unconfirmed sighting at the Gertie wreck |
-| June 17, 2026, 0551 | The pier folds, tripping a cached migration script that plays the pre-fold asset scan as the GOOD MORNING broadcast |
+| June 11, 2029, 0551 | The pier folds, tripping a cached migration script that plays the pre-fold asset scan as the GOOD MORNING broadcast |

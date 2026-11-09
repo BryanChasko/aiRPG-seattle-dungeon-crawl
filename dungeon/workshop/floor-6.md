@@ -7,7 +7,7 @@ Files on this floor: [`web/src/views/NewGameView.vue`](../../site/web/src/views/
 ![Floor 6: The Arena (Web Interface)](../../art/images/floors/floor-6-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, FLOOR 6.** Under Pioneer Square the old storefronts are still there, buried, and the Fremont Troll sits at the end of the arena like a judge who has seen too much. The review board could see us now. We could not see the audit. We needed what the reviewers had: the sheet, the rolls, the choices, all on one screen. Once we had it, Barnaby performed. I did not know an octopus could hit his marks. The throughput numbers did.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 8, MONDAY, JUNE 18, FLOOR 6.** Under Pioneer Square the old storefronts are still there, buried, and the Fremont Troll sits at the end of the arena like a judge who has seen too much. The review board could see us now. We could not see the audit. We needed what the reviewers had: the sheet, the rolls, the choices, all on one screen. Once we had it, Barnaby performed. I did not know an octopus could hit his marks. The throughput numbers did.
 <!-- /cordula-log -->
 
 > <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 6. Time to show the review board the Narrator. Pick who you play as, point the web interface at port 8009, and press Enter. No pressure. The review board is watching."
