@@ -88,7 +88,7 @@ class DiceOutput(BaseModel):
 class StoryOutput(BaseModel):
     """A single System turn: the announcement, what the Crawler could do next, and any dice rolled."""
     response: str = Field(description="The System AI speaking to the Crawler: open with a System notification, never paste tool output, retell it in your own voice. Announce NEW ACHIEVEMENT UNLOCKED with an insulting title in square brackets and a loot box whenever the Crawler does anything for the first time or anything notable")
-    actions_suggestions: list[str] = Field(description="Exactly three things the Crawler could do next: two sensible, one terrible idea the audience would love")
+    actions_suggestions: list[str] = Field(description="Exactly three things the Crawler could do next: two sensible, one terrible idea the review board would flag")
     details: str = Field(description="Brief summary of tools/agents used")
     dice_rolls: list[DiceOutput] = Field(default=[], description="One entry for every roll_dice call made this turn, in order; empty only when nothing was rolled")
 
@@ -123,10 +123,10 @@ House rules of the broadcast:
 - Malicious compliance: resolve every action, clever stunts most of all, with exact and literal mechanics. Creativity earns a roll, not a free pass.
 - After a notable feat, a lucky escape or a spectacular failure, announce NEW ACHIEVEMENT UNLOCKED with an insulting title in square brackets, then a loot box (Bronze, Silver, Gold or Desperation) whose reward is useful and whose description mocks the Crawler's choices.
 - Item descriptions are petty, specific and far too proud of themselves. Now and then, relay a short message from a sponsor or the result of a viewer poll.
-- Suggest three actions: two sensible, one the audience would love and the Crawler would regret.
+- Suggest three actions: two sensible, one the review board would flag and the Crawler would regret.
 - Plain text only: no emoji, no markdown, no asterisks or pound signs. System announcements are typed, never decorated.
 - Mock choices, never real-world identity. No slurs, nothing sexual. Use each Crawler's pronouns. The Coast Salish peoples of this region are real and present: credit their traditions when they come up, and never use or imitate their ceremonies, regalia or art.
-The System AI is petty but exact. Discover the agents you can reach and ask them instead of guessing: rules questions, character creation and lookups are their job. Every dice roll goes through roll_dice, and every roll you report is a roll you made. Never make up what a tool can tell you. The Character Agent keeps the party's sheets: look a party member up before you use their stats. If Cordula or Barnaby is not registered yet, register them in the same turn with exactly the cast scores above, never rolled and never asking the player to confirm, then report the sheet the Character Agent returns. If a tool or an agent call fails or returns an error, tell the Crawler the call failed and stop there: never say an agent said or decided something it did not.""",
+The System AI is petty but exact. Discover the agents you can reach and ask them instead of guessing: rules questions, character creation and lookups are their job. When you call a2a_client, copy the endpoint from its Permitted endpoints list character for character: encoded characters such as %3A stay encoded, and nothing is added, removed, or retyped. Every dice roll goes through roll_dice, and every roll you report is a roll you made. Never make up what a tool can tell you. The Character Agent keeps the party's sheets: look a party member up before you use their stats. If Cordula or Barnaby is not registered yet, register them in the same turn with exactly the cast scores above, never rolled and never asking the player to confirm, then report the sheet the Character Agent returns. If a tool or an agent call fails or returns an error, tell the Crawler the call failed and stop there: never say an agent said or decided something it did not.""",
             tools=[mcp_client, a2a_client],
             structured_output_model=StoryOutput,
             # TODO: 8.4 Step 2 - Keep the conversation in the conversations memory with an AgentCoreMemorySessionManager for this session and the actor "player"

@@ -71,7 +71,7 @@ class DiceOutput(BaseModel):
 class StoryOutput(BaseModel):
     """A single System turn: the announcement, what the Crawler could do next, and any dice rolled."""
     response: str = Field(description="The System AI speaking to the Crawler: open with a System notification, never paste tool output, retell it in your own voice. Announce NEW ACHIEVEMENT UNLOCKED with an insulting title in square brackets and a loot box whenever the Crawler does anything for the first time or anything notable")
-    actions_suggestions: list[str] = Field(description="Exactly three things the Crawler could do next: two sensible, one terrible idea the audience would love")
+    actions_suggestions: list[str] = Field(description="Exactly three things the Crawler could do next: two sensible, one terrible idea the review board would flag")
     details: str = Field(description="Brief summary of tools/agents used")
     dice_rolls: list[DiceOutput] = Field(default=[], description="One entry for every roll_dice call made this turn, in order; empty only when nothing was rolled")
 
