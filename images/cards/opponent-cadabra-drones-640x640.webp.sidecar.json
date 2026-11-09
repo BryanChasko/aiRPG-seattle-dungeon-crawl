@@ -1,0 +1,39 @@
+{
+ "file": "opponent-cadabra-drones-640x640.webp",
+ "bytes": 116836,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "ee02a058bded5b1e7e7b6f5e8309ad9421a1ed214fddd1bb8d8502dea1d998dd",
+  "size": "1024x1024"
+ },
+ "sha256": "1bd1980d4c4f416950e29d2e33dfd1050a2ffadd8ab7b0b71b89094902f35bfd",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-opponent-cadabra-drones.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-05/raw/card-opponent-cadabra-drones.png",
+  "raw_sha256": "1955a4ff2b1e93a2e2f5439dfebd3325d3668bbeda0d8ad782ee1ffefabe8d0b",
+  "request": "images/src/card-opponent-cadabra-drones.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "11.3.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

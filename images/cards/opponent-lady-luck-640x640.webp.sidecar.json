@@ -1,0 +1,39 @@
+{
+ "file": "opponent-lady-luck-640x640.webp",
+ "bytes": 97740,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "e0147a873ea3c8613962217e1e5b161ba36d70f6d26fe1f43acbacb709009dc7",
+  "size": "1024x1024"
+ },
+ "sha256": "d5917083cd8409e76bb1d8dfa4649570a4c03245660b75d56bbdcd6b82d8aaed",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-opponent-lady-luck.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-05/raw/card-opponent-lady-luck.png",
+  "raw_sha256": "d420e108f2f6212686b64b41858d840f1c950499d4ce216387208f8038cd2330",
+  "request": "images/src/card-opponent-lady-luck.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "11.3.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

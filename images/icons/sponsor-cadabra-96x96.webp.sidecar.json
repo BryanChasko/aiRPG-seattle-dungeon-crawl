@@ -1,0 +1,39 @@
+{
+ "file": "sponsor-cadabra-96x96.webp",
+ "bytes": 2070,
+ "format": "webp lossy q88",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "0bb77bb7e2cdea13bfe636a95968145b22ff77d9ccd7659c0b20db27c6da1ddf",
+  "size": "1024x1024"
+ },
+ "sha256": "59112eb4004a81269686c9081ce07921bb663b5b538c2cf9e0013521128885eb",
+ "size": [
+  96,
+  96
+ ],
+ "source": {
+  "raw": "icon-sponsor-cadabra.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-05/raw/icon-sponsor-cadabra.png",
+  "raw_sha256": "5666d7f52e380f97f90e4ff41b2a0d425656af0fc1d2f813cfabfa789ef71a68",
+  "request": "images/src/icon-sponsor-cadabra.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "11.3.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "center crop 12% margin",
+  "resize 96x96 lanczos",
+  "no dots, no vignette (UI glyph)"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "file": "opponent-kiro-scripter-640x640.webp",
+ "bytes": 91052,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "09a2beb9bfe5509fea8e651345aa8aba88ae40f04f7daf47cb8c185894288e79",
+  "size": "1024x1024"
+ },
+ "sha256": "19ef2fa01355edb3879fbc5013d0a1789dc7f158d52058ebebb162e66030cd9a",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-opponent-kiro-scripter.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-05/raw/card-opponent-kiro-scripter.png",
+  "raw_sha256": "d506128d654515d08f29839827e19809b58a22677417cb71f9c2e199f420b24a",
+  "request": "images/src/card-opponent-kiro-scripter.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "11.3.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

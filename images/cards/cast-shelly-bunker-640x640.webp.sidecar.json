@@ -1,22 +1,22 @@
 {
  "file": "cast-shelly-bunker-640x640.webp",
- "bytes": 79326,
+ "bytes": 98588,
  "format": "webp lossy q84",
  "render": {
   "endpoint": "https://api.meta.ai/v1/images/generations",
   "model": "muse-image-1.0",
-  "prompt_sha256": "9b83aff898222fb20cf474a2bb5270679e68e7246f076899e7b199c7d7680498",
+  "prompt_sha256": "77fa0d336612e0507d73e618e2de21619bef8e5712be81a52d2951c3db651c41",
   "size": "1024x1024"
  },
- "sha256": "b6f734b89ac95e5c7e0acc51868e65c61c8c22dd0c80688b77854f7a6cbf23c0",
+ "sha256": "5ddf28697730a6df8052f821f21c39178dd10a2467041fd5e044abff5d3992a7",
  "size": [
   640,
   640
  ],
  "source": {
   "raw": "card-cast-shelly-bunker.png",
-  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-02/raw/card-cast-shelly-bunker.png",
-  "raw_sha256": "cbb57fc948b9ff8d2614535a3f212e8c11a0ce4ac5957f14d62862375958b994",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-05/raw/card-cast-shelly-bunker.png",
+  "raw_sha256": "614e735054a6ec9eefedc8a345eba69486094d34ae7dd1c319ec8bb852322e57",
   "request": "images/src/card-cast-shelly-bunker.request.json"
  },
  "tokens": {
@@ -24,8 +24,8 @@
   "vignette": "#0B0E14 (obsidian, banner spec base)"
  },
  "tools": {
-  "pillow": "12.1.0",
-  "python": "3.14.2"
+  "pillow": "11.3.0",
+  "python": "3.13.5"
  },
  "transforms": [
   "cover-crop 640x640 lanczos",
