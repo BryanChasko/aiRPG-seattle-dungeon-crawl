@@ -33,7 +33,7 @@ Start the pool, then go to the encounter folder:
 
 ```bash
 docker run -d --name tide-pool python:3.13-slim sleep infinity
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-2-sandbox-tide-pool
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-2-sandbox-tide-pool
 ```
 
 `sleep infinity` keeps the container alive with nothing else running. Staying alive is all the pool needs.

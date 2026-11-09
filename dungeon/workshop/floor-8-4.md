@@ -23,7 +23,7 @@ What is AgentCore Memory short-term memory? In 8.2 the characters were records i
 Part 1 needs the `gameprod` project with the three bricks deployed in 8.1 to 8.3. Change to the Floor 8 folder in the terminal:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/8_agentcore_production
+cd seattle-strands-dungeon-crawl/dungeon/8_agentcore_production
 ```
 
 This section works in two folders:

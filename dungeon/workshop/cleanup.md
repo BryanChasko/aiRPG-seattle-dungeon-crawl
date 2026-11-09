@@ -52,7 +52,7 @@ Press Ctrl+C in the terminal of every running server: the dice MCP server, the R
 Skip this section without Floor 8. Otherwise run the commands from the project folder, with the same credentials and region as in Floor 8:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/8_agentcore_production/gameprod
+cd seattle-strands-dungeon-crawl/dungeon/8_agentcore_production/gameprod
 export AWS_DEFAULT_REGION=us-west-2
 ```
 

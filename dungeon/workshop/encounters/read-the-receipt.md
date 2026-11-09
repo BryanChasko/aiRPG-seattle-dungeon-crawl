@@ -30,7 +30,7 @@ Success check: each round prints a receipt with a `turn_usage` smaller than `age
 Change to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-1-read-the-receipt
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-1-read-the-receipt
 ```
 
 The file defines two tools, `roll_d20` and `add_modifier`, so one turn makes multiple tool calls to count, and `make_lady_luck()`, the agent. `read_the_receipt(result, seconds)` is the function you complete. `read_the_receipt` starts with four fields already filled in: `stop_reason`, `seconds` (a stopwatch the caller runs around the call), `context_size` and `agent_usage_so_far`. Every step adds one more field to the `receipt` dictionary.

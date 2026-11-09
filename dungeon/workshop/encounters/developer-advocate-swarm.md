@@ -39,7 +39,7 @@ Success looks like this: the mic starts at the keynote and moves after every rou
 Open the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-5-developer-advocate-swarm
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-5-developer-advocate-swarm
 ```
 
 ## Step 1: Import the Swarm

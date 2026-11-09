@@ -30,7 +30,7 @@ Success check: the script reports the passages added, and the Rules Agent answer
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-5-paper-trail
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-5-paper-trail
 ```
 
 ## Step 1: Import the Reader

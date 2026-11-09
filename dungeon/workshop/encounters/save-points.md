@@ -36,7 +36,7 @@ Success looks like this: for each manager, the second agent holds a few messages
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-7-save-points
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-7-save-points
 ```
 
 ## Step 1: Import the Three Managers

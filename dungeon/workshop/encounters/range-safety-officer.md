@@ -32,7 +32,7 @@ How you know it worked: in the drill, `FTS FIRED: stray delivery drone` prints w
 Open the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-8-range-safety-officer
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-8-range-safety-officer
 ```
 
 ## Step 1: Raise the Interrupt from the Tool

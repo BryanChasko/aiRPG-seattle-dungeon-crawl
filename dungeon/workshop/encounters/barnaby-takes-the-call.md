@@ -32,7 +32,7 @@ Success looks like this: each of the two calls prints the remote agent's name an
 Start the Rules Agent and the Character Agent from Floor 5 first, each in its own terminal (`python rules_agent.py` from `5_a2a_integration/agents/rules_agent`, `python character_agent.py` from `5_a2a_integration/agents/character_agent`). Then open a third terminal in the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-5-barnaby-takes-the-call
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-5-barnaby-takes-the-call
 ```
 
 ## Step 1: Import the Client and the Server

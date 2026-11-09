@@ -28,7 +28,7 @@ Success check: the narration streams word by word, one `PLAY-BY-PLAY: roll_d20` 
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-1-commentary-booth
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-1-commentary-booth
 ```
 
 The file defines a dice tool, `roll_d20`, so the turn has tool calls to announce, and Lady Luck, the Narrator's croupier, to call the round.

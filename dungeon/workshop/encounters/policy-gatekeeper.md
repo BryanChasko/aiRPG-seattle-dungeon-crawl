@@ -45,7 +45,7 @@ Success looks like this: the ledger lists all five calls; the two forbidden ones
 The Cedar engine, `cedarpy`, comes with the workshop dependencies (the `cedar` extra of `strands-agents`): if the environment predates the Policy Gatekeeper encounter, run `uv sync` from the repository root first. Then go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-2-policy-gatekeeper
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-2-policy-gatekeeper
 ```
 
 Kiro's shell runs on the host machine in this battle, as on the bonus floor. The gate keeps the shell tolerable, so read every prompt.
@@ -164,9 +164,9 @@ Kiro does five jobs: view the folder, create `scroll.py`, run it, then try to wr
 
 ```
 KIRO AT THE GATE (answer y or n when the gate asks you):
-  AT THE GATE: file_editor /home/you/aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-2-policy-gatekeeper
-  AT THE GATE: file_editor /home/you/aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-2-policy-gatekeeper/scroll.py
-  AT THE GATE: shell python /home/you/aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-2-policy-gatekeeper/scroll.py
+  AT THE GATE: file_editor /home/you/seattle-strands-dungeon-crawl/dungeon/encounters/floor-2-policy-gatekeeper
+  AT THE GATE: file_editor /home/you/seattle-strands-dungeon-crawl/dungeon/encounters/floor-2-policy-gatekeeper/scroll.py
+  AT THE GATE: shell python /home/you/seattle-strands-dungeon-crawl/dungeon/encounters/floor-2-policy-gatekeeper/scroll.py
 Approve "shell" - runs a script on the host?
   Input: {"command": "python /home/you/.../scroll.py"} (y/n): y
   AT THE GATE: file_editor /tmp/kiro-escape.py

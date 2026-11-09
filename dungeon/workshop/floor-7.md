@@ -26,7 +26,7 @@ Across Floors 1 to 5 you assembled the Narrator piece by piece: an agent, tools,
 Change to the Floor 7 folder in a terminal:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/7_strands_harness
+cd seattle-strands-dungeon-crawl/dungeon/7_strands_harness
 ```
 
 Open and modify the [`narrator_harness.py`](../7_strands_harness/narrator_harness.py) file.

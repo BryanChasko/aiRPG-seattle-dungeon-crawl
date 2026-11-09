@@ -34,7 +34,7 @@ Success looks like this: round 1 fails every case, the loop adds four correction
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-8-pad-explosion-aftermath
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-8-pad-explosion-aftermath
 ```
 
 Given in the file: the pad sheet, the four cases (each with the words a report must contain and the number ranges it must hit), `numbers_in`, which reads every number out of a report, `correction_for`, and two stand-in reporters for the drill.

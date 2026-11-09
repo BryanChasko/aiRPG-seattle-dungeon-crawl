@@ -32,7 +32,7 @@ Signs the run worked: the first turn ends with the Narrator saying the drum is n
 Open the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-3-living-workbench
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-3-living-workbench
 ```
 
 Run the script from the encounter folder. Strands looks for `./tools` in the current directory, and the script moves to the encounter folder before building the agent. The folder has to exist when the agent is built, or nothing watches it.

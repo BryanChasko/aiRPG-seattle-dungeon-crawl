@@ -41,7 +41,7 @@ How you know it worked: the output ends with a `PACER:` line that shows polls as
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-6-launch-commit-criteria
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-6-launch-commit-criteria
 ```
 
 ## Step 1: Listen Before Every Tool and Every Model Call

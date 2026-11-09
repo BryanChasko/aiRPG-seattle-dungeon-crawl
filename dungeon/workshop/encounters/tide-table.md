@@ -30,7 +30,7 @@ Success check: the run prints the System's ruling with the day's highest tide qu
 Open the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-2-tide-table
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-2-tide-table
 ```
 
 ## Step 1: Import the Tools

@@ -18,7 +18,7 @@ Summon your first agent with Strands: a Narrator that answers an adventurer with
 Change to the Floor 1 folder in the terminal:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/1_strands_basics
+cd seattle-strands-dungeon-crawl/dungeon/1_strands_basics
 ```
 
 Open [`simple_agent.py`](../1_strands_basics/simple_agent.py) and complete each TODO comment to create the first agent.

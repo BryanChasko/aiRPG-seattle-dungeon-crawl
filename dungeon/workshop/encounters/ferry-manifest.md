@@ -30,7 +30,7 @@ Success check: the script prints the manifest, then the Rules Agent built from t
 Open a terminal in the encounter folder and stay there: the manifest names its tool by a path relative to the folder where `ferry_manifest.py` runs.
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-8-ferry-manifest
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-8-ferry-manifest
 ```
 
 Find the knowledge base id the way 8.3, Part 1 did (the ten characters after `knowledge-base/` in `agentcore status`, run from `gameprod`) and export the id and the region:

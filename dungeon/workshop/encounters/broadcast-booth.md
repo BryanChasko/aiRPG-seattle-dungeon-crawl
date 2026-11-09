@@ -32,7 +32,7 @@ How to check it worked: each round prints one line and a receipt, and a minute o
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-8-broadcast-booth
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-8-broadcast-booth
 ```
 
 ## Wire the Booth to CloudWatch

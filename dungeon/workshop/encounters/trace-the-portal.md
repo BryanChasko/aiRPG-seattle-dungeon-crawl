@@ -32,7 +32,7 @@ Check success: every line has the same `trace` value, and the `portal.roll_dice`
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-4-trace-the-portal
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-4-trace-the-portal
 ```
 
 ## Step 1: Import the Switches

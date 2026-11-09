@@ -64,7 +64,7 @@ Nothing here has a monthly minimum, and nothing bills by the hour while idle exc
 Open a terminal at the root of Floor 8:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/8_agentcore_production
+cd seattle-strands-dungeon-crawl/dungeon/8_agentcore_production
 ```
 
 ### Step 1: Install the AgentCore CLI

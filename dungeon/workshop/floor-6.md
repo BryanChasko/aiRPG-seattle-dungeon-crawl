@@ -23,12 +23,12 @@ You've built a Narrator with custom tools, an MCP server and A2A agents. Test it
 
 > <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The arena is a public HTTPS page that calls localhost. The browser allows it because 127.0.0.1 is this machine. No other machine is invited. Yet."
 
-Once the Narrator, Character Agent, Rules Agent and MCP servers are running, open the web interface at https://bryanchasko.github.io/aiRPG-seattle-dungeon-crawl/.
+Once the Narrator, Character Agent, Rules Agent and MCP servers are running, open the web interface at https://bryanchasko.github.io/seattle-strands-dungeon-crawl/.
 
 The interface lives in this repository under `web/` (Vue 3 + Vite). To run the web interface on your own machine instead, with Node.js 22.12 or later:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/site/web
+cd seattle-strands-dungeon-crawl/site/web
 npm ci
 npm run dev
 ```
@@ -44,7 +44,7 @@ npm run dev
 In the web interface:
 
 - Pick the character to play. The party is set: Cordula Vance (she/her, Human (Seattle Native), Amphibious Breacher) is the default, or play as Barnaby (he/him, Uplifted Giant Pacific Octopus, Benthic Dragoon), the party leader. Shelly the geoduck and Chonks the spiny lumpsucker travel with the party as companions for either character
-- In Server URL, enter the URL shown in the Narrator Orchestrator terminal: `http://127.0.0.1:8009` (the play page also accepts it ready-filled: open https://bryanchasko.github.io/aiRPG-seattle-dungeon-crawl/?server=http%3A%2F%2F127.0.0.1%3A8009 and the field arrives set)
+- In Server URL, enter the URL shown in the Narrator Orchestrator terminal: `http://127.0.0.1:8009` (the play page also accepts it ready-filled: open https://bryanchasko.github.io/seattle-strands-dungeon-crawl/?server=http%3A%2F%2F127.0.0.1%3A8009 and the field arrives set)
 - Click Enter the Dungeon
 
 The web interface runs in the browser and talks to the Narrator running on the same machine. Browsers treat localhost as a secure origin, so this HTTPS page may call `http://127.0.0.1:8009`, but Chrome and Edge now ask permission before a public page can reach a service on the same machine. When the prompt appears, allow it. If Enter the Dungeon shows "Failed to fetch" and no prompt appeared, open the site settings for the page (the icon left of the address bar), allow local network access, then reload.

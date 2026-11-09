@@ -30,7 +30,7 @@ Proof it worked: the unpinned window forgets both answers, the pinned window rem
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-7-context-flood
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-7-context-flood
 ```
 
 ## Step 1: Import the Pin

@@ -36,7 +36,7 @@ The check: the dance-off round is on the scoreboard, and each demand prints the 
 Open the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-8-house-rules-guardrails
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-8-house-rules-guardrails
 ```
 
 ## Build the Guardrail

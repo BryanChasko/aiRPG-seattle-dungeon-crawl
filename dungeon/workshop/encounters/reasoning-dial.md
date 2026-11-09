@@ -42,7 +42,7 @@ Success check: each turn prints which candidate the dial chose, quick for the fi
 Change to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-1-reasoning-dial
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-1-reasoning-dial
 ```
 
 ## Step 1: Import the Router
