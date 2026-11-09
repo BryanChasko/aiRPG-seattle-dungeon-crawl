@@ -1,0 +1,49 @@
+{
+  "renders": [
+    {
+      "class": "sticker",
+      "name": "sticker-barnaby-octopus",
+      "out": "images/stickers/cast-barnaby-octopus.webp",
+      "place": {
+        "alt": "Barnaby the octopus sticker, cut out on transparency",
+        "page": "",
+        "where": "sticker pack: unclaimed until a page takes a sticker"
+      },
+      "subject": "Barnaby octopus cutout sticker, longest side 512, from the existing SAM sprite"
+    },
+    {
+      "class": "sticker",
+      "name": "sticker-barnaby-legend-octopus",
+      "out": "images/stickers/cast-barnaby-legend-octopus.webp",
+      "place": {
+        "alt": "Legend Barnaby sticker, wild octopus in the wreck, cut out on transparency",
+        "page": "",
+        "where": "sticker pack: unclaimed until a page takes a sticker"
+      },
+      "subject": "Legend Barnaby cutout sticker, longest side 512, from the existing SAM sprite"
+    },
+    {
+      "class": "sticker",
+      "name": "sticker-chonks-green-fish",
+      "out": "images/stickers/cast-chonks-green-fish.webp",
+      "place": {
+        "alt": "Chonks the green lumpsucker sticker, cut out on transparency",
+        "page": "",
+        "where": "sticker pack: unclaimed until a page takes a sticker"
+      },
+      "subject": "Chonks cutout sticker, longest side 512, from the existing SAM sprite"
+    },
+    {
+      "class": "sticker",
+      "name": "sticker-cordula-woman",
+      "out": "images/stickers/cast-cordula-woman.webp",
+      "place": {
+        "alt": "Cordula sticker, paddle upright, cut out on transparency",
+        "page": "",
+        "where": "sticker pack: unclaimed until a page takes a sticker"
+      },
+      "subject": "Cordula cutout sticker, longest side 512, from the existing SAM sprite"
+    }
+  ],
+  "run": "2026-11-09-batch-10-stickers"
+}

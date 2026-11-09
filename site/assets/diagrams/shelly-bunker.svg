@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200" role="img" aria-label="Shell bunker: Shelly pulled in and hardened, debuff arrows bouncing off a shield ring">
+  <title>Shelly's Shell Bunker: pulled in, immune</title>
+  <desc>A closed shell dome on a stone base at center, wrapped by two dashed shield arcs; three incoming debuff arrows strike the outer arc and break, while Cordula's tower-shield grip holds from the side.</desc>
+  <style>
+    .static{display:none}
+    text{font-family:sans-serif}
+    @media (prefers-reduced-motion: reduce){
+      .motion{display:none}
+      .static{display:inline}
+    }
+  </style>
+  <rect x="1" y="1" width="478" height="198" rx="10" fill="#0B0E14" stroke="#6A2C91" stroke-width="2"/>
+  <rect x="150" y="158" width="180" height="16" rx="6" fill="#2A2118" stroke="#8A6D3B" stroke-width="2"/>
+  <path d="M 165,158 Q 165,70 240,70 Q 315,70 315,158 Z" fill="#3A3f4A" stroke="#8A93A6" stroke-width="3"/>
+  <g stroke="#23262E" stroke-width="2" fill="none">
+    <path d="M 195,158 Q 197,100 240,96"/>
+    <path d="M 225,158 Q 226,112 240,108"/>
+    <path d="M 255,158 Q 254,112 240,108"/>
+    <path d="M 285,158 Q 283,100 240,96"/>
+  </g>
+  <path d="M 135,158 Q 135,50 240,50 Q 345,50 345,158" fill="none" stroke="#2EC4B6" stroke-width="3" stroke-dasharray="9 6"/>
+  <g class="motion">
+    <path d="M 128,158 Q 128,42 240,42 Q 352,42 352,158" fill="none" stroke="#2EC4B6" stroke-width="2" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.15;0.5" dur="2.4s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g class="static">
+    <path d="M 128,158 Q 128,42 240,42 Q 352,42 352,158" fill="none" stroke="#2EC4B6" stroke-width="2" opacity="0.5"/>
+  </g>
+  <g stroke="#E04848" stroke-width="3" fill="none">
+    <line x1="40" y1="60" x2="108" y2="92"/>
+    <line x1="40" y1="130" x2="104" y2="128"/>
+    <line x1="440" y1="90" x2="372" y2="108"/>
+  </g>
+  <g fill="#E04848" font-size="16" text-anchor="middle">
+    <text x="116" y="102">x</text>
+    <text x="112" y="138">x</text>
+    <text x="364" y="118">x</text>
+  </g>
+  <text x="40" y="180" fill="#E04848" font-size="12">debuffs: bounced</text>
+  <text x="330" y="180" fill="#2EC4B6" font-size="12">immune inside</text>
+</svg>

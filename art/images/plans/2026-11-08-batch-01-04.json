@@ -58,7 +58,7 @@
       "class": "card",
       "out": "images/cards/opponent-accountant-offbeat-640x640.webp",
       "place": {
-        "page": "dungeon/workshop/floor-5.md",
+        "page": "dungeon/workshop/floor-5-3.md",
         "where": "Part 4, after Cordula's dance-off result",
         "alt": "A Quarterly Close Accountant losing the beat in a storm of spreadsheet pages"
       }

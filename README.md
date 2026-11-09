@@ -1,7 +1,7 @@
 # Seattle Strands Dungeon Crawl: A Visual Lit aiRPG Workshop
 
 <p align="center">
-<img src="art/images/wordmark-1200x240.webp" alt="Wordmark: aiRPG, Seattle Dungeon Crawl" width="720">
+<img src="art/images/wordmark-1200x240.webp" alt="Wordmark: Seattle Strands Dungeon Crawl, a visual LitRPG workshop" width="720">
 </p>
 
 <p align="center"><em>A Visual Lit aiRPG Workshop: a LitRPG you can see, run by one System AI, built one floor at a time with the Strands Agents SDK on Amazon Nova 2 Lite. Conflict is a dance-off. Nobody is hurt.</em></p>

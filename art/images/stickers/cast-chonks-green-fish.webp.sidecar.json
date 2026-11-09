@@ -1,0 +1,13 @@
+{
+  "file": "cast-chonks-green-fish.webp",
+  "format": "webp lossy q90 rgba",
+  "sha256": "24e8e715c06141701aae869b176d86743753e7bab0c1a1b0612272509833cfa2",
+  "size": [512, 481],
+  "source": {
+    "sprite": "images/sprites/cast-chonks-green-fish.webp"
+  },
+  "transforms": [
+    "longest side resized to 512 (391x367 -> 512x481)",
+    "webp q90 rgba"
+  ]
+}

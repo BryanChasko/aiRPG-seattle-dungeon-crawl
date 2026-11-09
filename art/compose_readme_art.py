@@ -18,7 +18,7 @@ bar) and images/hud-strip-1200x120-still.webp (the reduced-motion still), each w
 sidecar. Re-running is deterministic: same fonts, same bytes up to webp encoding.
 """
 from __future__ import annotations
-import hashlib, json, math, os, sys
+import hashlib, json, math, os, shutil, subprocess, sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -63,6 +63,77 @@ def ben_day(im: Image.Image) -> Image.Image:
         for xx in range(5 + (yy // 10 % 2) * 5, im.width, 10):
             d.ellipse((xx - 2, yy - 2, xx + 2, yy + 2), fill=LAVENDER + (26,))
     return Image.alpha_composite(im.convert("RGBA"), dot)
+
+
+MARK_SVG = ART / "images" / "src" / "wordmark-barnaby-mark.svg"
+
+
+def find_chromium() -> str:
+    for cand in ("chromium-browser", "chromium", "google-chrome"):
+        if shutil.which(cand):
+            return cand
+    sys.exit("no chromium binary on PATH; need one for --screenshot SVG rasterization")
+
+
+def rasterize_svg(svg: Path, out_png: Path, window: int = 600) -> Path:
+    """Rasterize an SVG via headless chromium --screenshot (Pillow cannot parse SVG).
+
+    Transparent page background so the mark composites cleanly onto the obsidian
+    panel. Returns the PNG path. Deterministic for a fixed SVG and window size.
+    """
+    out_png.parent.mkdir(parents=True, exist_ok=True)
+    # NOTE: snap-confined chromium cannot write outside $HOME (e.g. /tmp), so run
+    # with cwd at the target dir and a bare filename, then verify the bytes landed.
+    subprocess.run([find_chromium(), "--headless", "--disable-gpu", "--no-sandbox",
+                    "--default-background-color=00000000",
+                    f"--screenshot={out_png.name}", f"--window-size={window},{window}",
+                    f"file://{svg.resolve()}"],
+                   check=True, capture_output=True, cwd=out_png.parent)
+    if not out_png.exists():
+        sys.exit(f"chromium screenshot failed to write {out_png}")
+    return out_png
+
+
+def wordmark_v2(mark: Image.Image) -> Image.Image:
+    """New lockup: Barnaby SVG mark (rasterized) + three text lines on the house panel.
+
+    Mark left, text left-aligned to its right: "Seattle Strands" in MedievalSharp
+    ink with violet glow, "DUNGEON CRAWL" tracked-out in Cinzel Bold teal beneath,
+    then the subtitle line small in Cinzel lavender. Same obsidian panel, violet-dim
+    border, and ben-day dots as the original wordmark.
+    """
+    W, H = 1200, 240
+    im = Image.new("RGBA", (W, H), OBSIDIAN + (255,))
+    mark = mark.crop(mark.getbbox())
+    mark.thumbnail((190, 190), Image.LANCZOS)
+    # measure the text first so the whole lockup (mark + left-aligned lines) can
+    # be centered in the panel as one unit
+    probe = ImageDraw.Draw(im)
+    line1_f = font("MedievalSharp.ttf", 92)
+    line1 = "Seattle Strands"
+    line2_f = font("Cinzel-Bold.ttf", 40)
+    line2 = "DUNGEON CRAWL"
+    line3_f = font("Cinzel-Bold.ttf", 22)
+    line3 = "A VISUAL LIT AIRPG WORKSHOP"
+    text_w = max(int(probe.textlength(line1, font=line1_f)),
+                 spaced_width(probe, line2, line2_f, 12),
+                 spaced_width(probe, line3, line3_f, 8))
+    tx = (W - mark.width - 36 - text_w) // 2 + mark.width + 36
+    mark_x = tx - mark.width - 36
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    layer.alpha_composite(mark.convert("RGBA"), (mark_x, (H - mark.height) // 2))
+    im = Image.alpha_composite(im, layer)
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glow)
+    gd.text((tx, 22), line1, font=line1_f, fill=VIOLET + (255,))
+    im = Image.alpha_composite(im, glow.filter(ImageFilter.GaussianBlur(12)))
+    im = Image.alpha_composite(im, glow.filter(ImageFilter.GaussianBlur(4)))
+    d = ImageDraw.Draw(im)
+    d.text((tx, 22), line1, font=line1_f, fill=INK + (255,))
+    spaced(d, (tx + 2, 126), line2, line2_f, TEAL + (255,), 12)
+    spaced(d, (tx + 4, 188), line3, line3_f, LAVENDER + (255,), 8)
+    d.rounded_rectangle((3, 3, W - 4, H - 4), radius=18, outline=VIOLET_DIM + (255,), width=3)
+    return ben_day(im).convert("RGB")
 
 
 def wordmark() -> Image.Image:
@@ -130,9 +201,19 @@ def save(im: Image.Image, out: Path, transforms: list[str], **save_kw) -> None:
 
 
 def main() -> int:
-    save(wordmark(), ART / "images" / "wordmark-1200x240.webp",
-         ["pillow type composition: MedievalSharp title with violet glow, Cinzel tracked subtitle in teal",
-          "ben-day 10px r2 alpha 10", "obsidian #0B0E14 panel so it reads on light and dark README themes"])
+    # stage the raster under art/images/src (NOT /tmp): snap-confined chromium
+    # cannot write outside $HOME. The staging png is removed before main() returns.
+    stage = ART / "images" / "src" / ".wordmark-mark.stage.png"
+    try:
+        mark = Image.open(rasterize_svg(MARK_SVG, stage)).convert("RGBA")
+        save(wordmark_v2(mark), ART / "images" / "wordmark-1200x240.webp",
+             ["Barnaby SVG mark (art/images/src/wordmark-barnaby-mark.svg) rasterized via headless "
+              "chromium --screenshot, composited left",
+              "pillow type composition: 'Seattle Strands' MedievalSharp 92 ink with violet glow, "
+              "'DUNGEON CRAWL' Cinzel Bold tracked teal, subtitle small Cinzel lavender",
+              "ben-day 10px r2 alpha 10", "obsidian #0B0E14 panel so it reads on light and dark README themes"])
+    finally:
+        stage.unlink(missing_ok=True)
     frames = [hud_frame(i / 24) for i in range(24)]
     first, rest = frames[6], frames[7:] + frames[:6]  # start mid-fill, not empty
     out = ART / "images" / "hud-strip-1200x120.webp"

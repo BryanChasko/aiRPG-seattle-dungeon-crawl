@@ -1,0 +1,13 @@
+{
+  "file": "cast-cordula-woman.webp",
+  "format": "webp lossy q90 rgba",
+  "sha256": "88d5ee1b3a8d77a9945ec9a4e90aef490fcd33aa28a29e570c2d43c7b9682bf3",
+  "size": [212, 512],
+  "source": {
+    "sprite": "images/sprites/cast-cordula-woman.webp"
+  },
+  "transforms": [
+    "longest side resized to 512 (224x542 -> 212x512)",
+    "webp q90 rgba"
+  ]
+}
