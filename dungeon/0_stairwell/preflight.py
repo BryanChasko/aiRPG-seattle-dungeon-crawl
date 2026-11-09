@@ -14,7 +14,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+DUNGEON = REPO_ROOT / "dungeon"
 MODEL_ID = "us.amazon.nova-2-lite-v1:0"
 REGION = "us-west-2"
 PORTS = {  # port -> who uses it
@@ -30,7 +31,7 @@ def check(status: str, name: str, detail: str = "", fix: str = "") -> None:
 
 
 def minimum_python() -> tuple[int, ...]:
-    text = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+    text = (REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8")
     found = re.search(r'requires-python\s*=\s*"[^"\d]*(\d+(?:\.\d+)*)', text)
     return tuple(int(n) for n in found.group(1).split(".")) if found else (3, 10)
 
