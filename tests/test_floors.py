@@ -365,7 +365,7 @@ def test_study_search_finds_the_page_that_teaches_it(study):
 
 def test_study_tools_stay_in_their_lane(study, monkeypatch):
     assert study.read_workshop_page("../../etc/passwd").startswith("Not a workshop page")
-    assert "agent_factory" in study.read_workshop_page("dungeon/workshop/floor-5.md", find="agent_factory")
+    assert "agent_factory" in study.read_workshop_page("dungeon/workshop/floor-5-1.md", find="agent_factory")
     assert study.strands_api_reference("os.system").startswith("Not a Strands module path")
 
     class FakeResponse:

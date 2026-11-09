@@ -16,6 +16,8 @@ for p in (
     A2A / "agents" / "character_agent",
     A2A / "agents" / "rules_agent",
     A2A / "agents" / "narrator_orchestrator",
+    ROOT / "dungeon" / "9_lead_fog_resilience",
+    ROOT / "dungeon" / "0_stairwell",
 ):
     if p.exists():
         sys.path.insert(0, str(p))
