@@ -1,22 +1,22 @@
 {
  "file": "sponsor-benthic-96x96.webp",
- "bytes": 2118,
+ "bytes": 2634,
  "format": "webp lossy q88",
  "render": {
   "endpoint": "https://api.meta.ai/v1/images/generations",
   "model": "muse-image-1.0",
-  "prompt_sha256": "ad71900fea9c862385ce87ef144e41cb459b11c525e58812b97604b4a039591e",
+  "prompt_sha256": "11c44094bbd9122903f5bea7223a1428e0bd1b5b5c55cd7fdbd4abb7939c60a5",
   "size": "1024x1024"
  },
- "sha256": "bb609b7d7ec62430f7633ea324559ceea7c84e9732b45d099c6772652190a1df",
+ "sha256": "76b720a99c456eb32b79a8b3031278f306a073c17257c7606bbb35e6ea12a7bb",
  "size": [
   96,
   96
  ],
  "source": {
   "raw": "icon-sponsor-benthic.png",
-  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-04/raw/icon-sponsor-benthic.png",
-  "raw_sha256": "67ab4064d4ce691c9cec6dc502d3aed1dd0cc81d6e20be5682e77a4638d25b45",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-05/raw/icon-sponsor-benthic.png",
+  "raw_sha256": "15b32fdb01934b2dc82d323738b65d5914dbcbe8c452eb6845b12fb78ca62be2",
   "request": "images/src/icon-sponsor-benthic.request.json"
  },
  "tokens": {
@@ -24,8 +24,8 @@
   "vignette": "#0B0E14 (obsidian, banner spec base)"
  },
  "tools": {
-  "pillow": "12.1.0",
-  "python": "3.14.2"
+  "pillow": "11.3.0",
+  "python": "3.13.5"
  },
  "transforms": [
   "center crop 12% margin",

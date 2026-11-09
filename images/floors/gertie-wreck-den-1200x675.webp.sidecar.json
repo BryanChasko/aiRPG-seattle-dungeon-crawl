@@ -1,0 +1,39 @@
+{
+ "file": "gertie-wreck-den-1200x675.webp",
+ "bytes": 162644,
+ "format": "webp lossy q82",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "1ac98f9b34b09b4b2cfdb2bf01f53e0e8b7f3af4e55fc3cb6e2b7b1f5193a15b",
+  "size": "1024x576"
+ },
+ "sha256": "4e1c575967ac38b5a31ffba54edb20a2954ef28acb314dd2d0159828ae9a6920",
+ "size": [
+  1200,
+  675
+ ],
+ "source": {
+  "raw": "header-gertie-wreck-den.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-05/raw/header-gertie-wreck-den.png",
+  "raw_sha256": "f12c5172ba7a96284379889ba63aedb79bda1afe78317afc50301d9bd060e316",
+  "request": "images/src/header-gertie-wreck-den.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "11.3.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 1200x675 lanczos",
+  "vignette feather 50 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

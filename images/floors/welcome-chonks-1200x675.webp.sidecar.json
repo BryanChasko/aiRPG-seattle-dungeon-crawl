@@ -1,0 +1,39 @@
+{
+ "file": "welcome-chonks-1200x675.webp",
+ "bytes": 145938,
+ "format": "webp lossy q82",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "e634aea3908ef006873502266d8f17eece4f8bd073f20e73360a94790f83f320",
+  "size": "1024x576"
+ },
+ "sha256": "6cef430c247a32b1b090b028e291f0eb486f72db66cbb9a4605c84a110c540c7",
+ "size": [
+  1200,
+  675
+ ],
+ "source": {
+  "raw": "header-welcome-chonks.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-05/raw/header-welcome-chonks.png",
+  "raw_sha256": "cd100833c0d4520b39f6a969836e757e6ea8bdde5389ebcdaae71f5855a1c6d8",
+  "request": "images/src/header-welcome-chonks.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "11.3.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 1200x675 lanczos",
+  "vignette feather 50 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}
