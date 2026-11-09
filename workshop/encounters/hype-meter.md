@@ -215,6 +215,6 @@ Loot to keep:
 >
 > **[ONE HUNDRED PERCENT ORGANIC APPLAUSE]**
 >
-> Reward: You received a [Silver Box]. Inside: one tiny tally counter, one sponsor tier, and a note from the audience that says "we saw the counter, we are fine with it."
+> Reward: You received a [Silver Box]. Inside: one tiny tally counter, one sponsor tier, and a note from the review board that says "we saw the counter, we are fine with it."
 
 Back to [Floor 6](../floor-6.md#floor-clear), or on to [Sponsor Interrupt](sponsor-interrupt.md).
