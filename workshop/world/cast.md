@@ -2,8 +2,8 @@
 
 <table>
 <tr>
-<td><img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula Vance grinning in an orange and black drysuit and float vest, a water tank on her back, holding a black kayak paddle upright like a color-guard staff" width="160"></td>
-<td><img src="../../images/cards/cast-barnaby-640x640.webp" alt="Barnaby, a reddish-orange Giant Pacific Octopus with crimson and white patterns, arms raised inside a clear backpack tank" width="160"></td>
+<td><img src="../../images/cards/cast-cordula-640x640.webp" alt="Cordula Vance grinning in a matte black drysuit, charcoal float vest and grey webbing, karambits sheathed on her calves, holding a black kayak paddle upright like a color-guard staff" width="160"></td>
+<td><img src="../../images/cards/cast-barnaby-640x640.webp" alt="Barnaby, a kraken-scale Giant Pacific Octopus dark charcoal and slate at rest, a black misting harness on his mantle and a blackened brass collar glowing faint violet, arms spread across wet stone" width="160"></td>
 <td><img src="../../images/cards/cast-shelly-640x640.webp" alt="Shelly the geoduck, a pale oblong clam shell half buried in sand among eelgrass, puffing a soft cloud of sea mist, a carabiner clipped to the shell" width="160"></td>
 <td><img src="../../images/cards/cast-chonks-640x640.webp" alt="Chonks, a small round green spiny lumpsucker covered in bumpy tubercles with big black eyes, stuck to a black forearm guard" width="160"></td>
 </tr>
@@ -71,8 +71,8 @@ Before the collapse, on survey runs over the Gertie wreck and on dawn kayak swee
 
 <table>
 <tr>
-<td><img src="../../images/cards/cast-cordula-drill-640x640.webp" alt="Cordula dancing her drill-cadence style" width="160"></td>
-<td><img src="../../images/cards/cast-cordula-benched-640x640.webp" alt="Cordula Benched, wrapped in a blanket" width="160"></td>
+<td><img src="../../images/cards/cast-cordula-drill-640x640.webp" alt="Cordula dancing her drill-cadence style in black on black on grey, paddle twirling overhead, water spraying from her boots" width="160"></td>
+<td><img src="../../images/cards/cast-cordula-benched-640x640.webp" alt="Cordula benched after a dance-off, wrapped in a dark grey blanket over her black drysuit, paddle across her knees" width="160"></td>
 </tr>
 </table>
 

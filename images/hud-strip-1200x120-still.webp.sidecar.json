@@ -1,0 +1,20 @@
+{
+ "file": "hud-strip-1200x120-still.webp",
+ "size": [
+  1200,
+  120
+ ],
+ "format": "webp lossy q90",
+ "source": {
+  "composed_by": "tools/compose_readme_art.py",
+  "fonts": [
+   "MedievalSharp (OFL)",
+   "Cinzel Bold (OFL)",
+   "DejaVu Sans Mono Bold"
+  ]
+ },
+ "transforms": [
+  "reduced-motion still of hud-strip-1200x120.webp at full groove"
+ ],
+ "sha256": "21f12a78171dbab6ea0e45feb23fd596de8af0f74e108c85a6d53e8af0aae8c7"
+}

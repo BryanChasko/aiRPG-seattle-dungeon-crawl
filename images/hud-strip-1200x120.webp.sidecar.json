@@ -1,0 +1,20 @@
+{
+ "file": "hud-strip-1200x120.webp",
+ "size": [
+  1200,
+  120
+ ],
+ "format": "webp lossy q88 animated 13 unique frames 90ms loop",
+ "source": {
+  "composed_by": "tools/compose_readme_art.py",
+  "fonts": [
+   "Cinzel Bold (OFL)",
+   "DejaVu Sans Mono Bold"
+  ]
+ },
+ "transforms": [
+  "groove segments breathe 8..13 of 14 with one hot segment on the beat",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "sha256": "5c1694b7c6ebbac016bc05c36768311bcbbb4ea046b2bfc1f509dbbeee10afed"
+}
