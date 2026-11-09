@@ -41,7 +41,7 @@ This section works in two folders:
 
 Step 3 of Set Up the Project on the Floor 8 page started the knowledge base. Its commands did this:
 
-- `aws s3 mb` and `aws s3 cp --recursive` create a bucket and copy the eleven handbook files into it: a knowledge base reads documents from S3. Bucket names are global across all AWS accounts, so the bucket name ends with the AWS account id.
+- `aws s3 mb` and `aws s3 cp --recursive` create a bucket and copy the twelve handbook files into it: a knowledge base reads documents from S3. Bucket names are global across all AWS accounts, so the bucket name ends with the AWS account id.
 - `agentcore add knowledge-base` declares a managed knowledge base named `rules` in `agentcore/agentcore.json`, with the bucket as its data source. The CLI gives the knowledge base, not the agents, the right to read the bucket.
 - `agentcore deploy` creates the knowledge base and its data source, then the CLI starts the ingestion: Bedrock reads, splits and indexes the handbook. The deployment finishes before the ingestion does.
 
@@ -56,7 +56,7 @@ Under Knowledge Bases, `rules` shows `Deployed` as soon as the knowledge base ex
 
 After editing a handbook file, copy the file to the bucket again and run `agentcore run ingest`: Bedrock indexes the bucket again, and the cloud Rules Agent answers from the new rule.
 
-If `rules` is missing from `agentcore status`, Step 3 of the Floor 8 page did not deploy: run Step 3 again from `gameprod`. If the ingestion shows `FAILED`, confirm that `aws s3 ls s3://gameprod-rules-$(aws sts get-caller-identity --query Account --output text)/` lists the eleven handbook files, then run `agentcore run ingest`.
+If `rules` is missing from `agentcore status`, Step 3 of the Floor 8 page did not deploy: run Step 3 again from `gameprod`. If the ingestion shows `FAILED`, confirm that `aws s3 ls s3://gameprod-rules-$(aws sts get-caller-identity --query Account --output text)/` lists the twelve handbook files, then run `agentcore run ingest`.
 
 > <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The rule book we dropped in the bucket two bricks ago had been read, cut up and filed while we worked. Nobody had to wait on it. That is how you run a long-lead item: start it first, check it last.
 
