@@ -96,4 +96,21 @@ describe('MessageList', () => {
     expect(container.classes()).toContain('border-wood')
     expect(container.classes()).toContain('shadow-panel')
   })
+
+  it('strips scripts and event handlers from assistant markdown', () => {
+    const hostile: ParsedMessage = {
+      role: 'assistant',
+      storyOutput: {
+        response: 'A door opens.<script>alert("pwned")</script><img src="x" onerror="alert(2)">',
+        actions_suggestions: [],
+        details: '',
+        dice_rolls: [],
+      },
+    }
+    const wrapper = mountList({ messages: [hostile], loading: false, error: null })
+    const html = wrapper.find('.narrative-text').html()
+    expect(html).toContain('A door opens.')
+    expect(html).not.toContain('<script>')
+    expect(html).not.toContain('onerror')
+  })
 })

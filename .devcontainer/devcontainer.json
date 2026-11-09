@@ -1,5 +1,5 @@
 {
-  "name": "aiRPG Seattle Dungeon Crawl",
+  "name": "Seattle Strands Dungeon Crawl",
   "image": "mcr.microsoft.com/devcontainers/python:1-3.13-bullseye",
 
   // Install uv after the container is created, then sync all Python dependencies.
@@ -10,7 +10,10 @@
   "forwardPorts": [8080, 8000],
   "portsAttributes": {
     "8080": { "label": "MCP server (ch 4)", "onAutoForward": "notify" },
-    "8000": { "label": "Strands harness / A2A (ch 5 & 7)", "onAutoForward": "notify" }
+    "8000": {
+      "label": "Strands harness / A2A (ch 5 & 7)",
+      "onAutoForward": "notify"
+    }
   },
 
   "customizations": {

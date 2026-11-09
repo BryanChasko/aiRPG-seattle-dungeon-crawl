@@ -5,6 +5,30 @@ Speaker icons in front of a bold name carry `alt=""`, so a screen reader says th
 Conventions match the floor-5.md template: `floor-nav`, `floor-files`,
 `cordula-log` markers. Paths are relative to `workshop/`.
 
+## Voices: who is talking, in type
+
+GitHub strips `style=` and color, so voices differ by tag and shape, never by
+color. No meaning lives in color alone, and no stock emoji ever stands in for
+art: every story image is bespoke, used once at its beat. Flair-class art
+(dividers, textures, HUD chrome, the 28px speaker glyphs) may repeat.
+
+| Voice | Markdown form | Reads as |
+|---|---|---|
+| Cordula | upright prose, the log baseline | the human center everything is measured against |
+| Barnaby | *italic collar speech* | an academic aside, parallel hands, serial voice |
+| System AI, performing | CAPS headers, `<kbd>` prompts | the broadcast interface, live to viewers |
+| System AI, filing | tables, `<samp>` findings | the flat audit register near quarter close |
+| Lady Luck | `` `13 + 1 = 14` `` code totals | the croupier readout, exact and final |
+| Shelly | `<small>` mist, a few words | barely present, anchor holding |
+| Chonks | `***POP***` minor SFX | one gurgle, one comic beat |
+| Stats | `<var>Groove</var>`, `<samp>` rolls | crisp LitRPG data, never prose |
+
+Major SFX (Monty WHAM, the Final Beat) are bespoke SVG or WebP lettering from
+the art team, requested in `docs/art-placements.md`, never a font the repo
+does not own. Minor SFX stay in `***bold italics***`. SVG loaded as `<img>`
+cannot fetch webfonts, so lettering is drawn paths or generic families, and
+the alt text always carries the words.
+
 ## System-AI quote
 
 ```markdown

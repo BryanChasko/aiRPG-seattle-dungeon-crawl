@@ -18,17 +18,20 @@
         v-for="(msg, index) in messages"
         :key="index"
         class="message-entry"
-        :class="[msg.role === 'user' ? 'message-user' : 'message-assistant', msg.role === 'assistant' && msg.storyOutput?.dice_rolls?.length ? 'has-dice' : '']"
+        :class="[
+          msg.role === 'user' ? 'message-user' : 'message-assistant',
+          msg.role === 'assistant' && msg.storyOutput?.dice_rolls?.length ? 'has-dice' : '',
+        ]"
       >
         <!-- User message -->
         <div v-if="msg.role === 'user' && msg.text" class="user-bubble">
-          <span class="role-tag">You</span>
-          <p class="user-text">{{ msg.text }}</p>
+          <span class="role-tag voice-cordula">You</span>
+          <p class="user-text voice-cordula">{{ msg.text }}</p>
         </div>
 
         <!-- Assistant message -->
         <div v-if="msg.role === 'assistant' && msg.storyOutput" class="assistant-block">
-          <span class="role-tag">The System AI</span>
+          <span class="role-tag voice-system-perform">The System AI</span>
           <div class="narrative-text" v-html="renderMarkdown(msg.storyOutput.response)"></div>
 
           <div
@@ -49,7 +52,7 @@
       <!-- Typing indicator -->
       <div v-if="typing" class="message-entry message-assistant">
         <div class="assistant-block">
-          <span class="role-tag">The System AI</span>
+          <span class="role-tag voice-system-perform">The System AI</span>
           <div class="typing-indicator">
             <span class="typing-dot"></span>
             <span class="typing-dot"></span>
@@ -62,6 +65,7 @@
 </template>
 
 <script setup lang="ts">
+import DOMPurify from 'dompurify'
 import { marked } from 'marked'
 import type { ParsedMessage } from '@/types'
 import DiceDisplay from '@/components/DiceDisplay.vue'
@@ -81,7 +85,7 @@ const props = defineProps<{
 }>()
 
 function renderMarkdown(text: string): string {
-  return marked.parse(text) as string
+  return DOMPurify.sanitize(marked.parse(text) as string)
 }
 </script>
 
@@ -113,8 +117,13 @@ function renderMarkdown(text: string): string {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .messages-scroll {
@@ -279,7 +288,9 @@ function renderMarkdown(text: string): string {
 }
 
 @keyframes typingBounce {
-  0%, 60%, 100% {
+  0%,
+  60%,
+  100% {
     transform: translateY(0);
     opacity: 0.4;
   }

@@ -422,6 +422,19 @@ S3: `s3://bryanchasko.com/airpg-art/motion/ferry-token-loot-pop.webp`
 <picture><source srcset="../../images/motion/ferry-token-loot-pop-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../images/motion/ferry-token-loot-pop.webp" alt="A Ferry Token popping in" width="240"></picture>
 ```
 
+## Backlog dedupe (2026-11-09, hand note)
+
+Three lanes appended below; four needs appear twice. Canonical row first,
+duplicate second: the cover cliffhanger banner (Art backlog row 1; Cover
+backlog confirms the gertie-wreck-den dual-use question), the wordmark
+recompose (Cover backlog; Requested asks the SVG build of the same new
+lettering), the social share crop (Art backlog; Requested repeats it with the
+repo social-preview upload), the favicon set (Requested is the fuller ask:
+SVG source plus 32px, 180px and 192/512; Art backlog row 4 is the smaller
+version). Per-lead web portraits and the generic avatar appear only in
+Requested. Art team: fold into `images/plans/` and regenerate; the next
+`tools/publish_art.py` run overwrites hand notes.
+
 ## Art backlog (requests for the art team, 2026-11-09)
 
 Requests only. Nothing below exists yet unless the status column says so.

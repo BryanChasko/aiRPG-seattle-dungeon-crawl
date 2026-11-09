@@ -86,7 +86,8 @@ body {
   color: var(--color-ink);
   background-color: var(--color-bg-page);
   /* Dark tonal wash over the obsidian tile keeps body text readable */
-  background-image: linear-gradient(180deg, rgb(11 14 20 / 72%), rgb(11 14 20 / 86%)), var(--texture-wood);
+  background-image:
+    linear-gradient(180deg, rgb(11 14 20 / 72%), rgb(11 14 20 / 86%)), var(--texture-wood);
   padding: 0 1.5rem;
 }
 
@@ -188,4 +189,40 @@ a:hover {
 /* Gold glow effect */
 .shadow-glow {
   box-shadow: var(--shadow-glow);
+}
+
+/* Speaker voices: play-page mirror of workshop/_snippets.md ## Voices.
+   Voices differ by shape (case, style, size, family), never by color alone. */
+.voice-system-perform {
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: var(--text-sm);
+}
+.voice-system-file {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+.voice-cordula {
+  font-family: var(--font-body);
+  font-style: normal;
+}
+.voice-barnaby {
+  font-style: italic;
+}
+.voice-lady-luck {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+.voice-shelly {
+  font-size: var(--text-sm);
+  opacity: 0.85;
+}
+.voice-chonks {
+  font-weight: 700;
+  font-style: italic;
+}
+.voice-stat {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
 }

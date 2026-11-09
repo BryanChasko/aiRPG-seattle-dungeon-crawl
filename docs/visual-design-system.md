@@ -1,4 +1,4 @@
-# Visual Design System: aiRPG Seattle Dungeon Crawl
+# Visual Design System: Seattle Strands Dungeon Crawl
 
 Source of truth for art direction, image formats, and prompt language.
 Pipeline: [tools/airpg_render.py](../tools/airpg_render.py)
@@ -124,7 +124,10 @@ as a character. Its visuals are interface: the HUD SVGs in `assets/hud/`, the no
 icons and the loot and sponsor icons.
 
 Speaker icons that sit in front of a bold name carry empty alt text (`alt=""`), so a screen
-reader says the name once.
+reader says the name once. Type voices for every speaker live in
+`workshop/_snippets.md` (## Voices): GitHub strips color, so voices differ by
+tag and shape, never by color, and the play page mirrors them with matching
+`voice-*` classes in `web/src/assets/theme.css`.
 
 ## 7a. Sponsors and contractors (local Pacific Northwest tropes, never a real company)
 
