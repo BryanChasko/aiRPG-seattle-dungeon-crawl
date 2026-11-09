@@ -1,7 +1,7 @@
 # Seattle Strands Dungeon Crawl: A Visual Lit aiRPG Workshop
 
 <p align="center">
-<img src="images/wordmark-1200x240.webp" alt="Wordmark: aiRPG, Seattle Dungeon Crawl" width="720">
+<img src="art/images/wordmark-1200x240.webp" alt="Wordmark: aiRPG, Seattle Dungeon Crawl" width="720">
 </p>
 
 <p align="center"><em>A Visual Lit aiRPG Workshop: a LitRPG you can see, run by one System AI, built one floor at a time with the Strands Agents SDK on Amazon Nova 2 Lite. Conflict is a dance-off. Nobody is hurt.</em></p>
@@ -12,7 +12,7 @@
 
 At 0551 every phone on the waterfront lit up with the same blank violet box. Then Pier 59 did not crash: it folded, the way a map folds, down and in, and the Sound came in after it. The flood took the System AI apart. Its voice, its dice, its rules and its memory are scattered across the floors under Seattle. It can still push one-way status reports through the broadcast relay, but it cannot hear you back, roll a fair die, quote a rule or remember who did what.
 
-<img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM NOTIFICATION**
+<img src="art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM NOTIFICATION**
 
 **DUNGEON CRAWL: SEATTLE. SEVERITY-1 OPEN. Q2 MIGRATION WINDOW.**
 
@@ -22,7 +22,7 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 ## The Meeting
 
-> <img src="images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 0547, PIER 59.**
+> <img src="art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 0547, PIER 59.**
 >
 > High tide was at 0556, so I was on the water by 0530: touring kayak, drysuit, float vest, the debris sweep the Soundkeepers run every week. Fog on Elliott Bay, gulls, a ferry horn out past the breakwater. Normal.
 >
@@ -37,16 +37,16 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 > Then a voice came out of the water, loud enough to rattle my teeth.
 
 <p align="center">
-<img src="images/floors/gertie-wreck-den-1200x675.webp" alt="The sunken Galloping Gertie wreck on the floor of the Tacoma Narrows: anemone-covered girders turned into a reef, a dark den mouth under a fallen girder, and the tip of one enormous red octopus arm curling out" width="720">
+<img src="art/images/floors/gertie-wreck-den-1200x675.webp" alt="The sunken Galloping Gertie wreck on the floor of the Tacoma Narrows: anemone-covered girders turned into a reef, a dark den mouth under a fallen girder, and the tip of one enormous red octopus arm curling out" width="720">
 </p>
 
 <p align="center"><em>Something lives in the wreck of Galloping Gertie. The divers call it the King Octopus. Its name is Barnaby.</em></p>
 
-> <img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Subject one: a woman with a boat. Subject two..." A pause. "Subject two is an octopus. Fine. Octopus, you get a collar."
+> <img src="art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Subject one: a woman with a boat. Subject two..." A pause. "Subject two is an octopus. Fine. Octopus, you get a collar."
 
 One arm out of a den is all the cover shows. The rest of Barnaby is earned in the dungeon.
 
-[Enter the dungeon: Floor 0](workshop/floor-0.md)
+[Enter the dungeon: Floor 0](dungeon/workshop/floor-0.md)
 
 ---
 
@@ -60,7 +60,7 @@ You rebuild the System AI of a LitRPG dungeon crawl under Seattle: a live cloud-
 - A web arena where a reader plays the crawl against the System you built.
 - A production deployment on AgentCore: dice, character and rules services with memory and a knowledge base, under one orchestrating System AI.
 
-Every agent on every floor runs on Amazon Nova 2 Lite. Each floor rebuilds one more subsystem, and the full design map is in [The System](workshop/world/the-system.md).
+Every agent on every floor runs on Amazon Nova 2 Lite. Each floor rebuilds one more subsystem, and the full design map is in [The System](dungeon/workshop/world/the-system.md).
 
 </details>
 
@@ -79,7 +79,7 @@ Every Safe Room has a terminal on the broadcast relay. The Strands manual is the
 - Elizabeth Fuentes, [Strands samples on GitHub](https://github.com/elizabethfuentes12) -- MIT-0 licensed, model-agnostic
 - [Strands Agents SDK](https://strandsagents.com/)
 
-The full floor map, with story and plate art for every floor, is the [Dungeon Map](workshop/README.md#the-dungeon-map).
+The full floor map, with story and plate art for every floor, is the [Dungeon Map](dungeon/workshop/README.md#the-dungeon-map).
 
 </details>
 
@@ -107,7 +107,7 @@ region: us-west-2
 
 **What it costs**
 
-Floors bill for Amazon Nova 2 Lite calls: see [What a Turn Costs](workshop/floor-1.md#what-a-turn-costs). Floor 8 also leaves billable resources in your account until cleanup: see [What Floor 8 Costs](workshop/floor-8.md#what-floor-8-costs) and [The Exit](workshop/cleanup.md).
+Floors bill for Amazon Nova 2 Lite calls: see [What a Turn Costs](dungeon/workshop/floor-1.md#what-a-turn-costs). Floor 8 also leaves billable resources in your account until cleanup: see [What Floor 8 Costs](dungeon/workshop/floor-8.md#what-floor-8-costs) and [The Exit](dungeon/workshop/cleanup.md).
 
 **Preflight check**
 
@@ -138,7 +138,7 @@ uv sync --group dev
 uv run pytest tests/
 ```
 
-The tests cover every floor without calling Amazon Nova 2 Lite or AWS: agents, tools, MCP server, A2A servers, Groove and Mana, the handbook knowledge base, the harness options, and the Floor 8 memory, retrieval and entrypoint. The web interface has its own suite in `web/` (`npm ci`, then `npx vitest run`). [Coverage page](workshop/coverage.md).
+The tests cover every floor without calling Amazon Nova 2 Lite or AWS: agents, tools, MCP server, A2A servers, Groove and Mana, the handbook knowledge base, the harness options, and the Floor 8 memory, retrieval and entrypoint. The web interface has its own suite in `site/web/` (`npm ci, then `npx vitest run`). [Coverage page](dungeon/workshop/coverage.md).
 
 </details>
 
@@ -160,11 +160,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.
 
 ---
 
-This crawl builds on Once Upon Agentic AI, the AWS sample workshop that first taught the Strands Agents SDK through a role-playing game. Every exercise of that workshop is still here; the [coverage page](workshop/coverage.md) maps them. The game-running agent the source workshop calls the Narrator is the System AI here: Narrator is that job's code name, and the System AI is the one speaker who runs the crawl.
+This crawl builds on Once Upon Agentic AI, the AWS sample workshop that first taught the Strands Agents SDK through a role-playing game. Every exercise of that workshop is still here; the [coverage page](dungeon/workshop/coverage.md) maps them. The game-running agent the source workshop calls the Narrator is the System AI here: Narrator is that job's code name, and the System AI is the one speaker who runs the crawl.
 
-**The World**: [World guide](workshop/world/README.md) -- [The Story](workshop/world/story.md) -- [Timeline](workshop/world/timeline.md) -- [The System](workshop/world/the-system.md) -- [Seattle, Under the Sound](workshop/world/seattle.md)
+**The World**: [World guide](dungeon/workshop/world/README.md) -- [The Story](dungeon/workshop/world/story.md) -- [Timeline](dungeon/workshop/world/timeline.md) -- [The System](dungeon/workshop/world/the-system.md) -- [Seattle, Under the Sound](dungeon/workshop/world/seattle.md)
 
-**Stuck?**: [`study/ask_the_system.py`](study/README.md) is a study companion built with Strands. Ask it about any floor, TODO, error or Strands API, and it answers from this repository and the Strands API reference, with citations.
+**Stuck?**: [`dungeon/study/ask_the_system.py`](dungeon/study/README.md) is a study companion built with Strands. Ask it about any floor, TODO, error or Strands API, and it answers from this repository and the Strands API reference, with citations.
 
 ---
 

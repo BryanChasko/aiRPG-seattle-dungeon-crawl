@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>aiRPG Seattle Dungeon Crawl</title>
+    <script>
+      // SPA redirect for GitHub Pages
+      // Stores the real URL and redirects to index.html which restores it
+      sessionStorage.redirect = location.href;
+      var base = '/seattle-strands-dungeon-crawl/';
+      location.replace(location.origin + base);
+    </script>
+  </head>
+  <body>
+    <p>
+      Taking you to the dungeon entrance. If nothing happens,
+      <a href="/seattle-strands-dungeon-crawl/">open the play page</a>,
+      or read the workshop on
+      <a href="https://github.com/BryanChasko/seattle-strands-dungeon-crawl">GitHub</a>
+      (Floor 5 starts the four servers on ports 8000, 8001, 8002 and 8009;
+      Floor 6 connects this page).
+    </p>
+  </body>
+</html>
