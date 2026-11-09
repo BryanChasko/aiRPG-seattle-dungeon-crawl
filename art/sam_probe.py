@@ -7,9 +7,9 @@ image rules out payload size; an optional control call to a muse-* model on the 
 rules out the key and the /responses surface itself.
 
 Usage:
-  uv run --with pillow python3 tools/sam_probe.py                 tiny synthetic image
-  uv run --with pillow python3 tools/sam_probe.py <image> "concept"
-  uv run --with pillow python3 tools/sam_probe.py --control       also call muse-spark-1.3
+  uv run --with pillow python3 art/sam_probe.py                 tiny synthetic image
+  uv run --with pillow python3 art/sam_probe.py <image> "concept"
+  uv run --with pillow python3 art/sam_probe.py --control       also call muse-spark-1.3
 """
 from __future__ import annotations
 import base64, io, json, sys, time, urllib.error, urllib.request

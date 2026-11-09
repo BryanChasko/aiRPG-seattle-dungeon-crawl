@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """Cut a character or object out of a render with SAM 3.1 (Meta Model API): transparent sprites.
 
-Sprites feed the motion pass (tools/motion.py) and compositing: a cast member on an arena plate,
+Sprites feed the motion pass (art/motion.py) and compositing: a cast member on an arena plate,
 an Off-Beat wobble, a HUD avatar. One concept per call, as SAM wants: a short noun phrase.
 
 Usage:
-  python3 tools/sam_cutout.py images/cards/cast-chonks-buckler-640x640.webp --concept "green fish"
-  python3 tools/sam_cutout.py <image> --concept octopus --all        every match, one sprite each
-  python3 tools/sam_cutout.py <image> --concept octopus --out images/sprites/barnaby.webp
+  python3 art/sam_cutout.py images/cards/cast-chonks-buckler-640x640.webp --concept "green fish"
+  python3 art/sam_cutout.py <image> --concept octopus --all        every match, one sprite each
+  python3 art/sam_cutout.py <image> --concept octopus --out images/sprites/barnaby.webp
 
 Writes images/sprites/<image stem>-<concept>.webp (RGBA, trimmed to the mask box, 4 px feathered
 edge) and a sidecar with the request, box, mask size and confidence. The SAM response text is kept
 in the art dir ($AIRPG_ART_DIR/sam/) for re-use; a cached response is never billed again.
-Needs Pillow and meta-sam-parser: uv run --with pillow --with meta-sam-parser python3 tools/sam_cutout.py ...
+Needs Pillow and meta-sam-parser: uv run --with pillow --with meta-sam-parser python3 art/sam_cutout.py ...
 """
 from __future__ import annotations
 import argparse, base64, hashlib, io, json, sys, urllib.error

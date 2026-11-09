@@ -2,7 +2,7 @@
 """Small client for the Meta API (api.meta.ai/v1) that the art tools share: key lookup, GET and POST.
 
 Usage:
-  python3 tools/meta_api.py models        list the models this key can call (free, no render)
+  python3 art/meta_api.py models        list the models this key can call (free, no render)
 
 The key comes from META_IMAGE_API_KEY, then MODEL_API_KEY, then ~/.config/muse/auth.json
 (providers.meta.api_key), and is never printed or written anywhere. The auth.json key is the

@@ -2,8 +2,8 @@
 """Review sheet for rendered art: one labeled grid per size class (cards, floors, icons).
 
 Usage:
-  python3 tools/contact_sheet.py images/cards/cast-shelly-anchor-640x640.webp images/floors ...
-  python3 tools/contact_sheet.py --plan images/plans/2026-11-08-batch-05.json
+  python3 art/contact_sheet.py images/cards/cast-shelly-anchor-640x640.webp images/floors ...
+  python3 art/contact_sheet.py --plan images/plans/2026-11-08-batch-05.json
 
 Writes <art dir>/<run or "review">/sheet-<class>.png ($AIRPG_ART_DIR, default
 ~/writing/art/once-upon-agentic-ai/experiments) and prints the paths. Needs Pillow.

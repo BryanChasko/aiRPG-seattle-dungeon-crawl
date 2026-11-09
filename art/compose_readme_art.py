@@ -11,7 +11,7 @@ and Cinzel (SIL Open Font License), fetched once into the art dir:
     -H "User-Agent: Mozilla/5.0"   # then download the two ttf URLs as MedievalSharp.ttf / Cinzel-Bold.ttf
 
 Usage:
-  uv run --with pillow python3 tools/compose_readme_art.py
+  uv run --with pillow python3 art/compose_readme_art.py
 
 Writes images/wordmark-1200x240.webp, images/hud-strip-1200x120.webp (animated groove
 bar) and images/hud-strip-1200x120-still.webp (the reduced-motion still), each with a
@@ -122,7 +122,7 @@ def save(im: Image.Image, out: Path, transforms: list[str], **save_kw) -> None:
     out.parent.mkdir(parents=True, exist_ok=True)
     im.save(out, "WEBP", quality=90, method=6, **save_kw)
     side = {"file": out.name, "size": list(im.size), "format": "webp lossy q90",
-            "source": {"composed_by": "tools/compose_readme_art.py",
+            "source": {"composed_by": "art/compose_readme_art.py",
                        "fonts": ["MedievalSharp (OFL)", "Cinzel Bold (OFL)", "DejaVu Sans Mono Bold"]},
             "transforms": transforms, "sha256": sha256_file(out)}
     Path(str(out) + ".sidecar.json").write_text(json.dumps(side, indent=1) + "\n")
@@ -141,7 +141,7 @@ def main() -> int:
                duration=90, loop=0)
     n = getattr(Image.open(out), "n_frames", len(frames))  # the muxer folds identical frames into longer durations
     side = {"file": out.name, "size": [1200, 120], "format": f"webp lossy q88 animated {n} unique frames 90ms loop",
-            "source": {"composed_by": "tools/compose_readme_art.py",
+            "source": {"composed_by": "art/compose_readme_art.py",
                        "fonts": ["Cinzel Bold (OFL)", "DejaVu Sans Mono Bold"]},
             "transforms": ["groove segments breathe 8..13 of 14 with one hot segment on the beat",
                            "ben-day 10px r2 alpha 10"],

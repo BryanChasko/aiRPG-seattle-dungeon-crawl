@@ -7,11 +7,11 @@ House spec (derived from shipped sidecars, enforced by --check):
   icons  96x96      : q88 UI glyph, no dots/vignette by design
 
 Usage:
-  python3 tools/airpg_render.py --check                      every shipped webp meets its class spec
-  python3 tools/airpg_render.py --plan images/plans/<run>.json   write requests + manifest, no API call
-  python3 tools/airpg_render.py --render images/plans/<run>.json plan, then render the whole run
-  python3 tools/airpg_render.py --batch <art dir>/<run>/manifest.json   render an existing manifest
-  python3 tools/contact_sheet.py <webp files or dirs>        review sheet of renders
+  python3 art/airpg_render.py --check                      every shipped webp meets its class spec
+  python3 art/airpg_render.py --plan images/plans/<run>.json   write requests + manifest, no API call
+  python3 art/airpg_render.py --render images/plans/<run>.json plan, then render the whole run
+  python3 art/airpg_render.py --batch <art dir>/<run>/manifest.json   render an existing manifest
+  python3 art/contact_sheet.py <webp files or dirs>        review sheet of renders
 
 A plan names each render's class, output file and subject; the prompt is built from the frozen
 blocks and the character model sheet in images/plans/style.json, so no request is hand-written.

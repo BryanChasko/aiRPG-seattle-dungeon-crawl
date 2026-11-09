@@ -16,9 +16,9 @@ Effects (issue #6: at most 480 px, 6 to 12 frames, under 1.5 MB):
   blink     Barnaby blinks: one slow eyelid over the eye-icon close-up        (icons)
 
 Usage:
-  python3 tools/motion.py offbeat images/cards/opponent-accountant-offbeat-640x640.webp
-  python3 tools/motion.py loot-pop images/icons/loot-gold-96x96.webp
-  python3 tools/motion.py --all            every effect listed in images/plans/motion.json
+  python3 art/motion.py offbeat images/cards/opponent-accountant-offbeat-640x640.webp
+  python3 art/motion.py loot-pop images/icons/loot-gold-96x96.webp
+  python3 art/motion.py --all            every effect listed in images/plans/motion.json
 
 Writes images/motion/<stem>-<effect>.webp, <stem>-<effect>-still.webp and a sidecar each.
 """

@@ -5,13 +5,13 @@ The reuse audit (docs/image-reuse-audit.md) found the full-body cast cards doing
 duty hundreds of times at 28px, where nothing reads. This tool cuts the close shots a comic
 would use instead: face and eye headshots for speaker icons (96x96), and square action panels
 (480x480) for inline beats, all cropped from art that already passed model-sheet QA, so no new
-render can drift off-model. Boxes come from SAM 3.1 (tools/sam_cutout.py, cached responses are
+render can drift off-model. Boxes come from SAM 3.1 (art/sam_cutout.py, cached responses are
 free) or from hand-placed relative boxes for banner panels.
 
 Usage:
   export META_IMAGE_API_KEY=$(aws ssm get-parameter --name /heraldstack/shared/meta-model-api-key \
     --with-decryption --profile ops-reader --region us-west-2 --query Parameter.Value --output text)
-  uv run --with pillow --with meta-sam-parser python3 tools/panel_crops.py [name ...]
+  uv run --with pillow --with meta-sam-parser python3 art/panel_crops.py [name ...]
 
 No arguments cuts every job below. Add a job by appending to JOBS.
 """
@@ -80,7 +80,7 @@ def cut(job) -> None:
     crop.save(outp, "WEBP", quality=88 if is_icon else 90, method=6)
     side = {"file": outp.name, "size": list(size), "format": "webp lossy q88" if is_icon else "webp lossy q90",
             "source": {"image": src, "image_sha256": sha256_file(ROOT / src)},
-            "crop": {"by": "tools/panel_crops.py", "kind": kind, "spec": str(spec),
+            "crop": {"by": "art/panel_crops.py", "kind": kind, "spec": str(spec),
                      "box": list(box), "expand": expand, "confidence": conf, "note": note},
             "transforms": ["square crop to the panel box", "resize lanczos",
                            "no dots, no vignette (speaker headshot)"] if is_icon else
