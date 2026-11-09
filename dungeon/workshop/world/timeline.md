@@ -63,4 +63,4 @@ The full character sheets are in [The Cast](cast.md).
 | 2016 | Cordula enlists in the Marine Corps Reserve, age nineteen |
 | February 19, 2026 | Cordula logs another unconfirmed sighting at the Gertie wreck |
 | April 2025 | Chonks hatches on a bull kelp holdfast |
-| June 17, 2026, 0551 | The pier folds |
+| June 17, 2026, 0551 | The pier folds, tripping a cached migration script that plays the pre-fold asset scan as the GOOD MORNING broadcast |

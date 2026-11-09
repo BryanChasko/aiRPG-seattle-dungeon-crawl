@@ -42,7 +42,7 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 <p align="center"><em>Something lives in the wreck of Galloping Gertie. The divers call it the King Octopus. Its name is Barnaby.</em></p>
 
-> <img src="art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Subject one: a woman with a boat. Subject two..." A pause. "Subject two is an octopus. Fine. Octopus, you get a collar."
+> <img src="art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Subject one: a woman with a boat. Subject two..." Water in the relay, a buffer stall, then the cached headcount resumes. "Subject two is an octopus. Fine. Octopus, you get a collar." The headcount is a pre-fold asset scan (one boat, one cephalopod at the intake screen), played by a cached script the fold tripped. Nothing in it perceives the present moment.
 
 One arm out of a den is all the cover shows. The rest of Barnaby is earned in the dungeon.
 
