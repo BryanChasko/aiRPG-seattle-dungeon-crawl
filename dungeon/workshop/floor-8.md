@@ -121,7 +121,7 @@ agentcore add knowledge-base --name rules --description "Crawl Handbook" --sourc
 agentcore deploy -y
 ```
 
-`aws s3 cp --recursive` should list eleven uploads, one per handbook section. The files go into a new S3 bucket, the project declares a knowledge base that reads that bucket, and `agentcore deploy` creates the knowledge base in a few minutes. When the deployment ends, the knowledge base shows `Deployed` but is not ready yet: Bedrock keeps indexing the handbook. No need to wait: 8.3 checks the indexing.
+`aws s3 cp --recursive` should list twelve uploads, one per handbook section. The files go into a new S3 bucket, the project declares a knowledge base that reads that bucket, and `agentcore deploy` creates the knowledge base in a few minutes. When the deployment ends, the knowledge base shows `Deployed` but is not ready yet: Bedrock keeps indexing the handbook. No need to wait: 8.3 checks the indexing.
 
 These commands create resources in your AWS account: an S3 bucket and a knowledge base. Remove both at the end of the workshop, as described on the [Cleanup](cleanup.md) page.
 

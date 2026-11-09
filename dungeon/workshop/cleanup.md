@@ -149,6 +149,8 @@ git checkout -- dungeon/5_a2a_integration/agents/character_agent/characters.json
 
 Floor cleared, Crawler. You finished every Strands workshop floor, from your first agent to orchestrating a complete multi-agent system with a web interface.
 
+The story ends here, but the machine still holds everything the crawl installed. [Floor Infinity](floor-infinity.md) removes it in tiers and proves the machine is like new.
+
 Loot kept:
 
 - Creating AI agents and equipping them with vended and custom tools

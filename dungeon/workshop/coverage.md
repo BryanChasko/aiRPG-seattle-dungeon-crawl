@@ -25,7 +25,9 @@ This crawl builds on *Once Upon Agentic AI*, the AWS sample workshop that first 
 | 6. Web Interface Testing | [6. The Arena](floor-6.md) | play in the browser against the local Narrator | 169 vitest tests in `site/web/` | the party picker, the GROOVE and MANA panel, the System theme |
 | 7. The Enchanted Armour | [7. The Armory](floor-7.md) | `create_harness` with `instructions`, `mcp_servers`, `tools`, `builtin_tools=[]`, `session`, and `structured_output_model` passed through (7) | live on Amazon Nova 2 Lite; `test_floor7_harness_gets_every_option_the_page_teaches` | Amazon Nova 2 Lite with reasoning off, measured near ten seconds a turn |
 | 8. Push to Production with AgentCore | [8](floor-8.md), [8.1](floor-8-1.md) to [8.4](floor-8-4.md) | dice server for AgentCore (1); memory records and `serve_a2a` (3); `retrieve` and `serve_a2a` (2); IAM-signed MCP and A2A, `BedrockAgentCoreApp`, `AgentCoreMemorySessionManager`, the entrypoint (15) | unit tests: `test_floor8_*` (4), `test_story_output_matches_across_floors` | the Crawl Handbook in a Bedrock knowledge base; `nova-policy.json`; SYSTEM DESIGN layer 8, a persistent world |
+| 9. Fog Resilience (optional) | [9. The Corrosion Cathedral](floor-9.md) | verifier agent with typed verdicts (3); `FogGate` hook on `MessageAddedEvent` (3); `PoisonScreen` intervention on `before_tool_call` (2) | unit tests: `test_floor9_*` (27) | the lead-fog rule; Wisdom and memory as the debuffed stats; the foreman dance |
 | Final cleanup | [The Exit](cleanup.md) | remove the AWS resources and generated files | `describe-stacks` returns not found | the empty registry restored with one `git checkout` |
+| Infinity (optional) | [Floor Infinity](floor-infinity.md) | tiered reset with inventory-first and a verify pass (2) | unit tests: `test_floor_infinity_*` | the never-touch list; the fresh-clone proof |
 
 ## Yes, And
 
