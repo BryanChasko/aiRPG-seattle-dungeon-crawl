@@ -9,8 +9,19 @@ import type {
   InquiryResult,
 } from '../types'
 import { parseMessages } from '../utils/messageParser'
+import { normalizeServerUrl } from '../utils/serverUrl'
 
-export function useGameApi(serverUrl: string) {
+// A turn can take about ten seconds; only a hung server should hit this.
+const REQUEST_TIMEOUT_MS = 120_000
+
+function withTimeout(): AbortSignal | undefined {
+  return typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function'
+    ? AbortSignal.timeout(REQUEST_TIMEOUT_MS)
+    : undefined
+}
+
+export function useGameApi(rawServerUrl: string) {
+  const serverUrl = normalizeServerUrl(rawServerUrl)
   const loading = ref(false)
   const error = ref<string | null>(null)
 
@@ -22,6 +33,7 @@ export function useGameApi(serverUrl: string) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question }),
+        signal: withTimeout(),
       })
       if (!res.ok) {
         throw new Error(`Request failed with status ${res.status}`)
@@ -41,7 +53,9 @@ export function useGameApi(serverUrl: string) {
     loading.value = true
     error.value = null
     try {
-      const res = await fetch(`${serverUrl}/user/${userName}`)
+      const res = await fetch(`${serverUrl}/user/${encodeURIComponent(userName)}`, {
+        signal: withTimeout(),
+      })
       if (!res.ok) {
         throw new Error(`Request failed with status ${res.status}`)
       }
@@ -59,7 +73,7 @@ export function useGameApi(serverUrl: string) {
     loading.value = true
     error.value = null
     try {
-      const res = await fetch(`${serverUrl}/messages`)
+      const res = await fetch(`${serverUrl}/messages`, { signal: withTimeout() })
       if (!res.ok) {
         throw new Error(`Request failed with status ${res.status}`)
       }
@@ -85,6 +99,7 @@ export function useGameApi(serverUrl: string) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
+        signal: withTimeout(),
       })
       if (!res.ok) {
         throw new Error(`Request failed with status ${res.status}`)
@@ -113,7 +128,7 @@ export function useGameApi(serverUrl: string) {
   /** GET /hype, or null when the Narrator does not serve it or sends something unexpected. */
   async function fetchHype(): Promise<HypeSnapshot | null> {
     try {
-      const res = await fetch(`${serverUrl}/hype`)
+      const res = await fetch(`${serverUrl}/hype`, { signal: withTimeout() })
       if (!res.ok) return null
       return parseHype(await res.json())
     } catch {

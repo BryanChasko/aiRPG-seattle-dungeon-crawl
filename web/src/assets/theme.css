@@ -16,24 +16,48 @@
   --color-candlelight: #ff8a3d;
   --color-shadow: rgba(0, 0, 0, 0.6);
   --color-emerald: #1fbf75;
+  --color-emerald-dark: #0a5c38;
+  --color-stroke: #8b82a8;
+  --color-focus: #ff2bd6;
 
   /* New theme variables */
   --color-bg-page: #0b0e14;
   --color-bg-card: #141824;
   --color-bg-user-msg: #1f1a33;
 
-  /* Fonts */
-  --font-heading: 'MedievalSharp', 'Cinzel', serif;
-  --font-body: 'Crimson Text', 'Georgia', serif;
-  --font-ui: 'Lora', serif;
-  --font-handwriting: 'Caveat', cursive;
+  /* Fonts: display face first, then readable system fallbacks if fonts fail offline */
+  --font-heading: 'MedievalSharp', 'Cinzel', 'Georgia', serif;
+  --font-body: 'Crimson Text', 'Georgia', 'Times New Roman', serif;
+  --font-ui: 'Lora', 'Georgia', serif;
+  --font-handwriting: 'Caveat', 'Segoe Script', cursive;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
+
+  /* Type scale (1.2 ratio from a 16px base) */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.44rem;
+  --text-2xl: 1.728rem;
+  --text-3xl: 2.074rem;
+  --leading-body: 1.6;
+  --leading-tight: 1.25;
 
   /* Borders & Decorations */
   --border-wood: 3px solid var(--color-wood-dark);
   --border-gold: 2px solid var(--color-gold);
+  --border-panel: 1px solid var(--color-stroke);
   --border-radius-panel: 8px;
-  --shadow-panel: 2px 4px 12px var(--color-shadow);
+  --border-radius-chip: 4px;
+  --shadow-panel: 0 10px 28px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-raised: 0 16px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 8px var(--color-gold-light);
+  --focus-ring: 0 0 0 2px var(--color-bg-page), 0 0 0 4px var(--color-focus);
+
+  /* Glass: solid first so text stays readable; blur is only an enhancement */
+  --panel-glass-bg: #141824;
+  --panel-glass-bg-blur: rgb(20 24 36 / 82%);
+  --panel-scrim: linear-gradient(180deg, rgb(11 14 20 / 78%), rgb(11 14 20 / 88%));
 
   /* Textures */
   --texture-parchment: url('/textures/obsidian-512x512.webp');
@@ -58,10 +82,11 @@ body {
   height: 100%;
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: var(--leading-body);
   color: var(--color-ink);
   background-color: var(--color-bg-page);
-  background-image: var(--texture-wood);
+  /* Dark tonal wash over the obsidian tile keeps body text readable */
+  background-image: linear-gradient(180deg, rgb(11 14 20 / 72%), rgb(11 14 20 / 86%)), var(--texture-wood);
   padding: 0 1.5rem;
 }
 
@@ -69,18 +94,75 @@ body {
   min-height: 100vh;
 }
 
+code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+a {
+  color: var(--color-gold-light);
+}
+
+a:hover {
+  color: var(--color-ink);
+}
+
+/* One visible keyboard focus ring everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  box-shadow: var(--focus-ring);
+}
+
 /* ===========================
    Reusable Theme Classes
    =========================== */
 
-/* Parchment-styled panel */
+/* Parchment-styled panel: solid color first, scrim, then texture */
 .panel-parchment {
-  /* background-color: var(--color-parchment); */
-  background-image: var(--texture-parchment);
+  background-color: var(--color-parchment);
+  background-image: var(--panel-scrim), var(--texture-parchment);
   background-repeat: repeat;
   background-size: auto;
   border-radius: var(--border-radius-panel);
   color: var(--color-ink);
+}
+
+/* Glass panel: solid opaque fallback first, blur only where supported */
+.panel-glass {
+  background-color: var(--panel-glass-bg);
+  border: var(--border-panel);
+  box-shadow: var(--shadow-panel);
+  color: var(--color-ink);
+}
+
+@supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
+  .panel-glass {
+    background-color: var(--panel-glass-bg-blur);
+    -webkit-backdrop-filter: blur(10px) saturate(1.1);
+    backdrop-filter: blur(10px) saturate(1.1);
+  }
+}
+
+/* Respect reduced transparency: back to fully solid panels */
+@media (prefers-reduced-transparency: reduce) {
+  .panel-glass {
+    background-color: var(--panel-glass-bg);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Respect reduced motion: no unroll, tumble, pulse, or smooth drift */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Dark wood border */

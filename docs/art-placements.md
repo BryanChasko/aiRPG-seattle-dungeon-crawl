@@ -442,3 +442,23 @@ before Floor 2, no Chonks before Floor 3, in image, caption or alt text.
 
 - Wordmark: `images/wordmark-1200x240.webp` still carries the old name baked in. Recompose with the title "Seattle Strands Dungeon Crawl" and the line "A Visual Lit aiRPG Workshop", then update the cover alt text in `README.md` to match the new image. Art team owns `images/` and the composing tool.
 - Cover tease: `images/floors/gertie-wreck-den-1200x675.webp` (wreck, den, one arm) now also serves as the `README.md` cover sighting. It is still listed above as ready to place on `workshop/cleanup.md`. Art team to confirm dual use, or render a dedicated cover fold-moment tease (Pier 59 folds at 0551, shadow, one arm or one eye only, no full body, no dance) and swap the cover.
+
+## Requested (web lane, hand-appended below the generated list)
+
+Everything above this heading is generated. This section is the web lane's ask
+list: new image needs found while building the play page. Nothing here exists
+yet; the art team owns every render and every binary. Spoiler rule for every
+entry surface: later-floor companions are never shown or named before they
+join, and Barnaby on an entry surface is a tease only (wreck, shadow, one
+arm, one eye), never the full dance reveal. Conflict is dance-offs; nobody
+is hurt.
+
+| request | format | slot | notes |
+|---|---|---|---|
+| Favicon set from one SVG source | svg + 32x32 png, 180x180 apple-touch, 192/512 maskable png | web/public/ (today the page points at the existing dice/d20.svg as a stopgap) | System AI eye or d20 glyph in the HUD line style, single accent on #0B0E14, legible at 16px |
+| Wordmark as true SVG (outlined paths) | svg, horizontal about 1200x240 and compact stacked about 480x240 | README header and web site header (today the header is text; the repo wordmark is raster only) | MedievalSharp/Cinzel display lettering; must read on obsidian #0B0E14; light variant welcome |
+| Social share crop | webp 1200x630 (same art at 1280x640 for the repo social preview upload) | web/index.html og:image and twitter:image, plus repo settings (absent today) | Spoiler-safe tease composition; keep one side darker for the wordmark lockup |
+| Web-sized lead portraits | webp, one per Crawler, sized for web/public | Play-as picker and character panel (today both leads share web/public/avatar-placeholder.jpeg) | Source cards already exist in images/cards/ on main; the art lane cuts the web copies so no binary is hand-copied |
+| Generic Crawler avatar | webp 96x96 | Replaces web/public/avatar-placeholder.jpeg (a JPEG, outside the format plan) | Hooded silhouette, rim light, no face, not any cast member |
+| Spoiler-safe landing backdrop plate | webp 1200x675 | Optional landing page backdrop | Stairwell and Sound mood only; no later-floor companions; Barnaby tease grammar only |
+| Descent map | inline-friendly svg, viewBox about 1200x675, no scripts | Optional: beside the labelled floor grid, which stays the accessible text version | Stairwell cross-section, floor nodes, one route line; no companion figures at early depths |

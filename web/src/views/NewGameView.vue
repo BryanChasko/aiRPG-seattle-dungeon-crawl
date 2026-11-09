@@ -10,12 +10,15 @@
         <h1 class="form-title">The Party Descends</h1>
 
         <form class="character-form" @submit.prevent="handleSubmit">
-          <div v-if="submitError" class="submit-error">{{ submitError }}</div>
+          <div v-if="submitError" class="submit-error" role="alert">
+            <p>{{ submitError }}</p>
+            <ServerHelp class="submit-error__help" />
+          </div>
 
           <div class="form-group">
-            <label for="party-member" class="form-label">Speak as</label>
+            <label for="party-member" class="form-label">Play as</label>
             <select id="party-member" v-model="form.name" class="form-input">
-              <option v-for="l in PARTY_LEADS" :key="l.name" :value="l.name">{{ l.name }}</option>
+              <option v-for="l in PARTY_LEADS" :key="l.name" :value="l.name">{{ l.pickerLabel }}</option>
             </select>
           </div>
 
@@ -25,20 +28,31 @@
             <div><dt>Class</dt><dd id="lead-class">{{ lead.characterClass }}</dd></div>
             <div><dt>Role</dt><dd id="lead-role">{{ lead.role }}</dd></div>
           </dl>
-          <p class="companions">Companions: {{ COMPANIONS.join(', ') }}</p>
+          <p class="companions">Companions join the party on later floors.</p>
 
           <div class="form-group">
             <label for="server-url" class="form-label">Server URL</label>
+            <p class="field-help" id="server-url-help">
+              The address of the game server you build in the workshop (the job code-named
+              the Narrator). This page is only a window onto it. For a local game that is
+              the address the fourth terminal prints.
+            </p>
             <input
               id="server-url"
               v-model="form.serverUrl"
               type="text"
               class="form-input"
               :class="{ 'input-error': errors.serverUrl }"
-              placeholder="https://your-server.example.com"
+              placeholder="http://127.0.0.1:8009"
+              aria-describedby="server-url-help"
             />
             <span v-if="errors.serverUrl" class="field-error">{{ errors.serverUrl }}</span>
+            <button type="button" class="preset-button" @click="useLocalServer">
+              Use my local server: http://127.0.0.1:8009
+            </button>
           </div>
+
+          <ServerHelp v-if="!submitError" />
 
           <button type="submit" class="start-button" :disabled="loading">
             {{ loading ? 'Descending...' : 'Enter the Dungeon' }}
@@ -51,26 +65,46 @@
 
 <script setup lang="ts">
 import { reactive, ref, computed, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import type { CharacterForm, ValidationErrors } from '@/types'
 import { validateForm } from '@/utils/validation'
 import { formatInitPrompt } from '@/utils/promptFormatter'
 import { useGameApi } from '@/composables/useGameApi'
 import { useGameStore } from '@/stores/gameStore'
-import { PARTY_LEADS, COMPANIONS } from '@/party'
+import { PARTY_LEADS } from '@/party'
+import ServerHelp from '@/components/ServerHelp.vue'
+import { LOCAL_NARRATOR_URL, normalizeServerUrl, friendlyConnectionError } from '@/utils/serverUrl'
 
 const router = useRouter()
+const route = useRoute()
 const store = useGameStore()
 const revealed = ref(false)
 
 onMounted(() => {
+  const reduceMotion =
+    typeof window !== 'undefined' &&
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (reduceMotion) {
+    revealed.value = true
+    return
+  }
   setTimeout(() => {
     revealed.value = true
   }, 1000)
 })
 
-// The party is set (workshop/world/cast.md): the player picks who speaks for it
-const form = reactive({ name: PARTY_LEADS[0].name, serverUrl: '' })
+// The party is set (workshop/world/cast.md): the player picks who they play as.
+// Seed the address from a ?server= deep link first, then the saved address.
+const queryServer = typeof route.query.server === 'string' ? route.query.server : ''
+const form = reactive({
+  name: PARTY_LEADS[0].name,
+  serverUrl: normalizeServerUrl(queryServer || store.serverUrl || ''),
+})
+
+function useLocalServer() {
+  form.serverUrl = LOCAL_NARRATOR_URL
+}
 const lead = computed(() => PARTY_LEADS.find(l => l.name === form.name) ?? PARTY_LEADS[0])
 const characterForm = computed<CharacterForm>(() => ({
   name: lead.value.name,
@@ -96,17 +130,24 @@ async function handleSubmit() {
   loading.value = true
 
   try {
+    form.serverUrl = normalizeServerUrl(form.serverUrl)
     const prompt = formatInitPrompt(characterForm.value)
     const { sendInquiry } = useGameApi(form.serverUrl)
     await sendInquiry(prompt)
     store.setConnection(form.serverUrl, lead.value.name)
 
-    // Roll the scroll closed, then navigate
+    // Roll the scroll closed, then navigate (instant under reduced motion)
     revealed.value = false
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    const reduceMotion =
+      typeof window !== 'undefined' &&
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!reduceMotion) {
+      await new Promise(resolve => setTimeout(resolve, 1500))
+    }
     router.push({ name: 'game', params: { characterName: lead.value.name } })
   } catch (e) {
-    submitError.value = e instanceof Error ? e.message : 'Failed to connect to server'
+    submitError.value = friendlyConnectionError(e, 'Failed to connect to server')
   } finally {
     loading.value = false
   }
@@ -117,29 +158,28 @@ async function handleSubmit() {
 .new-game-view {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 2rem;
+  align-items: flex-start;
+  padding: 2rem 1rem;
 }
 
 .form-card {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 640px;
   padding: 2.5rem;
-  background-color: #161b26;
-  background-image: url('/textures/obsidian-512x512.webp');
+  background-color: var(--color-bg-card);
+  background-image: var(--panel-scrim), var(--texture-parchment);
   background-size: cover;
-  border: 1px solid #3a3550;
-  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
+  border: var(--border-panel);
+  box-shadow: var(--shadow-raised);
+  border-radius: var(--border-radius-panel);
 }
 
 /* --- Scroll unroll wrapper --- */
 .scroll-wrapper {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 640px;
 }
 
 .scroll-wrapper .form-card {
@@ -201,7 +241,8 @@ async function handleSubmit() {
   color: var(--color-red-deep);
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
 }
 
 .character-form {
@@ -235,14 +276,35 @@ async function handleSubmit() {
 }
 
 .form-input:focus {
-  outline: none;
   border-color: var(--color-gold);
   box-shadow: var(--shadow-glow);
 }
 
 .form-input::placeholder {
   color: var(--color-ink-light);
-  opacity: 0.6;
+  opacity: 1;
+}
+
+.field-help {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-light);
+}
+
+.preset-button {
+  align-self: flex-start;
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  background: transparent;
+  border: var(--border-panel);
+  border-radius: var(--border-radius-chip);
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+}
+
+.preset-button:hover {
+  color: var(--color-gold-light);
 }
 
 .start-button {
@@ -319,11 +381,28 @@ async function handleSubmit() {
 
 .submit-error {
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--color-parchment);
-  background-color: var(--color-red-deep);
-  padding: 0.6rem 0.75rem;
-  border-radius: 4px;
-  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  background-color: #4a1220;
+  border: 1px solid var(--color-red-deep);
+  padding: 0.75rem;
+  border-radius: var(--border-radius-chip);
+  text-align: left;
+}
+
+.submit-error__help {
+  margin-top: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-wrapper .form-card {
+    clip-path: inset(0 0 0 0);
+  }
+  .scroll-rod--top {
+    top: -7px;
+  }
+  .scroll-rod--bottom {
+    top: calc(100% - 7px);
+  }
 }
 </style>

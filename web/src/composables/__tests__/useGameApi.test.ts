@@ -31,11 +31,15 @@ describe('useGameApi', () => {
       const { sendInquiry } = useGameApi(SERVER_URL)
       const result = await sendInquiry('What do I see?')
 
-      expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/inquire`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: 'What do I see?' }),
-      })
+      expect(globalThis.fetch).toHaveBeenCalledWith(
+        `${SERVER_URL}/inquire`,
+        expect.objectContaining({
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: 'What do I see?' }),
+          signal: expect.any(AbortSignal),
+        }),
+      )
       expect(result).toEqual(storyOutput)
     })
 
@@ -94,7 +98,9 @@ describe('useGameApi', () => {
       const { fetchUser } = useGameApi(SERVER_URL)
       const result = await fetchUser('Cordula')
 
-      expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/user/Cordula`)
+      expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/user/Cordula`, {
+        signal: expect.any(AbortSignal),
+      })
       expect(result).toEqual(stats)
     })
 
@@ -135,7 +141,9 @@ describe('useGameApi', () => {
       const { fetchMessages } = useGameApi(SERVER_URL)
       const result = await fetchMessages()
 
-      expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/messages`)
+      expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/messages`, {
+        signal: expect.any(AbortSignal),
+      })
       expect(result).toHaveLength(2)
       expect(result[0]).toEqual({ role: 'user', text: 'I challenge the accountant to a dance-off' })
       expect(result[1].role).toBe('assistant')

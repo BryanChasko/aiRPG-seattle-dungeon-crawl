@@ -1,11 +1,12 @@
 <template>
   <div class="character-stats-panel panel-parchment border-gold shadow-panel">
     <div v-if="loading" class="panel-status">
-      <span class="loading-indicator">Loading Crawler stats…</span>
+      <span class="loading-indicator">Loading Crawler stats...</span>
     </div>
 
     <div v-else-if="error" class="panel-status panel-error">
       {{ error }}
+      <a :href="FLOOR6_URL" target="_blank" rel="noopener">Floor 6 help</a>
     </div>
 
     <div v-else-if="!stats" class="panel-status">
@@ -101,6 +102,7 @@
 <script setup lang="ts">
 import { ref, watch, nextTick } from 'vue'
 import type { CharacterStats } from '@/types'
+import { FLOOR6_URL } from '@/links'
 
 const baseUrl = import.meta.env.BASE_URL
 const revealed = ref(false)
@@ -130,12 +132,12 @@ watch(() => props.stats, (newStats) => {
   padding: 1.5rem;
   min-width: 240px;
   /* Paper sheet look */
-  background-color: #161b26 !important;
-  background-image: url('/textures/obsidian-512x512.webp') !important;
+  background-color: var(--color-bg-card) !important;
+  background-image: var(--panel-scrim), var(--texture-parchment) !important;
   background-size: cover;
-  border: 1px solid #3a3550 !important;
-  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.08) !important;
-  border-radius: 4px;
+  border: 1px solid var(--color-stroke) !important;
+  box-shadow: var(--shadow-panel) !important;
+  border-radius: var(--border-radius-panel);
   z-index: 1;
 }
 
@@ -148,25 +150,25 @@ watch(() => props.stats, (newStats) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #161b26;
-  background-image: url('/textures/obsidian-512x512.webp');
+  background-color: var(--color-bg-card);
+  background-image: var(--panel-scrim), var(--texture-parchment);
   background-size: cover;
-  border: 1px solid #3a3550;
-  border-radius: 4px;
+  border: 1px solid var(--color-stroke);
+  border-radius: var(--border-radius-panel);
   z-index: -1;
 }
 
 .character-stats-panel::before {
   transform: rotate(-1.5deg);
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-panel);
 }
 
 .character-stats-panel::after {
   transform: rotate(1deg);
-  background-color: #1a2030;
-  background-image: url('/textures/obsidian-512x512.webp');
+  background-color: var(--color-parchment-dark);
+  background-image: var(--panel-scrim), var(--texture-parchment);
   background-size: cover;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-panel);
 }
 
 .panel-status {
@@ -202,8 +204,8 @@ watch(() => props.stats, (newStats) => {
   height: 180px;
   margin: 0 auto;
   border-radius: 8px;
-  border: 2px solid #3a3550;
-  background: linear-gradient(135deg, #3a3550, #4a4466);
+  border: 2px solid var(--color-stroke);
+  background: linear-gradient(135deg, var(--color-stroke), #4a4466);
   overflow: hidden;
   position: relative;
 }
@@ -311,7 +313,7 @@ watch(() => props.stats, (newStats) => {
   background: transparent;
   border-radius: 0;
   padding: 0 0.25rem;
-  border-bottom: 1px dashed #3a3550;
+  border-bottom: 1px dashed var(--color-stroke);
   padding-bottom: 0.75rem;
 }
 
@@ -374,7 +376,7 @@ watch(() => props.stats, (newStats) => {
   justify-content: space-between;
   align-items: center;
   padding: 0.4rem 0.6rem;
-  border: 1px solid #3a3550;
+  border: 1px solid var(--color-stroke);
   border-radius: 4px;
   background: #161b26;
 }

@@ -38,13 +38,20 @@ describe('Floor 6 encounters in useGameApi', () => {
 
   describe('fetchHype', () => {
     it('sends GET to /hype and returns the snapshot', async () => {
-      const snapshot = { hype: 12, sponsor_tiers: [10], next_sponsor_at: 25, last_event: 'achievement +5' }
+      const snapshot = {
+        hype: 12,
+        sponsor_tiers: [10],
+        next_sponsor_at: 25,
+        last_event: 'achievement +5',
+      }
       globalThis.fetch = mockFetch(snapshot)
 
       const { fetchHype, error } = useGameApi(SERVER_URL)
       const result = await fetchHype()
 
-      expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/hype`)
+      expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/hype`, {
+        signal: expect.any(AbortSignal),
+      })
       expect(result).toEqual(snapshot)
       expect(error.value).toBeNull()
     })
@@ -130,11 +137,15 @@ describe('Floor 6 encounters in useGameApi', () => {
       const { sendInquiryWithDeal } = useGameApi(SERVER_URL)
       await sendInquiryWithDeal('Hello')
 
-      expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/inquire`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: 'Hello' }),
-      })
+      expect(globalThis.fetch).toHaveBeenCalledWith(
+        `${SERVER_URL}/inquire`,
+        expect.objectContaining({
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: 'Hello' }),
+          signal: expect.any(AbortSignal),
+        }),
+      )
     })
 
     it('returns the story and no deal from a plain Floor 5 Narrator', async () => {
@@ -176,11 +187,15 @@ describe('Floor 6 encounters in useGameApi', () => {
       const { respondToDeal } = useGameApi(SERVER_URL)
       await respondToDeal('v1:tool_call:abc:123', true)
 
-      expect(globalThis.fetch).toHaveBeenCalledWith(`${SERVER_URL}/respond`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ interrupt_id: 'v1:tool_call:abc:123', accepted: true }),
-      })
+      expect(globalThis.fetch).toHaveBeenCalledWith(
+        `${SERVER_URL}/respond`,
+        expect.objectContaining({
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ interrupt_id: 'v1:tool_call:abc:123', accepted: true }),
+          signal: expect.any(AbortSignal),
+        }),
+      )
     })
 
     it('sends a refusal as accepted false', async () => {
