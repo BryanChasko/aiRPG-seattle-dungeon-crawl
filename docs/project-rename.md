@@ -329,6 +329,36 @@ has not been announced. In order:
 - The rename window itself: pick a time when no learner cohort is
   mid-floor, since the play page is down between steps 3 and 5.
 
+## 10. Root restructure (same window, after the art team lands)
+
+The repo root is crowded and slow to scroll. On rename day, after the
+art team finishes and before the section 5 commands, collapse the root
+to the README plus three folders; everything else moves under them.
+Do not start this early: floor pages, `study/build_pack.py`,
+`tools/check_docs.py`, and the web build all reference current root
+paths, so the move and every reference fix land in one prepared
+branch, gated the same way as the slug change.
+
+Target shape (names provisional, decided on the branch):
+
+- `README.md` stays at root, alone.
+- `dungeon/` (or `crawl/`): the workshop -- `workshop/`, `study/`,
+  `tools/` (docs tooling), `characters.json`, floor code folders
+  (`0_stairwell/` through `8_agentcore_production/`,
+  `encounters/`).
+- `site/` (or `play/`): the web interface -- `web/`, `assets/hud/`.
+- `art/`: `images/`, `docs/` art plans, art tooling out of
+  `tools/` (render, compose, publish scripts).
+
+Rules for the move branch: every `cd`, relative link, image path,
+`build_pack.py` ROOT, check-docs roots, and vite base move together;
+`git grep` for the old top-level names must come back clean except
+this plan; full gates (`check_docs.py`, pack `--check`, `uv sync`,
+web tests, solution tests) before the rename-day merge. Local folder
+renames (`mv aiRPG-seattle-dungeon-crawl seattle-strands-dungeon-crawl`)
+happen in the same window, so learners clone once into the final
+shape instead of twice.
+
 ## Appendix: the 53 files carrying the old slug on origin/main
 
 From `git grep -il 'aiRPG-seattle-dungeon-crawl' origin/main` at

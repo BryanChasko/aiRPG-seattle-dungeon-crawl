@@ -12,6 +12,10 @@ Files on this side passage: [`encounters/floor-8-quarterly-earnings-call/quarter
 
 <img src="../../images/cards/boss-earnings-call-640x640.webp" alt="The Quarterly Earnings Call, a giant grinning speakerphone with glowing buttons beneath three floating video-call tiles, sending violet sound waves over a flooded boardroom" width="240">
 
+Lose a round and the call itself goes Off-Beat:
+
+<img src="../../images/cards/boss-earnings-call-offbeat-640x640.webp" alt="The Quarterly Earnings Call Off-Beat: charts and ringing phones losing the beat, papers flying" width="240">
+
 ![The Bellevue lobby, where the glass conference rooms of the earnings call wait overhead](../../images/floors/bellevue-lobby-1200x675.webp)
 
 ## The Brief

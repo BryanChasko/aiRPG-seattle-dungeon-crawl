@@ -74,6 +74,10 @@ Before the collapse, on survey runs over the Gertie wreck and on dawn kayak swee
 <td><img src="../../images/cards/cast-cordula-drill-640x640.webp" alt="Cordula dancing her drill-cadence style in black on black on grey, paddle twirling overhead, water spraying from her boots" width="160"></td>
 <td><img src="../../images/cards/cast-cordula-benched-640x640.webp" alt="Cordula benched after a dance-off, wrapped in a dark grey blanket over her black drysuit, paddle across her knees" width="160"></td>
 </tr>
+<tr>
+<td><img src="../../images/cards/cast-cordula-vault-640x640.webp" alt="Cordula vaulting over floodwater on her planted black paddle like a pole-vaulter, body extended mid-air" width="160"></td>
+<td><img src="../../images/cards/cast-cordula-drum-640x640.webp" alt="Cordula drumming the Final Beat with her paddle on a barnacled buoy repurposed as a war drum" width="160"></td>
+</tr>
 </table>
 
 - **Species:** Human (Seattle Native). **Class:** Amphibious Breacher.
@@ -154,6 +158,16 @@ STEALTH            (smoke screen)      (gentle pin)        (locks, chests)
 </tr>
 </table>
 
+Barnaby's five chromatophore states, left to right across his cards: calm (the base card: dark charcoal and slate at rest), plotting, irritated (the first red blush over charcoal), stealth, academic. His collar glows faint violet at rest and burns brighter with his temper. Presence and the legend card are dance-off moments, not moods.
+
+<table>
+<tr>
+<td><img src="../../images/cards/cast-barnaby-plotting-640x640.webp" alt="Barnaby plotting with arm-tips steepled and one eye narrowed, collar glowing faint violet" width="160"></td>
+<td><img src="../../images/cards/cast-barnaby-irritated-640x640.webp" alt="Barnaby irritated with arms knotted and skin blushing red over charcoal, collar glowing hot" width="160"></td>
+<td><img src="../../images/cards/cast-barnaby-academic-640x640.webp" alt="Barnaby studying an open waterproof handbook, one arm turning the page, collar glowing steady violet" width="160"></td>
+</tr>
+</table>
+
 - **Chromatophore Stealth (passive and active):** bends light across his skin, hiding himself and Cordula while they stand still in damp or shadowed places. Chromatophore Stealth lets the party skip a dance-off the party does not want.
 - **Ink Cloud (area):** a thick black cloud that blinds and makes the floor slick. Opponents inside it are Off-Beat for two rounds. Nobody is hurt; everybody is confused.
 - **Eight-Point Hold (single target):** four suction-lined arms hold an opponent's arms and legs still, gently and completely. A held opponent cannot answer a Move Call that round.
@@ -190,8 +204,15 @@ On Day 2 the flood scoured the flat down to his shell and left him lying on the 
 
 - **Anchor:** Shelly digs into stone in half a second. With Cordula's carabiner on his shell ring, the party cannot be knocked back, pulled or blown off a ledge.
 - **Siphon Bind:** his siphon wraps an opponent's ankles from below and holds them in place for one round.
+
+<img src="../../images/cards/cast-shelly-bind-640x640.webp" alt="Shelly half-buried in mud, his long siphon coiled twice around a fleeing accountant's ankles" width="160">
+
 - **Saltwater Jet:** a pressurized blast that pushes up to three opponents fifteen feet back and leaves them Mud-Sighted for a round. The jet puts out fires instantly.
+
+<img src="../../images/cards/cast-shelly-jet-640x640.webp" alt="Shelly braced in stone, firing a high-pressure fan of seawater from his siphon, mud tumbling back" width="160">
 - **Shell Bunker:** Shelly pulls in and hardens, immune to debuffs, and Cordula can carry him as a tower shield.
+
+<picture><source srcset="../../images/motion/cast-shelly-mist-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../images/motion/cast-shelly-mist.webp" alt="Shelly at rest in his tide flat, breathing slow, sea mist shimmering" width="240"></picture>
 - **Party politics:** the System AI announced Shelly's arrival with far too much enthusiasm and runs a weekly viewer poll on what the siphon is for. Barnaby refuses to share a water line with "that unspeakable clam" and keeps him five feet away at all times. Cordula loves him: he takes no back space and he never lets go of the floor.
 
 ## Chonks, the Suction-Cup Sentinel
@@ -223,7 +244,12 @@ On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the hold
 | 28 | Bony tubercles: very high | 20 | Takes Strength 18 to pull off |
 
 - **Suction Latch:** thrown (by Cordula's pitching arm or Barnaby's flick), Chonks seals onto a visor, a phone screen or a slide clicker. The target is Off-Beat until he lets go.
+
+<picture><source srcset="../../images/motion/cast-chonks-green-fish-throw-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../images/motion/cast-chonks-green-fish-throw.webp" alt="Chonks spinning through the air in a throwing arc, about to latch" width="280"></picture>
+
 - **Spine Flare:** while latched, he puffs up and flares his spines. Anyone who grabs him loses their next move.
+
+<img src="../../images/cards/cast-chonks-flare-640x640.webp" alt="Chonks puffed round with every spine erect while latched to a brass wheel spoke, eyes squeezed shut" width="160">
 - **Stamina Vacuum:** while latched, he drains the target's Groove and shares half of the drained Groove with the party.
 - **Buckler:** strapped to Cordula's forearm, he inflates and hardens into a round shield.
 

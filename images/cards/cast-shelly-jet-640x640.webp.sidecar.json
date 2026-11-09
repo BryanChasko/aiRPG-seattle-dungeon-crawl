@@ -1,0 +1,39 @@
+{
+ "file": "cast-shelly-jet-640x640.webp",
+ "bytes": 109218,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "fb211e456929498be87dfc8345531634e7bc1bc05ab55569241a0c359981fdb4",
+  "size": "1024x1024"
+ },
+ "sha256": "9c9a55894ef1bdce9203d9d81eae4a82d2dc537644e2ffaa76e8f4a4a960d5c5",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-cast-shelly-jet.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-09/raw/card-cast-shelly-jet.png",
+  "raw_sha256": "3eff99e5c348ea260d30c8f62975c58c889d980cc9d491bb25cf1fce20250704",
+  "request": "images/src/card-cast-shelly-jet.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "13.0.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

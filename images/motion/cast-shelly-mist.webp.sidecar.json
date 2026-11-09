@@ -1,0 +1,30 @@
+{
+ "file": "cast-shelly-mist.webp",
+ "still": "cast-shelly-mist-still.webp",
+ "effect": "mist",
+ "frames": 8,
+ "size": [
+  400,
+  400
+ ],
+ "frame_ms": [
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90
+ ],
+ "bytes": 261122,
+ "source": {
+  "image": "images/cards/cast-shelly-640x640.webp",
+  "image_sha256": "cfdf762de5fe671257a9a45323a94184818e087d3355819af568f70b86873817"
+ },
+ "tools": {
+  "pillow": "13.0.0"
+ },
+ "model_calls": 0,
+ "sha256": "219d0c57ed1222334949aecd9cda003863f199347bb9c60bba7657c239c0f886"
+}

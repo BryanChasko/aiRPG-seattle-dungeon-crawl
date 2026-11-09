@@ -1,0 +1,39 @@
+{
+ "file": "boss-earnings-call-offbeat-640x640.webp",
+ "bytes": 97668,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "ee0dc742bae06f8d08e5978fa2c7c1a2358c3b91097270b1bfee1e2ce8468938",
+  "size": "1024x1024"
+ },
+ "sha256": "b92ea5bb31207399a92e7953f06c3b64e6ec85e4f29c055ba73ea084fe6366b8",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-boss-earnings-call-offbeat.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-09/raw/card-boss-earnings-call-offbeat.png",
+  "raw_sha256": "1ad7b132952cb056f1ae03c249699b5ac13b2ddf1e3df6b3e1421f49f142c5bb",
+  "request": "images/src/card-boss-earnings-call-offbeat.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "13.0.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

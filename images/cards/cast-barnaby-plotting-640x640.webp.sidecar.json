@@ -1,0 +1,39 @@
+{
+ "file": "cast-barnaby-plotting-640x640.webp",
+ "bytes": 111444,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "269df906333ad86ef964dc72adefb1ef2ac6b6681801b379b54710dea9280617",
+  "size": "1024x1024"
+ },
+ "sha256": "838e27ecb64e70ba663c3a965f4b0a6d40bc19e4faee0fcdbb60092422951baa",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-cast-barnaby-plotting.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-09/raw/card-cast-barnaby-plotting.png",
+  "raw_sha256": "d8450e268b06208e6b2b9e52f00fe2c1530b0c2d7ba1e7140dcd75df05fe56b3",
+  "request": "images/src/card-cast-barnaby-plotting.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "13.0.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}
