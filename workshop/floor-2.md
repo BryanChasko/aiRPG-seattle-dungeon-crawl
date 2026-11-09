@@ -114,6 +114,10 @@ Check: the terminal shows `Tool #1: http_request` before the answer, and the ans
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The answer came back with numbers in it, and every one had a source. Barnaby read the stat block twice.
 >
 > <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Advantage on stealth. Correct. A twenty-foot ink cloud. Accurate, if unambitious."
+
+The nursery with the lights out, for the stealth beat. Stealth runs on the tide: check the <img src="../assets/hud/tide-clock.svg" alt="tide clock" width="24"> tide clock and move while the water is low and dark.
+
+![The Eelgrass Nursery gone dark for stealth: eelgrass and crabs under faint teal light, lamps glowing](../images/floors/eelgrass-nursery-dim-1200x675.webp)
 >
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Then, quieter:
 >

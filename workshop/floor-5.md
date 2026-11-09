@@ -46,6 +46,10 @@ cd aiRPG-seattle-dungeon-crawl/5_a2a_integration
                                    (Port 8009)
 ```
 
+The same diagram for browsers (the text version above is the terminal-readable one):
+
+<img src="../assets/diagrams/floor-5-a2a.svg" alt="Diagram: three agent boxes across the top, each lined down to one orchestrator box, a pulse travelling the middle line" width="480">
+
 Build a system with three specialized agents that work together:
 
 - Rules Agent: manages the game rules and mechanics - [`agents/rules_agent/rules_agent.py`](../5_a2a_integration/agents/rules_agent/rules_agent.py)

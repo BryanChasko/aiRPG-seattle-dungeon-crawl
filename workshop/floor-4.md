@@ -113,6 +113,10 @@ if __name__ == "__main__":
 
 > <img src="../images/icons/sponsor-96x96.webp" alt="" width="28" height="28"> **SPONSOR MESSAGE:** This portal is brought to you by port 8002. Port 8002: it was free.
 
+The portal, as the System sees it: one die crossing the Locks from your terminal to the dice server.
+
+<img src="../assets/diagrams/floor-4-portal.svg" alt="Diagram: a client terminal box on the left, the dice server box on the right, two lock gates between them, one glowing die travelling across" width="480">
+
 ```bash
 python dice_roll_mcp_server.py
 ```
