@@ -342,11 +342,11 @@ branch, gated the same way as the slug change.
 Target shape (names provisional, decided on the branch):
 
 - `README.md` stays at root, alone.
-- `dungeon/` (or `crawl/`): the workshop — `workshop/`, `study/`,
+- `dungeon/` (or `crawl/`): the workshop -- `workshop/`, `study/`,
   `tools/` (docs tooling), `characters.json`, floor code folders
   (`0_stairwell/` through `8_agentcore_production/`,
   `encounters/`).
-- `site/` (or `play/`): the web interface — `web/`, `assets/hud/`.
+- `site/` (or `play/`): the web interface -- `web/`, `assets/hud/`.
 - `art/`: `images/`, `docs/` art plans, art tooling out of
   `tools/` (render, compose, publish scripts).
 
