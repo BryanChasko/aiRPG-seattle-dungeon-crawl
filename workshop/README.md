@@ -1,7 +1,9 @@
-# aiRPG Seattle Dungeon Crawl: Learn the Strands Agents SDK One Floor at a Time
+# Seattle Strands Dungeon Crawl: A Visual Lit aiRPG Workshop
+
+A Visual Lit aiRPG: a LitRPG you can see, run by one System AI, built one floor at a time with the Strands Agents SDK on Amazon Nova 2 Lite. Conflict is a dance-off. Nobody gets hurt.
 
 <!-- art slot: hero, 1600x600, art team -->
-![Cordula, in a matte black drysuit with Barnaby the octopus beside her and Chonks the lumpsucker on her forearm, strikes a dance pose with her kayak paddle while a startled accountant and an investment banker slip on the flooded floor of collapsed Pier 59. Shelly the geoduck puffs sea mist, bull kelp hangs overhead, and the Space Needle shows through the breach](../images/banner-1680x720.webp)
+![Cordula in a matte black drysuit on the flooded floor of collapsed Pier 59, kayak paddle in hand, bull kelp overhead, dark water and wreck girders behind her, and the Space Needle showing through the breach](../images/banner-1680x720.webp)
 
 "Roll for Initiative... in Python!"
 
