@@ -1,22 +1,22 @@
 {
  "file": "cast-shelly-anchor-640x640.webp",
- "bytes": 106802,
+ "bytes": 103178,
  "format": "webp lossy q84",
  "render": {
   "endpoint": "https://api.meta.ai/v1/images/generations",
   "model": "muse-image-1.0",
-  "prompt_sha256": "b35108913696de11573f1cff5af2a9acec4e6ac97a336f2ab4c38ce33dece7ae",
+  "prompt_sha256": "06f4e98551e2416873f13d2ed88a3abc3111c9a4862c303fbf99dbb29e0840d1",
   "size": "1024x1024"
  },
- "sha256": "b52757872c1784a417497fbdde61d8f65621de30d99c27d6f0533cf6c607e905",
+ "sha256": "cc88e45f2909906ef6756d279d445bc81e32c19e624d9337210af14c35105071",
  "size": [
   640,
   640
  ],
  "source": {
   "raw": "card-cast-shelly-anchor.png",
-  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-02/raw/card-cast-shelly-anchor.png",
-  "raw_sha256": "df37319b4e720d8244e63bc9a518f0053d399a9782053a2f584ae2b978467231",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-05/raw/card-cast-shelly-anchor.png",
+  "raw_sha256": "3e0824fb82320cf3af19387a9d3941b235badc213cad68fdd43f8e18af90db58",
   "request": "images/src/card-cast-shelly-anchor.request.json"
  },
  "tokens": {
@@ -24,8 +24,8 @@
   "vignette": "#0B0E14 (obsidian, banner spec base)"
  },
  "tools": {
-  "pillow": "12.1.0",
-  "python": "3.14.2"
+  "pillow": "11.3.0",
+  "python": "3.13.5"
  },
  "transforms": [
   "cover-crop 640x640 lanczos",

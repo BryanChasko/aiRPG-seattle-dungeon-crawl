@@ -1,22 +1,22 @@
 {
  "file": "cast-chonks-latch-640x640.webp",
- "bytes": 76832,
+ "bytes": 82676,
  "format": "webp lossy q84",
  "render": {
   "endpoint": "https://api.meta.ai/v1/images/generations",
   "model": "muse-image-1.0",
-  "prompt_sha256": "471481568a6f12da76425579c683525bf0a3593f49913e96ee2c6e9447256df1",
+  "prompt_sha256": "ac80d5edaa0f66c263bae065444c0b1515d059e0f40392accffb2a3d33cac618",
   "size": "1024x1024"
  },
- "sha256": "933eb38c995daa60ffd4792a9ce99be6294ada56ebafa4a371337122052acf0b",
+ "sha256": "e987b74cc453377742f3e492900018975dcbb582c1f1fe8e540f6024cab9e6a4",
  "size": [
   640,
   640
  ],
  "source": {
   "raw": "card-cast-chonks-latch.png",
-  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-02/raw/card-cast-chonks-latch.png",
-  "raw_sha256": "6ffd7f9c3fa325f59dd37a43c01ff56c6481e712dbaa0d36158acff30061df12",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-05/raw/card-cast-chonks-latch.png",
+  "raw_sha256": "c7937efdd029ff9deaf82859391d08f9dea4c85a217365c2f4c2bc6d5ab093f0",
   "request": "images/src/card-cast-chonks-latch.request.json"
  },
  "tokens": {
@@ -24,8 +24,8 @@
   "vignette": "#0B0E14 (obsidian, banner spec base)"
  },
  "tools": {
-  "pillow": "12.1.0",
-  "python": "3.14.2"
+  "pillow": "11.3.0",
+  "python": "3.13.5"
  },
  "transforms": [
   "cover-crop 640x640 lanczos",

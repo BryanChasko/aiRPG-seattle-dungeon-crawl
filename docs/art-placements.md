@@ -49,21 +49,151 @@ S3: `s3://bryanchasko.com/airpg-art/cards/opponent-founder-offbeat-640x640.webp`
 | [`cast-shelly-anchor-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-shelly-anchor-640x640.webp) | `workshop/world/cast.md`: Shelly section, beside the Anchor ability | replaces the file in place; no page edit |
 | [`cast-shelly-bunker-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-shelly-bunker-640x640.webp) | `workshop/world/cast.md`: Shelly section, beside the Shell Bunker ability | replaces the file in place; no page edit |
 | [`cast-chonks-latch-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-chonks-latch-640x640.webp) | `workshop/world/cast.md`: Chonks section, beside the Suction Latch ability | replaces the file in place; no page edit |
-| [`cast-barnaby-legend-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-barnaby-legend-640x640.webp) | `workshop/world/cast.md`: Barnaby section, first image under the heading, before the stats table | not rendered yet |
-| [`gertie-wreck-den-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/gertie-wreck-den-1200x675.webp) | `workshop/cleanup.md`: after the closing log where Barnaby goes home to the Sound | not rendered yet |
-| [`opponent-tourist-pod-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-tourist-pod-offbeat-640x640.webp) | `workshop/floor-1.md`: where the tourist pod leaves the tide pools (the Floor 1 opponent result) | not rendered yet |
-| [`opponent-devrel-swarm-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-devrel-swarm-offbeat-640x640.webp) | `workshop/encounters/developer-advocate-swarm.md`: beside the passage where the party wins the boss battle | not rendered yet |
-| [`opponent-ferry-commuters-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-ferry-commuters-offbeat-640x640.webp) | `workshop/floor-7.md`: after the dance-off result against the Ferry-Line Commuter Horde | not rendered yet |
-| [`opponent-kiro-scripter-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-kiro-scripter-640x640.webp) | `workshop/floor-2.md`: where Kiro offers to run any command (the HumanInTheLoop bonus) | not rendered yet |
-| [`opponent-lady-luck-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-lady-luck-640x640.webp) | `workshop/floor-3.md`: where the page introduces Lady Luck and her table | not rendered yet |
-| [`opponent-cadabra-drones-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-cadabra-drones-640x640.webp) | `workshop/world/the-system.md`: section 5, beside the Loot boxes bullet (Cadabra drones deliver every box) | not rendered yet |
+| [`cast-barnaby-legend-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-barnaby-legend-640x640.webp) | `workshop/world/cast.md`: Barnaby section, first image under the heading, before the stats table | ready to place |
+| [`gertie-wreck-den-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/gertie-wreck-den-1200x675.webp) | `workshop/cleanup.md`: after the closing log where Barnaby goes home to the Sound | ready to place |
+| [`opponent-tourist-pod-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-tourist-pod-offbeat-640x640.webp) | `workshop/floor-1.md`: where the tourist pod leaves the tide pools (the Floor 1 opponent result) | ready to place |
+| [`opponent-devrel-swarm-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-devrel-swarm-offbeat-640x640.webp) | `workshop/encounters/developer-advocate-swarm.md`: beside the passage where the party wins the boss battle | ready to place |
+| [`opponent-ferry-commuters-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-ferry-commuters-offbeat-640x640.webp) | `workshop/floor-7.md`: after the dance-off result against the Ferry-Line Commuter Horde | ready to place |
+| [`opponent-kiro-scripter-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-kiro-scripter-640x640.webp) | `workshop/floor-2.md`: where Kiro offers to run any command (the HumanInTheLoop bonus) | ready to place |
+| [`opponent-lady-luck-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-lady-luck-640x640.webp) | `workshop/floor-3.md`: where the page introduces Lady Luck and her table | ready to place |
+| [`opponent-cadabra-drones-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-cadabra-drones-640x640.webp) | `workshop/world/the-system.md`: section 5, beside the Loot boxes bullet (Cadabra drones deliver every box) | ready to place |
 | [`sponsor-bellevue-96x96.webp`](https://bryanchasko.com/airpg-art/icons/sponsor-bellevue-96x96.webp) | `workshop/world/the-system.md`: section 5 icon row, after sponsor-benthic | replaces the file in place; no page edit |
-| [`sponsor-hydros9-96x96.webp`](https://bryanchasko.com/airpg-art/icons/sponsor-hydros9-96x96.webp) | `workshop/world/the-system.md`: section 5 icon row, after sponsor-bellevue | not rendered yet |
+| [`sponsor-hydros9-96x96.webp`](https://bryanchasko.com/airpg-art/icons/sponsor-hydros9-96x96.webp) | `workshop/world/the-system.md`: section 5 icon row, after sponsor-bellevue | ready to place |
 | [`sponsor-benthic-96x96.webp`](https://bryanchasko.com/airpg-art/icons/sponsor-benthic-96x96.webp) | `workshop/world/the-system.md`: section 5 icon row (already placed) | replaces the file in place; no page edit |
-| [`sponsor-cadabra-96x96.webp`](https://bryanchasko.com/airpg-art/icons/sponsor-cadabra-96x96.webp) | `workshop/world/the-system.md`: section 5 icon row, last | not rendered yet |
-| [`welcome-shelly-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/welcome-shelly-1200x675.webp) | `workshop/floor-2.md`: right before Shelly's welcome log (Day 2, 1400 low water) | not rendered yet |
-| [`welcome-chonks-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/welcome-chonks-1200x675.webp) | `workshop/floor-3.md`: right before Chonks's welcome paragraph (after Step 4) | not rendered yet |
-| [`safe-room-dawn-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/safe-room-dawn-1200x675.webp) | `workshop/floor-7.md`: where the party wakes on Day 10 and the session comes back | not rendered yet |
+| [`sponsor-cadabra-96x96.webp`](https://bryanchasko.com/airpg-art/icons/sponsor-cadabra-96x96.webp) | `workshop/world/the-system.md`: section 5 icon row, last | ready to place |
+| [`welcome-shelly-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/welcome-shelly-1200x675.webp) | `workshop/floor-2.md`: right before Shelly's welcome log (Day 2, 1400 low water) | ready to place |
+| [`welcome-chonks-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/welcome-chonks-1200x675.webp) | `workshop/floor-3.md`: right before Chonks's welcome paragraph (after Step 4) | ready to place |
+| [`safe-room-dawn-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/safe-room-dawn-1200x675.webp) | `workshop/floor-7.md`: where the party wakes on Day 10 and the session comes back | ready to place |
+
+### `cast-barnaby-legend-640x640.webp` on `workshop/world/cast.md`
+
+Where: Barnaby section, first image under the heading, before the stats table.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/cast-barnaby-legend-640x640.webp`
+
+```markdown
+![Barnaby, a huge wild Giant Pacific Octopus with a brass collar, swimming free through the sunken girders of the Galloping Gertie wreck](../../images/cards/cast-barnaby-legend-640x640.webp)
+```
+
+### `gertie-wreck-den-1200x675.webp` on `workshop/cleanup.md`
+
+Where: after the closing log where Barnaby goes home to the Sound.
+
+S3: `s3://bryanchasko.com/airpg-art/floors/gertie-wreck-den-1200x675.webp`
+
+```markdown
+![The Galloping Gertie wreck on the floor of the Tacoma Narrows, an anemone-covered reef of girders with one red octopus arm curling out of a den](../images/floors/gertie-wreck-den-1200x675.webp)
+```
+
+### `opponent-tourist-pod-offbeat-640x640.webp` on `workshop/floor-1.md`
+
+Where: where the tourist pod leaves the tide pools (the Floor 1 opponent result).
+
+S3: `s3://bryanchasko.com/airpg-art/cards/opponent-tourist-pod-offbeat-640x640.webp`
+
+```markdown
+![Three tourists in matching rain shells slipping on wet tide-pool rocks, umbrellas flipped, laughing](../images/cards/opponent-tourist-pod-offbeat-640x640.webp)
+```
+
+### `opponent-devrel-swarm-offbeat-640x640.webp` on `workshop/encounters/developer-advocate-swarm.md`
+
+Where: beside the passage where the party wins the boss battle.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/opponent-devrel-swarm-offbeat-640x640.webp`
+
+```markdown
+![Five developer advocates in matching hoodies colliding mid-demo, stickers flying, a frozen blank laptop screen](../../images/cards/opponent-devrel-swarm-offbeat-640x640.webp)
+```
+
+### `opponent-ferry-commuters-offbeat-640x640.webp` on `workshop/floor-7.md`
+
+Where: after the dance-off result against the Ferry-Line Commuter Horde.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/opponent-ferry-commuters-offbeat-640x640.webp`
+
+```markdown
+![A crowd of rain-soaked commuters frozen mid-step on a muddy cliff path at dawn, coffee sloshing](../images/cards/opponent-ferry-commuters-offbeat-640x640.webp)
+```
+
+### `opponent-kiro-scripter-640x640.webp` on `workshop/floor-2.md`
+
+Where: where Kiro offers to run any command (the HumanInTheLoop bonus).
+
+S3: `s3://bryanchasko.com/airpg-art/cards/opponent-kiro-scripter-640x640.webp`
+
+```markdown
+![Kiro the Doomsday Scripter cross-legged on a vending machine in a flooded eelgrass meadow, one finger over the enter key](../images/cards/opponent-kiro-scripter-640x640.webp)
+```
+
+### `opponent-lady-luck-640x640.webp` on `workshop/floor-3.md`
+
+Where: where the page introduces Lady Luck and her table.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/opponent-lady-luck-640x640.webp`
+
+```markdown
+![Lady Luck, a croupier in a sea-green sequined vest, tossing glowing dice over an abalone shell table in a kelp forest](../images/cards/opponent-lady-luck-640x640.webp)
+```
+
+### `opponent-cadabra-drones-640x640.webp` on `workshop/world/the-system.md`
+
+Where: section 5, beside the Loot boxes bullet (Cadabra drones deliver every box).
+
+S3: `s3://bryanchasko.com/airpg-art/cards/opponent-cadabra-drones-640x640.webp`
+
+```markdown
+![A swarm of boxy brown delivery drones diving through a flooded hall to drop glowing loot boxes, one tangled in kelp](../../images/cards/opponent-cadabra-drones-640x640.webp)
+```
+
+### `sponsor-hydros9-96x96.webp` on `workshop/world/the-system.md`
+
+Where: section 5 icon row, after sponsor-bellevue.
+
+S3: `s3://bryanchasko.com/airpg-art/icons/sponsor-hydros9-96x96.webp`
+
+```markdown
+![Hydros-9 sponsor medallion: a teal water drop over nine stacked pivot arrows](../../images/icons/sponsor-hydros9-96x96.webp)
+```
+
+### `sponsor-cadabra-96x96.webp` on `workshop/world/the-system.md`
+
+Where: section 5 icon row, last.
+
+S3: `s3://bryanchasko.com/airpg-art/icons/sponsor-cadabra-96x96.webp`
+
+```markdown
+![Cadabra, Inc. contractor medallion: a cardboard parcel with a rocket fin and a drone rotor](../../images/icons/sponsor-cadabra-96x96.webp)
+```
+
+### `welcome-shelly-1200x675.webp` on `workshop/floor-2.md`
+
+Where: right before Shelly's welcome log (Day 2, 1400 low water).
+
+S3: `s3://bryanchasko.com/airpg-art/floors/welcome-shelly-1200x675.webp`
+
+```markdown
+![A geoduck lying on bare scoured sand at low tide, its long siphon draped across the flat, sea mist rising beside a lantern](../images/floors/welcome-shelly-1200x675.webp)
+```
+
+### `welcome-chonks-1200x675.webp` on `workshop/floor-3.md`
+
+Where: right before Chonks's welcome paragraph (after Step 4).
+
+S3: `s3://bryanchasko.com/airpg-art/floors/welcome-chonks-1200x675.webp`
+
+```markdown
+![A kelp bulb bursting overhead as a round green lumpsucker flies toward a gloved forearm guard](../images/floors/welcome-chonks-1200x675.webp)
+```
+
+### `safe-room-dawn-1200x675.webp` on `workshop/floor-7.md`
+
+Where: where the party wakes on Day 10 and the session comes back.
+
+S3: `s3://bryanchasko.com/airpg-art/floors/safe-room-dawn-1200x675.webp`
+
+```markdown
+![The Safe Room at dawn, embers in a basalt hearth, a drysuit drying and a clear water tank on a bench](../images/floors/safe-room-dawn-1200x675.webp)
+```
 
 ## motion
 

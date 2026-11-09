@@ -1,0 +1,39 @@
+{
+ "file": "safe-room-dawn-1200x675.webp",
+ "bytes": 134960,
+ "format": "webp lossy q82",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "d7685abd2fd225225ec5456dd5d32ede163bf1e9e3d602393e90c40c8dbee3f7",
+  "size": "1024x576"
+ },
+ "sha256": "42d90c9b60f534697f741888111f1870776383cce9afc8430732f064fdbf3ab7",
+ "size": [
+  1200,
+  675
+ ],
+ "source": {
+  "raw": "header-safe-room-dawn.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-05/raw/header-safe-room-dawn.png",
+  "raw_sha256": "8e3f3b200abed9c1a4d462bce25c99c76c948fedc991ff37f85a8cd867229a8f",
+  "request": "images/src/header-safe-room-dawn.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "11.3.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 1200x675 lanczos",
+  "vignette feather 50 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}
