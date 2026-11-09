@@ -10,7 +10,7 @@ Files on this floor: [`4_mcp_integration/dice_roll_mcp_server.py`](../4_mcp_inte
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 4, SATURDAY, JUNE 20, FLOOR 4.** At the Ship Canal the dungeon split in two. The Ballard Locks were glowing like portals, the dice were on the far side, and the party was on this one, with a swarm of developer advocates doing a live demo on the lock walls. I used to count salmon through the window of the fish ladder viewing room at these Locks, and now the water was glowing. Nobody can carry dice through a portal. I can put them on a server and let anyone on any side roll them. Barnaby touched a machine he had never seen, asked the machine what tools it served, and the machine listed them. He went quiet for a long time after that. I think it was the first time he talked to something that was not alive.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 4. You will move your dice out of the agent's pocket and into a server. They are still the System AI's dice, and the System AI is not here to object. They are just somewhere else now, being rolled in public, in front of everybody."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 4. You will move your dice out of the agent's pocket and into a server. They are still the System AI's dice, and the System AI is not here to object. They are just somewhere else now, being rolled in the open, on the record for the review board."
 
 ## Floor Objective
 
@@ -125,7 +125,7 @@ The terminal prints "Starting Dice Roll MCP Server..." followed by Uvicorn runni
 | `address already in use` | another process holds port 8002, usually the dice server from an earlier run | stop it with Ctrl+C in its terminal; on macOS and Linux, `lsof -i :8002` shows which process holds the port |
 | the script ends at once, with no Uvicorn line | `mcp.run(...)` is missing, or sits outside `if __name__ == "__main__":` | Step 3 |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The box with the dice in it lit up on the far wall of the lock chamber and stayed lit. A developer advocate on the lock wall pointed at it and told her livestream it was a "reference architecture." I let her have that one.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The box with the dice in it lit up on the far wall of the lock chamber and stayed lit. A developer advocate on the lock wall pointed at it and told her status call it was a "reference architecture." I let her have that one.
 
 ## Part 2: Creating the MCP Client (narrator_mcp_client.py)
 
@@ -210,9 +210,9 @@ Check: four `DICE ROLL: 4d6 drop 1 = ...` lines in the server terminal, and four
 | the client answers, but no `DICE ROLL` line appears in the server terminal | the Narrator has no MCP tool and invents its own rolls | check `tools=[mcp_dice_client]` |
 | `404 Not Found` in the server terminal | the client URL lacks `/mcp` | `url="http://localhost:8002/mcp"` |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The developer advocates were mid-demo when the first roll crossed the portal, and every one of them stopped to film it. It was the solstice, the longest day of the year, and the swarm had the whole afternoon to film it. Four rolls went over, four came back, and the log on the far wall printed each one where everybody could read it. One advocate in the swarm asked if we had a QR code. We did not. The swarm dispersed to find better lighting, and the Locks let us through.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The developer advocates were mid-demo when the first roll crossed the portal, and every one of them stopped to film it. It was the solstice, the longest day of the year, and the swarm had the whole afternoon to film it. Four rolls went over, four came back, and the log on the far wall printed each one where everybody could read it. One advocate in the swarm asked if we had a QR code. We did not. The swarm dispersed to find better signal, and the Locks let us through.
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 4: ONE SOURCE OF LUCK.** A LitRPG audience has to trust the dice. If every agent rolled its own, nobody could audit a dance-off, and the System AI would be one prompt away from fudging a result. One MCP server that every agent shares, logging every roll with its notation, is the battle log readers check when a Final Beat comes down to a single point. See [The System](world/the-system.md#1-origin-and-interface).
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 4: ONE SOURCE OF LUCK.** A review board has to trust the dice. If every agent rolled its own, nobody could audit a stress-test, and the System AI would be one prompt away from fudging a result. One MCP server that every agent shares, logging every roll with its notation, is the battle log readers check when a Final Beat comes down to a single point. See [The System](world/the-system.md#1-origin-and-interface).
 
 ## Side Passages (optional)
 

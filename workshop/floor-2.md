@@ -26,7 +26,7 @@ Edit [`agent_with_vended_tools.py`](../2_vended_tools/agent_with_vended_tools.py
 
 ## The Arsenal: Vended Tools
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Vended tools ship in strands.vended_tools. No pip install, no shopping, no excuses. The shell tool runs exactly what you approve, and the audience adores a Crawler who approves everything."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Vended tools ship in strands.vended_tools. No pip install, no shopping, no excuses. The shell tool runs exactly what you approve, and the review board flags a Crawler who approves everything."
 
 The Strands SDK ships with a set of ready-to-use tools, the vended tools. They live in `strands.vended_tools`, so no extra install is needed. Six of the tools:
 
@@ -47,7 +47,7 @@ The complete list is on the [Vended Tools](https://strandsagents.com/docs/user-g
 
 > <img src="../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [http_request]**
 >
-> Calls external APIs on the agent's behalf. Rarity: Common. Comes with the Open5e API pre-bookmarked, because the System AI refuses to invent a stat block in front of a live audience.
+> Calls external APIs on the agent's behalf. Rarity: Common. Comes with the Open5e API pre-bookmarked, because the System AI refuses to invent a stat block in front of the review board.
 
 ```python
 # TODO: Step 1 - Import http_request from strands.vended_tools

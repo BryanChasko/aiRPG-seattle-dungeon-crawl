@@ -2,7 +2,7 @@
 
 [Dungeon map](../README.md) | [Floor 1](../floor-1.md) | [Floor 2](../floor-2.md) | [Floor 3](../floor-3.md) | [Floor 4](../floor-4.md) | [Floor 5](../floor-5.md) | [Floor 6](../floor-6.md) | [Floor 7](../floor-7.md) | [Floor 8](../floor-8.md) <!-- floor-nav -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Side passages, Crawlers. Optional, unpaid, and the audience's favorite part. Every side passage starts where a floor ends and teaches a piece of the SDK the floor skipped. Skip the side passages if you like. The sponsors will notice."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Side passages, Crawlers. Optional, unpaid, and the review board's favorite part. Every side passage starts where a floor ends and teaches a piece of the SDK the floor skipped. Skip the side passages if you like. The sponsors will notice."
 
 Each encounter hangs off a floor: the encounter starts from that floor's finished code, teaches a Strands SDK module the floor does not cover, and runs on Amazon Nova 2 Lite like everything else in the crawl. Cordula logs each encounter, as she logs the floors. Encounter code follows the floor pattern: TODO markers on `main`, answers on the `solution` branch, a Show me the code block under each step, and offline tests on `solution`.
 
@@ -44,6 +44,8 @@ Every opponent of the crawl is playable in at least one floor or encounter. The 
 | 8.4 | [The Broadcast Booth](broadcast-booth.md) | sidequest | span attributes for the round and the Move Call, read back in Amazon CloudWatch | `strands.telemetry.tracer`, `strands.telemetry.metrics` |
 | 8.4 | [House Rules as Guardrails](house-rules-guardrails.md) | boss battle | an Amazon Bedrock guardrail that holds the broadcast's house rules on every Narrator turn, against the Regional Managing Director | `strands.types.guardrails` |
 | 8.4 | [Mid-Song Save](mid-song-save.md) | sidequest | a dance-off round that pauses mid-round, saves where it stopped and picks up in a new process without throwing a die twice | `strands.experimental.checkpoint` |
+
+Canon: the `Hype` field name is legacy from the broadcast build; the review board reads it as executive visibility.
 
 Encounter code lives in [`encounters/`](../../encounters/), one folder per encounter, outside the floor folders: the floors stay exactly as their pages describe them. Dance-offs and boss battles roll through one shared file, [`encounters/dance_floor.py`](../../encounters/dance_floor.py), and that file scores every round by the [Crawl Handbook](../world/crawl-handbook/).
 
