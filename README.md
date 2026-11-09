@@ -58,7 +58,9 @@ One arm out of a den is all the cover shows. The rest of Barnaby is earned in th
 
 <p align="center"><strong>Cordula Vance</strong> -- commits every change</p>
 
-Cordula was on the water at 0551 and went toward the fold instead of away from it. She holds the terminal and keeps the log; the steps on every floor are what she types next. Two companions join her on later floors. The cover does not name them.
+> <img src="images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, CONTINUED.**
+>
+> I hold the terminal and keep the log; the steps on every floor are what I type next. The octopus comes with me: the voice in the water claimed him, and I am not leaving him for the intake screen. Two more crew join us on later floors. You will meet them when the dungeon decides you are ready.
 
 ---
 
