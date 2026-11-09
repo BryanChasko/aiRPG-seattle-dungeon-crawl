@@ -46,7 +46,9 @@ describe('NewGameView', () => {
     it('renders the party picker, the server URL field and an Enter button', () => {
       const wrapper = mountComponent()
 
-      expect(wrapper.find('#party-member').exists()).toBe(true)
+      expect(wrapper.findAll('input[name="party-member"]')).toHaveLength(2)
+      expect(wrapper.text()).toContain('Play as')
+      expect(wrapper.text()).not.toContain('Speak as')
       expect(wrapper.find('#server-url').exists()).toBe(true)
       expect(wrapper.find('#character-name').exists()).toBe(false)
 
@@ -57,16 +59,18 @@ describe('NewGameView', () => {
   })
 
   describe('the set party', () => {
-    it('offers exactly the two party leads, Cordula Vance first and selected', () => {
+    it('offers exactly the two party leads with species, Cordula Vance first and selected', () => {
       const wrapper = mountComponent()
-      const select = wrapper.find('#party-member')
-      const options = select.findAll('option')
+      const radios = wrapper.findAll('input[name="party-member"]')
+      const names = wrapper.findAll('.party-name').map((o) => o.text())
 
-      expect(options.map((o) => o.text())).toEqual([
-        'Cordula Vance: Human',
-        'Barnaby: Giant Pacific Octopus',
+      expect(names).toEqual(['Cordula Vance: Human', 'Barnaby: Giant Pacific Octopus'])
+      expect(radios.map((r) => (r.element as HTMLInputElement).value)).toEqual([
+        'Cordula Vance',
+        'Barnaby',
       ])
-      expect((select.element as HTMLSelectElement).value).toBe('Cordula Vance')
+      expect((radios[0].element as HTMLInputElement).checked).toBe(true)
+      expect(wrapper.findAll('.party-portrait')).toHaveLength(2)
       expect(wrapper.find('#lead-pronouns').text()).toBe('she/her')
       expect(wrapper.find('#lead-species').text()).toBe('Human (Seattle Native)')
       expect(wrapper.find('#lead-class').text()).toBe('Amphibious Breacher')
@@ -74,7 +78,7 @@ describe('NewGameView', () => {
 
     it("shows Barnaby's sheet when the player plays as him", async () => {
       const wrapper = mountComponent()
-      await wrapper.find('#party-member').setValue('Barnaby')
+      await wrapper.findAll('input[name="party-member"]')[1].setValue()
 
       expect(wrapper.find('#lead-pronouns').text()).toBe('he/him')
       expect(wrapper.find('#lead-species').text()).toBe('Uplifted Giant Pacific Octopus')
@@ -118,8 +122,17 @@ describe('NewGameView', () => {
   })
 
   describe('validation', () => {
+    it('prefills the Floor 6 local Narrator and explains the field', () => {
+      const wrapper = mountComponent()
+      expect((wrapper.find('#server-url').element as HTMLInputElement).value).toBe(
+        'http://127.0.0.1:8009',
+      )
+      expect(wrapper.find('#server-help').text()).toContain('Narrator server you build')
+    })
+
     it('only asks for the server URL: the party is already filled in', async () => {
       const wrapper = mountComponent()
+      await wrapper.find('#server-url').setValue('')
 
       await wrapper.find('form').trigger('submit.prevent')
       await flushPromises()
@@ -151,7 +164,7 @@ describe('NewGameView', () => {
       globalThis.fetch = fetchMock
 
       const wrapper = mountComponent()
-      await wrapper.find('#party-member').setValue('Barnaby')
+      await wrapper.findAll('input[name="party-member"]')[1].setValue()
       await wrapper.find('#server-url').setValue('https://example.com')
 
       await wrapper.find('form').trigger('submit.prevent')
