@@ -22,7 +22,7 @@ First, create the Knowledge Base for the Rules Agent. The Crawl Handbook, the cr
 
 > <img src="../../art/images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [The Crawl Handbook]**
 >
-> Eleven Markdown files of rules, written by the Narrator and revised every time a Crawler found a loophole. Rarity: Free. The Rules Agent reads it so you never have to, then cites section names at you with visible satisfaction.
+> Twelve Markdown files of rules, written by the Narrator and revised every time a Crawler found a loophole. Rarity: Free. The Rules Agent reads it so you never have to, then cites section names at you with visible satisfaction.
 
 > <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Complete this setup before the Rules Agent can work.
 

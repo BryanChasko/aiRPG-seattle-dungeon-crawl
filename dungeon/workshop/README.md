@@ -92,6 +92,14 @@ Deploy the whole party to Amazon Bedrock AgentCore, one brick at a time
 - Serve the Narrator with `BedrockAgentCoreApp` and follow one turn across runtimes in the traces
 - Runs in a personal AWS account
 
+### [Floor 9 (Optional): The Corrosion Cathedral](floor-9.md)
+Make the System AI fog-proof on Night 13
+
+- Detect hallucinations with a verifier agent returning typed verdicts with citations
+- Gate memory writes with a hook: clean commits, fogged quarantines
+- Refuse poisoned tool-call instructions with an intervention handler
+- Dance the shift foreman, then take the elevator to the Exit
+
 ### [The Exit: Final Cleanup](cleanup.md)
 Stop your services, remove the Floor 8 AWS resources and delete the harness state in `.agent/`
 
