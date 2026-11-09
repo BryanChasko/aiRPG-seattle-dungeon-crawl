@@ -138,7 +138,7 @@ uv sync --group dev
 uv run pytest tests/
 ```
 
-The tests cover every floor without calling Amazon Nova 2 Lite or AWS: agents, tools, MCP server, A2A servers, Groove and Mana, the handbook knowledge base, the harness options, and the Floor 8 memory, retrieval and entrypoint. The web interface has its own suite in `web/` (`npm ci`, then `npx vitest run`). [Coverage page](dungeon/workshop/coverage.md).
+The tests cover every floor without calling Amazon Nova 2 Lite or AWS: agents, tools, MCP server, A2A servers, Groove and Mana, the handbook knowledge base, the harness options, and the Floor 8 memory, retrieval and entrypoint. The web interface has its own suite in `site/web/` (`npm ci, then `npx vitest run`). [Coverage page](dungeon/workshop/coverage.md).
 
 </details>
 
