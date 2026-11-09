@@ -15,7 +15,7 @@ Status: `ready to place` means the page owner adds the snippet at the spot named
 | [`cast-chonks-buckler-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-chonks-buckler-640x640.webp) | `dungeon/workshop/world/cast.md`: Chonks section, after the Buckler ability | placed |
 | [`cast-cordula-benched-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-cordula-benched-640x640.webp) | `dungeon/workshop/world/cast.md`: Cordula section, after the stats table | placed |
 | [`cast-cordula-drill-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-cordula-drill-640x640.webp) | `dungeon/workshop/world/cast.md`: Cordula section, after the stats table | placed |
-| [`opponent-accountant-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-accountant-offbeat-640x640.webp) | `dungeon/workshop/floor-5.md`: Part 4, after Cordula's dance-off result | ready to place |
+| [`opponent-accountant-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-accountant-offbeat-640x640.webp) | `dungeon/workshop/floor-5-3.md`: Part 4, after Cordula's dance-off result | placed |
 | [`opponent-banker-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-banker-offbeat-640x640.webp) | `dungeon/workshop/encounters/quarterly-earnings-call.md`: after the closing log in What It Costs | placed |
 | [`opponent-founder-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-founder-offbeat-640x640.webp) | `dungeon/workshop/floor-6.md`: next to Cordula's note that the founder ran out of slides | ready to place |
 | [`bellevue-lobby-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/bellevue-lobby-1200x675.webp) | `dungeon/workshop/floor-8.md`: under Boss Battle: The Quarterly Earnings Call | placed |
@@ -31,16 +31,6 @@ Status: `ready to place` means the page owner adds the snippet at the spot named
 | [`loot-silver-96x96.webp`](https://bryanchasko.com/airpg-art/icons/loot-silver-96x96.webp) | `dungeon/workshop/world/the-system.md`: section 5 icon row | placed |
 | [`loot-gold-96x96.webp`](https://bryanchasko.com/airpg-art/icons/loot-gold-96x96.webp) | `dungeon/workshop/world/the-system.md`: section 5 icon row | placed |
 | [`loot-desperation-96x96.webp`](https://bryanchasko.com/airpg-art/icons/loot-desperation-96x96.webp) | `dungeon/workshop/world/the-system.md`: section 5 icon row | placed |
-
-### `opponent-accountant-offbeat-640x640.webp` on `dungeon/workshop/floor-5.md`
-
-Where: Part 4, after Cordula's dance-off result.
-
-S3: `s3://bryanchasko.com/airpg-art/cards/opponent-accountant-offbeat-640x640.webp`
-
-```markdown
-![A Quarterly Close Accountant losing the beat in a storm of spreadsheet pages](../../art/images/cards/opponent-accountant-offbeat-640x640.webp)
-```
 
 ### `opponent-founder-offbeat-640x640.webp` on `dungeon/workshop/floor-6.md`
 
