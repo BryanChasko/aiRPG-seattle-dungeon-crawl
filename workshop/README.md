@@ -7,7 +7,7 @@ A Visual Lit aiRPG: a LitRPG you can see, run by one System AI, built one floor 
 
 "Roll for Initiative... in Python!"
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Welcome, Crawlers, to the dungeon under Seattle. Pier 59 collapsed this morning, the Salish Sea came in, and you came with it: soaked, short one kayak, armed with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods. Every script you run drops an achievement box. Write a clean loop and earn a Bronze Box. Burn through your token limit with an accidental infinite loop and earn a Desperation Box. The audience is watching. Try to be interesting."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Welcome, Crawlers, to the dungeon under Seattle. Pier 59 collapsed this morning, the Salish Sea came in, and you came with it: soaked, short one kayak, armed with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods. Every script you run drops an achievement box. Write a clean loop and earn a Bronze Box. Burn through your token limit with an accidental infinite loop and earn a Desperation Box. The review board is watching. Try to be interesting."
 
 ## Who I Am
 
@@ -15,7 +15,7 @@ A Visual Lit aiRPG: a LitRPG you can see, run by one System AI, built one floor 
 >
 > He fights beside me now, a kraken-scale octopus who refuses to confirm or deny the King Octopus legend. His name is Barnaby. Eight arms, a doctorate's worth of opinions, and, since I clamped a collar on him, a British accent.
 >
-> The thing that folded the pier is the System AI. It runs this dungeon: the floors, the tides, the opponents, the dice, the rules. The flood broke it. Its voice, its dice, its rule book and its memory washed out across eight floors under the Sound. The System AI survived in the broadcast relay and the collars, and it wants its show back. The only way out is to rebuild it, one piece per floor. Every piece I rebuild passes through Barnaby's collar first, and he wakes up a little more. I build every piece with the Strands Agents SDK: the first floor is one agent and one call, the last is the whole game running on Amazon Bedrock AgentCore. I write all of it.
+> The thing that folded the pier is the System AI. It runs this dungeon: the floors, the tides, the opponents, the dice, the rules. The flood broke it. Its voice, its dice, its rule book and its memory washed out across eight floors under the Sound. The System AI survived in the broadcast relay and the collars, and it wants its migration back. The only way out is to rebuild it, one piece per floor. Every piece I rebuild passes through Barnaby's collar first, and he wakes up a little more. I build every piece with the Strands Agents SDK: the first floor is one agent and one call, the last is the whole game running on Amazon Bedrock AgentCore. I write all of it.
 >
 > Nobody gets hurt down here. A fight is a dance-off, the opponents are accountants, bankers and developer advocates at work, and the worst that happens is I get Benched and wake up in a Safe Room. I keep a log. The log is what happened. The steps are what I type next.
 
@@ -120,7 +120,7 @@ Floor 0 covers the installs: Python, uv and the repository. Bring basic Python k
 - The System AI: the same AI, in its role as the omniscient, slightly unhinged host that talks to the Crawlers, tracking each Crawler's code output, syntax errors and desperate attempts to pass `uv sync`, and paying out achievements and insults
 - The Crawlers: Cordula, with Barnaby beside her running the party. Companions join on the way down. The party enters soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
 - The Loot Boxes: every cleared floor drops an achievement box. A clean loop earns a Bronze Box. Burning the token limit on an accidental infinite loop earns a Desperation Box
-- The Audience: billions of alien viewers. The viewers are not on the Crawlers' side. Neither are the sponsors, who are local: tech monoliths, waterfront penthouse money, coffee oligarchs and passive-aggressive email culture
+- The Review Board: billions of stakeholders watching. The stakeholders are not on the Crawlers' side. Neither are the sponsors, who are local: tech monoliths, waterfront penthouse money, coffee oligarchs and passive-aggressive email culture
 
 ### Clear the Floors in Order
 

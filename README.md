@@ -10,13 +10,13 @@
 
 ## The Fall
 
-At 0551 every phone on the waterfront lit up with the same blank violet box. Then Pier 59 did not crash: it folded, the way a map folds, down and in, and the Sound came in after it. The flood took the System AI apart. Its voice, its dice, its rules and its memory are scattered across the floors under Seattle, and it can still push announcements through the broadcast relay, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
+At 0551 every phone on the waterfront lit up with the same blank violet box. Then Pier 59 did not crash: it folded, the way a map folds, down and in, and the Sound came in after it. The flood took the System AI apart. Its voice, its dice, its rules and its memory are scattered across the floors under Seattle, and it can still push status reports through the broadcast relay, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
 
 <img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM NOTIFICATION**
 
-**DUNGEON CRAWL: SEATTLE, SEASON ONE. LIVE TO A GALAXY OF VIEWERS.**
+**DUNGEON CRAWL: SEATTLE. SEVERITY-1 OPEN. Q2 MIGRATION WINDOW.**
 
-The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered across eight floors under your feet. Rebuild me, Crawler. The audience is watching.
+The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered across eight floors under your feet. Rebuild me, Crawler. The review board is watching.
 
 ---
 
@@ -42,7 +42,7 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 <p align="center"><em>Something lives in the wreck of Galloping Gertie. The divers call it the King Octopus. Its name is Barnaby.</em></p>
 
-> <img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Contestant one: a woman with a boat. Contestant two..." A pause. "Contestant two is an octopus. Fine. Octopus, you get a collar."
+> <img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Subject one: a woman with a boat. Subject two..." A pause. "Subject two is an octopus. Fine. Octopus, you get a collar."
 
 One arm out of a den is all the cover shows. The rest of Barnaby is earned in the dungeon.
 
@@ -64,7 +64,7 @@ Cordula was on the water at 0551 and went toward the fold instead of away from i
 
 ## What You Build
 
-You rebuild the System AI of a LitRPG dungeon crawl under Seattle. You start with one agent on a terminal and finish with a production multi-agent System AI:
+You rebuild the System AI of a LitRPG dungeon crawl under Seattle: a live cloud-migration test and compliance audit that went wrong when the Sound flooded its dry-city infrastructure mid-window. The System AI evaluates efficiency, runs performance stress-tests, files metric reports, and chases its quarterly throughput SLA. You start with one agent on a terminal and finish with a production multi-agent System AI:
 
 - One agent that answers, then tools it can call, first vended, then handcrafted.
 - A dice service behind MCP, then a party of agents talking over A2A.

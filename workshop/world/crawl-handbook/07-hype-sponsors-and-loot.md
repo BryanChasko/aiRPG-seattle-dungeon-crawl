@@ -1,6 +1,6 @@
 # Hype, Sponsors and Loot Boxes
 
-Hype is a hidden stat the System AI tracks: how much the audience loves a Crawler. The System AI shows a Crawler's Hype whenever the System AI chooses.
+Hype is a hidden stat the System AI tracks: how much executive visibility a Crawler has. The System AI shows a Crawler's Hype whenever the System AI chooses. The name is legacy from the broadcast build: it once meant audience favor, and the code identifiers keep it.
 
 - +1 Hype for each dance-off round won.
 - +3 Hype for winning a Final Beat.
