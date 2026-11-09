@@ -23,7 +23,7 @@ ADVOCATES = [
     # agent name, who, their act, the move they call, their modifier
     ("keynote", "the Keynote Speaker", "opens with a product vision and a fog machine", "Presence", 2),
     ("live_demo", "the Live Demo", "codes on stage and hopes the network holds", "Choreography", 1),
-    ("livestream", "the Livestreamer", "narrates everything to forty thousand viewers", "Read the Room", 1),
+    ("livestream", "the Livestreamer", "files everything with forty thousand reviewers", "Read the Room", 1),
     ("swag_table", "the Swag Table", "throws stickers and socks at the front row", "Power", 0),
 ]
 

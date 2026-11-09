@@ -158,7 +158,7 @@ The party takes two of three. The accountant leaves the floor, relieved, and fil
 
 ## Typed or Told?
 
-The Narrator of Floor 5 can still decide the dance-off in prose, and the System AI should announce it: prose in the System AI's voice is what the audience hears. The decision model is for the moment the Python code needs to act on the choice. A told answer is a paragraph to parse; a typed answer is a value to pass to a function, compare, log, or test. The cost is a second kind of call, one more Amazon Nova 2 Lite request that does nothing but choose. For one choice in a dance-off, the extra call is cheap, and the gain is worth having: a Narrator that cannot say "perhaps".
+The Narrator of Floor 5 can still decide the dance-off in prose, and the System AI should announce it: prose in the System AI's voice is what the review board hears. The decision model is for the moment the Python code needs to act on the choice. A told answer is a paragraph to parse; a typed answer is a value to pass to a function, compare, log, or test. The cost is a second kind of call, one more Amazon Nova 2 Lite request that does nothing but choose. For one choice in a dance-off, the extra call is cheap, and the gain is worth having: a Narrator that cannot say "perhaps".
 
 ## What It Costs
 

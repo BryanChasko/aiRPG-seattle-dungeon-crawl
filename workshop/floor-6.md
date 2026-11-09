@@ -7,13 +7,13 @@ Files on this floor: [`web/src/views/NewGameView.vue`](../web/src/views/NewGameV
 ![Floor 6: The Arena (Web Interface)](../images/floors/floor-6-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, FLOOR 6.** Under Pioneer Square the old storefronts are still there, buried, and the Fremont Troll sits at the end of the arena like a judge who has seen too much. The audience could see us now. We could not see the show. We needed what the viewers had: the sheet, the rolls, the choices, all on one screen. Once we had it, Barnaby performed. I did not know an octopus could hit his marks. The ratings did.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 8, WEDNESDAY, JUNE 24, FLOOR 6.** Under Pioneer Square the old storefronts are still there, buried, and the Fremont Troll sits at the end of the arena like a judge who has seen too much. The review board could see us now. We could not see the audit. We needed what the reviewers had: the sheet, the rolls, the choices, all on one screen. Once we had it, Barnaby performed. I did not know an octopus could hit his marks. The throughput numbers did.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 6. Time to show the audience the Narrator. Pick who you play as, point the web interface at port 8009, and press Enter. No pressure. Only billions of viewers."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 6. Time to show the review board the Narrator. Pick who you play as, point the web interface at port 8009, and press Enter. No pressure. The review board is watching."
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 04: Adding Callbacks and Response Streaming](https://www.youtube.com/watch?v=Zamh36RWKz8) by Morgan Willis. "...callbacks are actually one of the main ways you can control how an agent's output surfaces into a user interface, an API server, or any sort of orchestration system."
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The broadcast booth played a course on a loop, and the part about callbacks stuck. The web interface is a callback: every chunk the System AI writes hits the screen the moment it leaves the model. I watched the dance-off appear one word at a time, and I understood why it paused where it did.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The status booth played a course on a loop, and the part about callbacks stuck. The web interface is a callback: every chunk the System AI writes hits the screen the moment it leaves the model. I watched the dance-off appear one word at a time, and I understood why it paused where it did.
 
 ## Floor Objective
 
@@ -59,7 +59,7 @@ Challenge the Pitch-Deck Founder to a dance-off in the Underground, with the Fre
 
 Check: the panel shows Cordula with GROOVE 17 and MANA 8 (or Barnaby with 11 and 11), and the Narrator returns the first turn as a notification, three choices and a battle log, within about ten seconds.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The System AI's HUD came up in a dead storefront under Pioneer Square: my sheet on the left, the battle log down the side, three choices at the bottom, one of them a terrible idea, as advertised. For the first time since the pier folded I could see what the viewers saw. I did not love it. Barnaby, on the other hand, found the camera within a second and turned a color I can only call stage-ready.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The System AI's HUD came up in a dead storefront under Pioneer Square: my sheet on the left, the battle log down the side, three choices at the bottom, one of them a terrible idea, as advertised. For the first time since the pier folded I could see what the reviewers saw. I did not love it. Barnaby, on the other hand, found the status light within a second and turned a color I can only call review-ready.
 
 Monitor performance: read the Narrator Orchestrator terminal log to follow each request:
 
@@ -77,7 +77,7 @@ Customization ideas:
 - Add custom tools for new game mechanics
 - Connect more MCP servers to add tools
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder wanted a dance-off for our "attention share." The Fremont Troll judged from the end of the arena, one stone eye on each of us. I called Endurance and held a drill cadence until the founder ran out of slides. Shelly dug in at my heel, and Chonks sat on my forearm guard and gurgled once. Barnaby closed on Presence with a full-body light show, timed to the beat, hitting every mark. The log on the screen showed every roll. The ratings ticker in the corner went vertical. Barnaby noticed. He is going to be insufferable about it.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Pitch-Deck Founder wanted a dance-off for our "attention share." The Fremont Troll judged from the end of the arena, one stone eye on each of us. I called Endurance and held a drill cadence until the founder ran out of slides. Shelly dug in at my heel, and Chonks sat on my forearm guard and gurgled once. Barnaby closed on Presence with a full-body light show, timed to the beat, hitting every mark. The log on the screen showed every roll. The throughput ticker in the corner went vertical. Barnaby noticed. He is going to be insufferable about it.
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 6: THE HUD.** In a LitRPG the reader sees the System through its interface: the floating character sheet, the notification boxes, the battle log. The web interface is that HUD, the System AI's screen for the Narrator's output, and it can only exist because [Floor 5](floor-5.md) forced the Narrator into `StoryOutput`: `response` becomes the notification, `dice_rolls` the battle log, `actions_suggestions` the three choices (one of them always a terrible idea). Design the data first and the interface follows. See [The System](world/the-system.md#1-origin-and-interface).
 
@@ -145,9 +145,9 @@ Slow response times:
 
 ## Side Passages (optional)
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The arena keeps two scores nobody showed us: Hype from the audience, deals from the sponsors.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The arena keeps two scores nobody showed us: Visibility from the review board, deals from the sponsors.
 
-- [The Hype Meter](encounters/hype-meter.md), sidequest: a hook turns tool and model events into Hype, and a meter in the web interface shows it
+- [The Hype Meter](encounters/hype-meter.md), sidequest: a hook turns tool and model events into Visibility, and a meter in the web interface shows it
 - [Sponsor Interrupt](encounters/sponsor-interrupt.md), sidequest: an interrupt pauses the turn so the player accepts or refuses a sponsor deal in the browser
 - [Launch Commit Criteria](encounters/launch-commit-criteria.md), sidequest: a hook that rate-limits Cadabra's go/no-go loop, with a minimum interval and a budget of tool and model calls
 
