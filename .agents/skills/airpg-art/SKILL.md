@@ -38,9 +38,11 @@ it is the ledger of every image, its page and spot, and its status
 
 Cards `640x640` webp. Plates `1200x675` webp. Icons `96x96` webp.
 Wordmark `1200x240` webp. Diagrams inline-friendly SVG (no scripts,
-`viewBox` about `1200x675`). Alt text carries the words: SVG loaded
-as `<img>` cannot fetch webfonts, so lettering is drawn paths or
-generic families.
+`viewBox` matching the shipped precedent: `480x200` portal,
+`480x240` A2A; role `img` with title/desc, ASCII fallback, placed
+at width 480). Alt text carries the words: SVG loaded as `<img>`
+cannot fetch webfonts, so lettering is drawn paths or generic
+families.
 
 ## Pipeline
 
