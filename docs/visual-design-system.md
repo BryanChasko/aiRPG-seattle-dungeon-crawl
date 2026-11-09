@@ -148,3 +148,41 @@ From `workshop/world/cast.md` and the canon in `workshop/world/story.md`, update
 | Barnaby | a wild Giant Pacific Octopus past every record (about 190 lb, about 22 ft arm tip to arm tip, kraken scale next to Cordula), dark charcoal and slate mottling at rest, old scars and barnacle-worn skin of a wild animal, the System AI's blackened brass collar with a faint violet glow; crimson and white chromatophore flashes only while dancing or furious (`BARNABY_DANCE`); on dry floors a black misting Hydration Harness on his mantle (`BARNABY_HARNESS`) and he moves under his own power, on wet floors he swims free | a human face, armor, an aquarium, glass walls, a monster, being carried, riding in a backpack tank, red-orange resting color, a polished brass collar |
 | Shelly | geoduck: a small pale oblong shell with a long, thick siphon (the "neck") much bigger than the shell; carabiner on the shell ring | an oyster, a turtle, legs, a face on the shell |
 | Chonks | round green golf-ball fish covered in bumpy tubercles, big black eyes, suction disc | a long body, a seahorse shape, fins like wings |
+
+## 9. Visual Lit alignment: image beside the words it teaches
+
+A page in this workshop is read, not scrolled past. The image and the text it
+explains must be visible at the same time, so the eye can move between them
+without losing its place. Five rules, in force for every new or revised page:
+
+1. Beside, not below. Put the picture in a two-column table next to the brief,
+   check or beat it belongs to. Never stack a lone image above or below its
+   paragraph where one scroll hides the other. The boss layout in
+   `workshop/_snippets.md` is the copy-paste form; `workshop/floor-0.md`
+   Step 4 (Monty) is the worked example.
+2. Image at reading size. A card shown as the subject of a beat renders large
+   enough to read its detail: boss and cast cards at `width="320"` from the
+   640x640 source. A 28px speaker icon is a label, not a picture; it never
+   stands in for the card. Shrinking a subject card to thumbnail size
+   (`width="240"` or less, alone on its own line) is the failure this rule ends.
+3. One image per beat. One picture carries one story beat, one boss, or one
+   check. Do not cluster three cards around one paragraph, and do not repeat
+   the same card as icon, thumbnail and plate on one screen. If a beat has no
+   art yet, leave the text clean and add a backlog row in
+   `docs/art-placements.md`; never borrow a nearby picture that shows
+   something else.
+4. Alt that describes. Subject art carries alt text that says what is in the
+   picture (who, where, doing what), never a filename, a caption repeated
+   word for word, or empty alt. Only the 28px speaker icons in front of a
+   bold name carry `alt=""`, so a screen reader says the name once (section 7).
+5. Spoiler gating by floor. A character appears in art only on or after the
+   floor where the party meets them. Shelly joins on Floor 2 and Chonks joins
+   on Floor 3, so the cover, Floor 0 and Floor 1 never show or name them in
+   art, captions or alt text. Barnaby on the cover is a cliffhanger tease
+   only: the wreck, a shadow, one arm, an eye. His full dance reveal is
+   earned later in the crawl and is never spent on the cover.
+
+Layout follows the reading, never the reverse: when text and image compete
+for width, keep the image at reading size and let the words take the other
+half of the table. Code blocks, TODO markers and checks stay full width
+under the table, unchanged.

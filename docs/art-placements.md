@@ -414,3 +414,19 @@ S3: `s3://bryanchasko.com/airpg-art/motion/ferry-token-loot-pop.webp`
 ```markdown
 <picture><source srcset="../../images/motion/ferry-token-loot-pop-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../images/motion/ferry-token-loot-pop.webp" alt="A Ferry Token popping in" width="240"></picture>
 ```
+
+## Art backlog (requests for the art team, 2026-11-09)
+
+Requests only. Nothing below exists yet unless the status column says so.
+Each row needs a plan in `images/plans/` rendered with
+`tools/airpg_render.py`; writers place the file when it lands and move the
+row into a batch section above. Spoiler rule applies to every row: no Shelly
+before Floor 2, no Chonks before Floor 3, in image, caption or alt text.
+
+| Slot | Size | Subject | Status |
+|---|---|---|---|
+| `README.md` cover hero, replacing `images/banner-1680x720.webp` in place | banner 1680x720 webp | Cliffhanger tease only: the Galloping Gertie wreck in dark water, one huge octopus arm curling out of a girder den, a shadow bigger than the wreck, one eye catching sodium light. Cordula small at the edge with her paddle, looking in. No full Barnaby, no dance, no crimson-white flash: the reveal is earned later. Nobody else from the party in frame. | requested; current banner shows the full dance and spends the reveal |
+| `workshop/floor-9.md` floor plate at the top | floor 1200x675 webp | Already rendered: `images/floors/floor-9-1200x675.webp` (batch-07 above). No new render needed. The page does not exist yet, so the plate is unplaced until the Floor 9 build lands; the almoco-nave plate and the four Floor 9 opponent cards in batch-07 wait with it. | art done, waiting on the page |
+| `web/index.html` social share image (`og:image`) | 1200x630 webp | The cover cliffhanger above, cropped for a share card: wreck, one arm, one eye, wordmark space left dark at the top. No party members beyond the tease, no text baked in. The site head has no `og:image` tag yet; the web lane adds the tag when this file lands. | requested |
+| `web/public/favicon.ico` plus an SVG favicon | 32x32 ico, scalable SVG | One small glyph that reads at tab size: a brass-rimmed violet System frame corner, or a single octopus arm curl. `web/index.html` already links `/favicon.ico` and `web/public/` has no such file, so the tab icon 404s today. Dark background `#0B0E14`, no text. | requested |
+| `README.md` cover, small Barnaby tease for narrow screens | card 640x640 webp | Square crop-safe companion to the cliffhanger banner: anemone-covered girder, one arm, one eye, darkness doing the rest. Lets the cover keep the tease when the wide banner crops badly. Same ban: no full body, no dance. | requested, only if the cover lane needs it after seeing the banner crop |
