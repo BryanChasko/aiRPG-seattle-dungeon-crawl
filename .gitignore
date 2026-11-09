@@ -216,7 +216,7 @@ rules_knowledge_base/
 .agent/
 
 # Ask the System study companion: its search index and chat session
-study/.state/
+dungeon/study/.state/
 
 # AgentCore deploy floors (8+): deployment targets and CLI state are account-specific
 *_agentcore_*/**/aws-targets.json

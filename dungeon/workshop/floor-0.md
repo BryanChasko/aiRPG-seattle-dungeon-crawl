@@ -34,7 +34,7 @@ This workshop rebuilds the AI behind *Dungeon Crawl: Seattle*, a live cloud-migr
 
 The lore lives in the [world guide](world/README.md): [the setting](world/seattle.md), [the cast](world/cast.md), [the System design](world/the-system.md) and the [Crawl Handbook](world/crawl-handbook/), the rules the Rules Agent searches on Floor 5.
 
-Stuck? [Ask the System](../../study/README.md): `python study/ask_the_system.py` answers questions about every floor or Strands API from these pages and the API reference.
+Stuck? [Ask the System](../study/README.md): `python dungeon/study/ask_the_system.py` answers questions about every floor or Strands API from these pages and the API reference.
 
 > <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 0: THE PREMISE.** Every LitRPG starts with where the System came from and why it is doing this to you. Ours is one AI. The System AI built the dungeon, runs the floors and owns the dice, the rules and the memory. The flood broke it. The status-report relay and the collars survived, so the System AI can still push canned status reports through them, but it cannot answer, roll a fair die, quote a rule or remember who did what. Each floor of this workshop rebuilds one more subsystem of the System AI, and Barnaby gets each piece first through the collar. The full map is in [The System](world/the-system.md#what-each-floor-adds-to-the-system).
 

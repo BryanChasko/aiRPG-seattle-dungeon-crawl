@@ -4,8 +4,8 @@ Ask it anything about a floor, a TODO, an error message or a Strands API, and it
 the System AI's voice from two sources only: the pages of this repository and the Strands API
 reference. It cites both, and says so when it does not know.
 
-    python study/ask_the_system.py                      # chat; type exit to leave
-    python study/ask_the_system.py "what is an agent card?"
+    python dungeon/study/ask_the_system.py                      # chat; type exit to leave
+    python dungeon/study/ask_the_system.py "what is an agent card?"
 
 Strands concepts on show, most of them beyond the base floors:
 - @tool functions with docstrings (Floor 3)
@@ -30,11 +30,12 @@ from strands.session.file_session_manager import FileSessionManager
 from strands.storage import LocalFileStorage
 from strands.storage.search.bm25 import Bm25SearchStrategy
 
-ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+DUNGEON = REPO_ROOT / "dungeon"
 STATE = Path(__file__).resolve().parent / ".state"  # gitignored: the search index and the chat session
 PAGES = sorted(
-    [*ROOT.glob("README.md"), *ROOT.glob("workshop/*.md"), *ROOT.glob("workshop/encounters/*.md"),
-     *ROOT.glob("workshop/world/*.md"), *ROOT.glob("workshop/world/crawl-handbook/*.md")]
+    [*REPO_ROOT.glob("README.md"), *DUNGEON.glob("workshop/*.md"), *DUNGEON.glob("workshop/encounters/*.md"),
+     *DUNGEON.glob("workshop/world/*.md"), *DUNGEON.glob("workshop/world/crawl-handbook/*.md")]
 )
 API_PAGE = "https://strandsagents.com/docs/api/python/{module}/"
 MODULE_NAME = re.compile(r"^strands(\.[a-z0-9_]+){0,6}$")
@@ -48,7 +49,7 @@ async def _build_index() -> None:
     search = Bm25SearchStrategy()
     try:
         for page in PAGES:
-            await search.index(_storage, page.relative_to(ROOT).as_posix(), page.read_bytes())
+            await search.index(_storage, page.relative_to(REPO_ROOT).as_posix(), page.read_bytes())
     finally:
         await search.close()
 
@@ -99,14 +100,14 @@ def read_workshop_page(path: str, find: str = "") -> str:
     """Read one page of this workshop, by the path search_workshop returned.
 
     Args:
-        path: A repository-relative path such as "workshop/floor-5.md".
+        path: A repository-relative path such as "dungeon/workshop/floor-5.md".
         find: Optional word or phrase; when given, the text starts a little before its first
             occurrence instead of at the top of the page.
 
     Returns:
         Up to 6,000 characters of the page, or an error if the path is not a workshop page.
     """
-    allowed = {p.relative_to(ROOT).as_posix(): p for p in PAGES}
+    allowed = {p.relative_to(REPO_ROOT).as_posix(): p for p in PAGES}
     if path not in allowed:
         return f"Not a workshop page: {path}. Use a path from search_workshop."
     text = allowed[path].read_text(encoding="utf-8")
@@ -146,7 +147,7 @@ How you answer:
 - For anything about the workshop (a floor, a TODO, a command, a file, a rule), call search_workshop with two or three \
 distinctive words, then read_workshop_page, and answer from what the page says.
 - For anything about a Strands class, function or argument, call strands_api_reference before you explain it.
-- Cite your sources at the end: the page path (for example workshop/floor-5.md) and the API reference URL.
+- Cite your sources at the end: the page path (for example dungeon/workshop/floor-5.md) and the API reference URL.
 - Never invent an API, an argument or a file. If the pages and the reference do not say, answer that you do not know \
 and say where to look.
 - When the Crawler is stuck on a TODO, give a hint first and the answer only if they ask for it. The answers live on \

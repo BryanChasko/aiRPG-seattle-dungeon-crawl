@@ -32,7 +32,7 @@ Every floor follows the same routine, so this page spells it out once:
 - Write code on the lines **under** the comment. Leave the comment in place: the pages, the tests and the `solution` branch all line up on it.
 - Save, then run the script from this folder: `python simple_agent.py`.
 - On Linux and macOS without an activated virtual environment the command may be `python3 simple_agent.py`. `uv run python simple_agent.py` works everywhere.
-- Stuck? Each step has a hint, a link to the matching Strands page, and a **Show me the code** block. Read the hint first. Or ask the [study companion](../../study/README.md): `python ../../study/ask_the_system.py "how do I enable debug logging in Strands?"`.
+- Stuck? Each step has a hint, a link to the matching Strands page, and a **Show me the code** block. Read the hint first. Or ask the [study companion](../study/README.md): `python ../study/ask_the_system.py "how do I enable debug logging in Strands?"`.
 
 `simple_agent.py` goes from this:
 

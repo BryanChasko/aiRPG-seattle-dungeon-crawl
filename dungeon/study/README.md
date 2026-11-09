@@ -1,15 +1,15 @@
 # Ask the System: the Study Companion
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You may ask me questions. I will answer them correctly and make you feel slightly worse about needing to ask."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You may ask me questions. I will answer them correctly and make you feel slightly worse about needing to ask."
 
 `ask_the_system.py` is a help desk for the crawl, built with the Strands Agents SDK this workshop teaches. Ask the System about any floor, any TODO, any error message or any Strands API. The System answers in its voice from two sources only, this repository's pages and the Strands API reference, and cites both.
 
 ```bash
-python study/ask_the_system.py                                   # chat; type exit to leave
-python study/ask_the_system.py "what is an agent card for?"      # one question
+python dungeon/study/ask_the_system.py                                   # chat; type exit to leave
+python dungeon/study/ask_the_system.py "what is an agent card for?"      # one question
 ```
 
-`ask_the_system.py` needs the same AWS credentials as the floors (Amazon Nova 2 Lite in us-west-2). The search index and the chat session live in `study/.state/`, which is gitignored; delete the folder to reset the index and the chat session.
+`ask_the_system.py` needs the same AWS credentials as the floors (Amazon Nova 2 Lite in us-west-2). The search index and the chat session live in `dungeon/study/.state/`, which is gitignored; delete the folder to reset the index and the chat session.
 
 ## How It Is Built
 
@@ -30,6 +30,6 @@ Read `ask_the_system.py` after clearing Floor 3. Each piece comes from a floor, 
 `build_pack.py` writes `knowledge-pack.md`: every floor's objective, its SYSTEM DESIGN layer and every TODO step, word for word, then the party's cast sheets and the whole Crawl Handbook. The pack runs about 30 KB, small enough for one system prompt, so a chat with no tools and no retrieval can answer from the real text. The companion site's chat ships this file.
 
 ```bash
-python study/build_pack.py          # rewrite the pack after you change a page
-python study/build_pack.py --check  # fails if the pack is stale
+python dungeon/study/build_pack.py          # rewrite the pack after you change a page
+python dungeon/study/build_pack.py --check  # fails if the pack is stale
 ```

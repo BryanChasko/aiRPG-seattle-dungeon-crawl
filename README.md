@@ -164,7 +164,7 @@ This crawl builds on Once Upon Agentic AI, the AWS sample workshop that first ta
 
 **The World**: [World guide](dungeon/workshop/world/README.md) -- [The Story](dungeon/workshop/world/story.md) -- [Timeline](dungeon/workshop/world/timeline.md) -- [The System](dungeon/workshop/world/the-system.md) -- [Seattle, Under the Sound](dungeon/workshop/world/seattle.md)
 
-**Stuck?**: [`study/ask_the_system.py`](study/README.md) is a study companion built with Strands. Ask it about any floor, TODO, error or Strands API, and it answers from this repository and the Strands API reference, with citations.
+**Stuck?**: [`dungeon/study/ask_the_system.py`](dungeon/study/README.md) is a study companion built with Strands. Ask it about any floor, TODO, error or Strands API, and it answers from this repository and the Strands API reference, with citations.
 
 ---
 
