@@ -195,6 +195,111 @@ S3: `s3://bryanchasko.com/airpg-art/floors/safe-room-dawn-1200x675.webp`
 ![The Safe Room at dawn, embers in a basalt hearth, a drysuit drying and a clear water tank on a bench](../images/floors/safe-room-dawn-1200x675.webp)
 ```
 
+## 2026-11-09-batch-06
+
+| image | page and spot | status |
+|---|---|---|
+| [`banner-1680x720.webp`](https://bryanchasko.com/airpg-art/images/banner-1680x720.webp) | `README.md`: hero slot at the top (the Gertie wreck plate stands in until this lands) | replaces the file in place; no page edit |
+| [`cast-cordula-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-cordula-640x640.webp) | `workshop/world/cast.md`: party table and Cordula section speaker card | replaces the file in place; no page edit |
+| [`cast-cordula-drill-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-cordula-drill-640x640.webp) | `workshop/world/cast.md`: Cordula section, beside the drill image | replaces the file in place; no page edit |
+| [`cast-cordula-benched-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-cordula-benched-640x640.webp) | `workshop/world/cast.md`: Cordula section, beside the benched image | replaces the file in place; no page edit |
+| [`cast-barnaby-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-barnaby-640x640.webp) | `workshop/world/cast.md`: party table and Barnaby speaker card | replaces the file in place; no page edit |
+| [`cast-shelly-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-shelly-640x640.webp) | `workshop/world/cast.md`: party table and Shelly section base card | replaces the file in place; no page edit |
+
+## 2026-11-09-batch-06b
+
+| image | page and spot | status |
+|---|---|---|
+| [`banner-1680x720.webp`](https://bryanchasko.com/airpg-art/images/banner-1680x720.webp) | `README.md`: hero slot at the top (the Gertie wreck plate stands in until this lands) | replaces the file in place; no page edit |
+
+## 2026-11-09-batch-06c
+
+| image | page and spot | status |
+|---|---|---|
+| [`banner-1680x720.webp`](https://bryanchasko.com/airpg-art/images/banner-1680x720.webp) | `README.md`: hero slot at the top (the Gertie wreck plate stands in until this lands) | replaces the file in place; no page edit |
+
+## 2026-11-09-batch-07
+
+| image | page and spot | status |
+|---|---|---|
+| [`floor-9-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/floor-9-1200x675.webp) | `workshop/floor-9.md`: floor plate at the top (page lands with the Floor 9 build) | ready to place |
+| [`almoco-nave-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/almoco-nave-1200x675.webp) | `workshop/floor-9.md`: zone plate for the Nave section (optional slot) | ready to place |
+| [`opp-shift-foreman-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opp-shift-foreman-640x640.webp) | `workshop/floor-9.md`: opponent card, shift foreman dance-off | ready to place |
+| [`opp-crane-operator-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opp-crane-operator-640x640.webp) | `workshop/floor-9.md`: opponent card, crane operator dance-off | ready to place |
+| [`opp-haul-truck-driver-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opp-haul-truck-driver-640x640.webp) | `workshop/floor-9.md`: opponent card, haul truck driver dance-off | ready to place |
+| [`opp-public-relations-man-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opp-public-relations-man-640x640.webp) | `workshop/floor-9.md`: opponent card, public relations man dance-off | ready to place |
+| [`fog-index-96x96.webp`](https://bryanchasko.com/airpg-art/icons/fog-index-96x96.webp) | `workshop/floor-9.md`: Fog Index mechanic icon | ready to place |
+
+### `floor-9-1200x675.webp` on `workshop/floor-9.md`
+
+Where: floor plate at the top (page lands with the Floor 9 build).
+
+S3: `s3://bryanchasko.com/airpg-art/floors/floor-9-1200x675.webp`
+
+```markdown
+![ALMOCO, the Corrosion Cathedral: three smoldering smelter stacks and mantis-like cranes over a black shoreline, teal runoff in the ditch](../images/floors/floor-9-1200x675.webp)
+```
+
+### `almoco-nave-1200x675.webp` on `workshop/floor-9.md`
+
+Where: zone plate for the Nave section (optional slot).
+
+S3: `s3://bryanchasko.com/airpg-art/floors/almoco-nave-1200x675.webp`
+
+```markdown
+![The Nave inside ALMOCO: furnace glow behind iron vents, a magnet bucket swinging over a catwalk in grey fog](../images/floors/almoco-nave-1200x675.webp)
+```
+
+### `opp-shift-foreman-640x640.webp` on `workshop/floor-9.md`
+
+Where: opponent card, shift foreman dance-off.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/opp-shift-foreman-640x640.webp`
+
+```markdown
+![The ALMOCO shift foreman in hard hat and grey coveralls, clipboard held like a shield, worried](../images/cards/opp-shift-foreman-640x640.webp)
+```
+
+### `opp-crane-operator-640x640.webp` on `workshop/floor-9.md`
+
+Where: opponent card, crane operator dance-off.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/opp-crane-operator-640x640.webp`
+
+```markdown
+![The ALMOCO crane operator in his glass cab high in the fog, eyes forward, hand on the lever, magnet bucket mid-swing](../images/cards/opp-crane-operator-640x640.webp)
+```
+
+### `opp-haul-truck-driver-640x640.webp` on `workshop/floor-9.md`
+
+Where: opponent card, haul truck driver dance-off.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/opp-haul-truck-driver-640x640.webp`
+
+```markdown
+![The ALMOCO haul truck driver waving from a cab as high as a house window, a tire taller than a person in front](../images/cards/opp-haul-truck-driver-640x640.webp)
+```
+
+### `opp-public-relations-man-640x640.webp` on `workshop/floor-9.md`
+
+Where: opponent card, public relations man dance-off.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/opp-public-relations-man-640x640.webp`
+
+```markdown
+![The ALMOCO public relations man at a lectern with a binder of memos, smiling, pointing away from the plume behind him](../images/cards/opp-public-relations-man-640x640.webp)
+```
+
+### `fog-index-96x96.webp` on `workshop/floor-9.md`
+
+Where: Fog Index mechanic icon.
+
+S3: `s3://bryanchasko.com/airpg-art/icons/fog-index-96x96.webp`
+
+```markdown
+![A round fog-index gauge with a teal ring, its needle lost in grey haze](../images/icons/fog-index-96x96.webp)
+```
+
 ## motion
 
 | image | page and spot | status |

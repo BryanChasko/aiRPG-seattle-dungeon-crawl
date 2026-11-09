@@ -1,22 +1,22 @@
 {
  "file": "cast-cordula-drill-640x640.webp",
- "bytes": 94076,
+ "bytes": 77642,
  "format": "webp lossy q84",
  "render": {
   "endpoint": "https://api.meta.ai/v1/images/generations",
   "model": "muse-image-1.0",
-  "prompt_sha256": "602b8cc5d4abff160f264644cb14ed5e02aa9be8ee5767e9cc6b6c7228ec1bbd",
+  "prompt_sha256": "3fbe9448efdd726138f919d009379dca332108ad37606bb16c46da686933b80d",
   "size": "1024x1024"
  },
- "sha256": "90d1e9c1a92a42221777c6cdabd879b3ea69b7803a12416325bafb522596ac8f",
+ "sha256": "df7670e20dddd286f08b37c6bfdf6eebbda0d16d1ccc45e1eb24e5ca4d8b8be4",
  "size": [
   640,
   640
  ],
  "source": {
   "raw": "card-cast-cordula-drill.png",
-  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-02/raw/card-cast-cordula-drill.png",
-  "raw_sha256": "5a9fec52c9653e25f55b747a3a122256416a9851edcd913904ebd846407510b7",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-06/raw/card-cast-cordula-drill.png",
+  "raw_sha256": "d7afd73eb9ba7ddead134994613c94737414b6a776ac41b9eb674ff78717c956",
   "request": "images/src/card-cast-cordula-drill.request.json"
  },
  "tokens": {
@@ -24,8 +24,8 @@
   "vignette": "#0B0E14 (obsidian, banner spec base)"
  },
  "tools": {
-  "pillow": "12.1.0",
-  "python": "3.14.2"
+  "pillow": "13.0.0",
+  "python": "3.13.5"
  },
  "transforms": [
   "cover-crop 640x640 lanczos",

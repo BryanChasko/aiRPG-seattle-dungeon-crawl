@@ -1,0 +1,34 @@
+{
+ "file": "cast-cordula-woman.webp",
+ "size": [
+  224,
+  542
+ ],
+ "format": "webp lossy q90 rgba",
+ "source": {
+  "image": "images/cards/cast-cordula-640x640.webp",
+  "image_sha256": "e7ccfc6091a3adfb4af4fff22a81cf4d816ce97d6397bfb550682ecb2a557013"
+ },
+ "segment": {
+  "model": "sam-3.1",
+  "concept": "woman",
+  "object_id": "0",
+  "confidence": 0.8750000596046448,
+  "box": [
+   200,
+   48,
+   424,
+   590
+  ],
+  "mask_raster": [
+   224,
+   542
+  ]
+ },
+ "transforms": [
+  "crop to SAM box",
+  "mask upscaled lanczos to box",
+  "alpha blur 1.2"
+ ],
+ "sha256": "4db77332db5c464f74cf1d24289b4d06408ea21ecd6601c3ab1619d880695ead"
+}

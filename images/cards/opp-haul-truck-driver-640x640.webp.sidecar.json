@@ -1,0 +1,39 @@
+{
+ "file": "opp-haul-truck-driver-640x640.webp",
+ "bytes": 98944,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "7241795bc606bd58a5759f9499f91e0a7e0d22e91eb5e57c7bb0ee2ffd86200e",
+  "size": "1024x1024"
+ },
+ "sha256": "744a16f6a08dc3c0a034e4f4826e9aac9aca84f3e47eb45a4c0f253f033b0d96",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-opp-haul-truck-driver.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-07/raw/card-opp-haul-truck-driver.png",
+  "raw_sha256": "70272c4db6fd11279c732aa7263f078c4f67cdb62d5b7733202a0ae696df3303",
+  "request": "images/src/card-opp-haul-truck-driver.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "13.0.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

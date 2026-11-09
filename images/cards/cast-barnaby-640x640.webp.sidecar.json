@@ -1,39 +1,39 @@
 {
- "brand_exceptions": [
-  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
-  "interface frame in the render is blank by prompt; no model text"
- ],
- "bytes": 99850,
  "file": "cast-barnaby-640x640.webp",
+ "bytes": 118688,
  "format": "webp lossy q84",
  "render": {
-  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "endpoint": "https://api.meta.ai/v1/images/generations",
   "model": "muse-image-1.0",
-  "prompt_sha256": "cb983d983e2ad24356da2c914fd678736b967e004d887443d685c127610a13ab",
+  "prompt_sha256": "3b8fc95d72dab2f999470a9da3341f6dae29a377adcd0c98145a180658768b89",
   "size": "1024x1024"
  },
- "sha256": "f370352d3e3488d2af5882395a35ccb4d42c1a02c02c7b9345a71cf85a137d3a",
+ "sha256": "8ac544f862d89cde8d48a901aa6b853532d248a3cc162fa50af1bd74785337c6",
  "size": [
   640,
   640
  ],
  "source": {
   "raw": "card-cast-barnaby.png",
-  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/card-cast-barnaby.png",
-  "raw_sha256": "f63cbb9d4357173ddd4bcd97354a37d3c46edc86ff1940323efed6e6b8fb1e24",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-06/raw/card-cast-barnaby.png",
+  "raw_sha256": "8c14866fbe155d89381ce5d6a9a3ddbb30ed17b1fd2414088972ae50cbb1e10b",
   "request": "images/src/card-cast-barnaby.request.json"
  },
  "tokens": {
   "ben_day": "#d7c7ee",
-  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
  },
  "tools": {
-  "pillow": "12.2.0",
-  "python": "3.12.3"
+  "pillow": "13.0.0",
+  "python": "3.13.5"
  },
  "transforms": [
   "cover-crop 640x640 lanczos",
   "vignette feather 36 to #0B0E14",
   "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
  ]
 }

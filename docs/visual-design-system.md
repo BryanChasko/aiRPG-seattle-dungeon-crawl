@@ -57,10 +57,10 @@ tokens pull in the model sheet. The blocks below are the same text, for reading.
 Card style block:
 
 ```text
-Cinematic dark-fantasy character card illustration, square, single subject centered with generous margin, waist-up or full body, high contrast, sharp detail, obsidian black and slate grey background with deep Puget Sound teal and sea-glass green, neon magenta-violet System rim light, warm sodium-orange accent light, rainy Pacific Northwest atmosphere, darker edges. Friendly, funny, game-show energy, never menacing, no weapons.
+Cinematic dark-fantasy character card illustration, square, single subject centered with generous margin, waist-up or full body, high contrast, sharp detail, obsidian black and slate grey background with deep Puget Sound teal and sea-glass green, neon magenta-violet System rim light, warm sodium-orange accent light, rainy Pacific Northwest atmosphere, darker edges. Friendly, funny, game-show energy, never menacing, no weapons drawn.
 ```
 
-Wide style block (floors; banners use the same voice in 21:9):
+Wide style block (floors; banners have their own 21:9 block in `style.json` that allows the cast and dance-off action):
 
 ```text
 Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no faces, no text, high contrast, obsidian and slate background with deep Puget Sound teal, magenta-violet System glow accents, warm sodium-orange practical lights, rainy Pacific Northwest atmosphere, darker edges.
@@ -140,11 +140,11 @@ these names are story only.
 
 ## 8. Character model sheet (what every render must keep)
 
-From `workshop/world/cast.md` and the canon in `workshop/world/story.md`. A render that breaks one of these is re-rolled, not shipped.
+From `workshop/world/cast.md` and the canon in `workshop/world/story.md`, updated to canon revision 3 (2026-11-08): Cordula black on black on grey with calf karambits, Barnaby kraken-scale, dark at rest, never carried. A render that breaks one of these is re-rolled, not shipped.
 
 | Character | Must show | Must not show |
 |---|---|---|
-| Cordula | orange and black drysuit, float vest, black touring paddle, dark curly hair | weapons, bare feet |
-| Barnaby | a wild Giant Pacific Octopus past every record (about 190 lb, about 22 ft arm tip to arm tip), red with crimson and white flashes, old scars and barnacle-worn skin of a wild animal, the System AI's brass collar; on dry floors he rides the clear backpack tank (the Cephalopod Hydration Pack), on wet floors he swims free | a human face, armor, an aquarium, glass walls, a monster or kraken |
+| Cordula | matte black drysuit, charcoal float vest, grey webbing (black on black on grey), black touring paddle, dark curly hair, a sheathed karambit on the outside of each calf | orange or high-visibility color, a tank on her back, weapons drawn, bare feet |
+| Barnaby | a wild Giant Pacific Octopus past every record (about 190 lb, about 22 ft arm tip to arm tip, kraken scale next to Cordula), dark charcoal and slate mottling at rest, old scars and barnacle-worn skin of a wild animal, the System AI's blackened brass collar with a faint violet glow; crimson and white chromatophore flashes only while dancing or furious (`BARNABY_DANCE`); on dry floors a black misting Hydration Harness on his mantle (`BARNABY_HARNESS`) and he moves under his own power, on wet floors he swims free | a human face, armor, an aquarium, glass walls, a monster, being carried, riding in a backpack tank, red-orange resting color, a polished brass collar |
 | Shelly | geoduck: a small pale oblong shell with a long, thick siphon (the "neck") much bigger than the shell; carabiner on the shell ring | an oyster, a turtle, legs, a face on the shell |
 | Chonks | round green golf-ball fish covered in bumpy tubercles, big black eyes, suction disc | a long body, a seahorse shape, fins like wings |

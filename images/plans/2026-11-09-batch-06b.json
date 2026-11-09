@@ -1,0 +1,13 @@
+{
+ "run": "2026-11-09-batch-06b",
+ "why": "Re-roll of the batch-06 hero, which failed QA: Barnaby rendered with a seashell on his mantle and the pair read as fighting. This subject states the bare mantle, the side-by-side dance pose and the chromatophore flashes explicitly.",
+ "renders": [
+  {
+   "name": "banner-pier59-danceoff",
+   "class": "banner",
+   "out": "images/banner-1680x720.webp",
+   "subject": "Dance partners side by side facing the audience, mid synchronized dance move on a flooded folded pier floor, never fighting each other: {CORDULA} grinning at the viewer, twirling her black paddle overhead like a baton, one boot splashing on the beat; beside her and dwarfing her, {BARNABY_DANCE}, bare smooth octopus head and mantle with no shell and no hat, crimson and white light-show bands rippling across dark skin, eight huge arms curled in a dance pose mirroring hers, suckers flashing white; a tiny round green lumpsucker fish cheering from a tide pool, ruined pier timbers and the rainy Seattle skyline behind, stage-light beams through rain",
+   "place": {"replaces": true, "page": "README.md", "where": "hero slot at the top (the Gertie wreck plate stands in until this lands)", "alt": "Cordula in black on black on grey dancing with her paddle beside kraken-scale Barnaby flashing crimson and white, on the folded Pier 59 floor"}
+  }
+ ]
+}
