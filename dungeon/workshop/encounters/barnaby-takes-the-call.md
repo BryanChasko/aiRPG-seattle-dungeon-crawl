@@ -21,7 +21,7 @@ Files on this side passage: [`encounters/floor-5-barnaby-takes-the-call/barnaby_
 | time | about 20 minutes |
 | model | Amazon Nova 2 Lite, as on every floor |
 
-On Floor 5 the Narrator reaches the other agents through the `a2a_client` tool, from [Step 2 of the Narrator](../floor-5.md#step-2-create-the-a2a-client-tool). That tool is the Narrator's choice to call: Amazon Nova 2 Lite picks the moment, the endpoint and the words. An [`A2AAgent`](https://strandsagents.com/docs/api/python/strands.agent.a2a_agent/) is the same conversation held by Python code. Pass the base URL of a remote agent; the `A2AAgent` reads the agent card, sends the message and returns the answer as an `AgentResult`, the type from [The Commentary Booth](commentary-booth.md). No Amazon Nova 2 Lite call happens on the calling side.
+On Floor 5 the Narrator reaches the other agents through the `a2a_client` tool, from [Step 2 of the Narrator](../floor-5-3.md#step-2-create-the-a2a-client-tool). That tool is the Narrator's choice to call: Amazon Nova 2 Lite picks the moment, the endpoint and the words. An [`A2AAgent`](https://strandsagents.com/docs/api/python/strands.agent.a2a_agent/) is the same conversation held by Python code. Pass the base URL of a remote agent; the `A2AAgent` reads the agent card, sends the message and returns the answer as an `AgentResult`, the type from [The Commentary Booth](commentary-booth.md). No Amazon Nova 2 Lite call happens on the calling side.
 
 This side passage covers `stream_async`. Instead of one answer at the end, `stream_async` yields every A2A event as the remote agent produces it: the task being accepted, status updates while the remote agent works, chunks of the answer, the final state. Each event arrives wrapped in a dictionary with `"type": "a2a_stream"`, and the last item is a dictionary holding the finished `"result"`. The provided `describe` function turns an event into one readable line, to show a call as it happens.
 
@@ -174,8 +174,8 @@ Uvicorn runs on `http://127.0.0.1:8003`, and `curl -s http://127.0.0.1:8003/.wel
 |---|---|---|
 | `AttributeError: 'NoneType' object has no attribute 'get_agent_card'` | `phone()` still returns `None` | Step 2 |
 | `NameError: name 'A2AAgent' is not defined` | Step 1 is missing | Step 1 |
-| the call dies with a connection error | the Rules Agent or the Character Agent is not running | start that agent as in [Floor 5, Part 1](../floor-5.md#part-1-setting-up-the-rules-agent) or Part 2 |
-| the Character Agent answers that Barnaby is not found | the party was never registered | run the registration curl from [Floor 5, Part 4](../floor-5.md#part-4-test-the-system) once |
+| the call dies with a connection error | the Rules Agent or the Character Agent is not running | start that agent as in [Floor 5.1](../floor-5-1.md#part-1-setting-up-the-rules-agent) or [Floor 5.2](../floor-5-2.md#part-2-setting-up-the-character-agent) |
+| the Character Agent answers that Barnaby is not found | the party was never registered | run the registration curl from [Floor 5, Part 4](../floor-5-3.md#part-4-test-the-system) once |
 | no event lines print, only the answer | the loop in Step 3 is not printing `a2a_stream` events | check `event.get("type") == "a2a_stream"` |
 | `address already in use` on `serve` | another process holds port 8003 | stop that process, or change `BARNABY_PORT` |
 | `AccessDeniedException` or `ExpiredToken` | the remote agent's Amazon Nova 2 Lite call failed | [Floor 0, Step 7](../floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
@@ -205,4 +205,4 @@ Loot kept:
 >
 > Reward: You received a [Silver Box]. Inside: one handset, eight arms of long-distance minutes, and a sticker that says "port 8003, not the Narrator."
 
-Back to [Floor 5](../floor-5.md#floor-clear), or on to [Floor 6](../floor-6.md).
+Back to [Floor 5](../floor-5-3.md#floor-clear), or on to [Floor 6](../floor-6.md).

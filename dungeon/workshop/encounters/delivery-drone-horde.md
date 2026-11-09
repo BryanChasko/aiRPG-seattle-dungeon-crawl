@@ -152,4 +152,4 @@ Loot kept:
 >
 > Reward: The party received a [Silver Box]. Inside: one parcel addressed to "Occupant", unopened, and a receipt for the receipts.
 
-Back to [Floor 5](../floor-5.md#floor-clear), or on to [Floor 6](../floor-6.md).
+Back to [Floor 5](../floor-5-3.md#floor-clear), or on to [Floor 6](../floor-6.md).

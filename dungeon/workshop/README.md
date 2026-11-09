@@ -64,12 +64,11 @@ Serve a tool over MCP and consume it
 - Connect an agent to the dice server with `MCPClient`
 
 ### [Floor 5: Party Formation (A2A)](floor-5.md)
-Make agents talk to each other
+Make agents talk to each other, one part per sitting
 
-- Expose agents with `A2AServer` and an `agent_factory` per conversation
-- Give the Rules Agent a ChromaDB knowledge base built from the Crawl Handbook
-- Orchestrate the Character Agent and Rules Agent with the `a2a_client` tool and the MCP dice server, and run a dance-off
-- Return typed JSON with `structured_output_model`
+- [Floor 5.1](floor-5-1.md): give the Rules Agent a ChromaDB knowledge base built from the Crawl Handbook, expose it with `A2AServer` and an `agent_factory`
+- [Floor 5.2](floor-5-2.md): expose the Character Agent the same way, on its own port
+- [Floor 5.3](floor-5-3.md): orchestrate both with the `a2a_client` tool and the MCP dice server, return typed JSON with `structured_output_model`, and run a dance-off
 
 ### [Floor 6: The Arena (Web Interface)](floor-6.md)
 Play with your Narrator in the browser

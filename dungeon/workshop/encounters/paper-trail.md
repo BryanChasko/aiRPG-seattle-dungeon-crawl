@@ -119,7 +119,7 @@ Check: one line, `3 passages from audit-report.pdf are in 'crawl_handbook' (N pa
 | `ModuleNotFoundError: No module named 'pypdf'` | the environment predates this encounter | `uv sync` from the repository root |
 | the count grows on every run | the ids change between runs | build them from the page and passage numbers only |
 
-Then ask the party. Start the Rules Agent, the Character Agent, the dice server and the Narrator as on [Floor 5, Part 4](../floor-5.md#part-4-test-the-system), and send:
+Then ask the party. Start the Rules Agent, the Character Agent, the dice server and the Narrator as on [Floor 5, Part 4](../floor-5-3.md#part-4-test-the-system), and send:
 
 ```bash
 curl -X POST http://0.0.0.0:8009/inquire \
@@ -131,7 +131,7 @@ The Rules Agent terminal shows the passages it found, `[Audit Report, page 1]` a
 
 ## What It Costs
 
-Nothing on AWS for the indexing: `pypdf` and ChromaDB run on the local machine, and the embedding model is the one Floor 5 already downloaded: `all-MiniLM-L6-v2`, 79.3 MB, which took about 2 to 3 minutes in the live run, downloads once and is cached after that. The question costs a Narrator turn, under one cent ([Floor 5](../floor-5.md#what-a-narrator-turn-costs)).
+Nothing on AWS for the indexing: `pypdf` and ChromaDB run on the local machine, and the embedding model is the one Floor 5 already downloaded: `all-MiniLM-L6-v2`, 79.3 MB, which took about 2 to 3 minutes in the live run, downloads once and is cached after that. The question costs a Narrator turn, under one cent ([Floor 5](../floor-5-3.md#what-a-narrator-turn-costs)).
 
 > <img src="../../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The rule clerk read the audit back to us with section and page, in the same bored voice it uses for the Final Beat. Finding 1 was fair. Finding 3 was fair too: I had not checked the tide before the dance-off, and the tide matters on this floor. The tide check is on my checklist now. Finding 5 we kept to ourselves. Barnaby has filed a formal dispute of Finding 2. The dispute is four pages long. I have not read the dispute.
 
@@ -149,4 +149,4 @@ Loot kept:
 >
 > Reward: a [Bronze Box]. Inside: a PDF reader, three new passages, and one management response the System AI has framed.
 
-Back to [Floor 5](../floor-5.md#floor-clear), or on to [Floor 6](../floor-6.md).
+Back to [Floor 5](../floor-5-3.md#floor-clear), or on to [Floor 6](../floor-6.md).
