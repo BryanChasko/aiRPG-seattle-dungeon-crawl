@@ -6,7 +6,7 @@
  ],
  "format": "webp lossy q90",
  "source": {
-  "composed_by": "tools/compose_readme_art.py",
+  "composed_by": "art/compose_readme_art.py",
   "fonts": [
    "MedievalSharp (OFL)",
    "Cinzel Bold (OFL)",
@@ -14,9 +14,10 @@
   ]
  },
  "transforms": [
-  "pillow type composition: MedievalSharp title with violet glow, Cinzel tracked subtitle in teal",
+  "Barnaby SVG mark (art/images/src/wordmark-barnaby-mark.svg) rasterized via headless chromium --screenshot, composited left",
+  "pillow type composition: 'Seattle Strands' MedievalSharp 92 ink with violet glow, 'DUNGEON CRAWL' Cinzel Bold tracked teal, subtitle small Cinzel lavender",
   "ben-day 10px r2 alpha 10",
   "obsidian #0B0E14 panel so it reads on light and dark README themes"
  ],
- "sha256": "0e52266adab80912b578d00eb29ef0f938a2534c5329cc6b6e5012c2cb56bad8"
+ "sha256": "69a755d486f85137cb430f8dd8f5c26ca16b50b53d84f9e4d73b81a72e5cd869"
 }
