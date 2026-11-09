@@ -52,7 +52,7 @@ def masks(text: str):
     """Yield (object_id, box, confidence, raster bytes, mask w, mask h) per match."""
     parser = sam.image_segmentation_format().create_parser()
     parser.push(text)
-    fin = parser.finish(sam.CompletedOutcome(status="completed"))
+    fin = parser.finish(sam.CompletedOutcome())
     recs = list(getattr(fin, "result", fin).records)
     boxes = {r.object_id: r for r in sam.records_of_kind(recs, "box")}
     for m in sam.records_of_kind(recs, "mask"):

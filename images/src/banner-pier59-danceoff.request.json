@@ -1,0 +1,13 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Panoramic cinematic dark-fantasy digital illustration, banner composition, 21:9, dynamic triangular action composition, high contrast, sharp detail on wet neoprene, nylon webbing, octopus skin and calcium shell, obsidian black and slate grey shadows with deep Puget Sound teal and sea-glass green, neon magenta-violet System stage light, warm sodium-orange practical light from below, rainy Pacific Northwest atmosphere, darker edges. Joyful, funny, high-energy dance battle energy, not violence, no weapons drawn. Subject: Dance partners side by side, mid synchronized dance move on a flooded folded pier floor, partners never opponents: Cordula Vance, a Marine Corps Reserve crew chief in her late twenties with dark curly hair, a matte black drysuit, a charcoal tactical float vest and grey webbing, black on black on grey with no orange and no high-visibility color, a sheathed curved karambit knife on the outside of each calf, holding a black touring kayak paddle, no tank on her back twirling her black paddle overhead like a baton, one boot splashing on the beat; beside her and dwarfing her, {BARNABY_DANCE}, a real wild octopus in three-quarter view, matte rough scarred skin, eyes on the sides of his head with horizontal pupils like a real Giant Pacific Octopus, no smile, no mouth visible, no cartoon, no mascot, crimson and white bands pulsing through dark skin as a dance light show, eight immense arms curling in rhythm across the wet timbers; a tiny round green lumpsucker fish in a tide pool below, ruined pier and the rainy Seattle skyline behind, violet stage beams through rain No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1792x768",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "e544a46c56f15c546419ea9fa1dd2246d847b808447770a6903810e4e3138fba",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null,
+ "plan": "images/plans/2026-11-09-batch-06c.json"
+}

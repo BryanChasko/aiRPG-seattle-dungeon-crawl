@@ -1,39 +1,39 @@
 {
- "brand_exceptions": [
-  "BRAND.md 3 people/faces ban lifted: the banner is a character scene of the cast (Cordula, Barnaby, Shelly, Chonks)",
-  "interface boxes in the render are blank by prompt; no model text"
- ],
- "bytes": 247480,
  "file": "banner-1680x720.webp",
+ "bytes": 280726,
  "format": "webp lossy q84",
  "render": {
-  "endpoint": "POST https://api.meta.ai/v1/images/generations",
+  "endpoint": "https://api.meta.ai/v1/images/generations",
   "model": "muse-image-1.0",
-  "prompt_sha256": "dc4567dca2e7a91d0635ba6425149512b42fb4f7ae737a1c58d2db6ab456d3c1",
+  "prompt_sha256": "e544a46c56f15c546419ea9fa1dd2246d847b808447770a6903810e4e3138fba",
   "size": "1792x768"
  },
- "sha256": "1d8ea7c4c821af6e7e4ca8471f076e7c0960d3bf419de0634de8330b94816720",
+ "sha256": "8e0ae5d3c65f57b7ac1f4023baa8bc883da041b91b23f192d3d65b401d72b835",
  "size": [
   1680,
   720
  ],
  "source": {
-  "raw": "banner-seattle-d.png",
-  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/raw/banner-seattle-d.png",
-  "raw_sha256": "29832f77647271c2b4a8a10fbb7f08025f48148f7bdbec75757d551a6730ba9c",
-  "request": "images/src/banner-seattle-d.request.json"
+  "raw": "banner-pier59-danceoff.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-06c/raw/banner-pier59-danceoff.png",
+  "raw_sha256": "cf60047949e84c80963b032ae4a98b9982c16e328daa046721d61d41567551f2",
+  "request": "images/src/banner-pier59-danceoff.request.json"
  },
  "tokens": {
   "ben_day": "#d7c7ee",
-  "vignette": "#0B0E14 (obsidian, banner spec base; deviation from BRAND.md house navy #050A18 for a GitHub surface)"
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
  },
  "tools": {
-  "pillow": "12.2.0",
-  "python": "3.12.3"
+  "pillow": "13.0.0",
+  "python": "3.13.5"
  },
  "transforms": [
   "cover-crop 1680x720 lanczos",
   "vignette feather 50 to #0B0E14",
   "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
  ]
 }

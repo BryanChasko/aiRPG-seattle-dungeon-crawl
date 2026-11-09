@@ -1,0 +1,39 @@
+{
+ "file": "opp-public-relations-man-640x640.webp",
+ "bytes": 74136,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "ae17cd284c96e5e717a0d8fc7b06ada2ee0ada362628a53a77e5759c698280ae",
+  "size": "1024x1024"
+ },
+ "sha256": "24b85fdbff09c13e62a874668ec45ed1f3251ad59fef8b0fb16e69673aa11b18",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-opp-public-relations-man.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-07/raw/card-opp-public-relations-man.png",
+  "raw_sha256": "0e471ca540899e6148123061abd368af7ea317a032ce57b223b61f571b8029f3",
+  "request": "images/src/card-opp-public-relations-man.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "13.0.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

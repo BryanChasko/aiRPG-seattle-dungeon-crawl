@@ -140,8 +140,8 @@ def rel(p: Path) -> str:
 
 
 def api_key() -> str:
-    """META_IMAGE_API_KEY wins; otherwise ~/.config/muse/auth.json (providers.meta.api_key). Never printed."""
-    key = os.environ.get("META_IMAGE_API_KEY", "")
+    """META_IMAGE_API_KEY, then MODEL_API_KEY, then ~/.config/muse/auth.json. Never printed."""
+    key = os.environ.get("META_IMAGE_API_KEY", "") or os.environ.get("MODEL_API_KEY", "")
     if key:
         return key
     try:

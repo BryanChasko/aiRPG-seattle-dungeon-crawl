@@ -1,0 +1,39 @@
+{
+ "file": "opp-crane-operator-640x640.webp",
+ "bytes": 102466,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "40aba91e80a162d80d407ea3d2616541829a3af5777623f48a485ac7147fcc62",
+  "size": "1024x1024"
+ },
+ "sha256": "31ef69a9063f9ac2a2222b270bc94c2cc43e9ed448d0d0f23683261bd750a79e",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-opp-crane-operator.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-07/raw/card-opp-crane-operator.png",
+  "raw_sha256": "a2b990e05e1cb45a519d74b13aa5850e504e16574bb77c2dfc0d039f057e5bf2",
+  "request": "images/src/card-opp-crane-operator.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "13.0.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

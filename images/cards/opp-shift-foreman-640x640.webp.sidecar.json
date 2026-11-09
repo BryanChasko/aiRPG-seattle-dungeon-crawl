@@ -1,0 +1,39 @@
+{
+ "file": "opp-shift-foreman-640x640.webp",
+ "bytes": 68386,
+ "format": "webp lossy q84",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "d0d60fc209f97943476740d2efd7ba6dfacdccd819f9d236337ab53602db9973",
+  "size": "1024x1024"
+ },
+ "sha256": "e85034f38d2a1deeab64062907e5f056209708decfe8e6628dff18c871cc5cf2",
+ "size": [
+  640,
+  640
+ ],
+ "source": {
+  "raw": "card-opp-shift-foreman.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-07/raw/card-opp-shift-foreman.png",
+  "raw_sha256": "56bf6a89f1c71b70bf7305ef551f44b4bf05f3580e424f93e9053451045e0da9",
+  "request": "images/src/card-opp-shift-foreman.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "13.0.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 640x640 lanczos",
+  "vignette feather 36 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

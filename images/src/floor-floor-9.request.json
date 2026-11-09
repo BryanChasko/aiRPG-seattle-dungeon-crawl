@@ -1,0 +1,13 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Cinematic dark-fantasy digital illustration, wide 16:9 environment scene, no people, no faces, no text, high contrast, obsidian and slate background with deep Puget Sound teal, magenta-violet System glow accents, warm sodium-orange practical lights, rainy Pacific Northwest atmosphere, darker edges. Subject: the Corrosion Cathedral of ALMOCO from the water: a sprawling mid-century lead smelter on a black slag-concrete shoreline, three soot-caked 500-foot brick stacks breathing sweet grey fog like smoldering obelisks, furnace fire flickering behind iron vents, rusted lattice gantry cranes at the tide edge like praying-mantis skeletons, one haloed streetlight in the fog, ditch water glowing faint milky teal in the foreground, black on black on grey with teal only in the runoff No text, no letters, no numbers, no words, no logos, no watermark, no signature.",
+ "n": 1,
+ "size": "1024x576",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "eecee9315a2767a676c5501512e18e5d9ed8560bc0d1218a2570c29d12203d1a",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null,
+ "plan": "images/plans/2026-11-09-batch-07.json"
+}
