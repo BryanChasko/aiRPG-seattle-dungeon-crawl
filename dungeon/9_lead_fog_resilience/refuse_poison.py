@@ -28,5 +28,10 @@ def is_poisoned(text: str) -> bool:
 class PoisonScreen(InterventionHandler):
     """Refuse planted instructions before the tool runs."""
 
+    # Given: every handler carries a name. The lesson is the screen, not the name.
+    @property
+    def name(self) -> str:
+        return "poison-screen"
+
     def before_tool_call(self, event):  # type: ignore[no-untyped-def]
         raise NotImplementedError("TODO: Part 3 Step 2 - deny or proceed")
