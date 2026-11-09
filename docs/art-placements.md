@@ -385,6 +385,8 @@ S3: `s3://bryanchasko.com/airpg-art/cards/boss-the-keynote-offbeat-640x640.webp`
 | [`ferry-token-loot-pop.webp`](https://bryanchasko.com/airpg-art/motion/ferry-token-loot-pop.webp) | `workshop/world/the-system.md`: section 5, Currency bullet | ready to place |
 | [`cast-chonks-green-fish-throw.webp`](https://bryanchasko.com/airpg-art/motion/cast-chonks-green-fish-throw.webp) | `workshop/world/cast.md`: Chonks section, beside the Suction Latch ability (thrown, he seals on) | placed |
 | [`cast-shelly-mist.webp`](https://bryanchasko.com/airpg-art/motion/cast-shelly-mist.webp) | `workshop/world/cast.md`: Shelly section, beside the base card: the calm idle | placed |
+| [`d20-roll.webp`](https://bryanchasko.com/airpg-art/motion/d20-roll.webp) | `workshop/world/the-system.md`: battle log section, beside the dice_rolls description: what a roll looks like | placed |
+| [`speaker-barnaby-eye-blink.webp`](https://bryanchasko.com/airpg-art/motion/speaker-barnaby-eye-blink.webp) | `workshop/world/cast.md`: Barnaby section, beside the expression sheet: one slow blink | placed |
 
 ### `opponent-accountant-offbeat.webp` on `workshop/world/the-system.md`
 

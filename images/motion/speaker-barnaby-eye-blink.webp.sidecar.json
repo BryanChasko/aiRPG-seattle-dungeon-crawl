@@ -1,0 +1,30 @@
+{
+ "file": "speaker-barnaby-eye-blink.webp",
+ "still": "speaker-barnaby-eye-blink-still.webp",
+ "effect": "blink",
+ "frames": 8,
+ "size": [
+  192,
+  192
+ ],
+ "frame_ms": [
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90,
+  90
+ ],
+ "bytes": 8248,
+ "source": {
+  "image": "images/icons/speaker-barnaby-eye-96x96.webp",
+  "image_sha256": "00c89b493274a02e2f60167618c0536a016d1c34ae02053cd2e1188c8bba45b8"
+ },
+ "tools": {
+  "pillow": "13.0.0"
+ },
+ "model_calls": 0,
+ "sha256": "7581ec2ca60d75f5c565a799811597d51090da44534c9ef04d1173705b35502e"
+}
