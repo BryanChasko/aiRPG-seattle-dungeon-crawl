@@ -43,7 +43,7 @@ npm run dev
 
 In the web interface:
 
-- Pick the character to play. The party is set: Cordula Vance (she/her, Human (Seattle Native), Amphibious Breacher) is the default, or speak as Barnaby (he/him, Uplifted Giant Pacific Octopus, Benthic Dragoon), the party leader. Shelly the geoduck and Chonks the spiny lumpsucker travel with the party as companions for either character
+- Pick the character to play. The party is set: Cordula Vance (she/her, Human (Seattle Native), Amphibious Breacher) is the default, or play as Barnaby (he/him, Uplifted Giant Pacific Octopus, Benthic Dragoon), the party leader. Shelly the geoduck and Chonks the spiny lumpsucker travel with the party as companions for either character
 - In Server URL, enter the URL shown in the Narrator Orchestrator terminal: `http://127.0.0.1:8009`
 - Click Enter the Dungeon
 

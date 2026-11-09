@@ -124,8 +124,8 @@ describe('Navigation Integration', () => {
 
       await flushPromises()
 
-      // Pick who speaks for the party
-      await wrapper.find('#party-member').setValue('Barnaby')
+      // Pick who the player plays as
+      await wrapper.findAll('input[name="party-member"]')[1].setValue()
       await wrapper.find('#server-url').setValue('https://example.com')
 
       // Submit the form, then let the 1.5 s closing animation run
