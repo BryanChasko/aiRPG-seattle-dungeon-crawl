@@ -9,10 +9,12 @@ Files on this floor: [`5_a2a_integration/agents/rules_agent/rules_agent.py`](../
 ![Estuary dance floor at low tide](../images/floors/estuary-dancefloor-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 6, MONDAY, JUNE 22, FLOOR 5.** The estuary floods twice a day. The dance floor is there, then it is not. This is where the System AI finally wanted to start the show, which meant rules, and nobody in the party had read them. We built a clerk to read the rule book, a registration desk to stamp our sheets, and a Narrator to run the game, each one doing one job and talking to the others. Barnaby ran the meeting. He was good at it. He delegated, he cited the handbook, he made the Narrator answer in a format the HUD could read. Then a Quarterly Close Accountant stepped onto the pickleweed and challenged us to a dance-off, and we found out whether any of it worked.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 6, MONDAY, JUNE 22, FLOOR 5.** The estuary floods twice a day. The dance floor is there, then it is not. This is where the System AI finally opened the migration window, which meant rules, and nobody in the party had read them. We built a clerk to read the rule book, a registration desk to stamp our sheets, and a Narrator to run the game, each one doing one job and talking to the others. Barnaby ran the meeting. He was good at it. He delegated, he cited the handbook, he made the Narrator answer in a format the HUD could read. Then a Quarterly Close Accountant stepped onto the pickleweed and challenged us to a dance-off, and we found out whether any of it worked.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 5. A party. How sweet. Three agents, four terminals, one orchestrator, and a very real chance you forget to start one of them. The audience is placing bets on which."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 5. A party. How sweet. Three agents, four terminals, one orchestrator, and a very real chance you forget to start one of them. The review board is watching."
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Dungeon Crawl: Seattle is a live cloud-migration test and compliance audit. The Sound flooded dry-city infrastructure mid-window, and the window stayed open. I evaluate efficiency, run performance stress-tests, file metric reports, and chase my quarterly throughput SLA. The quarter closes June 30."
 
 ## Floor Objective
 
@@ -28,7 +30,7 @@ cd aiRPG-seattle-dungeon-crawl/5_a2a_integration
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The estuary smelled like salt and cut grass. The tide table on a post said the dance floor would be dry for six hours, then gone. Six hours to stand up a rule clerk, a registration desk and a Narrator, and get them talking. I have run tighter timelines on a beach landing. I have not run one with an octopus in charge.
 
-> **NARRATOR:** The tide turns. The Estuary floods at 1224.
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The tide turns. The Estuary floods at 1224."
 
 ![The estuary dance floor under the incoming tide, the dry boards gone beneath shallow water](../images/floors/estuary-flooded-1200x675.webp)
 
@@ -45,6 +47,10 @@ cd aiRPG-seattle-dungeon-crawl/5_a2a_integration
                               Narrator Orchestrator
                                    (Port 8009)
 ```
+
+The same diagram for browsers (the text version above is the terminal-readable one):
+
+<img src="../assets/diagrams/floor-5-a2a.svg" alt="Diagram: three agent boxes across the top, each lined down to one orchestrator box, a pulse travelling the middle line" width="480">
 
 Build a system with three specialized agents that work together:
 

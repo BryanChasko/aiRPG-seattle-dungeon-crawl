@@ -8,7 +8,7 @@ Files on this side passage: [`encounters/floor-2-policy-gatekeeper/policy_gateke
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 2, THURSDAY, JUNE 18, SIDE PASSAGE OFF FLOOR 2.** Kiro the Doomsday Scripter was waiting at the bottom of the bonus stairs with a folder of scrolls and the happiest face I have seen on a person holding that much demolition magic. On the bonus floor I approved every one of Kiro's calls by hand. Forty approvals into a long day I would have said yes to anything, and the System AI knows it. So the Underground gave us a gate instead: a door with a rulebook bolted to the frame and a clerk beside it who waves the dull paperwork through. Kiro gets the floor folder. Everything else, the gate answers before I see the call. Barnaby read the rulebook aloud. "Sergeant, the rulebook is a short document. A short rulebook is the first sign of a good rulebook."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Policy Gatekeeper. The opponent is Kiro the Doomsday Scripter, a person at work, who has been told to do five jobs and has not been told which two are forbidden. The gate has. None of you will enjoy this. The audience will."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Policy Gatekeeper. The opponent is Kiro the Doomsday Scripter, a person at work, who has been told to do five jobs and has not been told which two are forbidden. The gate has. None of you will enjoy this. The review board will."
 
 ## The Brief
 

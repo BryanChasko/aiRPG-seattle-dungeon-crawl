@@ -16,7 +16,7 @@ art: every story image is bespoke, used once at its beat. Flair-class art
 |---|---|---|
 | Cordula | upright prose, the log baseline | the human center everything is measured against |
 | Barnaby | *italic collar speech* | an academic aside, parallel hands, serial voice |
-| System AI, performing | CAPS headers, `<kbd>` prompts | the broadcast interface, live to viewers |
+| System AI, performing | CAPS headers, `<kbd>` prompts | the status-report interface, live to the review board |
 | System AI, filing | tables, `<samp>` findings | the flat audit register near quarter close |
 | Lady Luck | `` `13 + 1 = 14` `` code totals | the croupier readout, exact and final |
 | Shelly | `<small>` mist, a few words | barely present, anchor holding |
@@ -32,7 +32,7 @@ the alt text always carries the words.
 ## System-AI quote
 
 ```markdown
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Your taunt here. The audience is watching."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Your taunt here. The review board is watching."
 ```
 
 Variants: swap the icon for `warning-96x96.webp` (**SYSTEM WARNING:**),

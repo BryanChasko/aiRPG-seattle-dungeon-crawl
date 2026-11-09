@@ -36,7 +36,7 @@ SITUATION = (
 )
 
 DECISION_PROMPT = ("You are the System AI, calling a dance-off between the party and an accountant at work. "
-                   "Read the room and pick the tempo and the Move Call that make the best show for the audience. "
+                   "Read the room and pick the tempo and the Move Call that keep the stress-test clean for the review board. "
                    "Plain text only, no emoji.")
 
 

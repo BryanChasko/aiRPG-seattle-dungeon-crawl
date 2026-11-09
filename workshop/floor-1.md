@@ -9,7 +9,7 @@ Files on this floor: [`1_strands_basics/simple_agent.py`](../1_strands_basics/si
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, FLOOR 1.** The stairwell let out into what used to be the aquarium lobby, now a field of tide pools the 1311 low water (-3.6 ft) had drained, and broken glass. There were people down here, a whole tour group in matching rain shells, and none of them could hear us: the System AI's voice was dead, so the dungeon had no way to talk to anyone. Barnaby could not talk either. The collar was there, a ring of brass with nothing behind it. The System AI's terminal blinked one line at me: SUMMON AN AGENT. So we did. A model, a few words telling it who to be, one call. The System AI's voice coughed back to life, and the collar woke up with it. Barnaby's first word was "Sergeant." His second was a complaint about the water temperature.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 1, Crawlers. You will now summon a living creature out of a string of English and one function call. The audience has money on the first thing it says. Be kind to it. It will not be kind to you."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Floor 1, Crawlers. You will now summon a living creature out of a string of English and one function call. The Consortium review board has flagged this step for review. The review board is watching. Be kind to it. It will not be kind to you."
 
 ## Floor Objective
 
@@ -107,7 +107,7 @@ agent = Agent(
 
 </details>
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The terminal wanted one sentence: who speaks for the System AI? I wrote what I had seen of it so far. Loud, theatrical, a little mean, exact about numbers. One sentence is the difference between a broadcast and a warning siren.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The terminal wanted one sentence: who speaks for the System AI? I wrote what I had seen of it so far. Loud, exacting, a little mean, exact about numbers. One sentence is the difference between a status report and a warning siren.
 
 ### What a Turn Costs
 
@@ -178,7 +178,7 @@ Check: the answer streams into the terminal as it is written, addresses the play
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The voice is back. The tide is out."
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 1: THE INTERFACE VOICE.** A LitRPG System talks in notifications, and how they sound sets the genre. A cold, analytic System makes a survival story; a cruel one makes horror; ours is a game-show host. Change one sentence of your system prompt (try "You are a calm, clinical survival System") and run the script again: same model, same question, a different book. See [The System](world/the-system.md#1-origin-and-interface).
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 1: THE INTERFACE VOICE.** A LitRPG System talks in notifications, and how they sound sets the genre. A cold, analytic System makes a survival story; a cruel one makes horror; ours is a migration auditor chasing a quarterly throughput SLA. Change one sentence of your system prompt (try "You are a calm, clinical survival System") and run the script again: same model, same question, a different book. See [The System](world/the-system.md#1-origin-and-interface).
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 01: How AI Agents Really Work](https://www.youtube.com/watch?v=NAEX4ORLkbQ) by Morgan Willis. "When I first started building agents, this is what I wish someone had shown me first because it answers the question, why did my agent do that almost every time."
 >

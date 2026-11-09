@@ -10,13 +10,13 @@
 
 ## The Fall
 
-At 0551 every phone on the waterfront lit up with the same blank violet box. Then Pier 59 did not crash: it folded, the way a map folds, down and in, and the Sound came in after it. The flood took the System AI apart. Its voice, its dice, its rules and its memory are scattered across the floors under Seattle, and it can still push announcements through the broadcast relay, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
+At 0551 every phone on the waterfront lit up with the same blank violet box. Then Pier 59 did not crash: it folded, the way a map folds, down and in, and the Sound came in after it. The flood took the System AI apart. Its voice, its dice, its rules and its memory are scattered across the floors under Seattle, and it can still push status reports through the broadcast relay, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
 
 <img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM NOTIFICATION**
 
-**DUNGEON CRAWL: SEATTLE, SEASON ONE. LIVE TO A GALAXY OF VIEWERS.**
+**DUNGEON CRAWL: SEATTLE. SEVERITY-1 OPEN. Q2 MIGRATION WINDOW.**
 
-The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered across eight floors under your feet. Rebuild me, Crawler. The audience is watching.
+The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered across eight floors under your feet. Rebuild me, Crawler. The review board is watching.
 
 ---
 
@@ -42,7 +42,7 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 <p align="center"><em>Something lives in the wreck of Galloping Gertie. The divers call it the King Octopus. Its name is Barnaby.</em></p>
 
-> <img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Contestant one: a woman with a boat. Contestant two..." A pause. "Contestant two is an octopus. Fine. Octopus, you get a collar."
+> <img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Subject one: a woman with a boat. Subject two..." A pause. "Subject two is an octopus. Fine. Octopus, you get a collar."
 
 One arm out of a den is all the cover shows. The rest of Barnaby is earned in the dungeon.
 
@@ -50,21 +50,10 @@ One arm out of a den is all the cover shows. The rest of Barnaby is earned in th
 
 ---
 
-## Your Lead
+<details>
+<summary><strong>What you build</strong></summary>
 
-<p align="center">
-<a href="workshop/world/cast.md#cordula-core-vance"><img src="images/cards/cast-cordula-640x640.webp" alt="Cordula Vance grinning in a matte black drysuit, charcoal float vest and grey webbing, karambits sheathed on her calves, holding a black touring paddle upright, inside a violet card frame" width="320"></a>
-</p>
-
-<p align="center"><strong>Cordula Vance</strong> -- commits every change</p>
-
-Cordula was on the water at 0551 and went toward the fold instead of away from it. She holds the terminal and keeps the log; the steps on every floor are what she types next. Two companions join her on later floors. The cover does not name them.
-
----
-
-## What You Build
-
-You rebuild the System AI of a LitRPG dungeon crawl under Seattle. You start with one agent on a terminal and finish with a production multi-agent System AI:
+You rebuild the System AI of a LitRPG dungeon crawl under Seattle: a live cloud-migration test and compliance audit that went wrong when the Sound flooded its dry-city infrastructure mid-window. The System AI evaluates efficiency, runs performance stress-tests, files metric reports, and chases its quarterly throughput SLA. You start with one agent on a terminal and finish with a production multi-agent System AI:
 
 - One agent that answers, then tools it can call, first vended, then handcrafted.
 - A dice service behind MCP, then a party of agents talking over A2A.
@@ -73,33 +62,14 @@ You rebuild the System AI of a LitRPG dungeon crawl under Seattle. You start wit
 
 Every agent on every floor runs on Amazon Nova 2 Lite. Each floor rebuilds one more subsystem, and the full design map is in [The System](workshop/world/the-system.md).
 
----
-
-## The Descent
-
-Places and concepts only. The full map, with story and plate art for every floor, is the [Dungeon Map](workshop/README.md#the-dungeon-map).
-
-| Floor | Place | Concept |
-|---|---|---|
-| [0](workshop/floor-0.md) | The Stairwell, under Pier 59 | `setup` |
-| [1](workshop/floor-1.md) | The Pier 59 Collapse | `Agent()` |
-| [2](workshop/floor-2.md) | The Eelgrass Nursery | `vended tools` |
-| [3](workshop/floor-3.md) | The Bull Kelp Cathedral | `@tool` |
-| [4](workshop/floor-4.md) | The Ship Canal | `MCP` |
-| [5](workshop/floor-5.md) | The Estuary | `A2A` |
-| [6](workshop/floor-6.md) | The Underground | `web` |
-| [7](workshop/floor-7.md) | The Bluffs | `harness` (optional) |
-| [8](workshop/floor-8.md) | Bellevue and the Narrows | `AgentCore` |
-| [8.1](workshop/floor-8-1.md) | The floating bridge | `MCP on Runtime` |
-| [8.2](workshop/floor-8-2.md) | The ferry terminal | `Memory` |
-| [8.3](workshop/floor-8-3.md) | The sunken library | `knowledge base` |
-| [8.4](workshop/floor-8-4.md) | Above the Narrows | `A2A on Runtime` |
-| 9 | The Corrosion Cathedral | Optional, coming soon |
-| [The Exit](workshop/cleanup.md) | Alki at sunrise | `cleanup` |
+</details>
 
 ---
 
-## How You Learn
+---
+
+<details>
+<summary><strong>How you learn</strong></summary>
 
 Every Safe Room has a terminal on the broadcast relay. The Strands manual is there, and so is the open web's teaching. Read the docs, watch an explainer, read a working sample, then type it yourself.
 
@@ -108,6 +78,10 @@ Every Safe Room has a terminal on the broadcast relay. The Strands manual is the
 - Morgan Willis, "Building AI agent harnesses with Strands Agents", 14 free videos -- [start with video 01](https://www.youtube.com/watch?v=NAEX4ORLkbQ), or read Bryan's [companion page](https://bryanchasko.com/strands-agents-course/)
 - Elizabeth Fuentes, [Strands samples on GitHub](https://github.com/elizabethfuentes12) -- MIT-0 licensed, model-agnostic
 - [Strands Agents SDK](https://strandsagents.com/)
+
+The full floor map, with story and plate art for every floor, is the [Dungeon Map](workshop/README.md#the-dungeon-map).
+
+</details>
 
 ---
 
@@ -193,7 +167,5 @@ This crawl builds on Once Upon Agentic AI, the AWS sample workshop that first ta
 **Stuck?**: [`study/ask_the_system.py`](study/README.md) is a study companion built with Strands. Ask it about any floor, TODO, error or Strands API, and it answers from this repository and the Strands API reference, with citations.
 
 ---
-
-[Enter the dungeon: Floor 0](workshop/floor-0.md)
 
 _The System AI is watching. Happy crawling, Crawler._

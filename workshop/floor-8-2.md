@@ -190,7 +190,7 @@ Expect `character_agent.py`, `memory-policy.json`, `nova-policy.json` and `pypro
 
 > <img src="../images/icons/item-96x96.webp" alt="" width="28" height="28"> **ITEM ACQUIRED: [memory-policy.json]**
 >
-> Grants one action: bedrock-agentcore:BatchCreateMemoryRecords. Rarity: Least-Privilege. Without this policy, create_character fails with AccessDeniedException and the audience cheers.
+> Grants one action: bedrock-agentcore:BatchCreateMemoryRecords. Rarity: Least-Privilege. Without this policy, create_character fails with AccessDeniedException and the review board logs it.
 
 The access the CLI grants at deploy time lets the runtime read the memory and record events, but not create memory records. Add that right to the runtime in `agentcore/agentcore.json`. The `characteragent` entry is already there, under `runtimes`: `agentcore add agent` wrote it in Step 2. Do not copy the whole block below; add only the `additionalPolicies` line at the end of the entry, with a comma after the line before it (`...` stands for the lines already in the file):
 
@@ -432,7 +432,7 @@ The Narrator discovers the two agents, asks the Character Agent for Cordula's sh
 
 If the Narrator says the Character Agent call failed, look in the Narrator terminal: `403` means a region mismatch, as in 8.1; a `ReadTimeout` means `timeout=300` is missing from Step 2; `Invalid URL` means `CHARACTER_AGENT_URL` in `.env` is not the whole URL.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Developer Advocate Swarm found us again in a Bellevue lobby, with better lighting this time. Before the first call, the Narrator went to the records office and pulled my sheet, Strength 16, Constitution 16, Charisma 10. The Narrator called Presence anyway, and the System AI announced it with relish. Charisma is my worst stat. I lost the round, the swarm livestreamed it, and every viewer could see the number on my sheet that lost it. Fair is fair.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Developer Advocate Swarm found us again in a Bellevue lobby, with better lighting this time. Before the first call, the Narrator went to the records office and pulled my sheet, Strength 16, Constitution 16, Charisma 10. The Narrator called Presence anyway, and the System AI announced it with relish. Charisma is my worst stat. I lost the round, the swarm filed it, and every reviewer could see the number on my sheet that lost it. Fair is fair.
 
 > <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Web interface: the [Floor 6](floor-6.md) interface still works for the game itself. Its character panel, however, reads the [Floor 5](floor-5.md) `characters.json` through the Narrator's `/user/{user_name}` endpoint, so the panel does not see the characters stored in AgentCore Memory. 8.4 takes the Narrator to the cloud and resolves the mismatch.
 

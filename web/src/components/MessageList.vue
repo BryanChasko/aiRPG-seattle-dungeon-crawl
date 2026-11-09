@@ -1,16 +1,16 @@
 <template>
   <div class="message-list panel-parchment border-wood shadow-panel">
     <div v-if="loading" class="list-status">
-      <span class="loading-indicator">Loading the broadcast...</span>
+      <span class="loading-indicator">Loading the status feed...</span>
     </div>
 
     <div v-else-if="error" class="list-status list-error">
-      Broadcast history could not be loaded. Check the four workshop terminals, then reload.
+      Status history could not be loaded. Check the four workshop terminals, then reload.
       <a :href="FLOOR6_URL" target="_blank" rel="noopener">Floor 6 help</a>
     </div>
 
     <div v-else-if="messages.length === 0" class="list-status">
-      No messages yet. The audience is getting restless
+      No messages yet. The review board is getting restless
     </div>
 
     <div v-else class="messages-scroll">

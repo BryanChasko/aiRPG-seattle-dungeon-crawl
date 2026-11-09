@@ -8,7 +8,7 @@ Files on this side passage: [`encounters/floor-5-developer-advocate-swarm/develo
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 7, TUESDAY, JUNE 23, SIDE PASSAGE OFF FLOOR 5.** The Developer Advocate Swarm came back from the Locks. The advocates had found better lighting: a ring light on the mudflat, a fog machine, a folding table of stickers and socks. There were four of them and one microphone, and they passed the microphone around without ever deciding who went next. Whoever held the mic called a move. Whoever lost the mic handed the mic on. I did not beat a swarm by beating one advocate. I beat whoever held the mic, again and again, until nobody was left to pass the mic to.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Developer Advocate Swarm. Four advocates, one mic, no agenda. They decide who goes next. The party decides whether the advocates get to. Like and subscribe."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Developer Advocate Swarm. Four advocates, one mic, no agenda. They decide who goes next. The party decides whether the advocates get to. File your metrics."
 
 <img src="../../images/cards/opponent-devrel-swarm-640x640.webp" alt="The Developer Advocate Swarm, five cheerful advocates in matching teal conference hoodies with laptops, stickers, a ring light and a camera, dancing in formation" width="240">
 
@@ -131,7 +131,7 @@ This boss battle and the Floor 8 one, The Quarterly Earnings Call, are the same 
 
 Each advocate's turn is two or three Amazon Nova 2 Lite calls: one to roll, one to answer or hand off, sometimes a third call between. A swarm the party clears is about a dozen short calls, about a cent. A swarm that loops costs more on every pass, which is the other reason for the limits.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Swag Table went last and threw a pair of socks at me on the Power call. I caught them. Catching them counts for nothing in the rules and a lot with the audience. Four rounds, four advocates, and every one of them handed off cleanly, with a little bow. The livestream got forty thousand viewers. Barnaby asked for the socks. He has eight arms. He wanted to make a point.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Swag Table went last and threw a pair of socks at me on the Power call. I caught them. Catching them counts for nothing in the rules and a lot with the review board. Four rounds, four advocates, and every one of them handed off cleanly, with a little bow. The livestream drew forty thousand reviewers. Barnaby asked for the socks. He has eight arms. He wanted to make a point.
 
 ## Encounter Clear
 

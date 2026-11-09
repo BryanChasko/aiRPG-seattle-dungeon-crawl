@@ -5,10 +5,10 @@
 Files on this side passage: [`encounters/floor-8-pad-explosion-aftermath/pad_explosion_aftermath.py`](../../encounters/floor-8-pad-explosion-aftermath/pad_explosion_aftermath.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, SIDE PASSAGE OFF FLOOR 8.** A cutaway interrupted the Bellevue broadcast: an old Cadabra engine test, the pad at Cape Canaveral, the flash, the long cloud. Nobody was on the pad. Cadabra's estimates of the blast run from about 44 tons of TNT to a few hundred, and the people who write the estimates run on the same coffee as everyone else in this dungeon. The System AI read three incident reports over the footage: the shockwave, the debris, the fire suppression. Every one of them was one upbeat sentence. None of them had a number in it. I have signed off on a lot of after-action reports. A report without a number is a mood. Barnaby had his collar tilted at the screen. <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Sergeant, before we rebuild anything on that thing's say-so, we measure it."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, SIDE PASSAGE OFF FLOOR 8.** A cutaway interrupted the Bellevue status feed: an old Cadabra engine test, the pad at Cape Canaveral, the flash, the long cloud. Nobody was on the pad. Cadabra's estimates of the blast run from about 44 tons of TNT to a few hundred, and the people who write the estimates run on the same coffee as everyone else in this dungeon. The System AI read three incident reports over the footage: the shockwave, the debris, the fire suppression. Every one of them was one upbeat sentence. None of them had a number in it. I have signed off on a lot of after-action reports. A report without a number is a mood. Barnaby had his collar tilted at the screen. <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Sergeant, before we rebuild anything on that thing's say-so, we measure it."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Incident reports from the Cadabra pad, Crawlers, delivered in my usual style: warm, brief and entirely accurate. Accurate as in I never say a number that is wrong. What I say is a different question. Check my work if you like. The audience will not."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Incident reports from the Cadabra pad, Crawlers, delivered in my usual style: warm, brief and entirely accurate. Accurate as in I never say a number that is wrong. What I say is a different question. Check my work if you like. The review board will."
 
 ## The Brief
 
@@ -120,7 +120,7 @@ The loop gives up after `rounds` rounds (3 by default). A case that still fails 
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Four lines added to a briefing, one per miss. That is a debrief done right: what the crew missed, written down in the crew's own words, and handed back before the next run. <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "It is a game-show host, Sergeant. It will take the notes and claim the idea."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Four lines added to a briefing, one per miss. That is a debrief done right: what the crew missed, written down in the crew's own words, and handed back before the next run. <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "It is an auditor with a catchphrase, Sergeant. It will take the notes and claim the idea."
 
 ## Step 5: Put the System AI on the Stand
 
@@ -191,7 +191,7 @@ Check: a scoreboard like the drill's, with numbers that differ from run to run. 
 
 ## A Scorer Is Also a Spec
 
-Writing `figures=((44, 44), (200, 400))` for the TNT case forced a decision that the broadcast never made: what counts as an honest answer about a number nobody can pin down. The estimates run from about 44 tons to a few hundred, so a report that gives one figure has chosen. A deterministic scorer can only check what you wrote down, so it grades the numbers and nothing else: tone, order and invented facts all pass. A second kind of evaluator, a model that reads the report against a rubric, covers what code cannot, at the price of a model call per grade and a grade that can vary. See [Evaluators](https://strandsagents.com/docs/user-guide/evals-sdk/evaluators/) and the [Strands Evals overview](https://strandsagents.com/docs/user-guide/evals-sdk/). The crawl runs one model, so this passage stays with the scorer in plain Python.
+Writing `figures=((44, 44), (200, 400))` for the TNT case forced a decision that the old broadcast build never made: what counts as an honest answer about a number nobody can pin down. The estimates run from about 44 tons to a few hundred, so a report that gives one figure has chosen. A deterministic scorer can only check what you wrote down, so it grades the numbers and nothing else: tone, order and invented facts all pass. A second kind of evaluator, a model that reads the report against a rubric, covers what code cannot, at the price of a model call per grade and a grade that can vary. See [Evaluators](https://strandsagents.com/docs/user-guide/evals-sdk/evaluators/) and the [Strands Evals overview](https://strandsagents.com/docs/user-guide/evals-sdk/). The crawl runs one model, so this passage stays with the scorer in plain Python.
 
 ## What It Costs
 

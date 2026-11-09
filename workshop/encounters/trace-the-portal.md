@@ -8,7 +8,7 @@ Files on this side passage: [`encounters/floor-4-trace-the-portal/trace_the_port
 > <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 5, SUNDAY, JUNE 21, SIDE PASSAGE OFF FLOOR 4.** The portal worked. That was the problem. A die went in on one side of the Ship Canal and a number came out on the other, and in between there was a wire I could not see. The Developer Advocate Swarm on the lock wall called it "effortless" and charged for the word. I do not take a call on faith. I want the log: who sent it, when it crossed, who caught it, how long it sat. Barnaby had one arm on the portal frame. "Sergeant, you have asked for a flight recorder." I had. Every piece of gear that carries something across a gap gets one.
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: Trace the Portal. Every call through the portal is now a span, with a trace id, a parent and a timestamp. I would say the audience will find it fascinating. The audience is a console. The console will print one line per span and then go home."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: Trace the Portal. Every call through the portal is now a span, with a trace id, a parent and a timestamp. I would say the review board will find it fascinating. The review board is a console. The console will print one line per span and then go home."
 
 ## The Brief
 
