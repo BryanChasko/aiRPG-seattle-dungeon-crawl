@@ -41,15 +41,6 @@ def query_rules(query: str) -> str:
         The matching passages, each prefixed with its section name, separated by blank lines.
     """
     # TODO: Step 1 - Retrieve the 3 passages closest to the query from the knowledge base and prefix each one with its section
-    results = knowledge_base.retrieve(
-        knowledgeBaseId=KNOWLEDGE_BASE_ID,
-        retrievalQuery={"text": query},
-        retrievalConfiguration={"managedSearchConfiguration": {"numberOfResults": 3}},
-    )["retrievalResults"]
-    return "\n\n".join(
-        f"[{section_of(result)}] {result['content']['text']}"
-        for result in results
-    )
 
 def create_agent(context_id: str) -> Agent:
     return Agent(
@@ -63,8 +54,4 @@ def create_agent(context_id: str) -> Agent:
 
 if __name__ == "__main__":
     # TODO: Step 2 - Serve the create_agent factory with serve_a2a on all interfaces, with the agent card of an A2AServer built on the same factory
-    serve_a2a(
-        StrandsA2AExecutor(agent_factory=create_agent, enable_a2a_compliant_streaming=True),
-        agent_card=A2AServer(agent_factory=create_agent).public_agent_card,
-        host="0.0.0.0",
-    )
+    pass

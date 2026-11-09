@@ -62,17 +62,11 @@ memory = boto3.client("bedrock-agentcore")
 
 def save_character(record: dict) -> None:
     # TODO: Step 1 - Save the record as a memory record in the namespace /characters/<character_id>
-    memory.batch_create_memory_records(memoryId=MEMORY_ID, records=[{
-        "requestIdentifier": record["character_id"],
-        "namespaces": [f"/characters/{record['character_id']}"],
-        "content": {"text": json.dumps(record)},
-        "timestamp": datetime.now(timezone.utc),
-    }])
+    pass
 
 def load_characters() -> list[dict]:
     # TODO: Step 2 - List the memory records under the namespace path /characters/ and decode their JSON content
-    pages = memory.get_paginator("list_memory_records").paginate(memoryId=MEMORY_ID, namespacePath="/characters/")
-    return [json.loads(r["content"]["text"]) for page in pages for r in page["memoryRecordSummaries"]]
+    pass
 
 @tool
 def find_character_by_name(name: str) -> dict:
@@ -230,8 +224,4 @@ Confirm creations like a clerk stamping a form the Crawler will regret signing, 
 
 if __name__ == "__main__":
     # TODO: Step 3 - Serve the create_agent factory with serve_a2a on all interfaces, with the agent card of an A2AServer built on the same factory
-    serve_a2a(
-        StrandsA2AExecutor(agent_factory=create_agent, enable_a2a_compliant_streaming=True),
-        agent_card=A2AServer(agent_factory=create_agent).public_agent_card,
-        host="0.0.0.0",
-    )
+    pass
