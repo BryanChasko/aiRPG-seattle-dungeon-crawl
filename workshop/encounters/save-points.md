@@ -29,7 +29,7 @@ A session manager saves an agent as it talks and loads it again when a new agent
 | `SnapshotSessionManager` | any Strands `Storage`, here a local folder | the whole agent as one blob | numbered checkpoints to travel back to |
 | `S3SessionManager` | an Amazon S3 bucket | one object per message, the file layout | survives the machine; needs a bucket |
 
-The flow for each manager is the same, and `play` is given: tell the System a secret, build a second agent on the same save point, and ask for the secret back. The second agent is restored while it is built, with no Amazon Nova 2 Lite call, and the script prints how many messages the second agent already holds.
+The flow for each manager is the same, and `play` is given: tell the System AI a secret, build a second agent on the same save point, and ask for the secret back. The second agent is restored while it is built, with no Amazon Nova 2 Lite call, and the script prints how many messages the second agent already holds.
 
 Success looks like this: for each manager, the second agent holds a few messages before the script asks it anything, and answers `Heron`. The snapshot run then pins a checkpoint, adds a turn, and restores that checkpoint.
 

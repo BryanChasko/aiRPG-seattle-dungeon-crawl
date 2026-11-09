@@ -53,7 +53,7 @@ Every fall a film crew came to the terminal to shoot the crab boats leaving for 
 
 <a id="why-she-went-toward-the-aquarium"></a>
 
-When Pier 59 folded she had about four seconds. The Marine Corps trains a crew chief to account for the crew first, and that morning the only crew she could see was an octopus tangled in the collapsing intake screen, one eye on her, flashing white, then red, then white. She counts him as crew. She has not changed her mind.
+When Pier 59 folded she had about four seconds. The Marine Corps trains a crew chief to account for the crew first, and that morning the only crew she could see was an octopus tangled in the collapsing intake screen, one eye on her, flashing crimson and white. She counts him as crew. She has not changed her mind. She cut him free with one of her karambits.
 
 ### Unconfirmed Sightings
 
@@ -61,8 +61,8 @@ Before the collapse, on survey runs over the Gertie wreck and on dawn kayak swee
 
 | Date | Where | What she saw |
 |---|---|---|
-| August 12, 2024 | Gertie wreck, slack before the 0618 ebb | a shape in the debris, longer than a diver, gone when she looked again |
-| October 3, 2024 | under Pier 57, dawn sweep | arms she thought were kelp until they moved |
+| August 12, 2025 | Gertie wreck, slack before the ebb | a shape in the debris, longer than a diver, gone when she looked again |
+| October 3, 2025 | under Pier 57, dawn sweep | arms she thought were kelp until they moved |
 | February 19, 2026 | Gertie wreck again, survey pass | a shadow in the steel, watching |
 
 | Strength | Dexterity | Constitution | Intelligence | Wisdom | Charisma |
@@ -82,9 +82,11 @@ Before the collapse, on survey runs over the Gertie wreck and on dawn kayak swee
 
 ### Gear: no boxers, no bare feet
 
-Cordula enters the dungeon dressed for the Sound: a high-visibility drysuit, a tactical float vest, and a heavy touring kayak paddle with a titanium shaft and blunt composite blades. She uses the paddle as a vaulting pole, a doorstop, a drum and, in a dance-off, a color-guard staff.
+Cordula enters the dungeon dressed for the Sound: a matte black drysuit, a charcoal tactical float vest, grey webbing, and a heavy black touring kayak paddle with a titanium shaft and blunt composite blades. No orange, no high-visibility. She uses the paddle as a vaulting pole, a doorstop, a drum and, in a dance-off, a color-guard staff.
 
-**The Cephalopod Hydration Pack.** Barnaby needs oxygenated salt water. On Day 1, the first achievements drop the pack: the clear backpack tank in the art, bigger on the inside, which carries him on dry floors on Cordula's back. On wet floors he swims free.
+**Karambits.** Two curved blades in calf sheaths. She carries them because she has driven I-5 alone at night for years and knows the corridor's history; name no killer and no victim. In the crawl she uses them on nets, lines, cables, zip ties and drone tethers, never on a person.
+
+**The Cephalopod Hydration Harness.** Barnaby needs oxygenated salt water. On Day 1, the first achievements drop the harness: a black misting system on his mantle, bigger on the inside, that keeps his skin wet out of water for about an hour. He moves under his own power beside her, swimming on wet floors and crawling fast on dry stretches.
 
 ## Barnaby
 
@@ -93,7 +95,7 @@ Cordula enters the dungeon dressed for the Sound: a high-visibility drysuit, a t
 | Species | Giant Pacific Octopus (*Enteroctopus dofleini*), uplifted by the System AI's collar |
 | Born | hatched spring 2023, somewhere in the Sound |
 | Age at the collapse | past three years, in a life of three to five years |
-| Weight and span | about 190 pounds and about 22 feet arm tip to arm tip, by Cordula's estimate; nobody has weighed him |
+| Weight and span | about 190 pounds and about 22 feet arm tip to arm tip, by Cordula's estimate; wider than a two-lane road, longer than a pickup truck; nobody has weighed him |
 | Pronouns | he/him |
 | Role | party leader, crowd control, strategist |
 | Home before the crawl | a den in the sunken wreck of Galloping Gertie, the first Tacoma Narrows Bridge |
@@ -101,8 +103,12 @@ Cordula enters the dungeon dressed for the Sound: a high-visibility drysuit, a t
 | Likes | latches, crab, cold clean water, Cordula's discipline, being right in front of witnesses |
 | Dislikes | dry air, being watched, sloppy instructions, "that unspeakable clam" |
 | Afraid of | forgetting, and being forgotten |
-| Habit | calls Cordula "Sergeant" and Chonks "the spherical one"; flashes crimson and white when irritated or plotting, which is most of the time |
+| Habit | calls Cordula "Sergeant" and Chonks "the spherical one"; flashes crimson and white only in a dance-off or in fury, which is most of the time |
 | Curious about | every lock he has not opened yet, and the Ballard Locks most of all |
+
+### How he moves
+
+On wet floors he swims. On dry stretches he crawls fast, the way a real octopus can for a while. He fights and dances beside Cordula, and his voice grows floor by floor as the System AI comes back together.
 
 ### Before the Crawl
 
@@ -120,7 +126,7 @@ He ranges the whole Sound. Divers tell stories about a shadow too big to be an o
 |---|---|---|---|---|---|
 | 12 | 18 | 10 | 18 | 15 | 16 |
 
-- **Class:** Benthic Dragoon. **Dance style:** chromatophore light show. Eight arms, a full-body color display and choreography planned three moves ahead. In a dance-off he takes Choreography and Presence calls.
+- **Class:** Benthic Dragoon. **Dance style:** chromatophore light show. Dark charcoal and slate at rest, crimson and white only when he dances or when he is furious. Eight arms, a full-body color display and choreography planned three moves ahead. In a dance-off he takes Choreography and Presence calls beside Cordula.
 
 ### Barnaby's Level 1 kit
 
@@ -256,13 +262,13 @@ Crawlers hear the System AI directly in every notification, achievement, Move Ca
 
 Day 1, at the top of the stairwell.
 
-> **NEW ACHIEVEMENT UNLOCKED!** **[You're Not Supposed to Have a Boat!]** Rewarding: Cordula. You entered the apocalypse holding a high-performance touring kayak paddle and wearing a high-visibility drysuit. Who brought a kayak to the end of the world? Apparently you did. Reward: a Bronze Environmental Box, +20% handling for any watercraft you control in subterranean rapids, and a pair of non-slip neoprene boots. You're welcome.
+> **NEW ACHIEVEMENT UNLOCKED!** **[You're Not Supposed to Have a Boat!]** Rewarding: Cordula. You entered the apocalypse holding a high-performance touring kayak paddle and wearing a matte black drysuit. Who brought a kayak to the end of the world? Apparently you did. Reward: a Bronze Environmental Box, +20% handling for any watercraft you control in subterranean rapids, and a pair of non-slip neoprene boots. You're welcome.
 
 > **NEW ACHIEVEMENT UNLOCKED!** **[He Has Eight Arms and a Ph.D. in Escapology]** Rewarding: Barnaby, Party Leader. You were an octopus in a collapsing intake screen. Now you lead a multi-species crawl team, and the woman with the knife counted you as crew before she counted herself. Reward: the Cephalopod Translation and Resonator Collar (Level 1).
 
-> **NEW ACHIEVEMENT UNLOCKED!** **[The Tactical Marine]** Rewarding: Cordula. Most people enter the dungeon in pajamas. You brought a drysuit, a paddle and a live 190-pound cephalopod in a dry bag with bilge pumps. Reward: a Bronze Environmental Crate with one Sealant Gel of the Benthic Deep (makes any fabric waterproof and pressure-proof) and one pair of Neoprene Combat Boots (+10% traction on wet surfaces).
+> **NEW ACHIEVEMENT UNLOCKED!** **[The Tactical Marine]** Rewarding: Cordula. Most people enter the dungeon in pajamas. You brought a matte black drysuit, a paddle and a live 190-pound cephalopod who crawls beside you. Reward: a Bronze Environmental Crate with one Sealant Gel of the Benthic Deep (makes any fabric waterproof and pressure-proof) and one pair of Neoprene Combat Boots (+10% traction on wet surfaces).
 
-> **NEW ACHIEVEMENT UNLOCKED!** **[The Ultimate Eight-Legged Co-Pilot]** Rewarding: Cordula and Barnaby. Most Crawlers enter with a useless house pet. You entered with a legend of the Narrows in a hydration pack bigger on the inside. Reward: the Cephalopod Hydration Pack (Level 1), which filters dungeon grime into clean, oxygenated seawater and carries your party leader on dry floors.
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "NEW ACHIEVEMENT UNLOCKED! [The Ultimate Eight-Legged Co-Pilot] Rewarding: Cordula and Barnaby. Most Crawlers enter with a useless house pet. You entered with a legend of the Narrows who crawls beside you. Reward: the Cephalopod Hydration Harness (Level 1), a black misting system on his mantle that keeps his skin wet out of water for about an hour."
 
 > **NEW ACHIEVEMENT UNLOCKED!** **[Some Assembly Required]** Rewarding: the party. Two Companion Eggs (Benthic Variant), unbound. Each egg binds one wild animal of the deep that accepts the party. Choose carefully. You will not.
 
@@ -300,7 +306,7 @@ Cordula planted her paddle like a color-guard staff and drilled the cadence: lef
 
 Chonks unlatched with a POP and landed back on Cordula's forearm buckler, looking pleased with himself.
 
-"Lovely work," Barnaby said. "Do wipe the spherical one before he goes back on the pack. He is degrading the aesthetic of my tank."
+"Lovely work," Barnaby said. "Do wipe the spherical one before you put him back on your arm. He is degrading the aesthetic of my mantle."
 
 "Copy, Professor," Cordula said. "Good job, Chonks."
 

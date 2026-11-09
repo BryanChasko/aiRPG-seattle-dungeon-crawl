@@ -71,7 +71,7 @@ from strands.decisions.llm_decision_model import LLMDecisionModel
 
 ```python
 def make_decision_model():
-    """The System's decision model: Amazon Nova 2 Lite, answering closed questions."""
+    """The System AI's decision model: Amazon Nova 2 Lite, answering closed questions."""
     # TODO: Step 2 - Return an LLMDecisionModel over a BedrockModel with model_id us.amazon.nova-2-lite-v1:0 and a system_prompt of DECISION_PROMPT
     return LLMDecisionModel(
         model=BedrockModel(model_id="us.amazon.nova-2-lite-v1:0"),  # Amazon Nova 2 Lite, US cross-Region inference profile

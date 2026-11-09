@@ -95,7 +95,7 @@ async function handleAction(text: string) {
   } finally {
     sending.value = false
   }
-  await refreshHype()
+  await Promise.all([refreshHype(), refreshStats()])
 }
 
 // Only reachable when the Narrator paused the turn on a sponsor deal (Sponsor Interrupt)
@@ -114,13 +114,24 @@ async function handleDeal(accepted: boolean) {
   } finally {
     sending.value = false
   }
-  await refreshHype()
+  await Promise.all([refreshHype(), refreshStats()])
 }
 
 // Only reachable with a Hype Meter Narrator; a plain Narrator answers null and the panel stays hidden
 async function refreshHype() {
   const api = useGameApi(store.serverUrl)
   store.setHype(await api.fetchHype())
+}
+
+// Groove, mana and xp change during a turn: re-read them quietly (no loading flash, keep the old card on error)
+async function refreshStats() {
+  const characterName = route.params.characterName as string
+  if (!characterName) return
+  try {
+    stats.value = await useGameApi(store.serverUrl).fetchUser(characterName)
+  } catch {
+    // keep the last good stats
+  }
 }
 
 onMounted(async () => {

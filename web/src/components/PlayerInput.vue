@@ -1,8 +1,12 @@
 <template>
   <form class="player-input" @submit.prevent="handleSubmit">
     <input
+      id="player-action"
       v-model="message"
+      name="action"
       type="text"
+      aria-label="Type your action here"
+      data-testid="player-action"
       class="player-input-field"
       placeholder="Tell the System AI what you do, Crawler..."
       :disabled="disabled"

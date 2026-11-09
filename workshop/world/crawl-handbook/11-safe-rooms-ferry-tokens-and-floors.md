@@ -1,6 +1,6 @@
 # Safe Rooms, Ferry Tokens and Floors
 
-Safe Rooms: cedar-walled rooms with a fire and rain on big windows, in the Northwest Regional style. No dancer can start a dance-off inside a Safe Room. Resting in a Safe Room restores all Groove and Mana. Most Safe Rooms have a shop; some have a forge for skill fusion.
+Safe Rooms: cedar-walled rooms with a fire and rain on big windows, in the Northwest Regional style. No dancer can start a dance-off inside a Safe Room. Resting in a Safe Room restores all Groove and Mana. Most Safe Rooms have a shop; some have a forge for skill fusion. Every Safe Room has a terminal on the broadcast relay: the System AI's public library, where the party reads the Strands manual, course videos and code samples.
 
 Ferry Tokens: the crawl's currency. Dancers spend Ferry Tokens in Safe Room shops on potions, repairs and gear. Safe Room shops also accept item trades.
 
@@ -10,7 +10,7 @@ Potions available on the Ship Canal floor:
 - Ship Canal Lager: cures Soggy.
 - Locks Porter: +2 Constitution for one floor.
 
-Floors: the dungeon has eight floors under Puget Sound. Each floor has stairs down, at least one Safe Room and a boss. The floors are Pier 59 Collapse, the Eelgrass Nursery, the Bull Kelp Cathedral, the Ship Canal, the Estuary, the Underground, the Bluffs, and Bellevue and the Narrows.
+Floors: the dungeon has eight floors under Puget Sound, with an optional deeper floor. Each floor has stairs down, at least one Safe Room and a boss. The floors are Pier 59 Collapse, the Eelgrass Nursery, the Bull Kelp Cathedral, the Ship Canal, the Estuary, the Underground, the Bluffs, Bellevue and the Narrows, and ALMOCO, the Corrosion Cathedral (optional, Floor 9).
 
 Terrain:
 

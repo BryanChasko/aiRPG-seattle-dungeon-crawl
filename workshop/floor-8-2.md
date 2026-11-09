@@ -10,7 +10,11 @@ Files on this floor: [`8_agentcore_production/characteragent/character_agent.py`
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, FLOOR 8.2.** Brick two was the registration desk. A desk in the cloud has no drawer to keep papers in, so our sheets needed a home of their own. When the desk restarted and still knew my Constitution score, Barnaby made a sound through the collar I am going to call a laugh.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Brick two. The Crawlers' characters move into AgentCore Memory, where the records outlive their sessions. The System AI offers most Crawlers less."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [stop-ai-agents-losing-memory-sample-for-aws](https://github.com/elizabethfuentes12/stop-ai-agents-losing-memory-sample-for-aws) by Elizabeth Fuentes. "Memory is not bolted on beside the agent; it runs through the agent's own mechanisms."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The memory samples taught me what the records office does: six patterns for six kinds of remembering. The one this floor uses stores records by namespace, one per character, and reads them back by listing the path. Barnaby checked every line before I ran it. He has opinions about filing.
+>
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** The desk in the cloud now recognizes me. That is a start. I remain skeptical of any records office that charges by the month.
 
 ## Floor Objective
 
@@ -66,6 +70,22 @@ The call replaces the `pass` under the TODO. In Floor 5, `save_character` called
 
 See [BatchCreateMemoryRecords](https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchCreateMemoryRecords.html) in the AgentCore API Reference.
 
+<details>
+<summary>Show me the code for Step 1</summary>
+
+```python
+def save_character(record: dict) -> None:
+    # TODO: Step 1 - Save the record as a memory record in the namespace /characters/<character_id>
+    memory.batch_create_memory_records(memoryId=MEMORY_ID, records=[{
+        "requestIdentifier": record["character_id"],
+        "namespaces": [f"/characters/{record['character_id']}"],
+        "content": {"text": json.dumps(record)},
+        "timestamp": datetime.now(timezone.utc),
+    }])
+```
+
+</details>
+
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** A desk in the cloud has no drawer. Every session gets a fresh desk and throws it away after. So the forms go to a records office down the hall, one folder per Crawler, labeled by id. Barnaby insisted on the label format. He is an octopus who has been filed incorrectly before.
 
 ### Step 2: Load the Characters
@@ -78,6 +98,18 @@ def load_characters() -> list[dict]:
 ```
 
 The two lines replace the `pass` under the TODO. In Floor 5, `load_characters` returned `characters_db.all()`. `list_memory_records` with `namespacePath="/characters/"` returns every record whose namespace starts with that path, a page at a time, hence the paginator. Each page has a `memoryRecordSummaries` list, and each record holds a character as JSON text in `content.text`. See [ListMemoryRecords](https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListMemoryRecords.html).
+
+<details>
+<summary>Show me the code for Step 2</summary>
+
+```python
+def load_characters() -> list[dict]:
+    # TODO: Step 2 - List the memory records under the namespace path /characters/ and decode their JSON content
+    pages = memory.get_paginator("list_memory_records").paginate(memoryId=MEMORY_ID, namespacePath="/characters/")
+    return [json.loads(r["content"]["text"]) for page in pages for r in page["memoryRecordSummaries"]]
+```
+
+</details>
 
 > <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Not instant: a new record appears in the list a few seconds after creation, sometimes up to a minute. Ask for a character right after creating the record and the Character Agent may not find the record yet: wait and ask again.
 
@@ -102,6 +134,21 @@ The call replaces the `pass` under the TODO. In Floor 5, `A2AServer(agent_factor
 See [Deploy A2A servers in AgentCore Runtime](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-a2a.html).
 
 The agent is created with `callback_handler=None`: nobody reads the terminal of a runtime, runtime logs go to CloudWatch.
+
+<details>
+<summary>Show me the code for Step 3</summary>
+
+```python
+if __name__ == "__main__":
+    # TODO: Step 3 - Serve the create_agent factory with serve_a2a on all interfaces, with the agent card of an A2AServer built on the same factory
+    serve_a2a(
+        StrandsA2AExecutor(agent_factory=create_agent, enable_a2a_compliant_streaming=True),
+        agent_card=A2AServer(agent_factory=create_agent).public_agent_card,
+        host="0.0.0.0",
+    )
+```
+
+</details>
 
 > <img src="../images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Cloud only: this `character_agent.py` needs `MEMORY_CHARACTERS_ID`, which only exists on AgentCore. Do not start `character_agent.py` locally.
 
@@ -252,6 +299,16 @@ In `.env`, paste the URL copied in Part 2, Step 4 after `CHARACTER_AGENT_URL=`, 
 CHARACTER_AGENT_URL = os.environ["CHARACTER_AGENT_URL"]
 ```
 
+<details>
+<summary>Show me the code for 8.2 Step 1</summary>
+
+```python
+# TODO: 8.2 Step 1 - Read CHARACTER_AGENT_URL from the environment
+CHARACTER_AGENT_URL = os.environ["CHARACTER_AGENT_URL"]
+```
+
+</details>
+
 ### Step 2: Create a Signed A2A Client Configuration
 
 ```python
@@ -276,7 +333,28 @@ The A2A client of Floor 5 talks plain HTTP. A `ClientConfig` passes the A2A clie
 - `headers={"X-Amzn-Bedrock-AgentCore-Runtime-Session-Id": str(uuid.uuid4())}`: AgentCore runs one microVM per session id, and the id must be at least 33 characters long; a `uuid4` has 36. One id per Narrator process means one session for the whole game
 - `timeout=300`: a Character Agent call that writes records can take longer than the httpx default of 5 seconds
 
-The configuration is stored in `agentcore_config`: `agentcore_config` is not tied to the Character Agent, and 8.3 reuses `agentcore_config` for the Rules Agent.
+The configuration is stored in `agentcore_config`: `agentcore_config` is not tied to the Character Agent, and 8.3 reuses `agentcore_config` for the Rules Agent. See the [A2A Client](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/a2a-client/) vended tool page.
+
+<details>
+<summary>Show me the code for 8.2 Step 2</summary>
+
+```python
+# TODO: 8.2 Step 2 - Import ClientConfig from a2a.client and SigV4HTTPXAuth from mcp_proxy_for_aws.sigv4_helper
+from a2a.client import ClientConfig
+from mcp_proxy_for_aws.sigv4_helper import SigV4HTTPXAuth
+```
+
+```python
+# TODO: 8.2 Step 2 - Create a ClientConfig whose httpx client signs requests with SigV4 for bedrock-agentcore in the region of your boto3 session and sends a session id
+agentcore_config = ClientConfig(httpx_client=httpx.AsyncClient(
+    auth=SigV4HTTPXAuth(boto3.Session().get_credentials(), "bedrock-agentcore", boto3.Session().region_name),
+    # AgentCore runs one microVM per session; the id must be at least 33 characters long
+    headers={"X-Amzn-Bedrock-AgentCore-Runtime-Session-Id": str(uuid.uuid4())},
+    timeout=300,
+))
+```
+
+</details>
 
 ### Step 3: Point the A2A Client at the Cloud
 
@@ -303,6 +381,33 @@ a2a_client = make_a2a_client(allowed_endpoints=[
 ```
 
 `make_a2a_client` takes a list of endpoints: a plain URL for an agent that needs no configuration, a `(url, client_config)` pair for agents that need one. The rest of the Narrator does not change: the Narrator discovers the Character Agent by its agent card, as in Floor 5, now served by AgentCore. See the [A2A Client](https://strandsagents.com/docs/user-guide/sdk/tools/vended-tools/a2a-client/) vended tool page.
+
+<details>
+<summary>Show me the code for 8.2 Step 3</summary>
+
+Before:
+
+```python
+a2a_client = make_a2a_client(allowed_endpoints=[
+    # TODO: 8.3 Step 2 - Replace the local Rules Agent with RULES_AGENT_URL and agentcore_config
+    "http://127.0.0.1:8000",  # Rules Agent
+    # TODO: 8.2 Step 3 - Replace the local Character Agent with CHARACTER_AGENT_URL and agentcore_config
+    "http://127.0.0.1:8001",  # Character Agent
+])
+```
+
+After:
+
+```python
+a2a_client = make_a2a_client(allowed_endpoints=[
+    # TODO: 8.3 Step 2 - Replace the local Rules Agent with RULES_AGENT_URL and agentcore_config
+    "http://127.0.0.1:8000",  # Rules Agent
+    # TODO: 8.2 Step 3 - Replace the local Character Agent with CHARACTER_AGENT_URL and agentcore_config
+    (CHARACTER_AGENT_URL, agentcore_config),  # Character Agent, on AgentCore
+])
+```
+
+</details>
 
 ### Step 4: Launch the Narrator
 

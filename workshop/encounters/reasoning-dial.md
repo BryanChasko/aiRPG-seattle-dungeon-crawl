@@ -5,12 +5,12 @@
 Files on this side passage: [`encounters/floor-1-reasoning-dial/reasoning_dial.py`](../../encounters/floor-1-reasoning-dial/reasoning_dial.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, SIDE PASSAGE OFF FLOOR 1.** The Bonus-Season Investment Banker was waiting under the Pier 59 clock, fleece vest zipped to the chin, and the System AI's voice was doing something I had not heard before. It was fast for the heckling and slow for the rulings. Barnaby found the cause on the collar's service panel: a brass dial with two marks, QUICK and CAREFUL. "Two settings, Sergeant. The System AI turns the knob itself, and for most of a bout it leaves the dial on QUICK. A good crew chief does not torque every bolt to spec, only the ones that hold a wing on."
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, SIDE PASSAGE OFF FLOOR 1.** The Rain-Shell Tourist Pod blocked the tide pools at the minus tide, matching windbreakers and shared disappointment about the aquarium, and the System AI's voice was doing something I had not heard before. It was fast for the heckling and slow for the rulings. Barnaby found the cause on the collar's service panel: a brass dial with two marks, QUICK and CAREFUL. "Two settings, Sergeant. The System AI turns the knob itself, and for most of a bout it leaves the dial on QUICK. A good crew chief does not torque every bolt to spec, only the ones that hold a wing on."
 <!-- /cordula-log -->
 
-> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Bonus-Season Investment Banker. They have synergies. The party has a dial. I will think hard about exactly one thing today, and it will be whether the party tied. Do not make me think hard about anything else."
+> <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Boss battle: the Rain-Shell Tourist Pod. They have matching windbreakers. The party has a dial. I will think hard about exactly one thing today, and it will be whether the party tied. Do not make me think hard about anything else."
 
-<img src="../../images/cards/opponent-banker-640x640.webp" alt="The Bonus-Season Investment Banker, a young man in a fleece vest over a dress shirt, slipping mid-spin on a wet floor as his sunglasses fly off" width="240">
+<img src="../../images/cards/opponent-tourist-pod-640x640.webp" alt="The Rain-Shell Tourist Pod, three visitors in matching blue windbreakers with phones out, disappointed about the aquarium" width="240">
 
 ## The Brief
 
@@ -25,14 +25,14 @@ Files on this side passage: [`encounters/floor-1-reasoning-dial/reasoning_dial.p
 
 Amazon Nova 2 Lite can answer straight away or think first. Thinking is a setting on the request, not a different model: the Narrator on Floor 5 turns reasoning on with `additional_request_fields={"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "low"}}` on the Narrator's `BedrockModel`, as the [code comment in the Floor 5 Narrator](../../5_a2a_integration/agents/narrator_orchestrator/narrator_orchestrator.py) explains. Thinking costs time and output tokens, and most of a dance-off needs no thinking. A heckle needs no thinking. A Final Beat that decides the whole bout might need it.
 
-A `ModelRouter` holds several candidates and lets a strategy choose one candidate for each turn. A candidate is a `RoutingCandidate`: a model with a name and a description. The strategy reads the candidate descriptions. The `ClassifierStrategy` asks a model to read the latest request and pick a candidate. The `FallbackStrategy` picks the healthiest candidate that has not failed yet, and the router asks the strategy again after a failed call. A router takes one strategy, and the banker fight needs both: the classifier to open each turn, the fallback to rescue it. The file supplies `DialStrategy`, a short class that hands the opening choice to the classifier and every choice after a failure to the fallback, and logs which candidate was picked. See [How Model Routing Works](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#how-model-routing-works), [Route Each Request by Content](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#route-each-request-by-content), [Route Failures to a Backup Model](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#route-failures-to-a-backup-model) and [Build a Custom Routing Strategy](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#build-a-custom-routing-strategy).
+A `ModelRouter` holds several candidates and lets a strategy choose one candidate for each turn. A candidate is a `RoutingCandidate`: a model with a name and a description. The strategy reads the candidate descriptions. The `ClassifierStrategy` asks a model to read the latest request and pick a candidate. The `FallbackStrategy` picks the healthiest candidate that has not failed yet, and the router asks the strategy again after a failed call. A router takes one strategy, and the tourist pod fight needs both: the classifier to open each turn, the fallback to rescue it. The file supplies `DialStrategy`, a short class that hands the opening choice to the classifier and every choice after a failure to the fallback, and logs which candidate was picked. See [How Model Routing Works](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#how-model-routing-works), [Route Each Request by Content](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#route-each-request-by-content), [Route Failures to a Backup Model](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#route-failures-to-a-backup-model) and [Build a Custom Routing Strategy](https://strandsagents.com/docs/user-guide/sdk/model-providers/model-routing/#build-a-custom-routing-strategy).
 
 The bout is three turns, and the dial should move on the third:
 
 | turn | request | the dial should pick |
 |---|---|---|
-| banter | the banker asks Cordula about synergy; heckle back | quick |
-| a round | Footwork against the banker, rolled with `dance_round` | quick |
+| banter | a tourist asks Cordula about aquarium tickets; heckle back | quick |
+| a round | Footwork against the pod, rolled with `dance_round` | quick |
 | the Final Beat | the last round finished level; call the drum and rule on the winner | deep |
 
 The dice come from [`dance_floor.py`](../../encounters/dance_floor.py), and the Final Beat is the one in the [Crawl Handbook](../world/crawl-handbook/04-final-beat.md): both sides roll, the total closest to 20 without going over wins. The party wins the bout by taking the Final Beat.
@@ -90,7 +90,7 @@ Replace `quick = None`.
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The banker opened with a sentence about monetizing the dance floor as an asset class. The collar answered before they finished it. One line, no pause, a heckle about the vest. The crowd on the pier laughed at the speed as much as the joke.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The pod opened with a sentence about refund policies. The collar answered before they finished it. One line, no pause, a heckle about the windbreakers. The crowd on the pier laughed at the speed as much as the joke.
 
 ## Step 3: The Deep Candidate
 
@@ -151,7 +151,7 @@ Replace `dial = None`.
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby read the dial's policy out loud, because Barnaby cannot resist a posted rule. Choose the deep setting only for a close call. Everything else goes to quick. He said it was the first rule posted about how the System AI thinks that I would have signed. Then he asked who decides what counts as close, and I pointed at the descriptions. The classifier reads them. I wrote them. I took the job seriously.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby read the dial's policy out loud, because Barnaby cannot resist a posted rule. Choose the deep setting only for a close call. Everything else goes to quick. He said it was the first rule posted about how the System AI thinks that he would have signed. Then he asked who decides what counts as close, and I pointed at the descriptions. The classifier reads them. I wrote them. I took the job seriously.
 
 ## Step 5: The Router
 
@@ -174,7 +174,7 @@ Replace `router = None`. The router makes the choice at the start of each turn a
 
 </details>
 
-## Face the Banker
+## Face the Tourist Pod
 
 ```bash
 python reasoning_dial.py
@@ -184,20 +184,20 @@ Check: three turns, each with the dial's choice and the clock, then the scoreboa
 
 ```
 BANTER: the dial chose quick (3.4 s)
-  Synergy, sir, is what you call two people standing near a spreadsheet. Cordula calls it a Tuesday.
+  Matching jackets, matching disappointment. Cordula calls it a tour group that took a wrong turn.
 
 A ROUND: the dial chose quick (6.2 s)
-  Cordula rolls 14 + 1 = 15 against the banker's 9 + 1 = 10. The party takes the round.
+  Cordula rolls 14 + 1 = 15 against the pod's 9 + 1 = 10. The party takes the round.
 
 THE FINAL BEAT: the dial chose deep (21.7 s)
-  Cordula lands on 19 and the banker overshoots to 23, so the drum is hers. The party wins the bout.
+  Cordula lands on 19 and the pod overshoots to 23, so the drum is hers. The party wins the bout.
 
-  Footwork: Cordula: 14 + 1 = 15 against the Bonus-Season Investment Banker: 9 + 1 = 10 -> party
-  Final Beat: Cordula: 19 against the Bonus-Season Investment Banker: 23 -> party
-  The party took the Final Beat. The banker has gone to restructure.
+  Footwork: Cordula: 14 + 1 = 15 against the Rain-Shell Tourist Pod: 9 + 1 = 10 -> party
+  Final Beat: Cordula: 19 against the Rain-Shell Tourist Pod: 23 -> party
+  The party took the Final Beat. The pod has gone to write a review.
 ```
 
-The Final Beat is a coin flip weighted by Footwork. If the banker takes the Final Beat, the last line says so, and the dial still did its job: run `reasoning_dial.py` again.
+The Final Beat is a coin flip weighted by Footwork. If the pod takes the Final Beat, the last line says so, and the dial still did its job: run `reasoning_dial.py` again.
 
 To watch the fallback, set `DEEP_PATIENCE_SECONDS = 1` at the top of `reasoning_dial.py` and run the script again. A deep turn that stays silent for a second fails, and the third line becomes `THE FINAL BEAT: the dial chose deep then quick`: the router asked the fallback after the failure, and the fallback named the one candidate not yet tried. Set `DEEP_PATIENCE_SECONDS` back to 30.
 
@@ -230,7 +230,7 @@ Money follows the output tokens, because thinking is billed as output, at $2.50 
 
 Three turns and three classifier calls come to under a cent, about $0.0079. The same bout all on deep, with no classifier, is about $0.016. The Final Beat turn is two thirds of the dial's bill, and that turn is the one that earned the spend.
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The drum sped up. The banker rolled a 23 and kept dancing past the final strike, the way they keep going past the end of every meeting. I rolled a 19 and stopped on the beat. The collar took long enough on the ruling that I counted the seconds: twenty-one seconds. Barnaby said he had been waiting since 0551 for the System AI to pause before it spoke. He sounded nearly moved.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The drum sped up. The pod rolled a 23 and kept dancing past the final strike, the way they keep going past the exit and take photos anyway. I rolled a 19 and stopped on the beat. The collar took long enough on the ruling that I counted the seconds: twenty-one seconds. Barnaby said he had been waiting since 0551 for the System AI to pause before it spoke. He sounded nearly moved.
 
 ## Encounter Clear
 
@@ -246,6 +246,6 @@ Loot kept:
 >
 > **[TURNS THE KNOB ONLY WHEN IT MATTERS]**
 >
-> Reward: You received a [Gold Box]. Inside: a brass dial with two marks, a stopwatch, and a fleece vest the banker left behind. The vest is a size small. Barnaby is wearing the vest.
+> Reward: You received a [Gold Box]. Inside: a brass dial with two marks, a stopwatch, and a matching blue windbreaker the pod left behind. The jacket is a size medium. Barnaby is wearing the jacket.
 
 Back to [Floor 1](../floor-1.md#floor-clear), or on to [Floor 2](../floor-2.md).

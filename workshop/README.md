@@ -1,6 +1,7 @@
 # aiRPG Seattle Dungeon Crawl: Learn the Strands Agents SDK One Floor at a Time
 
-![Cordula, in an orange drysuit with Barnaby the octopus in a water tank on her back and Chonks the lumpsucker on her forearm, strikes a dance pose with her kayak paddle while a startled accountant and an investment banker slip on the flooded floor of collapsed Pier 59. Shelly the geoduck puffs sea mist, bull kelp hangs overhead, and the Space Needle shows through the breach](../images/banner-1680x720.webp)
+<!-- art slot: hero, 1600x600, art team -->
+![Cordula, in a matte black drysuit with Barnaby the octopus beside her and Chonks the lumpsucker on her forearm, strikes a dance pose with her kayak paddle while a startled accountant and an investment banker slip on the flooded floor of collapsed Pier 59. Shelly the geoduck puffs sea mist, bull kelp hangs overhead, and the Space Needle shows through the breach](../images/banner-1680x720.webp)
 
 "Roll for Initiative... in Python!"
 
@@ -10,7 +11,7 @@
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I am Cordula Vance. Core, to anyone who has shared a boat with me. Marine Corps Reserve, amphibious crew chief, and before work I sweep debris off the Sound in a kayak. On Wednesday, June 17, I tied up under Pier 59, and at 0551 the pier folded into Elliott Bay with both of us under it.
 >
-> He rides on my back now, in a backpack tank the first achievement dropped, and he runs the party. His name is Barnaby. Eight arms, a doctorate's worth of opinions, and, since I clamped a collar on him, a British accent.
+> He fights beside me now, a kraken-scale octopus who refuses to confirm or deny the King Octopus legend. His name is Barnaby. Eight arms, a doctorate's worth of opinions, and, since I clamped a collar on him, a British accent.
 >
 > The thing that folded the pier is the System AI. It runs this dungeon: the floors, the tides, the opponents, the dice, the rules. The flood broke it. Its voice, its dice, its rule book and its memory washed out across eight floors under the Sound. The System AI survived in the broadcast relay and the collars, and it wants its show back. The only way out is to rebuild it, one piece per floor. Every piece I rebuild passes through Barnaby's collar first, and he wakes up a little more. I build every piece with the Strands Agents SDK: the first floor is one agent and one call, the last is the whole game running on Amazon Bedrock AgentCore. I write all of it.
 >
@@ -115,7 +116,7 @@ Floor 0 covers the installs: Python, uv and the repository. Bring basic Python k
 
 - The Narrator: the game AI that runs the dungeon, the floors, the tides, the opponents, the dice and every ruling. It is broken, and the Crawlers rebuild it. It does the job the source workshop gives the agent that runs the game
 - The System AI: the same AI, in its role as the omniscient, slightly unhinged host that talks to the Crawlers, tracking each Crawler's code output, syntax errors and desperate attempts to pass `uv sync`, and paying out achievements and insults
-- The Crawlers: Cordula, with Barnaby on her back running the party. Companions join on the way down. The party enters soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
+- The Crawlers: Cordula, with Barnaby beside her running the party. Companions join on the way down. The party enters soaked, short one kayak, with a bare-bones terminal and a dream of building autonomous multi-agent systems before the next floor floods
 - The Loot Boxes: every cleared floor drops an achievement box. A clean loop earns a Bronze Box. Burning the token limit on an accidental infinite loop earns a Desperation Box
 - The Audience: billions of alien viewers. The viewers are not on the Crawlers' side. Neither are the sponsors, who are local: tech monoliths, waterfront penthouse money, coffee oligarchs and passive-aggressive email culture
 

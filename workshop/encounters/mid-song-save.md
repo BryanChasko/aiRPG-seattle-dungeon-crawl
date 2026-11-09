@@ -5,7 +5,7 @@
 Files on this side passage: [`encounters/floor-8-mid-song-save/mid_song_save.py`](../../encounters/floor-8-mid-song-save/mid_song_save.py), [`encounters/dance_floor.py`](../../encounters/dance_floor.py) <!-- floor-files -->
 
 <!-- cordula-log -->
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** We were two beats into a round against the Bonus-Season Investment Banker when the floor lights went out. Not a fight. A deployment. Somebody in Bellevue had pushed a new version, and AgentCore swaps a runtime out from under a session the way a ferry crew swaps a shift: no ceremony, no handoff note. The music stopped. The Banker froze mid-spin with one sunglass arm in his mouth. When the lights came back, the Narrator had no idea where we were. "Round... one?" the System AI read off the card, in the only voice the Narrator has. I know the feeling. I have lost a radio net mid-transmission. The fix is not to shout louder. The fix is to write down where you were before the net drops.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 13, MONDAY, JUNE 29, SIDE PASSAGE OFF FLOOR 8.** We were two beats into a round against the Bonus-Season Investment Banker when the floor lights went out. Not a fight. A deployment. Somebody in Bellevue had pushed a new version, and AgentCore swaps a runtime out from under a session the way a ferry crew swaps a shift: no ceremony, no handoff note. The music stopped. The Banker froze mid-spin with one sunglass arm in his mouth. When the lights came back, the System AI had no idea where we were. "Round... one?" the System AI read off the card. I know the feeling. I have lost a radio net mid-transmission. The fix is not to shout louder. The fix is to write down where you were before the net drops.
 <!-- /cordula-log -->
 
 > <img src="../../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Sidequest: Mid-Song Save. A deployment is not an excuse. The song resumes from the last checkpoint, and not one die is thrown twice. The System checks the scoreboard. The System AI is always checking the scoreboard."
@@ -130,7 +130,7 @@ Replace the `return None`. The trap: a resume call carries no prompt, so a new a
 
 </details>
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Run two. The lights were back, the Banker was still holding his sunglasses, and Lady Luck picked her hand up off the table exactly where it had been and threw. Presence, Barnaby, a twelve and a three, fifteen against the Banker's eleven. The System AI said it had never been so grateful to a clipboard. Barnaby said it was not a clipboard, it was a protocol. I said it was both.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Run two. The lights were back, the Banker was still holding his sunglasses, and Lady Luck picked her hand up off the table exactly where it had been and threw. Presence, Barnaby, a twelve and a three, fifteen against the Banker's eleven. The System AI said it had never been so grateful to a clipboard. <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "It is not a clipboard. It is a protocol."
 
 ## Play the Song
 
@@ -183,7 +183,7 @@ On AgentCore the conversation lives in the `conversations` memory of 8.4, which 
 rm -rf .mid-song-save
 ```
 
-> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Run three. The Banker took his sunglasses out of his mouth for the call. The System AI read the totals, and they were the totals from the run before, the same twelve, the same three. Not rolled again. Called. Barnaby said that was the whole point of a checklist, to be able to stop in the middle and not start over. I told him I had been saying that for years. He said he knew. He had read about it.
+> <img src="../../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Run three. The Banker took his sunglasses out of his mouth for the call. The System AI read the totals, and they were the totals from the run before, the same twelve, the same three. Not rolled again. Called. <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "That is the whole point of a checklist. Stop in the middle, do not start over."
 
 ## Encounter Clear
 

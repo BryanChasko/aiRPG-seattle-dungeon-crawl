@@ -157,7 +157,11 @@ Name it `mcp_dice_client`: Step 2 uses the name `mcp_dice_client`.
 
 </details>
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby put one arm tip against the glow, which I would not have done, and asked the box what tools it offered. The box answered: a name, a description, a list of arguments, the same promises he wrote into the docstring on the floor above. He held still for a long time. Everything he had ever talked to was alive. The box was not alive, and it understood him anyway.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Barnaby put one arm tip against the glow, which I would not have done, and asked the box what tools it offered. The box answered: a name, a description, a list of arguments, the same promises he wrote into the docstring on the floor above. He held still for a long time.
+>
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Everything I have ever talked to was alive. The box is not alive, and it understood me anyway."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I let him sit with that one.
 
 ### Step 2: Add MCP Tools to the Narrator
 
@@ -218,6 +222,10 @@ Check: four `DICE ROLL: 4d6 drop 1 = ...` lines in the server terminal, and four
 - [Trace the Portal](encounters/trace-the-portal.md), sidequest: every MCP call as a span on the console, the one inside the server included
 - [The Warehouse Automation Grid](encounters/warehouse-automation-grid.md), sidequest: MCP tool filters, so an agent sees three of Cadabra's eight warehouse tools and never the one that trips the grid
 
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [MCP Tools](https://strandsagents.com/docs/user-guide/sdk/tools/mcp-tools/) (Strands docs), [Model Context Protocol](https://modelcontextprotocol.io/) (MCP docs) and [Video 03: Give Your Agent Tools Using MCP](https://www.youtube.com/watch?v=PtdHZBbm1Ys) by Morgan Willis. "Instead of manually wiring up every capability one tool at a time, you connect to an MCP server that already exposes those capabilities using a standard protocol."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Strands docs showed the MCPClient and the streamable-http transport. The MCP docs showed the protocol itself: a tool schema, a transport, a call. The video showed the client connect to a server, list its tools, call one. I ran the dice server in one terminal, the client in another, and the roll crossed the process boundary.
+
 ## Floor Clear
 
 Floor cleared, Crawler. The crawl now has an MCP server and client, and the Narrator reaches a tool over MCP.
@@ -227,6 +235,18 @@ Loot kept:
 - Create an MCP server that exposes a tool (FastMCP)
 - Connect an MCP client to the dice server
 - Add MCP tools to a Strands agent
+
+### What a Turn Costs
+
+Amazon Bedrock bills on-demand use by the token: the text sent to Amazon Nova 2 Lite (input) and the text it writes back (output). Third-party price trackers list Amazon Nova 2 Lite at about $0.30 per million input tokens and $2.50 per million output tokens as of November 2026. Confirm the current price for your region on the Amazon Bedrock pricing page before planning anything bigger than this workshop.
+
+| what runs | rough tokens | rough cost |
+|---|---|---|
+| this floor's script, once | 250 in, 400 out | under a tenth of a cent |
+| one Floor 5 Narrator turn (several model calls, tool results fed back in) | 15,000 in, 1,500 out | under one cent |
+| the whole workshop, with plenty of retries | a few hundred turns | a few dollars at most |
+
+The token counts are estimates, so measure them: after running an agent, print `response.metrics.accumulated_usage` to read `inputTokens`, `outputTokens` and `totalTokens` for the call.
 
 <img src="../images/icons/stairwell-96x96.webp" alt="" width="24" height="24"> **Stairwell:** Head to [Floor 5](floor-5.md) for Agent-to-Agent (A2A) communication and orchestrate teams of specialized agents.
 

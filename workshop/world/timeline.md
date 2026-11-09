@@ -23,6 +23,7 @@ The dungeon floods on the Sound's schedule, so the tides below are the tides the
 | 11 | Saturday, June 27 | [8](../floor-8.md), [8.1](../floor-8-1.md) | H 0244 10.0 ft, L 1007 -1.3 ft, H 1821 11.2 ft, L 2326 8.0 ft | Bellevue and the Narrows. The dice server goes to the cloud. The bankers are working the weekend. |
 | 12 | Sunday, June 28 | [8.2](../floor-8-2.md), [8.3](../floor-8-3.md) | H 0323 9.8 ft, L 1041 -1.6 ft, H 1854 11.4 ft | The Character Agent and the Rules Agent go to the cloud. |
 | 13 | Monday, June 29 | [8.4](../floor-8-4.md) | L 0007 7.9 ft, H 0402 9.7 ft, L 1116 -1.7 ft, H 1923 11.5 ft | The Narrator goes to the cloud, and the Quarterly Earnings Call goes live, the day before the quarter closes. |
+| 13 | Monday, June 29, night | 9 (optional, coming soon) | | ALMOCO, the Corrosion Cathedral, where the lead fog makes the System AI misremember. Barnaby fights beside Cordula. The elevator lets out at Alki at 0515 on June 30. |
 | 14 | Tuesday, June 30 | [the Exit](../cleanup.md) | L 0040 7.8 ft, H 0442 9.6 ft, L 1152 -1.8 ft, H 1948 11.5 ft | Sunrise on Alki at 0515. The party leaves no trace. The quarter closes at midnight. |
 
 ## Why Fourteen Days
@@ -56,9 +57,9 @@ The full character sheets are in [The Cast](cast.md).
 | March 3, 1997 | Cordula is born in Ballard |
 | February 28, 2001 | The [Nisqually earthquake](https://en.wikipedia.org/wiki/2001_Nisqually_earthquake) shakes Seattle. Shelly sits through it. Cordula, almost four, remembers the dishes |
 | Spring 2023 | Barnaby hatches somewhere in the Sound |
-| August 12, 2024 | Cordula logs an unconfirmed sighting at the Gertie wreck |
-| October 3, 2024 | Cordula logs an unconfirmed sighting under Pier 57 |
-| 2007 | Cordula learns to paddle at Shilshole, age ten |
+| August 12, 2025 | Cordula logs an unconfirmed sighting at the Gertie wreck |
+| October 3, 2025 | Cordula logs an unconfirmed sighting under Pier 57 |
+| February 19, 2026 | Cordula logs another unconfirmed sighting at the Gertie wreck |
 | 2016 | Cordula enlists in the Marine Corps Reserve, age nineteen |
 | February 19, 2026 | Cordula logs another unconfirmed sighting at the Gertie wreck |
 | April 2025 | Chonks hatches on a bull kelp holdfast |

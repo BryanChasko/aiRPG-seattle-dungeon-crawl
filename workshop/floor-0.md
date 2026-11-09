@@ -11,13 +11,13 @@
 >
 > High tide was at 0556, so I was on the water by 0530: touring kayak, drysuit, float vest, the debris sweep the Soundkeepers run every week. Fog on Elliott Bay, gulls, a ferry horn out past the breakwater. Normal.
 >
-> I had seen his shadow before. Survey runs over the Gertie wreck at the Narrows, dawn sweeps under the downtown piers. Something too big to be an octopus, always just past visibility. I logged each sighting as unconfirmed. I never met him face to face.
+> I had seen his shadow before. Survey runs over the Gertie wreck at the Narrows, dawn sweeps under the downtown piers. Something too big to be an octopus, always just past visibility. August 12, 2025, slack before the ebb at the wreck. October 3, 2025, under Pier 57 on a dawn sweep. February 19, 2026, another survey pass at Gertie. Three logs, each marked unconfirmed. I never met him face to face until the fold.
 >
 > At 0551 every phone on the waterfront lit up with the same blank violet box. No text in it. Then the pier moved.
 >
 > The pier did not crash. The pier folded, the way a map folds, down and in, and the Sound came in after it. The shadow was there, close this time, tangled in the collapsing intake screen: an octopus bigger than any on record, one eye on me.
 >
-> I had about four seconds. I spent them going toward him instead of away, because nobody else was awake to cut him loose. I cut him free with my rescue knife; he wrapped two arms around me and the kayak and held us both clear of the debris as the fold carried us down. Each of us saved the other.
+> I had about four seconds. I spent them going toward him instead of away, because nobody else was awake to cut him loose. I cut him free with one of my karambits; he wrapped two arms around me and the kayak and held us both clear of the debris as the fold carried us down. Each of us saved the other.
 >
 > Then a voice came out of the water, loud enough to rattle my teeth.
 
@@ -25,9 +25,9 @@
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, CONTINUED.**
 >
-> A brass ring snapped shut around his mantle, and his skin went a color I had never seen on an animal. He did not speak. He could not, not yet. But he looked at me, and then he looked at the stairwell behind me, the only way down that was not underwater, and I understood him anyway.
+> A blackened brass ring snapped shut around his mantle, and his skin went a color I had never seen on an animal. He did not speak. He could not, not yet. But he looked at me, and then he looked at the stairwell behind me, the only way down that was not underwater, and I understood him anyway.
 >
-> The first achievement dropped a backpack tank, bigger on the inside, to carry him on dry floors. I strapped it on and named him Barnaby, after a story I heard from a Tacoma ferry crew. The stairwell is where the workshop starts. The System AI, the game AI that runs this place, is broken, and the only way out is to rebuild it, one piece per floor. What we build passes through the collar to Barnaby first. The terminal is mine. The log is what happened. The steps are what I type next.
+> The first achievement dropped a black misting harness for his mantle, bigger on the inside, that keeps his skin wet out of water for about an hour. I named him Barnaby, after a story I heard from a Tacoma ferry crew. On wet floors he swims; on dry stretches he crawls beside me, fast. The stairwell is where the workshop starts. The System AI, the game AI that runs this place, is broken, and the only way out is to rebuild it, one piece per floor. What we build passes through the collar to Barnaby first. The terminal is mine. The log is what happened. The steps are what I type next.
 >
 > First thing on the stairs: a twenty-foot python.
 
@@ -44,7 +44,7 @@ Prepare your development environment: clone the workshop repo, install uv and Py
 
 ## The Crawl Under Construction
 
-This workshop builds the AI behind a LitRPG, *Dungeon Crawl: Seattle*. Cordula is the player character: the log above is her log, Barnaby rides on her back and runs the party. Two companions join them on later floors. The System AI built the dungeon, runs the floors, the tides, the opponents, the dice and every ruling. The flood broke it. The broadcast relay and the collars survived, so the System AI can still push canned announcements through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
+This workshop builds the AI behind a LitRPG, *Dungeon Crawl: Seattle*. Cordula is the player character: the log above is her log, Barnaby is the party leader. Two companions join them on later floors. The System AI built the dungeon, runs the floors, the tides, the opponents, the dice and every ruling. The flood broke it. The broadcast relay and the collars survived, so the System AI can still push canned announcements through them, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what. Conflict is a dance-off. Nobody dies: a Crawler who loses is Benched and wakes up in a Safe Room.
 
 The lore lives in the [world guide](world/README.md): [the setting](world/seattle.md), [the cast](world/cast.md), [the System design](world/the-system.md) and the [Crawl Handbook](world/crawl-handbook/), the rules the Rules Agent searches on Floor 5.
 
@@ -85,7 +85,7 @@ On Windows, use `python --version` instead of `python3 --version`.
 
 No git? Install git from [git-scm.com/downloads](https://git-scm.com/downloads), then open a new terminal and run `git --version` again.
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** First thing I did on the landing was inventory. Paddle, drysuit, float vest, one bilge pump, one kayak battery at eighty percent, one octopus in a backpack tank, one dead phone. You do not move until you know what you have. Barnaby watched me count and flashed a slow, steady brown. I chose to take that as approval.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** First thing I did on the landing was inventory. Paddle, drysuit, float vest, one bilge pump, one kayak battery at eighty percent, one octopus in a black misting harness, one dead phone. You do not move until you know what you have. Barnaby watched me count and flashed a slow, steady brown. I chose to take that as approval.
 
 ### Step 2: Claim Your Starter Safe Room (Clone the Repo)
 
@@ -213,7 +213,7 @@ Check: the prompt now starts with the environment name in parentheses, and `pyth
 | a new terminal has no active environment | activation lasts for one terminal; run the activate command again in every new one (Floor 5 opens four) |
 | to skip activation | put `uv run` in front of any command instead: `uv run python simple_agent.py` |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Safe Room was a maintenance closet halfway down the stairs, dry, with a door that locked from the inside. I topped off Barnaby's water, checked the pump, and shut the door. Everything we installed stayed in that closet. That is the point of a Safe Room.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Safe Room was a maintenance closet halfway down the stairs, dry, with a door that locked from the inside. I misted Barnaby's harness, coiled the line, and shut the door. Everything we installed stayed in that closet. That is the point of a Safe Room.
 
 ### Step 7: Check Your Pass to Amazon Nova 2 Lite (AWS)
 
@@ -234,7 +234,38 @@ A short reply such as `Ready` means Amazon Nova 2 Lite is reachable from every f
 | `AccessDeniedException` | the AWS role may not invoke Amazon Nova 2 Lite | open the Amazon Bedrock console in us-west-2, check model access for Amazon Nova 2 Lite, or ask your account admin for `bedrock:InvokeModel` on it |
 | `ValidationException` about the Amazon Nova 2 Lite model id | a different region or a typo | keep `region_name='us-west-2'` and the model id exactly as above |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One word came back up the stairwell: ready. Not from Barnaby, not yet. From the model the System AI runs on: Amazon Nova 2 Lite. That was enough. I clipped the tank to the frame, Barnaby wrapped two arms over my shoulders, and we went down.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** One word came back up the stairwell: ready. Not from Barnaby, not yet. From the model the System AI runs on: Amazon Nova 2 Lite. That was enough. Barnaby matched my pace on eight arms, and we went down.
+
+### Step 8: Preflight Check
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "One script, every check. It exits 0 when you are ready and prints each problem with its fix when you are not. The alternative is finding out on Floor 6 that Node is missing, live, in front of everyone."
+
+From the repository root:
+
+```bash
+uv run python 0_stairwell/preflight.py
+```
+
+One line per check, PASS, WARN or FAIL:
+
+- Python against the version `pyproject.toml` requires
+- running inside the project's `.venv`
+- uv on the PATH
+- Docker installed and the daemon running (the Sandbox Tide Pool encounter and the web build)
+- Node present (Floor 6's web interface)
+- ports 8000 to 8004, 8009 and 5173 free (the Floor 4 and Floor 5 servers and the Floor 6 dev server)
+- the region set to us-west-2
+- AWS credentials that resolve, with the exact `aws sso login` command when the session has expired
+
+Add `--live` to also send Amazon Nova 2 Lite one tiny request (about 10 output tokens):
+
+```bash
+uv run python 0_stairwell/preflight.py --live
+```
+
+Check: the last line starts with `0 failed`. Each FAIL has a matching FIX line under the checks; do what it says and run the script again.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I run the same checks before every dive: air, light, line, knife. The script is that checklist for a laptop. It passed, and the stairwell went on down.
 
 ## Floor Clear
 
@@ -246,7 +277,12 @@ Loot kept:
 - Cloned the workshop repository
 - Beat Monty: the Python this project runs is known
 - Set up and activated the Python virtual environment
+- Ran the preflight check
 - Proved your AWS credentials can reach Amazon Nova 2 Lite
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Python quickstart](https://strandsagents.com/docs/user-guide/sdk/quickstart/python/) (Strands docs). "Strands is an Open Source Python and TypeScript SDK that simplifies building AI agents and multi-agent systems."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The quickstart showed the three-line agent: import Agent, instantiate with a model and a prompt, call it with a string. I read it once and knew what Floor 1 would ask for. One page, one pattern, ready to type.
 
 <img src="../images/icons/stairwell-96x96.webp" alt="Stairwell" width="24" height="24"> **Stairwell:** Head to [Floor 1](floor-1.md) to create the first AI agent.
 

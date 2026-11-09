@@ -25,6 +25,7 @@ This crawl teaches the Strands Agents SDK and LitRPG System design together. Eac
 | [6](../floor-6.md) | A web interface | The HUD |
 | [7](../floor-7.md) | Strands harness sessions and memory | Persistence and consequence |
 | [8](../floor-8.md) | AgentCore Runtime, Memory and a managed knowledge base | A persistent world: the characters, the rules and the campaign outlive any one session |
+| 9 (optional, coming soon) | Resilience: hallucination detection, memory write gates, poisoned instruction refusal | The System AI stops believing everything it thinks |
 
 ## 1. Origin and interface
 
@@ -112,7 +113,7 @@ CLASS SELECTION    ABILITY EVOLUTION                SPECIALIZATION       STAT SY
 - **Classes.** Twelve Seattle classes at Level 1, each with a favorite Move Call. Classes branch into hybrid classes later (Amphibious Breacher into Tidewall Breacher; Benthic Dragoon into Abyssal Choreographer). See the handbook's classes section.
 - **Skill fusion.** Two Level 3 skills from the same party fuse at a Safe Room forge: Barnaby's Ink Cloud and Shelly's Saltwater Jet fuse into *Inkjet*.
 - **Titles and feats.** Passive bonuses for ridiculous accomplishments, announced by the System. Cordula starts with *Salish Sea Guardian*.
-- **Synergy and exploits.** The party's real power is combos: Chonks latches, Barnaby holds, Cordula hits the Final Beat. The System AI respects an exploit it did not see coming, and pays out a loot box for the exploit.
+- **Synergy and exploits.** The party's real power is combos: Chonks latches, Barnaby holds, Cordula hits the Final Beat. Barnaby fights and dances beside Cordula, taking Choreography and Presence calls while she takes Power, Footwork and the Final Beat. The System AI respects an exploit it did not see coming, and pays out a loot box for the exploit.
 
 ## 5. World-building and economy
 
@@ -165,6 +166,12 @@ The crawl replaces combat with the dance-off: three rounds of Move Calls rolled 
 <img src="../../assets/hud/final-beat-drum.svg" alt="The Final Beat drum" width="120">
 
 Why dance? Because dance gives every stat a job, dance is funnier than violence, and dance keeps the game welcoming. The structure is credited where the idea came from: dance as public display of law and strength runs deep in Northwest Coast protocol, and the speeding-drum tie-breaker comes from the modern powwow circuit. See [the setting's notes on representation](seattle.md#whose-land-this-is).
+
+## Safe Room Reading: how Crawlers learn
+
+The party learns its skills the way a real developer does: read the docs, watch an explainer, read a working sample, then type it yourself. Every Safe Room has a terminal on the broadcast relay: the System AI's public library. Cadabra published Strands as an open toolkit, so the Strands manual is there, and so is the open web's teaching: Morgan Willis's course videos "Building AI agent harnesses with Strands Agents", Elizabeth Fuentes's GitHub samples, the Strands docs and the Model Context Protocol docs.
+
+Each floor gets one SAFE ROOM READING block: a link to the real resource, one short attributed quote or code sample, and Cordula's log line on what she took from it and how she found it. Barnaby sometimes reads over her shoulder.
 
 ## 7. Consequence: benched, not dead
 

@@ -5,10 +5,13 @@
 ![The Exit: Final Cleanup](../images/floors/exit-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, THE EXIT.** We came up on the beach at Alki at sunrise, 0515, the skyline across the bay and the rain finally easing off. I packed out everything we brought in, as on any patrol: every deployment, every log, every file. Then I set the dry bag down at the waterline and opened it. The Sound was right there. He had come from the wreck at the Narrows, where the King Octopus legend lives, and the Sound would take him back whenever he was ready. I told him it was open and the choice was his. Barnaby looked at the water for a long time. Then he looked at me.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, THE EXIT.** We came up on the beach at Alki at sunrise, 0515, the skyline across the bay and the rain finally easing off. I packed out everything we brought in, as on any patrol: every deployment, every log, every file. The Sound was right there. He had come from the wreck at the Narrows, where the King Octopus legend lives, and the Sound would take him back whenever he was ready. I told him it was open and the choice was his. Barnaby looked at the water for a long time. Then he looked at me.
 <!-- /cordula-log -->
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The crawl is over and the quarter closes at midnight. Stop the servers, tear down the stack, delete the bucket and the log groups. Any resource left running keeps billing the account, and I do not forgive invoices."
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 13: Evaluating Agents](https://www.youtube.com/watch?v=S_ZRZFDJ6wE) by Morgan Willis. "How do you know your agent actually works? And more importantly, how do you measure whether a prompt change, model swap, tool update, or harness modification made things better or worse?"
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The course asked the question I should have asked before the first server started. Next time I will ask it before the deploy, not after.
 
 ## Floor Objective
 
@@ -140,7 +143,7 @@ git checkout -- 5_a2a_integration/agents/character_agent/characters.json
 
 ## The Last Log
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, ALKI, 0515.** High water had come at 0442, an hour and a quarter earlier than on the morning the pier fell, and the sun was up at 0515. I told him the truth: the System AI was rebuilt, the collar would keep working, and the Sound was open, whenever he wanted it. He did not have to ride on my back to be the party leader. I held out the dry bag and the open Sound and told him it was his call. He looked at the water for a long time. Then he poured himself out of the bag and into the shallows, red going to white going to red, and was gone. I sat on the sand for a while. Shelly dug in next to my boot. Chonks stuck himself to my forearm guard. At 0631 the collar pinged in my earpiece. "Sergeant. The Narrows. Next Tuesday. Bring the kayak." That is the end of the crawl. It is not the end of the patrol.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 14, TUESDAY, JUNE 30, ALKI, 0515.** High water had come at 0442, an hour and a quarter earlier than on the morning the pier fell, and the sun was up at 0515. I told him the truth: the System AI was rebuilt, the collar would keep working, and the Sound was open, whenever he wanted it. He did not have to be carried to be the party leader. He never did. I held out the open water and told him it was his call. He looked at the Sound for a long time. Then he poured himself across the sand and into the shallows, charcoal going to crimson going to white, moving fast the way a real octopus can for a stretch, and was gone. I sat on the sand for a while. Shelly dug in next to my boot. Chonks stuck himself to my forearm guard. At 0631 the collar pinged in my earpiece. "Sergeant. The Narrows. Next Tuesday. Bring the kayak." That is the end of the crawl. It is not the end of the patrol.
 
 ## Floor Clear
 

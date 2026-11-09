@@ -27,8 +27,23 @@ Each dungeon floor is a real Puget Sound habitat that the System AI dragged unde
 | 6. The Underground | Pioneer Square's buried storefronts and the space under the Aurora Bridge | Dripping brick, old sidewalk prisms, and the Fremont Troll, a 1990 public sculpture the System AI has opinions about | A maze of dead-end storefronts; the Troll judges every dance-off held in its shadow |
 | 7. The Bluffs | Steep shoreline cliffs above the high-tide line | Pacific madrone (*Arbutus menziesii*) with twisting trunks and peeling red-orange bark, wind-bent shore pine (*Pinus contorta*), Hooker's willow (*Salix hookeriana*) at the water's edge, Nootka rose (*Rosa nutkana*) and snowberry (*Symphoricarpos albus*) holding the slopes, Puget Sound gumweed (*Grindelia integrifolia*) with sticky yellow flowers on the rocky beaches | A cliff floor: the roots hold the bluff together, and anything that tears the roots out starts a landslide |
 | 8. Bellevue and the Narrows | Glass towers across Lake Washington, and the shipyards of Tacoma | Polished marble lobbies, laser-grid security, brick warehouses on Commencement Bay, the Tacoma Narrows where the giant octopus legend lives | The corporate floor: the final bosses wear lanyards |
+| 9. ALMOCO, the Corrosion Cathedral (optional) | A smelter on the Tacoma shore, rebuilt at its 1970s worst | Black slag foundations, soot-caked stacks, high-gantry cranes, ultra-class haul trucks, sweet metallic fog, teal runoff | The resilience floor: the System AI learns to detect its own hallucinations |
 
 The habitats are why the leads win. Barnaby hunts eelgrass meadows and kelp forests for a living, and Cordula has spent years of dawn debris sweeps with the Soundkeepers, paddling these shorelines by kayak.
+
+## ALMOCO, the Corrosion Cathedral
+
+Floor 9 is ALMOCO, the American Lead Mining & Operational Company: a fictional mid-century industrial conglomerate whose smelter stood on the Ruston shore at Point Defiance, a mile from the Narrows. The System AI rebuilt it at its 1970s worst, because, it says, the ratings were better.
+
+The look is Techno-Gothic: a corrosion cathedral sprawled along the shoreline like a rotting iron leviathan. Black slag-concrete foundations cracked by old tremors and crusted yellow-grey with lead oxide and arsenic; walls that sweat sulfur; three soot-caked brick stacks, 500 feet tall, breathing a sweet, metallic grey fog that settles like a shroud; furnace fire flickering behind iron vents at night, so the stacks look like smoldering obelisks.
+
+High-gantry lattice cranes stand at the water's edge like rusted praying-mantis skeletons frozen mid-strike, dripping black lubricant into the tide flats, shrieking when the wind comes up the Narrows, swinging magnet buckets of ore into the furnace hoppers without stopping. Ultra-class haul trucks over 4 meters to the bed rim rumble past: a single tire taller than Cordula, 4,000 horsepower felt half a mile off before they are seen, twin stacks that smell of burnt copper and kerosene, a 400-ton dump that lands like a thunderclap.
+
+The fog and the runoff are game hazards. Runoff turns ditch mud a milky, glowing teal; streetlights wear halos. The lead fog is a debuff on Wisdom and on memory: in the fog the System AI misremembers and agents confabulate, and memory writes go bad. Floor 9 teaches the party to detect hallucinations, gate memory writes and refuse poisoned instructions.
+
+Opponents are people at work, joked about for their jobs, nonlethal: the shift foreman with a quota and a clipboard, the crane operator who has not looked down since 1974, the haul truck driver on a double shift, the plant's public relations man who insists the fog is mostly steam.
+
+**Representation note.** ALMOCO is fictional. It draws on the real history of smelting on the Tacoma shore and the [Washington State Department of Ecology's Tacoma Smelter Plume cleanup](https://ecy.wa.gov/spills-cleanup/contamination-cleanup/cleanup-sites/tacoma-smelter). The story does not tell the lead-and-violence theory and does not mention serial killers. Barnaby's home wreck lies down the Narrows from the plume, and he has opinions about it.
 
 ## The cities
 

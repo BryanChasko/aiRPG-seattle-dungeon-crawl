@@ -78,7 +78,7 @@ Replace the `pass`. The Agent already receives the provider with `hooks=[sponsor
 ## Step 3: Let a Refusal Cancel the Tool
 
 ```python
-# TODO: Step 3 - When the answer is not "accept", cancel the tool call by setting event.cancel_tool to a message the System can retell
+# TODO: Step 3 - When the answer is not "accept", cancel the tool call by setting event.cancel_tool to a message the System AI can retell
 ```
 
 Setting `event.cancel_tool` to a string cancels the call; the string goes back to the Narrator as the tool's result, with an error status. Write the string as an instruction the Narrator can retell: the Crawler refused, the sponsor sulks. If `event.cancel_tool` is set to `True` instead, Strands uses a default message.
@@ -89,7 +89,7 @@ Setting `event.cancel_tool` to a string cancels the call; the string goes back t
 ```python
         # TODO: Step 2 - Raise the interrupt with event.interrupt("sponsor_deal", reason=reason) and keep the player's answer
         answer = event.interrupt("sponsor_deal", reason=reason)
-        # TODO: Step 3 - When the answer is not "accept", cancel the tool call by setting event.cancel_tool to a message the System can retell
+        # TODO: Step 3 - When the answer is not "accept", cancel the tool call by setting event.cancel_tool to a message the System AI can retell
         if answer != "accept":
             event.cancel_tool = "The Crawler refused the deal. Tell them the sponsor sulks, then carry on."
 ```

@@ -10,7 +10,11 @@ Files on this floor: [`8_agentcore_production/diceserver/dice_roll_mcp_server.py
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 11, SATURDAY, JUNE 27, FLOOR 8.1.** Brick one was the dice. If anything is going to keep running without us, the dice, which decide who wins, should be the part that does. Barnaby wanted proof the dice had left the building, so we read the logs from the cloud until he was satisfied. It took a while. He is hard to satisfy.
 <!-- /cordula-log -->
 
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Brick one. A dice server, a deploy, an IAM-signed client. Everything else keeps running on your machine. Consider this deploy a warm-up. Consider it the last one."
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [bedrock-agentcore-samples](https://github.com/elizabethfuentes12/bedrock-agentcore-samples) by Elizabeth Fuentes. "AgentCore provides composable services that work with popular open-source frameworks and any model, eliminating the choice between open-source flexibility and enterprise requirements."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The AgentCore samples show the same three bricks the floor builds: Runtime, Memory and Gateway. I kept the repo open in a tab the whole floor. Barnaby does not like surprises in production, and neither do I.
+>
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** The dice left first. A fair roll is the one thing the game cannot do without. Everything else waits on it.
 
 ## Floor Objective
 
@@ -31,6 +35,16 @@ mcp = FastMCP(host="0.0.0.0", stateless_http=True)
 ```
 
 This line is the only change to the Floor 4 server. Keep the name `mcp`: the `@mcp.tool()` decorator and `mcp.run(...)` below use it. AgentCore Runtime expects an MCP server at `0.0.0.0:8000/mcp`, which is FastMCP's default port and path, so `port=8002` goes away. `host="0.0.0.0"` makes the server reachable from outside its microVM (the default `127.0.0.1` only accepts local connections), and `stateless_http=True` lets any request be served without an MCP session kept in memory, the recommended mode for a simple tool server. `roll_dice`, its docstring and `mcp.run(transport="streamable-http")` are unchanged. See [Deploy MCP servers in AgentCore Runtime](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-mcp.html) in the AgentCore Developer Guide.
+
+<details>
+<summary>Show me the code for Step 1</summary>
+
+```python
+# TODO: Step 1 - Create the MCP server as mcp, listening on all interfaces, on the default port, with stateless HTTP
+mcp = FastMCP(host="0.0.0.0", stateless_http=True)
+```
+
+</details>
 
 The `pyproject.toml` next to the server lists its only dependency, `mcp<2`: AgentCore installs `mcp<2` when AgentCore packages the code.
 
@@ -140,6 +154,16 @@ DICE_SERVER_URL = os.environ["DICE_SERVER_URL"]
 
 Use brackets rather than `os.environ.get(...)`: if the variable is missing, the Narrator stops at startup with `KeyError: 'DICE_SERVER_URL'`, instead of failing later on the first roll.
 
+<details>
+<summary>Show me the code for 8.1 Step 1</summary>
+
+```python
+# TODO: 8.1 Step 1 - Read DICE_SERVER_URL from the environment
+DICE_SERVER_URL = os.environ["DICE_SERVER_URL"]
+```
+
+</details>
+
 ### Step 2: Create an IAM-Signed MCP Client
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The deployed dice server answers signed requests only. Sign for the wrong region and you get a 403. The System AI enjoys a good 403."
@@ -154,7 +178,22 @@ from mcp_proxy_for_aws.client import aws_iam_streamablehttp_client
 mcp_client = MCPClient(lambda: aws_iam_streamablehttp_client(endpoint=DICE_SERVER_URL, aws_service="bedrock-agentcore"))
 ```
 
-In Floor 5 the client was `MCPClient(url="http://localhost:8002/mcp")`. The deployed server only answers callers authenticated with IAM: every request must be signed with the AWS credentials (Signature Version 4). `aws_iam_streamablehttp_client`, from the `mcp-proxy-for-aws` package (already in the workshop dependencies), is the same streamable HTTP transport with the signature added. The signature covers a service and a region: `aws_service` names the service, and the region comes from the boto3 session, the `AWS_DEFAULT_REGION` you exported on the Floor 8 page. A request signed for the wrong region is rejected with a 403. The rest of the Narrator does not change: `mcp_client` still goes into `tools=[...]`, and Amazon Nova 2 Lite sees the same `roll_dice` tool as before.
+In Floor 5 the client was `MCPClient(url="http://localhost:8002/mcp")`. The deployed server only answers callers authenticated with IAM: every request must be signed with the AWS credentials (Signature Version 4). `aws_iam_streamablehttp_client`, from the `mcp-proxy-for-aws` package (already in the workshop dependencies), is the same streamable HTTP transport with the signature added. The signature covers a service and a region: `aws_service` names the service, and the region comes from the boto3 session, the `AWS_DEFAULT_REGION` you exported on the Floor 8 page. A request signed for the wrong region is rejected with a 403. The rest of the Narrator does not change: `mcp_client` still goes into `tools=[...]`, and Amazon Nova 2 Lite sees the same `roll_dice` tool as before. See the [MCP client for AWS services](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-mcp.html) in the AgentCore Developer Guide.
+
+<details>
+<summary>Show me the code for 8.1 Step 2</summary>
+
+```python
+# TODO: 8.1 Step 2 - Import aws_iam_streamablehttp_client from mcp_proxy_for_aws.client
+from mcp_proxy_for_aws.client import aws_iam_streamablehttp_client
+```
+
+```python
+# TODO: 8.1 Step 2 - Create an MCPClient connecting to DICE_SERVER_URL with aws_iam_streamablehttp_client for the bedrock-agentcore service
+mcp_client = MCPClient(lambda: aws_iam_streamablehttp_client(endpoint=DICE_SERVER_URL, aws_service="bedrock-agentcore"))
+```
+
+</details>
 
 ### Step 3: Launch the Narrator
 

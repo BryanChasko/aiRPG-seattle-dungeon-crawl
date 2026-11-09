@@ -2,7 +2,7 @@
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "I keep receipts. Here are mine."
 
-This crawl is built on *Once Upon Agentic AI*, the AWS sample workshop that first taught the Strands Agents SDK through a role-playing game. We kept every exercise the original workshop teaches and added to it. This page shows the evidence.
+This crawl builds on *Once Upon Agentic AI*, the AWS sample workshop that first taught the Strands Agents SDK through a role-playing game. Every exercise the original workshop teaches is still here. This page shows the evidence.
 
 ## Findings
 

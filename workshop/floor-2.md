@@ -111,7 +111,15 @@ Check: the terminal shows `Tool #1: http_request` before the answer, and the ans
 | `Tool #1: http_request`, then a connection error or a timeout | the network cannot reach Open5e | open https://api.open5e.com/v2/creatures/srd_giant-octopus/ in a browser; on a corporate network, set `HTTPS_PROXY` |
 | `AccessDeniedException` or `ExpiredToken` | the Amazon Nova 2 Lite call failed, not `http_request` | run the check in [Floor 0, Step 7](floor-0.md#step-7-check-your-pass-to-amazon-nova-2-lite-aws) |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The answer came back with numbers in it, and every one had a source. Barnaby read the stat block twice. "Advantage on stealth. Correct. A twenty-foot ink cloud. Accurate, if unambitious." Then, quieter: "They wrote me down as a monster, Sergeant." I told him it was a game manual from before anybody had met him. He went red for ten minutes. Then he asked how many other things the machine could look up.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The answer came back with numbers in it, and every one had a source. Barnaby read the stat block twice.
+>
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Advantage on stealth. Correct. A twenty-foot ink cloud. Accurate, if unambitious."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Then, quieter:
+>
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "They wrote me down as a monster, Sergeant."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I told him it was a game manual from before anybody had met him. He went red for ten minutes. Then he asked how many other things the machine could look up.
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 2, THURSDAY, JUNE 18, FLOOR 2, 1400.** The 1400 low water (-2.7 feet) pulled the bay back off the nursery, and the flood had scoured one sand flat down to bare shell. A geoduck lay on his side in the open with a two-foot neck draped across the sand, 59 years in the same square foot of Elliott Bay and now nowhere. Barnaby said an adult geoduck cannot dig back in, and then he said nothing for a while. The first Companion Egg bound him to the party and gave him what no adult geoduck has ever had, the power to dig in anywhere in half a second. I named him Shelly, after Shilshole, where I learned to paddle at ten. He answered with a long silence and one puff of sea mist, and I counted him in as crew. Barnaby set his rule within the minute: the clam stays five feet from the water line, and Shelly dug in exactly five feet away and did not move.
 
@@ -230,6 +238,10 @@ Check: `fibonacci_scroll.py` now sits in `2_vended_tools/`, and Kiro reports the
 - Approval prompts: tools run with the permissions of the Python process. With `HumanInTheLoop`, no tool call that alters the computer runs without explicit approval.
 - Allowing named tools: `allowed_tools=["file_editor"]` lets `file_editor` run without a prompt while other tools still ask. Use `["*"]` to disable every prompt, for testing only.
 
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Tools in Strands](https://strandsagents.com/docs/user-guide/sdk/tools/using-tools/) (Strands docs) and [Video 01: How AI Agents Really Work](https://www.youtube.com/watch?v=NAEX4ORLkbQ) by Morgan Willis. "This is already a working agent, not a very capable one because it has no tools yet, but it already contains an agent loop."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The docs listed the vended tools. The video said what Floor 1 left me with: a loop that could talk and nothing to reach with. I added http_request first, ran the agent, watched it decide on its own to call the API. That was the moment: the agent reached outside itself.
+
 ## Side Passages (optional)
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The eelgrass has more machines than the six on the main row, and Kiro has more scrolls than one.
@@ -248,6 +260,18 @@ Loot kept:
 - How to import a vended tool and add it to your agent
 - How an agent autonomously decides when to use a tool
 - Tool consent and safety (covered with the bonus room's `HumanInTheLoop` intervention)
+
+### What a Turn Costs
+
+Amazon Bedrock bills on-demand use by the token: the text sent to Amazon Nova 2 Lite (input) and the text it writes back (output). Third-party price trackers list Amazon Nova 2 Lite at about $0.30 per million input tokens and $2.50 per million output tokens as of November 2026. Confirm the current price for your region on the Amazon Bedrock pricing page before planning anything bigger than this workshop.
+
+| what runs | rough tokens | rough cost |
+|---|---|---|
+| this floor's script, once | 150 in, 400 out | under a tenth of a cent |
+| one Floor 5 Narrator turn (several model calls, tool results fed back in) | 15,000 in, 1,500 out | under one cent |
+| the whole workshop, with plenty of retries | a few hundred turns | a few dollars at most |
+
+The token counts are estimates, so measure them: after running an agent, print `response.metrics.accumulated_usage` to read `inputTokens`, `outputTokens` and `totalTokens` for the call.
 
 <img src="../images/icons/stairwell-96x96.webp" alt="" width="24" height="24"> **Stairwell:** Journey to [Floor 3](floor-3.md) where custom tools take shape for specific use cases.
 

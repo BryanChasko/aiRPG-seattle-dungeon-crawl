@@ -4,7 +4,7 @@
     <span v-if="!svgFailed" class="dice-svg-container">
       <span class="dice-image-wrapper" :class="{ 'dice-roll-in': animate }">
         <img
-          :src="`${baseUrl}dice/${diceType}.svg`"
+          :src="`${baseUrl}dice/${assetName}.svg`"
           :alt="`${diceType} dice`"
           class="dice-svg"
           :class="{ 'dice-tumble': animate }"
@@ -56,7 +56,10 @@ const diceColorMap: Record<string, string> = {
   d100: '#16a085',
 }
 
-const diceColor = computed(() => diceColorMap[props.diceType] || '#7f8c8d')
+// The Narrator sends "1d20" or "2d6"; the artwork is named by die only ("d20")
+const assetName = computed(() => props.diceType.trim().toLowerCase().replace(/^\d*d/, 'd'))
+
+const diceColor = computed(() => diceColorMap[assetName.value] || '#7f8c8d')
 </script>
 
 <style scoped>

@@ -166,11 +166,23 @@ Check: the answer streams into the terminal as it is written, addresses the play
 | no DEBUG lines | Step 1 is missing, or `basicConfig` has no handler | copy the Step 1 block |
 | the run prints nothing, no error, and exits as if it worked (the raw run says `(no output - script ends silently with empty agent)`) | the TODO lines still have no answers, so the script has nothing to run | write the code under each `# TODO: Step N` comment, then run it again |
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Rain-Shell Tourist Pod was blocking the tide pools, twenty people in matching jackets with a guide holding a flag. They could not hear us. Then the System AI's voice came back on, loud enough to rattle the glass, and every one of them turned around at once. The collar on Barnaby's mantle clicked, and a voice came out of it, dry and very British. "Sergeant." A pause. "This water is four degrees too cold, and I should like that noted." I noted it. The tour guide lowered the flag and let us through.
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The Rain-Shell Tourist Pod was blocking the tide pools, twenty people in matching jackets with a guide holding a flag. They could not hear us. Then the System AI's voice came back on, loud enough to rattle the glass, and every one of them turned around at once. The collar on Barnaby's mantle clicked, and a voice came out of it, dry and very British.
+>
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "Sergeant."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** A pause. Then he went on.
+>
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** "This water is four degrees too cold, and I should like that noted."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I noted it. The tour guide lowered the flag and let us through.
 
-> **NARRATOR:** The voice is back. The tide is out.
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The voice is back. The tide is out."
 
 > <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM DESIGN, LAYER 1: THE INTERFACE VOICE.** A LitRPG System talks in notifications, and how they sound sets the genre. A cold, analytic System makes a survival story; a cruel one makes horror; ours is a game-show host. Change one sentence of your system prompt (try "You are a calm, clinical survival System") and run the script again: same model, same question, a different book. See [The System](world/the-system.md#1-origin-and-interface).
+
+> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [Video 01: How AI Agents Really Work](https://www.youtube.com/watch?v=NAEX4ORLkbQ) by Morgan Willis. "When I first started building agents, this is what I wish someone had shown me first because it answers the question, why did my agent do that almost every time."
+>
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** I read the companion page on the agent loop and the harness, and then I watched the first video. The docs showed the skeleton. The video showed the loop: context in, tool call, tool result, context out. I typed the three lines myself, and the agent answered.
 
 ## Side Passage: The Commentary Booth (optional)
 

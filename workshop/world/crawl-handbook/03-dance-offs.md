@@ -1,6 +1,6 @@
 # Dance-Offs
 
-Conflict in the crawl is settled by a dance-off, never by violence. Opponents are people the System AI dropped into the dungeon; the opponents want to win, not to hurt anyone.
+Conflict in the crawl is settled by a dance-off, never by violence. Opponents are people the System AI dropped into the dungeon; the opponents want to win, not to hurt anyone. Barnaby fights and dances beside Cordula: he takes Choreography and Presence calls, she takes Power, Footwork and the Final Beat.
 
 Procedure:
 
