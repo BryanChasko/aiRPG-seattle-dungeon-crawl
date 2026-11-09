@@ -14,7 +14,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-PAD = "encounters/floor-8-pad-explosion-aftermath/pad_explosion_aftermath.py"
+PAD = "dungeon/encounters/floor-8-pad-explosion-aftermath/pad_explosion_aftermath.py"
 
 
 def load(rel: str, name: str):

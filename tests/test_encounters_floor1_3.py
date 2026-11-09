@@ -17,10 +17,10 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-RECEIPT = "encounters/floor-1-read-the-receipt/read_the_receipt.py"
-DIAL = "encounters/floor-1-reasoning-dial/reasoning_dial.py"
-WORKBENCH = "encounters/floor-3-living-workbench/living_workbench.py"
-SHELF = "encounters/floor-3-living-workbench/shelf/final_beat.py"
+RECEIPT = "dungeon/encounters/floor-1-read-the-receipt/read_the_receipt.py"
+DIAL = "dungeon/encounters/floor-1-reasoning-dial/reasoning_dial.py"
+WORKBENCH = "dungeon/encounters/floor-3-living-workbench/living_workbench.py"
+SHELF = "dungeon/encounters/floor-3-living-workbench/shelf/final_beat.py"
 REASONING_ON = {"reasoningConfig": {"type": "enabled", "maxReasoningEffort": "low"}}
 
 
@@ -210,7 +210,7 @@ def workbench_mod():
 @pytest.fixture
 def bench(tmp_path, monkeypatch, workbench_mod):
     """A scratch copy of the tools folder, with the working directory set to it the way the script runs."""
-    shutil.copytree(ROOT / "encounters/floor-3-living-workbench/tools", tmp_path / "tools", ignore=shutil.ignore_patterns("__pycache__"))
+    shutil.copytree(ROOT / "dungeon/encounters/floor-3-living-workbench/tools", tmp_path / "tools", ignore=shutil.ignore_patterns("__pycache__"))
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(workbench_mod, "TOOLS", tmp_path / "tools")
     return tmp_path / "tools"

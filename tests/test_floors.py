@@ -66,7 +66,7 @@ def names_in(expr: ast.expr) -> set[str]:
 def test_floor1_agent_logging_prompt_and_model(no_model):
     import logging
 
-    mod = load("1_strands_basics/simple_agent.py", "floor1_simple_agent")
+    mod = load("dungeon/1_strands_basics/simple_agent.py", "floor1_simple_agent")
     assert logging.getLogger("strands").level == logging.DEBUG
     assert mod.agent.model.config["model_id"] == NOVA
     assert "the System" in mod.agent.system_prompt and "Crawler" in mod.agent.system_prompt
@@ -77,14 +77,14 @@ def test_floor1_agent_logging_prompt_and_model(no_model):
 
 
 def test_floor2_http_request_is_a_tool(no_model):
-    mod = load("2_vended_tools/agent_with_vended_tools.py", "floor2_vended")
+    mod = load("dungeon/2_vended_tools/agent_with_vended_tools.py", "floor2_vended")
     assert "http_request" in mod.agent.tool_names
     assert "api.open5e.com/v2/creatures" in mod.agent.system_prompt
     assert no_model and "octopus" in no_model[0].lower()
 
 
 def test_floor2_bonus_room_gates_shell_and_file_editor_behind_hitl():
-    kw = agent_call_keywords("2_vended_tools/bonus_quest.py")
+    kw = agent_call_keywords("dungeon/2_vended_tools/bonus_quest.py")
     assert {"shell", "file_editor"} <= names_in(kw["tools"])
     hitl = [n for n in ast.walk(kw["interventions"]) if isinstance(n, ast.Call) and getattr(n.func, "id", None) == "HumanInTheLoop"]
     assert hitl, "the bonus room must pass HumanInTheLoop in interventions"
@@ -97,7 +97,7 @@ def test_floor2_bonus_room_gates_shell_and_file_editor_behind_hitl():
 
 @pytest.fixture
 def floor3(no_model):
-    return load("3_custom_tools/agent_with_dice_roll_tool.py", "floor3_dice")
+    return load("dungeon/3_custom_tools/agent_with_dice_roll_tool.py", "floor3_dice")
 
 
 def test_floor3_docstring_reaches_the_tool_spec(floor3):
@@ -139,21 +139,21 @@ def docstring_of(rel: str, func: str = "roll_dice") -> str:
 
 
 def test_floor4_server_serves_the_floor3_tool_on_port_8002(floor3):
-    mod = load("4_mcp_integration/dice_roll_mcp_server.py", "floor4_server")
+    mod = load("dungeon/4_mcp_integration/dice_roll_mcp_server.py", "floor4_server")
     assert mod.mcp.settings.port == 8002
     tool = mcp_tools(mod)["roll_dice"]
     assert set(tool.inputSchema["properties"]) == {"faces", "count", "drop_lowest"}
     # same function, same docstring as Floor 3 (and Floor 8). FastMCP keeps the whole
     # docstring as the description; Strands moves the Args lines into the parameters.
-    floor3_doc = docstring_of("3_custom_tools/agent_with_dice_roll_tool.py")
-    assert docstring_of("4_mcp_integration/dice_roll_mcp_server.py") == floor3_doc
-    assert docstring_of("8_agentcore_production/diceserver/dice_roll_mcp_server.py") == floor3_doc
+    floor3_doc = docstring_of("dungeon/3_custom_tools/agent_with_dice_roll_tool.py")
+    assert docstring_of("dungeon/4_mcp_integration/dice_roll_mcp_server.py") == floor3_doc
+    assert docstring_of("dungeon/8_agentcore_production/diceserver/dice_roll_mcp_server.py") == floor3_doc
     assert "Args:" in tool.description and "Args:" not in floor3.roll_dice.tool_spec["description"]
 
 
 def test_floor4_client_hands_the_mcp_client_to_the_agent():
     # source check only: the agent connects to the MCP server as soon as it is created
-    rel = "4_mcp_integration/narrator_mcp_client.py"
+    rel = "dungeon/4_mcp_integration/narrator_mcp_client.py"
     tree = ast.parse((ROOT / rel).read_text())
     client = next(n.value for n in ast.walk(tree) if isinstance(n, ast.Assign)
                   and getattr(n.targets[0], "id", None) == "mcp_dice_client")
@@ -192,7 +192,7 @@ def test_floor5_create_then_find_a_party_member(monkeypatch):
 
 
 def test_floor5_handbook_chunks_keep_their_section():
-    mod = load("5_a2a_integration/utils/create_knowledge_base.py", "floor5_kb")
+    mod = load("dungeon/5_a2a_integration/utils/create_knowledge_base.py", "floor5_kb")
     chunks = mod.extract_chunks(mod.HANDBOOK_DIR)
     sections = {c["metadata"]["section"] for c in chunks}
     assert len({p.stem for p in mod.HANDBOOK_DIR.glob("*.md")}) == 11
@@ -221,7 +221,7 @@ def test_floor7_harness_gets_every_option_the_page_teaches(monkeypatch):
 
     seen: dict = {}
     monkeypatch.setattr(strands_harness, "create_harness", lambda **kw: seen.update(kw) or types.SimpleNamespace(messages=[]))
-    mod = load("7_strands_harness/narrator_harness.py", "floor7_harness")
+    mod = load("dungeon/7_strands_harness/narrator_harness.py", "floor7_harness")
     assert seen["model"] == f"bedrock/{NOVA}" and seen["effort"] == "off"
     assert seen["instructions"] is mod.INSTRUCTIONS
     assert seen["mcp_servers"] == {"dice": {"url": "http://127.0.0.1:8002/mcp"}}
@@ -241,7 +241,7 @@ def aws_env(monkeypatch):
 
 
 def test_floor8_dice_server_listens_the_way_agentcore_expects():
-    mod = load("8_agentcore_production/diceserver/dice_roll_mcp_server.py", "floor8_dice")
+    mod = load("dungeon/8_agentcore_production/diceserver/dice_roll_mcp_server.py", "floor8_dice")
     assert (mod.mcp.settings.host, mod.mcp.settings.port, mod.mcp.settings.stateless_http) == ("0.0.0.0", 8000, True)
     assert "roll_dice" in mcp_tools(mod)
 
@@ -263,7 +263,7 @@ def test_floor8_characters_round_trip_through_memory_records(aws_env, monkeypatc
 
     monkeypatch.setenv("MEMORY_CHARACTERS_ID", "mem-characters")
     monkeypatch.setattr(boto3, "client", lambda *a, **kw: FakeMemory())
-    mod = load("8_agentcore_production/characteragent/character_agent.py", "floor8_characters")
+    mod = load("dungeon/8_agentcore_production/characteragent/character_agent.py", "floor8_characters")
     record = {"character_id": "abc", "name": "Cordula Vance"}
     mod.save_character(record)
     assert written[0]["namespaces"] == ["/characters/abc"]
@@ -282,7 +282,7 @@ def test_floor8_rules_agent_names_the_handbook_section(aws_env, monkeypatch):
 
     monkeypatch.setenv("KNOWLEDGE_BASE_RULES_ID", "KB12345678")
     monkeypatch.setattr(boto3, "client", lambda *a, **kw: FakeKnowledgeBase())
-    mod = load("8_agentcore_production/rulesagent/rules_agent.py", "floor8_rules")
+    mod = load("dungeon/8_agentcore_production/rulesagent/rules_agent.py", "floor8_rules")
     assert mod.section_of({"location": {"s3Location": {"uri": "s3://b/04-final-beat.md"}}}) == "Final Beat"
     assert mod.query_rules("how many rounds?") == "[Dance Offs] Three rounds of Move Calls."
 
@@ -290,7 +290,7 @@ def test_floor8_rules_agent_names_the_handbook_section(aws_env, monkeypatch):
 def test_floor8_narrator_entrypoint_serves_messages_and_story(aws_env, monkeypatch):
     for k in ("DICE_SERVER_URL", "CHARACTER_AGENT_URL", "RULES_AGENT_URL"):
         monkeypatch.setenv(k, f"https://example.invalid/{k.lower()}/invocations")
-    mod = load("8_agentcore_production/narrator/narrator_orchestrator.py", "floor8_narrator")
+    mod = load("dungeon/8_agentcore_production/narrator/narrator_orchestrator.py", "floor8_narrator")
     from bedrock_agentcore.runtime import BedrockAgentCoreApp
 
     assert isinstance(mod.app, BedrockAgentCoreApp)
@@ -314,9 +314,9 @@ def test_floor8_narrator_entrypoint_serves_messages_and_story(aws_env, monkeypat
 def test_story_output_matches_across_floors():
     """Floors 5, 7 and 8 must hand the web interface the same StoryOutput fields."""
     fields = []
-    for rel in ("5_a2a_integration/agents/narrator_orchestrator/narrator_orchestrator.py",
-                "7_strands_harness/narrator_harness.py",
-                "8_agentcore_production/narrator/narrator_orchestrator.py"):
+    for rel in ("dungeon/5_a2a_integration/agents/narrator_orchestrator/narrator_orchestrator.py",
+                "dungeon/7_strands_harness/narrator_harness.py",
+                "dungeon/8_agentcore_production/narrator/narrator_orchestrator.py"):
         tree = ast.parse((ROOT / rel).read_text())
         cls = next(n for n in ast.walk(tree) if isinstance(n, ast.ClassDef) and n.name == "StoryOutput")
         fields.append([s.target.id for s in cls.body if isinstance(s, ast.AnnAssign)])
@@ -326,20 +326,20 @@ def test_story_output_matches_across_floors():
 def test_every_floor_script_keeps_its_todo_markers():
     """The solution answers sit under the TODOs; a missing marker means the page and the code drifted."""
     expected = {
-        "1_strands_basics/simple_agent.py": 3,
-        "2_vended_tools/agent_with_vended_tools.py": 2,
-        "2_vended_tools/bonus_quest.py": 4,
-        "3_custom_tools/agent_with_dice_roll_tool.py": 4,
-        "4_mcp_integration/dice_roll_mcp_server.py": 4,
-        "4_mcp_integration/narrator_mcp_client.py": 3,
-        "7_strands_harness/narrator_harness.py": 7,
+        "dungeon/1_strands_basics/simple_agent.py": 3,
+        "dungeon/2_vended_tools/agent_with_vended_tools.py": 2,
+        "dungeon/2_vended_tools/bonus_quest.py": 4,
+        "dungeon/3_custom_tools/agent_with_dice_roll_tool.py": 4,
+        "dungeon/4_mcp_integration/dice_roll_mcp_server.py": 4,
+        "dungeon/4_mcp_integration/narrator_mcp_client.py": 3,
+        "dungeon/7_strands_harness/narrator_harness.py": 7,
     }
     for rel, count in expected.items():
         assert (ROOT / rel).read_text().count("# TODO:") == count, rel
 
 
 def test_json_seed_ships_empty():
-    seed = json.loads((ROOT / "5_a2a_integration/agents/character_agent/characters.json").read_text())
+    seed = json.loads((ROOT / "dungeon/5_a2a_integration/agents/character_agent/characters.json").read_text())
     assert seed == {"_default": {}}, "the party registers on Floor 5; the registry ships empty"
 
 
@@ -348,7 +348,7 @@ def test_json_seed_ships_empty():
 
 @pytest.fixture
 def study(tmp_path, monkeypatch):
-    mod = load("study/ask_the_system.py", "study_companion")
+    mod = load("dungeon/study/ask_the_system.py", "study_companion")
     from strands.storage import LocalFileStorage
 
     monkeypatch.setattr(mod, "STATE", tmp_path)
@@ -358,14 +358,14 @@ def study(tmp_path, monkeypatch):
 
 
 def test_study_search_finds_the_page_that_teaches_it(study):
-    assert study.search_workshop("drop_lowest").splitlines()[0].startswith("workshop/floor-3.md")
-    assert "workshop/world/crawl-handbook/04-final-beat.md" in study.search_workshop("Final Beat")
+    assert study.search_workshop("drop_lowest").splitlines()[0].startswith("dungeon/workshop/floor-3.md")
+    assert "dungeon/workshop/world/crawl-handbook/04-final-beat.md" in study.search_workshop("Final Beat")
     assert study.search_workshop("xyzzyplugh").startswith("No page contains")
 
 
 def test_study_tools_stay_in_their_lane(study, monkeypatch):
     assert study.read_workshop_page("../../etc/passwd").startswith("Not a workshop page")
-    assert "agent_factory" in study.read_workshop_page("workshop/floor-5.md", find="agent_factory")
+    assert "agent_factory" in study.read_workshop_page("dungeon/workshop/floor-5.md", find="agent_factory")
     assert study.strands_api_reference("os.system").startswith("Not a Strands module path")
 
     class FakeResponse:
@@ -386,14 +386,14 @@ def test_study_tools_stay_in_their_lane(study, monkeypatch):
 
 
 def test_study_agent_wiring():
-    kw = agent_call_keywords("study/ask_the_system.py")
+    kw = agent_call_keywords("dungeon/study/ask_the_system.py")
     assert names_in(kw["tools"]) == {"search_workshop", "read_workshop_page", "strands_api_reference"}
     assert {"FileSessionManager"} <= names_in(kw["session_manager"])
     assert {"SlidingWindowConversationManager"} <= names_in(kw["conversation_manager"])
 
 
 def test_knowledge_pack_is_current():
-    mod = load("study/build_pack.py", "study_pack")
+    mod = load("dungeon/study/build_pack.py", "study_pack")
     assert mod.without_header(mod.PACK.read_text(encoding="utf-8")) == mod.without_header(mod.build())
     pack = mod.PACK.read_text(encoding="utf-8")
     assert pack.count("TODO: ") == 63
@@ -419,7 +419,7 @@ def tracked_text_files():
     import subprocess
 
     names = subprocess.run(["git", "-C", str(ROOT), "ls-files"], capture_output=True, text=True, check=True).stdout.split()
-    skip = ("images/", "web/package-lock.json", "uv.lock")
+    skip = ("art/images/", "site/web/package-lock.json", "uv.lock")
     for name in names:
         path = ROOT / name
         if name.startswith(skip) or path.suffix in {".webp", ".png", ".ico", ".jpg", ".pdf", ".sqlite3"}:

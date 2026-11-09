@@ -21,9 +21,9 @@ from strands.interrupt import Interrupt, InterruptException, _InterruptState
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-HYPE = "encounters/floor-6-hype-meter/hype_meter.py"
-SPONSOR = "encounters/floor-6-sponsor-interrupt/sponsor_interrupt.py"
-FLOOR5_NARRATOR = "5_a2a_integration/agents/narrator_orchestrator/narrator_orchestrator.py"
+HYPE = "dungeon/encounters/floor-6-hype-meter/hype_meter.py"
+SPONSOR = "dungeon/encounters/floor-6-sponsor-interrupt/sponsor_interrupt.py"
+FLOOR5_NARRATOR = "dungeon/5_a2a_integration/agents/narrator_orchestrator/narrator_orchestrator.py"
 
 
 class FakeAgent:

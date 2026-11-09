@@ -28,4 +28,4 @@ EOF
 echo ""
 echo "[SYSTEM] Setup complete. Open a new terminal — the venv will be active automatically."
 echo "   Export your AWS credentials, then start with Floor 1:"
-echo "     python 1_strands_basics/simple_agent.py"
+echo "     python dungeon/1_strands_basics/simple_agent.py"

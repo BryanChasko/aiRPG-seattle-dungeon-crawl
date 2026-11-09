@@ -22,7 +22,7 @@ from strands.plugins import Plugin
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-STATIC_FIRE = "encounters/floor-7-static-fire/static_fire.py"
+STATIC_FIRE = "dungeon/encounters/floor-7-static-fire/static_fire.py"
 
 
 def load(rel: str, name: str):

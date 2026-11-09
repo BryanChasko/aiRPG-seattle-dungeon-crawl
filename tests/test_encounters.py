@@ -16,10 +16,10 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-BOOTH = "encounters/floor-1-commentary-booth/commentary_booth.py"
-SHUFFLE = "encounters/floor-3-concurrent-shuffle/concurrent_shuffle.py"
-PAPER = "encounters/floor-5-paper-trail/index_audit_report.py"
-FLOOD = "encounters/floor-7-context-flood/context_flood.py"
+BOOTH = "dungeon/encounters/floor-1-commentary-booth/commentary_booth.py"
+SHUFFLE = "dungeon/encounters/floor-3-concurrent-shuffle/concurrent_shuffle.py"
+PAPER = "dungeon/encounters/floor-5-paper-trail/index_audit_report.py"
+FLOOD = "dungeon/encounters/floor-7-context-flood/context_flood.py"
 
 
 def load(rel: str, name: str):
@@ -135,8 +135,8 @@ def test_paper_trail_passages_cite_their_page(paper):
 
 
 def test_paper_trail_pdf_is_the_one_the_generator_writes():
-    gen = load("encounters/floor-5-paper-trail/make_audit_report.py", "encounter_paper_generator")
-    assert gen.build() == (ROOT / "encounters/floor-5-paper-trail/audit-report.pdf").read_bytes()
+    gen = load("dungeon/encounters/floor-5-paper-trail/make_audit_report.py", "encounter_paper_generator")
+    assert gen.build() == (ROOT / "dungeon/encounters/floor-5-paper-trail/audit-report.pdf").read_bytes()
 
 
 def test_paper_trail_targets_the_rules_agents_collection(paper):
@@ -196,7 +196,7 @@ def test_context_flood_turn_3_is_the_developer_advocate_swarm(flood):
 
 # ---------- The boss battles and their shared dance floor --------------------
 
-BOSSES = "encounters"
+BOSSES = "dungeon/encounters"
 
 
 @pytest.fixture

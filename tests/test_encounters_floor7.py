@@ -20,9 +20,9 @@ from botocore.exceptions import ClientError
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-GRUDGES = "encounters/floor-7-system-holds-grudges/system_holds_grudges.py"
-VERSUS = "encounters/floor-7-keyword-versus-vector/keyword_versus_vector.py"
-SAVES = "encounters/floor-7-save-points/save_points.py"
+GRUDGES = "dungeon/encounters/floor-7-system-holds-grudges/system_holds_grudges.py"
+VERSUS = "dungeon/encounters/floor-7-keyword-versus-vector/keyword_versus_vector.py"
+SAVES = "dungeon/encounters/floor-7-save-points/save_points.py"
 
 
 def load(rel: str, name: str):

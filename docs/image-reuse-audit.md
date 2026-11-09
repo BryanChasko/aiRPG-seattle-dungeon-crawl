@@ -28,7 +28,7 @@ The cast has range; the pages are not using it.
 - Rotate by beat, like a comic: the same character gets a different crop for a different kind
   of line. Anything shown more than about 20 times needs variants.
 - Close shots are panels, not new renders: crop them from art that already passed the model
-  sheet (`tools/panel_crops.py`), so variety can never drift off-model.
+  sheet (`art/panel_crops.py`), so variety can never drift off-model.
 
 ## New assets (2026-11-09)
 
@@ -79,7 +79,7 @@ Snippet pattern (workshop root depth; add one more `../` from `workshop/encounte
 3. Shelly and Chonks beats currently ride along in Cordula or System lines; give them the
    siphon and face icons wherever the text names them acting.
 4. When a floor or encounter has a signature physical beat, prefer a panel over a third
-   full plate; add crops to `tools/panel_crops.py` JOBS instead of rendering new art.
+   full plate; add crops to `art/panel_crops.py` JOBS instead of rendering new art.
 
 ## Method
 

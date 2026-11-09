@@ -17,9 +17,9 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-TURNSTILE = "encounters/floor-4-locks-turnstile/locks_turnstile.py"
-TIDE = "encounters/floor-4-locks-turnstile/tide_server.py"
-PORTAL = "encounters/floor-4-trace-the-portal/trace_the_portal.py"
+TURNSTILE = "dungeon/encounters/floor-4-locks-turnstile/locks_turnstile.py"
+TIDE = "dungeon/encounters/floor-4-locks-turnstile/tide_server.py"
+PORTAL = "dungeon/encounters/floor-4-trace-the-portal/trace_the_portal.py"
 
 
 def load(rel: str, name: str):

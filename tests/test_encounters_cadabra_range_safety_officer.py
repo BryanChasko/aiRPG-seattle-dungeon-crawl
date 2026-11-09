@@ -20,7 +20,7 @@ from strands.types.tools import ToolContext
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-RSO = "encounters/floor-8-range-safety-officer/range_safety_officer.py"
+RSO = "dungeon/encounters/floor-8-range-safety-officer/range_safety_officer.py"
 
 DRONE = "stray delivery drone"
 RUN = "party run"
@@ -77,7 +77,7 @@ def director_for(rso, *targets: str):
 
 @pytest.fixture(autouse=True)
 def drill_on_path():
-    folder = str(ROOT / "encounters/floor-8-range-safety-officer")
+    folder = str(ROOT / "dungeon/encounters/floor-8-range-safety-officer")
     sys.path.insert(0, folder)
     yield
     sys.path.remove(folder)

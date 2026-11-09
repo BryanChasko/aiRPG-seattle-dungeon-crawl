@@ -1,7 +1,7 @@
 # Visual Design System: Seattle Strands Dungeon Crawl
 
 Source of truth for art direction, image formats, and prompt language.
-Pipeline: [tools/airpg_render.py](../tools/airpg_render.py)
+Pipeline: [art/airpg_render.py](../art/airpg_render.py)
 (`--check` verifies, `--batch <manifest>` renders). The key comes from `META_IMAGE_API_KEY`
 or `~/.config/muse/auth.json`, never from the repo; request JSONs keep `"auth": "REDACTED"`.
 Raw renders, run logs, manifests and the spend ledger stay out of the public repo, in
@@ -49,7 +49,7 @@ ben-day dot grid (icons: center-crop 12% margin + resize instead).
 ## 3. Prompt style blocks
 
 The blocks, endings and character model sheet live in one file,
-[`images/plans/style.json`](../images/plans/style.json). `tools/airpg_render.py --plan`
+[`images/plans/style.json`](../art/images/plans/style.json). `art/airpg_render.py --plan`
 builds every request from it, so no request is written by hand: a plan in
 `images/plans/` names each render's class, output and subject, and `{GEODUCK}`-style
 tokens pull in the model sheet. The blocks below are the same text, for reading.

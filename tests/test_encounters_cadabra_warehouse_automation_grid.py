@@ -18,8 +18,8 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-GRID = "encounters/floor-4-warehouse-automation-grid/warehouse_grid.py"
-SERVER = "encounters/floor-4-warehouse-automation-grid/grid_server.py"
+GRID = "dungeon/encounters/floor-4-warehouse-automation-grid/warehouse_grid.py"
+SERVER = "dungeon/encounters/floor-4-warehouse-automation-grid/grid_server.py"
 
 READ_ONLY = {"list_belts", "belt_status", "scan_parcel"}
 MOVERS = {"set_belt_speed", "route_parcel", "arm_pick", "arm_sweep_aisle"}

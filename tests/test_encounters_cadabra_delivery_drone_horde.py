@@ -17,7 +17,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-HORDE = "encounters/floor-5-delivery-drone-horde/delivery_drone_horde.py"
+HORDE = "dungeon/encounters/floor-5-delivery-drone-horde/delivery_drone_horde.py"
 
 
 def load(rel: str, name: str):

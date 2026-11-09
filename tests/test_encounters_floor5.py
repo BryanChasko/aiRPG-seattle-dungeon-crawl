@@ -29,9 +29,9 @@ from a2a.types import (
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-CALL = "encounters/floor-5-barnaby-takes-the-call/barnaby_takes_the_call.py"
-TYPED = "encounters/floor-5-read-the-room-typed/read_the_room_typed.py"
-PAPERWORK = "encounters/floor-5-subcontract-the-paperwork/subcontract_the_paperwork.py"
+CALL = "dungeon/encounters/floor-5-barnaby-takes-the-call/barnaby_takes_the_call.py"
+TYPED = "dungeon/encounters/floor-5-read-the-room-typed/read_the_room_typed.py"
+PAPERWORK = "dungeon/encounters/floor-5-subcontract-the-paperwork/subcontract_the_paperwork.py"
 
 
 def load(rel: str, name: str):

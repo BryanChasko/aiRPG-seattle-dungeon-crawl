@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-A2A = ROOT / "5_a2a_integration"
+A2A = ROOT / "dungeon" / "5_a2a_integration"
 
 for p in (
     A2A / "agents" / "character_agent",

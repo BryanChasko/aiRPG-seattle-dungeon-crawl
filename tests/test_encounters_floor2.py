@@ -19,11 +19,11 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-TIDE = "encounters/floor-2-tide-table/tide_table.py"
-POOL = "encounters/floor-2-sandbox-tide-pool/tide_pool.py"
-GATE = "encounters/floor-2-policy-gatekeeper/policy_gatekeeper.py"
-POLICY = "encounters/floor-2-policy-gatekeeper/gatekeeper.cedar"
-ASK = "encounters/floor-2-ask-the-player/ask_the_player.py"
+TIDE = "dungeon/encounters/floor-2-tide-table/tide_table.py"
+POOL = "dungeon/encounters/floor-2-sandbox-tide-pool/tide_pool.py"
+GATE = "dungeon/encounters/floor-2-policy-gatekeeper/policy_gatekeeper.py"
+POLICY = "dungeon/encounters/floor-2-policy-gatekeeper/gatekeeper.cedar"
+ASK = "dungeon/encounters/floor-2-ask-the-player/ask_the_player.py"
 
 
 def load(rel: str, name: str):

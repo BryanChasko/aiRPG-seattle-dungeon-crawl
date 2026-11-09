@@ -18,7 +18,7 @@ from strands.hooks.events import BeforeModelCallEvent, BeforeToolCallEvent
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-LCC = "encounters/floor-6-launch-commit-criteria/launch_commit_criteria.py"
+LCC = "dungeon/encounters/floor-6-launch-commit-criteria/launch_commit_criteria.py"
 
 
 def load(rel: str, name: str):

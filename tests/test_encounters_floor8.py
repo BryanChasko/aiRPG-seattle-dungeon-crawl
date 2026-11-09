@@ -19,14 +19,14 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 NOVA = "us.amazon.nova-2-lite-v1:0"
-BOOTH = "encounters/floor-8-broadcast-booth/broadcast_booth.py"
-HOUSE = "encounters/floor-8-house-rules-guardrails/house_rules.py"
-GUARDRAIL_JSON = ROOT / "encounters/floor-8-house-rules-guardrails/house-rules-guardrail.json"
-SONG = "encounters/floor-8-mid-song-save/mid_song_save.py"
-FERRY = "encounters/floor-8-ferry-manifest/ferry_manifest.py"
-FERRY_TOOL = "encounters/floor-8-ferry-manifest/rules_tool.py"
-FERRY_MANIFEST = ROOT / "encounters/floor-8-ferry-manifest/rules-agent-manifest.json"
-LEDGER = "encounters/floor-8-grudge-ledger/grudge_ledger.py"
+BOOTH = "dungeon/encounters/floor-8-broadcast-booth/broadcast_booth.py"
+HOUSE = "dungeon/encounters/floor-8-house-rules-guardrails/house_rules.py"
+GUARDRAIL_JSON = ROOT / "dungeon/encounters/floor-8-house-rules-guardrails/house-rules-guardrail.json"
+SONG = "dungeon/encounters/floor-8-mid-song-save/mid_song_save.py"
+FERRY = "dungeon/encounters/floor-8-ferry-manifest/ferry_manifest.py"
+FERRY_TOOL = "dungeon/encounters/floor-8-ferry-manifest/rules_tool.py"
+FERRY_MANIFEST = ROOT / "dungeon/encounters/floor-8-ferry-manifest/rules-agent-manifest.json"
+LEDGER = "dungeon/encounters/floor-8-grudge-ledger/grudge_ledger.py"
 
 
 def load(rel: str, name: str):
@@ -64,11 +64,11 @@ def scripted_model(monkeypatch):
     """Replace the Bedrock model stream: the first call asks for dance_round, the call after the tool result answers."""
     from strands.models.bedrock import BedrockModel
 
-    sys.path.insert(0, str(ROOT / "encounters"))
+    sys.path.insert(0, str(ROOT / "dungeon" / "encounters"))
     try:
         import dance_floor
     finally:
-        sys.path.remove(str(ROOT / "encounters"))
+        sys.path.remove(str(ROOT / "dungeon" / "encounters"))
     async def stream(self, messages, tool_specs=None, system_prompt=None, **kwargs):
         has_result = any("toolResult" in block for block in messages[-1]["content"])
         yield {"messageStart": {"role": "assistant"}}
