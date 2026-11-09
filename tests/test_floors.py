@@ -195,7 +195,7 @@ def test_floor5_handbook_chunks_keep_their_section():
     mod = load("dungeon/5_a2a_integration/utils/create_knowledge_base.py", "floor5_kb")
     chunks = mod.extract_chunks(mod.HANDBOOK_DIR)
     sections = {c["metadata"]["section"] for c in chunks}
-    assert len({p.stem for p in mod.HANDBOOK_DIR.glob("*.md")}) == 11
+    assert len({p.stem for p in mod.HANDBOOK_DIR.glob("*.md")}) == 12
     assert {"Dance-Offs", "The Final Beat", "Species"} <= sections
     assert all(len(c["text"]) <= mod.CHUNK_SIZE for c in chunks)
     assert len({c["id"] for c in chunks}) == len(chunks)
