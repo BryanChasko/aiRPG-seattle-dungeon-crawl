@@ -1,0 +1,22 @@
+{
+ "file": "wordmark-1200x240.webp",
+ "size": [
+  1200,
+  240
+ ],
+ "format": "webp lossy q90",
+ "source": {
+  "composed_by": "tools/compose_readme_art.py",
+  "fonts": [
+   "MedievalSharp (OFL)",
+   "Cinzel Bold (OFL)",
+   "DejaVu Sans Mono Bold"
+  ]
+ },
+ "transforms": [
+  "pillow type composition: MedievalSharp title with violet glow, Cinzel tracked subtitle in teal",
+  "ben-day 10px r2 alpha 10",
+  "obsidian #0B0E14 panel so it reads on light and dark README themes"
+ ],
+ "sha256": "0e52266adab80912b578d00eb29ef0f938a2534c5329cc6b6e5012c2cb56bad8"
+}

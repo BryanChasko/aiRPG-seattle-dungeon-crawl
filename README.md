@@ -1,11 +1,11 @@
 # aiRPG Seattle Dungeon Crawl
 
-<!-- art slot: title wordmark, 1200x240, art team -->
-
-<!-- art slot: hero, 1680x720, art team: Cordula in black on black on grey beside kraken-scale Barnaby mid-dance-off on the folded Pier 59 floor; until it lands, the Gertie wreck stands in -->
+<p align="center">
+<img src="images/wordmark-1200x240.webp" alt="aiRPG: Seattle Dungeon Crawl" width="720">
+</p>
 
 <p align="center">
-<a href="workshop/floor-0.md"><img src="images/floors/gertie-wreck-den-1200x675.webp" alt="The sunken wreck of the 1940 Tacoma Narrows Bridge on the floor of the Narrows: twisted girders and cables draped in white anemones, rockfish swimming through the steel, lamps glowing among the beams, violet light, and one huge red octopus arm curling out of a den" width="100%"></a>
+<a href="workshop/floor-0.md"><img src="images/banner-1680x720.webp" alt="Cordula in black on black on grey dancing with her paddle raised beside kraken-scale Barnaby, a wild Giant Pacific Octopus dwarfing her, his dark skin flashing crimson and white bands as he dances, on the flooded folded Pier 59 floor with the rainy Seattle skyline behind" width="100%"></a>
 </p>
 
 <p align="center"><em>Something lives in the wreck of Galloping Gertie. The divers call it the King Octopus. Its name is Barnaby.</em></p>
@@ -28,7 +28,7 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 <table>
 <tr>
-<td align="center" width="25%"><a href="workshop/world/cast.md#cordula-vance"><img src="images/cards/cast-cordula-640x640.webp" alt="Cordula Vance grinning in an orange and black drysuit and float vest with a clear water tank on her back, holding a black touring paddle, inside a violet card frame" width="160"></a><br><strong>Cordula Vance</strong><br>commits every change</td>
+<td align="center" width="25%"><a href="workshop/world/cast.md#cordula-vance"><img src="images/cards/cast-cordula-640x640.webp" alt="Cordula Vance grinning in a matte black drysuit, charcoal float vest and grey webbing, karambits sheathed on her calves, holding a black touring paddle upright, inside a violet card frame" width="160"></a><br><strong>Cordula Vance</strong><br>commits every change</td>
 <td align="center" width="25%"><a href="workshop/world/cast.md#barnaby"><img src="images/cards/cast-barnaby-legend-640x640.webp" alt="Barnaby, a huge scarred Giant Pacific Octopus with barnacle-worn arms and a brass collar, spread across the girders of a sunken bridge" width="160"></a><br><strong>Barnaby</strong><br>eight arms, four stations at once</td>
 <td align="center" width="25%"><a href="workshop/world/cast.md#shelly"><img src="images/cards/cast-shelly-anchor-640x640.webp" alt="Shelly, a geoduck: a small pale shell dug into dark mud with a long, thick, wrinkled siphon curling up out of it, a carabiner and rope clipped to the shell" width="160"></a><br><strong>Shelly</strong><br>geoduck anchor</td>
 <td align="center" width="25%"><a href="workshop/world/cast.md#chonks"><img src="images/cards/cast-chonks-640x640.webp" alt="Chonks, a round green lumpsucker covered in bumpy tubercles with big black eyes and a suction disc" width="160"></a><br><strong>Chonks</strong><br>lumpsucker tank</td>
@@ -62,7 +62,7 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 </tr>
 <tr>
 <td align="center" width="25%"><a href="workshop/floor-8-4.md"><img src="images/floors/floor-8-4-1200x675.webp" alt="A broadcast control booth high above the Tacoma Narrows at night, glowing monitors and a microphone, the suspension bridge through the windows" width="240"></a><br><strong>8.4 The Narrator in the Cloud</strong><br>above the Narrows<br><code>A2A on Runtime</code></td>
-<td align="center" width="25%"><!-- art slot: Floor 9 plate, 1200x675, art team: ALMOCO's three smoldering stacks and mantis cranes over teal runoff --><br><strong>9. ALMOCO</strong><br>the Corrosion Cathedral<br><em>optional, coming soon</em></td>
+<td align="center" width="25%"><img src="images/floors/floor-9-1200x675.webp" alt="ALMOCO, the Corrosion Cathedral: three smoldering smelter stacks and mantis-like cranes over a black shoreline, fog, and teal runoff in the ditch water" width="240"><br><strong>9. ALMOCO</strong><br>the Corrosion Cathedral<br><em>optional, coming soon</em></td>
 <td align="center" width="25%"><a href="workshop/cleanup.md"><img src="images/floors/exit-1200x675.webp" alt="A grey dawn on the beach at Alki, driftwood on the sand, the Seattle skyline and the Space Needle across Elliott Bay" width="240"></a><br><strong>The Exit</strong><br>Alki at sunrise<br><code>cleanup</code></td>
 <td align="center" width="25%"></td>
 </tr>
@@ -70,7 +70,9 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 ---
 
-<!-- art slot: HUD strip with animated groove-bar, 1200x120, art team -->
+<p align="center">
+<picture><source srcset="images/hud-strip-1200x120-still.webp" media="(prefers-reduced-motion: reduce)"><img src="images/hud-strip-1200x120.webp" alt="The HUD strip: a fourteen-segment Groove bar with one hot segment travelling on the beat, six Mana pips, and a d20 showing 20" width="720"></picture>
+</p>
 
 <p align="center">
 <img src="assets/hud/groove-bar.svg" alt="" width="120">
@@ -90,13 +92,11 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 ## Bosses and Sponsors
 
-<!-- art slot: boss row at 96px, art team -->
-
 <p align="center">
-<img src="images/cards/boss-monty-640x640.webp" alt="" width="96">
-<img src="images/cards/boss-earnings-call-640x640.webp" alt="" width="96">
-<img src="images/cards/boss-regional-director-640x640.webp" alt="" width="96">
-<img src="images/cards/boss-the-keynote-640x640.webp" alt="" width="96">
+<img src="images/cards/boss-monty-640x640.webp" alt="Monty the python, a boss opponent" width="96">
+<img src="images/cards/boss-earnings-call-640x640.webp" alt="The Quarterly Earnings Call, a boss opponent" width="96">
+<img src="images/cards/boss-regional-director-640x640.webp" alt="The Regional Director, a boss opponent" width="96">
+<img src="images/cards/boss-the-keynote-640x640.webp" alt="The Keynote, a boss opponent" width="96">
 </p>
 
 <p align="center"><em>Monty the python, the Quarterly Earnings Call, the Regional Director, the Keynote. Nonlethal. People at work, joked about for their jobs.</em></p>
