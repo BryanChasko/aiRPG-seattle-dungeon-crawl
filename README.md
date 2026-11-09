@@ -1,20 +1,18 @@
-# aiRPG Seattle Dungeon Crawl
+# Seattle Strands Dungeon Crawl: A Visual Lit aiRPG Workshop
 
 <p align="center">
-<img src="images/wordmark-1200x240.webp" alt="aiRPG: Seattle Dungeon Crawl" width="720">
+<img src="images/wordmark-1200x240.webp" alt="Wordmark: aiRPG, Seattle Dungeon Crawl" width="720">
 </p>
 
-<p align="center">
-<a href="workshop/floor-0.md"><img src="images/banner-1680x720.webp" alt="Cordula in black on black on grey dancing with her paddle raised beside kraken-scale Barnaby, a wild Giant Pacific Octopus dwarfing her, his dark skin flashing crimson and white bands as he dances, on the flooded folded Pier 59 floor with the rainy Seattle skyline behind" width="100%"></a>
-</p>
-
-<p align="center"><em>Something lives in the wreck of Galloping Gertie. The divers call it the King Octopus. Its name is Barnaby.</em></p>
-
-Rebuild the System AI of a LitRPG dungeon crawl under Seattle. Learn the Strands Agents SDK one floor at a time.
+<p align="center"><em>A Visual Lit aiRPG Workshop: a LitRPG you can see, run by one System AI, built one floor at a time with the Strands Agents SDK on Amazon Nova 2 Lite. Conflict is a dance-off. Nobody is hurt.</em></p>
 
 [Enter the dungeon: Floor 0](workshop/floor-0.md)
 
 ---
+
+## The Fall
+
+At 0551 every phone on the waterfront lit up with the same blank violet box. Then Pier 59 did not crash: it folded, the way a map folds, down and in, and the Sound came in after it. The flood took the System AI apart. Its voice, its dice, its rules and its memory are scattered across the floors under Seattle, and it can still push announcements through the broadcast relay, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
 
 <img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM NOTIFICATION**
 
@@ -24,95 +22,70 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 ---
 
-<!-- art slot: party row with kraken-scale Barnaby beside Cordula, 4x 160x160, art team -->
+## A Sighting in the Wreck
 
-<table>
-<tr>
-<td align="center" width="25%"><a href="workshop/world/cast.md#cordula-vance"><img src="images/cards/cast-cordula-640x640.webp" alt="Cordula Vance grinning in a matte black drysuit, charcoal float vest and grey webbing, karambits sheathed on her calves, holding a black touring paddle upright, inside a violet card frame" width="160"></a><br><strong>Cordula Vance</strong><br>commits every change</td>
-<td align="center" width="25%"><a href="workshop/world/cast.md#barnaby"><img src="images/cards/cast-barnaby-legend-640x640.webp" alt="Barnaby, a huge scarred Giant Pacific Octopus with barnacle-worn arms and a brass collar, spread across the girders of a sunken bridge" width="160"></a><br><strong>Barnaby</strong><br>eight arms, four stations at once</td>
-<td align="center" width="25%"><a href="workshop/world/cast.md#shelly"><img src="images/cards/cast-shelly-anchor-640x640.webp" alt="Shelly, a geoduck: a small pale shell dug into dark mud with a long, thick, wrinkled siphon curling up out of it, a carabiner and rope clipped to the shell" width="160"></a><br><strong>Shelly</strong><br>geoduck anchor</td>
-<td align="center" width="25%"><a href="workshop/world/cast.md#chonks"><img src="images/cards/cast-chonks-640x640.webp" alt="Chonks, a round green lumpsucker covered in bumpy tubercles with big black eyes and a suction disc" width="160"></a><br><strong>Chonks</strong><br>lumpsucker tank</td>
-</tr>
-</table>
+<p align="center">
+<img src="images/floors/gertie-wreck-den-1200x675.webp" alt="The sunken Galloping Gertie wreck on the floor of the Tacoma Narrows: anemone-covered girders turned into a reef, a dark den mouth under a fallen girder, and the tip of one enormous red octopus arm curling out" width="720">
+</p>
+
+<p align="center"><em>Something lives in the wreck of Galloping Gertie. The divers call it the King Octopus. Its name is Barnaby.</em></p>
+
+That is a sighting, not a meeting. One arm out of a den under a fallen girder is all the cover shows. The rest of Barnaby is earned in the dungeon.
+
+---
+
+## Your Lead
+
+<p align="center">
+<a href="workshop/world/cast.md#cordula-core-vance"><img src="images/cards/cast-cordula-640x640.webp" alt="Cordula Vance grinning in a matte black drysuit, charcoal float vest and grey webbing, karambits sheathed on her calves, holding a black touring paddle upright, inside a violet card frame" width="320"></a>
+</p>
+
+<p align="center"><strong>Cordula Vance</strong> -- commits every change</p>
+
+Cordula was on the water at 0551 and went toward the fold instead of away from it. She holds the terminal and keeps the log; the steps on every floor are what she types next. Two companions join her on later floors. The cover does not name them.
+
+---
+
+## What You Build
+
+You rebuild the System AI of a LitRPG dungeon crawl under Seattle. You start with one agent on a terminal and finish with a production multi-agent System AI:
+
+- One agent that answers, then tools it can call, first vended, then handcrafted.
+- A dice service behind MCP, then a party of agents talking over A2A.
+- A web arena where a reader plays the crawl against the System you built.
+- A production deployment on AgentCore: dice, character and rules services with memory and a knowledge base, under one orchestrating System AI.
+
+Every agent on every floor runs on Amazon Nova 2 Lite. Each floor rebuilds one more subsystem, and the full design map is in [The System](workshop/world/the-system.md).
 
 ---
 
 ## The Descent
 
-<!-- art slot: floor map grid with labeled plates, 4 columns at 240px each, art team -->
+Places and concepts only. The full map, with story and plate art for every floor, is the [Dungeon Map](workshop/README.md#the-dungeon-map).
 
-<table>
-<tr>
-<td align="center" width="25%"><a href="workshop/floor-0.md"><img src="images/floors/floor-0-1200x675.webp" alt="A flooded concrete stairwell descending under the collapsed waterfront, rain through a broken skylight, cracked aquarium glass on the landings" width="240"></a><br><strong>0. The Stairwell</strong><br>under Pier 59<br><code>setup</code></td>
-<td align="center" width="25%"><a href="workshop/floor-1.md"><img src="images/floors/floor-1-1200x675.webp" alt="The shattered tanks of an aquarium pavilion folded into tide pools, barnacled pier pilings and anemones" width="240"></a><br><strong>1. Agent Summoning</strong><br>the Pier 59 Collapse<br><code>Agent()</code></td>
-<td align="center" width="25%"><a href="workshop/floor-2.md"><img src="images/floors/floor-2-1200x675.webp" alt="A shallow underwater meadow of ribbon-like eelgrass over pale sand, sunlight filtering down" width="240"></a><br><strong>2. The Vending Machines</strong><br>the Eelgrass Nursery<br><code>vended tools</code></td>
-<td align="center" width="25%"><a href="workshop/floor-3.md"><img src="images/floors/floor-3-1200x675.webp" alt="A towering underwater forest of bull kelp rising from black rocks to floating bulbs" width="240"></a><br><strong>3. The Crafting Table</strong><br>the Bull Kelp Cathedral<br><code>@tool</code></td>
-</tr>
-<tr>
-<td align="center" width="25%"><a href="workshop/floor-4.md"><img src="images/floors/floor-4-1200x675.webp" alt="The Ballard Locks flooded, the two lock chambers glowing violet like portal gates, floating homes on the canal" width="240"></a><br><strong>4. The Portal Room</strong><br>the Ship Canal<br><code>MCP</code></td>
-<td align="center" width="25%"><a href="workshop/floor-5.md"><img src="images/floors/floor-5-1200x675.webp" alt="A salt marsh at low tide where a river meets the Sound, red pickleweed and tall sedge" width="240"></a><br><strong>5. Party Formation</strong><br>the Estuary<br><code>A2A</code></td>
-<td align="center" width="25%"><a href="workshop/floor-6.md"><img src="images/floors/floor-6-1200x675.webp" alt="The Seattle Underground beneath Pioneer Square turned into a dance floor, old brick arches and glowing purple sidewalk prisms" width="240"></a><br><strong>6. The Arena</strong><br>the Underground<br><code>web</code></td>
-<td align="center" width="25%"><a href="workshop/floor-7.md"><img src="images/floors/floor-7-1200x675.webp" alt="A steep shoreline cliff above the tide, madrone trees with peeling red bark and wind-bent shore pines" width="240"></a><br><strong>7. The Armory</strong><br>the Bluffs<br><code>harness</code></td>
-</tr>
-<tr>
-<td align="center" width="25%"><a href="workshop/floor-8.md"><img src="images/floors/floor-8-1200x675.webp" alt="Glass office towers across a dark Lake Washington with red laser-grid light, a suspension bridge in the distance" width="240"></a><br><strong>8. Production</strong><br>Bellevue and the Narrows<br><code>AgentCore</code></td>
-<td align="center" width="25%"><a href="workshop/floor-8-1.md"><img src="images/floors/floor-8-1-1200x675.webp" alt="A brass and glass dice tower on a floating bridge deck at night, glowing dice tumbling inside" width="240"></a><br><strong>8.1 The Dice Server</strong><br>the floating bridge<br><code>MCP on Runtime</code></td>
-<td align="center" width="25%"><a href="workshop/floor-8-2.md"><img src="images/floors/floor-8-2-1200x675.webp" alt="An empty ferry terminal at night with a long wooden registration counter, a stamp and stacks of character sheets" width="240"></a><br><strong>8.2 The Character Agent</strong><br>the ferry terminal<br><code>Memory</code></td>
-<td align="center" width="25%"><a href="workshop/floor-8-3.md"><img src="images/floors/floor-8-3-1200x675.webp" alt="A sunken library of waterproof binders and scrolls lit teal, kelp drifting between the shelves" width="240"></a><br><strong>8.3 The Rules Agent</strong><br>the sunken library<br><code>knowledge base</code></td>
-</tr>
-<tr>
-<td align="center" width="25%"><a href="workshop/floor-8-4.md"><img src="images/floors/floor-8-4-1200x675.webp" alt="A broadcast control booth high above the Tacoma Narrows at night, glowing monitors and a microphone, the suspension bridge through the windows" width="240"></a><br><strong>8.4 The Narrator in the Cloud</strong><br>above the Narrows<br><code>A2A on Runtime</code></td>
-<td align="center" width="25%"><img src="images/floors/floor-9-1200x675.webp" alt="ALMOCO, the Corrosion Cathedral: three smoldering smelter stacks and mantis-like cranes over a black shoreline, fog, and teal runoff in the ditch water" width="240"><br><strong>9. ALMOCO</strong><br>the Corrosion Cathedral<br><em>optional, coming soon</em></td>
-<td align="center" width="25%"><a href="workshop/cleanup.md"><img src="images/floors/exit-1200x675.webp" alt="A grey dawn on the beach at Alki, driftwood on the sand, the Seattle skyline and the Space Needle across Elliott Bay" width="240"></a><br><strong>The Exit</strong><br>Alki at sunrise<br><code>cleanup</code></td>
-<td align="center" width="25%"></td>
-</tr>
-</table>
-
----
-
-<p align="center">
-<picture><source srcset="images/hud-strip-1200x120-still.webp" media="(prefers-reduced-motion: reduce)"><img src="images/hud-strip-1200x120.webp" alt="The HUD strip: a fourteen-segment Groove bar with one hot segment travelling on the beat, six Mana pips, and a d20 showing 20" width="720"></picture>
-</p>
-
-<p align="center">
-<img src="assets/hud/groove-bar.svg" alt="" width="120">
-<img src="assets/hud/hype-tick.svg" alt="" width="48">
-<img src="assets/hud/mana-pips.svg" alt="" width="96">
-<img src="assets/hud/d20.svg" alt="" width="48">
-<img src="assets/hud/move-choreography.svg" alt="" width="48">
-<img src="assets/hud/move-power.svg" alt="" width="48">
-<img src="assets/hud/move-presence.svg" alt="" width="48">
-<img src="assets/hud/move-footwork.svg" alt="" width="48">
-<img src="assets/hud/tide-clock.svg" alt="" width="96">
-</p>
-
-<p align="center"><em>The LitRPG chrome: Groove, Hype, Mana, the d20, Move Calls, the tide</em></p>
-
----
-
-## Bosses and Sponsors
-
-<p align="center">
-<img src="images/cards/boss-monty-640x640.webp" alt="Monty the python, a boss opponent" width="96">
-<img src="images/cards/boss-earnings-call-640x640.webp" alt="The Quarterly Earnings Call, a boss opponent" width="96">
-<img src="images/cards/boss-regional-director-640x640.webp" alt="The Regional Director, a boss opponent" width="96">
-<img src="images/cards/boss-the-keynote-640x640.webp" alt="The Keynote, a boss opponent" width="96">
-</p>
-
-<p align="center"><em>Monty the python, the Quarterly Earnings Call, the Regional Director, the Keynote. Nonlethal. People at work, joked about for their jobs.</em></p>
-
-<p align="center">
-<img src="images/icons/sponsor-bellevue-96x96.webp" alt="" width="32"> <strong>Bellevue Consortium</strong> -- Doors '94 OS, sponsors the opponents, quarter closes June 30<br>
-<img src="images/icons/sponsor-cadabra-96x96.webp" alt="" width="32"> <strong>Cadabra, Inc.</strong> -- delivery drones, rented obstacles, published Strands<br>
-<img src="images/icons/sponsor-benthic-96x96.webp" alt="" width="32"> <strong>Benthic Collective</strong> -- Ballard fishing and kombucha co-op, adores Barnaby<br>
-<img src="images/icons/sponsor-hydros9-96x96.webp" alt="" width="32"> <strong>Hydros-9 Aquatic Collective</strong> -- South Lake Union water-tech, ninth pivot, adores Barnaby
-</p>
+| Floor | Place | Concept |
+|---|---|---|
+| [0](workshop/floor-0.md) | The Stairwell, under Pier 59 | `setup` |
+| [1](workshop/floor-1.md) | The Pier 59 Collapse | `Agent()` |
+| [2](workshop/floor-2.md) | The Eelgrass Nursery | `vended tools` |
+| [3](workshop/floor-3.md) | The Bull Kelp Cathedral | `@tool` |
+| [4](workshop/floor-4.md) | The Ship Canal | `MCP` |
+| [5](workshop/floor-5.md) | The Estuary | `A2A` |
+| [6](workshop/floor-6.md) | The Underground | `web` |
+| [7](workshop/floor-7.md) | The Bluffs | `harness` (optional) |
+| [8](workshop/floor-8.md) | Bellevue and the Narrows | `AgentCore` |
+| [8.1](workshop/floor-8-1.md) | The floating bridge | `MCP on Runtime` |
+| [8.2](workshop/floor-8-2.md) | The ferry terminal | `Memory` |
+| [8.3](workshop/floor-8-3.md) | The sunken library | `knowledge base` |
+| [8.4](workshop/floor-8-4.md) | Above the Narrows | `A2A on Runtime` |
+| 9 | The Corrosion Cathedral | Optional, coming soon |
+| [The Exit](workshop/cleanup.md) | Alki at sunrise | `cleanup` |
 
 ---
 
 ## How You Learn
 
-Every Safe Room has a terminal on the broadcast relay. Cadabra published Strands as an open toolkit, so the Strands manual is there, and so is the open web's teaching. Read the docs, watch an explainer, read a working sample, then type it yourself.
+Every Safe Room has a terminal on the broadcast relay. The Strands manual is there, and so is the open web's teaching. Read the docs, watch an explainer, read a working sample, then type it yourself.
 
 **Free courses and samples**
 
@@ -122,7 +95,7 @@ Every Safe Room has a terminal on the broadcast relay. Cadabra published Strands
 
 ---
 
-<hr>
+Clone `main` to build; switch to `solution` when a TODO blocks progress. Details below.
 
 <details>
 <summary><strong>Requirements</strong></summary>
@@ -141,6 +114,10 @@ region: us-west-2
 - AWS credentials with permission to invoke Amazon Nova 2 Lite in us-west-2
 - Docker (the Sandbox Tide Pool encounter and the web build) and Node.js (Floor 6's web interface)
 - Floor 8 only: Node.js 20 or later and the [AgentCore CLI](https://github.com/aws/agentcore-cli)
+
+**What it costs**
+
+Floors bill for Amazon Nova 2 Lite calls: see [What a Turn Costs](workshop/floor-1.md#what-a-turn-costs). Floor 8 also leaves billable resources in your account until cleanup: see [What Floor 8 Costs](workshop/floor-8.md#what-floor-8-costs) and [The Exit](workshop/cleanup.md).
 
 **Preflight check**
 
@@ -193,14 +170,14 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.
 
 ---
 
-This crawl builds on Once Upon Agentic AI, the AWS sample workshop that first taught the Strands Agents SDK through a role-playing game. Every exercise of that workshop is still here; the [coverage page](workshop/coverage.md) maps them. The game-running agent the source workshop calls the Narrator is the System AI here.
+This crawl builds on Once Upon Agentic AI, the AWS sample workshop that first taught the Strands Agents SDK through a role-playing game. Every exercise of that workshop is still here; the [coverage page](workshop/coverage.md) maps them. The game-running agent the source workshop calls the Narrator is the System AI here: Narrator is that job's code name, and the System AI is the one speaker who runs the crawl.
 
----
-
-**The World**: [World guide](workshop/world/README.md) -- [The Story](workshop/world/story.md) -- [Timeline](workshop/world/timeline.md) -- [Cast](workshop/world/cast.md) -- [The System](workshop/world/the-system.md) -- [Seattle, Under the Sound](workshop/world/seattle.md) -- [Crawl Handbook](workshop/world/crawl-handbook/)
+**The World**: [World guide](workshop/world/README.md) -- [The Story](workshop/world/story.md) -- [Timeline](workshop/world/timeline.md) -- [The System](workshop/world/the-system.md) -- [Seattle, Under the Sound](workshop/world/seattle.md)
 
 **Stuck?**: [`study/ask_the_system.py`](study/README.md) is a study companion built with Strands. Ask it about any floor, TODO, error or Strands API, and it answers from this repository and the Strands API reference, with citations.
 
 ---
+
+[Enter the dungeon: Floor 0](workshop/floor-0.md)
 
 _The System AI is watching. Happy crawling, Crawler._

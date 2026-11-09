@@ -414,3 +414,8 @@ S3: `s3://bryanchasko.com/airpg-art/motion/ferry-token-loot-pop.webp`
 ```markdown
 <picture><source srcset="../../images/motion/ferry-token-loot-pop-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../images/motion/ferry-token-loot-pop.webp" alt="A Ferry Token popping in" width="240"></picture>
 ```
+
+## Cover backlog (hand notes, not generated)
+
+- Wordmark: `images/wordmark-1200x240.webp` still carries the old name baked in. Recompose with the title "Seattle Strands Dungeon Crawl" and the line "A Visual Lit aiRPG Workshop", then update the cover alt text in `README.md` to match the new image. Art team owns `images/` and the composing tool.
+- Cover tease: `images/floors/gertie-wreck-den-1200x675.webp` (wreck, den, one arm) now also serves as the `README.md` cover sighting. It is still listed above as ready to place on `workshop/cleanup.md`. Art team to confirm dual use, or render a dedicated cover fold-moment tease (Pier 59 folds at 0551, shadow, one arm or one eye only, no full body, no dance) and swap the cover.
