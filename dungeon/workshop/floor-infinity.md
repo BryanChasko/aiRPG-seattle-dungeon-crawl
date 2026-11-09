@@ -75,6 +75,6 @@ Check: `git status` shows only your own edits to tracked files. Check: a fresh c
 
 The machine is like new. The repo stays, reset to shipped state: generated files gone, your commits intact.
 
-> **CORDULA'S LOG, DAY 15, TUESDAY, JUNE 30, 0515, ALKI.** The terminal went dark last. I watched the prompt go out like a porch light. The octopus pretended not to watch. We left the beach clean.
+> **CORDULA'S LOG, DAY 15, MONDAY, JUNE 25, 0515, ALKI.** The terminal went dark last. I watched the prompt go out like a porch light. The octopus pretended not to watch. We left the beach clean.
 
 Back to [the Exit](cleanup.md), or up to [Floor 9](floor-9.md) for the fog-proofing that made this reset safe.

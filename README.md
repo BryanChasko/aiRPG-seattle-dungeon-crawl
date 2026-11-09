@@ -37,9 +37,9 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 ## The Meeting
 
-> <img src="art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 0547, PIER 59.**
+> <img src="art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, MONDAY, JUNE 11, 0547, PIER 59.**
 >
-> High tide was at 0556, so I was on the water by 0530: touring kayak, drysuit, float vest, the debris sweep the Soundkeepers run every week. Fog on Elliott Bay, gulls, a ferry horn out past the breakwater. Normal.
+> High tide was at 0356, so I was on the water by 0530: touring kayak, drysuit, float vest, the debris sweep the Soundkeepers run every week. Fog on Elliott Bay, gulls, a ferry horn out past the breakwater. Normal.
 >
 > I had seen his shadow before. Survey runs over the Gertie wreck at the Narrows, dawn sweeps under the downtown piers. Something too big to be an octopus, always just past visibility. August 12, 2025, slack before the ebb at the wreck. October 3, 2025, under Pier 57 on a dawn sweep. February 19, 2026, another survey pass at Gertie. Three logs, each marked unconfirmed. I never met him face to face until the fold.
 >

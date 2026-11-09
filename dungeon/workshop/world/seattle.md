@@ -2,7 +2,7 @@
 
 > <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Welcome to Seattle, Crawlers. The rain is real, the coffee is strong, and as of this morning the waterfront is a dungeon. Please keep your hands, arms and tentacles inside the floor at all times."
 
-The crawl opens on the Seattle waterfront at 0551 on Day 1, Wednesday, June 17, when the System AI folds the ground under Pier 59 into a dungeon that runs beneath Puget Sound, under the neighborhoods and out to Tacoma and Bellevue. This page is the setting guide: the places, the living things, the opponents, and how the game treats the cultures of the region.
+The crawl opens on the Seattle waterfront at 0551 on Day 1, Monday, June 11, when the System AI folds the ground under Pier 59 into a dungeon that runs beneath Puget Sound, under the neighborhoods and out to Tacoma and Bellevue. This page is the setting guide: the places, the living things, the opponents, and how the game treats the cultures of the region.
 
 ## Whose land this is
 

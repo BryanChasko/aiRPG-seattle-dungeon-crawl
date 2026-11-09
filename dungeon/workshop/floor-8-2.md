@@ -7,7 +7,7 @@ Files on this floor: [`8_agentcore_production/characteragent/character_agent.py`
 ![Floor 8.2: The Character Agent](../../art/images/floors/floor-8-2-1200x675.webp)
 
 <!-- cordula-log -->
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 12, SUNDAY, JUNE 28, FLOOR 8.2.** Brick two was the registration desk. A desk in the cloud has no drawer to keep papers in, so our sheets needed a home of their own. When the desk restarted and still knew my Constitution score, Barnaby made a sound through the collar I am going to call a laugh.
+> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 12, FRIDAY, JUNE 22, FLOOR 8.2.** Brick two was the registration desk. A desk in the cloud has no drawer to keep papers in, so our sheets needed a home of their own. When the desk restarted and still knew my Constitution score, Barnaby made a sound through the collar I am going to call a laugh.
 <!-- /cordula-log -->
 
 > <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SAFE ROOM READING:** [stop-ai-agents-losing-memory-sample-for-aws](https://github.com/elizabethfuentes12/stop-ai-agents-losing-memory-sample-for-aws) by Elizabeth Fuentes. "Memory is not bolted on beside the agent; it runs through the agent's own mechanisms."

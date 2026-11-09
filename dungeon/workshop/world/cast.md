@@ -190,7 +190,7 @@ Barnaby's five chromatophore states, left to right across his cards: calm (the b
 | Pronouns | he/him, as far as anyone can tell |
 | Role | subterranean anchor and portable cover |
 | Home before the crawl | the same square foot of sand under Elliott Bay since 1968, now the floor of the Eelgrass Nursery |
-| Joins | Day 2, Thursday, June 18, at the 1400 low water, on [Floor 2](../floor-2.md) |
+| Joins | Day 2, Tuesday, June 12, at the 1145 low water, on [Floor 2](../floor-2.md) |
 | Cares about | holding his spot, and later, holding the party's |
 | Likes | cold silt, the hum of ferry engines, being carried by Cordula, which he will not admit |
 | Dislikes | being moved, being dug up, the siphon poll, Barnaby's five-foot rule |
@@ -235,7 +235,7 @@ On Day 2 the flood scoured the flat down to his shell and left him lying on the 
 | Pronouns | he/him |
 | Role | projectile, buckler, distraction |
 | Home before the crawl | the holdfast his father guarded, in the kelp forest that became the Bull Kelp Cathedral |
-| Joins | Day 3, Friday, June 19, on [Floor 3](../floor-3.md) |
+| Joins | Day 3, Wednesday, June 13, on [Floor 3](../floor-3.md) |
 | Cares about | sticking to things, and being thrown |
 | Likes | Cordula's forearm guard, warm phone screens, slide clickers, a good throw, attention |
 | Dislikes | being wiped, being pulled off, dry air, Barnaby's comments |
@@ -275,7 +275,7 @@ On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the hold
 | Fact | Detail |
 |---|---|
 | What it is | ExalE, the one AI character: runs the crawl and narrates it |
-| Online | 0551 on Day 1, Wednesday, June 17, 2026. Built by Cadabra somewhere else, for dry-city migrations; Seattle is its first quarter in the water |
+| Online | 0551 on Day 1, Monday, June 11, 2029. Built by Cadabra somewhere else, for dry-city migrations; Seattle is its first quarter in the water |
 | Runs | the floors, the tides, the stairwells, the opponents it drops in, the Move Calls and every ruling, the dice, the rules, the memory of every Crawler, notifications, achievements, loot boxes, character sheets, sponsor messages and the throughput numbers |
 | Cares about | a complete quarter and the throughput SLA: every floor run, every rule applied the same way twice, every die fair, and the review board staying to the end |
 | Likes | drama, an exploit it did not see coming, Barnaby, who is throughput gold, stakeholder escalations, sponsor money, balance, order, a ruling that holds |
