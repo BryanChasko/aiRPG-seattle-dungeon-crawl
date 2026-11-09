@@ -5,23 +5,9 @@
 ![Floor 0: The Stairwell](../images/floors/floor-0-1200x675.webp)
 
 <!-- cordula-log -->
-## Before the Fall
+## After the Fold
 
-> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 0547, PIER 59.**
->
-> High tide was at 0556, so I was on the water by 0530: touring kayak, drysuit, float vest, the debris sweep the Soundkeepers run every week. Fog on Elliott Bay, gulls, a ferry horn out past the breakwater. Normal.
->
-> I had seen his shadow before. Survey runs over the Gertie wreck at the Narrows, dawn sweeps under the downtown piers. Something too big to be an octopus, always just past visibility. August 12, 2025, slack before the ebb at the wreck. October 3, 2025, under Pier 57 on a dawn sweep. February 19, 2026, another survey pass at Gertie. Three logs, each marked unconfirmed. I never met him face to face until the fold.
->
-> At 0551 every phone on the waterfront lit up with the same blank violet box. No text in it. Then the pier moved.
->
-> The pier did not crash. The pier folded, the way a map folds, down and in, and the Sound came in after it. The shadow was there, close this time, tangled in the collapsing intake screen: an octopus bigger than any on record, one eye on me.
->
-> I had about four seconds. I spent them going toward him instead of away, because nobody else was awake to cut him loose. I cut him free with one of my karambits; he wrapped two arms around me and the kayak and held us both clear of the debris as the fold carried us down. Each of us saved the other.
->
-> Then a voice came out of the water, loud enough to rattle my teeth.
-
-> <img src="../images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Contestant one: a woman with a boat. Contestant two..." A pause. "Contestant two is an octopus. Fine. Octopus, you get a collar."
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17.** The meeting is on the way in: [how Barnaby and I met](../README.md#the-meeting). The fold carried us down to the stairwell, the System AI collared him, and I named him. What follows is what we found at the bottom.
 
 > <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, CONTINUED.**
 >

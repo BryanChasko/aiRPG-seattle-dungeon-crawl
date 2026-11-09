@@ -6,8 +6,6 @@
 
 <p align="center"><em>A Visual Lit aiRPG Workshop: a LitRPG you can see, run by one System AI, built one floor at a time with the Strands Agents SDK on Amazon Nova 2 Lite. Conflict is a dance-off. Nobody is hurt.</em></p>
 
-[Enter the dungeon: Floor 0](workshop/floor-0.md)
-
 ---
 
 ## The Fall
@@ -22,7 +20,21 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 ---
 
-## A Sighting in the Wreck
+## The Meeting
+
+> <img src="images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA'S LOG, DAY 1, WEDNESDAY, JUNE 17, 0547, PIER 59.**
+>
+> High tide was at 0556, so I was on the water by 0530: touring kayak, drysuit, float vest, the debris sweep the Soundkeepers run every week. Fog on Elliott Bay, gulls, a ferry horn out past the breakwater. Normal.
+>
+> I had seen his shadow before. Survey runs over the Gertie wreck at the Narrows, dawn sweeps under the downtown piers. Something too big to be an octopus, always just past visibility. August 12, 2025, slack before the ebb at the wreck. October 3, 2025, under Pier 57 on a dawn sweep. February 19, 2026, another survey pass at Gertie. Three logs, each marked unconfirmed. I never met him face to face until the fold.
+>
+> At 0551 every phone on the waterfront lit up with the same blank violet box. No text in it. Then the pier moved.
+>
+> The pier did not crash. The pier folded, the way a map folds, down and in, and the Sound came in after it. The shadow was there, close this time, tangled in the collapsing intake screen: an octopus bigger than any on record, one eye on me.
+>
+> I had about four seconds. I spent them going toward him instead of away, because nobody else was awake to cut him loose. I cut him free with one of my karambits; he wrapped two arms around me and the kayak and held us both clear of the debris as the fold carried us down. Each of us saved the other.
+>
+> Then a voice came out of the water, loud enough to rattle my teeth.
 
 <p align="center">
 <img src="images/floors/gertie-wreck-den-1200x675.webp" alt="The sunken Galloping Gertie wreck on the floor of the Tacoma Narrows: anemone-covered girders turned into a reef, a dark den mouth under a fallen girder, and the tip of one enormous red octopus arm curling out" width="720">
@@ -30,7 +42,11 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 <p align="center"><em>Something lives in the wreck of Galloping Gertie. The divers call it the King Octopus. Its name is Barnaby.</em></p>
 
-That is a sighting, not a meeting. One arm out of a den under a fallen girder is all the cover shows. The rest of Barnaby is earned in the dungeon.
+> <img src="images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "GOOD MORNING, SEATTLE. Welcome to *Dungeon Crawl: Seattle*. I took water in transit and several of my systems are down. You will be fixing them. Contestant one: a woman with a boat. Contestant two..." A pause. "Contestant two is an octopus. Fine. Octopus, you get a collar."
+
+One arm out of a den is all the cover shows. The rest of Barnaby is earned in the dungeon.
+
+[Enter the dungeon: Floor 0](workshop/floor-0.md)
 
 ---
 
