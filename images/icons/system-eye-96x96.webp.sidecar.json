@@ -1,0 +1,39 @@
+{
+ "file": "system-eye-96x96.webp",
+ "bytes": 2022,
+ "format": "webp lossy q88",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "0288a80fa048ce5cb118da4772c68743ace651724554dcef359ada3a4b3d4c15",
+  "size": "1024x1024"
+ },
+ "sha256": "063e2cbdab4752c80770bf7c36ab761dce8917fc289fc4c49a5b0ec8829339b6",
+ "size": [
+  96,
+  96
+ ],
+ "source": {
+  "raw": "icon-system-eye.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-08/raw/icon-system-eye.png",
+  "raw_sha256": "fa419acacd3439d3a05dee8ce0406fcc1d0331b7997a11e8a24d6adaee35acaf",
+  "request": "images/src/icon-system-eye.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "13.0.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "center crop 12% margin",
+  "resize 96x96 lanczos",
+  "no dots, no vignette (UI glyph)"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

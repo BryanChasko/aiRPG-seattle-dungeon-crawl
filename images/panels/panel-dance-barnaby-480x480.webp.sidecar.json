@@ -1,0 +1,31 @@
+{
+ "file": "panel-dance-barnaby-480x480.webp",
+ "size": [
+  480,
+  480
+ ],
+ "format": "webp lossy q90",
+ "source": {
+  "image": "images/banner-1680x720.webp",
+  "image_sha256": "8e0ae5d3c65f57b7ac1f4023baa8bc883da041b91b23f192d3d65b401d72b835"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "rel",
+  "spec": "(0.48, 0.02, 0.84, 0.94)",
+  "box": [
+   806,
+   14,
+   1411,
+   676
+  ],
+  "expand": 1.0,
+  "confidence": null,
+  "note": "Barnaby's half: dance arms and chromatophore bands"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos"
+ ],
+ "sha256": "e905e0cee3648060f20832cd1b0d1d25a84c6497a4b13287cd0ce3f944a18561"
+}

@@ -1,0 +1,12 @@
+{
+ "run": "2026-11-09-batch-08",
+ "why": "Speaker-icon variety for the System AI glyph, which the reuse audit found 128 times: an eye close-up for watching/judging lines and a broadcast-ring variant for announcements, so rotation does not need a second System look.",
+ "renders": [
+  {"name": "icon-system-eye", "class": "icon", "out": "images/icons/system-eye-96x96.webp",
+   "subject": "a single watchful violet eye with a brass iris ring and a small broadcast tally light above it, extreme close-up filling the frame, calm and judging",
+   "place": {"page": "docs/image-reuse-audit.md", "where": "System AI speaker variant for watching and judging lines", "alt": ""}},
+  {"name": "icon-system-signal", "class": "icon", "out": "images/icons/system-signal-96x96.webp",
+   "subject": "concentric broadcast signal rings expanding from a glowing violet core in a weathered brass housing, seen straight on, announcement energy",
+   "place": {"page": "docs/image-reuse-audit.md", "where": "System AI speaker variant for announcements and notifications", "alt": ""}}
+ ]
+}

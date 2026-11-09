@@ -1,0 +1,32 @@
+{
+ "file": "speaker-cordula-drill-96x96.webp",
+ "size": [
+  96,
+  96
+ ],
+ "format": "webp lossy q88",
+ "source": {
+  "image": "images/cards/cast-cordula-drill-640x640.webp",
+  "image_sha256": "df7670e20dddd286f08b37c6bfdf6eebbda0d16d1ccc45e1eb24e5ca4d8b8be4"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "rel",
+  "spec": "(0.24, 0.0, 0.68, 0.42)",
+  "box": [
+   153,
+   0,
+   435,
+   268
+  ],
+  "expand": 1.0,
+  "confidence": null,
+  "note": "Cordula mid-dance with the paddle overhead, for action and drill lines"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos",
+  "no dots, no vignette (speaker headshot)"
+ ],
+ "sha256": "5533eb45f1e21697105772391b5d1b99eeafbe7307eddd2464345f7acd6d35a1"
+}

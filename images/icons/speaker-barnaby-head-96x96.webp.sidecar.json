@@ -1,0 +1,32 @@
+{
+ "file": "speaker-barnaby-head-96x96.webp",
+ "size": [
+  96,
+  96
+ ],
+ "format": "webp lossy q88",
+ "source": {
+  "image": "images/cards/cast-barnaby-640x640.webp",
+  "image_sha256": "8ac544f862d89cde8d48a901aa6b853532d248a3cc162fa50af1bd74785337c6"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "sam",
+  "spec": "octopus head",
+  "box": [
+   192,
+   98,
+   399,
+   255
+  ],
+  "expand": 1.25,
+  "confidence": 0.7655677795410156,
+  "note": "Barnaby default speaker headshot"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos",
+  "no dots, no vignette (speaker headshot)"
+ ],
+ "sha256": "e6a7f2134f652463c462b0c28646d4df804581d022c36daf8afdffbeefb254d1"
+}

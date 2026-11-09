@@ -1,0 +1,32 @@
+{
+ "file": "speaker-barnaby-eye-96x96.webp",
+ "size": [
+  96,
+  96
+ ],
+ "format": "webp lossy q88",
+ "source": {
+  "image": "images/cards/cast-barnaby-640x640.webp",
+  "image_sha256": "8ac544f862d89cde8d48a901aa6b853532d248a3cc162fa50af1bd74785337c6"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "sam",
+  "spec": "octopus eye",
+  "box": [
+   277,
+   161,
+   301,
+   190
+  ],
+  "expand": 2.2,
+  "confidence": 0.8400000333786011,
+  "note": "Barnaby's eye, for dry one-liners"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos",
+  "no dots, no vignette (speaker headshot)"
+ ],
+ "sha256": "00c89b493274a02e2f60167618c0536a016d1c34ae02053cd2e1188c8bba45b8"
+}
