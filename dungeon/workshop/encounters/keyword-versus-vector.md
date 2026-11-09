@@ -34,7 +34,7 @@ Success looks like this: the script prints five rounds, each with two ranks and 
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-7-keyword-versus-vector
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-7-keyword-versus-vector
 ```
 
 ## Step 1: Import the Strategy

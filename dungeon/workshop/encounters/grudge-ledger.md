@@ -30,7 +30,7 @@ Success check: `write` files three grudges and prints their S3 locations; a minu
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-8-grudge-ledger
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-8-grudge-ledger
 ```
 
 ## Build the Records Office

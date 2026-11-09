@@ -34,7 +34,7 @@ How you know it worked: the System AI announces a tempo, then each round prints 
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-5-read-the-room-typed
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-5-read-the-room-typed
 ```
 
 ## Step 1: Import the Decision Model

@@ -30,7 +30,7 @@ Check that it worked: campaign one ends with a ledger of Markdown files, one hea
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-7-system-holds-grudges
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-7-system-holds-grudges
 ```
 
 ## Step 1: Import the Pieces

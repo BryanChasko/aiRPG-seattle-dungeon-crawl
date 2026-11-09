@@ -32,7 +32,7 @@ Adapted from the plugins and skills sample in the Strands Agents Course ([`sampl
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-7-static-fire
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-7-static-fire
 ```
 
 Given code: the pad clock (`pad_clock`), the beach (`beach_scan`), the exclusion radius of 500 meters, the `range_log` list, two `Skill` objects (`HOLD_CALL` and `PAD_CALLOUT`), the range desk prompt and the `make_director` function. A `Skill` is a name, a description and instructions; nothing in it calls a model.

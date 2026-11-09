@@ -10,7 +10,7 @@
 
 ## The Fall
 
-At 0551 every phone on the waterfront lit up with the same blank violet box. Then Pier 59 did not crash: it folded, the way a map folds, down and in, and the Sound came in after it. The flood took the System AI apart. Its voice, its dice, its rules and its memory are scattered across the floors under Seattle, and it can still push status reports through the broadcast relay, but it cannot answer anyone, roll a fair die, quote a rule or remember who did what.
+At 0551 every phone on the waterfront lit up with the same blank violet box. Then Pier 59 did not crash: it folded, the way a map folds, down and in, and the Sound came in after it. The flood took the System AI apart. Its voice, its dice, its rules and its memory are scattered across the floors under Seattle. It can still push one-way status reports through the broadcast relay, but it cannot hear you back, roll a fair die, quote a rule or remember who did what.
 
 <img src="art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **SYSTEM NOTIFICATION**
 

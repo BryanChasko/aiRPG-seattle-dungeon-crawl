@@ -32,7 +32,7 @@ Success looks like this: the first knock, for `ferry-wifi`, comes back as an err
 Change to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-4-locks-turnstile
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-4-locks-turnstile
 ```
 
 ## Step 1: Import the Router Factory

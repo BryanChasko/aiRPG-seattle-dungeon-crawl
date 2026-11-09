@@ -44,7 +44,7 @@ Success check: the call prints its rounds in agenda order, and it stops at the f
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-8-quarterly-earnings-call
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-8-quarterly-earnings-call
 ```
 
 ## Step 1: Import the Builder

@@ -25,7 +25,7 @@ What is A2A? [Agent2Agent (A2A)](https://a2a-protocol.org/) is an open protocol 
 Change to the root of Floor 5:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/5_a2a_integration
+cd seattle-strands-dungeon-crawl/dungeon/5_a2a_integration
 ```
 
 > <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** The estuary smelled like salt and cut grass. The tide table on a post said the dance floor would be dry for six hours, then gone. Six hours to stand up a rule clerk, a registration desk and a Narrator, and get them talking. I have run tighter timelines on a beach landing. I have not run one with an octopus in charge.

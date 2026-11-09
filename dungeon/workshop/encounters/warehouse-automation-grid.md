@@ -32,7 +32,7 @@ How you know it worked: the unfiltered client lists all eight tools and the filt
 Change to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-4-warehouse-automation-grid
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-4-warehouse-automation-grid
 ```
 
 ## Step 1: Import the Client

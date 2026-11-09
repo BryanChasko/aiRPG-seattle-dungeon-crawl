@@ -30,7 +30,7 @@ Success looks like this: the sequential round prints the dice landing one second
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-3-concurrent-shuffle
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-3-concurrent-shuffle
 ```
 
 The tool, `roll_for`, repeats the Floor 3 lesson: the `roll_for` docstring tells Amazon Nova 2 Lite to ask for both rolls in the same response, because an executor can only run side by side the calls the executor receives together.

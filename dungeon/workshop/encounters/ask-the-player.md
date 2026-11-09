@@ -32,7 +32,7 @@ Success looks like this: the show stops with a question from the Narrator and wa
 Open the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-2-ask-the-player
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-2-ask-the-player
 ```
 
 ## Step 1: Import the Tool

@@ -78,11 +78,11 @@ No git? Install git from [git-scm.com/downloads](https://git-scm.com/downloads),
 Clone the repository before the ceiling collapses and buries the party in uncompiled garbage:
 
 ```bash
-git clone https://github.com/BryanChasko/aiRPG-seattle-dungeon-crawl.git
-cd aiRPG-seattle-dungeon-crawl
+git clone https://github.com/BryanChasko/seattle-strands-dungeon-crawl.git
+cd seattle-strands-dungeon-crawl
 ```
 
-Check: `ls` (or `dir` on Windows) lists `README.md`, `dungeon`, `site` and `art`. Every command from here runs inside the aiRPG-seattle-dungeon-crawl folder.
+Check: `ls` (or `dir` on Windows) lists `README.md`, `dungeon`, `site` and `art`. Every command from here runs inside the seattle-strands-dungeon-crawl folder.
 
 ### Step 3: Equip uv
 
@@ -178,7 +178,7 @@ The command prints Python 3.10 or later, the project's own interpreter.
 
 | roadblock | fix |
 |---|---|
-| `No pyproject.toml found` | the terminal is not in the repository folder: `cd aiRPG-seattle-dungeon-crawl` |
+| `No pyproject.toml found` | the terminal is not in the repository folder: `cd seattle-strands-dungeon-crawl` |
 | SSL or certificate errors on a corporate network | `uv sync --native-tls` uses your system's certificates |
 | `uv sync` stops on a package that needs a compiler | confirm `uv run python --version` prints 3.10 to 3.13, then run `uv sync` again; open an issue with the full error if the failure persists |
 

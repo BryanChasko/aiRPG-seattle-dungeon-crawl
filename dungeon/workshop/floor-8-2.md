@@ -27,7 +27,7 @@ What is AgentCore Memory? AgentCore Memory is a managed store for agents. AgentC
 This section needs the `gameprod` project with the dice server deployed in 8.1. Open a terminal at the root of Floor 8:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/8_agentcore_production
+cd seattle-strands-dungeon-crawl/dungeon/8_agentcore_production
 ```
 
 This section works in two folders:

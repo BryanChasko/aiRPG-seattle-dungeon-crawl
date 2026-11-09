@@ -41,7 +41,7 @@ Check: in the web interface a dialog opens with the sponsor, the offer, the rewa
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-6-sponsor-interrupt
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-6-sponsor-interrupt
 ```
 
 ## Step 1: Listen Before Every Tool
@@ -164,7 +164,7 @@ The web interface already ships the dialog. `useGameApi` posts the turn and read
 The dialog is optional, like the Hype panel. A Narrator that never sends `interrupt` never opens the dialog, and the Floor 5 Narrator works with the same page. Run the interface from this repository, as in [Floor 6](../floor-6.md#web-interface):
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/site/web
+cd seattle-strands-dungeon-crawl/site/web
 npm ci
 npm run dev
 ```

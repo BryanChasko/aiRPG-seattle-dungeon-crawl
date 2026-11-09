@@ -38,7 +38,7 @@ Check the result: run 2 throws the dice, run 3 throws none, and the call in run 
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-8-mid-song-save
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-8-mid-song-save
 ```
 
 ## Step 1: Fetch the Checkpoint Class

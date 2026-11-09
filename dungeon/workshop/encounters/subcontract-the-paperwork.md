@@ -32,7 +32,7 @@ Check the result: the run prints the Narrator's two-sentence report with a total
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-5-subcontract-the-paperwork
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-5-subcontract-the-paperwork
 ```
 
 ## Step 1: Import the Factory

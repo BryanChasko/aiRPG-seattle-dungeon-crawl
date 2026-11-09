@@ -19,7 +19,7 @@ Learn how to create custom tools by building a Dice Rolling Tool - an essential 
 Open a terminal at the root of Floor 3:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/3_custom_tools
+cd seattle-strands-dungeon-crawl/dungeon/3_custom_tools
 ```
 
 Edit the [`agent_with_dice_roll_tool.py`](../3_custom_tools/agent_with_dice_roll_tool.py) file to build an agent that rolls dice with a custom tool.

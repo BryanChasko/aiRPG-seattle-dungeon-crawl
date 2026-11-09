@@ -147,4 +147,4 @@ floor where the party meets them (Shelly: Floor 2, Chonks: Floor 3).
 - no real company, logo or trademark in any art; sponsors are local tropes (`docs/visual-design-system.md` section 7a)
 - no images inside the crawl handbook: `workshop/world/crawl-handbook/` is the Rules Agent's knowledge base, so it stays text
 - no Shelly art before her Floor 2 welcome, no Chonks art before his Floor 3 welcome
-- new art comes from a plan in `images/plans/` rendered with `tools/airpg_render.py`, never a hand-written request
+- new art comes from a plan in `images/plans/` rendered with `art/airpg_render.py`, never a hand-written request

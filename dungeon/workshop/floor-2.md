@@ -19,7 +19,7 @@ Tools are the primary mechanism for extending agent capabilities, enabling them 
 Open a terminal at the Floor 2 folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/2_vended_tools
+cd seattle-strands-dungeon-crawl/dungeon/2_vended_tools
 ```
 
 Edit [`agent_with_vended_tools.py`](../2_vended_tools/agent_with_vended_tools.py) file.

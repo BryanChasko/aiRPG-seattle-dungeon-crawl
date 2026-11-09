@@ -27,7 +27,7 @@ What is a managed knowledge base? A Bedrock Knowledge Base turns documents into 
 This section needs the `gameprod` project with the dice server and the Character Agent deployed in 8.1 and 8.2, and the knowledge base started on the Floor 8 page. Open a terminal at the root of Floor 8:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/8_agentcore_production
+cd seattle-strands-dungeon-crawl/dungeon/8_agentcore_production
 ```
 
 This section works in two folders:

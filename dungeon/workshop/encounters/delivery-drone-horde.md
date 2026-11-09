@@ -30,7 +30,7 @@ Success looks like this: the first crossing, with no steering, ends back near th
 Open the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-5-delivery-drone-horde
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-5-delivery-drone-horde
 ```
 
 ## Step 1: Import the Steering Classes

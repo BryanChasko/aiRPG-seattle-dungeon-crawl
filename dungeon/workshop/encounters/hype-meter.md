@@ -41,7 +41,7 @@ Check the result: `GET /hype` returns a total that rises after a round the party
 Go to the encounter folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/encounters/floor-6-hype-meter
+cd seattle-strands-dungeon-crawl/dungeon/encounters/floor-6-hype-meter
 ```
 
 ## Step 1: Watch Tool Calls
@@ -141,10 +141,10 @@ The web interface already ships the panel. After each turn, `GameView.vue` asks 
 
 The panel is optional. If the Narrator has no `/hype` route, answers with an error, or sends a value that is not a number, the panel does not appear and nothing else changes. The Floor 5 Narrator and the Hype Meter Narrator both work with the same web page.
 
-To see it, run the web interface from the aiRPG-seattle-dungeon-crawl repository, as in [Floor 6](../floor-6.md#web-interface):
+To see it, run the web interface from the seattle-strands-dungeon-crawl repository, as in [Floor 6](../floor-6.md#web-interface):
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/site/web
+cd seattle-strands-dungeon-crawl/site/web
 npm ci
 npm run dev
 ```

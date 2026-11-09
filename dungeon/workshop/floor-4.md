@@ -21,7 +21,7 @@ What is MCP? The [Model Context Protocol](https://modelcontextprotocol.io/) is a
 In a terminal, go to the Floor 4 folder:
 
 ```bash
-cd aiRPG-seattle-dungeon-crawl/dungeon/4_mcp_integration
+cd seattle-strands-dungeon-crawl/dungeon/4_mcp_integration
 ```
 
 Build two MCP files:
