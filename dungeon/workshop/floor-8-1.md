@@ -201,7 +201,7 @@ The Rules Agent and the Character Agent from Floor 5 must be running (terminals 
 
 ```bash
 export AWS_DEFAULT_REGION=us-west-2
-cd ../narrator
+cd ../narrator  # from the gameprod folder; from 8_agentcore_production itself, use cd narrator
 python narrator_orchestrator.py
 ```
 

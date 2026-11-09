@@ -414,7 +414,7 @@ a2a_client = make_a2a_client(allowed_endpoints=[
 Only the Rules Agent from Floor 5 must still be running (terminal 1). Stop the local Character Agent (terminal 2). Then stop the Floor 8 Narrator started in 8.1 and start the Narrator again to load the edited file:
 
 ```bash
-cd ../narrator
+cd ../narrator  # from the gameprod folder; from 8_agentcore_production itself, use cd narrator
 python narrator_orchestrator.py
 ```
 

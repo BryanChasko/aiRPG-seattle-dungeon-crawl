@@ -25,7 +25,7 @@ You've built a Narrator with custom tools, an MCP server and A2A agents. Test it
 
 Once the Narrator, Character Agent, Rules Agent and MCP servers are running, open the web interface at https://bryanchasko.github.io/seattle-strands-dungeon-crawl/.
 
-The interface lives in this repository under `web/` (Vue 3 + Vite). To run the web interface on your own machine instead, with Node.js 22.12 or later:
+The interface lives in this repository under `site/web/` (Vue 3 + Vite). To run the web interface on your own machine instead, with Node.js 22.12 or later:
 
 ```bash
 cd seattle-strands-dungeon-crawl/site/web
@@ -120,7 +120,7 @@ The token counts are estimates, so measure them: print `result.metrics.accumulat
 Browser:
 
 - Do not run the web interface in Safari: Safari has not been tested
-- Use Google Chrome or Mozilla Firefox
+- Use Google Chrome, Mozilla Firefox, or Microsoft Edge
 
 "Connection Refused" error:
 
