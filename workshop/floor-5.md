@@ -52,6 +52,17 @@ Build a system with three specialized agents that work together:
 - Character Agent: handles character creation and management - [`agents/character_agent/character_agent.py`](../5_a2a_integration/agents/character_agent/character_agent.py)
 - Narrator Orchestrator: coordinates all agents for gameplay - [`agents/narrator_orchestrator/narrator_orchestrator.py`](../5_a2a_integration/agents/narrator_orchestrator/narrator_orchestrator.py)
 
+> <img src="../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** Four stations, Sergeant. I have four pairs of arms. Rules, registry, dice, Narrator: I shall keep the appropriate appendages on each. You will keep the fifth terminal and inform us, in order, whether any of it worked. A party that cannot staff its own diagram has no business drawing one.
+
+```
+BARNABY, STATION KEEPING
+Pair 1 -> 8000 Rules Agent       Pair 3 -> 8002 Dice Service
+Pair 2 -> 8001 Character Agent   Pair 4 -> 8009 Narrator (watch only)
+Collar -> one decision at a time. Cordula -> fifth terminal, commits the checklist.
+```
+
+That became the floor plan, because the diagram and the octopus make the same point. The four processes run side by side and none of them waits to exist. The Narrator still takes one turn at a time and commits that turn in order, as one `StoryOutput`. Parallel stations, serial commit: four pairs of arms to fan the work out, one collar to decide, one crew chief to say what done means. When a terminal goes missing on this floor, Barnaby has an idle pair of arms, and opinions about whose job the missing terminal was.
+
 ## Part 1: Setting Up the Rules Agent
 
 First, create the Knowledge Base for the Rules Agent. The Crawl Handbook, the crawl's own rule book, must be processed and stored in ChromaDB (a vector database) so the Rules Agent can query it for rules questions.
@@ -556,6 +567,8 @@ Four terminals should now be running:
 | 4 | Narrator, `python narrator_orchestrator.py` | http://127.0.0.1:8009 |
 
 If a process is missing, return to its launch step.
+
+> <img src="../images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** Four terminals, four jobs, none of them waiting on another to exist. Barnaby put one pair of arms on each: rules, registry, dice, Narrator. I kept the fifth terminal and the checklist. He can start four things at once. Somebody still has to say, in order, what "started" means. That part is mine, and he would not have it any other way. He said so while typing in two windows at once, which I pretended not to watch.
 
 The Narrator is a FastAPI application listening on port 8009. Each curl command below sends a POST request to the Narrator's `/inquire` endpoint with a JSON body holding the question; a web page sends the same request. While the request runs, the four terminals show what the Narrator does with the request: which agent the Narrator asks over A2A, when the Narrator rolls the dice over MCP, and what each agent answers. Open a fifth terminal and run the curl commands there (no virtual environment needed, curl is a system command), or, with a REST client, use the [`test/test.http`](../5_a2a_integration/test/test.http) file prepared for these tests:
 

@@ -23,6 +23,8 @@ Files on this side passage: [`encounters/floor-3-concurrent-shuffle/concurrent_s
 
 When Amazon Nova 2 Lite asks for two or more tool calls in one response, the agent's tool executor decides how the calls run. The `ConcurrentToolExecutor` runs the calls side by side: `ConcurrentToolExecutor` is the default, so every agent built on Floors 2 to 5 already used `ConcurrentToolExecutor`. The `SequentialToolExecutor` runs the calls one after the other, in the order Amazon Nova 2 Lite asked. In this file each die takes a second to land, so the difference shows on the clock: about two seconds of dice in the air with `SequentialToolExecutor`, about one with `ConcurrentToolExecutor`.
 
+> <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** Sergeant, I do not queue my arms. The first four do not wait for the second four to finish being interesting. Two dice have nothing to say to each other; making one wait is not discipline, it is queueing for its own sake. The battle log is another matter. There, order is the record, and even I take my turn.
+
 Success looks like this: the sequential round prints the dice landing one second apart, in the order Lady Luck asked; the concurrent round prints them landing together; both rounds report `model responses: 2`.
 
 Go to the encounter folder:

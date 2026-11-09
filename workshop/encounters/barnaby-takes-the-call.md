@@ -43,6 +43,8 @@ cd aiRPG-seattle-dungeon-crawl/encounters/floor-5-barnaby-takes-the-call
 
 Both classes live in the Strands package already installed for Floor 5. The Narrator imported the server class as `from strands.multiagent.a2a import A2AServer`; the module path `strands.multiagent.a2a.server` names the file the class comes from, and the API page for that file is the one linked above.
 
+> <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** Two imports, Sergeant: one to dial out, one to be dialed. Even I cannot answer a telephone I have not imported, and I have tried. It was undignified for everyone.
+
 <details>
 <summary>Show me the code for Step 1</summary>
 
@@ -118,6 +120,8 @@ The trap: the A2A event is nested under `event["event"]`, not the event itself. 
 
 `A2AServer(agent_factory=create_barnaby, port=8003)` is the same call as the Rules Agent's, with a different factory. The factory takes a context id and returns a fresh agent, so every caller gets its own Barnaby who has never heard of the previous caller. `create_barnaby` is provided and runs on Amazon Nova 2 Lite. Ports 8000, 8001, 8002 and 8009 are Floor 5's, so Barnaby takes 8003. See [A2A Server configuration](https://strandsagents.com/docs/user-guide/sdk/multi-agent/a2a-server-configuration/#server-configuration-options) and [`A2AServer`](https://strandsagents.com/docs/api/python/strands.multiagent.a2a.server/).
 
+> <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** A number of one's own is the beginning of dignity, Sergeant. Mark what the factory promises: each caller receives a fresh, bright-eyed version of me, ignorant of the last caller's confidences. Eight arms, several conversations, no shared notebook. Discretion, it turns out, is also a form of parallel work.
+
 <details>
 <summary>Show me the code for Step 4</summary>
 
@@ -163,6 +167,8 @@ python barnaby_takes_the_call.py serve
 ```
 
 Uvicorn runs on `http://127.0.0.1:8003`, and `curl -s http://127.0.0.1:8003/.well-known/agent-card.json` prints a card that starts with `{"name":"Barnaby"` (the fields may come in another order). To call him, point `phone` at `http://127.0.0.1:8003` from another script.
+
+> <img src="../../images/cards/cast-barnaby-640x640.webp" alt="" width="28" height="28"> **BARNABY:** Observe the allocation, Sergeant: one pair dialing the rules desk, one pair holding for the registry, one pair writing down what both said, and one pair keeping the spherical one off the handset. The script still awaits each call in turn, because a log is read in order. The servers, however, were all awake at once. That distinction is the entire lesson, and I intend to take credit for it.
 
 | output | cause | fix |
 |---|---|---|

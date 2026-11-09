@@ -167,6 +167,8 @@ The crawl replaces combat with the dance-off: three rounds of Move Calls rolled 
 
 Why dance? Because dance gives every stat a job, dance is funnier than violence, and dance keeps the game welcoming. The structure is credited where the idea came from: dance as public display of law and strength runs deep in Northwest Coast protocol, and the speeding-drum tie-breaker comes from the modern powwow circuit. See [the setting's notes on representation](seattle.md#whose-land-this-is).
 
+The party itself teaches the concurrency lesson before any code does. Barnaby is built parallel: four stations at once, one pair of arms each, which is why the handbook lets him assist and dance in the same round. Cordula is built serial: one checklist, in order, every change committed. Every parallel system in the crawl is those two bodies at work: concurrent tool calls and A2A fan-out are Barnaby work, fast because the jobs are independent; the battle log, the registry file and the Final Beat are Cordula work, ordered because the record is the result. When a learner asks whether calls may run side by side, the System asks the only question that matters: do the arms share anything?
+
 ## Safe Room Reading: how Crawlers learn
 
 The party learns its skills the way a real developer does: read the docs, watch an explainer, read a working sample, then type it yourself. Every Safe Room has a terminal on the broadcast relay: the System AI's public library. Cadabra published Strands as an open toolkit, so the Strands manual is there, and so is the open web's teaching: Morgan Willis's course videos "Building AI agent harnesses with Strands Agents", Elizabeth Fuentes's GitHub samples, the Strands docs and the Model Context Protocol docs.
