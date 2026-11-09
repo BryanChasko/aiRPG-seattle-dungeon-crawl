@@ -1,0 +1,13 @@
+{
+  "file": "cast-barnaby-legend-octopus.webp",
+  "format": "webp lossy q90 rgba",
+  "sha256": "6199265e1bde1232061c5ee25a624421ef6673b46e1a977fa913e05b9f90a354",
+  "size": [512, 429],
+  "source": {
+    "sprite": "images/sprites/cast-barnaby-legend-octopus.webp"
+  },
+  "transforms": [
+    "longest side resized to 512 (581x487 -> 512x429)",
+    "webp q90 rgba"
+  ]
+}

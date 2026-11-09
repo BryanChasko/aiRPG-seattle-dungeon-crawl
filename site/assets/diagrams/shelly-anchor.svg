@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200" role="img" aria-label="Geoduck anchor: shell dug into mud, siphon up, carabiner and rope holding the party line">
+  <title>Shelly's Anchor: dug in, holding the line</title>
+  <desc>A clam shell half buried in layered mud at the bottom; its siphon rises up through the water; a carabiner clipped to the shell ring holds a rope that runs up out of frame, with a mist puff drifting.</desc>
+  <style>
+    .static{display:none}
+    text{font-family:sans-serif}
+    @media (prefers-reduced-motion: reduce){
+      .motion{display:none}
+      .static{display:inline}
+    }
+  </style>
+  <rect x="1" y="1" width="478" height="198" rx="10" fill="#0B0E14" stroke="#6A2C91" stroke-width="2"/>
+  <rect x="2" y="150" width="476" height="24" fill="#2A2118"/>
+  <rect x="2" y="174" width="476" height="24" fill="#1A140E"/>
+  <g stroke="#8A6D3B" stroke-width="2" fill="none">
+    <line x1="40" y1="162" x2="120" y2="162"/>
+    <line x1="300" y1="162" x2="440" y2="162"/>
+    <line x1="90" y1="186" x2="200" y2="186"/>
+    <line x1="330" y1="186" x2="430" y2="186"/>
+  </g>
+  <ellipse cx="200" cy="152" rx="86" ry="34" fill="#3A3f4A" stroke="#8A93A6" stroke-width="3"/>
+  <g stroke="#23262E" stroke-width="2" fill="none">
+    <path d="M 140,142 Q 170,128 200,142 Q 230,156 260,142"/>
+    <path d="M 132,152 Q 170,142 200,152 Q 236,162 268,152"/>
+  </g>
+  <circle cx="200" cy="118" r="7" fill="none" stroke="#8A93A6" stroke-width="3"/>
+  <path d="M 216,146 C 224,110 228,80 250,58" fill="none" stroke="#C9BFA8" stroke-width="14" stroke-linecap="round"/>
+  <path d="M 216,146 C 224,110 228,80 250,58" fill="none" stroke="#8A7B5C" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 8"/>
+  <ellipse cx="254" cy="54" rx="12" ry="7" fill="none" stroke="#C9BFA8" stroke-width="3"/>
+  <rect x="150" y="104" width="22" height="28" rx="9" fill="none" stroke="#2EC4B6" stroke-width="4"/>
+  <line x1="161" y1="104" x2="161" y2="92" stroke="#2EC4B6" stroke-width="4"/>
+  <path d="M 161,92 L 120,30" stroke="#2EC4B6" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="60" y="24" fill="#2EC4B6" font-size="12">party line: no knockback</text>
+  <g class="motion">
+    <circle r="6" fill="#8A93A6" opacity="0.7">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 290,60 q 20,-14 44,-8"/>
+    </circle>
+  </g>
+  <g class="static">
+    <circle cx="312" cy="52" r="6" fill="#8A93A6" opacity="0.7"/>
+  </g>
+  <text x="330" y="56" fill="#8A93A6" font-size="11">sea mist</text>
+</svg>

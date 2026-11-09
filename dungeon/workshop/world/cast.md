@@ -151,6 +151,10 @@ CHROMATOPHORE      INK CLOUD           EIGHT-POINT HOLD    ARM-LOCK PICK
 STEALTH            (smoke screen)      (gentle pin)        (locks, chests)
 ```
 
+The same diagram for browsers (the text version above is the terminal-readable one):
+
+<img src="../../../site/assets/diagrams/barnaby-ability-kit.svg" alt="Diagram: Barnaby's five chromatophore states across the top, four parallel arm stations below feeding into one collar" width="480">
+
 <table>
 <tr>
 <td><img src="../../../art/images/cards/cast-barnaby-presence-640x640.webp" alt="Barnaby in a dance-off, calling Presence" width="160"></td>
@@ -205,6 +209,8 @@ On Day 2 the flood scoured the flat down to his shell and left him lying on the 
 | 42 | Calcium shell: halves physical knockback | 15 | Slow on the surface, fast underground |
 
 - **Anchor:** Shelly digs into stone in half a second. With Cordula's carabiner on his shell ring, the party cannot be knocked back, pulled or blown off a ledge.
+
+<img src="../../../site/assets/diagrams/shelly-anchor.svg" alt="Diagram: Shelly's shell dug into layered mud, siphon up, carabiner and rope holding the party line" width="480">
 - **Siphon Bind:** his siphon wraps an opponent's ankles from below and holds them in place for one round.
 
 <img src="../../../art/images/cards/cast-shelly-bind-640x640.webp" alt="Shelly half-buried in mud, his long siphon coiled twice around a fleeing accountant's ankles" width="160">
@@ -213,6 +219,8 @@ On Day 2 the flood scoured the flat down to his shell and left him lying on the 
 
 <img src="../../../art/images/cards/cast-shelly-jet-640x640.webp" alt="Shelly braced in stone, firing a high-pressure fan of seawater from his siphon, mud tumbling back" width="160">
 - **Shell Bunker:** Shelly pulls in and hardens, immune to debuffs, and Cordula can carry him as a tower shield.
+
+<img src="../../../site/assets/diagrams/shelly-bunker.svg" alt="Diagram: Shelly pulled into his shell dome inside a shield ring, incoming debuff arrows bouncing off" width="480">
 
 <picture><source srcset="../../../art/images/motion/cast-shelly-mist-still.webp" media="(prefers-reduced-motion: reduce)"><img src="../../../art/images/motion/cast-shelly-mist.webp" alt="Shelly at rest in his tide flat, breathing slow, sea mist shimmering" width="240"></picture>
 - **Party politics:** the System AI announced Shelly's arrival with far too much enthusiasm and files a weekly stakeholder escalation on what the siphon is for. Barnaby refuses to share a water line with "that unspeakable clam" and keeps him five feet away at all times. Cordula loves him: he takes no back space and he never lets go of the floor.
@@ -294,6 +302,42 @@ The party rebuilds the System AI one piece per floor, and each piece is that flo
 | 8 | permanence: the System AI runs whether anyone watches |
 
 Crawlers hear the System AI directly in every notification, achievement, Move Call, sponsor message and throughput report. The System AI never lies about a number; it chooses which numbers to show.
+
+## Art direction
+
+Short briefs for anyone drawing the party: one persona line, the expression sheet, and the HUD accent each character owns. Story plates stay bespoke and single-use; only HUD chrome, dividers, and the 28px speaker glyphs repeat.
+
+### Cordula: the First-Time Builder
+
+Persona: the new Crawler learning out loud. She counts cadence, checks the list twice, and redoes the move until it lands on time. Draw the effort, not the polish: jaw set, eyes on the checklist, paddle planted before the step.
+
+Expression sheet: drill cadence mid-call (paddle twirling overhead), vault (body extended over the planted paddle), drum (Final Beat on the buoy), benched (grey blanket over the drysuit, paddle across her knees, drained but upright).
+
+HUD accent: slate grey panel with a white checklist tick. Her speaker glyph stays plain: she is the baseline every other accent plays against.
+
+### Barnaby: the Systems Thinker
+
+Persona: the strategist who fans out and lands one decision. Eight arms sketch four plans at once; the collar speaks exactly one. Draw him mid-thought: one eye on the problem, arm-tips steepled, already three moves ahead.
+
+Expression sheet: the five chromatophore states, left to right: calm (charcoal and slate at rest), plotting (arm-tips steepled, one eye narrowed), irritated (first red blush over charcoal), stealth (light bent away, barely there), academic (handbook open, one arm turning the page). Presence and the legend card are dance-off moments, not moods. Plus the slow blink: one eye closing and opening when he wants you to know he heard you.
+
+HUD accent: collar violet, faint at rest and hotter with temper. Never color alone: every violet shift ships with a label or a line of dialogue.
+
+### Shelly: the Accessibility Anchor
+
+Persona: stillness as access. He holds the floor so the rest of the party can move fast: low speed, high stability, zero back space. Draw weight and patience: half buried, siphon up, in no hurry at all.
+
+Expression sheet: anchor (dug in, carabiner on the shell ring), siphon bind (coiled twice around fleeing ankles), saltwater jet (braced in stone, fan of seawater), shell bunker (pulled in, hardened dome), mist idle (at rest in the tide flat, breathing slow).
+
+HUD accent: mud brass ring with a teal anchor tick. His states change shape, never just shade, so every buff reads without color.
+
+### Chonks: the Clip-Sharer
+
+Persona: the shareable moment. One gurgle, one throw, one latch: the whole joke lands in under three seconds and loops cleanly. Draw round, mid-air, and pleased with himself.
+
+Expression sheet: thrown arc (spinning, about to seal on), suction latch (flattened onto a visor or clicker), spine flare (puffed round, eyes squeezed shut), buckler (strapped to the forearm guard, hardened into a shield).
+
+HUD accent: green roundel with a white suction ring. His motion stills always show the arc midpoint, so the reduced-motion frame tells the same joke as the loop.
 
 ## Opening achievements
 

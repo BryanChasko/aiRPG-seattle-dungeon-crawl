@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" role="img" aria-label="Barnaby's five chromatophore states across the top, four parallel arm stations below feeding one collar">
+  <title>Barnaby's ability kit: five states, four stations, one collar</title>
+  <desc>Five state chips in a row (calm, plotting, irritated, stealth, academic), each with its skin color dot; below, four arm-pair stations feed lines into one collar dot that speaks a single line.</desc>
+  <style>
+    .static{display:none}
+    text{font-family:sans-serif}
+    @media (prefers-reduced-motion: reduce){
+      .motion{display:none}
+      .static{display:inline}
+    }
+  </style>
+  <rect x="1" y="1" width="478" height="238" rx="10" fill="#0B0E14" stroke="#6A2C91" stroke-width="2"/>
+  <text x="24" y="28" fill="#B04CE0" font-size="14">FIVE STATES</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="20" y="38" width="80" height="52" rx="8" fill="none" stroke="#3A4556" stroke-width="2"/>
+    <circle cx="60" cy="56" r="8" fill="#3A4556" stroke="#8A93A6" stroke-width="1"/>
+    <text x="60" y="80" fill="#8A93A6">CALM</text>
+    <rect x="108" y="38" width="80" height="52" rx="8" fill="none" stroke="#B04CE0" stroke-width="2"/>
+    <circle cx="148" cy="56" r="8" fill="#2A2140" stroke="#B04CE0" stroke-width="1"/>
+    <text x="148" y="80" fill="#B04CE0">PLOTTING</text>
+    <rect x="196" y="38" width="80" height="52" rx="8" fill="none" stroke="#E04848" stroke-width="2"/>
+    <circle cx="236" cy="56" r="8" fill="#E04848" stroke="#3A4556" stroke-width="1"/>
+    <text x="236" y="80" fill="#E04848">IRRITATED</text>
+    <rect x="284" y="38" width="80" height="52" rx="8" fill="none" stroke="#2EC4B6" stroke-width="2"/>
+    <circle cx="324" cy="56" r="8" fill="#0B0E14" stroke="#2EC4B6" stroke-width="1"/>
+    <text x="324" y="80" fill="#2EC4B6">STEALTH</text>
+    <rect x="372" y="38" width="88" height="52" rx="8" fill="none" stroke="#B04CE0" stroke-width="2" stroke-dasharray="5 3"/>
+    <circle cx="416" cy="56" r="8" fill="#6A2C91" stroke="#B04CE0" stroke-width="1"/>
+    <text x="416" y="80" fill="#B04CE0">ACADEMIC</text>
+  </g>
+  <text x="24" y="118" fill="#2EC4B6" font-size="14">PARALLEL STATIONS: FOUR PAIRS, ONE COLLAR</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="20" y="128" width="96" height="40" rx="8" fill="none" stroke="#8A6D3B" stroke-width="2"/>
+    <text x="68" y="145" fill="#8A6D3B">TYPE</text>
+    <text x="68" y="159" fill="#8A6D3B">a terminal</text>
+    <rect x="128" y="128" width="96" height="40" rx="8" fill="none" stroke="#8A6D3B" stroke-width="2"/>
+    <text x="176" y="145" fill="#8A6D3B">HOLD</text>
+    <text x="176" y="159" fill="#8A6D3B">a call open</text>
+    <rect x="236" y="128" width="96" height="40" rx="8" fill="none" stroke="#8A6D3B" stroke-width="2"/>
+    <text x="284" y="145" fill="#8A6D3B">READ</text>
+    <text x="284" y="159" fill="#8A6D3B">a page aloud</text>
+    <rect x="344" y="128" width="116" height="40" rx="8" fill="none" stroke="#8A6D3B" stroke-width="2"/>
+    <text x="402" y="145" fill="#8A6D3B">GUARD</text>
+    <text x="402" y="159" fill="#8A6D3B">Chonks: no keys</text>
+  </g>
+  <g stroke="#8A6D3B" stroke-width="2" fill="none">
+    <path d="M 68,168 L 68,184 L 240,184 L 240,200"/>
+    <path d="M 176,168 L 176,184"/>
+    <path d="M 284,168 L 284,184"/>
+    <path d="M 402,168 L 402,184 L 240,184 L 240,200"/>
+  </g>
+  <circle cx="240" cy="210" r="10" fill="none" stroke="#B04CE0" stroke-width="3"/>
+  <g class="motion">
+    <circle cx="240" cy="210" r="4" fill="#B04CE0">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g class="static">
+    <circle cx="240" cy="210" r="4" fill="#B04CE0"/>
+  </g>
+  <text x="262" y="214" fill="#B04CE0" font-size="11">one collar speaks</text>
+</svg>

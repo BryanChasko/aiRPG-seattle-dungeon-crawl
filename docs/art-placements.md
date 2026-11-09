@@ -15,7 +15,7 @@ Status: `ready to place` means the page owner adds the snippet at the spot named
 | [`cast-chonks-buckler-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-chonks-buckler-640x640.webp) | `dungeon/workshop/world/cast.md`: Chonks section, after the Buckler ability | placed |
 | [`cast-cordula-benched-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-cordula-benched-640x640.webp) | `dungeon/workshop/world/cast.md`: Cordula section, after the stats table | placed |
 | [`cast-cordula-drill-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-cordula-drill-640x640.webp) | `dungeon/workshop/world/cast.md`: Cordula section, after the stats table | placed |
-| [`opponent-accountant-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-accountant-offbeat-640x640.webp) | `dungeon/workshop/floor-5.md`: Part 4, after Cordula's dance-off result | placed |
+| [`opponent-accountant-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-accountant-offbeat-640x640.webp) | `dungeon/workshop/floor-5.md`: Part 4, after Cordula's dance-off result | ready to place |
 | [`opponent-banker-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-banker-offbeat-640x640.webp) | `dungeon/workshop/encounters/quarterly-earnings-call.md`: after the closing log in What It Costs | placed |
 | [`opponent-founder-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/opponent-founder-offbeat-640x640.webp) | `dungeon/workshop/floor-6.md`: next to Cordula's note that the founder ran out of slides | ready to place |
 | [`bellevue-lobby-1200x675.webp`](https://bryanchasko.com/airpg-art/floors/bellevue-lobby-1200x675.webp) | `dungeon/workshop/floor-8.md`: under Boss Battle: The Quarterly Earnings Call | placed |
@@ -31,6 +31,16 @@ Status: `ready to place` means the page owner adds the snippet at the spot named
 | [`loot-silver-96x96.webp`](https://bryanchasko.com/airpg-art/icons/loot-silver-96x96.webp) | `dungeon/workshop/world/the-system.md`: section 5 icon row | placed |
 | [`loot-gold-96x96.webp`](https://bryanchasko.com/airpg-art/icons/loot-gold-96x96.webp) | `dungeon/workshop/world/the-system.md`: section 5 icon row | placed |
 | [`loot-desperation-96x96.webp`](https://bryanchasko.com/airpg-art/icons/loot-desperation-96x96.webp) | `dungeon/workshop/world/the-system.md`: section 5 icon row | placed |
+
+### `opponent-accountant-offbeat-640x640.webp` on `dungeon/workshop/floor-5.md`
+
+Where: Part 4, after Cordula's dance-off result.
+
+S3: `s3://bryanchasko.com/airpg-art/cards/opponent-accountant-offbeat-640x640.webp`
+
+```markdown
+![A Quarterly Close Accountant losing the beat in a storm of spreadsheet pages](../../art/images/cards/opponent-accountant-offbeat-640x640.webp)
+```
 
 ### `opponent-founder-offbeat-640x640.webp` on `dungeon/workshop/floor-6.md`
 
@@ -318,56 +328,65 @@ S3: `s3://bryanchasko.com/airpg-art/icons/fog-index-96x96.webp`
 | [`cast-barnaby-academic-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-barnaby-academic-640x640.webp) | `dungeon/workshop/world/cast.md`: Barnaby section, expression sheet row, academic | placed |
 | [`cast-chonks-flare-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-chonks-flare-640x640.webp) | `dungeon/workshop/world/cast.md`: Chonks section, beside the Spine Flare ability | placed |
 | [`cast-shelly-jet-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-shelly-jet-640x640.webp) | `dungeon/workshop/world/cast.md`: Shelly section, beside the Saltwater Jet ability | placed |
-| [`boss-monty-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-monty-offbeat-640x640.webp) | `dungeon/workshop/floor-8.md`: boss section, beside the Monty dance-off result | ready to place |
-| [`boss-earnings-call-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-earnings-call-offbeat-640x640.webp) | `dungeon/workshop/floor-8.md`: boss section, beside the Earnings Call dance-off result | ready to place |
-| [`boss-regional-director-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-regional-director-offbeat-640x640.webp) | `dungeon/workshop/floor-8.md`: boss section, beside the Regional Director dance-off result | ready to place |
-| [`boss-the-keynote-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-the-keynote-offbeat-640x640.webp) | `dungeon/workshop/floor-8.md`: boss section, beside the Keynote dance-off result | ready to place |
-
-### `boss-monty-offbeat-640x640.webp` on `dungeon/workshop/floor-8.md`
-
-Where: boss section, beside the Monty dance-off result.
-
-S3: `s3://bryanchasko.com/airpg-art/cards/boss-monty-offbeat-640x640.webp`
-
-```markdown
-![Monty the giant python tied in a knot mid dance-off, head bobbing a half-beat late](../../art/images/cards/boss-monty-offbeat-640x640.webp)
-```
-
-### `boss-earnings-call-offbeat-640x640.webp` on `dungeon/workshop/floor-8.md`
-
-Where: boss section, beside the Earnings Call dance-off result.
-
-S3: `s3://bryanchasko.com/airpg-art/cards/boss-earnings-call-offbeat-640x640.webp`
-
-```markdown
-![The Quarterly Earnings Call Off-Beat: charts and ringing phones losing the beat, papers flying](../../art/images/cards/boss-earnings-call-offbeat-640x640.webp)
-```
-
-### `boss-regional-director-offbeat-640x640.webp` on `dungeon/workshop/floor-8.md`
-
-Where: boss section, beside the Regional Director dance-off result.
-
-S3: `s3://bryanchasko.com/airpg-art/cards/boss-regional-director-offbeat-640x640.webp`
-
-```markdown
-![The Regional Director Off-Beat, stumbling over his own shoes, tie flying, clipboard scattering](../../art/images/cards/boss-regional-director-offbeat-640x640.webp)
-```
-
-### `boss-the-keynote-offbeat-640x640.webp` on `dungeon/workshop/floor-8.md`
-
-Where: boss section, beside the Keynote dance-off result.
-
-S3: `s3://bryanchasko.com/airpg-art/cards/boss-the-keynote-offbeat-640x640.webp`
-
-```markdown
-![The Keynote Off-Beat: a presenter silhouette frozen on the big screen with a loading spinner](../../art/images/cards/boss-the-keynote-offbeat-640x640.webp)
-```
+| [`boss-monty-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-monty-offbeat-640x640.webp) | `dungeon/workshop/floor-0.md`: floor boss card, after the Had Monty danced off-beat line | placed |
+| [`boss-earnings-call-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-earnings-call-offbeat-640x640.webp) | `dungeon/workshop/encounters/quarterly-earnings-call.md`: beside the Lose a round and the call itself goes Off-Beat line | placed |
+| [`boss-regional-director-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-regional-director-offbeat-640x640.webp) | `dungeon/workshop/encounters/house-rules-guardrails.md`: beside the And when the guardrail trips him mid-move line | placed |
+| [`boss-the-keynote-offbeat-640x640.webp`](https://bryanchasko.com/airpg-art/cards/boss-the-keynote-offbeat-640x640.webp) | `dungeon/workshop/floor-8-4.md`: after Cordula Keynote closing log, before Part 4 | placed |
 
 ## 2026-11-09-batch-09b
 
 | image | page and spot | status |
 |---|---|---|
 | [`cast-shelly-bind-640x640.webp`](https://bryanchasko.com/airpg-art/cards/cast-shelly-bind-640x640.webp) | `dungeon/workshop/world/cast.md`: Shelly section, beside the Siphon Bind ability | placed |
+
+## 2026-11-09-batch-10-stickers
+
+| image | page and spot | status |
+|---|---|---|
+| [`cast-barnaby-octopus.webp`](https://bryanchasko.com/airpg-art/stickers/cast-barnaby-octopus.webp) | ``: sticker pack: unclaimed until a page takes a sticker | ready to place |
+| [`cast-barnaby-legend-octopus.webp`](https://bryanchasko.com/airpg-art/stickers/cast-barnaby-legend-octopus.webp) | ``: sticker pack: unclaimed until a page takes a sticker | ready to place |
+| [`cast-chonks-green-fish.webp`](https://bryanchasko.com/airpg-art/stickers/cast-chonks-green-fish.webp) | ``: sticker pack: unclaimed until a page takes a sticker | ready to place |
+| [`cast-cordula-woman.webp`](https://bryanchasko.com/airpg-art/stickers/cast-cordula-woman.webp) | ``: sticker pack: unclaimed until a page takes a sticker | ready to place |
+
+### `cast-barnaby-octopus.webp` on ``
+
+Where: sticker pack: unclaimed until a page takes a sticker.
+
+S3: `s3://bryanchasko.com/airpg-art/stickers/cast-barnaby-octopus.webp`
+
+```markdown
+
+```
+
+### `cast-barnaby-legend-octopus.webp` on ``
+
+Where: sticker pack: unclaimed until a page takes a sticker.
+
+S3: `s3://bryanchasko.com/airpg-art/stickers/cast-barnaby-legend-octopus.webp`
+
+```markdown
+
+```
+
+### `cast-chonks-green-fish.webp` on ``
+
+Where: sticker pack: unclaimed until a page takes a sticker.
+
+S3: `s3://bryanchasko.com/airpg-art/stickers/cast-chonks-green-fish.webp`
+
+```markdown
+
+```
+
+### `cast-cordula-woman.webp` on ``
+
+Where: sticker pack: unclaimed until a page takes a sticker.
+
+S3: `s3://bryanchasko.com/airpg-art/stickers/cast-cordula-woman.webp`
+
+```markdown
+
+```
 
 ## motion
 
