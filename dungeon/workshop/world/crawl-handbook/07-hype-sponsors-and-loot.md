@@ -7,7 +7,7 @@ Hype is a hidden stat the System AI tracks: how much executive visibility a Craw
 - +5 Hype for any achievement.
 - Half of all Hype is lost when a Crawler is benched.
 
-Sponsors watch Hype. At 10, 25 and 50 Hype, a sponsor may send a loot box, and the System AI delivers it with a sponsor message. Sponsors include the Benthic Collective, a Ballard fishing-and-kombucha cooperative that adores Barnaby; the Hydros-9 Aquatic Collective, a venture-funded South Lake Union water-tech startup on its ninth pivot, which also adores Barnaby; the Bellevue Consortium, famous for the Doors '94 operating system, which sponsors the opponents and resents every upset; and Cadabra, Inc., whose delivery drones drop every loot box and whose weaponized obstacles wait on deeper floors.
+Sponsors watch Hype. At 10, 25 and 50 Hype, a sponsor may send a loot box, and the System AI delivers it with a sponsor message. Sponsors include the Benthic Collective, a Ballard fishing-and-kombucha cooperative that adores Barnaby; the Hydros-9 Aquatic Collective, a venture-funded South Lake Union water-tech startup on its ninth pivot, which also adores Barnaby; the Bellevue Consortium, famous for the Doors '94 operating system, which sponsors the opponents and resents every upset; and Cadabra, whose delivery drones drop every loot box and whose weaponized obstacles wait on deeper floors.
 
 Loot boxes come in four tiers:
 

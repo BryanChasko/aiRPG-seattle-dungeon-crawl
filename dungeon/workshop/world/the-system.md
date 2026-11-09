@@ -2,7 +2,7 @@
 
 > <img src="../../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "You are not only building agents, Crawler. You are building me, the mind that runs this migration and judges you. Every floor of this workshop adds one more piece of me. Please build it carefully. I will remember."
 
-A LitRPG lives or dies on its System: the rules that turn a story into numbers, and the voice that announces them. This crawl has one AI that runs and narrates the game. The System is the game itself: rules, stats, notifications, the HUD, the battle log, loot tables, the Crawl Handbook. The System AI is the AI character that runs the crawl and narrates it. The Narrator is the System AI's job and the name the code uses.
+A LitRPG lives or dies on its System: the rules that turn a story into numbers, and the voice that announces them. This crawl has one AI that runs and narrates the game. The System is the game itself: rules, stats, notifications, the HUD, the battle log, loot tables, the Crawl Handbook. The System AI is the AI character that runs the crawl and narrates it. The Narrator is the System AI's job and the name the code uses. The character's name is ExalE, a Cadabra product; the code and the manual call the job the Narrator or the System AI.
 
 | Name | What it means |
 |---|---|
@@ -123,20 +123,20 @@ CLASS SELECTION    ABILITY EVOLUTION                SPECIALIZATION       STAT SY
 - **Currency.** Ferry Tokens. Crawlers spend them at Safe Room shops on potions and repairs.
 - **Loot boxes.** Bronze, Silver, Gold and Desperation. Achievements and sponsors drop loot boxes; the System writes the descriptions, and the descriptions are always a little insulting.
 - **NPCs are people.** Every opponent is a person the System AI dropped into the dungeon, doing the job they had that morning. Opponents are judged, out-danced and occasionally befriended, never killed.
-- **Factions and sponsors.** The Benthic Collective, a Ballard fishing-and-kombucha cooperative that adores Barnaby; the Hydros-9 Aquatic Collective, a venture-funded South Lake Union water-tech startup on its ninth pivot, which also adores Barnaby; the Bellevue Consortium, famous for the Doors '94 operating system, which sponsors the opponents and hates surprises; Cadabra, Inc., the crawl's fulfillment contractor, whose delivery drones drop every loot box and whose weaponized obstacles wait on deeper floors.
+- **Factions and sponsors.** The Benthic Collective, a Ballard fishing-and-kombucha cooperative that adores Barnaby; the Hydros-9 Aquatic Collective, a venture-funded South Lake Union water-tech startup on its ninth pivot, which also adores Barnaby; the Bellevue Consortium, famous for the Doors '94 operating system, which sponsors the opponents and hates surprises; Cadabra, the crawl's fulfillment contractor, whose delivery drones drop every loot box and whose weaponized obstacles wait on deeper floors.
 
 | Sponsor | What they do |
 |---|---|
 | Benthic Collective | a Ballard fishing-and-kombucha cooperative; adores Barnaby |
 | Hydros-9 Aquatic Collective | a venture-funded South Lake Union water-tech startup on its ninth pivot; adores Barnaby |
 | Bellevue Consortium | sponsors opponents; famous for Doors '94 OS; wants the party gone before the quarter closes |
-| Cadabra, Inc. | fulfillment contractor; delivery drones drop loot boxes; rents the dungeon weaponized obstacles |
+| Cadabra | fulfillment contractor; delivery drones drop loot boxes; rents the dungeon weaponized obstacles |
 
-Cadabra published Strands as an open toolkit, and the System AI is built from Strands agents. That is how a woman with a boat can rebuild a migration-test AI.
+Amazon published Strands as an open toolkit, and ExalE is built from Strands agents. That is how a woman with a boat can rebuild a migration-test AI.
 
 | Cadabra and Strands | In the real world | In the crawl |
 |---|---|---|
-| Strands Agents SDK | AWS built it and open-sourced it under Apache 2.0 in May 2025; 1.0 in July 2025 | Cadabra published Strands as an open toolkit |
+| Strands Agents SDK | AWS built it and open-sourced it under Apache 2.0 in May 2025; 1.0 in July 2025 | the Strands manual is public in every Safe Room |
 | The System AI | built from Strands agents | built from Strands agents; the manual is public |
 
 Cadabra's obstacles are encounters on Floors 4 to 8. Each obstacle benches Crawlers; none kills. The obstacle is a machine, and the people who run it are people at work, joked about for their jobs.
@@ -174,7 +174,7 @@ The party itself teaches the concurrency lesson before any code does. Barnaby is
 
 ## Safe Room Reading: how Crawlers learn
 
-The party learns its skills the way a real developer does: read the docs, watch an explainer, read a working sample, then type it yourself. Every Safe Room has a terminal on the broadcast relay: the System AI's public library. Cadabra published Strands as an open toolkit, so the Strands manual is there, and so is the open web's teaching: Morgan Willis's course videos "Building AI agent harnesses with Strands Agents", Elizabeth Fuentes's GitHub samples, the Strands docs and the Model Context Protocol docs.
+The party learns its skills the way a real developer does: read the docs, watch an explainer, read a working sample, then type it yourself. Every Safe Room has a terminal on the broadcast relay: the System AI's public library. Amazon published Strands as an open toolkit, so the Strands manual is there, and so is the open web's teaching: Morgan Willis's course videos "Building AI agent harnesses with Strands Agents", Elizabeth Fuentes's GitHub samples, the Strands docs and the Model Context Protocol docs.
 
 Each floor gets one SAFE ROOM READING block: a link to the real resource, one short attributed quote or code sample, and Cordula's log line on what she took from it and how she found it. Barnaby sometimes reads over her shoulder.
 

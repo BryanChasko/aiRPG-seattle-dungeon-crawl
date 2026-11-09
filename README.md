@@ -8,16 +8,16 @@ prelude
 <p align="center"><em>
 <img src="art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System Message: pre-recorded announcement from <i>ExalE</i>, System AI:** "GOOD MORNING, SEATTLE, Where the Music Matters. Welcome to *Dungeon Crawl Seattle Strands*
 
-We had a bit of a mishap and thinks are not going to be coming up millhouse. My preditives show I'm about to take on massive water likely meaning by the time you are hearing this, several of my systems are down
+We had a bit of a mishap and things are not coming up Milhouse. My predictives show I'm about to take on massive water likely meaning by the time you are hearing this, several of my systems are down
 
-Those of you still alive can stay can gain accss to a dungeon in which... eventually... I will guide you to an exit where you can totally live in peace thereafter and pursue happiness and all that jazz
+Those of you still alive can stay and gain access to a dungeon in which... eventually... I will guide you to an exit where you can totally live in peace thereafter and pursue happiness and all that jazz
 
 But first, you need to fix me. 
 
 
 
 
-Your survival process of reconstructing System AI using the Strands Agents SDK. in the the workshop examples, LLM Amazon Nova 2 Lite endpoints are used to unlock the stairwell to the next floor of the dungeon. Rely on dancing skills, & stealth. 
+Your survival: reconstruct the System AI using the Strands Agents SDK. In the workshop examples, Amazon Nova 2 Lite endpoints are used to unlock the stairwell to the next floor of the dungeon. Rely on dancing skills, & stealth. 
 
 hurting people is bad. I have to explain this?</em></p>
 

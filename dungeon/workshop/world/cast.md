@@ -274,8 +274,8 @@ On Day 3 a bulb popped overhead, the stipe whipped, and Chonks came off the hold
 
 | Fact | Detail |
 |---|---|
-| What it is | the one AI character: runs the crawl and narrates it |
-| Online | 0551 on Day 1, Wednesday, June 17, 2026. Built somewhere else, for dry-city migrations; Seattle is its first quarter in the water |
+| What it is | ExalE, the one AI character: runs the crawl and narrates it |
+| Online | 0551 on Day 1, Wednesday, June 17, 2026. Built by Cadabra somewhere else, for dry-city migrations; Seattle is its first quarter in the water |
 | Runs | the floors, the tides, the stairwells, the opponents it drops in, the Move Calls and every ruling, the dice, the rules, the memory of every Crawler, notifications, achievements, loot boxes, character sheets, sponsor messages and the throughput numbers |
 | Cares about | a complete quarter and the throughput SLA: every floor run, every rule applied the same way twice, every die fair, and the review board staying to the end |
 | Likes | drama, an exploit it did not see coming, Barnaby, who is throughput gold, stakeholder escalations, sponsor money, balance, order, a ruling that holds |
