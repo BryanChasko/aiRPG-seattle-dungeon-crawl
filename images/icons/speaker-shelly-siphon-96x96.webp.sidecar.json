@@ -1,0 +1,32 @@
+{
+ "file": "speaker-shelly-siphon-96x96.webp",
+ "size": [
+  96,
+  96
+ ],
+ "format": "webp lossy q88",
+ "source": {
+  "image": "images/cards/cast-shelly-640x640.webp",
+  "image_sha256": "cfdf762de5fe671257a9a45323a94184818e087d3355819af568f70b86873817"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "rel",
+  "spec": "(0.16, 0.08, 0.6, 0.58)",
+  "box": [
+   102,
+   51,
+   384,
+   371
+  ],
+  "expand": 1.0,
+  "confidence": null,
+  "note": "Shelly's siphon and mist puff, the part that reads small"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos",
+  "no dots, no vignette (speaker headshot)"
+ ],
+ "sha256": "6adb21bdeb18cfb6e10ab8b968fe9ad90fbad9767c296935708bbc2146bd10cd"
+}

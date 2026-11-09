@@ -1,7 +1,7 @@
 [project]
 name = "airpg-seattle-dungeon-crawl"
 version = "1.0.0"
-description = "Learn the Strands Agents SDK by building the System, the AI that runs a LitRPG dungeon crawl under Seattle, one floor at a time"
+description = "Seattle Strands Dungeon Crawl: A Visual Lit aiRPG Workshop - learn the Strands Agents SDK by building the System AI that runs a Visual Lit aiRPG dungeon crawl under Seattle, one floor at a time"
 requires-python = ">=3.10"
 dependencies = [
     # Strands Agents SDK — floor pinned to the release the workshop instructions were

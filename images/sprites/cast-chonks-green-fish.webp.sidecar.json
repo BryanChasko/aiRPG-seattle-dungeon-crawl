@@ -1,0 +1,34 @@
+{
+ "file": "cast-chonks-green-fish.webp",
+ "size": [
+  391,
+  367
+ ],
+ "format": "webp lossy q90 rgba",
+ "source": {
+  "image": "images/cards/cast-chonks-640x640.webp",
+  "image_sha256": "1162524846190dd2efef17bf26779c68d8ab2ccc570849f96fa343173171b686"
+ },
+ "segment": {
+  "model": "sam-3.1",
+  "concept": "green fish",
+  "object_id": "0",
+  "confidence": 0.8827838897705078,
+  "box": [
+   104,
+   65,
+   495,
+   432
+  ],
+  "mask_raster": [
+   391,
+   367
+  ]
+ },
+ "transforms": [
+  "crop to SAM box",
+  "mask upscaled lanczos to box",
+  "alpha blur 1.2"
+ ],
+ "sha256": "f670b075e852efab783283a5e20dceadff82c632a3c3aceb0676afa359182318"
+}

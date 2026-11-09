@@ -1,0 +1,34 @@
+{
+ "file": "cast-barnaby-octopus.webp",
+ "size": [
+  633,
+  507
+ ],
+ "format": "webp lossy q90 rgba",
+ "source": {
+  "image": "images/cards/cast-barnaby-640x640.webp",
+  "image_sha256": "8ac544f862d89cde8d48a901aa6b853532d248a3cc162fa50af1bd74785337c6"
+ },
+ "segment": {
+  "model": "sam-3.1",
+  "concept": "octopus",
+  "object_id": "0",
+  "confidence": 0.921951174736023,
+  "box": [
+   7,
+   98,
+   640,
+   605
+  ],
+  "mask_raster": [
+   633,
+   507
+  ]
+ },
+ "transforms": [
+  "crop to SAM box",
+  "mask upscaled lanczos to box",
+  "alpha blur 1.2"
+ ],
+ "sha256": "fb1392e0fb1e927925de6272eb7d3469a293362732d2fbcc70c3d3c2149318c7"
+}

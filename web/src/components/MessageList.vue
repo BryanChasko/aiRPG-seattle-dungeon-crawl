@@ -1,11 +1,12 @@
 <template>
   <div class="message-list panel-parchment border-wood shadow-panel">
     <div v-if="loading" class="list-status">
-      <span class="loading-indicator">Loading the broadcast…</span>
+      <span class="loading-indicator">Loading the broadcast...</span>
     </div>
 
     <div v-else-if="error" class="list-status list-error">
-      Broadcast history could not be loaded
+      Broadcast history could not be loaded. Check the four workshop terminals, then reload.
+      <a :href="FLOOR6_URL" target="_blank" rel="noopener">Floor 6 help</a>
     </div>
 
     <div v-else-if="messages.length === 0" class="list-status">
@@ -17,17 +18,20 @@
         v-for="(msg, index) in messages"
         :key="index"
         class="message-entry"
-        :class="[msg.role === 'user' ? 'message-user' : 'message-assistant', msg.role === 'assistant' && msg.storyOutput?.dice_rolls?.length ? 'has-dice' : '']"
+        :class="[
+          msg.role === 'user' ? 'message-user' : 'message-assistant',
+          msg.role === 'assistant' && msg.storyOutput?.dice_rolls?.length ? 'has-dice' : '',
+        ]"
       >
         <!-- User message -->
         <div v-if="msg.role === 'user' && msg.text" class="user-bubble">
-          <span class="role-tag">You</span>
-          <p class="user-text">{{ msg.text }}</p>
+          <span class="role-tag voice-cordula">You</span>
+          <p class="user-text voice-cordula">{{ msg.text }}</p>
         </div>
 
         <!-- Assistant message -->
         <div v-if="msg.role === 'assistant' && msg.storyOutput" class="assistant-block">
-          <span class="role-tag">The System AI</span>
+          <span class="role-tag voice-system-perform">The System AI</span>
           <div class="narrative-text" v-html="renderMarkdown(msg.storyOutput.response)"></div>
 
           <div
@@ -48,7 +52,7 @@
       <!-- Typing indicator -->
       <div v-if="typing" class="message-entry message-assistant">
         <div class="assistant-block">
-          <span class="role-tag">The System AI</span>
+          <span class="role-tag voice-system-perform">The System AI</span>
           <div class="typing-indicator">
             <span class="typing-dot"></span>
             <span class="typing-dot"></span>
@@ -61,9 +65,11 @@
 </template>
 
 <script setup lang="ts">
+import DOMPurify from 'dompurify'
 import { marked } from 'marked'
 import type { ParsedMessage } from '@/types'
 import DiceDisplay from '@/components/DiceDisplay.vue'
+import { FLOOR6_URL } from '@/links'
 
 // Configure marked for inline-friendly output
 marked.setOptions({
@@ -79,7 +85,7 @@ const props = defineProps<{
 }>()
 
 function renderMarkdown(text: string): string {
-  return marked.parse(text) as string
+  return DOMPurify.sanitize(marked.parse(text) as string)
 }
 </script>
 
@@ -111,8 +117,13 @@ function renderMarkdown(text: string): string {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .messages-scroll {
@@ -141,10 +152,26 @@ function renderMarkdown(text: string): string {
 .message-assistant {
   align-self: flex-start;
   position: relative;
-  background-color: rgb(20 24 36 / 60%);
-  box-shadow: inset 0em 0em 0.5em 0 rgba(0, 0, 0, 0.2);
-  border: solid 1px #7a5aa0;
+  background-color: var(--panel-glass-bg);
+  box-shadow: var(--shadow-panel);
+  border: solid 1px var(--color-stroke);
   overflow: visible;
+}
+
+@supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
+  .message-assistant {
+    background-color: var(--panel-glass-bg-blur);
+    -webkit-backdrop-filter: blur(10px) saturate(1.1);
+    backdrop-filter: blur(10px) saturate(1.1);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .message-assistant {
+    background-color: var(--panel-glass-bg);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
 }
 
 .user-bubble {
@@ -220,7 +247,7 @@ function renderMarkdown(text: string): string {
 
 .narrative-text :deep(hr) {
   border: none;
-  border-top: 1px solid #3a3550;
+  border-top: 1px solid var(--color-stroke);
   margin: 0.75rem 0;
 }
 
@@ -261,7 +288,9 @@ function renderMarkdown(text: string): string {
 }
 
 @keyframes typingBounce {
-  0%, 60%, 100% {
+  0%,
+  60%,
+  100% {
     transform: translateY(0);
     opacity: 0.4;
   }

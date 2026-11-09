@@ -1,0 +1,13 @@
+{
+ "run": "2026-11-09-batch-06c",
+ "why": "Second hero re-roll: 06b fixed the shell and the fight pose but Barnaby came out a cute cartoon mascot (front eyes, smile, glossy stripes) against the wild-animal model sheet. This subject pins the anatomy, the matte skin and the eye placement.",
+ "renders": [
+  {
+   "name": "banner-pier59-danceoff",
+   "class": "banner",
+   "out": "images/banner-1680x720.webp",
+   "subject": "Dance partners side by side, mid synchronized dance move on a flooded folded pier floor, partners never opponents: {CORDULA} twirling her black paddle overhead like a baton, one boot splashing on the beat; beside her and dwarfing her, {BARNABY_DANCE}, a real wild octopus in three-quarter view, matte rough scarred skin, eyes on the sides of his head with horizontal pupils like a real Giant Pacific Octopus, no smile, no mouth visible, no cartoon, no mascot, crimson and white bands pulsing through dark skin as a dance light show, eight immense arms curling in rhythm across the wet timbers; a tiny round green lumpsucker fish in a tide pool below, ruined pier and the rainy Seattle skyline behind, violet stage beams through rain",
+   "place": {"replaces": true, "page": "README.md", "where": "hero slot at the top (the Gertie wreck plate stands in until this lands)", "alt": "Cordula in black on black on grey dancing with her paddle beside kraken-scale Barnaby flashing crimson and white, on the folded Pier 59 floor"}
+  }
+ ]
+}

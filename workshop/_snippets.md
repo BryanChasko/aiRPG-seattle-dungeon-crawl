@@ -5,6 +5,30 @@ Speaker icons in front of a bold name carry `alt=""`, so a screen reader says th
 Conventions match the floor-5.md template: `floor-nav`, `floor-files`,
 `cordula-log` markers. Paths are relative to `workshop/`.
 
+## Voices: who is talking, in type
+
+GitHub strips `style=` and color, so voices differ by tag and shape, never by
+color. No meaning lives in color alone, and no stock emoji ever stands in for
+art: every story image is bespoke, used once at its beat. Flair-class art
+(dividers, textures, HUD chrome, the 28px speaker glyphs) may repeat.
+
+| Voice | Markdown form | Reads as |
+|---|---|---|
+| Cordula | upright prose, the log baseline | the human center everything is measured against |
+| Barnaby | *italic collar speech* | an academic aside, parallel hands, serial voice |
+| System AI, performing | CAPS headers, `<kbd>` prompts | the broadcast interface, live to viewers |
+| System AI, filing | tables, `<samp>` findings | the flat audit register near quarter close |
+| Lady Luck | `` `13 + 1 = 14` `` code totals | the croupier readout, exact and final |
+| Shelly | `<small>` mist, a few words | barely present, anchor holding |
+| Chonks | `***POP***` minor SFX | one gurgle, one comic beat |
+| Stats | `<var>Groove</var>`, `<samp>` rolls | crisp LitRPG data, never prose |
+
+Major SFX (Monty WHAM, the Final Beat) are bespoke SVG or WebP lettering from
+the art team, requested in `docs/art-placements.md`, never a font the repo
+does not own. Minor SFX stay in `***bold italics***`. SVG loaded as `<img>`
+cannot fetch webfonts, so lettering is drawn paths or generic families, and
+the alt text always carries the words.
+
 ## System-AI quote
 
 ```markdown
@@ -88,6 +112,34 @@ Clips live in `images/motion/`, each with a `-still.webp` rest frame. GitHub hon
 ```
 
 Where each clip and render belongs, with ready-to-paste lines and S3 keys: `docs/art-placements.md`.
+
+## Boss layout (image beside the brief, never below it)
+
+Copy-paste form of the Visual Lit alignment rules in
+`docs/visual-design-system.md` section 9. Worked example: Monty in
+`workshop/floor-0.md` Step 4. Swap the card, alt text, boss name and check
+paragraph; keep the card at `width="320"`, one image for the beat, and the
+commands full width under the table.
+
+```markdown
+<table>
+<tr>
+<td valign="top" width="50%"><img src="../images/cards/boss-NAME-640x640.webp" alt="Describe who is in the picture, where, and what they are doing" width="320"></td>
+<td valign="top" width="50%">
+
+> <img src="../images/icons/floor-boss-96x96.webp" alt="" width="28" height="28"> **FLOOR BOSS: NAME, THE TITLE.** One paragraph: who blocks the way, what the confusion is, and how the Crawler wins. Nobody gets hurt: say what winning looks like.
+
+One short paragraph with the check the picture teaches: what to run, install or confirm. End by pointing at the commands right under this card.
+
+</td>
+</tr>
+</table>
+```
+
+Then the code block, the plain-language result, the roadblock table and the
+achievement toast, in that order, full width. No second copy of the boss card
+on the same screen. No character in the art, caption or alt text before the
+floor where the party meets them (Shelly: Floor 2, Chonks: Floor 3).
 
 ## Art rules
 

@@ -1,0 +1,39 @@
+{
+ "file": "almoco-nave-1200x675.webp",
+ "bytes": 133976,
+ "format": "webp lossy q82",
+ "render": {
+  "endpoint": "https://api.meta.ai/v1/images/generations",
+  "model": "muse-image-1.0",
+  "prompt_sha256": "2486d0603feed9d132d57c49b07dac8afd095b23c416e6fc3993b77eed5f2850",
+  "size": "1024x576"
+ },
+ "sha256": "3a7123249e9e65b123201eebdebec895f48c247ae5e00507efc58457559a4290",
+ "size": [
+  1200,
+  675
+ ],
+ "source": {
+  "raw": "floor-almoco-nave.png",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-07/raw/floor-almoco-nave.png",
+  "raw_sha256": "d07d6f9e21b8a42e8bd8215deb7e26156c3bb07951b6c0c2d8ba649e101412e3",
+  "request": "images/src/floor-almoco-nave.request.json"
+ },
+ "tokens": {
+  "ben_day": "#d7c7ee",
+  "vignette": "#0B0E14 (obsidian, banner spec base)"
+ },
+ "tools": {
+  "pillow": "13.0.0",
+  "python": "3.13.5"
+ },
+ "transforms": [
+  "cover-crop 1200x675 lanczos",
+  "vignette feather 50 to #0B0E14",
+  "ben-day 10px r2 alpha 10"
+ ],
+ "brand_exceptions": [
+  "BRAND.md 3 people/faces ban lifted: character cards for the cast and the opponents of the crawl",
+  "interface frame in the render is blank by prompt; no model text"
+ ]
+}

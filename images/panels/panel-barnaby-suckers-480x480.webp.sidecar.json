@@ -1,0 +1,31 @@
+{
+ "file": "panel-barnaby-suckers-480x480.webp",
+ "size": [
+  480,
+  480
+ ],
+ "format": "webp lossy q90",
+ "source": {
+  "image": "images/cards/cast-barnaby-legend-640x640.webp",
+  "image_sha256": "d135f61e458df138b03368289b1bfb2a5cfc2039a44f825c9d22a9ab3ad82392"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "rel",
+  "spec": "(0.42, 0.48, 1.0, 1.0)",
+  "box": [
+   268,
+   307,
+   640,
+   640
+  ],
+  "expand": 1.0,
+  "confidence": null,
+  "note": "sucker rows at reading distance"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos"
+ ],
+ "sha256": "3897b054cb292e50d9123174f4701745604c123604d51a76c82ec2d8900ae015"
+}

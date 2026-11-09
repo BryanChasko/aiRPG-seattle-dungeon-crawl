@@ -70,7 +70,7 @@ const nextText = computed(() => {
   height: 8px;
   margin: 0.4rem 0;
   background-color: #1a2030;
-  border: 1px solid #3a3550;
+  border: 1px solid var(--color-stroke);
   border-radius: 4px;
   overflow: hidden;
 }

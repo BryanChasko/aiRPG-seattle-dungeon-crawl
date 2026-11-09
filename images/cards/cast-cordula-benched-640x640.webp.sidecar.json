@@ -1,22 +1,22 @@
 {
  "file": "cast-cordula-benched-640x640.webp",
- "bytes": 94482,
+ "bytes": 86908,
  "format": "webp lossy q84",
  "render": {
   "endpoint": "https://api.meta.ai/v1/images/generations",
   "model": "muse-image-1.0",
-  "prompt_sha256": "0e1c2216fbd9d49f0d8186098de97ffdf05beb1e0ae1c01ea26dec2a1a856917",
+  "prompt_sha256": "97df741f8f7c48fb963c27842a2d89a407ec7664616320ab9d5ac2f7ee0b3699",
   "size": "1024x1024"
  },
- "sha256": "c92630dbf1cd1c1ef0a6d29f645c50c981d0319513e2e0d7293b1eaba92b2117",
+ "sha256": "67a533382d7f249d35049ba6fbaa9146a201bd6794e1d3e4c218453cebb87329",
  "size": [
   640,
   640
  ],
  "source": {
   "raw": "card-cast-cordula-benched.png",
-  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-08-batch-01/raw/card-cast-cordula-benched.png",
-  "raw_sha256": "81d1421e09e363f17fb92dbdf05d798cc92fedac05ac34b739a4664783d1de48",
+  "raw_kept_at": "/home/bryanchasko/writing/art/once-upon-agentic-ai/experiments/2026-11-09-batch-06/raw/card-cast-cordula-benched.png",
+  "raw_sha256": "db8fb0b500f5b9d61b584e6ab8bd1b5a4b4bbfd02fe4ab2dd5ecf41e0fa6914e",
   "request": "images/src/card-cast-cordula-benched.request.json"
  },
  "tokens": {
@@ -24,8 +24,8 @@
   "vignette": "#0B0E14 (obsidian, banner spec base)"
  },
  "tools": {
-  "pillow": "12.1.0",
-  "python": "3.14.2"
+  "pillow": "13.0.0",
+  "python": "3.13.5"
  },
  "transforms": [
   "cover-crop 640x640 lanczos",

@@ -17,8 +17,17 @@
         :typing="sending"
       />
 
-      <div v-if="sendError" class="game-view__send-error">
-        {{ sendError }}
+      <div v-if="sendError" class="game-view__send-error" role="alert">
+        <p>{{ sendError }}</p>
+        <p class="game-view__send-error-help">
+          Check the four workshop terminals (8000 rules, 8001 registry, 8002 dice, 8009 the
+          game server this page calls), then try again.
+          <a :href="FLOOR5_URL" target="_blank" rel="noopener">Floor 5, Part 4: launch them</a>
+          <span aria-hidden="true"> | </span>
+          <a :href="FLOOR6_URL" target="_blank" rel="noopener">Floor 6: connect this page</a>
+          <span aria-hidden="true"> | </span>
+          <a :href="REPO_URL" target="_blank" rel="noopener">GitHub</a>
+        </p>
       </div>
 
       <SponsorDealDialog
@@ -55,6 +64,8 @@ import PlayerInput from '@/components/PlayerInput.vue'
 import HypeMeter from '@/components/HypeMeter.vue'
 import SponsorDealDialog from '@/components/SponsorDealDialog.vue'
 import type { CharacterStats, ParsedMessage } from '@/types'
+import { REPO_URL, FLOOR5_URL, FLOOR6_URL } from '@/links'
+import { friendlyConnectionError } from '@/utils/serverUrl'
 
 const route = useRoute()
 const store = useGameStore()
@@ -91,7 +102,7 @@ async function handleAction(text: string) {
     messages.value = [...messages.value, { role: 'assistant', storyOutput: story }]
     store.setPendingDeal(deal)
   } catch (e) {
-    sendError.value = e instanceof Error ? e.message : 'Failed to send message'
+    sendError.value = friendlyConnectionError(e, 'Failed to send message')
   } finally {
     sending.value = false
   }
@@ -110,7 +121,7 @@ async function handleDeal(accepted: boolean) {
     messages.value = [...messages.value, { role: 'assistant', storyOutput: story }]
     store.setPendingDeal(nextDeal)
   } catch (e) {
-    sendError.value = e instanceof Error ? e.message : 'Failed to answer the sponsor'
+    sendError.value = friendlyConnectionError(e, 'Failed to answer the sponsor')
   } finally {
     sending.value = false
   }
@@ -142,7 +153,7 @@ onMounted(async () => {
   try {
     stats.value = await api.fetchUser(characterName)
   } catch (e) {
-    statsError.value = e instanceof Error ? e.message : 'Failed to load character stats'
+    statsError.value = friendlyConnectionError(e, 'Failed to load character stats')
   } finally {
     statsLoading.value = false
   }
@@ -151,7 +162,7 @@ onMounted(async () => {
   try {
     messages.value = await api.fetchMessages()
   } catch (e) {
-    messagesError.value = e instanceof Error ? e.message : 'Failed to load message history'
+    messagesError.value = friendlyConnectionError(e, 'Failed to load message history')
   } finally {
     messagesLoading.value = false
   }
@@ -165,7 +176,7 @@ onMounted(async () => {
   display: flex;
   gap: 2rem;
   padding: 1rem;
-  min-height: 100vh;
+
   align-items: flex-start;
   background-color: var(--color-bg-page);
 }
@@ -183,13 +194,13 @@ onMounted(async () => {
   flex-direction: column;
   gap: 0.75rem;
   min-width: 0;
-  background-color: #161b26;
-  background-image: url('/textures/obsidian-512x512.webp');
+  background-color: var(--color-bg-card);
+  background-image: var(--panel-scrim), var(--texture-parchment);
   background-size: cover;
-  border: 1px solid #3a3550;
-  border-radius: 4px;
+  border: var(--border-panel);
+  border-radius: var(--border-radius-panel);
   padding: 1rem;
-  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-panel);
   z-index: 1;
 }
 
@@ -202,24 +213,24 @@ onMounted(async () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #161b26;
-  background-image: url('/textures/obsidian-512x512.webp');
+  background-color: var(--color-bg-card);
+  background-image: var(--panel-scrim), var(--texture-parchment);
   background-size: cover;
-  border: 1px solid #3a3550;
-  border-radius: 4px;
+  border: var(--border-panel);
+  border-radius: var(--border-radius-panel);
   z-index: -1;
 }
 
 .game-view__main::before {
   transform: rotate(0.8deg);
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-panel);
 }
 
 .game-view__main::after {
-  background-color: #1a2030;
-  background-image: url('/textures/obsidian-512x512.webp');
+  background-color: var(--color-parchment-dark);
+  background-image: var(--panel-scrim), var(--texture-parchment);
   background-size: cover;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-panel);
 }
 
 .game-view__send-error {

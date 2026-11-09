@@ -43,7 +43,7 @@ const emit = defineEmits<{
   padding: 0.6rem 1rem;
   color: var(--color-ink);
   background-color: var(--color-bg-card);
-  border: 1px solid #3a3550;
+  border: 1px solid var(--color-stroke);
   /* border-radius: 8px; */
   border-radius: 1rem;
   cursor: pointer;

@@ -50,8 +50,8 @@ def sha256_file(p: Path) -> str:
 def check() -> int:
     bad = 0
     for webp in sorted((ROOT / "images").rglob("*.webp")):
-        if str(webp).endswith(".sidecar.json") or webp.parent.name in ("motion", "sprites"):
-            continue  # clips and SAM sprites are not render classes; their sidecars differ
+        if str(webp).endswith(".sidecar.json") or webp.parent.name in ("motion", "sprites", "panels"):
+            continue  # clips, SAM sprites and panel crops are not render classes; their sidecars differ
         side = Path(str(webp) + ".sidecar.json")
         name = webp.name
         try:
@@ -140,8 +140,8 @@ def rel(p: Path) -> str:
 
 
 def api_key() -> str:
-    """META_IMAGE_API_KEY wins; otherwise ~/.config/muse/auth.json (providers.meta.api_key). Never printed."""
-    key = os.environ.get("META_IMAGE_API_KEY", "")
+    """META_IMAGE_API_KEY, then MODEL_API_KEY, then ~/.config/muse/auth.json. Never printed."""
+    key = os.environ.get("META_IMAGE_API_KEY", "") or os.environ.get("MODEL_API_KEY", "")
     if key:
         return key
     try:

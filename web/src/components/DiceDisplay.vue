@@ -112,9 +112,9 @@ const diceColor = computed(() => diceColorMap[assetName.value] || '#7f8c8d')
   font-family: var(--font-ui);
   font-weight: 900;
   font-size: 1.4rem;
-  color: #e8e2f0;
+  color: #171022;
   pointer-events: none;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 3px rgb(255 255 255 / 85%), 0 1px 1px rgb(255 255 255 / 85%);
 }
 
 /* --- CSS fallback path --- */

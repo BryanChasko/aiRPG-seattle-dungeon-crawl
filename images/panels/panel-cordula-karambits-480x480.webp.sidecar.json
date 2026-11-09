@@ -1,0 +1,31 @@
+{
+ "file": "panel-cordula-karambits-480x480.webp",
+ "size": [
+  480,
+  480
+ ],
+ "format": "webp lossy q90",
+ "source": {
+  "image": "images/cards/cast-cordula-drill-640x640.webp",
+  "image_sha256": "df7670e20dddd286f08b37c6bfdf6eebbda0d16d1ccc45e1eb24e5ca4d8b8be4"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "rel",
+  "spec": "(0.22, 0.52, 0.78, 1.0)",
+  "box": [
+   140,
+   332,
+   499,
+   640
+  ],
+  "expand": 1.0,
+  "confidence": null,
+  "note": "boots, splash and the sheathed calf karambits"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos"
+ ],
+ "sha256": "57b4c44ce1b159b3d4798448b85885c9073e2d90f86d53bc977484823986f204"
+}

@@ -4,8 +4,15 @@
 Usage:
   python3 tools/meta_api.py models        list the models this key can call (free, no render)
 
-The key comes from META_IMAGE_API_KEY or ~/.config/muse/auth.json (providers.meta.api_key)
-and is never printed or written anywhere.
+The key comes from META_IMAGE_API_KEY, then MODEL_API_KEY, then ~/.config/muse/auth.json
+(providers.meta.api_key), and is never printed or written anywhere. The auth.json key is the
+Muse subscription OAuth credential: it covers the muse-* models but has zero SAM quota
+(sam-3.1 answers 429 rate_limit_exceeded instantly). SAM needs a Meta Model API key
+(MODEL_API_KEY in Meta's samples); ours lives in AWS Systems Manager Parameter Store at
+/heraldstack/shared/meta-model-api-key (account 211125425201), e.g.
+  export META_IMAGE_API_KEY=$(aws ssm get-parameter --name /heraldstack/shared/meta-model-api-key \
+    --with-decryption --profile ops-reader --region us-west-2 --query Parameter.Value --output text)
+(the parameter lives in us-west-2; a profile defaulting elsewhere creates a stray copy there.)
 """
 from __future__ import annotations
 import json, os, sys, urllib.error, urllib.request
@@ -25,7 +32,8 @@ BASE = (_meta().get("api_base_url") or "https://api.meta.ai/v1").rstrip("/")
 
 
 def api_key() -> str:
-    return os.environ.get("META_IMAGE_API_KEY") or _meta().get("api_key", "")
+    return (os.environ.get("META_IMAGE_API_KEY") or os.environ.get("MODEL_API_KEY")
+            or _meta().get("api_key", ""))
 
 
 def request(method: str, path: str, body: dict | None = None, timeout: int = 300, waits=(5, 20, 60)) -> dict:

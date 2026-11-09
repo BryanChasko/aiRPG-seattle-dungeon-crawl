@@ -1,0 +1,34 @@
+{
+ "file": "cast-barnaby-legend-octopus.webp",
+ "size": [
+  581,
+  487
+ ],
+ "format": "webp lossy q90 rgba",
+ "source": {
+  "image": "images/cards/cast-barnaby-legend-640x640.webp",
+  "image_sha256": "d135f61e458df138b03368289b1bfb2a5cfc2039a44f825c9d22a9ab3ad82392"
+ },
+ "segment": {
+  "model": "sam-3.1",
+  "concept": "octopus",
+  "object_id": "0",
+  "confidence": 0.9375000596046448,
+  "box": [
+   33,
+   117,
+   614,
+   604
+  ],
+  "mask_raster": [
+   581,
+   487
+  ]
+ },
+ "transforms": [
+  "crop to SAM box",
+  "mask upscaled lanczos to box",
+  "alpha blur 1.2"
+ ],
+ "sha256": "af771b864087e419f16353051fc3daffdab8ef8031672671c398c9a3e74eedb9"
+}

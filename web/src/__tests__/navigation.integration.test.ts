@@ -7,8 +7,6 @@ import NewGameView from '@/views/NewGameView.vue'
 import GameView from '@/views/GameView.vue'
 import { useGameStore } from '@/stores/gameStore'
 
-
-
 function createTestRouter(pinia: ReturnType<typeof createPinia>) {
   const router = createRouter({
     history: createMemoryHistory(),
@@ -46,7 +44,6 @@ const AppWrapper = defineComponent({
     return () => h('div', { id: 'app' }, [h(resolveComponent('RouterView'))])
   },
 })
-
 
 import { resolveComponent } from 'vue'
 
@@ -124,8 +121,8 @@ describe('Navigation Integration', () => {
 
       await flushPromises()
 
-      // Pick who speaks for the party
-      await wrapper.find('#party-member').setValue('Barnaby')
+      // Pick who the player plays as
+      await wrapper.findAll('input[name="party-member"]')[1].setValue()
       await wrapper.find('#server-url').setValue('https://example.com')
 
       // Submit the form, then let the 1.5 s closing animation run

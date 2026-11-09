@@ -1,0 +1,55 @@
+{
+ "run": "2026-11-09-batch-07",
+ "why": "Floor 9 ALMOCO, the Corrosion Cathedral (canon revision 3; art slots in research/2026-11-08-floor-9-almoco-spec.md section 11). Techno-Gothic, black on black on grey, teal only in the runoff, no gore, no real company logos; opponents are people at work, worried not menacing.",
+ "renders": [
+  {
+   "name": "floor-floor-9",
+   "class": "floor",
+   "out": "images/floors/floor-9-1200x675.webp",
+   "subject": "the Corrosion Cathedral of ALMOCO from the water: a sprawling mid-century lead smelter on a black slag-concrete shoreline, three soot-caked 500-foot brick stacks breathing sweet grey fog like smoldering obelisks, furnace fire flickering behind iron vents, rusted lattice gantry cranes at the tide edge like praying-mantis skeletons, one haloed streetlight in the fog, ditch water glowing faint milky teal in the foreground, black on black on grey with teal only in the runoff",
+   "place": {"page": "workshop/floor-9.md", "where": "floor plate at the top (page lands with the Floor 9 build)", "alt": "ALMOCO, the Corrosion Cathedral: three smoldering smelter stacks and mantis-like cranes over a black shoreline, teal runoff in the ditch"}
+  },
+  {
+   "name": "floor-almoco-nave",
+   "class": "floor",
+   "out": "images/floors/almoco-nave-1200x675.webp",
+   "subject": "inside the Nave of the ALMOCO smelter in thick lead fog: a cathedral-scale industrial hall, furnace fire glowing behind rows of iron vents, haloed lamps fading into grey haze, a high catwalk under a swinging magnet bucket of ore, black lubricant dripping, black on black on grey, nobody in the shot",
+   "place": {"page": "workshop/floor-9.md", "where": "zone plate for the Nave section (optional slot)", "alt": "The Nave inside ALMOCO: furnace glow behind iron vents, a magnet bucket swinging over a catwalk in grey fog"}
+  },
+  {
+   "name": "card-opp-shift-foreman",
+   "class": "card",
+   "out": "images/cards/opp-shift-foreman-640x640.webp",
+   "subject": "a tired shift foreman in a hard hat and grey coveralls holding a clipboard like a shield, worried not menacing, quota board blurred behind him, grey smelter fog, kind eyes, a man doing arithmetic he does not believe",
+   "place": {"page": "workshop/floor-9.md", "where": "opponent card, shift foreman dance-off", "alt": "The ALMOCO shift foreman in hard hat and grey coveralls, clipboard held like a shield, worried"}
+  },
+  {
+   "name": "card-opp-crane-operator",
+   "class": "card",
+   "out": "images/cards/opp-crane-operator-640x640.webp",
+   "subject": "a crane operator in a glass gantry cab seen from below, eyes fixed forward on the horizon, one hand on a worn lever, a magnet bucket of ore mid-swing beside the cab, fog below the lattice boom, he never looks down",
+   "place": {"page": "workshop/floor-9.md", "where": "opponent card, crane operator dance-off", "alt": "The ALMOCO crane operator in his glass cab high in the fog, eyes forward, hand on the lever, magnet bucket mid-swing"}
+  },
+  {
+   "name": "card-opp-haul-truck-driver",
+   "class": "card",
+   "out": "images/cards/opp-haul-truck-driver-640x640.webp",
+   "subject": "a haul truck driver on a double shift in a cab the height of a house window, sandwich in one hand, waving with the other, one tire taller than a person filling the foreground, headlamps blooming in grey fog, cheerful and exhausted",
+   "place": {"page": "workshop/floor-9.md", "where": "opponent card, haul truck driver dance-off", "alt": "The ALMOCO haul truck driver waving from a cab as high as a house window, a tire taller than a person in front"}
+  },
+  {
+   "name": "card-opp-public-relations-man",
+   "class": "card",
+   "out": "images/cards/opp-public-relations-man-640x640.webp",
+   "subject": "a tidy public relations man at a lectern clutching a binder of memos, neat suit and a fixed smile, gesturing away from the grey fog plume rising directly behind him, insisting everything is steam, comically sincere",
+   "place": {"page": "workshop/floor-9.md", "where": "opponent card, public relations man dance-off", "alt": "The ALMOCO public relations man at a lectern with a binder of memos, smiling, pointing away from the plume behind him"}
+  },
+  {
+   "name": "icon-fog-index",
+   "class": "icon",
+   "out": "images/icons/fog-index-96x96.webp",
+   "subject": "a round brass fog-index gauge with its needle buried in grey haze, a thin teal ring glowing around the rim, flat and dark",
+   "place": {"page": "workshop/floor-9.md", "where": "Fog Index mechanic icon", "alt": "A round fog-index gauge with a teal ring, its needle lost in grey haze"}
+  }
+ ]
+}

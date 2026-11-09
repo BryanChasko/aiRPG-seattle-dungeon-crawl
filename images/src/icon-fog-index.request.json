@@ -1,0 +1,13 @@
+{
+ "model": "muse-image-1.0",
+ "prompt": "Dark fantasy game interface icon, a single object centered with generous empty margin, cinematic lighting, high contrast, polished brass and weathered leather detail, plain obsidian black background (#0B0E14), soft glow halo. Subject: a round brass fog-index gauge with its needle buried in grey haze, a thin teal ring glowing around the rim, flat and dark No text, no letters, no numbers, no words, no logos, no watermark, no signature, no user interface.",
+ "n": 1,
+ "size": "1024x1024",
+ "output_format": "png",
+ "endpoint": "POST https://api.meta.ai/v1/images/generations",
+ "prompt_sha256": "3c49c565d0d9780f632a4dcbff1f27883ef4e8d6c7f228233111f928cb2f2ad6",
+ "auth": "REDACTED",
+ "output_sha256": null,
+ "revised_prompt": null,
+ "plan": "images/plans/2026-11-09-batch-07.json"
+}

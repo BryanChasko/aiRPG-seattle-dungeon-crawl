@@ -1,0 +1,32 @@
+{
+ "file": "speaker-cordula-face-96x96.webp",
+ "size": [
+  96,
+  96
+ ],
+ "format": "webp lossy q88",
+ "source": {
+  "image": "images/cards/cast-cordula-640x640.webp",
+  "image_sha256": "e7ccfc6091a3adfb4af4fff22a81cf4d816ce97d6397bfb550682ecb2a557013"
+ },
+ "crop": {
+  "by": "tools/panel_crops.py",
+  "kind": "sam",
+  "spec": "woman's face",
+  "box": [
+   300,
+   68,
+   345,
+   140
+  ],
+  "expand": 1.6,
+  "confidence": 0.9139785170555115,
+  "note": "Cordula default speaker headshot"
+ },
+ "transforms": [
+  "square crop to the panel box",
+  "resize lanczos",
+  "no dots, no vignette (speaker headshot)"
+ ],
+ "sha256": "f6f55ceb9ac8cbb50cefac39bb15ed4e4f38dd44319878a516987aa9100089dd"
+}
