@@ -46,7 +46,7 @@ The Sound came in at 0551. My voice, my dice, my rules, my memory are scattered 
 
 One arm out of a den is all the cover shows. The rest of Barnaby is earned in the dungeon.
 
-[Enter the dungeon: Floor 0](workshop/floor-0.md)
+[Enter the dungeon: Floor 0](dungeon/workshop/floor-0.md)
 
 ---
 
@@ -60,7 +60,7 @@ You rebuild the System AI of a LitRPG dungeon crawl under Seattle: a live cloud-
 - A web arena where a reader plays the crawl against the System you built.
 - A production deployment on AgentCore: dice, character and rules services with memory and a knowledge base, under one orchestrating System AI.
 
-Every agent on every floor runs on Amazon Nova 2 Lite. Each floor rebuilds one more subsystem, and the full design map is in [The System](workshop/world/the-system.md).
+Every agent on every floor runs on Amazon Nova 2 Lite. Each floor rebuilds one more subsystem, and the full design map is in [The System](dungeon/workshop/world/the-system.md).
 
 </details>
 
@@ -79,7 +79,7 @@ Every Safe Room has a terminal on the broadcast relay. The Strands manual is the
 - Elizabeth Fuentes, [Strands samples on GitHub](https://github.com/elizabethfuentes12) -- MIT-0 licensed, model-agnostic
 - [Strands Agents SDK](https://strandsagents.com/)
 
-The full floor map, with story and plate art for every floor, is the [Dungeon Map](workshop/README.md#the-dungeon-map).
+The full floor map, with story and plate art for every floor, is the [Dungeon Map](dungeon/workshop/README.md#the-dungeon-map).
 
 </details>
 
@@ -107,7 +107,7 @@ region: us-west-2
 
 **What it costs**
 
-Floors bill for Amazon Nova 2 Lite calls: see [What a Turn Costs](workshop/floor-1.md#what-a-turn-costs). Floor 8 also leaves billable resources in your account until cleanup: see [What Floor 8 Costs](workshop/floor-8.md#what-floor-8-costs) and [The Exit](workshop/cleanup.md).
+Floors bill for Amazon Nova 2 Lite calls: see [What a Turn Costs](dungeon/workshop/floor-1.md#what-a-turn-costs). Floor 8 also leaves billable resources in your account until cleanup: see [What Floor 8 Costs](dungeon/workshop/floor-8.md#what-floor-8-costs) and [The Exit](dungeon/workshop/cleanup.md).
 
 **Preflight check**
 
@@ -138,7 +138,7 @@ uv sync --group dev
 uv run pytest tests/
 ```
 
-The tests cover every floor without calling Amazon Nova 2 Lite or AWS: agents, tools, MCP server, A2A servers, Groove and Mana, the handbook knowledge base, the harness options, and the Floor 8 memory, retrieval and entrypoint. The web interface has its own suite in `web/` (`npm ci`, then `npx vitest run`). [Coverage page](workshop/coverage.md).
+The tests cover every floor without calling Amazon Nova 2 Lite or AWS: agents, tools, MCP server, A2A servers, Groove and Mana, the handbook knowledge base, the harness options, and the Floor 8 memory, retrieval and entrypoint. The web interface has its own suite in `web/` (`npm ci`, then `npx vitest run`). [Coverage page](dungeon/workshop/coverage.md).
 
 </details>
 
@@ -160,9 +160,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.
 
 ---
 
-This crawl builds on Once Upon Agentic AI, the AWS sample workshop that first taught the Strands Agents SDK through a role-playing game. Every exercise of that workshop is still here; the [coverage page](workshop/coverage.md) maps them. The game-running agent the source workshop calls the Narrator is the System AI here: Narrator is that job's code name, and the System AI is the one speaker who runs the crawl.
+This crawl builds on Once Upon Agentic AI, the AWS sample workshop that first taught the Strands Agents SDK through a role-playing game. Every exercise of that workshop is still here; the [coverage page](dungeon/workshop/coverage.md) maps them. The game-running agent the source workshop calls the Narrator is the System AI here: Narrator is that job's code name, and the System AI is the one speaker who runs the crawl.
 
-**The World**: [World guide](workshop/world/README.md) -- [The Story](workshop/world/story.md) -- [Timeline](workshop/world/timeline.md) -- [The System](workshop/world/the-system.md) -- [Seattle, Under the Sound](workshop/world/seattle.md)
+**The World**: [World guide](dungeon/workshop/world/README.md) -- [The Story](dungeon/workshop/world/story.md) -- [Timeline](dungeon/workshop/world/timeline.md) -- [The System](dungeon/workshop/world/the-system.md) -- [Seattle, Under the Sound](dungeon/workshop/world/seattle.md)
 
 **Stuck?**: [`study/ask_the_system.py`](study/README.md) is a study companion built with Strands. Ask it about any floor, TODO, error or Strands API, and it answers from this repository and the Strands API reference, with citations.
 

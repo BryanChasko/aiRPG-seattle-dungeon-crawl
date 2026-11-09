@@ -1,7 +1,7 @@
 """Floor 0 preflight: check the local setup before you climb.
 
-    uv run python 0_stairwell/preflight.py           local checks only
-    uv run python 0_stairwell/preflight.py --live    also one tiny Amazon Nova 2 Lite request
+    uv run python dungeon/0_stairwell/preflight.py           local checks only
+    uv run python dungeon/0_stairwell/preflight.py --live    also one tiny Amazon Nova 2 Lite request
 
 Exit 0 when nothing failed; otherwise exit 1 with a one-line fix under each FAIL. A WARN never fails the run.
 """
