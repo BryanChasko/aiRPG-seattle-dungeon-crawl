@@ -339,16 +339,24 @@ Do not start this early: floor pages, `study/build_pack.py`,
 paths, so the move and every reference fix land in one prepared
 branch, gated the same way as the slug change.
 
-Target shape (names provisional, decided on the branch):
+Target shape (decided on the move branch):
 
-- `README.md` stays at root, alone.
-- `dungeon/` (or `crawl/`): the workshop -- `workshop/`, `study/`,
-  `tools/` (docs tooling), `characters.json`, floor code folders
-  (`0_stairwell/` through `8_agentcore_production/`,
-  `encounters/`).
-- `site/` (or `play/`): the web interface -- `web/`, `assets/hud/`.
-- `art/`: `images/`, `docs/` art plans, art tooling out of
-  `tools/` (render, compose, publish scripts).
+- `README.md` stays at root, with the manifests (`pyproject.toml`,
+  `.python-version`) and repo config (`.devcontainer/`,
+  `.github/dependabot.yml`, `.prettierignore`). Manifests do not
+  move: the 4 scripts' ROOT logic (`0_stairwell/preflight.py`,
+  `study/build_pack.py`, `tools/check_docs.py`,
+  `study/ask_the_system.py`) learns REPO_ROOT versus the moved
+  directories instead. Dependabot `directory: '/'` is unchanged.
+- `dungeon/`: the workshop -- `workshop/`, `study/`, floor code
+  folders (`0_stairwell/` through `8_agentcore_production/`),
+  `encounters/`, `characters.json`, and docs tooling out of
+  `tools/` (`check_docs.py` plus its helpers).
+- `site/`: the web interface -- `web/`, `assets/hud/`.
+- `art/`: `images/`, and art tooling out of `tools/`
+  (`airpg_render.py`, `compose_readme_art.py`, `motion.py`,
+  `publish_art.py`, `contact_sheet.py`, `sam_cutout.py`,
+  `sam_probe.py`, `meta_api.py`).
 
 Rules for the move branch: every `cd`, relative link, image path,
 `build_pack.py` ROOT, check-docs roots, and vite base move together;
@@ -359,18 +367,29 @@ renames (`mv aiRPG-seattle-dungeon-crawl seattle-strands-dungeon-crawl`)
 happen in the same window, so learners clone once into the final
 shape instead of twice.
 
-## Appendix: the 53 files carrying the old slug on origin/main
+## Appendix: the 55 files carrying the old slug on origin/main
 
-From `git grep -il 'aiRPG-seattle-dungeon-crawl' origin/main` at
-e3c09614c0fbdc58f0cc3fe126ab877efcf94bb2. Re-run the command on rename
-day; this list is a snapshot, not the source of truth.
+From `grep -rl 'aiRPG-seattle-dungeon-crawl'` (case sensitive) at
+e2334e5: 90 lines in 56 files, 70 lines in the 55 files below plus
+20 lines in this plan. Re-run the command on rename day; this list
+is a snapshot, not the source of truth. New since the earlier
+snapshot: `web/src/links.ts`,
+`web/src/components/__tests__/ServerHelp.test.ts`,
+`web/src/views/NewGameView.vue`,
+`web/src/views/__tests__/NewGameView.test.ts`. Gone case
+sensitively (lowercase now, deliberate section 3.3 keeps):
+`8_agentcore_production/ui_proxy/ui_proxy.py` (SESSION_ID) and
+`pyproject.toml` (distribution name). `web/public/404.html` carries
+3 slug lines.
 
 ```text
-8_agentcore_production/ui_proxy/ui_proxy.py
-pyproject.toml
 study/build_pack.py
 study/knowledge-pack.md
 web/public/404.html
+web/src/components/__tests__/ServerHelp.test.ts
+web/src/links.ts
+web/src/views/__tests__/NewGameView.test.ts
+web/src/views/NewGameView.vue
 web/vite.config.ts
 workshop/cleanup.md
 workshop/encounters/ask-the-player.md
