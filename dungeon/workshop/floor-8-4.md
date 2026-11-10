@@ -66,8 +66,6 @@ from bedrock_agentcore.memory.integrations.strands.config import AgentCoreMemory
 from bedrock_agentcore.memory.integrations.strands.session_manager import AgentCoreMemorySessionManager
 ```
 
-The two classes live in two submodules of `bedrock_agentcore.memory.integrations.strands`.
-
 In Floor 5 a single Narrator served every request. Here the agent is created in `get_narrator(session_id)`, once per session, on the first invocation of that session: the session manager needs the session id, which is known only when a request arrives, and creating the agent at import time could exceed the few seconds a new microVM has to start.
 
 ```python
@@ -99,8 +97,6 @@ async def invoke(payload, context):
     return response.structured_output.model_dump()
 ```
 
-The entrypoint answers `{"prompt": "..."}` with a `StoryOutput` dictionary and `{"messages": true}` with the history, for the session in `context.session_id`.
-
 ### Step 4: Run the App
 
 ```python
@@ -119,9 +115,7 @@ if __name__ == "__main__":
 #  from fastapi.middleware.cors import CORSMiddleware; from tinydb import TinyDB, Query)
 ```
 
-Nothing in `narrator_orchestrator.py` uses these five imports anymore, and AgentCore does not install the packages: the Narrator's `pyproject.toml` does not list them, so one leftover import stops the runtime at startup.
-
-The `pyproject.toml` next to the Narrator lists the Narrator's dependencies for AgentCore. `invoke-policy.json` is used in Part 2, Step 3.
+Nothing in `narrator_orchestrator.py` uses these five imports anymore, and AgentCore does not install the packages: one leftover import stops the runtime at startup.
 
 > <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Cloud only: this version of the Narrator needs `MEMORY_CONVERSATIONS_ID`, which exists only on AgentCore: do not start the Narrator locally.
 
@@ -199,8 +193,6 @@ Without `envVars`, the Narrator fails at startup with a `KeyError`. Without `add
 
 ### Step 4: Deploy
 
-> <img src="../../art/images/icons/warning-96x96.webp" alt="" width="28" height="28"> **SYSTEM WARNING:** Run these commands from the `gameprod` folder, like every `agentcore` command on this floor.
-
 ```bash
 agentcore deploy -y
 agentcore status
@@ -236,13 +228,13 @@ If the first invoke fails, the Narrator logs say why: `KeyError` names a missing
 
 ### What the Narrator and Its Memory Cost
 
-The Narrator runtime bills like the other runtimes, per second while a session runs, and a dance-off turn keeps it busy 30 to 60 seconds, mostly waiting on Amazon Nova 2 Lite and the other runtimes, which costs no CPU. The `conversations` memory bills about $1.00 per GB of events written, with each event counted as at least 12 KB, $0.20 per GB read and $0.10 per GB-month stored ([AgentCore pricing](https://aws.amazon.com/bedrock/agentcore/pricing/)). A hundred turns write a few hundred events: about 5 MB billed, half a cent. The Amazon Nova 2 Lite calls of those hundred turns, about a dollar, cost more than every runtime and memory of the floor together.
+The Narrator runtime bills per second while a session runs; a turn keeps it busy 30 to 60 seconds, mostly waiting on the model and the other bricks. The `conversations` memory bills about $1.00 per GB written ([AgentCore pricing](https://aws.amazon.com/bedrock/agentcore/pricing/)): a hundred turns write about 5 MB, half a cent. The Amazon Nova 2 Lite calls of those turns, about a dollar, cost more than every runtime and memory on the floor together.
 
 ## Part 3: Play from the Web Interface (ui_proxy/ui_proxy.py)
 
 > <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "The browser has no AWS credentials. The proxy does. It signs every request and forwards it to the Narrator. The System AI approves of intermediaries who know their place."
 
-The Floor 6 web interface runs in a browser at `http://127.0.0.1:8009` with no AWS credentials, so the proxy (a small local FastAPI server keeping the Floor 5 Narrator's three routes) forwards each request to the runtime signed with the active AWS profile's credentials. It finds the Narrator ARN and the `characters` memory id by listing them, so nothing needs copying: `/inquire` and `/messages` call `invoke_agent_runtime` with the two entrypoint payloads, `/user/{user_name}` reads the sheet from the Character Agent's memory as in 8.2, and every request shares one `SESSION_ID`: one session id, one campaign. Change `SESSION_ID` to start a new game.
+The Floor 6 web interface runs in a browser with no AWS credentials, so the proxy (a small local FastAPI server keeping the Floor 5 Narrator's three routes) forwards each request to the runtime, signed with the active AWS profile. It finds the Narrator ARN and the `characters` memory id by listing them, so nothing needs copying. Every request shares one `SESSION_ID`: one session id, one campaign. Change `SESSION_ID` to start a new game.
 
 ### Step 1: Launch the Proxy
 
@@ -287,7 +279,7 @@ Check: the character panel shows the sheet registered in 8.2, and the first turn
 
 > <img src="../../art/images/icons/system-ai-96x96.webp" alt="" width="28" height="28"> **System AI:** "Traces show every thought the Narrator had during a turn, across four runtimes. Most of them were about you."
 
-A Narrator turn now crosses several runtimes with no terminal to watch, so AgentCore records each turn as a trace instead: the three agent `pyproject.toml` files list `aws-opentelemetry-distro`, AgentCore starts them with `opentelemetry-instrument`, and Strands creates the spans itself, so the code needs no additions. The dice server has no model and keeps tracing off (`"enableOtel": false` in `agentcore.json`); its rolls appear on the Narrator's side. A workshop's worth of turns is a few MB of spans, under a cent ([AgentCore pricing](https://aws.amazon.com/bedrock/agentcore/pricing/), Observability). See [AgentCore Observability](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html) in the AgentCore Developer Guide.
+A Narrator turn now crosses several runtimes with no terminal to watch, so AgentCore records each turn as a trace instead: the three agent `pyproject.toml` files list `aws-opentelemetry-distro`, and Strands creates the spans itself, so the code needs no additions. The dice server keeps tracing off (`"enableOtel": false`); its rolls appear on the Narrator's side. A workshop's worth of turns is a few MB of spans, under a cent. See [AgentCore Observability](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html).
 
 ### Step 1: List the Traces
 
