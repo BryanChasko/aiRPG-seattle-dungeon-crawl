@@ -121,13 +121,9 @@ Nothing in `narrator_orchestrator.py` uses these five imports anymore, and Agent
 
 ## Part 2: Deploy the Narrator
 
-Run the commands in Part 2 from the project folder:
-
-```bash
-cd gameprod
-```
-
 ### Step 1: Add the Conversations Memory
+
+From the `gameprod` folder:
 
 ```bash
 agentcore add memory --name conversations
@@ -143,13 +139,7 @@ agentcore add agent --name narrator --type byo --protocol HTTP --framework Stran
   --code-location ../narrator --entrypoint narrator_orchestrator.py
 ```
 
-Use `--protocol HTTP` this time: the Narrator is neither an MCP server nor an A2A agent, but an application called over HTTP. Check the path:
-
-```bash
-ls ../narrator
-```
-
-The listing shows `narrator_orchestrator.py`, `invoke-policy.json`, `nova-policy.json` and `pyproject.toml`.
+Use `--protocol HTTP` this time: the Narrator is neither an MCP server nor an A2A agent, but an application called over HTTP.
 
 ### Step 3: Configure the Narrator's Runtime
 
@@ -249,15 +239,7 @@ You should see `Forwarding to arn:aws:bedrock-agentcore:us-west-2:...:runtime/ga
 
 ### Step 2: Play
 
-From another terminal, the same `/inquire` request as before:
-
-```bash
-curl -X POST http://0.0.0.0:8009/inquire \
-  -H "Content-Type: application/json" \
-  -d '{"question": "Cordula challenges the Quarterly Close Accountant to a dance-off. Run round one."}'
-```
-
-Then open the Floor 6 web interface, pick the speaking character and enter `http://127.0.0.1:8009` as the server URL, as in Floor 6. The proxy reads the character sheets registered in the cloud memory in 8.2. Every turn now travels from the browser to the proxy, to the Narrator runtime, and from there to the three other bricks. Stop the proxy and start it again: the campaign picks up where it stopped.
+Open the Floor 6 web interface, pick the speaking character and enter `http://127.0.0.1:8009` as the server URL, as in Floor 6. The proxy reads the character sheets registered in the cloud memory in 8.2. Every turn now travels from the browser to the proxy, to the Narrator runtime, and from there to the three other bricks. Stop the proxy and start it again: the campaign picks up where it stopped.
 
 Now the last boss of the crawl, in the cloud, with the whole party deployed:
 
@@ -289,7 +271,7 @@ Play a turn that needs a roll and a rule, for example "Barnaby tries an Eight-Po
 agentcore traces list --runtime narrator
 ```
 
-The command lists one trace per turn, with its id and the session id of the proxy, followed by a link to the CloudWatch console. Traces take 2 to 3 minutes to appear: if the list is empty, wait and run the command again.
+Traces take 2 to 3 minutes to appear: if the list is empty, wait and run the command again.
 
 ### Step 2: Read a Turn in the Console
 
@@ -336,17 +318,11 @@ print('Session stopped')
 
 The next request starts a new session on the latest version. The campaign is not lost: the conversation lives in the `conversations` memory, not in the microVM. If the command fails with `ResourceNotFoundException`, no session was open, and the error has another cause: read `agentcore logs --runtime narrator` from the `gameprod` folder. If `SESSION_ID` in `ui_proxy.py` was changed, use that value in the command.
 
-The AWS CLI has the same operation, `aws bedrock-agentcore stop-runtime-session`, but only in recent versions: an older AWS CLI answers `Invalid choice: 'bedrock-agentcore'`. The Python version above uses the boto3 package of the workshop environment, which always includes the operation.
-
-The Narrator says an agent call failed with the endpoint "not in the allowed endpoints list". The Narrator's `a2a_client` matches the endpoint character for character, and the model retyped the long encoded URL instead of copying it. The Narrator's system prompt carries the verbatim-copy rule; retry the turn and it copies the URL exactly.
-
-The narration ignores the Groove rules: a loss bigger than 6, or a Move Call with the wrong ability modifier. That is the model improvising, not a broken wire: the dice and the sheets are correct in the logs and the memory. Re-run the round.
+The AWS CLI has the same operation, `aws bedrock-agentcore stop-runtime-session`, but only in recent versions. The Python version above uses the boto3 package of the workshop environment, which always includes the operation.
 
 To remove everything at the end of the workshop, see the [Cleanup](cleanup.md) page.
 
 ## Side Passages (optional)
-
-> <img src="../../art/images/cards/cast-cordula-640x640.webp" alt="" width="28" height="28"> **CORDULA:** With the whole show in the cloud, three last doors: the booth where the broadcast is logged, the lobby where the Regional Managing Director wants something worse than a dance-off, and the moment the lights go out mid-song.
 
 - [The Broadcast Booth](encounters/broadcast-booth.md), sidequest: span attributes for the round and the Move Call, read back in Amazon CloudWatch
 - [House Rules as Guardrails](encounters/house-rules-guardrails.md), boss battle: an Amazon Bedrock guardrail holds the broadcast's house rules on every Narrator turn
